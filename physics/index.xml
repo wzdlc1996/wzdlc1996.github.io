@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leonard</title>
-    <link>https://wzdlc1996.github.io/</link>
-    <description>Recent content on Leonard</description>
+    <title>Physics on Leonard</title>
+    <link>https://wzdlc1996.github.io/physics/</link>
+    <description>Recent content in Physics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
     <lastBuildDate>Mon, 05 Nov 2018 15:45:57 +0800</lastBuildDate>
     
-	<atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wzdlc1996.github.io/physics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -26,18 +26,6 @@ $$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Loren
 $$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
 [Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
 $$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:</description>
-    </item>
-    
-    <item>
-      <title>Dual Graphic Card Configuration for Manjaro Linux</title>
-      <link>https://wzdlc1996.github.io/linux/nvidiasetting/</link>
-      <pubDate>Wed, 31 Oct 2018 14:48:29 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/linux/nvidiasetting/</guid>
-      <description>Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
-   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1. Remove Bumblebee Usually manjaro can be easily installed choosing the free drive mode, but nouveau is hard to use. And sometimes it make user cannot entry the x-system. One way is that noting nouveau in blacklist , use command:
-sudo nano /etc/modprob.d/usrBlack.blacklist blacklist nouveau  Then to use the graphic card, one can run mhwd-tui to install the non-free driver and Bumblebee to manage dual graphic card. First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd. One can simply remove them using the mhwd command in terminal or via Manjaro Settings Manager In other distribution, the work is the same. User can using their package manager to do it. Or more directly, do NOT install bumblebee, directly install PRIME after truning off nouveau.
-Step 2. Install Closed-source Driver One can follow the following articles to install the driver according to what he use:</description>
     </item>
     
   </channel>

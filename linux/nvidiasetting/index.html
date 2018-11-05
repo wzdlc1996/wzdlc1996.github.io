@@ -11,7 +11,7 @@
    Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1. Remove Bumblebee Usually manjaro can be easily installed choosing the free drive mode, but nouveau is hard to use. And sometimes it make user cannot entry the x-system. One way is that noting nouveau in blacklist , use command:
 sudo nano /etc/modprob.d/usrBlack.blacklist blacklist nouveau  Then to use the graphic card, one can run mhwd-tui to install the non-free driver and Bumblebee to manage dual graphic card. First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd. One can simply remove them using the mhwd command in terminal or via Manjaro Settings Manager In other distribution, the work is the same. User can using their package manager to do it. Or more directly, do NOT install bumblebee, directly install PRIME after truning off nouveau.
 Step 2. Install Closed-source Driver One can follow the following articles to install the driver according to what he use:">
-  
+
   <meta property="og:title" content="Dual Graphic Card Configuration for Manjaro Linux" />
 <meta property="og:description" content="Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
    Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1. Remove Bumblebee Usually manjaro can be easily installed choosing the free drive mode, but nouveau is hard to use. And sometimes it make user cannot entry the x-system. One way is that noting nouveau in blacklist , use command:
@@ -39,12 +39,12 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
 
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
-  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet"> 
-    
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
   
   <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
-  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
-  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
@@ -69,22 +69,64 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
 
 
   
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/js/vendors/katex/katex.min.css">
   
   
 
   
-    
+  
     <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-    
+
 
     
       
@@ -120,6 +162,11 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
               <a class="nav-link" href="https://wzdlc1996.github.io/linux/" >Linux  </a>
             </li>
           
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/physics/" >Physics  </a>
+            </li>
+          
           
         </ul>
 
@@ -128,7 +175,7 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
     </div>
   </nav>
   
- 
+
       
  
 
@@ -247,7 +294,8 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
   
 
 </div>
-  
+
+
     
 
     
@@ -289,7 +337,7 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
 
     
       <li class="middot"></li>
-      <li>2 minutes read</li>
+      <li>3 minutes read</li>
     
   </ul>
   
@@ -399,6 +447,86 @@ blacklist rivafb
 
 options nvidia_drm modeset = 1
 </code></pre>
+
+<h3 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h3>
+
+<p>First for other distribution but manjaro, user need to edit the file <code>/etc/X11/xorg.conf</code> , if X.Org and X server version <code>1.17.2+</code></p>
+
+<pre><code class="language-shell">#/etc/X11/xorg.conf
+
+Section &quot;Module&quot;
+    Load &quot;modesetting&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier &quot;nvidia&quot;
+    Driver &quot;nvidia&quot;
+    BusID &quot;PCI&quot;
+    Option &quot;AllowEmptyInitialConfiguration&quot;
+EndSection
+</code></pre>
+
+<p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
+
+<pre><code class="language-shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre>
+
+<p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
+
+<ol>
+<li><p><code>LightDM</code>
+Edit the file <code>/etc/lightdm/lightdm.conf</code> :</p>
+
+<pre><code class="language-shell">[Seat:*]
+display-setup-script = optimus.sh
+</code></pre></li>
+
+<li><p><code>GDM</code>
+GDM is the defult display manager of Gnome 3 . one should create two new .desktop files:</p>
+
+<pre><code class="language-shell">#/usr/share/gdm/greeter/autostart/optimus.desktop
+#/etc/xdg/autostart/optimus.desktop
+
+[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer
+</code></pre>
+
+<p>Or user can create one and link those two by command <code>ln -s</code></p></li>
+
+<li><p><code>SDDM</code>
+SDDM is the default display manager of KDE . one should write those two command to file <code>/usr/share/sddm/script/Xsetup</code> like:</p>
+
+<pre><code class="language-shell">#/usr/share/sddm/scripts/Xsetup
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre></li>
+</ol>
+
+<h3 id="step-6-reboot">Step 6. Reboot</h3>
+
+<p>If everything is set correctly, when user reboot, DM will load and he can log in. And:</p>
+
+<pre><code class="language-shell">$ glxinfo | grep -i vendor
+server glx vendor string: NVIDIA Corporation
+client glx vendor string: NVIDIA Corporation
+OpenGL vendor string: NVIDIA Corporation
+</code></pre>
+
+<hr>
+
+<h3 id="references">References</h3>
+
+<ol>
+<li><a href="https://wiki.archlinux.org/index.php/PRIME">PRIME - ArchWiki</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus">NVIDIA Optimus - Arch Wiki</a></li>
+<li><a href="https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225">[HowTo] Set up PRIME on Manjaro</a></li>
+</ol>
 
           </div>
 
@@ -599,6 +727,84 @@ options nvidia_drm modeset = 1
 							
 						
 				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-5-make-dgpu-as-primary">
+												 Step 5. Make dGPU as primary
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-6-reboot">
+												 Step 6. Reboot
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#references">
+												 References
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
 
 				</ul>
 			</div>
@@ -616,7 +822,7 @@ options nvidia_drm modeset = 1
   
 
 
-    
+
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -625,7 +831,7 @@ options nvidia_drm modeset = 1
   
   <div class="pb-2 mt-5 pt-5">
     
-      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
     
     
 
@@ -657,6 +863,19 @@ options nvidia_drm modeset = 1
     <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
+
+  <script>
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1){
+            all[i].SourceElement().parentNode.className += 'has-jax';
+        }}
+    );
+  </script>
+
 
 </footer>
 
@@ -690,15 +909,6 @@ options nvidia_drm modeset = 1
 
 
 
- 
-  <script src="https://wzdlc1996.github.io/js/vendors/katex/katex.min.js"> </script>
-  <script src="https://wzdlc1996.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
-
-  <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          renderMathInElement(document.body);
-      });
-  </script>
 
 
 

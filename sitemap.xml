@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wzdlc1996.github.io/physics/fieldtheory/premath/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/linux/nvidiasetting/</loc>
     <lastmod>2018-10-31T14:48:29+08:00</lastmod>
   </url>
@@ -13,7 +18,19 @@
   </url>
   
   <url>
+    <loc>https://wzdlc1996.github.io/series/field-theory/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/linux/</loc>
     <lastmod>2018-10-31T14:48:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -31,12 +48,6 @@
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/categories/linux/</loc>
-    <lastmod>2018-10-31T14:48:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://wzdlc1996.github.io/linux/</loc>
     <lastmod>2018-10-31T14:48:29+08:00</lastmod>
     <priority>0</priority>
@@ -49,8 +60,32 @@
   </url>
   
   <url>
+    <loc>https://wzdlc1996.github.io/tags/math/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/physics/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/physics/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/series/</loc>
-    <lastmod>2018-10-31T14:48:29+08:00</lastmod>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   

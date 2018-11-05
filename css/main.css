@@ -1,3 +1,28 @@
+/* Customize */
+em {
+  color: red;
+  font-size: 20px;
+  font-weight:600;
+  font-family: cursive;
+}
+
+em:hover{
+  color: #c00000;
+}
+
+.has-jax {
+  font: inherit;
+  font-size: 100%;
+  border: 0 !important;
+  color: #818181 !important;
+  background-color: white !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
 
 /* .container-fluid {
   padding-left: 0 !important;
@@ -25,7 +50,7 @@
   --text-light: #959595;
 }
 
-/* 
+/*
 
 Layout
 
@@ -110,7 +135,7 @@ a:active .active-color  {
   margin: 0 2% 5% 2%;
   /* padding: 2.5rem 4rem; */
   padding: 4% 7%;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); 
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   /* box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 8px 0 rgba(0, 0, 0, 0.12); */
   border-radius: .25rem;
 }
@@ -119,7 +144,7 @@ a:active .active-color  {
   /* margin: 1.5rem 1rem 2rem 3rem; */
   margin: 3% 2% 4% 5%;
   /* padding: 4rem 6rem; */
-  padding: 5.5% 8.4%; 
+  padding: 5.5% 8.4%;
 }
 
 .post-header {
@@ -175,7 +200,7 @@ a:active .active-color  {
   vertical-align: middle;
 }
 
-a:hover .post-meta, a:active .post-meta, 
+a:hover .post-meta, a:active .post-meta,
 a:hover.post-meta, a:active.post-meta {
   color: var(--active-color);
 }
@@ -219,7 +244,7 @@ a:hover.post-meta, a:active.post-meta {
 
 
 /* li-x 表示横过来的li */
-.li-x li { 
+.li-x li {
   padding: 0 8px;
   display: inline-block;
 }
@@ -256,7 +281,7 @@ footer .copyright {
   font-size: 0.875rem;
 }
 
-/* 
+/*
 
 post card
 
@@ -294,7 +319,7 @@ post card
   transition: transform 0.2s ease-out;
 }
 
-.post-card .view:hover img,  
+.post-card .view:hover img,
 .post-card a:hover img {
   -moz-transform: scale(1.05);
   -webkit-transform: scale(1.05);
@@ -303,13 +328,13 @@ post card
 }
 
 
-/* 
+/*
 
 Markdown
 
 */
 
-.markdown h1, .markdown h2, .markdown h3, 
+.markdown h1, .markdown h2, .markdown h3,
 .markdown h4, .markdown h5, .markdown h6 {
   font-weight: 500;
 }
@@ -423,7 +448,7 @@ Markdown
   color: var(--text-grey);
   /* border-left: .25rem solid #e5e5e5; */
   border-left: .25rem solid var(--grey-l3);
-  
+
 }
 
 .markdown blockquote p:last-child {
@@ -472,9 +497,9 @@ Markdown
 
 
 /*
- 
+
   tags
- 
+
  */
 
 .tags-sm, .tags-md {
@@ -525,7 +550,7 @@ Markdown
 }
 
 
-/* 
+/*
 
   Navbar
 
@@ -551,7 +576,7 @@ Markdown
 
 
 
-/* 
+/*
 
 Avatar
 
@@ -587,7 +612,7 @@ Avatar
     font-size: 1rem!important;
   }
 
-  .carousel-content .display-4{ 
+  .carousel-content .display-4{
     font-size: 2rem!important;
   }
 
@@ -608,7 +633,7 @@ Avatar
     font-size: 1rem!important;
   }
 
-  .carousel-content .display-4{ 
+  .carousel-content .display-4{
     font-size: 2rem!important;
   }
 
@@ -624,7 +649,7 @@ Avatar
 
 
 
-/* 
+/*
 
 carousel
 
@@ -666,7 +691,7 @@ carousel
 
 
 
-/* 
+/*
 
 toc-nav  scrollspy
 
@@ -678,12 +703,12 @@ toc-nav  scrollspy
   top: 6rem;
   overflow-y: auto;
 
-  
+
   -ms-flex-order: 2;
   order: 2;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  font-size: .875rem; 
+  font-size: .875rem;
 }
 
 /* .toc-nav[data-toggle=page-scrollspy] .nav-item+ul {
@@ -718,13 +743,13 @@ toc-nav  scrollspy
   border-left: .025rem solid #45526e;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #45526e; 
+  color: #45526e;
 } */
 
 
 /* .toc-nav a.nav-link.active, .toc-nav a.nav-link:active {
   background-color: transparent;
-  color: black; 
+  color: black;
   border-left: .125rem solid #45526e;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -749,7 +774,7 @@ toc-nav  scrollspy
 .toc-nav .nav-link {
   text-overflow:ellipsis;
   overflow:hidden;
-} 
+}
 
 .toc-nav .nav-item, .toc-nav .nav-link {
   font-size: .8rem;
@@ -788,7 +813,7 @@ toc-nav  scrollspy
   -webkit-box-shadow: none;
   box-shadow: none;
   font-weight: 700;
-} 
+}
 
 
 
@@ -797,13 +822,13 @@ toc-nav  scrollspy
  Pagination
 
  */
- .pagination .page-item .page-link, 
+ .pagination .page-item .page-link,
  .pagination .page-item .page-link:hover,
  .pagination .page-item.active .page-link {
   margin-left: 2px;
   margin-right: 2px;
   -webkit-border-radius: 20%;
-  border-radius: 20%; 
+  border-radius: 20%;
  }
 
  .page-link{
@@ -829,10 +854,10 @@ toc-nav  scrollspy
 }
 
 .pagination.pagination-outline .page-item .page-link:focus {
-  box-shadow: none; 
+  box-shadow: none;
 }
 
-.pagination.pagination-outline .page-item.active .page-link {  
+.pagination.pagination-outline .page-item.active .page-link {
   border: 1px;
   border-style: solid;
   border-color: #4285f4;
@@ -840,7 +865,7 @@ toc-nav  scrollspy
   background-color: transparent;
 }
 
-.pagination.pagination-outline.active-color .page-item.active .page-link {  
+.pagination.pagination-outline.active-color .page-item.active .page-link {
   border: 1px;
   border-style: solid;
   /* border-color: #38849e; */
@@ -854,8 +879,8 @@ toc-nav  scrollspy
 
 
 
-/* 
-   Stepper 
+/*
+   Stepper
  */
 
  .stepper li a {
@@ -946,7 +971,7 @@ toc-nav  scrollspy
 }
 
 
-/* 
+/*
    Timeline
  */
 
@@ -1072,10 +1097,10 @@ toc-nav  scrollspy
       left: 6%; } }
 
 
-/* 
+/*
   Card
  */
- 
+
  .card.card-cascade.wider {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1125,7 +1150,7 @@ toc-nav  scrollspy
 
 
 
-/* 
+/*
   temp term list
  */
 

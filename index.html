@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh_Hans">
   <head>
-	<meta name="generator" content="Hugo 0.49.2" />
+	<meta name="generator" content="Hugo 0.50" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
   <meta name="description" content="[It is a great day!  A little site of Wang Zhenduo]">
-  
+
   <meta property="og:title" content="Leonard" />
 <meta property="og:description" content="[It is a great day!  A little site of Wang Zhenduo]" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wzdlc1996.github.io/" />
-<meta property="og:updated_time" content="2018-10-31T14:48:29&#43;08:00"/>
+<meta property="og:updated_time" content="2018-11-05T15:45:57&#43;08:00"/>
 
 
   <title>
@@ -33,12 +33,12 @@
 
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
-  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet"> 
-    
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
   
   <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
-  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
-  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
@@ -65,22 +65,64 @@
 
 
   
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/js/vendors/katex/katex.min.css">
   
   
 
   
-    
+  
     <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-    
+
 
      
    
@@ -114,6 +156,11 @@
              
             <li class="nav-item ">
               <a class="nav-link" href="https://wzdlc1996.github.io/linux/" >Linux  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/physics/" >Physics  </a>
             </li>
           
           
@@ -306,6 +353,8 @@
 
   
 
+  
+
 
 
 
@@ -333,6 +382,15 @@
               </a>
             </li>           
           
+            
+              <li class="middot"></li>
+            
+            <li class="py-1">
+              <a href="https://wzdlc1996.github.io/categories/physics">
+                <span>Physics (1)</span>
+              </a>
+            </li>           
+          
         
       </div>
     </div>
@@ -343,6 +401,8 @@
 
         
         
+
+  
 
   
 
@@ -372,6 +432,12 @@
             <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button"><span>manjaro (1)</span></a></li>
           
         
+            <li><a href="https://wzdlc1996.github.io/tags/math" role="button"><span>math (1)</span></a></li>
+          
+        
+            <li><a href="https://wzdlc1996.github.io/tags/physics" role="button"><span>physics (1)</span></a></li>
+          
+        
       </div>
     </div>
 
@@ -380,6 +446,8 @@
 
 
         
+  
+
   
 
 
@@ -402,6 +470,45 @@
      
       <div class="post-meta" >
         
+          
+          
+
+            
+            
+            
+            
+              
+              
+<div class="card card-cascade wider mb-4 mt-2">
+    <a href="https://wzdlc1996.github.io/series/field-theory">
+  
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="https://wzdlc1996.github.io/img/default.jpg" >
+    
+      <div class="mask rgba-white-slight waves-effect waves-light"></div>
+    
+  </div>
+
+  
+  <div class="card-body card-body-cascade text-center">
+   
+
+    
+    <h4 class="card-title"><strong>Field-Theory (1)</strong></h4>
+    
+
+    
+    <p class="card-text"> </p>
+    
+
+
+  </div>
+</a>
+
+</div>
+
+
+            
           
           
 
@@ -467,6 +574,75 @@
               
                   <div class="post-wrapper white-bg post-card">
   
+  <a href="https://wzdlc1996.github.io/physics/fieldtheory/premath/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Preliminary Mathematics</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Nov 5, 2018</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>8 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
+[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
+$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :
+$$\eta_{\mu\nu}=\eta^{\mu\nu} = (&#43;,-,-,-)$$ And dual vector of $x$ :
+$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$ where the Einstein Summation Convention has been applied. The inner product in Minkowski spacetime is:
+$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Lorentz Transformation [Definition] : Lorentz Transformation is a linear transformation which hold the inner product invariant:
+$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
+[Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
+$$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+        
+      
+      
+        
+          <li><a href="https://wzdlc1996.github.io/series/field-theory"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Field Theory</a></li>
+        
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/math" role="button">Math </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+              
+                  <div class="post-wrapper white-bg post-card">
+  
   <a href="https://wzdlc1996.github.io/linux/nvidiasetting/">
     <div class="post-header text-center">
       <div class="px-4 post-heading">Dual Graphic Card Configuration for Manjaro Linux</div>
@@ -477,7 +653,7 @@
     
         
           <li class="middot"></li>
-          <li>2 minutes read</li>
+          <li>3 minutes read</li>
         
       </ul>
     </div>
@@ -541,7 +717,7 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
   
 
 
-    
+
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -550,7 +726,7 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
   
   <div class="pb-2 mt-5 pt-5">
     
-      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
     
     
 
@@ -585,6 +761,19 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
   </div>
   
 
+  <script>
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1){
+            all[i].SourceElement().parentNode.className += 'has-jax';
+        }}
+    );
+  </script>
+
+
 </footer>
 
 
@@ -617,15 +806,6 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
 
 
 
- 
-  <script src="https://wzdlc1996.github.io/js/vendors/katex/katex.min.js"> </script>
-  <script src="https://wzdlc1996.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
-
-  <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          renderMathInElement(document.body);
-      });
-  </script>
 
 
 

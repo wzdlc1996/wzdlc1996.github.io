@@ -6,10 +6,19 @@
     <description>Recent content in Series on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Wed, 31 Oct 2018 14:48:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Nov 2018 15:45:57 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Field Theory</title>
+      <link>https://wzdlc1996.github.io/series/field-theory/</link>
+      <pubDate>Mon, 05 Nov 2018 15:45:57 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/series/field-theory/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux</title>
