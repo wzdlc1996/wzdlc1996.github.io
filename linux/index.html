@@ -9,20 +9,20 @@
   <meta name="author" content="Leonard">
   <meta name="description" content="[It is a great day!  A little site of Wang Zhenduo]">
   
-  <meta property="og:title" content="Linux" />
+  <meta property="og:title" content="Linuxes" />
 <meta property="og:description" content="[It is a great day!  A little site of Wang Zhenduo]" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://wzdlc1996.github.io/categories/linux/" />
+<meta property="og:url" content="https://wzdlc1996.github.io/linux/" />
 <meta property="og:updated_time" content="2018-10-31T14:48:29&#43;08:00"/>
 
 
   <title>
   
-       Linux | Leonard 
+       Linuxes | Leonard 
   
   </title>
 
-  <link rel="canonical" href="https://wzdlc1996.github.io/categories/linux/">
+  <link rel="canonical" href="https://wzdlc1996.github.io/linux/">
 
   
   
@@ -51,7 +51,7 @@
 
   
   
-  <link href="https://wzdlc1996.github.io/categories/linux/index.xml" rel="alternate" type="application/rss+xml" title="Leonard" />
+  <link href="https://wzdlc1996.github.io/linux/index.xml" rel="alternate" type="application/rss+xml" title="Leonard" />
   
 
   <style type="text/css">
@@ -229,7 +229,7 @@
             
     
             
-                <a href="https://wzdlc1996.github.io/categories/linux/index.xml"><i class="fas fa-rss pr-1" aria-hidden="true"></i></a>
+                <a href="https://wzdlc1996.github.io/linux/index.xml"><i class="fas fa-rss pr-1" aria-hidden="true"></i></a>
             
 
             
@@ -248,14 +248,15 @@
     
 
     
-<main class="post-main-wrapper px-5">
-  
-  <div class="row">
+  <main class="post-main-wrapper px-5">
     
-    <div class="col-md-3">
+    <div class="row">
+
       
       
-      
+        
+        <div class="col-md-3">
+          
 
   
 
@@ -293,9 +294,8 @@
     
   
 
-
-      
-      
+    
+          
 
   
 
@@ -331,8 +331,7 @@
     
   
 
-
-      
+          
   
 
 
@@ -367,58 +366,111 @@
   
 
   
+        </div>
+        
 
-    </div>
-    
-
-    
-    
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+        
+        
+        <div class="col-md-9 mt-3">  
+      
+          <ul>
+            <div class="div-x">
+              <div class='post-heading'>
   
-      Linux
+      Linuxes
   
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                One post
-              </div>
-            
-          </div>
-      
-          
-      </ul>
-      <ul>
-        
-            
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2018.10</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2018-10-31T14:48:29&#43;08:00'>Oct 31, 2018</time></span>
-    
-    <a href="https://wzdlc1996.github.io/linux/nvidiasetting/"><span>Dual Graphic Card Configuration for Manjaro Linux</span></a>
-</li>
+              
+              
+                <div class="px-2 middot"></div>
+                <div>
+                  One post
+                </div>
+              
+            </div>
 
-                
+              
+        </ul>
+        <div>
+          <div class="pagination pagination-outline justify-content-end active-color">
             
+            
+
+          </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/linux/nvidiasetting/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Dual Graphic Card Configuration for Manjaro Linux</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 31, 2018</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
         
       </ul>
     </div>
     
+
+    
+      Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
+   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1. Remove Bumblebee Usually manjaro can be easily installed choosing the free drive mode, but nouveau is hard to use. And sometimes it make user cannot entry the x-system. One way is that noting nouveau in blacklist , use command:
+sudo nano /etc/modprob.d/usrBlack.blacklist blacklist nouveau  Then to use the graphic card, one can run mhwd-tui to install the non-free driver and Bumblebee to manage dual graphic card. First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd. One can simply remove them using the mhwd command in terminal or via Manjaro Settings Manager In other distribution, the work is the same. User can using their package manager to do it. Or more directly, do NOT install bumblebee, directly install PRIME after truning off nouveau.
+Step 2. Install Closed-source Driver One can follow the following articles to install the driver according to what he use:......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/linux"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Linux </a></li>
+        
+      
+      
+        
+          <li><a href="https://wzdlc1996.github.io/series/linux"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Linux</a></li>
+        
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/linux" role="button">Linux </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button">Manjaro </a></li>
+      
     
   </div>
-</main> 
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+            
+        </div>
+      </div>
+      
+
+    </div>
+  </main>
 
     
     
@@ -449,7 +501,7 @@
     
 
     
-        <a href="https://wzdlc1996.github.io/categories/linux/index.xml"><i class="fas fa-rss mr-3" aria-hidden="true"></i></a>
+        <a href="https://wzdlc1996.github.io/linux/index.xml"><i class="fas fa-rss mr-3" aria-hidden="true"></i></a>
     
 
     
