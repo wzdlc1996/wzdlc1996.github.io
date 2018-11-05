@@ -117,7 +117,7 @@ Step 2. Install Closed-source Driver One can follow the following articles to in
           </li>
              
             <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/Linux/" >Linux  </a>
+              <a class="nav-link" href="https://wzdlc1996.github.io/linux/" >Linux  </a>
             </li>
           
           
@@ -364,34 +364,32 @@ Or more directly, do <strong>NOT</strong> install bumblebee, directly install PR
 Other distribution can jump to Step 4</p>
 
 <ol>
-<li><strong>Remove Old Config File</strong>
-Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:
-```shell
-#/etc/X11/xorg.conf.d/optimus.conf</li>
-</ol>
+<li><p><strong>Remove Old Config File</strong></p>
 
-<p>Section &ldquo;Module&rdquo;
-       Load &ldquo;modesetting&rdquo;
-   EndSection</p>
+<p>Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:</p>
 
-<p>Section &ldquo;Device&rdquo;
-       Identifier &ldquo;nvidia&rdquo;
-       Driver &ldquo;nvidia&rdquo;
-       BusID &ldquo;PCI&rdquo;
-       Option &ldquo;AllowEmptyInitialConfiguration&rdquo;
-   EndSection</p>
-
-<pre><code>   While the BusID value can be find by command: `lspci | grep -E &quot;VGA|3D&quot;`
-
-2. **Write Blacklist**
-   One need to remove two files: `/etc/modprobe.d/mhwd-gpu.conf` and `/etc/modprobe.d/mhwd-nvidia.conf`
-   and write a new one:
-
-   ```shell
-   blacklist nouveau
-   blacklist nvidiafb
-   blacklist rivafb
+<pre><code class="language-shell">#/etc/X11/xorg.conf.d/optimus.conf  
+Section &quot;Module&quot;
+    Load &quot;modesetting&quot;
+EndSection  
+Section &quot;Device&quot;
+    Identifier &quot;nvidia&quot;
+    Driver &quot;nvidia&quot;
+    BusID &quot;PCI&quot;
+    Option &quot;AllowEmptyInitialConfiguration&quot;
+EndSection
 </code></pre>
+
+<p>While the BusID value can be find by command: <code>lspci | grep -E &quot;VGA|3D&quot;</code></p></li>
+
+<li><p><strong>Write Blacklist</strong>
+One need to remove two files: <code>/etc/modprobe.d/mhwd-gpu.conf</code> and <code>/etc/modprobe.d/mhwd-nvidia.conf</code> and write a new one:</p>
+
+<pre><code class="language-shell">blacklist nouveau
+blacklist nvidiafb
+blacklist rivafb
+</code></pre></li>
+</ol>
 
 <h3 id="step-4-enable-nvdia-drm-modeset">Step 4. Enable <code>nvdia-drm.modeset</code></h3>
 
