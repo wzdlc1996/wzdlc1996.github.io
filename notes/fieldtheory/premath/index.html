@@ -380,7 +380,7 @@ $$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We 
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>11 minutes read</li>
     
   </ul>
   
@@ -460,7 +460,7 @@ Or equivalently:<code>$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu \beta} = \et
 </ol>
 With <code>Proper Orthochronous</code> (<code>Restricted Lorentz Group</code>) noted as<code>$\text{SO}^+(1,3)$</code>, we can construct the Lorentz Group<code>$\text{O}(1,3)$</code>as:</p>
 
-<div>$$\\{ 1,P,T,PT \\} \text{SO}^+(1,3) = \text{O}(1,3)$$</div>
+<div>$$\{ 1,P,T,PT \} \text{SO}^+(1,3) = \text{O}(1,3)$$</div>
 
 <p>Where<code>$P=(+,-,-,-)$</code>is the space inversion and<code>$T=(-,+,+,+)$</code>is the time reversal. They also induce those 4 (not connected)components of<code>$\text{O}(1,3)$</code>. <mark>These 4 components are connected (but not simply connected)</mark></p>
 
@@ -514,7 +514,7 @@ In a reference, one can write the tensor <code>$T$</code> as a quantity with <co
 With the following notations:</p>
 
 <div>$$\begin{aligned}
-\theta^i &= \frac 1 2 \epsilon^{ijk}\omega^{jk} \ ; \ L^i = \frac 1 2 \epsilon^{ijk}J^{jk} \\
+\theta^i &= \frac 1 2 \sum_{jk} \epsilon^{ijk}\omega^{jk} \ ; \ L^i = \frac 1 2 \sum_{jk} \epsilon^{ijk}J^{jk} \\
 \eta^i &= \omega_{0,i} \ ; \ K^i = J^{0,i}
 \end{aligned}$$</div>
 
@@ -534,7 +534,9 @@ With the following notations:</p>
 [K^i,K^j] &= -\ti \epsilon^{ijk} L^k
 \end{aligned}$$</div>
 
-<p>where (\epsilon^{ijk}) is the covariant <code>Levi-Civita</code> simbol. Which equals <code>$1$</code> if <code>$ijk$</code> are even permutation of <code>$123$</code> , and <code>$-1$</code> for odd ones. And vanishes for otherwise.</p>
+<p>summation of $k$ is over ${1,2,3}$</p>
+
+<p>where $\epsilon^{ijk}$ is the covariant <code>Levi-Civita</code> simbol. Which equals <code>$1$</code> if <code>$ijk$</code> are even permutation of <code>$123$</code> , and <code>$-1$</code> for odd ones. And vanishes for otherwise.</p>
 
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -571,6 +573,37 @@ One can choose these matrix arbitarily. One of those is:</p>
 <p>By the simple property:</p>
 
 <div>$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu\nu} = \sum_\lambda (J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - J^{\gamma\delta})_{\mu\lambda}(J^{\alpha\beta})_{\lambda\nu} = \sum_{\lambda}(J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - (\mu\leftrightarrow \nu)$$</div>
+
+</details>
+
+
+<p>Here we write down all matrix form of these generators in vector representation, the simbol $\sim$ means that the right-hand-side matrix is the matrix of left-hand-side <code>$A$</code> &rsquo;s elements <code>$A^{\mu}_{\indent \nu}$</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Matrix Form
+    </summary>
+    <div>$$\begin{aligned}
+J^{01}&=-J^{10}\sim \ti \begin{bmatrix}0&1&0&0\\ 1&0&0&0\\ 0&0&0&0 \\ 0&0&0&0  \end{bmatrix} \ ; \
+J^{02}=-J^{20}\sim \ti \begin{bmatrix}0&0&1&0\\ 0&0&0&0\\ 1&0&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
+J^{03}=-J^{30}\sim \ti \begin{bmatrix} 0&0&0&1\\ 0&0&0&0\\ 0&0&0&0\\ 1&0&0&0 \end{bmatrix} \\
+J^{12}&=-J^{21}\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&-1&0\\ 0&1&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
+J^{23}=-J^{32}\sim\ti\begin{bmatrix}0&0&0&0\\ 0&0&0&0\\ 0&0&0&-1\\ 0&0&1&0 \end{bmatrix} \ ; \
+J^{31}=J^{-31}\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&0&1\\ 0&0&0&0\\ 0&-1&0&0 \end{bmatrix}
+\end{aligned}$$</div>
+
+<p>And for <code>$\bm{L},\bm{K}$</code> :</p>
+
+<div>
+$$\begin{aligned}
+L^1&\sim \ti \begin{bmatrix}0&0&0&0\\ 0&0&0&0\\ 0&0&0& -1\\ 0&0&1&0 \end{bmatrix} \ ; \
+L^2\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&0&1\\ 0&0&0&0\\ 0&-1&0&0 \end{bmatrix} \ ; \
+L^3\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&-1&0\\ 0&1&0&0\\ 0&0&0&0 \end{bmatrix} \\
+K^2&\sim\ti\begin{bmatrix}0&1&0&0\\ 1&0&0&0\\ 0&0&0&0 \\ 0&0&0&0  \end{bmatrix} \ ; \
+K^2\sim\ti \begin{bmatrix}0&0&1&0\\ 0&0&0&0\\ 1&0&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
+K^3\sim \ti \begin{bmatrix} 0&0&0&1\\ 0&0&0&0\\ 0&0&0&0\\ 1&0&0&0 \end{bmatrix}
+\end{aligned}$$
+</div>
 
 </details>
 
@@ -618,6 +651,49 @@ Then , the basis of (<sup>1</sup>&frasl;<sub>2</sub>,0) called as <code>left-han
 <p>We can write the matrix representation of Lorentz Group by spinor basis:</p>
 
 <div>$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big) \ , \ \Lambda_R = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}+\ti \bm{\eta})^i \big)$$</div>
+
+<h4 id="parity-transformation">Parity-Transformation</h4>
+
+<p><em>[Definition]</em> : <code>Parity-Transformation</code> is the Spatial reflection transformation.</p>
+
+<p>In Minkowski space-time, we have the matrix form of the Parity-Transformation:</p>
+
+<div>$$\begin{aligned}
+P_1 &\sim \text{diag}(1,1,-1,-1) \\
+P_2 &\sim \text{diag}(1,-1,1,-1) \\
+P_3 &\sim \text{diag}(1,-1,-1,1)\end{aligned}$$</div>
+
+<p>It is obviously that <code>$P_i^2=I$</code> . That means they are self-identity.</p>
+
+<p>The question is: when a Parity-Transformation is operated on the space-time, what will happen on the Lorentz Transformation of these elements(vectors and spinors)</p>
+
+<p>Because we know the matrix form of Parity-Transformation of 4-vectors, we will begin with them. Vectors transforms as:</p>
+
+<div>$$v^{\mu} \rightarrow \Lambda(\omega)^{\mu}_{\indent \nu} v^{\nu}$$</div>
+
+<p>Then under Parity transformation it shall be :</p>
+
+<div>$$P_i v^{\mu} \rightarrow P_i \Lambda(\omega)^{\mu}_{\indent \nu} v^{\nu}= P_i \Lambda(\omega)^{\mu}_{\indent \nu} P_i P_i v^{\nu}$$</div>
+
+<p>That means under Parity Transformation, elements in (Restricted) Lorentz Group shall be transformed by:</p>
+
+<div>$$ \Lambda \rightarrow P_i \Lambda P_i = \Lambda' $$</div>
+
+<p>For the reason that <code>$\det P_i=1$</code> , <code>$\Lambda'$</code> shall be in the (Restricted) Lorentz Group too. Let <code>$\Lambda=\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})$</code> , then we can derive the transformation of the generators <code>$\bm{L},\bm{K}$</code> under Parity Transformation, with parameters <code>$\bm{\theta},\bm{\eta}$</code> invariant.</p>
+
+<p><em>[Theorem]</em> : Under Parity Transformation, we have:</p>
+
+<div>$$P_i\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K}) P_i = \Lambda(\bm{\theta},\bm{\eta};-(P_i)^i_{\indent j}L^j , (P_i)^i_{\indent j}K^j) $$</div>
+
+<p>That means that the 3-vector <code>$\bm{L}$</code> transforms like <code>Pseudovector</code> and <code>$\bm{K}$</code> transforms like <code>vector</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+</details>
+
 
 <h3 id="spinor-space">Spinor Space</h3>
 
@@ -703,11 +779,11 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
-    <p>Same as our discussion in <code>Scalar</code> section, we have:</p>
+    <p>According to the transformation regulation of spinor, we have:</p>
 
-<div>$$\Lambda_L = z_{\mu}\sigma^{\mu}$$</div>
+<div>$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big)$$</div>
 
-<p>with <code>$z_0^2-z_1^2-z_2^2-z_3^2 = 1$</code> . Then for <code>$a_l \rightarrow \Lambda_L a_l$</code> , one have:</p>
+<p>Then for $a_l \rightarrow \Lambda_L a_l$ , one have:</p>
 
 <div>$$a^{\mu}\rightarrow a_l^{\dagger} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L a_l $$</div>
 
@@ -715,19 +791,30 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
 
 <div>$$\begin{aligned}[]
 \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L &= \eta_{\mu\nu} z_{\alpha}^{*}z_{\beta} \sigma^{\alpha}\sigma^{\nu}\sigma^{\beta} \\
-&= \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
+&= \mathcal{L}^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
 \end{aligned}$$</div>
 
-<p>By the inner-product of Pauli matrices:</p>
+<p>We need to check if <code>$L^{\mu}_{\indent \nu}$</code> is the the vector representation of Lorentz Group, which shall be written as:</p>
 
-<div>$$(\sigma^\alpha,\sigma^\beta) \equiv \frac 1 2 \text{Tr}(\sigma^\alpha\sigma^\beta) = \delta^\alpha_\beta $$</div>
+<div>$$\Lambda^{\mu}_{\indent \nu} = \exp(-\frac \ti 2 \omega_{\alpha\beta}J^{\alpha\beta})^{\mu}_{\indent \nu}=\exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)^{\mu}_{\indent \nu}$$</div>
 
-<p>Then we have:</p>
+<p>We need only to check whether the infinitesimal transformation is consistent or not. Which means that we need to check the following two equalities(generator equalities):</p>
 
 <div>$$\begin{aligned}
-\Lambda^{\mu}_{\indent \nu} &= \frac 1 2 \text{Tr}(\Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L\bar{\sigma}^{\nu}) \\
-&= \frac 1 2 \eta_{\mu\lambda}\eta_{\nu\delta}z_{\alpha}^{*}z_{\beta} \text{Tr}\sigma^\alpha\sigma^\lambda\sigma^\beta\sigma^\delta
+\partial_{\theta^i} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L|_{\bm{\eta}=\bm{\theta}=0} &= \partial_{\theta^i} \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}|_{\bm{\eta}=\bm{\theta}=0} \\
+\partial_{\eta^i} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L|_{\bm{\eta}=\bm{\theta}=0} &= \partial_{\eta^i} \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}|_{\bm{\eta}=\bm{\theta}=0}
 \end{aligned}$$</div>
+
+<p>Which is:</p>
+
+<div>$$\begin{aligned}
+\frac \ti 2[\sigma^i,\bar{\sigma}^{\mu}] &= -\ti (L^i)^{\mu}_{\indent \nu}\bar{\sigma}^{\nu} \\
+-\frac 1 2\{\sigma^i,\bar{\sigma}^{\mu}\} &= -\ti (K^i)^{\mu}_{\indent \nu}\bar{\sigma}^{\nu}
+\end{aligned}$$</div>
+
+<p>By the matrix form of <code>$\bm{L},\bm{K}$</code> we can check these equalities</p>
+
+<p>Which is similar for the right-handed Weyl spinor.</p>
 
 </details>
 
@@ -1033,6 +1120,36 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
 										<li class="nav-item">
 						 					<a class="nav-link" href="#weyl-spinor-representation">
 												 Weyl Spinor Representation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#parity-transformation">
+												 Parity-Transformation
 											</a>
 										</li>
 						 
