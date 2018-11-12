@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Physics on Leonard</title>
-    <link>https://wzdlc1996.github.io/tags/physics/</link>
-    <description>Recent content in Physics on Leonard</description>
+    <title>Quantum Mechanics on Leonard</title>
+    <link>https://wzdlc1996.github.io/series/quantum-mechanics/</link>
+    <description>Recent content in Quantum Mechanics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
     <lastBuildDate>Mon, 12 Nov 2018 14:38:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wzdlc1996.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wzdlc1996.github.io/series/quantum-mechanics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -63,23 +63,6 @@ $$(\phi,\psi) := \int \phi^*(\bm{x}) \psi(\bm{x})\td V$$ Satisfying the three Ax
  Hermiticity : $(\phi,\psi)=(\psi,\phi)^*$ Linearity : $(\phi,\lambda_1\psi_1+\lambda_2\psi_2)=\lambda_1 (\phi,\psi_1)+\lambda_2 (\phi,\psi_2) \ \ \text{for } \lambda_1,\lambda_2 \in \mathbb{C}$ Positive definiteness : $(\psi,\psi)\geq 0 , \text{ and } \Big((\psi,\psi)=0 \Leftrightarrow \psi=0 \Big)$  The third axiom above leads to a useful consiquence:
 The Gram matrix $G_{i,j}=(\psi_i,\psi_j)$ of a set of wavefunction is Hermitian and positive semi-definite.
  Proof  For the positive definiteness of inner product, we have:</description>
-    </item>
-    
-    <item>
-      <title>Preliminary Mathematics</title>
-      <link>https://wzdlc1996.github.io/notes/fieldtheory/premath/</link>
-      <pubDate>Mon, 05 Nov 2018 15:45:57 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
-      <description>Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
-[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
-$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :
-$$\eta_{\mu\nu}=\eta^{\mu\nu} = (+,-,-,-)$$ And dual vector of $x$ :
-$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$ where the Einstein Summation Convention has been applied. The inner product in Minkowski spacetime is:
-$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Lorentz Transformation [Definition] : Lorentz Transformation is a linear transformation which hold the inner product invariant:
-$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
-[Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
-$$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:</description>
     </item>
     
   </channel>

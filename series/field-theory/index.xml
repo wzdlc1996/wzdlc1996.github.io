@@ -13,10 +13,10 @@
     
     <item>
       <title>Preliminary Mathematics</title>
-      <link>https://wzdlc1996.github.io/physics/fieldtheory/premath/</link>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/premath/</link>
       <pubDate>Mon, 05 Nov 2018 15:45:57 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/physics/fieldtheory/premath/</guid>
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
       <description>Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
 [Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
 $$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :

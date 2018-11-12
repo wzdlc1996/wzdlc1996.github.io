@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
+[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
+$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :
+$$\eta_{\mu\nu}=\eta^{\mu\nu} = (&#43;,-,-,-)$$ And dual vector of $x$ :
+$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$ where the Einstein Summation Convention has been applied. The inner product in Minkowski spacetime is:
+$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Lorentz Transformation [Definition] : Lorentz Transformation is a linear transformation which hold the inner product invariant:
+$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
+[Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
+$$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:">
+
+  <meta property="og:title" content="Preliminary Mathematics" />
+<meta property="og:description" content="Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
+[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
+$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :
+$$\eta_{\mu\nu}=\eta^{\mu\nu} = (&#43;,-,-,-)$$ And dual vector of $x$ :
+$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$ where the Einstein Summation Convention has been applied. The inner product in Minkowski spacetime is:
+$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Lorentz Transformation [Definition] : Lorentz Transformation is a linear transformation which hold the inner product invariant:
+$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
+[Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
+$$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/premath/" /><meta property="article:published_time" content="2018-11-05T15:45:57&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-05T15:45:57&#43;08:00"/>
+
+
+
+  <title>
+  
+       Preliminary Mathematics | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/premath/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0%20%28copy%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/field-theory"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Field-Theory</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Preliminary Mathematics</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Nov 5, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>9 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h3 id="minkowski-spacetime">Minkowski Spacetime</h3>
+
+<h4 id="the-structure-of-minkowski-spacetime">The Structure of Minkowski Spacetime</h4>
+
+<p>From now on we will study in <code>Minkowski spacetime</code> (non-General Relativity) .</p>
+
+<p><em>[Definition]</em> : <code>Minkowski spacetime (non-curved)</code> is a 4-dimension real linear space:</p>
+
+<div>$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$</div>
+
+<p>Usually we note the vector as a lowercase of letter with a Greek superscript like<code>$x\sim x^{\mu}$</code>and ignore the basis.
+with the <code>metric</code> :</p>
+
+<div>$$\eta_{\mu\nu}=\eta^{\mu\nu} = (+,-,-,-)$$</div>
+
+<p>And <code>dual vector</code> of <code>$x$</code> :</p>
+
+<div>$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$</div>
+
+<p>where the <a href="https://en.wikipedia.org/wiki/Einstein_notation"><code>Einstein Summation Convention</code></a> has been applied.
+The <code>inner product</code> in Minkowski spacetime is:</p>
+
+<div>$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$</div>
+
+<h4 id="lorentz-transformation">Lorentz Transformation</h4>
+
+<p><em>[Definition]</em> : <code>Lorentz Transformation</code> is a linear transformation which hold the inner product invariant:</p>
+
+<div>$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x'^{\mu} = \Lambda^{\mu}_{\ \ \ \  \nu} x ^{\nu}$$</div>
+
+<p>With <code>$\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda^{\nu}_{\ \ \ \  \beta} = \eta_{\alpha\beta}$</code>
+Or equivalently:<code>$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$</code></p>
+
+<p><em>[Theorem]</em> : By<code>$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$</code>, we have:</p>
+
+<div>$$(\Lambda^{-1})^{\mu}_{\ \ \ \  \nu} = \Lambda_{\nu}^{\ \ \ \  \mu}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>We have<code>$\Lambda^{\mu}_{\ \ \ \  \alpha}\Lambda^{\nu}_{\ \ \ \  \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$</code>, for<code>$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$</code>, we have:</p>
+
+<div>$$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu}^{\ \ \ \  \beta} = \delta_{\alpha}^{\beta}$$</div>
+
+<p>Or with the raising and lowering indices pairly will not change the value:</p>
+
+<div>$$\Lambda_{\alpha}^{\ \ \ \  \mu} \Lambda^{\alpha}_{\ \ \ \  \nu} = \delta_{\nu}^{\mu}$$</div>
+
+<p>For <code>$\Lambda$</code>and<code>$\Lambda^{-1}$</code> shall satisfy:</p>
+
+<div>$$\Lambda \Lambda^{-1} = 1 \Leftrightarrow (\Lambda)^{\mu}_{\ \ \ \  \alpha} (\Lambda)^{\alpha}_{\ \ \ \  \nu} = \delta_{\nu}^{\mu}$$</div>
+
+<p>With the comparation between these two equality above, we have:</p>
+
+<div>$$(\Lambda^{-1})^{\mu}_{\ \ \ \  \alpha} = \Lambda_{\alpha}^{\ \ \ \  \mu}$$</div>
+
+</details>
+
+
+<p>In Special Relativity, Lorentz transformation describes the coordinate transformation between two references. We can classify Lorentz transformation by if it contain the time reversal and space inversion:
+<ol>
+  <li><code>Proper, Orthochronous</code> : <code>$\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</code> </li>
+  <li><code>Improper, Orthochronous</code> :<code>$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</code></li>
+  <li><code>Improper, Non-orthochronous</code> :<code>$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\leq -1$</code></li>
+  <li><code>Proper, Non-orthochronous</code> :<code>$\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\leq -1$</code></li>
+</ol>
+With <code>Proper Orthochronous</code> (<code>Restricted Lorentz Group</code>) noted as<code>$\text{SO}^+(1,3)$</code>, we can construct the Lorentz Group<code>$\text{O}(1,3)$</code>as:</p>
+
+<div>$$\\{ 1,P,T,PT \\} \text{SO}^+(1,3) = \text{O}(1,3)$$</div>
+
+<p>Where<code>$P=(+,-,-,-)$</code>is the space inversion and<code>$T=(-,+,+,+)$</code>is the time reversal. They also induce those 4 (not connected)components of<code>$\text{O}(1,3)$</code>. <mark>These 4 components are connected (but not simply connected)</mark></p>
+
+<h4 id="scalar-vector-and-tensor">Scalar, Vector and Tensor</h4>
+
+<p><em>[Definition]</em> : <code>Scalars</code> are some quantities, which is invariant when reference changes.</p>
+
+<p><em>[Definition]</em> : <code>Vectors</code> are those <code>4-components quantities</code>, which are transformed by <code>Lorentz Transformation</code> when reference changes: <code>$v'^{\mu} = \Lambda^{\mu}_{\indent \nu}v^{\nu}$</code> . For example, position <code>$x=(x^0,\bm{x})$</code> is a vector</p>
+
+<p><em>[Definition]</em> : <code>Tensors</code> are multilinear maps from <code>$\mathcal{M}$</code>s and their <code>dual space</code> to scalars</p>
+
+<p>For <code>$(m,n)$</code> type tensor <code>$T$</code> , it is the multilinear map:</p>
+
+<div>$$T :\mathcal{M}^{\times m} \times (\mathcal{M}^* )^{\times n} \rightarrow \mathbb{R}$$</div>
+
+<p>Here, we use <code>$\mathcal{M}$</code> to note the vector space and <code>$\mathcal{M}^* $</code> to note the dual-vector space. The Minkowski spacetime is also a vector space <code>$\mathcal{M}$</code> describing the space-time coordinates. <br>
+In a reference, one can write the tensor <code>$T$</code> as a quantity with <code>$4(m+n)$</code> indices:</p>
+
+<div>$$T \sim T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent \indent \nu_1,\cdots,\nu_n} \ \ \ \mu_p,\nu_q \in \{0,1,2,3\}$$</div>
+
+<p>And:</p>
+
+<div>$$T(v_1,v_2,\cdots,v_m,u_1,\cdots,u_n) = T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent  \indent \nu_1,\cdots,\nu_n} (v_1)^{\mu_1}(v_2)^{\mu_2}\cdots (v_m)^{\mu_m} (u_1)_{\nu_1}\cdots (u_n)_{\nu_n}$$</div>
+
+<p>Then the transformation of the tensor shall be:</p>
+
+<div>$$(T')_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent  \indent \nu_1,\cdots,\nu_n} = T_{\alpha_1,\cdots,\alpha_m}^{\indent \indent \indent \indent \beta_1,\cdots,\beta_n} \Lambda_{\mu_1}^{\indent \alpha_1}\cdots
+\Lambda_{\mu_m}^{\indent \alpha_m} \Lambda^{\nu_1}_{\indent \beta_1}\cdots \Lambda^{\nu_n}_{\indent \beta_n}$$</div>
+
+<h3 id="lorentz-group">Lorentz group</h3>
+
+<h4 id="basic-concept">Basic Concept</h4>
+
+<p><em>[Definition]</em> : <code>Lorentz Group</code> , or mathematically, <code>Generalized Orthogonal Group</code> <code>$\text{O}(1,3;\mathbb{R})$</code> , is the <code>metrix Lie Group</code> that preserves the quadratic form:</p>
+
+<div>$$(x^0,x^1,x^2,x^3) \mapsto (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2$$</div>
+
+<p>on <code>$\mathbb{R}^4$</code> . Which is a <code>6-D noncompact non-abelian real Lie group, not connected</code></p>
+
+<p><em>[Definition]</em> : <code>Restricted Lorentz Group</code> : <code>$\text{SO}^+(1,3)$</code>, is the connected component of Lorentz Group which contains the <code>identity element</code></p>
+
+<h4 id="lie-algebra-of-restricted-lorentz-group">Lie Algebra of Restricted Lorentz Group</h4>
+
+<p><em>[Definition]</em> : <code>Vector representation</code> of <code>$\text{SO}^+(1,3)$</code> is its representation by <code>$4\times 4$</code> real metrix.</p>
+
+<p><em>[Theorem]</em> : The common form of elements in <code>$\text{SO}^+(1,3)$</code> is:</p>
+
+<div>$$\Lambda = \exp \Big(-\frac {\ti} 2 \omega_{\mu,\nu} J^{\mu,\nu} \Big)$$</div>
+
+<p>Where <code>$J^{\mu\nu} = -J^{\nu\mu}$</code> are generators, and <code>$\omega_{\mu\nu}=-\omega_{\nu\mu}$</code> are six independent parameters
+With the following notations:</p>
+
+<div>$$\begin{aligned}
+\theta^i &= \frac 1 2 \epsilon^{ijk}\omega^{jk} \ ; \ L^i = \frac 1 2 \epsilon^{ijk}J^{jk} \\
+\eta^i &= \omega_{0,i} \ ; \ K^i = J^{0,i}
+\end{aligned}$$</div>
+
+<p>One can rewrite the expression as</p>
+
+<div>$$\Lambda = \exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)$$</div>
+
+<p>Where <code>$\theta^i,\eta^i$</code> are real number, and <code>$L^i,K^i$</code> are generators.</p>
+
+<p>Usually, <code>$L^i$</code> generate the <code>rotation</code> in <code>$\mathbb{R}^3$</code> , and <code>$K^i$</code> generate the <code>boost</code> .</p>
+
+<p>They satisfy the commutation relation as:</p>
+
+<div>$$\begin{aligned}[]
+[L^i,L^j] &= \ti \epsilon^{ijk}L^k \\
+[L^i,K^j] &= \ti \epsilon^{ijk}K^k \\
+[K^i,K^j] &= -\ti \epsilon^{ijk} L^k
+\end{aligned}$$</div>
+
+<p>where (\epsilon^{ijk}) is the covariant <code>Levi-Civita</code> simbol. Which equals <code>$1$</code> if <code>$ijk$</code> are even permutation of <code>$123$</code> , and <code>$-1$</code> for odd ones. And vanishes for otherwise.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>Let us begin with the infinitesimal Lorentz Transformation in vector representation. Let <code>$J^{\mu\nu}$</code> be the generators. For
+Lorentz Group is six dimension. Then there should be only six independent generators . Letting <code>$J^{\mu\nu}=-J^{\nu\mu}$</code> will satisfy it.
+With <code>$\omega_{\mu\nu}$</code> be the parameter (Also <code>$\omega_{\mu\nu}=-\omega_{\nu\mu}$</code> so that there are only 6 independent parameters), we can write down the general expression:</p>
+
+<div>$$\Lambda^{\mu}_{\indent \nu} = \exp\Big(-\frac {\ti} {2} \omega_{\alpha\beta} J^{\alpha\beta} \Big)^{\mu}_{\indent \nu}$$</div>
+
+<p>The infinitesimal transformation will be : <code>$\Lambda^{\mu}_{\indent \nu} \approx \delta^{\mu}_{\nu} -\frac {\ti} 2 \omega_{\alpha\beta} (J^{\alpha\beta})^{\mu}_{\indent \nu}$</code>
+For Lorentz Transform should satisfy:</p>
+
+<div>$$\Lambda^{\mu}_{\indent \lambda}\Lambda^{\nu}_{\indent \delta} \eta_{\mu\nu} = \eta_{\lambda\delta}$$</div>
+
+<p>Then we have:</p>
+
+<div>$$\omega_{\alpha\beta}(J^{\alpha\beta})_{\delta\lambda} + \omega_{\alpha\beta}(J^{\alpha\beta})_{\lambda\delta} = 0$$</div>
+
+<p>This shall be hold for arbitary <code>$\omega$</code> , so we have that:</p>
+
+<div>$$(J^{\alpha\beta})_{\mu\nu} = - (J^{\alpha\beta})_{\mu\nu}$$</div>
+
+<p>Which shows that the generators in vector representation are anti-symmetric metrices.
+One can choose these matrix arbitarily. One of those is:</p>
+
+<div>$$(J^{\alpha\beta})_{\mu\nu} = \ti (\delta_{\mu}^{\alpha}\delta_{\nu}^{\beta}-\delta_{\nu}^{\alpha}\delta_{\mu}^{\beta})$$</div>
+
+<p>The commutation relation are invariant among the representation. They are:</p>
+
+<div>$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu \nu} =\ti\Big\{\delta^{\delta}_{\alpha}(J^{\beta\gamma})+\delta^{\alpha}_{\gamma}(J^{\delta\beta})+\delta^{\beta}_{\delta}(J^{\gamma\alpha})+\delta_{\beta}^{\gamma}(J^{\alpha\delta}) \Big\}_{\mu\nu}$$</div>
+
+<p>By the simple property:</p>
+
+<div>$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu\nu} = \sum_\lambda (J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - J^{\gamma\delta})_{\mu\lambda}(J^{\alpha\beta})_{\lambda\nu} = \sum_{\lambda}(J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - (\mu\leftrightarrow \nu)$$</div>
+
+</details>
+
+
+<h4 id="weyl-spinor-representation">Weyl Spinor Representation</h4>
+
+<p><em>[Theorem]</em> :     With the definition of <code>$L^i,K^i$</code> (or for simplicity <code>$\bm{L},\bm{K}$</code>) , one can define the new generator:</p>
+
+<div>$$\bm{J}^{(1)} := \frac 1 2 (\bm{L}+\ti \bm{K}) \ \ \bm{J}^{(2)} := \frac 1 2 (\bm{L}-\ti \bm{K})$$</div>
+
+<p>And induce the new commutation relation:</p>
+
+<div>$$[J^{(\alpha),i},J^{(\beta),j}] = \ti \delta_{\alpha,\beta} \epsilon^{ijk} J^{(\alpha),k} \ \ ; \ \ \alpha,\beta=1,2$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>For <code>$\alpha=\beta=1$</code> , we have:</p>
+
+<div>$$\begin{aligned}[]
+[J^i,J^j] &= \frac 1 4 \Big([L^i,L^j]-[K^i,K^j] + \ti ([L^i,K^j]+[K^i,L^j]) \Big) \\
+&= \frac 1 4 \Big(\ti \epsilon^{ijk} L^k +\ti \epsilon^{ijk} L^k +\ti (\ti\epsilon^{ijk} K^k - \ti \epsilon^{jik}K^k) \Big) \\
+&= \frac 1 2 \epsilon^{ijk}\ti(L^k+\ti K^k) \\
+&= \ti \epsilon^{ijk} J^k
+\end{aligned}$$</div>
+
+<p>And when <code>$\alpha\neq\beta$</code> , there will be additional minus sign which let the result to be vanished.</p>
+
+</details>
+
+
+<p>One can find that <code>$\{J_i^{(1,2)}\}$</code> forms two <code>$\text{su}(2)$</code> Lie Algebra.</p>
+
+<p>In some degree, we can say that the Lorentz Group is the direct product of two <code>$\text{SU}(2)$</code> Group with complex parameters.</p>
+
+<p><em>[Definition]</em> : For Lorentz Group looks like the direct product of two <code>$\text{SU}(2)$</code> , we can use a piar of indeces of <code>$\text{SU}(2)$</code> representation
+to note any representations of Lorentz Group , which can be written as <code>$(j_1,j_2)$</code>
+Then , the basis of (<sup>1</sup>&frasl;<sub>2</sub>,0) called as <code>left-handed Weyl Spinor</code> , and the basis of (0,<sup>1</sup>&frasl;<sub>2</sub>) called as <code>right-handed Weyl Spinor</code></p>
+
+<p>Using the <code>covariance</code> form of <code>Pauli Matrices</code> :</p>
+
+<div>$$\sigma^0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \ , \ \sigma^1 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \ , \ \sigma^2 = \begin{bmatrix} 0 & -\ti \\ \ti & 0\end{bmatrix} \ , \ \sigma^3 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$$</div>
+
+<p>We can write the matrix representation of Lorentz Group by spinor basis:</p>
+
+<div>$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big) \ , \ \Lambda_R = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}+\ti \bm{\eta})^i \big)$$</div>
+
+<h3 id="spinor-space">Spinor Space</h3>
+
+<p><em>[Definition]</em> : <code>1/2-spinor space</code> is a 2-dimension complex linear space used for the irrep. of Lorentz Group.
+To handle the Lorentz Group, we need two <sup>1</sup>&frasl;<sub>2</sub>-spinor spaces, ususally noted as (<sup>1</sup>&frasl;<sub>2</sub>,0) and (0,<sup>1</sup>&frasl;<sub>2</sub>).
+We will separate the spinor in different space by the subscripts <code>$_l,_r$</code> .
+A spinor is noted as a pair of complex number, or a complex column vector.</p>
+
+<p>In this section, our goal is to construct some <code>invariants</code> of Lorentz Group or some quantities we have known from spinor spaces
+When spinor operated by the elements of Lorentz Group, it performs as the linear transformation with the 2x2 matrix above.</p>
+
+<h4 id="scalars">Scalars</h4>
+
+<p><em>[Theorem]</em> : For any two left-handed spinors: <code>$a_l,b_l$</code> , the quadratic form:</p>
+
+<div>$$(a_l)^1(b_l)^2-(a_l)^2(b_l)^1 = (a_l)^T \epsilon b_l$$</div>
+
+<p>Where <code>$\epsilon = \ti \sigma^2$</code> , is invariant under Lorentz Transformation.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>consider the Lorentz Transformation with parameter <code>$\bm{\theta},\bm{\eta}$</code> , then we have:</p>
+
+<div>$$a_l \rightarrow \Lambda_L a_l \ \ b_l \rightarrow \Lambda_L b_l$$</div>
+Where `$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_i \sigma^i (\theta^i - \ti \eta^i) \big) $` .
+With the property of Pauli matrices:
+
+<div>$$\exp(\ti \bm{x}\cdot \bm{\sigma}) = \cos(x) + \ti \sin (x) \bm{n}_x\cdot \bm{\sigma}$$</div>
+
+<p>For complex vector <code>$\bm{x}\in \mathbb{C}^3$</code> , this formula shall be treated as:</p>
+
+<div>$$\exp(\ti \bm{x}\cdot \bm{\sigma}) = \sum_{k=0}^{\infty} \frac {(-1)^k} {(2k)!} \big(\sum_{i=1}^3 (x^i)^2 \big)^k + \ti \sum_{k=0}^{\infty} \frac {(-1)^k} {(2k+1)!} \big(\sum_{i=1}^3 (x^i)^2 \big)^k \big(\sum_{i=1}^3 x^i \sigma^i \big)$$</div>
+
+<p>Then we can write down the general expression of the matrix:</p>
+
+<div>$$\Lambda_L = z_0+z_1\sigma^1+z_2\sigma^2+z_3\sigma^3$$</div>
+
+<p>with <code>$-z_1^2-z_2^2-z_3^2+z_0^2=1$</code>
+Then:</p>
+
+<div>$$a_l^T\epsilon b_l \rightarrow \ti a_l^T (\sum_{i=0}^{3} z_i (\sigma^i)^T) \sigma^2 \sum_{i=0}^{3} z_i (\sigma^i) b_l$$</div>
+
+<p>For <code>$\sigma^2\sigma^i\sigma^2=-\sigma^{iT}$</code> , we have <code>$i,j\neq 0$</code>:</p>
+
+<div>$$\begin{aligned}
+\sigma^{iT} \sigma^2\sigma^j &= -\sigma^2\sigma^i\sigma^j = -\sigma^2 \delta_{ij} -\ti \epsilon^{ijk} \sigma^2\sigma^k \\
+&= -\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - \epsilon^{ijk}\epsilon^{2kl}\sigma^l \\
+&= -\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - (\delta_{il}\delta_{j2}-\delta_{i2}\delta_{jl})\sigma^l \\
+&=-\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - \delta_{j2}\sigma^i+\delta_{i2}\sigma^j
+\end{aligned}$$</div>
+
+<p>And:</p>
+
+<div>$$\begin{aligned}
+\sigma^{0T}\sigma^2\sigma^j &= \delta_{2j} +\ti \epsilon^{2jk}\sigma^k \\
+\sigma^{iT}\sigma^2\sigma^0 &= -\sigma^2\sigma^i = -\delta_{2i}-\ti \epsilon^{2ik}\sigma^k \\
+\sigma^{0T}\sigma^2\sigma^0 &= \sigma^2
+\end{aligned}$$</div>
+
+<p>Then:</p>
+
+<div>$$\sum_{i,j=0}^3 z_iz_j \sigma^{iT} \sigma^2\sigma^j =z_0^2 \sigma^2 -\sum_{i=1}^3 z_i^2 \sigma^2 = \sigma^2$$</div>
+
+<p>Which means the quadratic form is indeed invariant.</p>
+
+</details>
+
+
+<h4 id="vectors">Vectors</h4>
+
+<p><em>[Theorem]</em> : For any left-handed Weyl spionor $a_l$ and right-handed Weyl spinor $b_r$ , Let <code>$\bar{\sigma}^{\mu}=\sigma_{\mu}=\eta_{\mu\nu}\sigma^{\nu}$</code> , one can construct some quantities with 4-components:</p>
+
+<div>$$\begin{aligned}
+a^{\mu} &= a_l^{\dagger}\bar{\sigma}^{\mu}a_l \\
+b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
+\end{aligned}$$</div>
+
+<p>Are <code>vectors</code> . Namely, they transformed by the (4-)vector-rep. of Lorentz group under Lorentz Transformation.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>Same as our discussion in <code>Scalar</code> section, we have:</p>
+
+<div>$$\Lambda_L = z_{\mu}\sigma^{\mu}$$</div>
+
+<p>with <code>$z_0^2-z_1^2-z_2^2-z_3^2 = 1$</code> . Then for <code>$a_l \rightarrow \Lambda_L a_l$</code> , one have:</p>
+
+<div>$$a^{\mu}\rightarrow a_l^{\dagger} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L a_l $$</div>
+
+<p>For the completion of Pauli matrices in 4x4 Hermitian matrices space:</p>
+
+<div>$$\begin{aligned}[]
+\Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L &= \eta_{\mu\nu} z_{\alpha}^{*}z_{\beta} \sigma^{\alpha}\sigma^{\nu}\sigma^{\beta} \\
+&= \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
+\end{aligned}$$</div>
+
+<p>By the inner-product of Pauli matrices:</p>
+
+<div>$$(\sigma^\alpha,\sigma^\beta) \equiv \frac 1 2 \text{Tr}(\sigma^\alpha\sigma^\beta) = \delta^\alpha_\beta $$</div>
+
+<p>Then we have:</p>
+
+<div>$$\begin{aligned}
+\Lambda^{\mu}_{\indent \nu} &= \frac 1 2 \text{Tr}(\Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L\bar{\sigma}^{\nu}) \\
+&= \frac 1 2 \eta_{\mu\lambda}\eta_{\nu\delta}z_{\alpha}^{*}z_{\beta} \text{Tr}\sigma^\alpha\sigma^\lambda\sigma^\beta\sigma^\delta
+\end{aligned}$$</div>
+
+</details>
+
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/math" role="button">Math </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/linux/nvidiasetting/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Dual Graphic Card Configuration for Manjaro Linux</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/quantummechanics/concepts/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Basic Concepts of Quantum Mechanics</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#minkowski-spacetime">
+												 Minkowski Spacetime
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-structure-of-minkowski-spacetime">
+												 The Structure of Minkowski Spacetime
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#lorentz-transformation">
+												 Lorentz Transformation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#scalar-vector-and-tensor">
+												 Scalar, Vector and Tensor
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#lorentz-group">
+												 Lorentz group
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#basic-concept">
+												 Basic Concept
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#lie-algebra-of-restricted-lorentz-group">
+												 Lie Algebra of Restricted Lorentz Group
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#weyl-spinor-representation">
+												 Weyl Spinor Representation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spinor-space">
+												 Spinor Space
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#scalars">
+												 Scalars
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#vectors">
+												 Vectors
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

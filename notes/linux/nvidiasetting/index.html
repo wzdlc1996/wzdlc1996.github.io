@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
+   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1. Remove Bumblebee Usually manjaro can be easily installed choosing the free drive mode, but nouveau is hard to use. And sometimes it make user cannot entry the x-system. One way is that noting nouveau in blacklist , use command:
+sudo nano /etc/modprob.d/usrBlack.blacklist blacklist nouveau  Then to use the graphic card, one can run mhwd-tui to install the non-free driver and Bumblebee to manage dual graphic card. First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd. One can simply remove them using the mhwd command in terminal or via Manjaro Settings Manager In other distribution, the work is the same. User can using their package manager to do it. Or more directly, do NOT install bumblebee, directly install PRIME after truning off nouveau.
+Step 2. Install Closed-source Driver One can follow the following articles to install the driver according to what he use:">
+
+  <meta property="og:title" content="Dual Graphic Card Configuration for Manjaro Linux" />
+<meta property="og:description" content="Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
+   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1. Remove Bumblebee Usually manjaro can be easily installed choosing the free drive mode, but nouveau is hard to use. And sometimes it make user cannot entry the x-system. One way is that noting nouveau in blacklist , use command:
+sudo nano /etc/modprob.d/usrBlack.blacklist blacklist nouveau  Then to use the graphic card, one can run mhwd-tui to install the non-free driver and Bumblebee to manage dual graphic card. First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd. One can simply remove them using the mhwd command in terminal or via Manjaro Settings Manager In other distribution, the work is the same. User can using their package manager to do it. Or more directly, do NOT install bumblebee, directly install PRIME after truning off nouveau.
+Step 2. Install Closed-source Driver One can follow the following articles to install the driver according to what he use:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/linux/nvidiasetting/" /><meta property="article:published_time" content="2018-10-31T14:48:29&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-31T14:48:29&#43;08:00"/>
+
+
+
+  <title>
+  
+       Dual Graphic Card Configuration for Manjaro Linux | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/linux/nvidiasetting/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0%20%28copy%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/linux"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Linux </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/linux"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Linux</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Dual Graphic Card Configuration for Manjaro Linux</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Oct 31, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>3 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h3 id="introduction">Introduction</h3>
+
+<p>usually, linux has two method to handle the dual-graphic card. The difference between
+them are:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Advantages</th>
+<th align="left">Disadvantages</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Bumblebee</td>
+<td align="left">Uses dGPU(descrete) only when requested.  Saving power <br> Manjaro default</td>
+<td align="left">Some overhead so lower raw performance</td>
+</tr>
+
+<tr>
+<td align="left">PRIME</td>
+<td align="left">Uses the dGPU directly , Better performance</td>
+<td align="left">dGPU and iGPU(integrated) both powered on constantly <br> need manual configuration</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="step-1-remove-bumblebee">Step 1. Remove Bumblebee</h3>
+
+<p>Usually manjaro can be easily installed choosing the <code>free drive</code> mode, but <code>nouveau</code>
+is hard to use. And sometimes it make user cannot entry the x-system.
+One way is that noting <code>nouveau</code> in <code>blacklist</code> , use command:</p>
+
+<pre><code class="language-shell">sudo nano /etc/modprob.d/usrBlack.blacklist
+
+blacklist nouveau
+</code></pre>
+
+<p>Then to use the graphic card, one can run <code>mhwd-tui</code> to install the non-free driver and
+Bumblebee to manage dual graphic card.
+First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd.
+One can simply remove them using the <code>mhwd</code> command in terminal or via <code>Manjaro Settings Manager</code>
+In other distribution, the work is the same. User can using their package manager to do it.
+Or more directly, do <strong>NOT</strong> install bumblebee, directly install PRIME after truning off nouveau.</p>
+
+<h3 id="step-2-install-closed-source-driver">Step 2. Install Closed-source Driver</h3>
+
+<p>One can follow the following articles to install the driver according to what he use:</p>
+
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/ATI">ATI</a> to install drivers for ATI/AMD GPUs</li>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA">NVIDIA</a> to install drivers for NVIDIA GPUs</li>
+</ul>
+
+<p>To be careful, user should query which version of the driver is the best for their hardware.</p>
+
+<h3 id="step3-fix-mhwd-s-configuration">Step3. Fix MHWD&rsquo;s Configuration</h3>
+
+<p>this is for Manjaro Linux, for <code>mhwd</code> does the sensible thing and puts configuration in place as though the NVIDIA GPU was the only device available.
+Other distribution can jump to Step 4</p>
+
+<ol>
+<li><p><strong>Remove Old Config File</strong></p>
+
+<p>Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:</p>
+
+<pre><code class="language-shell">#/etc/X11/xorg.conf.d/optimus.conf  
+Section &quot;Module&quot;
+    Load &quot;modesetting&quot;
+EndSection  
+Section &quot;Device&quot;
+    Identifier &quot;nvidia&quot;
+    Driver &quot;nvidia&quot;
+    BusID &quot;PCI&quot;
+    Option &quot;AllowEmptyInitialConfiguration&quot;
+EndSection
+</code></pre>
+
+<p>While the BusID value can be find by command: <code>lspci | grep -E &quot;VGA|3D&quot;</code></p></li>
+
+<li><p><strong>Write Blacklist</strong>
+One need to remove two files: <code>/etc/modprobe.d/mhwd-gpu.conf</code> and <code>/etc/modprobe.d/mhwd-nvidia.conf</code> and write a new one:</p>
+
+<pre><code class="language-shell">blacklist nouveau
+blacklist nvidiafb
+blacklist rivafb
+</code></pre></li>
+</ol>
+
+<h3 id="step-4-enable-nvdia-drm-modeset">Step 4. Enable <code>nvdia-drm.modeset</code></h3>
+
+<p>PRIME relies on <code>vidia-drm</code> , one need to creat a new file:</p>
+
+<pre><code class="language-shell">#/etc/modprobe.d/nvidia-drm.conf
+
+options nvidia_drm modeset = 1
+</code></pre>
+
+<h3 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h3>
+
+<p>First for other distribution but manjaro, user need to edit the file <code>/etc/X11/xorg.conf</code> , if X.Org and X server version <code>1.17.2+</code></p>
+
+<pre><code class="language-shell">#/etc/X11/xorg.conf
+
+Section &quot;Module&quot;
+    Load &quot;modesetting&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier &quot;nvidia&quot;
+    Driver &quot;nvidia&quot;
+    BusID &quot;PCI&quot;
+    Option &quot;AllowEmptyInitialConfiguration&quot;
+EndSection
+</code></pre>
+
+<p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
+
+<pre><code class="language-shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre>
+
+<p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
+
+<ol>
+<li><p><code>LightDM</code>
+Edit the file <code>/etc/lightdm/lightdm.conf</code> :</p>
+
+<pre><code class="language-shell">[Seat:*]
+display-setup-script = optimus.sh
+</code></pre></li>
+
+<li><p><code>GDM</code>
+GDM is the defult display manager of Gnome 3 . one should create two new .desktop files:</p>
+
+<pre><code class="language-shell">#/usr/share/gdm/greeter/autostart/optimus.desktop
+#/etc/xdg/autostart/optimus.desktop
+
+[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer
+</code></pre>
+
+<p>Or user can create one and link those two by command <code>ln -s</code></p></li>
+
+<li><p><code>SDDM</code>
+SDDM is the default display manager of KDE . one should write those two command to file <code>/usr/share/sddm/script/Xsetup</code> like:</p>
+
+<pre><code class="language-shell">#/usr/share/sddm/scripts/Xsetup
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre></li>
+</ol>
+
+<h3 id="step-6-reboot">Step 6. Reboot</h3>
+
+<p>If everything is set correctly, when user reboot, DM will load and he can log in. And:</p>
+
+<pre><code class="language-shell">$ glxinfo | grep -i vendor
+server glx vendor string: NVIDIA Corporation
+client glx vendor string: NVIDIA Corporation
+OpenGL vendor string: NVIDIA Corporation
+</code></pre>
+
+<hr>
+
+<h3 id="references">References</h3>
+
+<ol>
+<li><a href="https://wiki.archlinux.org/index.php/PRIME">PRIME - ArchWiki</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus">NVIDIA Optimus - Arch Wiki</a></li>
+<li><a href="https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225">[HowTo] Set up PRIME on Manjaro</a></li>
+</ol>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/linux" role="button">Linux </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button">Manjaro </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/premath/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Preliminary Mathematics</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#introduction">
+												 Introduction
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-1-remove-bumblebee">
+												 Step 1. Remove Bumblebee
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-2-install-closed-source-driver">
+												 Step 2. Install Closed-source Driver
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step3-fix-mhwd-s-configuration">
+												 Step3. Fix MHWD’s Configuration
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-4-enable-nvdia-drm-modeset">
+												 Step 4. Enable nvdia-drm.modeset
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-5-make-dgpu-as-primary">
+												 Step 5. Make dGPU as primary
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-6-reboot">
+												 Step 6. Reboot
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#references">
+												 References
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&ldquo;ket&rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &ldquo;bra&rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$. More strictly we should call it Bogoliubov space And the closeness ($\lambda_1 \psi_1&#43;\lambda_2\psi_2$ is normalizable if $\psi_i$ are normalizable) is hold indeed, one can check it by Cauchy-Schwarz Inequality. A natural inner product can be defined on Hilbert space, as the overlap of two wavefunctions $\phi ,\psi$ :
+$$(\phi,\psi) := \int \phi^*(\bm{x}) \psi(\bm{x})\td V$$ Satisfying the three Axioms :
+ Hermiticity : $(\phi,\psi)=(\psi,\phi)^*$ Linearity : $(\phi,\lambda_1\psi_1&#43;\lambda_2\psi_2)=\lambda_1 (\phi,\psi_1)&#43;\lambda_2 (\phi,\psi_2) \ \ \text{for } \lambda_1,\lambda_2 \in \mathbb{C}$ Positive definiteness : $(\psi,\psi)\geq 0 , \text{ and } \Big((\psi,\psi)=0 \Leftrightarrow \psi=0 \Big)$  The third axiom above leads to a useful consiquence:
+The Gram matrix $G_{i,j}=(\psi_i,\psi_j)$ of a set of wavefunction is Hermitian and positive semi-definite.
+ Proof  For the positive definiteness of inner product, we have:">
+
+  <meta property="og:title" content="Basic Concepts of Quantum Mechanics" />
+<meta property="og:description" content="Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&ldquo;ket&rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &ldquo;bra&rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$. More strictly we should call it Bogoliubov space And the closeness ($\lambda_1 \psi_1&#43;\lambda_2\psi_2$ is normalizable if $\psi_i$ are normalizable) is hold indeed, one can check it by Cauchy-Schwarz Inequality. A natural inner product can be defined on Hilbert space, as the overlap of two wavefunctions $\phi ,\psi$ :
+$$(\phi,\psi) := \int \phi^*(\bm{x}) \psi(\bm{x})\td V$$ Satisfying the three Axioms :
+ Hermiticity : $(\phi,\psi)=(\psi,\phi)^*$ Linearity : $(\phi,\lambda_1\psi_1&#43;\lambda_2\psi_2)=\lambda_1 (\phi,\psi_1)&#43;\lambda_2 (\phi,\psi_2) \ \ \text{for } \lambda_1,\lambda_2 \in \mathbb{C}$ Positive definiteness : $(\psi,\psi)\geq 0 , \text{ and } \Big((\psi,\psi)=0 \Leftrightarrow \psi=0 \Big)$  The third axiom above leads to a useful consiquence:
+The Gram matrix $G_{i,j}=(\psi_i,\psi_j)$ of a set of wavefunction is Hermitian and positive semi-definite.
+ Proof  For the positive definiteness of inner product, we have:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/quantummechanics/concepts/" /><meta property="article:published_time" content="2018-11-12T11:36:42&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-12T11:36:42&#43;08:00"/>
+
+
+
+  <title>
+  
+       Basic Concepts of Quantum Mechanics | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/quantummechanics/concepts/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0%20%28copy%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Quantum-Mechanics</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Basic Concepts of Quantum Mechanics</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Nov 12, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>15 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h3 id="outline">Outline</h3>
+
+<table>
+<thead>
+<tr>
+<th>Terminologies</th>
+<th>Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Hilbert Space: <code>$\mathcal{H}$</code></td>
+<td>Linear space equipped with an inner product</td>
+</tr>
+
+<tr>
+<td>quantum states(&ldquo;ket&rdquo;) : <code>$\ket{\psi}$</code></td>
+<td>elements in the linear space <code>$\mathcal{H}$</code></td>
+</tr>
+
+<tr>
+<td>&ldquo;bra&rdquo; : <code>$\bra{\psi}$</code></td>
+<td>linear functionals defined on <code>$\mathcal{H}$</code> : <code>$\mathcal{H}\rightarrow \mathbb{C}$</code></td>
+</tr>
+
+<tr>
+<td>quantum mechanical operators</td>
+<td>linear mappings : <code>$\mathcal{H}_1\rightarrow \mathcal{H}_2$</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="the-hilbert-space">The Hilbert Space</h3>
+
+<h4 id="wavefunction">Wavefunction</h4>
+
+<p>The Hilbert space <code>$\mathcal{H}(V)$</code> defined on a coordinate space <code>$V$</code> is a <code>complex linear space</code> formed by all
+<code>normalizable</code> wavefunction defined on <code>$V$</code>. More strictly we should call it <code>Bogoliubov space</code>
+And the closeness (<code>$\lambda_1 \psi_1+\lambda_2\psi_2$</code> is normalizable if <code>$\psi_i$</code> are normalizable) is hold indeed, one can check it by Cauchy-Schwarz Inequality.
+A <code>natural inner product</code> can be defined on Hilbert space, as the overlap of two wavefunctions <code>$\phi ,\psi$</code> :</p>
+
+<div>$$(\phi,\psi) := \int \phi^*(\bm{x}) \psi(\bm{x})\td V$$</div>
+
+<p>Satisfying the three <code>Axioms</code> :</p>
+
+<ol>
+<li><code>Hermiticity</code> : <code>$(\phi,\psi)=(\psi,\phi)^*$</code></li>
+<li><code>Linearity</code> : <code>$(\phi,\lambda_1\psi_1+\lambda_2\psi_2)=\lambda_1 (\phi,\psi_1)+\lambda_2 (\phi,\psi_2) \ \ \text{for } \lambda_1,\lambda_2 \in \mathbb{C}$</code></li>
+<li><code>Positive definiteness</code> : <code>$(\psi,\psi)\geq 0 , \text{ and } \Big((\psi,\psi)=0 \Leftrightarrow \psi=0 \Big)$</code></li>
+</ol>
+
+<p>The third axiom above leads to a useful consiquence:</p>
+
+<p>The Gram matrix <code>$G_{i,j}=(\psi_i,\psi_j)$</code> of a set of wavefunction is Hermitian and positive semi-definite.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>For the positive definiteness of inner product, we have:</p>
+
+<p><div>$$(\sum_i \lambda_i \psi_i,\sum_j \lambda_j \psi<em>j)=\sum</em>{i,j}\lambda_i^* \lambda<em>j G</em>{i,j}\geq 0$$</div></p>
+
+<p>holds for arbitrary <code>$\bm{\lambda}$</code>, which means that the Gram matrix is semi-definition. <br>
+  The Hermitian is eaily to check.</p>
+
+</details>
+
+
+<h4 id="combining-hilbert-spaces">Combining Hilbert Spaces</h4>
+
+<ul>
+<li><p><code>Direct sum of two Hilbert spaces</code> : <code>$\mathcal{H}_1(V_1)\oplus \mathcal{H}_2(V_2)$</code> <br>
+the wavefunction in the combined Hilbert space is formed by :</p>
+
+<div>$$(\psi_1 \oplus \psi_2)(\bm{x})=\begin{cases}
+\psi_1(\bm{x}) & \bm{x}\in V_1 \\
+\psi_2(\bm{x}) & \bm{x}\in V_2
+\end{cases}
+\text{ Where } \psi_i \in \mathcal{H}_i(V_i)$$</div>
+
+<p>And the induced inner product is :</p>
+
+<div>$$(\phi_1\oplus \phi_2 , \psi_1\oplus \psi_2 )_{V_1 \oplus V_2}=(\phi_1,\psi_1)_{V_1}+(\phi_2,\psi_2)_{V_2}=\int \phi_1^*\psi_1 \td V_1+\int \phi_2^*\psi_2\td V_2$$</div>
+
+<p>with the induced volume element defined as : <code>$\td (V_1\oplus V_2)=\td V_1+\td V_2$</code></p></li>
+
+<li><p><code>Tensor product of two Hilbert spaces</code> : <code>$\mathcal{H}_1(V_1)\otimes \mathcal{H}_2(V_2)$</code> <br>
+the wavefunction in the combined Hilbert space is formed by :</p>
+
+<div>$$(\psi_1\otimes \psi_2 )(\bm{x}_1,\bm{x}_2)=\psi_1(\bm{x}_1)\psi_2(\bm{x}_2) \ \ \text{ for } \bm{x}_i \in V_i \text{ and } \psi_i \in \mathcal{H}_i(V_i)$$</div>
+
+<p>And the induced inner product is :</p>
+
+<div>$$(\phi_1\otimes \phi_2 , \psi_1\otimes \psi_2)_{V_1\otimes V_2}=(\phi_1,\psi_1)_{V_1}\cdot (\phi_2,\psi_2)_{V_2}$$</div>
+
+<p>with the induced volume element defined as : <code>$\td (V_1\otimes V_2)=\td V_1 \td V_2$</code></p></li>
+</ul>
+
+<p><mark><code>Entanglement</code> : wavefunctions in <code>$\mathcal{H}_1\otimes \mathcal{H}_2$</code> may not be a direct product like <code>$\psi_1\otimes \psi_2$</code></mark> <br>
+for some like <code>$\psi_1\otimes \psi_2 + \phi_1\otimes \phi_2$</code> , generally it CANNOT be written as the direct product of wavefunctions from each Hilbert space</p>
+
+<p><em>[Definition]</em> : <code>kets</code> <code>$\ket \psi$</code> , is the element(quantum state) in Hilbert space corresponding to wavefunction <code>$\psi$</code> <br>
+<em>[Definition]</em> : <code>bras</code> <code>$\bra \psi$</code> , is a linear functional defined on the Hilbert space:</p>
+
+<div>$$\bra \psi : \mathcal{H} \rightarrow \mathbb{C} , \phi \mapsto (\psi,\phi)$$</div>
+
+<p>Usually we use the short-hand notation like:</p>
+
+<ol>
+<li><code>$\langle \psi | \phi \rangle \equiv (\psi,\phi)=\int \psi^*\phi \td V$</code></li>
+<li><code>bra is a linear functional</code> : `$\langle \psi|\lambda_1 \phi_1 + \lambda_2\phi_2\rangle =\lambda_1 \langle \psi|\phi_1\rangle +\lambda_2 \langle \psi |\phi_2 \rangle<br /></li>
+<li><code>bra form an anti-linear space</code> : <code>$\lambda_1^* \bra{\psi_1}+\lambda_2^* \bra{\psi_2}=\bra{\lambda_1 \psi_1+\lambda_2 \psi_2}$</code></li>
+<li><code>Direct sum</code> : <code>$\ket{\psi_1}+\ket{\psi_2}$</code> with <code>$\psi_i\in \mathcal{H}_i$</code> means the direct sum state : <code>$\psi_1\oplus \psi_2 \in \mathcal{H}_1\oplus \mathcal{H}_2$</code></li>
+<li><code>Tensor product</code> : <code>$\ket{\psi_1}\ket{\psi_2}\equiv\ket{\psi_1}\otimes\ket{\psi_2}$</code> with <code>$\psi_i\in \mathcal{H}_i$</code> means the tensor product state <code>$\psi_1\otimes \psi_2\in \mathcal{H}_1\otimes \mathcal{H}_2$</code></li>
+<li><code>Linear operator</code> : <code>$\ket{\psi_1}\bra{\psi_2}$</code> with <code>$\psi_i\in\mathcal{H}_i$</code> is a linear operator : <code>$\mathcal{H}_2\rightarrow \mathcal{H}_1 , \ket{\phi}\mapsto \ket{\psi_1}\rangle \psi_2 | \phi\rangle$</code></li>
+</ol>
+
+<p><em>[Theorem(Riesz-Frechet)]</em> : Any &lsquo;continuous&rsquo; linear functional</p>
+
+<div>$$f:\mathcal{H}\rightarrow \mathbb{C}, \phi\mapsto f(\phi)$$</div>
+
+<p>corresponds to a wavefunction <code>$\psi_f$</code> so that</p>
+
+<div>$$f=\bra{\psi_f} \ \ ,  \ \ f(\phi)=(\psi_f,\phi)$$</div>
+
+<h4 id="complete-orthonormal-basis">Complete Orthonormal Basis</h4>
+
+<p><em>[Definition]</em> : A set of kets <code>$\{\ket{e_i}\}$</code> called as <code>Complete orthonormal basis</code> , IFF for ANY <code>$\psi\in\mathcal{H}$</code> , it can be expanded by the basis: <code>$\ket{\psi}=\sum_i \ket{e_i}\langle e_i | \psi\rangle$</code></p>
+
+<p>For <code>finite</code> dimensional Hilbert space, this is just &ldquo;number of orthonormal basis&rdquo;= &ldquo;dimension of Hilbert space&rdquo; <br>
+For <code>infinite</code> dimension Hilbert space, the completeness is usually hard to prove.</p>
+
+<p><em>[Theorem]</em> : A set quantum state <code>$\{\ket{\psi_j}\}$</code> are linear dependent, <code>IFF</code> matrix <code>$A_{i,j}=\langle \psi_i | \psi_j \rangle$</code> is a singular matrix</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The linear dependence is equivalent to the statement:</p>
+
+<div>$$\exists k_j (\text{Not all be zero}) \Rightarrow \sum_j k_j \ket{\psi_j}=0$$</div>
+
+<p>That is there is a row or column could be vanished though row-line operation on the determinate <code>$\text{det}A_{i,j} $</code> . <br>
+Then we proved the theorem.</p>
+
+</details>
+
+
+<h3 id="quantum-mechanical-operators">Quantum Mechanical Operators</h3>
+
+<h4 id="operators">Operators</h4>
+
+<p><em>[Definition]</em> : <code>Linear operators</code> are linear mappings between two (offen the same) Hilbert spaces:</p>
+
+<div>$$\hat O \ket{\psi}\in \mathcal{H}_2 \text{ for } \ket{\psi}\in \mathcal{H}_1 , \text{ and } \hat O \ket{\lambda_1\psi_1+\lambda_2\psi_2}=\lambda_1 \hat O \ket{\psi_1}+\lambda_2 \hat O\ket{\psi_2}$$</div>
+
+<p><em>[Definition]</em> : <code>Anti-linear operators</code> are mappings with a different linearity:</p>
+
+<div>$$\hat O \ket{\lambda_1 \psi_1+\lambda_2 \psi_2} = \lambda_1^* \hat O \ket{\psi_1} +\lambda_2^* \hat O \ket{\psi_2}$$</div>
+
+<p><code>Hermitian conjugate (adjoint)</code> of a linear operator <code>$\hat O$</code> is a linear operator <code>$\hat O^{\dagger}$</code>, satisfying:</p>
+
+<div>$$(\hat O^{\dagger} \psi,\phi)=(\psi,\hat O \phi) \ \text{for } \forall \psi,\phi$$</div>
+
+<p>Or one can rewrite it in Dirac notation: <code>$\bra{\hat O^{\dagger}\psi}=\bra{\psi}\hat O$</code>. <br>
+The <code>adjoint</code> operation has the following properties:
+1. <code>self-identical</code> : <code>$(\hat O^{\dagger})^{\dagger} = \hat O$</code>
+2. <code>$(\lambda \hat O)^{\dagger}=\lambda^* \hat O^{\dagger} \ \ \ , \ \ (\hat A \hat B)^{\dagger}=\hat B^{\dagger}\hat A^{\dagger}$</code>
+3. Any operator is the sum of its Hermitian &amp; anti-Hermitian part: <code>$\hat O = (\hat O +\hat O^{\dagger})/2 +(\hat O -\hat O^{\dagger})/2$</code></p>
+
+<p><em>[Definition]</em> : <code>Matrix representation</code> . Under a complete basis, any kets can be represented as a vector, and the operator can be represented as a matrix:</p>
+
+<div>$$\begin{aligned}[]
+\ket{\psi} &=\sum_i \ket{e_i}\langle e_i|\psi\rangle \sim \{\langle e_i|\psi\rangle\}_i \\
+\hat O &= \sum_{i,j} \ket {e_i}\bra{e_j} \bra {e_i}\hat O \ket{e_j} \sim O_{i,j}=\bra {e_i}\hat O \ket{e_j}
+\end{aligned}$$</div>
+
+<p><em>[Difinition]</em> : <code>Trace</code> of an operator is defined as a number:</p>
+
+<div>$$\text{Tr} \hat O =\sum_n \bra{n} \hat O \ket{n}$$</div>
+
+<p>in which the <code>$n$</code> is a <code>complete orthonormal basis</code> .
+1. The result of trace is <code>independent</code> of the choice of basis
+2. Trace has the cyclic property: <code>$\text{Tr}(\hat A \hat B\hat C)=\text{Tr}(\hat C \hat A \hat B)=\text{Tr}(\hat B \hat C \hat A)$</code>
+<br>
+<em>[Defnition]</em> : <code>Eigenvalue</code> <code>$\lambda$</code> and coresponding <code>eigen-state</code> of operator <code>$\hat O$</code> defined by :</p>
+
+<div>$$\hat O \ket{\lambda} = \lambda \ket{\lambda}$$</div>
+
+<p><em>[Definition(SVD)]</em> : <code>Singular value decomposition (SVD)</code> : <br>
+Any operator can be written as <code>$\hat O =\sum_n \ket{f(n)}\rho_n\bra{n}$</code> , where <code>$n$</code> labels the <code>singular value</code> <code>$\rho_n \geq 0$</code>,
+and the two sets of orthonormal basis <code>$\ket{n} \ \&amp; \ \ket{f(n)}$</code> are eigenstates of <code>$\hat O^{\dagger}\hat O \ \&amp; \ \hat O \hat O^{\dagger}$</code> respectively  <br>
+function <code>$f$</code> is some mapping performing the labels coresponding. <br>
+In complete orthonormal basis <code>$\ket{e_i}$</code> , the above relations becomes:</p>
+
+<div>$$O_{i,j}=\bra{e_i}\hat O \ket{e_j}=\sum_n \langle e_i|f(n)\rangle \rho_n \langle n | e_j\rangle = (U\cdot \rho \cdot V^{\dagger})_{i,j}$$</div>
+
+<p>Where the unitary matrices <code>$U_{i,n}=\langle e_i|f(n)\rangle , V_{j,n}=\langle e_j | n\rangle$</code>.
+and the diagonal matrix <code>$\rho$</code> has diagpnal elements <code>$\rho_n$</code>.</p>
+
+<p><em>[Definition]</em> : <code>Projection operator</code> : <code>$\hat P : \mathcal{H}\rightarrow \mathcal{H}$</code> satisfying <code>$\hat P^2=\hat P$</code> <br>
+<em>[Definition]</em> : <code>Inverse of an operator</code> : <code>$\hat A^{-1}\hat A=\hat A \hat A^{-1}=\hat {1}$</code> <br>
+<em>[Definition]</em> : <code>Unitary operator</code> : <code>$(\hat U \phi,\hat U \psi)=(\phi,\psi)$</code> for arbitrary <code>$\psi,\phi$</code>. Or equivalently <code>$\hat U^{\dagger}\hat U=\hat {1}$</code> <br>
+<em>[Definition]</em> : <code>anti-Unitary operator</code> : it is an anti-linear operator with the property that: <code>$(\hat U \psi,\hat U \phi)=(\phi,\psi)$</code> . <br></p>
+
+<h4 id="abstract-calculations-with-operators">Abstract Calculations with Operators</h4>
+
+<p><em>[Definition]</em> : Commutator &amp; anti-commutator of two operators: <code>$[\hat A,\hat B]:=\hat A\hat B - \hat B \hat A \ \  ; \ \ \{\hat A,\hat B\}=\hat A \hat B+\hat B\hat A$</code> <br>
+For simplicity, we call commutator <code>$[\hat A,\hat B]$</code> as <code>Lie derivative</code> :<code>$\mathcal{L}_{\hat A}\hat B$</code>
+<br>
+<em>[Theorem]</em> : <code>Baker-Hausdorff formula</code> :</p>
+
+<div>$$\text{e}^{\hat A} \hat B \text{e}^{-\hat A}=\hat B+\frac {[\hat A,\hat B]} {1!} +\frac {[\hat A ,[\hat A,\hat B]]} {2!}+\cdots$$</div>
+
+<p>or one can write it as : <code>$\text{e}^{\hat A} \hat B \text{e}^{-\hat A}=\exp (\mathcal{L}_{\hat A}) \hat B$</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>Define <code>$\hat f (t)=\exp(t\hat A)\hat B\exp(-t\hat A)$</code> , then <code>$\hat f(0)=\hat B$</code> . <br>
+Then we can check that:</p>
+
+<div>$$\frac {\td} {\td t} \hat f(t)=\hat A \hat f(t)-\hat f(t)\hat A =\mathcal{L}_{\hat A} \hat f(t)$$</div>
+
+<p>And :</p>
+
+<div>$$\frac {\td} {\td t} \mathcal{L}_{\hat A} \hat f(t)=\mathcal{L}_{\hat A} \frac {\td} {\td t} \hat f(t)$$</div>
+
+<p>Then we can write down:</p>
+
+<div>$$\hat f(t) = \exp(t\mathcal{L}_{\hat A}) \hat f(0)$$</div>
+
+<p>Which can be obtained by Taylor expansion or simplly solve the operator equation.  <br>
+Then we can have the BH-formula at <code>$t=1$</code></p>
+
+</details>
+
+
+<p>Direct sum &amp; tensor product of operator defined like wavefunction. <br>
+For operator <code>$\hat A$</code> defined on <code>$\mathcal{H}_1$</code> , while <code>$\hat B$</code> defined on <code>$\mathcal{H}_2$</code> , <code>$\ket{\psi_i}\in\mathcal{H}_i$</code> :</p>
+
+<ul>
+<li><code>Direct sum</code> :
+<code>$\hat A \oplus \hat B$</code> is an operator defined on <code>$\mathcal{H}_1\oplus \mathcal{H}_2$</code> and : <br>
+<code>$(\hat A\oplus \hat B)(\ket{\psi_1}\oplus \ket{\psi_2})=\hat A\ket{\psi_1}\oplus \hat B \ket{\psi_2}$</code></li>
+<li><code>Tensor product</code> : <br>
+<code>$\hat A \otimes \hat B$</code> is an operator defined on <code>$\mathcal{H}_1\otimes \mathcal{H}_2$</code> and : <br>
+<code>$(\hat A\otimes \hat B)(\ket{\psi_1}\otimes \ket{\psi_2})=\hat A\ket{\psi_1}\otimes \hat B \ket{\psi_2}$</code></li>
+</ul>
+
+<p>For tensor product, we have:</p>
+
+<div>$$\text{Tr}_{1\otimes 2} \hat A \otimes \hat B=\text{Tr}_1 \hat A\text{Tr}_2 \hat B$$</div>
+
+<h3 id="density-matrix">Density Matrix</h3>
+
+<p><em>[Definition]</em> : Density matrix of a <code>normalizad</code> pure state <code>$\psi$</code> is defined as :
+<div>$$\hat \rho_{\psi}=\ket{\psi}\bra{\psi}$$</div>
+It is a <mark>porjection operator</mark> . And the expectation of an operator can be rewritten as <code>$O_{\psi}=\text{Tr}\hat O \hat \rho_{\psi}$</code> <br>
+<span class="note">Density matrix is independent of the complex phase of <code>$\ket{\psi}$</code></span>
+<br>
+<em>[Definition]</em> : <code>Generic density matrix</code> is a <mark>linear Hermitian non-negative</mark> operator of <mark>trace unity</mark> :</p>
+
+<div>$$\hat \rho^{\dagger}=\hat \rho \ \ ; \ \forall \ket{\psi}\in \mathcal{H}\Rightarrow \bra{\phi}\hat \rho\ket{\phi}\geq 0 \ \  ;\ \ \text{Tr}\hat \rho=1$$</div>
+
+<p>In some orthonormal basis <code>$\{\ket{e_i}\}$</code> , one can write density matrix as : <code>$\hat \rho=\sum_i \lambda_i \ket{e_i}\bra{e_i}$</code> with <code>$\lambda_i\gt 0$</code> , and <code>$\sum_i \lambda_i=1$</code> <br>
+In general, those basis <code>$\{\ket{e_i}\}$</code> could be incomplete. <br>
+Some times one need to form a continuous <mark>&lsquo;event space&rsquo;</mark> and some <mark>&lsquo;probability meassurement&rsquo;</mark> on it, and the density matrix could be written as :
+<div>$$\hat \rho = \int_{\Omega} \td \mathbb{P}(A) \ket{r(A)}\bra{r(A)}$$</div>
+Where the function <code>$r(A)$</code> return a quantum state, while those states in set <code>$A$</code> :<code>$\{\ket{x}\}_{x\in A}$</code> has the same physics property as it or their difference is very small.
+This definition is only the generalization through the probability theory, and has not found in usual physics yet. <br></p>
+
+<p>Expectation value of operator <code>$\hat O$</code> on density matrix is <code>$O=\text{Tr}(\hat O \hat \rho)$</code> <br>
+If <code>$\hat \rho_j$</code> are density matrices , <code>$\lambda_j\gt 0 , \sum_i \lambda_i =1$</code> , then <code>$\sum_j \lambda_j \hat \rho_j$</code> is also a density matrix</p>
+
+<h3 id="entanglement">Entanglement</h3>
+
+<p><em>[Definition]</em> : <code>von Neumann Entropy</code> is a functional who maps the density matrix to a non-negative number:</p>
+
+<div>$$S[\hat \rho]:=-\text{Tr}(\hat \rho \text{log} \hat \rho) \equiv -\sum_i \lambda_i \log \lambda_i$$</div>
+
+<p>pure states have zero entropy while mixed states has positive one. <br>
+In <mark>n(finite)-dimension</mark> Hilbert space, <code>$0\leq S[\hat \rho]\leq \log(n)$</code> <br>
+<mark>Renyi entropy</mark> : <code>$S_n:=\frac 1 {1-n} \log \text{Tr}\hat \rho^n$</code> , and formally <code>$\lim_{n\rightarrow 1}S_n=S$</code></p>
+
+<p><em>[Theorem]</em> : <code>Concavity of von Neumann Entropy</code> : mixing two systems increases entropy:</p>
+
+<div>$$S[\lambda \hat \rho_1+(1-\lambda)\hat \rho_2]\geq \lambda S[\hat \rho_1]+(1-\lambda)S[\hat \rho_2] \ \ \ \ \lambda\in(0,1)$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>First we need to introduce a lemma : <br>
+<em>[Lemma]</em> : <code>Klein's inequality</code> . Let <code>$\hat A,\hat B$</code> self-adjoint(Hermitian) and <code>$f$</code> is convex from : <code>$\mathbb{R}\rightarrow \mathbb{R}$</code> . Then:</p>
+
+<div>$$\text{Tr}(f(\hat A)-f(\hat B)-(\hat A-\hat B)f'(\hat B))\geq 0$$</div>
+
+<p>Where the operation of <code>$f$</code> on operator is naturally induced like above. <br>
+<em>[Proof]</em> : Let <code>$\hat A\ket{a_i}=a_i \ket{a_i} \ ; \ \hat B\ket{b_i}=b_i\ket{b_i}$</code> , for the hermitian, <code>$a_i,b_i\in\mathbb{R}$</code>. <br>
+Then we have:</p>
+
+<div>$$\begin{aligned}
+\text{Tr}(f(\hat A)-f(\hat B)-(\hat A-\hat B)f'(\hat B)) &= \sum_i f(a_i)-\bra{a_i} f(\hat B)\ket{a_i}-\bra{a_i}(\hat A-\hat B) f'(\hat B)\ket{a_i}  \\
+&=\sum_i f(a_i)-\bra{a_i} f(\hat B)\ket{a_i}- a_i \bra{a_i} f'(\hat B)\ket{a_i}+\bra{a_i}\hat B f'(\hat B)\ket{a_i} \\
+&=\sum_i \Bigg( f(a_i) - \sum_j \Big(|\langle a_i|b_j\rangle|^2 \big( f(b_j)+ a_i f'(b_j) - b_j f'(b_j)  \big) \Big) \Bigg) \\
+&=\sum_{i,j} |\langle a_i | b_j \rangle|^2 \Big(f(a_i)-f(b_j)-(a_i-b_j)f'(b_j))  \Big)
+\end{aligned}$$</div>
+
+<p>For <code>$f$</code> is convex <code>$\mathbb{R}\rightarrow \mathbb{R}$</code> function, we have that <code>$\forall x,y\in \mathbb{R}$</code> :</p>
+
+<div>$$f(x)-f(y)\geq (x-y)f'(y)$$</div>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note
+    </summary>
+    <p>if a real2real function called as <code>convex</code> ; it satisfys:</p></p>
+
+<div>$$F(x,y;t):=f(t x+(1-t) y) - tf(x)+(1-t)f(y)\leq 0 \ \ x,y\in\mathbb{R} \ \ t\in(0,1)$$</div>
+
+<p>For <code>$F(x,y;0)=F(x,y;1)=0$</code>, then the derivative shall:</p>
+
+<div>$$\partial_t F(x,y;t)|_{t=0} \leq 0 \ \ \partial_t F(x,y;t)|_{t=1}\geq 0 $$</div>
+
+<p>Which means that:</p>
+
+<div>$$(x-y)f'(y)\leq f(x)-f(y)$$</div>
+
+<p></details></p>
+
+<p>Then the lemma has been proved. <br>
+To prove the concavity, we use the Klein&rsquo;s inequality with <code>$f(t)=t\log t$</code> , then we have:</p>
+
+<div>$$\text{Tr} \hat A\log \hat A-\text{Tr} \hat B\log\hat B \geq \text{Tr}(\hat A-\hat B)(1+\text{log}\hat B)$$</div>
+
+<p>Or:</p>
+
+<div>$$\text{Tr}\hat A\log\hat A-\text{Tr}\hat A\log\hat B\geq \text{Tr}(\hat A-\hat B)$$</div>
+
+<p>Let <code>$\hat A=\hat \rho_1 , \hat B=\lambda \hat \rho_1+(1-\lambda)\hat \rho_2$</code> , then we have:</p>
+
+<div>$$\text{Tr}\hat \rho_1 \log \hat \rho_1 \geq \text{Tr}\hat \rho_1 \log(\lambda \hat \rho_1+(1-\lambda)\hat \rho_2) $$</div>
+
+<p>And let <code>$\hat A=\hat \rho_2$</code> we have:</p>
+
+<div>$$\text{Tr}\hat \rho_2 \log \hat \rho_2 \geq \text{Tr}\hat \rho_2 \log(\lambda \hat \rho_1+(1-\lambda)\hat \rho_2) $$</div>
+
+<p>Then, multiplying the first inequality <code>$\lambda$</code> and the second <code>$1-\lambda$</code> , adding them yield:</p>
+
+<div>$$\lambda \text{Tr} \hat \rho_1\log\hat \rho_1+(1-\lambda)\text{Tr}\hat \rho_2\log\hat \rho_2\geq \text{Tr}(\lambda \hat \rho_1+(1-\lambda)\hat \rho_2)\log (\lambda \hat \rho_1+(1-\lambda)\hat \rho_2)$$</div>
+
+<p>The concavity has been proved.</p>
+
+</details>
+
+
+<p><em>[Definition]</em> : <code>Reduced density matrix</code> , given a density metrix <code>$\hat \rho$</code> on <code>$\mathcal{H}_a \otimes \mathcal{H}_b$</code>, reduced density matrix <code>$\hat \rho_a$</code> on <code>$\mathcal{H}_a$</code> is:</p>
+
+<div>$$\hat \rho_a := \text{Tr}_b (\hat \rho) \equiv \sum_{j}\bra{e_{j,b}}\hat \rho \ket{e_{j,b}}$$</div>
+
+<p>Where <code>$\ket{e_{j,b}}$</code> is a set of complete orthonormal basis in Hilbert space <code>$\mathcal{H}_b$</code></p>
+
+<p><em>[Theorem]</em> : subadditivity of entropy: information is &lsquo;lost&rsquo; by separating two subsystems:</p>
+
+<div>$$S_{a\otimes b}[\hat \rho] = \text{Tr}_{a\otimes b} (-\hat \rho \log \hat \rho) \leq S_a[\hat \rho_a] + S_b[\hat \rho_b] = \text{Tr}_a (-\hat \rho_a \log \hat \rho_a) + \text{Tr}_b (-\hat \rho_b \log \hat \rho_b) = S_{a\otimes b} [\hat \rho_a \otimes \hat \rho_b]$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>First, we introduce the difinition of so called <code>Relative entropy</code>:</p>
+
+<div>$$S[\hat \rho \| \hat \sigma] := -S[\hat \rho] - \text{Tr} (\hat \rho \log \hat \sigma)$$</div>
+
+<p>By the inference of Klein inequality, we have:</p>
+
+<div>$$\text{Tr} \hat A \log \hat A - \text{Tr} \hat A \log \hat B \geq \text{Tr}(\hat A-\hat B)$$</div>
+
+<p>That is said that <code>$S[\hat \rho \|\hat \sigma] \geq 0$</code> . <br>
+Then let <code>$\hat \sigma = \hat \rho_a \otimes \hat \rho_b$</code> we have:</p>
+
+<div>$$S[\hat \rho \| \hat \rho_a \otimes \hat \rho_b] = -S[\hat \rho] - \text{Tr}(\hat \rho \log(\hat \rho_a \otimes \hat \rho_b))\geq 0$$</div>
+
+<p>For <code>$\text{Tr}(\cdot)=\text{Tr}_a(\text{Tr}_b(\cdot))= \text{Tr}_b(\text{Tr}_a(\cdot))$</code> , we have:</p>
+
+<div>$$\begin{aligned}
+\text{Tr}(\hat \rho \log(\hat \rho_a\otimes \hat \rho_b)) &= \text{Tr}(\hat \rho \log (\hat \rho_a\otimes \hat 1_b)(\hat 1_a \otimes \hat \rho_b)) \\
+&= \text{Tr}(\hat \rho \log \hat \rho_a\otimes \hat 1_b)+\text{Tr}(\hat \rho \log \hat 1_a \otimes \hat \rho_b) \\
+&= \text{Tr}_a(\text{Tr}_b(\hat \rho \log \hat \rho_a\otimes \hat 1_b))+\text{Tr}_b(\text{Tr}_a(\hat \rho \log \hat 1_a \otimes \hat \rho_b)) \\
+&= \text{Tr}_a(\log \hat \rho_a \text{Tr}_b \hat \rho ) + \text{Tr}_b (\log \hat \rho_b \text{Tr}_a \hat \rho) \\
+&= \text{Tr}_a(\hat \rho_a \log \hat \rho_a)+\text{Tr}_b (\hat \rho_b \log \hat \rho_b)
+\end{aligned}$$</div>
+
+<p>Then we have proven :</p>
+
+<div>$$S_{a\otimes b} [\hat \rho] \leq S_a [\hat \rho_a]+S_b[\hat \rho_b]$$</div>
+
+<p>The last equality is simple to prove.</p>
+
+</details>
+
+
+<h4 id="density-matrix-of-pure-state">Density Matrix of Pure State</h4>
+
+<p>Density matrix of a pure state: <code>$\hat \rho = \ket{\psi}\bra{\psi}$</code> , where <code>$\ket{\psi}\in \mathcal{H}_a\otimes\mathcal{H}_b$</code> is a normalized pure state,
+has some special properties:</p>
+
+<ol>
+<li><code>Entanglement Entropy</code> : defined as the von Neumann Entropy of reduced density matrix: <code>$S_a=-\text{Tr}(\hat \rho_a\log\hat \rho_a) , \hat \rho_a = \text{Tr}_b\hat \rho$</code></li>
+<li>The degrees of freedom of <code>$a,b$</code> are entangled in this state if <code>$S_a \gt 0$</code></li>
+<li>The state <code>$\ket{\psi}$</code> is <code>disentangled</code>, <mark>IFF</mark> <code>$\ket{\psi}=\ket{\psi_a}\otimes \ket{\phi_b}$</code> , <mark>IFF</mark> <code>$S_a=0$</code></li>
+
+<li><p><code>Schmidt decomposition</code> :</p>
+
+<div>$$\ket{\psi}=\sum_i \lambda_i \ket{\phi_i}\otimes \ket{\varphi_i}$$</div>
+
+<p>Where <code>$\lambda_i^2$</code> are eigenvalues of <code>$\hat \rho_a$</code> , and <code>$\phi_i,\varphi_i$</code> are orthonormal eigenstates of <code>$\hat \rho_a, \hat \rho_b$</code> .</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <pre><code>Generally, one can write `$\ket{\psi}\in\mathcal{H}_a\otimes \mathcal{H}_b$` as the expansion on basis `$e_{i,a}$` and `$e_{i,b}$` in `$\mathcal{H}_a$` and `$\mathcal{H}_b$` :
+
+&lt;div&gt;$$\ket{\psi} = \sum_{i,j} a_{ij}\ket{e_{i,a}}\ket{e_{j,b}}$$&lt;/div&gt;
+
+While the SVD of matrix `$\bm{A}$` whose elements are `$a_{ij}$` is :
+
+&lt;div&gt;$$\bm{A}= \bm{U}\bm{\Sigma}\bm{V}^{\dagger}$$&lt;/div&gt;
+
+And that is
+
+&lt;div&gt;$$a_{ij} = \sum_l u_{i,l}\lambda_l v^*_{j,l}$$&lt;/div&gt;
+
+Then let `$\ket{\phi_l} = \sum_i u_{i,l} \ket{e_{i,a}} \ , \ \ket{\varphi_l} = \sum_j v^*_{j,l}\ket{e_{j,b}}$` , one have:
+
+&lt;div&gt;$$\ket {\psi}=\sum_{l} \lambda_l \ket{\phi_l}\ket{\varphi_l}$$&lt;/div&gt;
+
+While `$\ket{\phi_i},\ket{\varphi_i}$` are orthonormal in each Hilbert space for `$\bm{U},\bm{V}$` are unitary matrices. &lt;br&gt;
+And for the expansion, one can write the reduced density matrix as:
+
+&lt;div&gt;$$\begin{aligned}
+\hat \rho_a &amp;= \sum_k \bra{e_{k,b}} \sum_{i,j}\lambda_i\lambda_j^* \ket{\phi_i}\ket{\varphi_i}\bra{\phi_j}\bra{\varphi_j} \ket{e_{k,b}} \\
+&amp;= \sum_{i,j}\lambda_i\lambda_j^* \ket{\phi_i}\bra{\phi_j} \sum_k \langle \varphi_j |e_{k,b} \rangle \langle e_{k,b}| \varphi_i \rangle \\
+&amp;= \sum_i \lambda_i^2 \ket{\phi_i}\bra{\phi_i}
+\end{aligned}$$&lt;/div&gt;
+
+For `$\hat \rho$` is Hermitian so `$\lambda_i\in\mathbb{R}$` . That is `$\lambda_i^2$` are eigenvalues of `$\hat \rho_a$` and `$\ket{\phi_i}$` are `$\hat \rho_a$` 's eigenstates &lt;br&gt;
+Further more, `$\lambda_i^2$` are also eigenvalues of `$\hat \rho_b$` and `$\ket{\varphi_i}$` are `$\hat \rho_b$`'s eigenstates.
+</code></pre>
+
+</details>
+</li>
+
+<li><p><code>Reciprocity</code> : define reduced density matrix <code>$\hat \rho_b = \text{Tr}_a \hat \rho$</code> on <code>$\mathcal{H}_b$</code> , we have <code>$S_a=S_b$</code> .
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <pre><code>Using Schmidt decomposition: `$\ket{\phi}= \sum_i \lambda_i \ket{\phi_i}\ket{\varphi_i}$`, then one have:
+&lt;div&gt;$$S_b=-\sum_i \lambda_i^2\log \lambda_i^2=S_a$$&lt;/div&gt;
+For the details in the previous proof.
+Proved.
+</code></pre>
+
+</details>
+</p></li>
+</ol>
+
+<h3 id="measurement">Measurement</h3>
+
+<h4 id="measurement-1">Measurement</h4>
+
+<p>Measurement can be done for a Hermition operator <code>$\hat A$</code> on a pure or mixed states <code>$\hat \rho$</code> <br>
+The outcome of the measurement will be the eigenvalues of <code>$\hat A$</code>, and the probability of outcome <code>$\lambda$</code> is:</p>
+
+<div>$$\mathbb{P}(\lambda) = \text{Tr}(\hat P_{\lambda}\hat \rho)$$</div>
+
+<p>where <code>$\hat P_{\lambda}$</code> is the projection to eigenvalue <code>$\lambda$</code> subspace : <code>$\hat P_{\lambda}=\sum \ket{A=\lambda}\bra{A=\lambda}$</code>, summing over <code>orthonormal</code> eigenstates of <code>$\hat A$</code> with eigenvalue <code>$\lambda$</code> . <br>
+The statistical average of outcome is the expectation value of <code>$\hat A$</code> in state <code>$\hat \rho$</code> :</p>
+
+<div>$$\text{Tr}\hat A \hat \rho = \text{Tr}(\sum_{\lambda} \lambda \hat P_{\lambda} \hat \rho) = \sum_{\lambda} \lambda \text{Tr}(\hat P_{\lambda}\hat \rho)=\sum_{\lambda}\lambda \mathbb{P}(\lambda)$$</div>
+
+<p>And for pure state it simplily is <code>$\bra{\psi}\hat A\ket{\psi}$</code></p>
+
+<p><code>Collapse postulate</code> : if the measurement outcome is <code>$\lambda$</code> , the quantum state will collapse to <code>$\hat P_{\lambda}\hat \rho \hat P_{\lambda} / (\text{Tr}\hat P_{\lambda}\hat \rho)$</code> <br>
+if eigenvalue-<code>$\lambda$</code> eigenstate is unique, this is the familiar statement that the system collapses to eigenstate <code>$\ket{A=\lambda}$</code></p>
+
+<p><em>[Theorem]</em> : Information is gained by measurement: entropy decrease:</p>
+
+<div>$$S[\hat \rho] \geq \sum_{\lambda} \mathbb{P}(\lambda)S[\hat \rho_{\lambda}]$$</div>
+
+<p>where <code>$\hat \rho_{\lambda}$</code> is the collapsed state,
+That is to say that the original entropy is less than the expectation value of entropy after measurement</p>
+
+<h4 id="the-uncertainty-principle">The Uncertainty Principle</h4>
+
+<p><em>[Theorem]</em> : For Hermitian <code>$\hat A, \hat B$</code> , we have:</p>
+
+<div>$$\Delta \hat A \Delta \hat B \geq \frac 1 4 |\langle [\hat A,\hat B]\rangle|^2$$</div>
+
+<p>Where <code>$\Delta \hat O := (\langle \hat O^2\rangle - \langle \hat O \rangle^2)$</code> , <code>$\langle \hat O \rangle = \text{Tr}\hat O \hat \rho$</code>.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>Define the inner product of two operators <code>$\hat A,\hat B$</code>, as <code>$(\hat A,\hat B)=\langle \hat A^{\dagger}\hat B\rangle = \text{Tr}\hat A^{\dagger}\hat B\hat \rho $</code> <br>
+Then define two new operators: <code>$\hat A' = \hat A -\langle \hat A\rangle , \hat B'=\hat B-\langle \hat B\rangle$</code>, one have:</p>
+
+<div>$$\begin{aligned}
+\frac 1 4 |\langle [\hat A,\hat B]\rangle|^2 &= \frac 1 4 |\langle [\hat A',\hat B']\rangle|^2 \\
+&= \frac 1 2 (\hat A',\hat B')(\hat B',\hat A') -\frac 1 4 (\hat A',\hat B')^2 -\frac 1 4 (\hat B',\hat A')^2 \\
+&= |\text{Im}(\hat A',\hat B')|^2 \leq |(\hat A',\hat B')|^2 \\
+&\leq (\hat A',\hat A')(\hat B',\hat B') = (\langle \hat A^2\rangle - |\langle \hat A\rangle|^2)(\langle \hat B^2\rangle - |\langle \hat B\rangle|^2)
+\end{aligned}$$</div>
+
+<p>The last inequality is Cauchy-Schwarz <br>
+The condition for the equality to be true is obviously:</p>
+
+<div>$$(\hat A',\hat B')\in \mathbb{C} \ \ \text{and} \ \ (\hat A'-\lambda \hat B',\hat A' - \lambda \hat B')=0$$</div>
+
+<p>One can solve the equation to obtain the quantum state <code>$\hat \rho$</code> satisfying these condition above.</p>
+
+</details>
+
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/math" role="button">Math </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/premath/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Preliminary Mathematics</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Identical Particles</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#outline">
+												 Outline
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-hilbert-space">
+												 The Hilbert Space
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#wavefunction">
+												 Wavefunction
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#combining-hilbert-spaces">
+												 Combining Hilbert Spaces
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#complete-orthonormal-basis">
+												 Complete Orthonormal Basis
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#quantum-mechanical-operators">
+												 Quantum Mechanical Operators
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#operators">
+												 Operators
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#abstract-calculations-with-operators">
+												 Abstract Calculations with Operators
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#density-matrix">
+												 Density Matrix
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#entanglement">
+												 Entanglement
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#density-matrix-of-pure-state">
+												 Density Matrix of Pure State
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#measurement">
+												 Measurement
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#measurement-1">
+												 Measurement
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-uncertainty-principle">
+												 The Uncertainty Principle
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

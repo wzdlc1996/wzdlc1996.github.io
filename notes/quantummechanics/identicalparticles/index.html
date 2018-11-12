@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
+$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
+ $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:
+$$\mathcal{S}:(\mathcal{H}_1)^{\otimes n}\rightarrow \mathcal{H}_n$$ The (anti-)symmetrization mapping is defined on a tensor product basis as:
+$$\begin{aligned} \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for boson} \\ \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} (-1)^{\sigma} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for fermion} \end{aligned}$$  Second quantization language and some simple many-body wavefunction
+The Fock Space Permutation Group [Definition] : permutation is a map : $\sigma=\begin{pmatrix}1 &amp; 2 &amp; \cdots &amp; n \\ \sigma(1) &amp; \sigma(2) &amp; \cdots &amp; \sigma(n)\end{pmatrix}\equiv\{j,\sigma(j)\}$ means replacing $j$ by $\sigma(j)$ , and $\sigma(j)\in\{1,2,\cdots,n\}$ [Definition] : Transposition : $(i,j)$ means exchange $i$ and $j$ while keeping others fixed. Any permutation can be represented as a product of transpositions of neighbors $(i,i&#43;1)$ , and the number of transpositions is defined as the parity of the permutation. The sign(signature) of a permutation : $(-1)^{\sigma}$ , is $&#43;1$ for even one and $-1$ for odd one. It can be rewritten as:">
+
+  <meta property="og:title" content="Identical Particles" />
+<meta property="og:description" content="Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
+$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
+ $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:
+$$\mathcal{S}:(\mathcal{H}_1)^{\otimes n}\rightarrow \mathcal{H}_n$$ The (anti-)symmetrization mapping is defined on a tensor product basis as:
+$$\begin{aligned} \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for boson} \\ \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} (-1)^{\sigma} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for fermion} \end{aligned}$$  Second quantization language and some simple many-body wavefunction
+The Fock Space Permutation Group [Definition] : permutation is a map : $\sigma=\begin{pmatrix}1 &amp; 2 &amp; \cdots &amp; n \\ \sigma(1) &amp; \sigma(2) &amp; \cdots &amp; \sigma(n)\end{pmatrix}\equiv\{j,\sigma(j)\}$ means replacing $j$ by $\sigma(j)$ , and $\sigma(j)\in\{1,2,\cdots,n\}$ [Definition] : Transposition : $(i,j)$ means exchange $i$ and $j$ while keeping others fixed. Any permutation can be represented as a product of transpositions of neighbors $(i,i&#43;1)$ , and the number of transpositions is defined as the parity of the permutation. The sign(signature) of a permutation : $(-1)^{\sigma}$ , is $&#43;1$ for even one and $-1$ for odd one. It can be rewritten as:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/" /><meta property="article:published_time" content="2018-11-12T13:42:48&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-12T13:42:48&#43;08:00"/>
+
+
+
+  <title>
+  
+       Identical Particles | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0%20%28copy%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Quantum-Mechanics</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Identical Particles</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Nov 12, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>11 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h3 id="outline">Outline</h3>
+
+<p><code>Fock space</code> is the direct sum of identical particle Hilbert space for all different particle numbers:</p>
+
+<div>$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$</div>
+
+<p>Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:</p>
+
+<ul>
+<li><code>$n$</code>-body Hilbert space for identical particles <code>$\mathcal{H}_n$</code> is a subspace of <code>$(\mathcal{H})^{\otimes n}$</code></li>
+
+<li><p><code>$\mathcal{H}_n$</code> is the image of multi-linear (anti-)symmetrization mapping:</p>
+
+<div>$$\mathcal{S}:(\mathcal{H}_1)^{\otimes n}\rightarrow \mathcal{H}_n$$</div></li>
+
+<li><p>The (anti-)symmetrization mapping is defined on a tensor product basis as:</p>
+
+<div>$$\begin{aligned}
+\mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for boson} \\
+\mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} (-1)^{\sigma} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for fermion}
+\end{aligned}$$</div></li>
+</ul>
+
+<p>Second quantization language and some simple many-body wavefunction</p>
+
+<h3 id="the-fock-space">The Fock Space</h3>
+
+<h4 id="permutation-group">Permutation Group</h4>
+
+<p><em>[Definition]</em> : <code>permutation</code> is a map : <code>$\sigma=\begin{pmatrix}1 &amp; 2 &amp; \cdots &amp; n \\ \sigma(1) &amp; \sigma(2) &amp; \cdots &amp; \sigma(n)\end{pmatrix}\equiv\{j,\sigma(j)\}$</code> means replacing <code>$j$</code> by <code>$\sigma(j)$</code> , and <code>$\sigma(j)\in\{1,2,\cdots,n\}$</code> <br>
+<em>[Definition]</em> : <code>Transposition</code> : <code>$(i,j)$</code> means exchange <code>$i$</code> and <code>$j$</code> while keeping others fixed. <br>
+<mark>Any permutation can be represented as a product of transpositions of neighbors <code>$(i,i+1)$</code></mark> , and the number of transpositions is defined as the parity of the permutation. <br>
+The <code>sign(signature)</code> of a permutation : <code>$(-1)^{\sigma}$</code> , is <code>$+1$</code> for even one and <code>$-1$</code> for odd one. It can be rewritten as:</p>
+
+<div>$$(-1)^{\sigma} = \prod_{i\lt j} \text{sgn }(\sigma(j)-\sigma(i))$$</div>
+
+<p>And satisfies <code>$(-1)^{\sigma\cdot \mu} = (-1)^{\sigma}(-1)^{\mu}$</code> <br>
+There are only two 1-d representation of permutation group:</p>
+
+<ol>
+<li>the trivial one <code>$R(\sigma)=1$</code></li>
+<li>the alternative one <code>$R(\sigma)=(-1)^{\sigma}$</code></li>
+</ol>
+
+<h4 id="traditional-treatment">Traditional Treatment</h4>
+
+<p>The configuration of <code>$n$</code> indentical particles <code>$x=(\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n)$</code> has the same physical picture with all permutations of <code>$\bm{x}_1,\cdots,\bm{x}_n$</code> <br>
+This means that <code>$n$</code>-body state: <code>$\psi(x)=\psi(\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n)$</code> should be <code>'invariant'</code> under permutations of <code>$\bm{x}_i$</code> : <br>
+<mark>the wavefunction may get complex phase, but the density matrix should be the same</mark></p>
+
+<p><em>[Assumption]</em> : the n-body wavefunction is a 1-d representation of the permutation group <code>$S_n$</code> , then there are only two possibilities: bosons and fermions.</p>
+
+<ul>
+<li><p>Being a 1-d representation means, for <code>$\sigma \in S_n$</code> ,</p>
+
+<div>$$\psi(\bm{x}_{\sigma(1)},\cdots,\bm{x}_{\sigma(n)}) = R(\sigma) \psi(\bm{x}_1,\cdots,\bm{x}_n)$$</div>
+
+<p>Where <code>$R(\sigma)$</code> is a complex number of unit modulus.
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note
+    </summary>
+    <pre><code>the requirement of 1-d representation is come from we believe the wavefunction (with 1 component) can be completely discribe the many-body state
+</code></pre>
+
+</details>
+</p></li>
+
+<li><p><code>Bosons</code> : correspond to the trivial representation of permutation group, which means any permutation has no effect on the wavefunction. Integer spin particles. <br></p></li>
+
+<li><p><code>Fermions</code> : correspond to the alternative representation of permutation group, which means pariwise exchage changes the sign of the wavefunction. Half-odd-integer spin particles.</p></li>
+
+<li><p>In 2-dimensional space, braiding group instead of permutation group should be considered, there are paticles(anyons) beyond bosons and fermions.</p></li>
+</ul>
+
+<h4 id="the-structure-of-many-body-hilbert-space">The Structure of Many-body Hilbert Space</h4>
+
+<p><em>[Definition]</em> : <code>Fock space</code> : the Hilbert space of identical particles with indefinite particle number, is the <code>direct sum</code> of 0-partile &amp; 1-particle &amp; &hellip; Hilbert space:</p>
+
+<div>$$\mathcal{F}= \mathcal{H}_0 \oplus \mathcal{H}_1 \oplus \mathcal{H}_2 \oplus \cdots$$</div>
+
+<p><em>[Definition]</em> : 0-particle Hilbert space: noted as <code>$\mathcal{H}_0$</code> , is a 1-d Hilbert space with only the <code>vacuum state</code> : <code>$\ket{0}$</code> <br>
+<em>[Definition]</em> : 1-particle Hilbert space: noted as <code>$\mathcal{H}_1$</code> , is the linear space of 1-body wavefunction. can be finite or infinite dimension.</p>
+
+<p><em>[Definition]</em> : <code>$n(\gt2)$</code>-particle Hilbert space: noted as <code>$\mathcal{H}_n$</code> , is a subspace of the tensor product <code>$(\mathcal{H}_1)^{\otimes n} \equiv \bigotimes_{i=1}^n \mathcal{H}_1$</code>, with (anti-)symmetrization between the factor <code>$\mathcal{H}_1$</code>s</p>
+
+<ul>
+<li><p>There shall be a (linear) map, maps the direct product state to the state of <code>$\mathcal{H}_n$</code> like:</p>
+
+<div>$$\mathcal{S} : (\mathcal{H}_1)^{\otimes n} \rightarrow \mathcal{H}_n ; \ \ \ket{\psi_1}\otimes\ket{\psi_2}\otimes \cdots \otimes \ket{\psi_n} \mapsto \ket{\psi_1,\psi_2,\cdots,\psi_n}$$</div>
+
+<p>And permutations of <code>$\psi_i$</code> produce the same n-body state, up to a phase.</p></li>
+
+<li><p><code>Bosons</code>: permutations of <code>$\psi_i$</code> are trivial:</p>
+
+<div>$$\mathcal{S} : \ket{\psi_1}\cdots\ket{\psi_n} \mapsto \frac 1 {\sqrt{n!}} \sum_{\sigma \in S_n} \ket{\psi_{\sigma(1)}}\cdots\ket{\psi_{\sigma(n)}}$$</div>
+
+<p>And</p>
+
+<div>$$\ket{\psi_{\sigma(1)},\cdots,\psi_{\sigma(n)}} = \ket{\psi_1,\cdots,\psi_n}$$</div>
+
+<p>And the wavefunction is the coefficient on the coordinate eigenstate basis <code>$\ket{\bm{x}_i}$</code> , we have:</p>
+
+<div>$$\psi(\bm{x}_1,\cdots,\bm{x}_n) = \frac 1 {\sqrt{n!}} \sum_{\sigma\in S_n}\prod_i \psi_{\sigma(i)}(\bm{x}_i)\equiv \frac 1 {\sqrt{n!}}\text{perm}[\psi_j(\bm{x}_i)]$$</div>
+
+<p>The norm of the wavefunction is:</p>
+
+<div>$$\sqrt{\text{perm}[\langle \psi_i |\psi_j\rangle]} = \sqrt{\sum_{\sigma\in S_n}\prod_i \langle \psi_i|\psi_{\sigma(i)}\rangle}$$</div></li>
+
+<li><p><code>Fermions</code>: permutations of <code>$\psi_i$</code> produce the factor <code>$(-1)^{\sigma}$</code> :</p>
+
+<div>$$\mathcal{S} : \ket{\psi_1}\cdots\ket{\psi_n} \mapsto \frac 1 {\sqrt{n!}} \sum_{\sigma \in S_n} (-1)^{\sigma} \ket{\psi_{\sigma(1)}}\cdots\ket{\psi_{\sigma(n)}}$$</div>
+
+<p>And</p>
+
+<div>$$\ket{\psi_{\sigma(1)},\cdots,\psi_{\sigma(n)}} =(-1)^{\sigma} \ket{\psi_1,\cdots,\psi_n}$$</div>
+And the wavefunction is the coefficient on the coordinate eigenstate basis `$\ket{\bm{x}_i}$` , we have:
+
+<div>$$\psi(\bm{x}_1,\cdots,\bm{x}_n) = \frac 1 {\sqrt{n!}} \sum_{\sigma\in S_n}(-1)^{\sigma} \prod_i \psi_{\sigma(i)}(\bm{x}_i) = \frac 1 {\sqrt{n!}}\det[\psi_j(\bm{x}_i)]$$</div>
+
+<p>The norm of the wavefunction is:</p>
+
+<div>$$\sqrt{\det[\langle \psi_i|\psi_j\rangle]}$$</div></li>
+</ul>
+
+<h4 id="basis-of-many-body-hilbert-space">Basis of Many-body Hilbert Space</h4>
+
+<p>Given a complete orthonormal basis <code>$\{\ket{j}\}_{j=1}^{J}$</code> , we can construct the basis of <code>$\mathcal{H}_n$</code> :</p>
+
+<ul>
+<li><p><code>Bosons</code>: basis are <code>$\ket{i_1,i_2,\cdots,i_n}$</code> , for all <code>$1\leq i_1\leq i_2 \leq \cdots \leq i_n\leq m$</code> <br>
+These basis are <code>orthogonal , but not normalized</code> . And the number of basis (dimension of <code>$\mathcal{H}_n)$</code> is <code>$\begin{pmatrix} n+J-1 \\ n \end{pmatrix} = \frac {\Gamma(n+J)} {\Gamma(n+1)\Gamma(J)}$</code></p></li>
+
+<li><p><code>Fermions</code>: basis are <code>$\ket{i_1,i_2,\cdots,i_n}$</code> , for all <code>$1\lt i_1\lt i_2 \lt \cdots \lt i_n\lt m$</code> <br>
+When <code>$J\leq n$</code> , there is no many-body state, which is known as <code>Pauli exclusion</code> <br>
+These basis are <code>orthonormal</code> . And the number of basis (dimension of <code>$\mathcal{H}_n)$</code> is <code>$\begin{pmatrix} J \\ n \end{pmatrix} = \frac {\Gamma(1+J)} {\Gamma(n+1)\Gamma(J-n+1)}$</code></p></li>
+</ul>
+
+<h4 id="occupation-number-rep">Occupation Number Rep.</h4>
+
+<p>denote the above basis <code>$\ket{i_1,i_2,\cdots,i_n}$</code> as <code>$\ket{1^{n_1},\cdots,m^{n_m}}$</code> , where <code>$n_j$</code> is the number of appearance of <code>$i_j$</code> , For <code>$n-$</code>particle state, <code>$\sum n_i=n$</code>.</p>
+
+<p><em>[Definition]</em> : <code>Occupation basis</code> is the <code>normalized</code> state of this vector:</p>
+
+<div>$$\ket{n_1,\cdots,n_m} = (n_1!)^{-1/2}(n_2!)^{-1/2}\cdots(n_m!)^{-1/2}\ket{1^{n_1},\cdots,m^{n_m}}$$</div>
+
+<p>For fermion , <code>$n_j=0 \text{ or }1$</code></p>
+
+<h3 id="second-quantization">Second Quantization</h3>
+
+<h4 id="creation-annihilation-operators">Creation &amp; Annihilation Operators</h4>
+
+<p><em>[Definition]</em> : <code>Creation operator</code> is an operator maps vector from <code>$\mathcal{H}_n$</code> to one in <code>$\mathcal{H}_{n+1}$</code> :</p>
+
+<div>$$\hat \psi^{\dagger} : \mathcal{H}_n \rightarrow \mathcal{H}_{n+1} \  \ ; \ \hat \psi^{\dagger}\ket{\psi_1,\cdots,\psi_n} = \ket{\psi,\psi_1,\cdots,\psi_n}$$</div>
+
+<p>In occupation basis, it is :</p>
+
+<div>$$\begin{aligned}
+\text{For bosons: } & \hat a_i^{\dagger} \ket{\cdots,n_i,\cdots} = \sqrt{n_i+1}\ket{\cdots,(n_i+1),\cdots} \\
+\text{For fermions: } & \hat a_i^{\dagger} \ket{\cdots,n_i=0,\cdots} = (-1)^{\sum_{j=1}^{i-1} n_j}\ket{\cdots,n_i=1,\cdots}
+\end{aligned}$$</div>
+
+<p><em>[Definition]</em> : <code>Annihilation operator</code> is an operator maps vector from <code>$\mathcal{H}_n$</code> to one in <code>$\mathcal{H}_{n-1}$</code> :</p>
+
+<div>$$\hat \psi : \mathcal{H}_n \rightarrow \mathcal{H}_{n-1} \ \ ; \ \hat \psi \ket{\psi_1,\cdots,\psi_n} = \sum_{i=1}^n (\nu)^{i-1} \langle \psi |\psi_i \rangle \ket{\psi_1,\cdots,\psi_{i-1},\psi_{i+1},\cdots,\psi_n}$$</div>
+
+<p>Where <code>$\nu=\pm 1$</code> for bosons <code>$\nu=1$</code>, for fermions <code>$\nu=-1$</code> <br>
+In occupation basis, it is:</p>
+
+<div>$$\begin{aligned}
+\text{For bosons: } & \hat a_i \ket{\cdots,n_i,\cdots} = \sqrt{n_i}\ket{\cdots,(n_i-1),\cdots} \\
+\text{For fermions: } & \hat a_i \ket{\cdots,n_i=1,\cdots} = (-1)^{\sum_{j=1}^{i-1} n_j}\ket{\cdots,n_i=0,\cdots}
+\end{aligned}$$</div>
+
+<p>And:</p>
+
+<div>$$\ket{n_1,n_2,\cdots,n_m} = \frac {1} {\sqrt{\prod_j n_j!}}\prod_{j=1}^m \hat e_j^{\dagger n_j}\ket{0}$$</div>
+
+<p>For vacuum, we have:</p>
+
+<div>$$\begin{aligned}
+\hat \psi \ket{0}&=0 \text{ for any annihilation operator} \\
+\bra{0}\hat \psi^{\dagger} &= 0 \text{ for any creation operator}
+\end{aligned}$$</div>
+
+<p><em>[Theorem]</em> : <code>(Anti-)Commutation relations</code> : <br></p>
+
+<div>$$\begin{aligned}
+\text{For bosons: } & [\hat\psi,\hat\psi^{\dagger}] = 1 \\
+\text{For fermions: } & \{\hat\psi,\hat\psi^{\dagger}\} = 1
+\end{aligned}$$</div>
+
+<p><em>[Definition]</em> : <code>occupation number operator</code> : <code>$\hat n_{\psi} = \hat \psi^{\dagger}\hat \psi $</code>:</p>
+
+<ul>
+<li><code>$[\hat n_{\psi},\hat\psi^{\dagger}]=\hat \psi^{\dagger}$</code> , namely <code>$\hat \psi^{\dagger}$</code> increases eigenvalue of <code>$\hat n_{\psi}$</code> by 1</li>
+<li><code>$[\hat n_{\psi},\hat\psi]=-\hat \psi$</code> , namely <code>$\hat \psi$</code> decreases eigenvalue of <code>$\hat n_{\psi}$</code> by 1</li>
+<li>Eigenvalues of <code>$\hat n_{\psi}$</code> are non-negative integers</li>
+<li>Occupation basis <code>$\ket{n_1,\cdots,n_m}$</code> are eigenstates of <code>$\hat n_i$</code> , with eigenvalue <code>$n_i$</code></li>
+</ul>
+
+<p><em>[Theorem]</em> : <code>General (Anti-)Commutation relations</code> :</p>
+
+<div>$$\begin{aligned}
+\text{For bosons: } & [\hat\psi,\hat\psi'^{\dagger}] = \langle \psi|\psi'\rangle \ , \ [\hat \psi,\hat \psi']=0=[\hat \psi^{\dagger},\hat \psi'^{\dagger}] \\
+\text{For fermions: } & \{\hat\psi,\hat\psi^{\dagger}\} = \langle \psi|\psi'\rangle \ , \ \{\hat \psi,\hat \psi'\}=0=\{\hat \psi^{\dagger},\hat \psi'^{\dagger}\}
+\end{aligned}$$</div>
+
+<p><em>[Theorem]</em> : <code>Basis change</code> : <code>$\hat \psi^{\dagger} = \sum_i \langle e_i |\psi \rangle \hat {e_i}^{\dagger}$</code> , sum is over a complete orthonormal basis</p>
+
+<h4 id="some-calculation-tricks">Some Calculation Tricks</h4>
+
+<p><em>[Theorem]</em> : for orthonormal basis of creation(annihilation) operators <code>$\hat e_j^{\dagger}, \hat e_i$</code> , the commutator:</p>
+
+<div>$$[\hat e_i^{\dagger}\hat e_j , \hat e_k^{\dagger}] = \delta_{jk}\hat e_i^{\dagger}$$</div>
+This is true for both bosons and fermions. <br>
+The proof can be obtained by the following formula:
+<div>$$[\hat A\hat B,\hat C] = \hat A[\hat B,\hat C]+[\hat A,\hat C]\hat B = \hat A\{\hat B,\hat C\}-\{\hat A,\hat C\}\hat B$$</div>
+
+<p><em>[Theorem]</em> : By the above fact, we have:</p>
+
+<div>$$\hat e_i^{\dagger}\hat e_j \hat e_{i_1}^{\dagger}\cdots\hat e_{i_n}^{\dagger} \ket{0}=\sum_{i'_1,i'_2,\cdots,i'_n} \hat e_{i'_1}^{\dagger}\cdots\hat e_{i'_n}^{\dagger}\ket{0}$$</div>
+
+<p>Where the summation over the sequence <code>$(i'_1,\cdots,i'_n)$</code> which is <code>$(i_1,\cdots,i_n)$</code> with one appearance of <code>$j$</code> replaced by <code>$i$</code></p>
+
+<h4 id="the-second-quantization">The Second Quantization</h4>
+
+<p><em>[Rule]</em> : <code>the rule of thumb</code> , to get a <code>many-body</code> Hamiltonian <code>(defined on the Fock space)</code> , simply <code>replace</code> 1-body wavefunction <code>$\psi(x),\psi^*(x)$</code> in the <code>Energy formula</code> for product
+states by <code>$\hat \psi(x), \hat \psi^{\dagger}(x)$</code> , remove the summations over all particles and need some <code>normal ordering</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Examples
+    </summary>
+    <ul>
+<li><p><code>kinetic energy</code> : <br>
+In original way, we write the kinetic energy as:</p>
+
+<div>$$T = \sum_i \int \psi^*_i(x)\big(-\frac {\partial_x^2} {2m}\big)\psi_i(x)\td x$$</div>
+
+<p>Then the corresponding many-body term is:</p>
+
+<div>$$\hat T = \int \hat \psi^{\dagger}(x)\big(-\frac {\partial_x^2} {2m} \big) \hat \psi(x)\td x= \int \hat \psi^{\dagger}(p)\big(\frac {p^2} {2m} \big) \hat \psi(p)\td p$$</div></li>
+
+<li><p><code>1-body potential energy</code> : <br>
+In original way , we write the 1-body potential energy as:</p>
+
+<div>$$V_1 = \sum_i \int V(x)\psi^*_i(x)\psi_i(x)\td x$$</div>
+
+<p>And the corresponding many-body term is :</p>
+
+<div>$$\hat V_1 = \int V(x)\hat \psi^{\dagger}(x)\hat \psi(x)\td x$$</div></li>
+
+<li><p><code>2-body potential energy</code> : <br>
+For 2-body interaction, we have the potential energy in original way:</p>
+
+<div>$$V_2 = \frac 1 2 \sum_{i\neq j} \int V(x,x')\psi_i^*(x)\psi_i(x)\psi_j^*(x')\psi_j(x')\td x\td x'$$</div>
+
+<p>The corresponding many-body term is :</p>
+
+<div>$$\hat V_2 = \frac 1 2\int V(x,x') \hat \psi^{\dagger}(x)\hat \psi^{\dagger}(x')\hat \psi(x')\hat \psi(x)\td x\td x'$$</div></li>
+</ul>
+
+</details>
+
+
+<h3 id="special-many-body-states">Special Many-body States</h3>
+
+<h4 id="fermion-product-state-fermi-sea">Fermion Product State(Fermi Sea)</h4>
+
+<p><em>[Definition]</em> : the Fermion Product State is:</p>
+
+<div>$$|\psi_1,\cdots,\psi_n\rangle = \prod_{i=1}^n \hat \psi_i^{\dagger}\ket{0}$$</div>
+
+<p>Norm of this state is given by the Gram determinant: <code>$\sqrt{\text{det}[\langle \psi_i|\psi_j\rangle]}$</code> . <br>
+If <code>$\psi_i$</code> are linearly dependent , this state vanishes. <br>
+Linearly independent <code>$\psi_i$</code> span a n-dimensional 1-body Hilbert space. Given a complete orthonormal basis of this sapce <code>$c_i$</code> , then:</p>
+
+<div>$$\ket{\psi_1,\cdots,\psi_n} = \text{det}[\langle c_i|\psi_j] \ket{c_1,\cdots,c_n}$$</div>
+
+<p>And this state is the eigenstate of <code>$\hat n=\sum_i \hat c_i^{\dagger}\hat c_i$</code> with eigenvalue is <code>$n$</code>. <br>
+The <code>parent Hamiltonian</code> of this state is:</p>
+
+<div>$$\hat H = -\sum_{i=1}^n \hat c_i^{\dagger}\hat c_i + \sum_{i=n+1}^m \hat c_i^{\dagger}\hat c_i$$</div>
+
+<p>Namely, the unique ground state of this Hamiltonian is this fermion product state.</p>
+
+<p><em>[Definition]</em> : <code>Particle-hole Transformation of Fermions</code> of a single fermion mode: formally <code>$\hat c_i \leftrightarrow \hat c_i^{\dagger}$</code>. <br>
+This will preserve the anti-commutation relations. <br>
+This correspongds to a unitary transformation on the Fock space: <code>$\hat U = (\hat c_i+\hat c_i^{\dagger})\cdot (-1)^{\sum_{j\neq i}\hat c_j^{\dagger}\hat c_j}$</code> , this will let:</p>
+
+<div>$$\hat U^{\dagger}\hat U = \hat 1 \ \ \hat U \hat c_i\hat U^{\dagger} = \hat c_i^{\dagger} \ \ \hat U \hat c_j\hat U^{\dagger} = \hat c_j  \text{ for } j\neq i$$</div>
+
+<p>And the unitary transformation on occupation number basis is:</p>
+
+<div>$$\ket{\cdots,n_i=0,\cdots}\leftrightarrow (-1)^{\sum_{j\gt i} n_j} \ket{\cdots,n_i=1,\cdots}$$</div>
+
+<p>And the factor <code>$(-1)^{\sum_{j\gt i}n_j}$</code> is preserve the matrix elements of <code>$\hat \psi_j , \hat \psi_k^{\dagger}$</code> for <code>$j\gt i$</code>. <br>
+In particular, the new &ldquo;vacuum&rdquo; is originally <code>$\ket{0,\cdots,n_i=1,\cdots,0}$</code>.</p>
+
+<h4 id="fermion-pairing-state-bcs-state">Fermion Pairing State(BCS state)</h4>
+
+<p><em>[Definition]</em> : Consider two orthonormal fermion modes <code>$c_1, c_2$</code> , teh pairing state is:</p>
+
+<div>$$\ket{\lambda} = (1+|\lambda|^2)^{-1/2}\exp(\lambda \hat c_1^{\dagger}\hat c_2^{\dagger}) \ket{0}$$</div>
+
+<p>Where <code>$\lambda \in\mathbb{C}$</code> <br>
+This state is <code>not</code> an eigenstate of fermion number operator <code>$\hat c_1^{\dagger}\hat c_1+\hat c_2^{\dagger}\hat c_2$</code> . <br>
+<em>[Definition]</em> : <code>Bogoliubov</code> transformation which defines the <code>Boogoliubov quasiparticles</code> :</p>
+
+<div>$$\begin{aligned}
+\hat \gamma_1 &= u\hat c_1+v \hat c_2^{\dagger} \\
+\hat \gamma_2 &= -v\hat c_1^{\dagger}+u\hat c_2
+\end{aligned}$$</div>
+
+<p>where <code>$u=(1+|\lambda|^2)^{-1/2} $</code> and <code>$v=-\lambda(1+|\lambda|^2)^{-1/2}$</code> . <br>
+This two operator satisfy: <code>$\{\hat \gamma_i,\hat \gamma_j^{\dagger}\}=\delta_{ij}$</code> <br>
+The pairing state is vanished by <code>$\hat \gamma_i$</code> , namely <code>$\hat \gamma \ket{\lambda}=0$</code> <br>
+And the <code>parent Hamiltonian</code> is</p>
+
+<div>$$\hat H = \hat \gamma_1^{\dagger}\hat \gamma_1 +\hat \gamma_2^{\dagger}\hat \gamma_2$$</div>
+
+<p><em>[Definition]</em> : <code>Generic fermion pairing state</code> is defined as:</p>
+
+<div>$$\ket{\{f_{ij}\}} \propto \exp(\frac 1 2 \sum_{i,j}f_{ij}\hat c_i^{\dagger}\hat c_j^{\dagger})\ket{0}$$</div>
+
+<p>Where <code>$c_i$</code> are some orthonormal basis, and <code>$f_{ij}=-f_{ji}$</code> are some complex numbers. <br>
+By a orthogonal transformation <code>$\hat c_i^{\dagger} \rightarrow O_{ij}\hat {(c')}_j^{\dagger}$</code> , where <code>$\bm{O}$</code> is an orthogonal matrix, the antisymmetric matrix <code>$\bm{f}$</code>  can be brought into a standard form:</p>
+
+<div>$$\bm{O}^T \bm{f}\bm{O} = \begin{bmatrix} 0 & \lambda_1 & 0 & 0 & \cdots \\ -\lambda_1 & 0&0&0&\cdots \\ 0&0&0& \lambda_2&\cdots \\ 0&0& -\lambda_2&0&\cdots \\ \vdots&\vdots&\vdots&\vdots&\ddots\end{bmatrix}$$</div>
+
+<p>the state becomes <code>$\propto \exp(\lambda_1 \hat{c'}_1^{\dagger} \hat{c'}_2^{\dagger}+\lambda \hat{c'}_3^{\dagger}\hat {c'}_4^{\dagger}+\cdots)\ket{0}$</code> . <br>
+Bogoliubov transformations can be defined on <code>$\hat {c'}_{2i-1}$</code> &amp; <code>$\hat {c'}_{2i}$</code>.</p>
+
+<h4 id="boson-coherent-state">Boson Coherent State</h4>
+
+<p><em>[Definition]</em> : The coherent state from a single boson mode <code>$\hat b$</code> is:</p>
+
+<div>$$\ket{z} = e^{-|z|^2/2}e^{z\hat b^{\dagger}} \ket{0}$$</div>
+
+<p>where <code>$z\in \mathbb{C}$</code> . <br>
+This state is <code>not</code> an eigenstate of boson number <code>$\hat b^{\dagger}\hat b$</code> , but <code>$\hat b\ket{z}=z\ket{z}$</code> , therefor this state vanished by <code>$\hat b'=\hat b-z$</code> <br>
+The <code>parent Hamiltonian</code> is thus <code>$\hat H = (\hat b-z)^{\dagger}(\hat b-z)$</code> <br>
+The inner product between two Boson Coherent state is:</p>
+
+<div>$$\langle z'|z\rangle = e^{-(|z|^2+|z'|^2)/2} e^{z(z')^* } $$</div>
+
+<h4 id="boson-pairing-state">Boson Pairing State</h4>
+
+<p>Consider two orthonormal boson modes <code>$\hat b_1,\hat b_2$</code> , the boson pairing state is:</p>
+
+<div>$$\ket{\lambda} = (1-|\lambda|^2)^{1/2}\exp(\lambda \hat b_1^{\dagger}\hat b_2^{\dagger})\ket{0}$$</div>
+
+<p>Where <code>$\lambda \in \mathbb{C} , |\lambda|\lt 1$</code> . <br>
+This state is <code>not</code> an eigenstate of boson number : <code>$\hat b_1^{\dagger}\hat b_1+\hat b_2^{\dagger}\hat b_2$</code> <br>
+Bogoliubov transformation:</p>
+
+<div>$$\begin{aligned}
+\hat \gamma_1 &= u\hat b_1+v\hat b_2^{\dagger} \\
+\hat \gamma_2 &= u\hat b_2+v\hat b_1^{\dagger}
+\end{aligned}$$</div>
+
+<p>where <code>$u=(1-|\lambda|^2)^{-1/2} , v=-\lambda(1-|\lambda|^2)^{-1/2}$</code>.
+Then <code>$\hat \gamma_i\ket{\lambda}=0$</code> <br>
+The <code>parent Hamiltonian</code> is:</p>
+
+<div>$$\hat H =\hat \gamma_1^{\dagger}\hat \gamma_1+\hat \gamma_2^{\dagger}\hat \gamma_2$$</div>
+
+<h3 id="the-wick-expansion">The Wick Expansion</h3>
+
+<p>Let <code>$\ket{0}$</code> be the single-particle vacuum , Let <code>$\hat A_i (i=1,\cdots,2n)$</code> be a set of single-particle operators, namely linear cominations of annihilation and creation operators, then
+<code>$\bra{0}\hat A_1\hat A_2\cdots\hat A_{2n}\ket{0}$</code> is the <code>Hafnian(Pfaffian)</code> of matrix <code>$\bra{0}\hat A_i\hat A_j\ket{0}$</code> for bosons(fermions) . <br></p>
+
+<p><em>[Definition]</em> : <code>Hafnian</code> of <code>$2n\times 2n$</code> symmetric matrix <code>$M_{ij}$</code> is :</p>
+
+<div>$$\text{Hf}(\bm{M}) = \frac 1 {n!} \sum_{\sigma\in S_{2n}, \sigma(1)\lt \sigma(2), \sigma(3)\lt \sigma(4),\cdots} M_{\sigma(1)\sigma(2)} M_{\sigma(3)\sigma(4)}\cdots M_{\sigma(2n-1)\sigma(2n)}$$</div>
+
+<p><em>[Definition]</em> : <code>Pfaffian</code> of <code>$2n\times 2n$</code> anti-symmetric matrix <code>$M_{ij}$</code> is :</p>
+
+<div>$$\text{Pf}(\bm{M}) = \frac 1 {n!} \sum_{\sigma\in S_{2n}, \sigma(1)\lt \sigma(2), \sigma(3)\lt \sigma(4),\cdots} (-1)^{\sigma} M_{\sigma(1)\sigma(2)} M_{\sigma(3)\sigma(4)}\cdots M_{\sigma(2n-1)\sigma(2n)}$$</div>
+
+<p><em>[Notes]</em> : this is true only for such <code>free particle</code> states <code>$\ket{0}$</code> , the matrix <code>$\bra{0}\hat A_i\hat A_j\ket{0}$</code> may not be symmetric or anti-symmetric, but the above definition of Hafnian/Pfaffian still works for the Wick expansion</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/math" role="button">Math </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/quantummechanics/concepts/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Basic Concepts of Quantum Mechanics</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/quantummechanics/dynamics/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Quantum Dynamics</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#outline">
+												 Outline
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-fock-space">
+												 The Fock Space
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#permutation-group">
+												 Permutation Group
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#traditional-treatment">
+												 Traditional Treatment
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-structure-of-many-body-hilbert-space">
+												 The Structure of Many-body Hilbert Space
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#basis-of-many-body-hilbert-space">
+												 Basis of Many-body Hilbert Space
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#occupation-number-rep">
+												 Occupation Number Rep.
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#second-quantization">
+												 Second Quantization
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#creation-annihilation-operators">
+												 Creation &amp; Annihilation Operators
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#some-calculation-tricks">
+												 Some Calculation Tricks
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-second-quantization">
+												 The Second Quantization
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#special-many-body-states">
+												 Special Many-body States
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#fermion-product-state-fermi-sea">
+												 Fermion Product State(Fermi Sea)
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#fermion-pairing-state-bcs-state">
+												 Fermion Pairing State(BCS state)
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#boson-coherent-state">
+												 Boson Coherent State
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#boson-pairing-state">
+												 Boson Pairing State
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-wick-expansion">
+												 The Wick Expansion
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
