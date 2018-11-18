@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by (\phi(\bm{x},t)). Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field (\phi(\bm{x})) at each point of space . In general, the field can contain some internal degrees of freedom.
+The Lagrange function now is a functional of the field and its differential respects to time:
+$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$
+In general, it depends on the value of (\phi,\partial_t \phi) at all points in space. Note that the functional does not depend on the coordinate (\bm{x}) itself.
+The Lagrangian Formalism In this series, we will only study a class of fields, which is called as the local field theories without high order of time-derivative. Namely:
+$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$
+There should be no high order time-derivative in right-hand-side. Function (\mathcal{L}) is called Lagrange density or Lagrangian in this series. The gradient describes the local interaction of field.
+One can write a covariant Action abstractly :
+$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$">
+
+  <meta property="og:title" content="Classical Field Theory" />
+<meta property="og:description" content="Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by (\phi(\bm{x},t)). Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field (\phi(\bm{x})) at each point of space . In general, the field can contain some internal degrees of freedom.
+The Lagrange function now is a functional of the field and its differential respects to time:
+$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$
+In general, it depends on the value of (\phi,\partial_t \phi) at all points in space. Note that the functional does not depend on the coordinate (\bm{x}) itself.
+The Lagrangian Formalism In this series, we will only study a class of fields, which is called as the local field theories without high order of time-derivative. Namely:
+$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$
+There should be no high order time-derivative in right-hand-side. Function (\mathcal{L}) is called Lagrange density or Lagrangian in this series. The gradient describes the local interaction of field.
+One can write a covariant Action abstractly :
+$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalft/" /><meta property="article:published_time" content="2018-11-14T15:20:07&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-14T15:20:07&#43;08:00"/>
+
+
+
+  <title>
+  
+       Classical Field Theory | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalft/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/field-theory"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Field-Theory</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Classical Field Theory</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Nov 14, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>5 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Now we will study <code>Fields</code> . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by (\phi(\bm{x},t)). <br />
+<mark>Then the field is a system with an infinite number(uncountable) of degrees of freedom. </mark> <br />
+The dynamical variables of the theory are now the values of the field (\phi(\bm{x})) <code>at each point of space</code> . In general, the field can contain some internal degrees of freedom.</p>
+
+<p>The <code>Lagrange function</code> now is a <code>functional</code> of the field and its differential respects to time:</p>
+
+<p>$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$</p>
+
+<p>In general, it depends on the value of (\phi,\partial_t \phi) at all points in space. Note that the functional does not depend on the coordinate (\bm{x}) itself.</p>
+
+<h2 id="the-lagrangian-formalism">The Lagrangian Formalism</h2>
+
+<p>In this series, we will only study a class of fields, which is called as the <code>local field theories</code> without high order of time-derivative. Namely:</p>
+
+<p>$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$</p>
+
+<p>There should be no high order time-derivative in right-hand-side. Function (\mathcal{L}) is called <code>Lagrange density</code> or <code>Lagrangian</code> in this series. The gradient describes the <code>local interaction</code> of field.</p>
+
+<p>One can write a covariant <code>Action</code> abstractly :</p>
+
+<p>$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$</p>
+
+<p>where (x) denotes the 4-vector ((\bm{x},t)) and (\td^4x) is the <code>invariant-volume of cell</code>. The invariance of action under Lorentz Transformation requires that <mark>Lagrangian should be a Lorentz-scalar</mark></p>
+
+<p>One can obtain the equation of motion (<code>Euler-Lagrange equation</code>) by variation method:</p>
+
+<p>$$\frac {\partial \mathcal{L}} {\partial \phi} - \partial<em>{\mu} \frac {\partial \mathcal{L}} {\partial(\partial</em>{\mu}\phi)}=0$$</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>Because the variation of action is zero:</p>
+
+<p>$$\begin{aligned}
+\delta S &amp;= \int \td^4 x \Big{\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi +\sum<em>{\mu=0}^3 \frac {\partial \mathcal{L}} {\partial(\partial</em>{\mu}\phi)} \delta(\partial<em>{\mu}\phi)  \Big} <br />
+&amp;=\int \td^4 x \Big{\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi + \frac {\partial \mathcal{L}} {\partial(\partial</em>{0}\phi)} \partial<em>{0}\delta\phi + \sum</em>{i=1}^3 \frac {\partial \mathcal{L}} {\partial(\partial_i\phi)} \partial<em>i\delta\phi  \Big} <br />
+&amp;=\int \td^4 x\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi + \int \gamma\td^3\bm{x} \frac {\partial \mathcal{L}} {\partial(\partial</em>{0}\phi)} \delta\phi \Big|_{t_i}^{t<em>f} - \int \td^4 x\partial</em>{0} \frac {\partial \mathcal{L}} {\partial(\partial<em>{0}\phi)} \delta\phi <br />
+&amp;\ \ \ \ + \int</em>{\partial \Omega} {\cdots} -\int \td^4x \sum_{i=1}^3\partial_i \frac {\partial \mathcal{L}} {\partial(\partial<em>i\phi)} \delta\phi <br />
+&amp;=\int \td^4 x \Big{\frac {\partial \mathcal{L}} {\partial \phi} - \partial</em>{\mu} \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi)}\Big}\delta \phi<br />
+&amp;=0
+\end{aligned}$$</p>
+
+<p>Where the variation of field (\delta\phi) at initial(final) time (t_i(t_f)) shall be zero, and the integral on surface of whole space shall vanish too.</p>
+
+</details>
+
+
+<p>It is easy to generalize this equation to the field with multi independent internal degrees of freedom: (\phi\sim \phi^r \ r=1,\cdots,N) :</p>
+
+<p>$$\frac {\partial \mathcal{L}} {\partial \phi^r} - \partial<em>{\mu} \frac {\partial \mathcal{L}} {\partial(\partial</em>{\mu}\phi^r)}=0$$</p>
+
+<h2 id="the-hamilton-formalism">The Hamilton Formalism</h2>
+
+<p>To apply Hamilton&rsquo;s formalism to a field theory, we need first define the <code>canonically conjugate momentum</code> :</p>
+
+<p>$$\pi(x)\equiv\pi(\bm{x},t)=\frac {\delta L(t)} {\delta\flo{\phi}(\bm{x},t)} = \frac {\partial\mathcal{L}} {\partial (\partial_0 \phi)} $$</p>
+
+<p>And the <code>Hamiltonian</code> of a field system is:</p>
+
+<p>$$H(t) = \int \td^3 \bm{x} \mathcal{H} =\int \td^3 \bm{x} \Big(\pi(x)\flo{\phi}(x)-\mathcal{L} \Big)$$</p>
+
+<p>And one can define the <code>Poisson Bracket</code> of two functionals (F[\phi,\pi],G[\phi,\pi]) of field and its canonically conjugate field(momentum field):</p>
+
+<p>$${F,G}_{PB}=\int \td^3 \bm{x} \Big{\frac {\delta F} {\delta \phi(x)}\frac {\delta G} {\delta \pi(x)} - \frac {\delta F} {\delta \pi(x)} \frac {\delta G} {\delta \phi(x)} \Big} $$</p>
+
+<p>If (F,G) are all locally depend on field, that means they can expressed as the spatial integral of density functions (\mathcal{F}(\phi(x),\pi(x)),\mathcal{G}(\phi(x),\pi(x))) , the Poisson bracket will be:</p>
+
+<p>$${F,G}_{PB}=\int \td^3 \bm{x} \Big{\frac {\partial\mathcal{F}} {\partial \phi(x)}\frac {\partial\mathcal{G}} {\partial \pi(x)} - \frac {\partial\mathcal{F}} {\partial \pi(x)} \frac {\partial\mathcal{G}} {\partial \phi(x)} \Big} $$</p>
+
+<p>By Poisson bracket, one can write down the equation of motion of the time-dependent function: (F(t)=F[\phi,\pi]) in Hamilton Formalism:</p>
+
+<p>$$\frac {\td F(t)} {\td t} = {F,H}_{PB}$$</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>For any functional of (\phi,\pi) : (F(t)=F[\phi,\pi]) , we have its derivative respects of time is:</p>
+
+<p>$$\frac {\td F(t)} {\td t} = \int \td^3 \bm{x} \Big{\frac {\delta F} {\delta \phi(x)} \flo{\phi}+\frac {\delta F} {\delta \pi(x)} \flo{\pi} \Big}$$</p>
+
+<p>As for Hamiltonian, for we have:</p>
+
+<p>$$H(t) = \int \td^3 \bm{x} \ \pi(x)\flo{\phi}(x)-L$$</p>
+
+<p>or its variation:</p>
+
+<p>$$\delta H = \int \td^3 \bm{x} \ \pi \delta\flo{\phi} + \delta\pi \flo{\phi} -\delta L $$</p>
+
+<p>For (\delta L = \int \td^3 \bm{x} \pi \delta \flo{\phi} + \frac {\delta L} {\delta \phi(x)}\delta \phi (x)=\int \td^3 \bm{x} \pi\delta\flo{\phi}+\flo{\pi}\delta \phi)</p>
+
+<p>Which is yielded by the mechanics of point system.</p>
+
+<p>Then these equations directly yield:</p>
+
+<p>$$\flo{\phi} = \frac {\delta H} {\delta \pi} \ ; \ \flo{\pi}=-\frac {\delta H} {\delta \phi} $$</p>
+
+<p>And :</p>
+
+<p>$$\frac {\td F(t)} {\td t} = {F,H}_{PB}$$</p>
+
+</details>
+
+
+<p>Explicitly, when Hamilton density is only depend on the field, momentum and their gradient:</p>
+
+<p>$$\begin{aligned}
+\frac {\partial \phi(\bm{x},t)} {\partial t} &amp;= \frac {\delta H} {\delta \pi(\bm{x},t)} = \frac {\partial \mathcal{H}} {\partial \pi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \phi)} <br />
+\frac {\partial \pi(\bm{x},t)} {\partial t} &amp;= -\frac {\delta H} {\delta \phi(\bm{x},t)} =- \frac {\partial \mathcal{H}} {\partial \phi} + \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \pi)}
+\end{aligned}$$</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>First we compute the variation&rsquo;s of Hamiltonian in terms of Hamilton density:</p>
+
+<p>$$\begin{aligned}
+\delta H &amp;=\delta \int \td^3\bm{x} \mathcal{H}(\phi,\pi,\nabla \phi, \nabla\pi)<br />
+&amp;= \int \td^3 \bm{x} \Big{\frac {\partial \mathcal{H}} {\partial \phi} \delta \phi+\frac {\partial \mathcal{H}} {\partial \pi}\delta \pi + \frac {\partial \mathcal{H}} {\partial (\nabla \phi)} \cdot \nabla \phi+\frac {\partial \mathcal{H}} {\partial (\nabla \pi) } \cdot \nabla \pi \Big} <br />
+&amp;=\int \td^3 \bm{x}\Big{\big(\frac {\partial \mathcal{H}} {\partial \phi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla\phi)} \big)\delta \phi+(\phi\leftrightarrow \pi) \Big} + \int_{\partial \Omega}{\cdots}
+\end{aligned}$$</p>
+
+<p>With the integral on area vanishing, we have:</p>
+
+<p>$$\begin{aligned}
+\frac {\delta H} {\delta \pi(\bm{x},t)} &amp;= \frac {\partial \mathcal{H}} {\partial \pi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \phi)} <br />
+\frac {\delta H} {\delta \phi(\bm{x},t)} &amp;= \frac {\partial \mathcal{H}} {\partial \phi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \pi)}
+\end{aligned}$$</p>
+
+</details>
+
+
+<p>We can also compute the Poisson bracket between fields and momentum. Only noting (f(\bm{x},t)=\int \td^3 \bm{x}&rsquo; \delta^3(\bm{x}-\bm{x}&lsquo;)f(\bm{x}&lsquo;,t)) :</p>
+
+<p>$$\begin{aligned}
+{\phi(\bm{x},t),\phi(\bm{x}&lsquo;,t)}<em>{PB} &amp;= 0 <br />
+{\pi(\bm{x},t),\pi(\bm{x}&lsquo;,t)}</em>{PB} &amp;= 0 <br />
+{\phi(\bm{x},t),\pi(\bm{x}&lsquo;,t)}_{PB} &amp;= \delta^3(\bm{x}-\bm{x}&lsquo;)
+\end{aligned}$$</p>
+
+<p>Where one can treat the coordinate at left-hand-side as the parameter of the functional: (f(\bm{x},t)\equiv f<em>{\bm{x}}(t)=f</em>{\bm{x}}[\phi,\pi]) .</p>
+
+<h1 id="symmetry-of-fields">Symmetry of Fields</h1>
+
+<h2 id="fields-under-lorentz-transformation">Fields under Lorentz Transformation</h2>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/tmp/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Russian Jumping</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/linux/bluetoothaudio/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Bluetooth Audio Issues</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#introduction">
+												 Introduction
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-lagrangian-formalism">
+												 The Lagrangian Formalism
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-hamilton-formalism">
+												 The Hamilton Formalism
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#symmetry-of-fields">
+												 Symmetry of Fields
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#fields-under-lorentz-transformation">
+												 Fields under Lorentz Transformation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@email.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

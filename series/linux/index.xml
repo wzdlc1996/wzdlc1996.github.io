@@ -6,10 +6,25 @@
     <description>Recent content in Linux on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Wed, 31 Oct 2018 14:48:29 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Nov 2018 13:13:29 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bluetooth Audio Issues</title>
+      <link>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</guid>
+      <description> Switch HSV to A2DP A2DP not working with PulseAudio Here is the explanation from ArchWiki: A2DP not working with PulseAudio
+With Blueman-manager version 2.06 and PulseAudio version 12.2 , there is an issue that one cannot switch to A2DP with GUI. It will post the error message that Fail to change profile to A2DP . It seems only happening in Gnome. One need to avoid the GDM to start PulseAudio. The solution is:
+ Edit /etc/pulse/default.pa to close the default Bluetooth discover of pulse.
+nano /etc/pulse/default.pa # load-module module-bluetooth-discover  Edit /usr/bin/start-pulseaudio-x11 to open bluetooth discover by pactl . It should be:
+nano /usr/bin/start-pulseaudio-x11 if ... if [ x”$SESSION_MANAGER” != x ] ; then /usr/bin/pactl load-module module-x11-xsmp “display=$DISPLAY session_manager=$SESSION_MANAGER” &amp;gt; /dev/null fi #Insert this line# /usr/bin/pactl load-module module-bluetooth-discover fi  Usually this block of code is at the last line.
+  This solution is from:
+ Linux &amp;amp; Bluetooth BBS. Arch at #17 ArchWiki.Chinese Simplified  </description>
+    </item>
     
     <item>
       <title>Dual Graphic Card Configuration for Manjaro Linux</title>

@@ -6,13 +6,28 @@
     <description>Recent content in Quantum Mechanics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Mon, 12 Nov 2018 14:38:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 11:42:20 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/quantum-mechanics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Symmetriy in Quantum Mechanics</title>
+      <title>Angular Momentum and Spin</title>
+      <link>https://wzdlc1996.github.io/notes/quantummechanics/spin/</link>
+      <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
+      <description> SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With (\bm{r}=(x,y,z)^T) , it is the set of 3x3 matrices (\bm{R}) which satisfy:
+$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$
+SO(3) together with spatial inversion form the O(3) group: (\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3))
+Parameterizing SO(3) Group There are two ways to parameterize the SO(3) group:
+ Any SO(3) rotation can be descriped by angle (\theta) and axis (\bm{n}) . It can be denoted by: (\bm{R}_{\bm{n}}(\theta)) , and according to the definition, we have following properties:  (\bm{R}{\bm{n}}(\theta)^{-1}=\bm{R}{\bm{n}}(-\theta)) (\bm{R}{\bm{n}}(\theta) = \bm{R}{-\bm{n}}(-\theta)) (\bm{R}&amp;rsquo;\bm{R}n(\theta)(\bm{R}&amp;lsquo;)^{-1} = \bm{R}{\bm{R}&amp;rsquo;\bm{n}}(\theta))  One can also parameterize the SO(3) group by Euler angles: Any SO(3) rotation can be represented as:
+$$\bm{R}=\bm{R}_{\bm{e}z}(\alpha)\bm{R}{\bm{e}y}(\beta)\bm{R}{\bm{e}_z}(\gamma)$$
+Where (\alpha\in[0,\pi), \beta\in[0,\pi), \gamma\in[0,2\pi)) .  Matrix form  Rotations around \(z\) and \(y\) axis are explicitly: $$\bm{R}_{\bm{e}_z}(\theta) = \begin{bmatrix} \cos \theta &amp;amp; -\sin \theta &amp;amp; 0 \\ \sin\theta &amp;amp; \cos \theta &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix} \ ; \ \bm{R}_{\bm{e}_y}(\theta) = \begin{bmatrix} \cos \theta &amp;amp; 0 &amp;amp; \sin\theta \\ 0 &amp;amp; 1 &amp;amp; 0 \\ -\sin\theta &amp;amp; 0 &amp;amp; \cos \theta \end{bmatrix}$$     </description>
+    </item>
+    
+    <item>
+      <title>Symmetry in Quantum Mechanics</title>
       <link>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</link>
       <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
