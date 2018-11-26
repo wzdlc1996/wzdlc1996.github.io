@@ -6,15 +6,24 @@
     <description>Recent content in Series on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sun, 18 Nov 2018 21:49:41 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 19:23:43 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title></title>
+      <link>https://wzdlc1996.github.io/series/</link>
+      <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Field Theory</title>
       <link>https://wzdlc1996.github.io/series/field-theory/</link>
-      <pubDate>Sun, 18 Nov 2018 21:49:41 +0800</pubDate>
+      <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/series/field-theory/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>Quantum Mechanics</title>
       <link>https://wzdlc1996.github.io/series/quantum-mechanics/</link>
-      <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
+      <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/series/quantum-mechanics/</guid>
       <description></description>

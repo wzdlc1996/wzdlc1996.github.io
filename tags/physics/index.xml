@@ -6,36 +6,10 @@
     <description>Recent content in Physics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sun, 18 Nov 2018 21:49:41 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 15:20:07 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Classical Fields</title>
-      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfields/</link>
-      <pubDate>Sun, 18 Nov 2018 21:49:41 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfields/</guid>
-      <description>Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
-$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$
-And for the complex valued field, the Lagrangian is:
-$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{}\partial^\mu \phi - \frac {m^2} 2 \phi^{}\phi$$
-It can be treated as two independent real value field: (\phi=\phi_r+\ti \phi_i) and (\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i))
-We discuss the real valued field hereafter:
-The equation of motion is:
-$$(\partial^{\mu}\partial_{\mu} + m^2) \phi = (\square + m^2)\phi=0$$
-Where (\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2) is d&#39;Alembert operator . And the canonically conjugate field(momentum):
-$$\pi = \partial_0 \phi $$
-Then one can write down the Hamiltonian:
-$$H = \frac 1 2 \int \td^3 \bm{x} (\pi^2+ \nabla\phi\cdot \nabla \phi+m^2\phi^2)$$
-Solution of The Equation To solve the field equation, one can use the Fourier transformation:
-$$\phi(x) = \int \frac {\td^3\bm{k}\td \omega} {(2\pi)^{4&amp;frasl;2}} e^{\ti \bm{k}\cdot \bm{x}-\ti\omega t} a(\bm{k},\omega) = \int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4&amp;frasl;2}} e^{-\ti k_\mu x^\mu} a(k)$$
-Where the 4-vector (k=(\omega,\bm{k})) . Then the equation will be:
-$$\int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4&amp;frasl;2}} (-k\mu k^\mu+m^2) e^{-\ti k\mu x^\mu} a(k) = 0$$
-Which requires that (-k_\mu k^\mu+m^2=0) , which is the dispersion relationship :
-$$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$</description>
-    </item>
     
     <item>
       <title>Classical Field Theory</title>
@@ -43,30 +17,13 @@ $$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$</description>
       <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</guid>
-      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by (\phi(\bm{x},t)). Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field (\phi(\bm{x})) at each point of space . In general, the field can contain some internal degrees of freedom.
+      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space . In general, the field can contain some internal degrees of freedom.
 The Lagrange function now is a functional of the field and its differential respects to time:
-$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$
-In general, it depends on the value of (\phi,\partial_t \phi) at all points in space. Note that the functional does not depend on the coordinate (\bm{x}) itself.
+$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$ In general, it depends on the value of $\phi,\partial_t \phi$ at all points in space. Note that the functional does not depend on the coordinate $\bm{x}$ itself.
 The Lagrangian Formalism In this series, we will only study a class of fields, which is called as the local field theories without high order of time-derivative. Namely:
-$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$
-There should be no high order time-derivative in right-hand-side. Function (\mathcal{L}) is called Lagrange density or Lagrangian in this series. The gradient describes the local interaction of field.
+$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$ There should be no high order time-derivative in right-hand-side. Function $\mathcal{L}$ is called Lagrange density or Lagrangian in this series. The gradient describes the local interaction of field.
 One can write a covariant Action abstractly :
-$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$</description>
-    </item>
-    
-    <item>
-      <title>Angular Momentum and Spin</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/spin/</link>
-      <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
-      <description> SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With (\bm{r}=(x,y,z)^T) , it is the set of 3x3 matrices (\bm{R}) which satisfy:
-$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$
-SO(3) together with spatial inversion form the O(3) group: (\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3))
-Parameterizing SO(3) Group There are two ways to parameterize the SO(3) group:
- Any SO(3) rotation can be descriped by angle (\theta) and axis (\bm{n}) . It can be denoted by: (\bm{R}_{\bm{n}}(\theta)) , and according to the definition, we have following properties:  (\bm{R}{\bm{n}}(\theta)^{-1}=\bm{R}{\bm{n}}(-\theta)) (\bm{R}{\bm{n}}(\theta) = \bm{R}{-\bm{n}}(-\theta)) (\bm{R}&amp;rsquo;\bm{R}n(\theta)(\bm{R}&amp;lsquo;)^{-1} = \bm{R}{\bm{R}&amp;rsquo;\bm{n}}(\theta))  One can also parameterize the SO(3) group by Euler angles: Any SO(3) rotation can be represented as:
-$$\bm{R}=\bm{R}_{\bm{e}z}(\alpha)\bm{R}{\bm{e}y}(\beta)\bm{R}{\bm{e}_z}(\gamma)$$
-Where (\alpha\in[0,\pi), \beta\in[0,\pi), \gamma\in[0,2\pi)) .  Matrix form  Rotations around \(z\) and \(y\) axis are explicitly: $$\bm{R}_{\bm{e}_z}(\theta) = \begin{bmatrix} \cos \theta &amp;amp; -\sin \theta &amp;amp; 0 \\ \sin\theta &amp;amp; \cos \theta &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix} \ ; \ \bm{R}_{\bm{e}_y}(\theta) = \begin{bmatrix} \cos \theta &amp;amp; 0 &amp;amp; \sin\theta \\ 0 &amp;amp; 1 &amp;amp; 0 \\ -\sin\theta &amp;amp; 0 &amp;amp; \cos \theta \end{bmatrix}$$     </description>
+$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$ where $x$ denotes the 4-vector $(\bm{x},t)$ and $\td^4x$ is the invariant-volume of cell.</description>
     </item>
     
     <item>

@@ -169,6 +169,11 @@ $$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We 
           </li>
              
             <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
               <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
             </li>
           
@@ -380,7 +385,7 @@ $$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We 
 
     
       <li class="middot"></li>
-      <li>13 minutes read</li>
+      <li>14 minutes read</li>
     
   </ul>
   
@@ -451,7 +456,7 @@ Or equivalently:<code>$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu \beta} = \et
 </details>
 
 
-<p>In Special Relativity, Lorentz transformation describes the coordinate transformation between two references. We can classify Lorentz transformation by if it contain the time reversal and space inversion:
+<p>In Special Relativity, Lorentz transformation describes the coordinate transformation between two reference frames. We can classify Lorentz transformation by if it contain the time reversal and space inversion:
 <ol>
   <li><code>Proper, Orthochronous</code> : <code>$\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</code> </li>
   <li><code>Improper, Orthochronous</code> :<code>$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</code></li>
@@ -466,9 +471,9 @@ With <code>Proper Orthochronous</code> (<code>Restricted Lorentz Group</code>) n
 
 <h2 id="scalar-vector-and-tensor">Scalar, Vector and Tensor</h2>
 
-<p><em>[Definition]</em> : <code>Scalars</code> are some quantities, which is invariant when reference changes.</p>
+<p><em>[Definition]</em> : <code>Scalars</code> are some quantities, which is invariant when reference frame changes.</p>
 
-<p><em>[Definition]</em> : <code>Vectors</code> are those <code>4-components quantities</code>, which are transformed by <code>Lorentz Transformation</code> when reference changes: <code>$v'^{\mu} = \Lambda^{\mu}_{\indent \nu}v^{\nu}$</code> . For example, position <code>$x=(x^0,\bm{x})$</code> is a vector</p>
+<p><em>[Definition]</em> : <code>Vectors</code> are those <code>4-components quantities</code>, which are transformed by <code>Lorentz Transformation</code> when reference frame changes: <code>$v'^{\mu} = \Lambda^{\mu}_{\indent \nu}v^{\nu}$</code> . For example, position <code>$x=(x^0,\bm{x})$</code> is a vector</p>
 
 <p><em>[Definition]</em> : <code>Tensors</code> are multilinear maps from <code>$\mathcal{M}$</code>s and their <code>dual space</code> to scalars</p>
 
@@ -477,7 +482,7 @@ With <code>Proper Orthochronous</code> (<code>Restricted Lorentz Group</code>) n
 <div>$$T :\mathcal{M}^{\times m} \times (\mathcal{M}^* )^{\times n} \rightarrow \mathbb{R}$$</div>
 
 <p>Here, we use <code>$\mathcal{M}$</code> to note the vector space and <code>$\mathcal{M}^* $</code> to note the dual-vector space. The Minkowski spacetime is also a vector space <code>$\mathcal{M}$</code> describing the space-time coordinates. <br>
-In a reference, one can write the tensor <code>$T$</code> as a quantity with <code>$4(m+n)$</code> indices:</p>
+In a reference frame, one can write the tensor <code>$T$</code> as a quantity with <code>$4(m+n)$</code> indices:</p>
 
 <div>$$T \sim T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent \indent \nu_1,\cdots,\nu_n} \ \ \ \mu_p,\nu_q \in \{0,1,2,3\}$$</div>
 
@@ -717,7 +722,7 @@ P K^i P &= -K^i
 </details>
 
 
-<p><mark> This theorem hold for spinor representation too</mark></p>
+<p><mark> This theorem hold for spinor representation too</mark> , with the form : (P\Lambda<em>{L&reg;}P = \Lambda</em>{R(L)}) and (P a<em>{l&reg;} = a</em>{r(l)})</p>
 
 <p>In some degree, we say that Parity-Transformation will exchange the left-handed spinor and right-handed spinor. For the difference between left/right handed spinor is <code>$L\leftrightarrow L , K\leftrightarrow -K$</code> (That is why they are called as <code>handed</code>)</p>
 
@@ -817,7 +822,7 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
 
 <div>$$\begin{aligned}[]
 \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L &= \eta_{\mu\nu} z_{\alpha}^{*}z_{\beta} \sigma^{\alpha}\sigma^{\nu}\sigma^{\beta} \\
-&= \mathcal{L}^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
+&= (\Lambda)^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
 \end{aligned}$$</div>
 
 <p>We need to check if <code>$L^{\mu}_{\indent \nu}$</code> is the the vector representation of Lorentz Group, which shall be written as:</p>
@@ -897,7 +902,53 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
 
 <p>Finally, even it is trivial, we will give the transformation relationship of Dirac Spinor under the Lorentz Transformation:</p>
 
-<div>$$\psi \rightarrow \psi' = \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi$$</div>
+<div>$$\psi \rightarrow \psi' = \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi = \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi $$</div>
+
+<p>Where <code>$\omega_{\mu\nu}$</code> are the parameters of <code>$\Lambda$</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>Similar to what we have done before, we need only check the equalities of generators:</p>
+
+<div>$$\begin{aligned}
+\partial_{\theta^i} \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi \Bigg|_{\bm{\theta}=\bm{\eta}=0} &= \partial_{\theta^i} \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi\Big|_{\bm{\theta}=\bm{\eta}=0} \\
+\partial_{\eta^i} \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi \Bigg|_{\bm{\theta}=\bm{\eta}=0} &= \partial_{\eta^i} \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi\Big|_{\bm{\theta}=\bm{\eta}=0}
+\end{aligned}$$</div>
+
+<p>With <code>$\theta^i =  \epsilon^{ijk}\omega^{jk}/2 = \epsilon^{ijk}\omega_{jk}/2  , \eta^i=\omega_{0i}$</code> That is to check the equalities:</p>
+
+<div>$$\begin{aligned}
+\begin{bmatrix} -\ti \sigma^i /2 & 0 \\ 0 & -\ti \sigma^i/2 \end{bmatrix} \psi  &= -\sum_{jk}\frac {\ti} 4 \sigma_{jk}\epsilon^{ijk} \psi \\
+\begin{bmatrix} -\sigma^i/2 & 0 \\ 0 & \sigma^i/2 \end{bmatrix} \psi &= -(\frac {\ti} 2 \sigma_{0i}) \psi
+\end{aligned}$$</div>
+
+<p>For <code>$\sigma_{\mu\nu} = \frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</code> , we can calculate it in Weyl basis:</p>
+
+<div>$$\begin{aligned}
+\sigma_{\mu\nu} &= \frac {\ti} 2 \Bigg(\begin{bmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{bmatrix}\begin{bmatrix} 0 & \sigma^\nu \\ \bar{\sigma}^\nu & 0 \end{bmatrix}-\begin{bmatrix} 0 & \sigma^\nu \\ \bar{\sigma}^\nu & 0 \end{bmatrix}\begin{bmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{bmatrix}\Bigg) \\
+&= \frac {\ti} 2 \begin{bmatrix} \sigma^\mu \bar{\sigma}^\nu -\sigma^\nu \bar{\sigma}^\mu & 0 \\ 0 & \bar{\sigma}^\mu \sigma^\nu - \bar{\sigma}^\nu\sigma^\mu \end{bmatrix}
+\end{aligned}$$</div>
+
+<p>With the Pauli matrices&rsquo; property: <code>$[\sigma^i,\sigma^j] = 2\ti \epsilon^{ijk}\sigma^k$</code> , we have:</p>
+
+<div>$$\begin{aligned}
+\sigma_{i0} &= \ti \begin{bmatrix} \sigma^i & 0 \\ 0 & -\sigma^i \end{bmatrix} \\
+\sigma_{ij} &= \epsilon^{ijk} \begin{bmatrix}\sigma^k & 0 \\ 0 & \sigma^k \end{bmatrix}
+\end{aligned}$$</div>
+
+<p>Then we have:</p>
+
+<div>$$\begin{aligned}
+-\frac {\ti} 2 \sigma_{0i} &= \begin{bmatrix} -\sigma^i/2 & 0 \\ 0 &\sigma^i /2\end{bmatrix} \\
+-\sum_{jk} \frac {\ti} 4 \sigma_{jk}\epsilon^{ijk} &= -2\delta_i^l \begin{bmatrix}\sigma^l & 0 \\ 0 & \sigma^l \end{bmatrix} \frac {\ti} 4 = \begin{bmatrix}-\ti\sigma^i/2 & 0 \\ 0 & -\ti\sigma^i/2 \end{bmatrix}
+\end{aligned}$$</div>
+
+<p>The equalities are checked.</p>
+
+</details>
+
 
           </div>
 
