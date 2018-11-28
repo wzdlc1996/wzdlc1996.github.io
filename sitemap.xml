@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://wzdlc1996.github.io/notes/quantummechanics/spin/</loc>
+    <lastmod>2018-11-14T11:42:20+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</loc>
     <lastmod>2018-11-12T14:38:46+08:00</lastmod>
   </url>
@@ -77,6 +82,12 @@
   </url>
   
   <url>
+    <loc>https://wzdlc1996.github.io/categories/linux/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/tags/linux/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
     <priority>0</priority>
@@ -84,12 +95,6 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/series/linux/</loc>
-    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/categories/linux/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -119,13 +124,13 @@
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/tags/physics/</loc>
+    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
     <lastmod>2018-11-14T15:20:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
+    <loc>https://wzdlc1996.github.io/tags/physics/</loc>
     <lastmod>2018-11-14T15:20:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -138,7 +143,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/series/quantum-mechanics/</loc>
-    <lastmod>2018-11-12T14:38:46+08:00</lastmod>
+    <lastmod>2018-11-14T11:42:20+08:00</lastmod>
     <priority>0</priority>
   </url>
   

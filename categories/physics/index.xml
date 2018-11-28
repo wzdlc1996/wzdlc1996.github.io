@@ -27,6 +27,22 @@ $$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$ where $x$ denotes t
     </item>
     
     <item>
+      <title>Angular Momentum and Spin</title>
+      <link>https://wzdlc1996.github.io/notes/quantummechanics/spin/</link>
+      <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
+      <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
+$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$
+Parameterizing SO(3) Group There are two ways to parameterize the SO(3) group:
+ Any SO(3) rotation can be descriped by angle $\theta$ and axis $\bm{n}$ . It can be denoted by: $\bm{R}_{\bm{n}}(\theta)$ , and according to the definition, we have following properties:
+ $\bm{R}_{\bm{n}}(\theta)^{-1}=\bm{R}_{\bm{n}}(-\theta)$ $\bm{R}_{\bm{n}}(\theta) = \bm{R}_{-\bm{n}}(-\theta)$ $\bm{R}&#39;\bm{R}_n(\theta)(\bm{R}&#39;)^{-1} = \bm{R}_{\bm{R}&#39;\bm{n}}(\theta)$  One can also derive the matrix form of $\bm{R}_{\bm{n}}(\theta)$ directly:
+$$\bm{R}_{\bm{n}}(\theta) \bm{x} = (\bm{x}\cdot \bm{n})\bm{n} +(\bm{x}-(\bm{x}\cdot \bm{n})\bm{n})\cos\theta + (\bm{n}\times \bm{x})\sin\theta $$  Proof  For arbitrary vector $\bm{x}$ , one can always decompose it along $\bm{n}$ and the vertical one:
+$$\bm{x} = \bm{x}-(\bm{x}\cdot \bm{n})\bm{n} + (\bm{x}\cdot \bm{n})\bm{n}$$ The component along $\bm{n}$ will be invariant, but the vertical one will rotate with $\theta$ . One the plane, we have two linear-independent vectors:
+$$\begin{aligned} \bm{x}_1 &amp;= \bm{x}-(\bm{x}\cdot\bm{n})\bm{n} \\ \bm{x}_2 &amp;= - \bm{x}_1 \times \bm{n} = \bm{n}\times \bm{x} \end{aligned}$$ With $\theta$ means counterclockwise rotation, that is from $\bm{x}_1$ to $\bm{x}_2$ .</description>
+    </item>
+    
+    <item>
       <title>Symmetry in Quantum Mechanics</title>
       <link>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</link>
       <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>

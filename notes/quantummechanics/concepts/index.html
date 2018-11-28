@@ -814,34 +814,33 @@ has some special properties:</p>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
-    <pre><code>Generally, one can write `$\ket{\psi}\in\mathcal{H}_a\otimes \mathcal{H}_b$` as the expansion on basis `$e_{i,a}$` and `$e_{i,b}$` in `$\mathcal{H}_a$` and `$\mathcal{H}_b$` :
+    <p>Generally, one can write <code>$\ket{\psi}\in\mathcal{H}_a\otimes \mathcal{H}_b$</code> as the expansion on basis <code>$e_{i,a}$</code> and <code>$e_{i,b}$</code> in <code>$\mathcal{H}_a$</code> and <code>$\mathcal{H}_b$</code> :</p>
 
-&lt;div&gt;$$\ket{\psi} = \sum_{i,j} a_{ij}\ket{e_{i,a}}\ket{e_{j,b}}$$&lt;/div&gt;
+<div>$$\ket{\psi} = \sum_{i,j} a_{ij}\ket{e_{i,a}}\ket{e_{j,b}}$$</div>
 
-While the SVD of matrix `$\bm{A}$` whose elements are `$a_{ij}$` is :
+<p>While the SVD of matrix <code>$\bm{A}$</code> whose elements are <code>$a_{ij}$</code> is :</p>
 
-&lt;div&gt;$$\bm{A}= \bm{U}\bm{\Sigma}\bm{V}^{\dagger}$$&lt;/div&gt;
+<div>$$\bm{A}= \bm{U}\bm{\Sigma}\bm{V}^{\dagger}$$</div>
 
-And that is
+<p>And that is</p>
 
-&lt;div&gt;$$a_{ij} = \sum_l u_{i,l}\lambda_l v^*_{j,l}$$&lt;/div&gt;
+<div>$$a_{ij} = \sum_l u_{i,l}\lambda_l v^*_{j,l}$$</div>
 
-Then let `$\ket{\phi_l} = \sum_i u_{i,l} \ket{e_{i,a}} \ , \ \ket{\varphi_l} = \sum_j v^*_{j,l}\ket{e_{j,b}}$` , one have:
+<p>Then let <code>$\ket{\phi_l} = \sum_i u_{i,l} \ket{e_{i,a}} \ , \ \ket{\varphi_l} = \sum_j v^*_{j,l}\ket{e_{j,b}}$</code> , one have:</p>
 
-&lt;div&gt;$$\ket {\psi}=\sum_{l} \lambda_l \ket{\phi_l}\ket{\varphi_l}$$&lt;/div&gt;
+<div>$$\ket {\psi}=\sum_{l} \lambda_l \ket{\phi_l}\ket{\varphi_l}$$</div>
 
-While `$\ket{\phi_i},\ket{\varphi_i}$` are orthonormal in each Hilbert space for `$\bm{U},\bm{V}$` are unitary matrices. &lt;br&gt;
-And for the expansion, one can write the reduced density matrix as:
+<p>While <code>$\ket{\phi_i},\ket{\varphi_i}$</code> are orthonormal in each Hilbert space for <code>$\bm{U},\bm{V}$</code> are unitary matrices. <br>
+And for the expansion, one can write the reduced density matrix as:</p>
 
-&lt;div&gt;$$\begin{aligned}
-\hat \rho_a &amp;= \sum_k \bra{e_{k,b}} \sum_{i,j}\lambda_i\lambda_j^* \ket{\phi_i}\ket{\varphi_i}\bra{\phi_j}\bra{\varphi_j} \ket{e_{k,b}} \\
-&amp;= \sum_{i,j}\lambda_i\lambda_j^* \ket{\phi_i}\bra{\phi_j} \sum_k \langle \varphi_j |e_{k,b} \rangle \langle e_{k,b}| \varphi_i \rangle \\
-&amp;= \sum_i \lambda_i^2 \ket{\phi_i}\bra{\phi_i}
-\end{aligned}$$&lt;/div&gt;
+<div>$$\begin{aligned}
+\hat \rho_a &= \sum_k \bra{e_{k,b}} \sum_{i,j}\lambda_i\lambda_j^* \ket{\phi_i}\ket{\varphi_i}\bra{\phi_j}\bra{\varphi_j} \ket{e_{k,b}} \\
+&= \sum_{i,j}\lambda_i\lambda_j^* \ket{\phi_i}\bra{\phi_j} \sum_k \langle \varphi_j |e_{k,b} \rangle \langle e_{k,b}| \varphi_i \rangle \\
+&= \sum_i \lambda_i^2 \ket{\phi_i}\bra{\phi_i}
+\end{aligned}$$</div>
 
-For `$\hat \rho$` is Hermitian so `$\lambda_i\in\mathbb{R}$` . That is `$\lambda_i^2$` are eigenvalues of `$\hat \rho_a$` and `$\ket{\phi_i}$` are `$\hat \rho_a$` 's eigenstates &lt;br&gt;
-Further more, `$\lambda_i^2$` are also eigenvalues of `$\hat \rho_b$` and `$\ket{\varphi_i}$` are `$\hat \rho_b$`'s eigenstates.
-</code></pre>
+<p>For <code>$\hat \rho$</code> is Hermitian so <code>$\lambda_i\in\mathbb{R}$</code> . That is <code>$\lambda_i^2$</code> are eigenvalues of <code>$\hat \rho_a$</code> and <code>$\ket{\phi_i}$</code> are <code>$\hat \rho_a$</code> &rsquo;s eigenstates <br>
+Further more, <code>$\lambda_i^2$</code> are also eigenvalues of <code>$\hat \rho_b$</code> and <code>$\ket{\varphi_i}$</code> are <code>$\hat \rho_b$</code>&rsquo;s eigenstates.</p>
 
 </details>
 </li>
@@ -851,11 +850,12 @@ Further more, `$\lambda_i^2$` are also eigenvalues of `$\hat \rho_b$` and `$\ket
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
-    <pre><code>Using Schmidt decomposition: `$\ket{\phi}= \sum_i \lambda_i \ket{\phi_i}\ket{\varphi_i}$`, then one have:
-&lt;div&gt;$$S_b=-\sum_i \lambda_i^2\log \lambda_i^2=S_a$$&lt;/div&gt;
-For the details in the previous proof.
-Proved.
-</code></pre>
+    <p>Using Schmidt decomposition: <code>$\ket{\phi}= \sum_i \lambda_i \ket{\phi_i}\ket{\varphi_i}$</code>, then one have:</p>
+
+<div>$$S_b=-\sum_i \lambda_i^2\log \lambda_i^2=S_a$$</div>
+
+<p>For the details in the previous proof.
+Proved.</p>
 
 </details>
 </p></li>

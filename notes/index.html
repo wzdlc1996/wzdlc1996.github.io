@@ -360,6 +360,8 @@
 
   
 
+  
+
 
 
 
@@ -383,7 +385,7 @@
             
             <li class="py-1">
               <a href="https://wzdlc1996.github.io/categories/physics">
-                <span>Physics (6)</span>
+                <span>Physics (7)</span>
               </a>
             </li>           
           
@@ -422,6 +424,8 @@
 
   
 
+  
+
 
 
 
@@ -442,7 +446,7 @@
         
         
         
-            <li><a href="https://wzdlc1996.github.io/tags/physics" role="button"><span>physics (6)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/physics" role="button"><span>physics (7)</span></a></li>
           
         
             <li><a href="https://wzdlc1996.github.io/tags/linux" role="button"><span>linux (2)</span></a></li>
@@ -461,6 +465,8 @@
   
 
           
+  
+
   
 
   
@@ -499,7 +505,7 @@
         
           
           
-            <li class="py-1"><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><span>Quantum-Mechanics (4)</span></a></li>
+            <li class="py-1"><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><span>Quantum-Mechanics (5)</span></a></li>
           
             <li class="py-1"><a href="https://wzdlc1996.github.io/series/field-theory"><span>Field-Theory (2)</span></a></li>
           
@@ -532,7 +538,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  8 posts
+                  9 posts
                 </div>
               
             </div>
@@ -734,27 +740,31 @@ $$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$ where $x$ denotes t
           
               <div class="post-wrapper white-bg post-card">
   
-  <a href="https://wzdlc1996.github.io/notes/quantummechanics/symmetry/">
+  <a href="https://wzdlc1996.github.io/notes/quantummechanics/spin/">
     <div class="post-header text-center">
-      <div class="px-4 post-heading">Symmetry in Quantum Mechanics</div>
+      <div class="px-4 post-heading">Angular Momentum and Spin</div>
       <ul class="post-meta li-x mt-1">
         
-          <li>Nov 12, 2018</li>
+          <li>Nov 14, 2018</li>
         
     
         
           <li class="middot"></li>
-          <li>11 minutes read</li>
+          <li>19 minutes read</li>
         
       </ul>
     </div>
     
 
     
-      Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:
- Order of group : $|G|$ is the number of finite group elements Order of an element : $|g|$ is the minimal integer $n$ s.t. $g^n=1$ , or $\infty$ if $n$ does not exist Abelian group :if $\forall g,h\in G \Rightarrow gh=hg $ subgroup : $H\leq G$ : a subset $H\subset G$ which is also a group under multiplication $\circ$ left(right) coset : $gH(Hg) := \{gh(hg) : h\in H \}$ Normal subgroup : $H \unlhd G$ a subgroup satisfying $\forall g \in G \Rightarrow gH=Hg$ Quotient group : $G/H$ is the group of cosets for normal subgroup $H$ of $G$:
-$$H\unlhd G \Rightarrow G/H := \{gH : g\in G \} \text{ with } a,b\in G/H \Rightarrow a\circ b :=g_a g_b H \in G/H$$ Conjugacy class : $f,h\in G$ are conjugate if $\exists g \in G \Rightarrow gfg^{-1}=h$ all elements conjugate to $f$ form the conjugacy class of $f$......
+      SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
+$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$
+Parameterizing SO(3) Group There are two ways to parameterize the SO(3) group:
+ Any SO(3) rotation can be descriped by angle $\theta$ and axis $\bm{n}$ . It can be denoted by: $\bm{R}_{\bm{n}}(\theta)$ , and according to the definition, we have following properties:
+ $\bm{R}_{\bm{n}}(\theta)^{-1}=\bm{R}_{\bm{n}}(-\theta)$ $\bm{R}_{\bm{n}}(\theta) = \bm{R}_{-\bm{n}}(-\theta)$ $\bm{R}&#39;\bm{R}_n(\theta)(\bm{R}&#39;)^{-1} = \bm{R}_{\bm{R}&#39;\bm{n}}(\theta)$  One can also derive the matrix form of $\bm{R}_{\bm{n}}(\theta)$ directly:
+$$\bm{R}_{\bm{n}}(\theta) \bm{x} = (\bm{x}\cdot \bm{n})\bm{n} &#43;(\bm{x}-(\bm{x}\cdot \bm{n})\bm{n})\cos\theta &#43; (\bm{n}\times \bm{x})\sin\theta $$  Proof  For arbitrary vector $\bm{x}$ , one can always decompose it along $\bm{n}$ and the vertical one:
+$$\bm{x} = \bm{x}-(\bm{x}\cdot \bm{n})\bm{n} &#43; (\bm{x}\cdot \bm{n})\bm{n}$$ The component along $\bm{n}$ will be invariant, but the vertical one will rotate with $\theta$ . One the plane, we have two linear-independent vectors:
+$$\begin{aligned} \bm{x}_1 &amp;= \bm{x}-(\bm{x}\cdot\bm{n})\bm{n} \\ \bm{x}_2 &amp;= - \bm{x}_1 \times \bm{n} = \bm{n}\times \bm{x} \end{aligned}$$ With $\theta$ means counterclockwise rotation, that is from $\bm{x}_1$ to $\bm{x}_2$ .......
     
   </a>
 
