@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Leonard</title>
+    <link>https://wzdlc1996.github.io/tags/</link>
+    <description>Recent content in Tags on Leonard</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh_Hans</language>
+    <lastBuildDate>Thu, 15 Nov 2018 13:13:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://wzdlc1996.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux</title>
+      <link>https://wzdlc1996.github.io/tags/linux/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manjaro</title>
+      <link>https://wzdlc1996.github.io/tags/manjaro/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/manjaro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://wzdlc1996.github.io/tags/math/</link>
+      <pubDate>Mon, 12 Nov 2018 11:36:42 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement</title>
+      <link>https://wzdlc1996.github.io/tags/measurement/</link>
+      <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/measurement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Physics</title>
+      <link>https://wzdlc1996.github.io/tags/physics/</link>
+      <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/physics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quantum</title>
+      <link>https://wzdlc1996.github.io/tags/quantum/</link>
+      <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/quantum/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

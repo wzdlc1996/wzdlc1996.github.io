@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/artic/zenoeff/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</loc>
+    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/quantummechanics/spin/</loc>
+    <lastmod>2018-11-14T11:42:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</loc>
+    <lastmod>2018-11-12T14:38:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/quantummechanics/dynamics/</loc>
+    <lastmod>2018-11-12T14:15:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/</loc>
+    <lastmod>2018-11-12T13:42:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/quantummechanics/concepts/</loc>
+    <lastmod>2018-11-12T11:36:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/fieldtheory/premath/</loc>
+    <lastmod>2018-11-05T15:45:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</loc>
+    <lastmod>2018-10-31T14:48:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/artic/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/series/field-theory/</loc>
+    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/linux/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/linux/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/series/linux/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/manjaro/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/math/</loc>
+    <lastmod>2018-11-12T11:36:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/measurement/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
+    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/physics/</loc>
+    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/quantum/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/series/quantum-measurement/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/series/quantum-mechanics/</loc>
+    <lastmod>2018-11-14T11:42:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/reviews/</loc>
+    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/series/</loc>
+    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

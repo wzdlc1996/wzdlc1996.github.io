@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Field Theory on Leonard</title>
+    <link>https://wzdlc1996.github.io/series/field-theory/</link>
+    <description>Recent content in Field Theory on Leonard</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh_Hans</language>
+    <lastBuildDate>Wed, 14 Nov 2018 15:20:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://wzdlc1996.github.io/series/field-theory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classical Field Theory</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</link>
+      <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</guid>
+      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space . In general, the field can contain some internal degrees of freedom.
+The Lagrange function now is a functional of the field and its differential respects to time:
+$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$ In general, it depends on the value of $\phi,\partial_t \phi$ at all points in space. Note that the functional does not depend on the coordinate $\bm{x}$ itself.
+The Lagrangian Formalism In this series, we will only study a class of fields, which is called as the local field theories without high order of time-derivative. Namely:
+$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$ There should be no high order time-derivative in right-hand-side. Function $\mathcal{L}$ is called Lagrange density or Lagrangian in this series. The gradient describes the local interaction of field.
+One can write a covariant Action abstractly :
+$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$ where $x$ denotes the 4-vector $(\bm{x},t)$ and $\td^4x$ is the invariant-volume of cell.</description>
+    </item>
+    
+    <item>
+      <title>Preliminary Mathematics</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/premath/</link>
+      <pubDate>Mon, 05 Nov 2018 15:45:57 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
+      <description>Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
+[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
+$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :
+$$\eta_{\mu\nu}=\eta^{\mu\nu} = (+,-,-,-)$$ And dual vector of $x$ :
+$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$ where the Einstein Summation Convention has been applied. The inner product in Minkowski spacetime is:
+$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Lorentz Transformation [Definition] : Lorentz Transformation is a linear transformation which hold the inner product invariant:
+$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
+[Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
+$$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:</description>
+    </item>
+    
+  </channel>
+</rss>
