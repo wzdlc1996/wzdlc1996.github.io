@@ -1,12 +1,12 @@
 /* Customize */
-em {
+p > em {
   color: red;
   font-size: 20px;
   font-weight:600;
   font-family: cursive;
 }
 
-em:hover{
+p > em:hover{
   color: #c00000;
 }
 
@@ -60,6 +60,7 @@ body {
   /* color: #333; */
   color: var(--text-dark);
   line-height: 1.6;
+  padding-right: 0px !important;
 }
 
 img {
