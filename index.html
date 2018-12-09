@@ -15,7 +15,7 @@
 <meta property="og:description" content="[男なら 谁かのために强くなれ  A little site of Leonard, a physics worker]" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wzdlc1996.github.io/" />
-<meta property="og:updated_time" content="2018-11-22T19:23:43&#43;08:00"/>
+<meta property="og:updated_time" content="2018-12-09T14:56:40&#43;08:00"/>
 
 
   <title>
@@ -489,6 +489,8 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
 
 
 
@@ -534,6 +536,15 @@ autocomplete('#aa-search-input',
               </a>
             </li>           
           
+            
+              <li class="middot"></li>
+            
+            <li class="py-1">
+              <a href="https://wzdlc1996.github.io/categories/tools">
+                <span>Tools (1)</span>
+              </a>
+            </li>           
+          
         
       </div>
     </div>
@@ -544,6 +555,8 @@ autocomplete('#aa-search-input',
 
         
         
+
+  
 
   
 
@@ -597,6 +610,12 @@ autocomplete('#aa-search-input',
             <li><a href="https://wzdlc1996.github.io/tags/math" role="button"><span>math (2)</span></a></li>
           
         
+            <li><a href="https://wzdlc1996.github.io/tags/development" role="button"><span>development (1)</span></a></li>
+          
+        
+            <li><a href="https://wzdlc1996.github.io/tags/front-end" role="button"><span>front-end (1)</span></a></li>
+          
+        
             <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button"><span>measurement (1)</span></a></li>
           
         
@@ -611,6 +630,8 @@ autocomplete('#aa-search-input',
 
 
         
+  
+
   
 
   
@@ -745,6 +766,34 @@ autocomplete('#aa-search-input',
               
               
 <div class="card card-cascade wider">
+    <a href="https://wzdlc1996.github.io/series/hugo">
+  
+
+
+  
+
+    
+
+    
+
+
+<p class="card-title"><strong>Hugo (1)</strong></p>
+</a>
+
+</div>
+
+
+            
+          
+          
+
+            
+            
+            
+            
+              
+              
+<div class="card card-cascade wider">
     <a href="https://wzdlc1996.github.io/series/quantum-measurement">
   
 
@@ -786,6 +835,73 @@ autocomplete('#aa-search-input',
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/artic/insitesearch/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Setup an In-Site Search</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 9, 2018</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>6 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
+Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.
+This article follows the post of Yangming’s Blog [Hugo&amp;Algolia] .
+Sign up to Algolia It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by defauld, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.
+The direct interface for the user of Algolia is its Dashboard [Dashboard]. And in the indices page we can find how many indices have been used.
+Algolia provides three ways to add records: manual, upload JSON file, and API. Here we will use the third way: API to add our records.
+Tool: hugo-algolia To upload the records of the posts, we need to construct the JSON file to describe the content data.......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/tools"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> tools </a></li>
+        
+      
+      
+        
+          <li><a href="https://wzdlc1996.github.io/series/hugo"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>hugo</a></li>
+        
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/front-end" role="button">front-end </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/development" role="button">development </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -1011,67 +1127,6 @@ Parameterizing SO(3) Group There are two ways to parameterize the SO(3) group:
 $$\bm{R}_{\bm{n}}(\theta) \bm{x} = (\bm{x}\cdot \bm{n})\bm{n} &#43;(\bm{x}-(\bm{x}\cdot \bm{n})\bm{n})\cos\theta &#43; (\bm{n}\times \bm{x})\sin\theta $$  Proof  For arbitrary vector $\bm{x}$ , one can always decompose it along $\bm{n}$ and the vertical one:
 $$\bm{x} = \bm{x}-(\bm{x}\cdot \bm{n})\bm{n} &#43; (\bm{x}\cdot \bm{n})\bm{n}$$ The component along $\bm{n}$ will be invariant, but the vertical one will rotate with $\theta$ . One the plane, we have two linear-independent vectors:
 $$\begin{aligned} \bm{x}_1 &amp;= \bm{x}-(\bm{x}\cdot\bm{n})\bm{n} \\ \bm{x}_2 &amp;= - \bm{x}_1 \times \bm{n} = \bm{n}\times \bm{x} \end{aligned}$$ With $\theta$ means counterclockwise rotation, that is from $\bm{x}_1$ to $\bm{x}_2$ .......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
-        
-      
-      
-        
-          <li><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Quantum-Mechanics</a></li>
-        
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/notes/quantummechanics/symmetry/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Symmetry in Quantum Mechanics</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 12, 2018</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>11 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:
- Order of group : $|G|$ is the number of finite group elements Order of an element : $|g|$ is the minimal integer $n$ s.t. $g^n=1$ , or $\infty$ if $n$ does not exist Abelian group :if $\forall g,h\in G \Rightarrow gh=hg $ subgroup : $H\leq G$ : a subset $H\subset G$ which is also a group under multiplication $\circ$ left(right) coset : $gH(Hg) := \{gh(hg) : h\in H \}$ Normal subgroup : $H \unlhd G$ a subgroup satisfying $\forall g \in G \Rightarrow gH=Hg$ Quotient group : $G/H$ is the group of cosets for normal subgroup $H$ of $G$:
-$$H\unlhd G \Rightarrow G/H := \{gH : g\in G \} \text{ with } a,b\in G/H \Rightarrow a\circ b :=g_a g_b H \in G/H$$ Conjugacy class : $f,h\in G$ are conjugate if $\exists g \in G \Rightarrow gfg^{-1}=h$ all elements conjugate to $f$ form the conjugacy class of $f$......
     
   </a>
 

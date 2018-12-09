@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
+Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.
+This article follows the post of Yangming&rsquo;s Blog [Hugo&amp;Algolia] .
+Sign up to Algolia It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by defauld, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.
+The direct interface for the user of Algolia is its Dashboard [Dashboard]. And in the indices page we can find how many indices have been used.
+Algolia provides three ways to add records: manual, upload JSON file, and API. Here we will use the third way: API to add our records.
+Tool: hugo-algolia To upload the records of the posts, we need to construct the JSON file to describe the content data.">
+
+  <meta property="og:title" content="Setup an In-Site Search" />
+<meta property="og:description" content="Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
+Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.
+This article follows the post of Yangming&rsquo;s Blog [Hugo&amp;Algolia] .
+Sign up to Algolia It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by defauld, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.
+The direct interface for the user of Algolia is its Dashboard [Dashboard]. And in the indices page we can find how many indices have been used.
+Algolia provides three ways to add records: manual, upload JSON file, and API. Here we will use the third way: API to add our records.
+Tool: hugo-algolia To upload the records of the posts, we need to construct the JSON file to describe the content data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/insitesearch/" /><meta property="article:published_time" content="2018-12-09T14:56:40&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-09T14:56:40&#43;08:00"/>
+
+
+
+  <title>
+  
+       Setup an In-Site Search | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/artic/insitesearch/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128644147-1');
+</script>
+
+
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+    </div>
+
+
+
+
+  </nav>
+
+  
+  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/tools"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> tools </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/hugo"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>hugo</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Setup an In-Site Search</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Dec 9, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>6 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h1 id="introduction">Introduction</h1>
+
+<p><code>Hugo</code> is a static website constructor, based on <code>GO</code>. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [<a href="https://gohugo.io/tools/search/">hugo doc</a>]. Here we use the commercial search service: <code>Algolia</code> [<a href="https://www.algolia.com/">Algolia site</a>] .</p>
+
+<p>Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.</p>
+
+<p>This article follows the post of Yangming&rsquo;s Blog [<a href="https://www.qikqiak.com/post/hugo-integrated-algolia-search/">Hugo&amp;Algolia</a>] .</p>
+
+<h1 id="sign-up-to-algolia">Sign up to Algolia</h1>
+
+<p>It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by defauld, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.</p>
+
+<p>The direct interface for the user of Algolia is its <code>Dashboard</code> [<a href="https://www.algolia.com/dashboard">Dashboard</a>]. And in the indices page we can find how many indices have been used.</p>
+
+<p>Algolia provides three ways to add records: manual, upload <code>JSON</code> file, and API. Here we will use the third way: <code>API</code> to add our records.</p>
+
+<h1 id="tool-hugo-algolia">Tool: hugo-algolia</h1>
+
+<p>To upload the records of the posts, we need to construct the <code>JSON</code> file to describe the content data. There is a open-source tool <code>hugo-algolia</code> to handle this easily. The github-site is : [<a href="https://github.com/10Dimensional/hugo-algolia">Github site</a>].</p>
+
+<blockquote>
+<p>This tool is used to generate and send indices from Hugo static sites for use with Algolia</p>
+</blockquote>
+
+<p>And it supports YAML, JSON, and TOML front matter.</p>
+
+<p>The installation is easy to do with <code>npm</code>:</p>
+
+<pre><code class="language-shell">npm install hugo-algolia
+</code></pre>
+
+<p>remember to let it executable with <code>chmod +x</code></p>
+
+<p>And one can simply use it with TOML front file to generate the JSON file:</p>
+
+<pre><code class="language-shell">hugo-algolia --config ./config.toml
+</code></pre>
+
+<p>It will generate a JSON file in the <code>$hugoroot/public</code> folder, in which all posts in <code>$hugoroot/content</code> will be listed.</p>
+
+<p>One can also use the <code>-s</code> flag to send them to Algolia. However this tool can not read the <code>appID</code> and <code>key</code> in <code>TOML</code> file, we can make some hack on it. A temporal adjustment is edit the file <code>$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js</code>, rewrite the function <code>HugoAlgolia.prototype.setCredentials</code> :</p>
+
+<pre><code class="language-js">//$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js
+
+HugoAlgolia.prototype.setCredentials = function() {
+/*
+   Original code, one can find that it called the module &quot;matter&quot; to handle the
+   YAML file. Now YAML can handle the TOML too with the same usage, but the
+   author of hugo-algolia has not correct it yet.
+
+   const configMeta = matter.read(self.pathToCredentials);
+   const creds = configMeta.data.algolia;
+
+   if (creds) {
+     self.algoliaCredentials = {
+       indexName: creds.index,
+       key: write_key &amp;&amp; write_key !== undefined ? write_key : creds.key,
+       appID: creds.appID
+     };
+     self.localIndexName = creds.index;
+   }
+*/
+/*
+   Here we directly write the &quot;index&quot;, &quot;key&quot;, and &quot;appID&quot; here so that them can
+   be send to Algolia correctly.
+
+*/
+   self.algoliaCredentials = {
+       indexName: &quot;Your Index Name&quot;,
+       key: &quot;Administrator's Key&quot;,
+       appID: &quot;The Application ID&quot;
+     };
+     self.localIndexName = &quot;Your Index Name&quot;;
+ };
+</code></pre>
+
+<p>With the adjustment, we can use the command:</p>
+
+<pre><code class="language-shell">hugo-algolia -s --config ./config.toml
+</code></pre>
+
+<p>at hugo root folder to generate the JSON indices file and send them to Algolia.</p>
+
+<p>After this process we can find them under the <code>indices</code> page in the dashboard.</p>
+
+<h1 id="front-end-setup">Front-end Setup</h1>
+
+<p>Now we have submitted posts we want to Algolia. Then we need to make a front-end UI to use it. It is different for different hugo themes. Here we use a simple one:</p>
+
+<p>we will add a little icon which is a <code>&lt;a&gt;</code> element actually, and when one click on it, there will be a <code>modal</code> subpage by the <code>bootstrap 4</code> library. And there will be a input dialog in it. Then we can use it to search the posts.</p>
+
+<p>We need to add the <code>bootstrap 4</code> in the site, and because of the dependence, we need also add the <code>jquery</code> lib. Edit the <code>$themepath/layouts/partials/head.html</code> file:</p>
+
+<pre><code class="language-html">&lt;!--$themepath/layouts/partials/head.html--&gt;
+&lt;!--Bootstrap--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot; integrity=&quot;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; integrity=&quot;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js&quot; integrity=&quot;sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js&quot; integrity=&quot;sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>One need to remove the origin <code>bootstrap css</code> importation if exists.</p>
+
+<p>Then we can make the front-end ui:</p>
+
+<p>First we need to add a file like <code>$themepath/layouts/partials/search.html</code>:</p>
+
+<pre><code class="language-html">&lt;!--$themepath/layouts/partials/search.html--&gt;
+
+&lt;div class=&quot;aa-input-container&quot; id=&quot;aa-input-container&quot;&gt;
+    &lt;input type=&quot;search&quot; id=&quot;aa-search-input&quot; class=&quot;aa-input-search&quot; placeholder=&quot;Search for titles or URIs...&quot; name=&quot;search&quot; autocomplete=&quot;off&quot; /&gt;
+    &lt;svg class=&quot;aa-input-icon&quot; viewBox=&quot;654 -372 1664 1664&quot;&gt;
+        &lt;path d=&quot;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+&lt;script src=&quot;{{ &quot;https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js&quot; | absURL }}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{{ &quot;https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js&quot; | absURL }}&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+/*here you need to write your appID and apiKey(not administrator key!)*/
+var client = algoliasearch(&quot;Application ID&quot;, &quot;API Key&quot;);
+var index = client.initIndex('Your Index Name');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            /*here the link format might be need to correct according to your site */
+            return '&lt;span&gt;' + '&lt;a href=&quot;/' + suggestion.uri.toLowerCase() + '/&quot;&gt;' +
+            suggestion._highlightResult.title.value + '&lt;/a&gt;&lt;/span&gt;';
+        }
+    }
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>Where the <code>svg</code> element is a little magnifier icon.</p>
+
+<p>Then we need to make a entry. For <code>AllinOne</code> theme: [<a href="https://github.com/orianna-zzo/AllinOne">AllinOne homepage</a>] , we will set it on the left of <code>navbar</code>. Edit the file <code>$themepath/layouts/partials/site-navbar.html</code> , add this <code>&lt;a&gt;</code> element at the end of the <code>&lt;div&gt;</code> in the label <code>&lt;nav&gt;</code> , before the last <code>&lt;/div&gt;</code> notation.</p>
+
+<pre><code class="language-html">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;
+&lt;a data-toggle=&quot;modal&quot; data-target=&quot;#modalSearch&quot; style=&quot;outline: none;&quot;&gt;
+  &lt;svg class=&quot;aa-input-butn&quot; viewBox=&quot;654 -372 1664 1664&quot;&gt;
+  &lt;path d=&quot;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;
+</code></pre>
+
+<p>And add the following <code>&lt;div&gt;</code> after the <code>&lt;nav&gt;</code> :</p>
+
+<pre><code class="language-html">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modalSearch&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalLabel&quot;&gt;Search&lt;/h5&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+          &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        {{ partial &quot;search.html&quot; . }}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>You need also add a <code>CSS</code> file in which to assign the style of these elements:</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        CSS file
+    </summary>
+    <pre><code class="language-CSS">/*#themepath/static/css/search.css*/
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+.aa-input-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.aa-input-container span,.aa-input-container input {
+    width: inherit;
+}
+.aa-input-search {
+  width: 300px;
+  padding: 12px 28px 12px 12px;
+  border: 2px solid #e4e4e4;
+  border-radius: 4px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-family: &quot;Montserrat&quot;, sans-serif;
+  box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
+  font-size: 11px;
+  box-sizing: border-box;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.aa-input-search::-webkit-search-decoration, .aa-input-search::-webkit-search-cancel-button, .aa-input-search::-webkit-search-results-button, .aa-input-search::-webkit-search-results-decoration {
+    display: none;
+}
+.aa-input-search:focus {
+    outline: 0;
+    border-color: #3a96cf;
+    box-shadow: 4px 4px 0 rgba(58, 150, 207, 0.1);
+}
+.aa-input-icon {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  fill: #e4e4e4;
+}
+.aa-input-butn {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  fill: #e4e4e4;
+}
+.aa-hint {
+  color: #e4e4e4;
+}
+.aa-dropdown-menu {
+  background-color: #fff;
+  border: 2px solid rgba(228, 228, 228, 0.6);
+  border-top-width: 1px;
+  font-family: &quot;Montserrat&quot;, sans-serif;
+  width: 300px;
+  margin-top: 10px;
+  box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
+  font-size: 11px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.aa-suggestion {
+  padding: 12px;
+  border-top: 1px solid rgba(228, 228, 228, 0.6);
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.aa-suggestion:hover, .aa-suggestion.aa-cursor {
+    background-color: rgba(241, 241, 241, 0.35);
+}
+.aa-suggestion &gt; span:first-child {
+    color: #333;
+}
+.aa-suggestion &gt; span:last-child {
+    text-transform: uppercase;
+    color: #a9a9a9;
+}
+.aa-suggestion &gt; span:first-child em, .aa-suggestion &gt; span:last-child em {
+  font-weight: 700;
+  font-style: normal;
+  background-color: rgba(58, 150, 207, 0.1);
+  padding: 2px 0 2px 2px;
+}
+</code></pre>
+
+</details>
+
+
+<p>And add it to the <code>$themepath/layouts/partials/head.html</code> to let it contain the css file:</p>
+
+<pre><code class="language-html">&lt;!--$themepath/layouts/partials/head.html--&gt;
+&lt;!--Search--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ &quot;css/search.css&quot; | absURL }}&quot; /&gt;
+</code></pre>
+
+<p>There might be a little bug of the bootstrap modal, which let the <code>padding-right</code> of <code>body</code> increase at each time to use the modal. To correct this, we can add a line to the <code>$themepath/static/css/main.css</code> :</p>
+
+<pre><code class="language-CSS">body {
+  padding-right: 0px !important;
+}
+</code></pre>
+
+<h1 id="result">Result</h1>
+
+<p>After all, we will have a search icon in the left of the navigation bar. It will be looked like:</p>
+
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/InsiteSearch_1.png"/></div>
+
+
+<h1 id="reference">Reference:</h1>
+
+<ol>
+<li><a href="https://gohugo.io/tools/search/">Hugo official doc</a></li>
+<li><a href="https://www.algolia.com/">Algolia official page</a></li>
+<li><a href="https://www.qikqiak.com/post/hugo-integrated-algolia-search/">Yangming&rsquo;s Blog</a></li>
+<li><a href="https://www.algolia.com/dashboard">Algolia Dashboard</a></li>
+<li><a href="https://github.com/10Dimensional/hugo-algolia">Github/10Dimensional/hugo-algolia</a></li>
+<li><a href="https://github.com/orianna-zzo/AllinOne">Github/orianna-zzo/AllinOne</a></li>
+</ol>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/front-end" role="button">front-end </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/development" role="button">development </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/artic/zenoeff/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Quantum Zeno Effect</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#introduction">
+												 Introduction
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#sign-up-to-algolia">
+												 Sign up to Algolia
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#tool-hugo-algolia">
+												 Tool: hugo-algolia
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#front-end-setup">
+												 Front-end Setup
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#result">
+												 Result
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#reference">
+												 Reference:
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
