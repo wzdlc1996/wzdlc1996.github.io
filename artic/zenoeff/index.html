@@ -451,7 +451,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>11 minutes read</li>
+      <li>13 minutes read</li>
     
   </ul>
   
@@ -706,8 +706,6 @@ R_3 &= \rho_{22}-\rho_{11}
 
 <p>When <code>$\tau\rightarrow 0$</code> or <code>$n\rightarrow \infty$</code> , we will find that <code>$P_1(T)=1$</code> , which is the QZE.</p>
 
-<p>###</p>
-
 <h2 id="anti-zeno-effect">Anti-Zeno Effect</h2>
 
 <p>When the time interval <code>$\tau\rightarrow 0$</code> , the system will never decay. But with finite <code>$\tau$</code> , the measurement sequence will accelerate the decay or slow it down, which depend on the time interval <code>$\tau$</code> .</p>
@@ -766,6 +764,36 @@ R_3 &= \rho_{22}-\rho_{11}
 <div>$$\ket{u}\ket{O} \rightarrow_{N\tau;\tau\rightarrow 0} \frac {\alpha T \tau} 2 \ket{s}\ket{O:\text{decayed}} + (1-\frac {\alpha T \tau} 2)\ket{u}\ket{O:\text{undecayed}} = \ket{u}\ket{O:\text{undecayed}} $$</div>
 
 <p>That is QZE.</p>
+
+<h2 id="itano-s-experiment-and-rsi">Itano&rsquo;s Experiment and RSI</h2>
+
+<p>In the comment article by L.E.Ballentine [<a href="https://journals.aps.org/pra/pdf/10.1103/PhysRevA.43.5165">Ballentine 1991</a>] , he disagreed with the &ldquo;wavefunction collapse postulate&rdquo; in Itano&rsquo;s experiment and paper. Ballentine&rsquo;s argument is consistent to the RSI but in his original paper he did not cite the word of Everett.</p>
+
+<p>Here we will introduce his argument. We will begin with the initial states of ions are all <code>$\ket{1}$</code> , and also assume that the decay from <code>$\ket{3}$</code> to <code>$\ket{1}$</code> is extremely fast. With a photon detector <code>$\ket{\{\cdots\}}$</code> (where the <code>$\cdots$</code> notes the history of the detector) we will have the &ldquo;measurement&rdquo; process, or the entanglement process of ion and detector:</p>
+
+<div>$$\ket{1^n ,2^{N-n}}\otimes \ket{\{\cdots\}}\rightarrow \ket{1^n,2^{N-n}}\otimes\ket{\{n,\cdots\}}$$</div>
+
+<p>Then for the Rabi oscillation between <code>$\ket{1}$</code> and <code>$\ket{2}$</code> , we have the evolution of the system in the <code>$\tau$</code> (in occupation basis and let <code>$\Omega\tau=\xi$</code>) :</p>
+
+<div>$$\begin{aligned}
+\ket{1^m,2^n} &\rightarrow_{\tau} (\cos\Omega\tau \ket{1}-\ti\sin\Omega\tau\ket{2})^{\otimes m}(-\ti\sin\Omega\tau\ket{1}+\cos\Omega\tau\ket{2})^{\otimes n} \\
+&=\sum_{j=0}^m\sum_{k=0}^n C_m^j C_n^k \cos^{j+n-k} \xi(-\ti\sin\xi)^{m-j+k} \ket{1^{j+k},2^{m+n-j-k}} \\
+&=\sum_{l=0}^{m+n}R_{l;m,n}(\xi)\ket{1^l,2^{m+n-l}}
+\end{aligned}$$</div>
+
+<p>Where <code>$R_{l;m,n}(\xi)=\sum_{j=0}^l C_m^j  C_n^{l-j} \cos^{2j+n-l}\xi (-\ti\sin\xi)^{m+l-2j}$</code> , in which invalid binomial coefficient should be zero.</p>
+
+<p>Then we can write the evolution of the system and detector:</p>
+
+<div>$$\begin{aligned}
+\ket{1}^{\otimes N}\otimes\ket{\{\}} & \rightarrow_{\tau} \sum_{n=0}^N R_{n;N,0}(\xi)\ket{1^n,2^{N-n}}\otimes \ket{\{n\}} \\
+\ket{1}^{\otimes N}\otimes\ket{\{\}}& \rightarrow_{2\tau} \sum_{n=0}^N R_{n;N,0}(\xi) \sum_{n'=0}^N R_{n';n,N-n}(\xi) \ket{1^{n'},2^{N-n'}}\otimes \ket{\{n',n\}} \\
+\cdots
+\end{aligned}$$</div>
+
+<p>In the special situation where <code>$N=1$</code> , it is reduced to what we discussed in the last section: the Zeno effect for a pure state in RSI. And for general situation, we know that <code>$R_{l;m,n}(\xi)$</code> is a representation of the <code>dynamics semi-group</code> of Quantum mechanics. According to the original word of Misra [<a href="https://aip.scitation.org/doi/10.1063/1.523304">Misra 1977</a>] , the conclusion is the same.</p>
+
+<p>We need to point out, the <code>photon detector</code> might not be a classical apparatus. In fact, the decoherence of the state is caused by the spontaneous emission. And in that it does not need a &ldquo;detector&rdquo; actually. It can be find in Petrosky&rsquo;s paper [<a href="https://www.researchgate.net/publication/222378644_Quantum_Zeno_effect">Petrosky 1990</a>]. They discussed the Hamiltonian of the total system together with the spontaneous emission and photon absorption to excite the ion.</p>
 
           </div>
 
@@ -1277,6 +1305,32 @@ R_3 &= \rho_{22}-\rho_{11}
 										<li class="nav-item">
 						 					<a class="nav-link" href="#qze-in-rsi">
 												 QZE in RSI
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#itano-s-experiment-and-rsi">
+												 Itano’s Experiment and RSI
 											</a>
 										</li>
 						 

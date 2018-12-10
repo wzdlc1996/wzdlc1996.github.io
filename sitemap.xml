@@ -99,12 +99,6 @@
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/tags/linux/</loc>
-    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://wzdlc1996.github.io/series/linux/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
     <priority>0</priority>
@@ -112,6 +106,12 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/categories/linux/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/linux/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -141,13 +141,13 @@
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/tags/physics/</loc>
+    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
     <lastmod>2018-11-14T15:20:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
+    <loc>https://wzdlc1996.github.io/tags/physics/</loc>
     <lastmod>2018-11-14T15:20:07+08:00</lastmod>
     <priority>0</priority>
   </url>
