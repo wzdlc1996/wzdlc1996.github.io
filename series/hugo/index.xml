@@ -20,7 +20,7 @@
       <description>Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
 Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.
 This article follows the post of Yangming&amp;rsquo;s Blog [Hugo&amp;amp;Algolia] .
-Sign up to Algolia It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by defauld, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.
+Sign up to Algolia It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by the default, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.
 The direct interface for the user of Algolia is its Dashboard [Dashboard]. And in the indices page we can find how many indices have been used.
 Algolia provides three ways to add records: manual, upload JSON file, and API. Here we will use the third way: API to add our records.
 Tool: hugo-algolia To upload the records of the posts, we need to construct the JSON file to describe the content data.</description>
