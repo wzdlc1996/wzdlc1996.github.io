@@ -6,10 +6,32 @@
     <description>Recent content in Physics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Wed, 14 Nov 2018 15:20:07 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Dec 2018 15:21:12 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Classical Fields: Dirac Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</link>
+      <pubDate>Tue, 11 Dec 2018 15:21:12 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</guid>
+      <description>Dirac Field Formalism [Definition] : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:
+$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$ This Lagrangian are not symmetric to $\psi$ and $\bar{\psi}$ , but this form will not lead the momentum vanish.
+Note that $\psi$ is a 4-components Dirac Spinor.</description>
+    </item>
+    
+    <item>
+      <title>Classical Fields: Scalar Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</link>
+      <pubDate>Sun, 18 Nov 2018 21:49:41 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</guid>
+      <description>Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
+$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
+$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r+\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</description>
+    </item>
     
     <item>
       <title>Classical Field Theory</title>
@@ -17,13 +39,7 @@
       <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</guid>
-      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space . In general, the field can contain some internal degrees of freedom.
-The Lagrange function now is a functional of the field and its differential respects to time:
-$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$ In general, it depends on the value of $\phi,\partial_t \phi$ at all points in space. Note that the functional does not depend on the coordinate $\bm{x}$ itself.
-The Lagrangian Formalism In this series, we will only study a class of fields, which is called as the local field theories without high order of time-derivative. Namely:
-$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$ There should be no high order time-derivative in right-hand-side. Function $\mathcal{L}$ is called Lagrange density or Lagrangian in this series. The gradient describes the local interaction of field.
-One can write a covariant Action abstractly :
-$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$ where $x$ denotes the 4-vector $(\bm{x},t)$ and $\td^4x$ is the invariant-volume of cell.</description>
+      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space .</description>
     </item>
     
     <item>
@@ -33,13 +49,7 @@ $$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$ where $x$ denotes t
       
       <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
       <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
-$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$
-Parameterizing SO(3) Group There are two ways to parameterize the SO(3) group:
- Any SO(3) rotation can be descriped by angle $\theta$ and axis $\bm{n}$ . It can be denoted by: $\bm{R}_{\bm{n}}(\theta)$ , and according to the definition, we have following properties:
- $\bm{R}_{\bm{n}}(\theta)^{-1}=\bm{R}_{\bm{n}}(-\theta)$ $\bm{R}_{\bm{n}}(\theta) = \bm{R}_{-\bm{n}}(-\theta)$ $\bm{R}&#39;\bm{R}_n(\theta)(\bm{R}&#39;)^{-1} = \bm{R}_{\bm{R}&#39;\bm{n}}(\theta)$  One can also derive the matrix form of $\bm{R}_{\bm{n}}(\theta)$ directly:
-$$\bm{R}_{\bm{n}}(\theta) \bm{x} = (\bm{x}\cdot \bm{n})\bm{n} +(\bm{x}-(\bm{x}\cdot \bm{n})\bm{n})\cos\theta + (\bm{n}\times \bm{x})\sin\theta $$  Proof  For arbitrary vector $\bm{x}$ , one can always decompose it along $\bm{n}$ and the vertical one:
-$$\bm{x} = \bm{x}-(\bm{x}\cdot \bm{n})\bm{n} + (\bm{x}\cdot \bm{n})\bm{n}$$ The component along $\bm{n}$ will be invariant, but the vertical one will rotate with $\theta$ . One the plane, we have two linear-independent vectors:
-$$\begin{aligned} \bm{x}_1 &amp;= \bm{x}-(\bm{x}\cdot\bm{n})\bm{n} \\ \bm{x}_2 &amp;= - \bm{x}_1 \times \bm{n} = \bm{n}\times \bm{x} \end{aligned}$$ With $\theta$ means counterclockwise rotation, that is from $\bm{x}_1$ to $\bm{x}_2$ .</description>
+$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$</description>
     </item>
     
     <item>
@@ -49,9 +59,7 @@ $$\begin{aligned} \bm{x}_1 &amp;= \bm{x}-(\bm{x}\cdot\bm{n})\bm{n} \\ \bm{x}_2 &
       
       <guid>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</guid>
       <description>Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:
- Order of group : $|G|$ is the number of finite group elements Order of an element : $|g|$ is the minimal integer $n$ s.t. $g^n=1$ , or $\infty$ if $n$ does not exist Abelian group :if $\forall g,h\in G \Rightarrow gh=hg $ subgroup : $H\leq G$ : a subset $H\subset G$ which is also a group under multiplication $\circ$ left(right) coset : $gH(Hg) := \{gh(hg) : h\in H \}$ Normal subgroup : $H \unlhd G$ a subgroup satisfying $\forall g \in G \Rightarrow gH=Hg$ Quotient group : $G/H$ is the group of cosets for normal subgroup $H$ of $G$:
-$$H\unlhd G \Rightarrow G/H := \{gH : g\in G \} \text{ with } a,b\in G/H \Rightarrow a\circ b :=g_a g_b H \in G/H$$ Conjugacy class : $f,h\in G$ are conjugate if $\exists g \in G \Rightarrow gfg^{-1}=h$ all elements conjugate to $f$ form the conjugacy class of $f$</description>
+ Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:</description>
     </item>
     
     <item>
@@ -60,13 +68,7 @@ $$H\unlhd G \Rightarrow G/H := \{gH : g\in G \} \text{ with } a,b\in G/H \Righta
       <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/quantummechanics/dynamics/</guid>
-      <description>Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:
-$$\ket{\psi(t&#39;)} = \hat U(t&#39;,t)\ket{\psi(t)}$$ The evolution operator has the following property:
-$$\hat U(t&#39;&#39;,t&#39;)\hat U(t&#39;,t)=\hat U(t&#39;&#39;,t) \ \ ; \ \hat U(t,t)=\hat 1$$ It is usually continuous and reversible
-The infinitesimal time evolution:
-$$\hat U(t+\td t,t) = \hat 1 -\frac {\ti} {\hbar} \hat H(t)\td t +O(dt^2)$$ Where the Hamiltonian is:
-$$\hat H(t) = \ti \hbar \frac {\td} {\td t&#39;} \hat U(t&#39;,t)\Big|_{t&#39;=t}=\ti \hbar \frac {\td \hat U(t&#39;,t)} {\td t&#39;} \hat U^{\dagger}(t&#39;,t)\Big|_{t&#39;=t}$$ Then for $(\partial_1 \hat U(t&#39;,t))\hat U^{\dagger}(t&#39;,t)+\hat U(t&#39;,t)\partial_1\hat U^{\dagger}(t&#39;,t)=0$ , one can find that $\hat H$ is Hermitian Moreover, one can prove that $\frac {\td \hat U(t&#39;,t)} {\td t&#39;} \hat U^{\dagger}(t&#39;,t)$ is independent to $t$:
- Proof  $$\begin{aligned}[] \frac {\td \hat U(t,t_0)} {\td t} \hat U^{\dagger}(t,t_0) &amp;= \frac {\td \hat U(t,t&#39;_0)} {\td t} \hat U(t&#39;_0,t_0) (\hat U(t,t&#39;_0)\hat U(t&#39;_0,t_0))^{\dagger} \\ &amp;= \frac {\td \hat U(t,t&#39;_0)} {\td t} \hat U(t&#39;_0,t_0) \hat U^{\dagger}(t&#39;_0,t_0) \hat U^{\dagger}(t,t&#39;_0) \\ &amp;= \frac {\td \hat U(t,t&#39;_0)} {\td t} \hat U^{\dagger}(t,t&#39;_0) \end{aligned}$$ Q.</description>
+      <description>Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:</description>
     </item>
     
     <item>
@@ -77,10 +79,7 @@ $$\hat H(t) = \ti \hbar \frac {\td} {\td t&#39;} \hat U(t&#39;,t)\Big|_{t&#39;=t
       <guid>https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/</guid>
       <description>Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
 $$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
- $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:
-$$\mathcal{S}:(\mathcal{H}_1)^{\otimes n}\rightarrow \mathcal{H}_n$$ The (anti-)symmetrization mapping is defined on a tensor product basis as:
-$$\begin{aligned} \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ &amp; \text{for boson} \\ \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} (-1)^{\sigma} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ &amp; \text{for fermion} \end{aligned}$$  Second quantization language and some simple many-body wavefunction
-The Fock Space Permutation Group [Definition] : permutation is a map : $\sigma=\begin{pmatrix}1 &amp;amp; 2 &amp;amp; \cdots &amp;amp; n \\ \sigma(1) &amp;amp; \sigma(2) &amp;amp; \cdots &amp;amp; \sigma(n)\end{pmatrix}\equiv\{j,\sigma(j)\}$ means replacing $j$ by $\sigma(j)$ , and $\sigma(j)\in\{1,2,\cdots,n\}$ [Definition] : Transposition : $(i,j)$ means exchange $i$ and $j$ while keeping others fixed. Any permutation can be represented as a product of transpositions of neighbors $(i,i+1)$ , and the number of transpositions is defined as the parity of the permutation. The sign(signature) of a permutation : $(-1)^{\sigma}$ , is $+1$ for even one and $-1$ for odd one. It can be rewritten as:</description>
+ $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:</description>
     </item>
     
     <item>
@@ -89,11 +88,7 @@ The Fock Space Permutation Group [Definition] : permutation is a map : $\sigma=\
       <pubDate>Mon, 12 Nov 2018 11:36:42 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/quantummechanics/concepts/</guid>
-      <description>Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&amp;ldquo;ket&amp;rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &amp;ldquo;bra&amp;rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$. More strictly we should call it Bogoliubov space And the closeness ($\lambda_1 \psi_1+\lambda_2\psi_2$ is normalizable if $\psi_i$ are normalizable) is hold indeed, one can check it by Cauchy-Schwarz Inequality. A natural inner product can be defined on Hilbert space, as the overlap of two wavefunctions $\phi ,\psi$ :
-$$(\phi,\psi) := \int \phi^*(\bm{x}) \psi(\bm{x})\td V$$ Satisfying the three Axioms :
- Hermiticity : $(\phi,\psi)=(\psi,\phi)^*$ Linearity : $(\phi,\lambda_1\psi_1+\lambda_2\psi_2)=\lambda_1 (\phi,\psi_1)+\lambda_2 (\phi,\psi_2) \ \ \text{for } \lambda_1,\lambda_2 \in \mathbb{C}$ Positive definiteness : $(\psi,\psi)\geq 0 , \text{ and } \Big((\psi,\psi)=0 \Leftrightarrow \psi=0 \Big)$  The third axiom above leads to a useful consiquence:
-The Gram matrix $G_{i,j}=(\psi_i,\psi_j)$ of a set of wavefunction is Hermitian and positive semi-definite.
- Proof  For the positive definiteness of inner product, we have:</description>
+      <description>Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&amp;ldquo;ket&amp;rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &amp;ldquo;bra&amp;rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$.</description>
     </item>
     
     <item>
@@ -104,13 +99,7 @@ The Gram matrix $G_{i,j}=(\psi_i,\psi_j)$ of a set of wavefunction is Hermitian 
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
       <description>Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
 [Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
-$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis. with the metric :
-$$\eta_{\mu\nu}=\eta^{\mu\nu} = (+,-,-,-)$$ And dual vector of $x$ :
-$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$ where the Einstein Summation Convention has been applied. The inner product in Minkowski spacetime is:
-$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$ Lorentz Transformation [Definition] : Lorentz Transformation is a linear transformation which hold the inner product invariant:
-$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x&#39;^{\mu} = \Lambda^{\mu}_{\ \ \ \ \nu} x ^{\nu}$$ With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda^{\nu}_{\ \ \ \ \beta} = \eta_{\alpha\beta}$ Or equivalently:$\Lambda^{\mu}_{\ \ \ \ \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$
-[Theorem] : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:
-$$(\Lambda^{-1})^{\mu}_{\ \ \ \ \nu} = \Lambda_{\nu}^{\ \ \ \ \mu}$$  Proof  We have$\Lambda^{\mu}_{\ \ \ \ \alpha}\Lambda^{\nu}_{\ \ \ \ \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:</description>
+$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis.</description>
     </item>
     
   </channel>

@@ -3,13 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</loc>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/artic/insitesearch/</loc>
     <lastmod>2018-12-09T14:56:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/artic/zenoeff/</loc>
-    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <lastmod>2018-12-10T18:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</loc>
+    <lastmod>2018-12-11T17:11:00+08:00</lastmod>
   </url>
   
   <url>
@@ -76,7 +86,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/series/field-theory/</loc>
-    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,7 +104,13 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/</loc>
-    <lastmod>2018-12-09T14:56:40+08:00</lastmod>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/tags/linux/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -106,12 +122,6 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/categories/linux/</loc>
-    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/tags/linux/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -130,37 +140,37 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/tags/measurement/</loc>
-    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <lastmod>2018-12-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/notes/</loc>
-    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
-    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/tags/physics/</loc>
-    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/categories/physics/</loc>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/tags/quantum/</loc>
-    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <lastmod>2018-12-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/series/quantum-measurement/</loc>
-    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <lastmod>2018-12-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -172,13 +182,13 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/categories/reviews/</loc>
-    <lastmod>2018-11-22T19:23:43+08:00</lastmod>
+    <lastmod>2018-12-10T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/series/</loc>
-    <lastmod>2018-11-14T15:20:07+08:00</lastmod>
+    <lastmod>2018-12-11T15:21:12+08:00</lastmod>
     <priority>0</priority>
   </url>
   

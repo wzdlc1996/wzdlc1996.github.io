@@ -8,25 +8,27 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
-   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1.">
+  <meta name="description" content="Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
+$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
+$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r&#43;\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)&#43;\mathcal{L}_R(\phi_i)$">
 
-  <meta property="og:title" content="Dual Graphic Card Configuration for Manjaro Linux" />
-<meta property="og:description" content="Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
-   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1." />
+  <meta property="og:title" content="Classical Fields: Scalar Field" />
+<meta property="og:description" content="Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
+$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
+$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r&#43;\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)&#43;\mathcal{L}_R(\phi_i)$" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wzdlc1996.github.io/notes/linux/nvidiasetting/" /><meta property="article:published_time" content="2018-10-31T14:48:29&#43;08:00"/>
-<meta property="article:modified_time" content="2018-10-31T14:48:29&#43;08:00"/>
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/" /><meta property="article:published_time" content="2018-11-18T21:49:41&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-11T17:11:00&#43;08:00"/>
 
 
 
   <title>
   
-       Dual Graphic Card Configuration for Manjaro Linux | Leonard 
+       Classical Fields: Scalar Field | Leonard 
   
   </title>
 
-  <link rel="canonical" href="https://wzdlc1996.github.io/notes/linux/nvidiasetting/">
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/">
 
   
   
@@ -424,26 +426,26 @@ autocomplete('#aa-search-input',
   <ul class="post-meta li-x">
     
       
-        <li><a href="https://wzdlc1996.github.io/categories/linux"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Linux </a></li>
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
       
     
     
       
-        <li><a href="https://wzdlc1996.github.io/series/linux"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Linux</a></li>
+        <li><a href="https://wzdlc1996.github.io/series/field-theory"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Field-Theory</a></li>
       
     
   </ul>
 
-  <div class="px-4 post-heading">Dual Graphic Card Configuration for Manjaro Linux</div>
+  <div class="px-4 post-heading">Classical Fields: Scalar Field</div>
 
   <ul class="post-meta li-x mt-1">
     
-      <li>Oct 31, 2018</li>
+      <li>Nov 18, 2018</li>
     
 
     
       <li class="middot"></li>
-      <li>3 minutes read</li>
+      <li>5 minutes read</li>
     
   </ul>
   
@@ -454,185 +456,162 @@ autocomplete('#aa-search-input',
           <div class="post-content markdown">
             
 
-<h1 id="introduction">Introduction</h1>
+<h1 id="klein-gordon-field">Klein-Gordon Field</h1>
 
-<p>usually, linux has two method to handle the dual-graphic card. The difference between
-them are:</p>
+<h2 id="formalism">Formalism</h2>
 
-<table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">Advantages</th>
-<th align="left">Disadvantages</th>
-</tr>
-</thead>
+<p><em>[Definition]</em> : <code>Klein-Gordon</code> Field is a class of scalar fields. For the <code>real valued</code> field, the Lagrangian(Lorentz-scalar) is:</p>
 
-<tbody>
-<tr>
-<td align="left">Bumblebee</td>
-<td align="left">Uses dGPU(descrete) only when requested.  Saving power <br> Manjaro default</td>
-<td align="left">Some overhead so lower raw performance</td>
-</tr>
+<div>$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$</div>
 
-<tr>
-<td align="left">PRIME</td>
-<td align="left">Uses the dGPU directly , Better performance</td>
-<td align="left">dGPU and iGPU(integrated) both powered on constantly <br> need manual configuration</td>
-</tr>
-</tbody>
-</table>
+<p>And for the <code>complex valued</code> field, the Lagrangian is:</p>
 
-<h1 id="step-1-remove-bumblebee">Step 1. Remove Bumblebee</h1>
+<div>$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$</div>
 
-<p>Usually manjaro can be easily installed choosing the <code>free drive</code> mode, but <code>nouveau</code>
-is hard to use. And sometimes it make user cannot entry the x-system.
-One way is that noting <code>nouveau</code> in <code>blacklist</code> , use command:</p>
+<p>It can be treated as two independent real value field: <code>$\phi=\phi_r+\ti \phi_i$</code> and <code>$\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</code></p>
 
-<pre><code class="language-shell">sudo nano /etc/modprob.d/usrBlack.blacklist
+<p>We discuss the real valued field hereafter (and we will see that real-valued means <code>neutral</code>):</p>
 
-blacklist nouveau
-</code></pre>
+<p>The equation of motion is:</p>
 
-<p>Then to use the graphic card, one can run <code>mhwd-tui</code> to install the non-free driver and
-Bumblebee to manage dual graphic card.
-First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd.
-One can simply remove them using the <code>mhwd</code> command in terminal or via <code>Manjaro Settings Manager</code>
-In other distribution, the work is the same. User can using their package manager to do it.
-Or more directly, do <strong>NOT</strong> install bumblebee, directly install PRIME after truning off nouveau.</p>
+<div>$$(\partial^{\mu}\partial_{\mu} + m^2) \phi = (\square + m^2)\phi=0$$</div>
 
-<h1 id="step-2-install-closed-source-driver">Step 2. Install Closed-source Driver</h1>
+<p>Where <code>$\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$</code> is <code>d'Alembert operator</code> . <br />
+And the <code>canonically conjugate field</code>(momentum):</p>
 
-<p>One can follow the following articles to install the driver according to what he use:</p>
+<div>$$\pi = \partial_0 \phi $$</div>
 
-<ul>
-<li><a href="https://wiki.archlinux.org/index.php/ATI">ATI</a> to install drivers for ATI/AMD GPUs</li>
-<li><a href="https://wiki.archlinux.org/index.php/NVIDIA">NVIDIA</a> to install drivers for NVIDIA GPUs</li>
-</ul>
+<p>Then one can write down the Hamiltonian:</p>
 
-<p>To be careful, user should query which version of the driver is the best for their hardware.</p>
+<div>$$H = \frac 1 2  \int \td^3 \bm{x} (\pi^2+ \nabla\phi\cdot \nabla \phi+m^2\phi^2)$$</div>
 
-<h1 id="step3-fix-mhwd-s-configuration">Step3. Fix MHWD&rsquo;s Configuration</h1>
+<h2 id="solution-of-the-equation">Solution of The Equation</h2>
 
-<p>this is for Manjaro Linux, for <code>mhwd</code> does the sensible thing and puts configuration in place as though the NVIDIA GPU was the only device available.
-Other distribution can jump to Step 4</p>
+<p>To solve the field equation, one can use the Fourier transformation:</p>
 
-<ol>
-<li><p><strong>Remove Old Config File</strong></p>
+<div>$$\phi(x) = \int \frac {\td^3\bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti\omega t} a(\bm{k},\omega) = \int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{-\ti k_\mu x^\mu} a(k)$$</div>
 
-<p>Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:</p>
+<p>Where the 4-vector <code>$k=(\omega,\bm{k})$</code> . Then the equation will be:</p>
 
-<pre><code class="language-shell">#/etc/X11/xorg.conf.d/optimus.conf
-Section &quot;Module&quot;
-    Load &quot;modesetting&quot;
-EndSection
-Section &quot;Device&quot;
-    Identifier &quot;nvidia&quot;
-    Driver &quot;nvidia&quot;
-    BusID &quot;PCI&quot;
-    Option &quot;AllowEmptyInitialConfiguration&quot;
-EndSection
-</code></pre>
+<div>$$\int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} (-k_\mu k^\mu+m^2) e^{-\ti k_\mu x^\mu} a(k) = 0$$</div>
 
-<p>While the BusID value can be find by command: <code>lspci | grep -E &quot;VGA|3D&quot;</code></p></li>
+<p>Which requires that <code>$-k_\mu k^\mu+m^2=0$</code> , which is the <code>dispersion relationship</code> :</p>
 
-<li><p><strong>Write Blacklist</strong>
-One need to remove two files: <code>/etc/modprobe.d/mhwd-gpu.conf</code> and <code>/etc/modprobe.d/mhwd-nvidia.conf</code> and write a new one:</p>
+<div>$$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$</div>
 
-<pre><code class="language-shell">blacklist nouveau
-blacklist nvidiafb
-blacklist rivafb
-</code></pre></li>
-</ol>
+<p>With this relation, we separate the general solution to two items according to the sign of frequency:</p>
 
-<h1 id="step-4-enable-nvdia-drm-modeset">Step 4. Enable <code>nvdia-drm.modeset</code></h1>
+<div>$$\begin{aligned}
+\phi(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
+\pi(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\}
+\end{aligned}$$</div>
 
-<p>PRIME relies on <code>vidia-drm</code> , one need to creat a new file:</p>
+<p>One can rewrite the Hamiltonian with <code>$a(\bm{k})$</code> as:</p>
 
-<pre><code class="language-shell">#/etc/modprobe.d/nvidia-drm.conf
+<div>$$H = \int \td^3\bm{x} \ \omega_{|\bm{k}|}^2 (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</div>
 
-options nvidia_drm modeset = 1
-</code></pre>
+<p>In which we hold the order of <code>$a$</code> , which will let the conclusion hold in quantum theory</p>
 
-<h1 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h1>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>We need to compute three items in Hamiltonian:</p>
 
-<p>First for other distribution but manjaro, user need to edit the file <code>/etc/X11/xorg.conf</code> , if X.Org and X server version <code>1.17.2+</code></p>
+<div>$$\begin{aligned}
+\int \td^3\bm{x} \pi^2 &= \int \td^3\bm{x} \int \frac {\td^3 \bm{k}_1 \td^3\bm{k}_2 (-\omega_1\omega_2)} {(2\pi)^3}\Big\{e^{\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}-\ti(\omega_1+\omega_2)t}a(\bm{k}_1)a(\bm{k}_2) \\
+& \ \ \ \ + e^{-\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}+\ti(\omega_1+\omega_2)t}a(\bm{k}_1)^*a(\bm{k}_2)^* \\
+& \ \ \ \ -e^{\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}-\ti(\omega_1-\omega_2)t} a(\bm{k}_1)a(\bm{k}_2)^* \\
+& \ \ \ \ -e^{-\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}+\ti(\omega_1-\omega_2)t} a(\bm{k}_1)^*a(\bm{k}_2) \Big\} \\
+&= \int \td^3 \bm{k} \ \omega_{|\bm{k}|}^2 \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
+\\
+\int\td^3\bm{x}(\nabla \phi)^2 &= \int \td^3 \bm{k} \ |\bm{k}|^2 \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
+\\
+\int\td^3\bm{x}(m \phi)^2 &= \int \td^3 \bm{k} \ m^2 \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*+e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) + e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
 
-<pre><code class="language-shell">#/etc/X11/xorg.conf
+\end{aligned}$$</div>
 
-Section &quot;Module&quot;
-    Load &quot;modesetting&quot;
-EndSection
+<p>Then we have the result:</p>
 
-Section &quot;Device&quot;
-    Identifier &quot;nvidia&quot;
-    Driver &quot;nvidia&quot;
-    BusID &quot;PCI&quot;
-    Option &quot;AllowEmptyInitialConfiguration&quot;
-EndSection
-</code></pre>
+<div>$$H = \int \td^3\bm{x} \ \omega_{|\bm{k}|}^2 (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</div>
 
-<p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
+</details>
 
-<pre><code class="language-shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-</code></pre>
 
-<p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
+<h2 id="charged-klein-gordon-field">Charged Klein-Gordon Field</h2>
 
-<ol>
-<li><p><code>LightDM</code>
-Edit the file <code>/etc/lightdm/lightdm.conf</code> :</p>
+<p>Complex valued Klein-Gordon Field has a internal degree of freedom. It allow the complex valued Klein-Gordon Field to describe the charged spin-0 particles. Here we will show it by the Noether Theorem.</p>
 
-<pre><code class="language-shell">[Seat:*]
-display-setup-script = optimus.sh
-</code></pre></li>
+<p>Complex valued Klein-Gordon Field has an <code>$\text{U}(1)$</code> symmetry:</p>
 
-<li><p><code>GDM</code>
-GDM is the defult display manager of Gnome 3 . one should create two new .desktop files:</p>
+<div>$$\phi\rightarrow \phi' = \phi e^{\ti \alpha} \ ; \ \phi^* \rightarrow \phi'^*=\phi' e^{-\ti \alpha}$$</div>
 
-<pre><code class="language-shell">#/usr/share/gdm/greeter/autostart/optimus.desktop
-#/etc/xdg/autostart/optimus.desktop
+<p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with <code>$\delta x=0 , \delta \phi=\ti \phi\delta \alpha$</code> be the generator)</p>
 
-[Desktop Entry]
-Type=Application
-Name=Optimus
-Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
-NoDisplay=true
-X-GNOME-Autostart-Phase=DisplayServer
-</code></pre>
+<div>$$Q = \int \td^3 \bm{x} \frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi)} \delta \phi+\frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi^*)} \delta \phi^* = \ti \int \td^3 \bm{x} \ (\pi \phi - \pi^* \phi^*) $$</div>
 
-<p>Or user can create one and link those two by command <code>ln -s</code></p></li>
+<p>With the formalism of complex valued Klein-Gordon Field, we can use two set of real valued Klein-Gordon Field to describe it:</p>
 
-<li><p><code>SDDM</code>
-SDDM is the default display manager of KDE . one should write those two command to file <code>/usr/share/sddm/script/Xsetup</code> like:</p>
+<div>$$\phi_r \sim a(\bm{k}) \ ; \ \phi_i \sim b(\bm{k})$$</div>
 
-<pre><code class="language-shell">#/usr/share/sddm/scripts/Xsetup
+<p>And write down the expression of <code>$Q$</code> :</p>
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-</code></pre></li>
-</ol>
+<div>$$Q = 2\int \td^3 \bm{k}\ \ti \omega_{|\bm{k}|}\Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</div>
 
-<h1 id="step-6-reboot">Step 6. Reboot</h1>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>With:</p>
 
-<p>If everything is set correctly, when user reboot, DM will load and he can log in. And:</p>
+<div>$$\begin{aligned}
+\phi_r(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
+\pi_r(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
+\phi_i(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\} \\
+\pi_i(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\}
+\end{aligned}$$</div>
 
-<pre><code class="language-shell">$ glxinfo | grep -i vendor
-server glx vendor string: NVIDIA Corporation
-client glx vendor string: NVIDIA Corporation
-OpenGL vendor string: NVIDIA Corporation
-</code></pre>
+<p>And:</p>
 
-<hr>
+<div>$$\phi = \phi_r+\ti \phi_i \ ; \ \pi=\frac 1 2 (\pi_r-\ti\pi_i) $$</div>
 
-<h1 id="references">References</h1>
+<p>That is caused by the fact:</p>
 
-<ol>
-<li><a href="https://wiki.archlinux.org/index.php/PRIME">PRIME - ArchWiki</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus">NVIDIA Optimus - Arch Wiki</a></li>
-<li><a href="https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225">[HowTo] Set up PRIME on Manjaro</a></li>
-</ol>
+<div>$$\pi=\frac {\delta \mathcal{L}} {\delta \flo{\phi}}=\frac {\delta \mathcal{L}} {\delta \flo{\phi}_r}\frac {\partial\flo{\phi}_r} {\partial \flo{\phi}}+\frac {\delta \mathcal{L}} {\delta \flo{\phi}_i}\frac {\partial\flo{\phi}_i} {\partial \flo{\phi}}$$</div>
+
+<p>Like:</p>
+
+<div>$$\frac {\partial} {\partial z}=\frac {\partial \text{Re} z} {\partial z}\frac {\partial} {\partial \text{Re} z}+\frac {\partial \text{Im} z} {\partial z}\frac {\partial} {\partial \text{Im} z}=\frac 1 2\frac {\partial} {\partial \text{Re} z}+\frac 1 {2\ti}\frac {\partial} {\partial \text{Im} z}$$</div>
+
+<p>with <code>$\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$</code>.</p>
+
+<p>Then the charge:</p>
+
+<div>$$Q=\ti \int \td^3 \bm{x} \ (\pi \phi-\pi^*\phi^*)=\int \td^3 \bm{x} \ (\pi_i \phi_r -\pi_r \phi_i)$$</div>
+
+<p>Then we need only compute the integral of <code>$\pi_i\phi_r$</code> , and another term can be obtained by permute the <code>$a$</code> and <code>$b$</code> :</p>
+
+<div>$$\begin{aligned}
+\int \td^3 \bm{x} \pi_i \phi_r &= \int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3} \ti \omega_1\Big\{-e^{\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} - \ti (\omega_1+\omega_2)t} b(\bm{k}_1)a(\bm{k}_2) \\
+&\indent -e^{\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} - \ti (\omega_1-\omega_2)t} b(\bm{k}_1)a(\bm{k}_2)^* + e^{-\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} + \ti (\omega_1-\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)  \\
+&\indent +e^{-\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} + \ti (\omega_1+\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)^* \Big\} \\
+&=\int \td^3 \bm{k} \ \ti \omega_{|\bm{k}|}\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}b(\bm{k})a(-\bm{k})-b(\bm{k})a(\bm{k})^* +b(\bm{k})^* a(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}b(\bm{k})^*a(-\bm{k})^* \Big\} \\
+\int \td^3 \bm{x} \pi_r \phi_i &= \int \td^3 \bm{k} \ \ti \omega_{|\bm{k}|}\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(\bm{k})b(-\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(\bm{k})^*b(-\bm{k})^* \Big\} \\
+&=\int \td^3 \bm{k} \ \ti \omega_{|\bm{k}|}\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(-\bm{k})b(\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(-\bm{k})^*b(\bm{k})^* \Big\} \\
+\end{aligned}$$</div>
+
+<p>Then we have:</p>
+
+<div>$$Q = 2\int \td^3 \bm{k}\ \ti \omega_{|\bm{k}|}\Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</div>
+
+</details>
+
+
+<p>Or with that <code>$c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$</code> , we have:</p>
+
+<div>$$Q=2\int \td^3 \bm{k} \omega_{|\bm{k}|}(c_+(\bm{k})^*c_+(\bm{k})-c_-(\bm{k})^*c_-(\bm{k}))$$</div>
+
+<p>This conclusion hold in Quantum theory where <code>$a,a^*$</code> are not commutable but <code>$a,b$</code> are commutable.</p>
 
           </div>
 
@@ -646,10 +625,7 @@ OpenGL vendor string: NVIDIA Corporation
   <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     
-      <li><a href="https://wzdlc1996.github.io/tags/linux" role="button">Linux </a></li>
-      
-    
-      <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button">Manjaro </a></li>
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
       
     
   </div>
@@ -665,14 +641,21 @@ OpenGL vendor string: NVIDIA Corporation
           <div class="row pt-3">
             <div class="col-md-6">
               
+                <a href=https://wzdlc1996.github.io/notes/linux/bluetoothaudio/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Bluetooth Audio Issues</span>
+                  </div>
+                </a>
+              
             </div>
             
             <div class="col-md-6 text-right" >
               
-                <a href=https://wzdlc1996.github.io/notes/fieldtheory/premath/ class="post-meta">Next
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/ class="post-meta">Next
                   <div class="pt-2 pb-5 flex-reverse">
                     <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>Preliminary Mathematics</span>
+                    <span>Classical Fields: Dirac Field</span>
                   </div>
                 </a>
               
@@ -720,8 +703,8 @@ OpenGL vendor string: NVIDIA Corporation
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#introduction">
-												 Introduction
+						 					<a class="nav-link" href="#klein-gordon-field">
+												 Klein-Gordon Field
 											</a>
 										</li>
 						 
@@ -739,15 +722,19 @@ OpenGL vendor string: NVIDIA Corporation
 								
 									<ul class="nav">
 								
+									<ul class="nav">
+								
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#step-1-remove-bumblebee">
-												 Step 1. Remove Bumblebee
+						 					<a class="nav-link" href="#formalism">
+												 Formalism
 											</a>
 										</li>
 						 
 								
+								
+									</ul>
 								
 									</ul>
 								
@@ -761,15 +748,19 @@ OpenGL vendor string: NVIDIA Corporation
 								
 									<ul class="nav">
 								
+									<ul class="nav">
+								
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#step-2-install-closed-source-driver">
-												 Step 2. Install Closed-source Driver
+						 					<a class="nav-link" href="#solution-of-the-equation">
+												 Solution of The Equation
 											</a>
 										</li>
 						 
 								
+								
+									</ul>
 								
 									</ul>
 								
@@ -783,103 +774,19 @@ OpenGL vendor string: NVIDIA Corporation
 								
 									<ul class="nav">
 								
+									<ul class="nav">
+								
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#step3-fix-mhwd-s-configuration">
-												 Step3. Fix MHWD’s Configuration
+						 					<a class="nav-link" href="#charged-klein-gordon-field">
+												 Charged Klein-Gordon Field
 											</a>
 										</li>
 						 
 								
 								
 									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#step-4-enable-nvdia-drm-modeset">
-												 Step 4. Enable nvdia-drm.modeset
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#step-5-make-dgpu-as-primary">
-												 Step 5. Make dGPU as primary
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#step-6-reboot">
-												 Step 6. Reboot
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#references">
-												 References
-											</a>
-										</li>
-						 
-								
 								
 									</ul>
 								

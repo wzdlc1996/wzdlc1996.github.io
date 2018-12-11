@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Dirac Field Formalism [Definition] : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:
+$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$ This Lagrangian are not symmetric to $\psi$ and $\bar{\psi}$ , but this form will not lead the momentum vanish.
+Note that $\psi$ is a 4-components Dirac Spinor.">
+
+  <meta property="og:title" content="Classical Fields: Dirac Field" />
+<meta property="og:description" content="Dirac Field Formalism [Definition] : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:
+$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$ This Lagrangian are not symmetric to $\psi$ and $\bar{\psi}$ , but this form will not lead the momentum vanish.
+Note that $\psi$ is a 4-components Dirac Spinor." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/" /><meta property="article:published_time" content="2018-12-11T15:21:12&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-11T15:21:12&#43;08:00"/>
+
+
+
+  <title>
+  
+       Classical Fields: Dirac Field | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128644147-1');
+</script>
+
+
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+    </div>
+
+
+
+
+  </nav>
+
+  
+  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/field-theory"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Field-Theory</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Classical Fields: Dirac Field</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Dec 11, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>12 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h1 id="dirac-field">Dirac Field</h1>
+
+<h2 id="formalism">Formalism</h2>
+
+<p><em>[Definition]</em> : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:</p>
+
+<div>$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$</div>
+
+<p>This Lagrangian are not symmetric to <code>$\psi$</code> and <code>$\bar{\psi}$</code> , but this form will not lead the momentum vanish.</p>
+
+<p>Note that <code>$\psi$</code> is a 4-components Dirac Spinor. And these four components are independent. So we have the equation of motion:</p>
+
+<div>$$(\ti \gamma^\mu \partial_\mu -m)\psi = 0$$</div>
+
+<p>To let the form of the Dirac equation invariant under Lorentz Transformation, one need requires that the Dirac field transforms as:</p>
+
+<div>$$\psi(x)\rightarrow \psi'(x') = \Lambda_{1/2}\psi(x'=L(\omega) x) \ ; \ \Lambda_{1/2} = \exp(-\frac {\ti} 4 \omega_{\mu\nu} \sigma^{\mu\nu}) $$</div>
+
+<p>And the <code>canonically conjugate field</code> are also quantity with 4 components:</p>
+
+<div>$$\pi = \ti \bar{\psi}\gamma^0 = \ti \psi^\dagger$$</div>
+
+<p>The Hamiltonian:</p>
+
+<div>$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi  \Big\} $$</div>
+
+<h2 id="solution-of-the-equation">Solution of The Equation</h2>
+
+<p>To solve the Dirac Equation, one can also use the Fourier Transformation. Remember that <code>$\psi$</code> are 4-components quantity:</p>
+
+<div>$$\psi = \int \frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti \omega t} a(\bm{k},\omega) $$</div>
+
+<p>Where <code>$a(\bm{k},\omega)$</code> are 4-components Dirac spinor, and also let <code>$k=(\omega,\bm{k})$</code>. Then one can write:</p>
+
+<div>$$k_{\mu}\gamma^{\mu} a(\bm{k},\omega) -m a(\bm{k},\omega) = 0$$</div>
+
+<p>In the basis that <code>$\gamma^{\mu} = \begin{bmatrix} 0 &amp; \sigma^{\mu} \\ \bar{\sigma}^{\mu} &amp; 0 \end{bmatrix}$</code> , we can solve this equation of matrix. The homogeneous equation has non-trivial solution, that requires:</p>
+
+<div>$$\det(k_{\mu}\gamma^{\mu} -m) =0 \Rightarrow (-k_0^2+k_1^2+k_2^2+k_3^2+m^2)^2\equiv (m^2-k_\mu k^\mu)^2=0 $$</div>
+
+<p>Namely : <code>$\omega^2 = m^2+|\bm{k}|^2$</code> or <code>$\omega \equiv \pm \omega_{\bm{k}} = \pm \sqrt{m^2+|\bm{k}|^2}$</code></p>
+
+<p>Then we can rewrite the general solution as:</p>
+
+<div>$$\psi^{(+)} \propto e^{\ti \bm{k}\cdot \bm{x}-\ti \omega_{\bm{k}} t} u(\bm{k}) \ ; \ \psi^{(-)}\propto e^{-\ti \bm{k}\cdot \bm{x}+\ti \omega_{\bm{k}} t} v(\bm{k})$$</div>
+
+<p>Where the two spinor: <code>$u=\begin{bmatrix} u_l\\ u_r\end{bmatrix} , v=\begin{bmatrix} v_l\\ v_r\end{bmatrix}$</code> shall satisfy:</p>
+
+<div>$$\begin{aligned}
+(k_{\mu}\gamma^\mu -m) u &= 0\\
+(k_{\mu}\gamma^\mu +m) v &=0
+\end{aligned}$$</div>
+
+<p>Using the equality:</p>
+
+<div>$$(k_\mu\gamma^\mu-m)(k_{\mu}\gamma^\mu +m) = 0 $$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>With <code>$\sigma^i\sigma^j =\delta_i^j +\ti \epsilon^{ijk}\sigma^k$</code></p>
+
+<div>$$\begin{aligned}
+(k_\mu\sigma^\mu)(k_\mu\bar{\sigma}^\mu) &= k_0^2 + k_0k_i\sigma^i-k_ik_0\sigma^i -k_ik_j(\delta_i^j+\ti \epsilon^{ijk}\sigma^k) \\
+&=k_0^2-k_ik_i\\
+&=k_\mu k^\mu
+\end{aligned}$$</div>
+
+<p>Then for <code>$k_\mu\gamma^\mu = \begin{bmatrix} 0 &amp; k_\mu \sigma^\mu \\ k_\mu \bar{\sigma}^\mu &amp; 0 \end{bmatrix}$</code> , we have:</p>
+
+<div>$$(k_\mu\gamma^\mu-m)(k_{\mu}\gamma^\mu +m) = \begin{bmatrix} k_\mu k^\mu & 0 \\ 0 & k_\mu k^\mu \end{bmatrix} -m^2 =0$$</div>
+
+<p>with <code>$k_\mu k^\mu = m^2$</code></p>
+
+</details>
+
+
+<p>With two sets of <code>2-components quantities</code> : <code>$\chi^{(s)},\xi^{(s)} \ ; \ s=1,2$</code> , we can write down(widely used convention):</p>
+
+<div>$$u^{(s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</div>
+
+<p><mark>The factor is added so that <code>$\bar{u}u,\bar{v}v$</code> are Lorentz scalar</mark> , and <code>$\chi,\xi$</code> are just 2x1 matrices (basis of 2-D linear space), <mark>They are not Weyl spinor!</mark>. Under Lorentz Transformation they are invariant.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>With <code>$u$</code> , we have:</p>
+
+<div>$$\begin{aligned}
+\bar{u}u &= u^\dagger \gamma^0 u \\
+&=\frac {1} {2m(m+\omega_{|\bm{k}|})} [\chi^{\dagger},\chi^\dagger](m+k_\mu \gamma^{\mu\dagger}) \gamma^0 (m+k_\mu \gamma^\mu) \begin{bmatrix} \chi \\ \chi \end{bmatrix} \\
+&=\frac {1} {2m(m+\omega_{|\bm{k}|})} [\chi^{\dagger},\chi^\dagger]\begin{bmatrix} m\sigma^0 & k_\mu \bar{\sigma}^{\mu} \\ k_\mu \sigma^\mu & m \sigma^0\end{bmatrix} \begin{bmatrix} 0 & \sigma^0\\ \sigma^0 & 0\end{bmatrix} \begin{bmatrix} m\sigma^0 & k_\mu \sigma^{\mu} \\ k_\mu \bar{\sigma}^\mu & m \sigma^0\end{bmatrix} \begin{bmatrix} \chi \\ \chi \end{bmatrix} \\
+&=\frac {1} {2m(m+\omega_{|\bm{k}|})} [\chi^{\dagger},\chi^\dagger]\begin{bmatrix} 2m k_\mu \bar{\sigma}^{\mu} & k_\mu k^\mu +m^2 \\ k_\mu k^\mu +m^2 & 2m k_\mu \sigma^\mu\end{bmatrix} \begin{bmatrix} \chi \\ \chi \end{bmatrix} \\
+&=\frac {m k_0 (\chi^\dagger \chi + \chi^\dagger \chi) + m^2(\chi^\dagger\chi + \chi^\dagger \chi)} {m(m+\omega_{|\bm{k}|})} \\
+&=2\chi^\dagger \chi
+\end{aligned}$$</div>
+
+<p>Is invariant under Lorentz transformation.</p>
+
+<p>The more general formulas are:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(s)}u^{(r)} &= 2 \chi^{(s)\dagger}\chi^{(r)} \\
+\bar{v}^{(s)}v^{(r)} &= -2 \xi^{(s)\dagger}\xi^{(r)} \\
+\end{aligned}$$</div>
+
+</details>
+
+
+<p>Sometimes one can write them as a much beautiful form:</p>
+
+<div>$$u^{(s)}(\bm{k})=\frac {1} {\sqrt{m}} \begin{bmatrix} \sqrt{k_\mu \sigma^\mu} \chi^{(s)} \\ \sqrt{k_\mu \bar{\sigma}^\mu}\chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {1} {\sqrt{m}} \begin{bmatrix} \sqrt{k_\mu \sigma^\mu} \xi^{(s)} \\ -\sqrt{k_\mu \bar{\sigma}^{\mu}} \xi^{(s)}\end{bmatrix}$$</div>
+
+<p>This form of <code>$u,v$</code> will satisfy the equation automatically. With the convention that the square-root of matrix is the branch that have position eigenvalue.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The equation for <code>$u_{l(r)},v_{l(r)}$</code> are:</p>
+
+<div>$$\begin{aligned}
+k_\mu \sigma^\mu u_r -m u_l &=0 \\
+k_\mu \bar{\sigma}^\mu u_l - m u_r &=0\\
+k_\mu \sigma^\mu v_r +m v_l &=0 \\
+k_\mu \bar{\sigma}^\mu v_l + m v_r &=0
+\end{aligned}$$</div>
+
+<p>For <code>$(k_\mu\sigma^\mu)(k_\mu\bar{\sigma}^{\mu})=k_\mu k^\mu$</code> , there are only two independent equations((1) and (3), (2) are the same as (1), and (4) are the same as (2)). One can easily check that the form above satisfy these equations.</p>
+
+<p>More over, we can check that <code>$\bar{u}u,\bar{v}v$</code> are Lorentz scalar, remember <code>$k_{\mu}\sigma^{\mu}$</code> is Hermitian.</p>
+
+<div>$$\begin{aligned}
+\bar{u} u &= u^{\dagger} \gamma^0 u \\
+&= \frac 1 m \Big(\chi^\dagger \sqrt{k_\mu\sigma^\mu}\sqrt{k_\mu \bar{\sigma}^\mu} \chi + \chi^\dagger \sqrt{k_\mu\bar{\sigma}^\mu}\sqrt{k_\mu \sigma^\mu} \chi  \Big) \\
+&= 2\chi^\dagger \chi
+\end{aligned}$$</div>
+
+<p>Check for <code>$v$</code> is similar, the general form are still:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(s)}u^{(r)} &= 2 \chi^{(s)\dagger}\chi^{(r)} \\
+\bar{v}^{(s)}v^{(r)} &= -2 \xi^{(s)\dagger}\xi^{(r)} \\
+\end{aligned}$$</div>
+
+<p>One can also directly prove they are the same. Notice that <code>$k_\mu \sigma^\mu$</code> is Hermitian:</p>
+
+<div>$$\sqrt{k_\mu \sigma^\mu} = a_\mu \sigma^\mu$$</div>
+
+<p>Then square the both sides:</p>
+
+<div>$$k_\mu \sigma^\mu = a_0^2 + 2a_0 a_i \sigma^i + a_i a_j \sigma^i\sigma^j = |a|^2+2a_0 a_i \sigma^i$$</div>
+
+<p>Where <code>$|a|^2 = a_0^2 +a_1^2 +a_2^2 +a_3^2$</code> . Then one can write the equation:</p>
+
+<div>$$\begin{aligned}
+k_0 &= |a|^2 \\
+k_i &= 2a_0 a_i
+\end{aligned}$$</div>
+
+<p>Then eliminate <code>$a_i$</code> , one have: <code>$k_0 = a_0^2 + \sum_{i=1}^3k_i^2/(4a_0^2)$</code></p>
+
+<p>One can solve that:</p>
+
+<div>$$\begin{cases}
+& a_0 = \sqrt{\frac 1 2 (k_0 \pm m)} \\
+& a_i = k_i/(2a_0)
+\end{cases}$$</div>
+
+<p>We need the positive branch, for <code>$\det a_\mu \sigma^\mu = a_\mu a^\mu=2a_0^2-k_0=\lambda_1\lambda_2 \gt 0$</code> , we need to choose the branch that <code>$a_0=\sqrt{(k_0+m)/2}$</code> . Then:</p>
+
+<div>$$\sqrt{k_\mu\sigma^\mu} = \frac {m\sigma^0+k_\mu \sigma^\mu} {\sqrt{2(m+k_0)}} $$</div>
+
+<p>Similarly, one can write:</p>
+
+<div>$$\sqrt{k_\mu\bar{\sigma}^\mu} = \frac {m\sigma^0+k_\mu \bar{\sigma}^\mu} {\sqrt{2(m+k_0)}} $$</div>
+
+<p>That is:</p>
+
+<div>$$\frac 1 {\sqrt{m}} \begin{bmatrix} \sqrt{k_\mu \sigma^\mu} \chi \\ \pm \sqrt{k_\mu\bar{\sigma}^{\mu}} \chi \end{bmatrix} = \frac {m\pm k_\mu\gamma^\mu} {\sqrt{2m(m+k_0)}} \begin{bmatrix} \chi \\ \pm \chi \end{bmatrix} $$</div>
+
+<p>q.e.d.</p>
+
+</details>
+
+
+<h2 id="properties-of-dirac-field">Properties of Dirac Field</h2>
+
+<ol>
+<li><p>According to the definition above. <code>$u^{(s)},v^{(s)}$</code> as the function of <code>$k=(\omega,\bm{k})$</code> has the property:</p>
+
+<div>$$\begin{aligned}
+u^{(s)}(k) &= \exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu}) u^{(s)}(k=(m,\bm{0})) \\
+v^{(s)}(k) &= \exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu}) v^{(s)}(k=(m,\bm{0})) \\
+\end{aligned}$$</div>
+
+<p>Where <code>$S^{\mu\nu}=\frac 1 2 \sigma_{\mu\nu}$</code> and <code>$\omega_{\mu\nu}$</code> are the parameters of Lorentz transformation, which let:</p>
+
+<div>$$\Lambda(\omega)(m,\bm{0}) = k$$</div>
+
+<p>Similarly:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(s)}(k) &= \bar{u}^{(s)}(k=(m,\bm{0})) \exp(\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})  \\
+v^{(s)}(k) &= \bar{v}^{(s)}(k=(m,\bm{0})) \exp(\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})  \\
+\end{aligned}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>One can check the formular of Lorentz Transformation:</p>
+
+<div>$$\exp(-\ti a \bm{n}\cdot \bm{K}) (1,\bm{0})\equiv \Lambda(\bm{\theta}=\bm{0},\bm{\eta}=a \bm{n};\bm{L},\bm{K}) (1,\bm{0}) = (\cosh a , \sinh a \ \bm{n})$$</div>
+
+<p>where <code>$|\bm{n}|=1$</code>, namely <code>$\bm{n}$</code> is a unit 3-vector.</p>
+
+<p>With the relation that: <code>$\omega_{0,i}=\eta^i$</code> , we have that:</p>
+
+<div>$$\Lambda(\omega_{\mu\nu}=\delta_{\mu}^0 \delta_{\nu}^i \eta^i-\delta_{\nu}^0 \delta_{\mu}^i \eta^i)(m,\bm{0})=k$$</div>
+
+<p>Where <code>$\eta^i=a k^i/|\bm{k}|$</code> and <code>$a=\sinh^{-1}(|\bm{k}|/m)$</code></p>
+
+<p>With this parameter:</p>
+
+<div>$$\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu}) =\exp(-\ti \sum_{i=1}^3 \eta^i S^{0,i})=\begin{bmatrix} \cosh \frac a 2 +\sinh \frac a 2 \frac {k_i\sigma^i} {|\bm{k}|} & 0 \\ 0 &\cosh \frac a 2 -\sinh \frac a 2 \frac {k_i\sigma^i} {|\bm{k}|} \end{bmatrix}$$</div>
+
+<p>For <code>$u^{(s)}(k=(m,\bm{0}))=\begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(k=(m,\bm{0}))=\begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$</code> , we have:</p>
+
+<div>$$\begin{aligned}
+\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})u^{(s)}(k=(m,\bm{0})) &= \Big(\cosh \frac a 2 + \sinh \frac a 2 \frac 1 {|\bm{k}|} k_i \gamma^i \Big)u^{(s)}(k=(m,\bm{0})) \\
+\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})v^{(s)}(k=(m,\bm{0})) &= \Big(\cosh \frac a 2 - \sinh \frac a 2 \frac 1 {|\bm{k}|} k_i \gamma^i \Big)v^{(s)}(k=(m,\bm{0}))
+\end{aligned}$$</div>
+
+<p>For the formula of hyperbolic-sin/cos:</p>
+
+<div>$$\cosh^2 \frac a 2 = \frac {\cosh a+1} 2 \ ; \ \sinh^2 \frac a 2 = \frac {\cosh a -1} 2 \ ; \ \cosh^2 a-\sinh^2 a= 1$$</div>
+
+<p>We have:</p>
+
+<div>$$\begin{aligned}
+\cosh \frac a 2 &= \sqrt{\frac 1 2 (1+\sqrt{\frac {m^2 +|\bm{k}|^2} {m^2}})} = \sqrt{\frac {m+k_0} {2m}} = \frac {m+k_0} {\sqrt{{2m(m+\omega_{|\bm{k}|})}}} \\
+\sinh \frac a 2 &= \sqrt{\frac 1 2 (-1+\sqrt{\frac {m^2 +|\bm{k}|^2} {m^2}})} = \sqrt{\frac {-m+k_0} {2m}} = \frac {|\bm{k}|} {\sqrt{{2m(m+\omega_{|\bm{k}|})}}}
+\end{aligned}$$</div>
+
+<p>Where <code>$k_0=\sqrt{m^2+\bm{k}^2}=\omega_{|\bm{k}|}$</code></p>
+
+<p>Then we have:</p>
+
+<div>$$\begin{aligned}
+\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})u^{(s)}(k=(m,\bm{0})) &= \frac {m+k_\mu \gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} u^{(s)}(k=(m,\bm{0})) \\
+\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})v^{(s)}(k=(m,\bm{0})) &= \frac {m-k_\mu \gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}}v^{(s)}(k=(m,\bm{0}))
+\end{aligned}$$</div>
+
+<p>Noting that for <code>$v$</code> :</p>
+
+<div>$$k_0 \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix} =-k_0 \begin{bmatrix}0 & \sigma^0 \\ \sigma^0 & 0 \end{bmatrix}\begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}=-k_0\gamma^0 \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</div>
+
+<p>Additionally:</p>
+
+<div>$$\gamma^0\big[\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})\big]^\dagger \gamma^0 = \exp(\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})$$</div>
+
+<p>We can prove the formula about <code>$\bar{u},\bar{v}$</code></p>
+
+<p>Then this property is proved.</p>
+
+</details>
+</li>
+
+<li><p><code>$u^{(s)},v^{(s)}$</code> as the function of 4-vector <code>$(k=(k_0\equiv \omega_{|\bm{k}|},\bm{k}))$</code> has the property :</p>
+
+<div>$$\begin{aligned}
+u^{(s)}(k) & = \Lambda_{0\rightarrow k}\Lambda_{k'\rightarrow 0} u^{(s)}(k') \\
+v^{(s)}(k) & = \Lambda_{0\rightarrow k}\Lambda_{k'\rightarrow 0} v^{(s)}(k')
+\end{aligned}$$</div>
+
+<p>Where <code>$\Lambda_{k_1\rightarrow k_2}$</code> is the Lorentz Transformation for Dirac Spinor <code>$\Lambda_{k_1\rightarrow k_2} =\exp(-\ti \omega_{\mu\nu}S^{\mu\nu}/2)$</code> with parameter <code>$\omega$</code> inducing 4-vector Lorentz Transformation: <code>$\Lambda(\omega)k_1=k_2$</code> . Obviously <code>$\Lambda_{k_1\rightarrow k_2} = \Lambda_{k_2\rightarrow k_1}^{-1}$</code></p></li>
+
+<li><p><code>$u^{(s)}$</code> and <code>$v^{(s)}$</code> satisfy(with <code>$\bar{x}=x^\dagger \gamma^0$</code> for Dirac spinor <code>$x$</code> ) :</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(r)}(k)u^{(s)}(k) &= 2(\chi^{(r)})^\dagger \chi^{(s)} \\
+\bar{v}^{(r)}(k)v^{(s)}(k) &= -2(\xi^{(r)})^\dagger \xi^{(s)} \\
+\bar{u}^{(r)}(k)v^{(s)}(k) &= \bar{v}^{(r)}(k)u^{(s)}(k)=0
+\end{aligned}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The first two equality has been proved. We consider the third one:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(r)}(k)v^{(s)}(k)&=u^{(r)\dagger}(k)\gamma^0 v^{(s)}(k) \\
+&=\frac 1 m [\chi^{(r)\dagger}\sqrt{k_\mu\sigma^{\mu}},\chi^{(r)\dagger}\sqrt{k_\mu\bar{\sigma}^{\mu}}] \gamma^0 \begin{bmatrix} \sqrt{k_\mu \sigma^{\mu}} \xi^{(s)} \\ -\sqrt{k_\mu \bar{\sigma}^{\mu}} \xi^{(s)}\end{bmatrix} \\
+&= \frac 1 m (-k_\mu k^\mu \chi^{(r)\dagger}\xi^{(s)}+k_{\mu}k^{\mu} \chi^{(r)\dagger}\xi^{(s)})\\
+&= 0
+\end{aligned}$$</div>
+
+<p>q.e.d.</p>
+
+</details>
+</li>
+
+<li><p>With the special choose of</p>
+
+<div>$$\chi^{(r)\dagger}\chi^{(s)} = \xi^{(r)\dagger}\xi^{(s)} = \delta_{r}^{s} m$$</div>
+
+<p>We can define the <code>Energy Projector</code> :</p>
+
+<div>$$\begin{aligned}
+P^{(+)} &= \frac 1 {2m} \sum_{s=1,2} u^{(s)}(k)\bar{u}^{(s)}(k) = \frac {k_{\mu}\gamma^{\mu}+m} {2m} \\
+P^{(-)} &= -\frac 1 {2m} \sum_{s=1,2} v^{(s)}(k)\bar{v}^{(s)}(k) = \frac {-k_{\mu}\gamma^{\mu}+m} {2m}
+\end{aligned}$$</div>
+
+<p>With the equality that <code>$(k_{\mu}\gamma^{\mu}+m)(k_{\mu}\gamma^{\mu}-m)=0$</code> and <code>$k_{\mu}\gamma^{\mu}k_\nu \gamma^\nu = k_{\mu}k^{\mu}$</code> , one can find that:</p>
+
+<div>$$\begin{aligned}
+P^{(+) 2} &= P^{(+)} \\
+P^{(-) 2} &= P^{(-)} \\
+P^{(+)}\hat P^{(-)} &= P^{(-)}P^{(+)} = 0 \\
+P^{(+)} +P^{(-)} & = 1
+\end{aligned}$$</div>
+
+<p>That is why call them <code>Projector</code> .</p>
+
+<p>More over, acting any solution of free Dirac equation, <code>$\hat P^{(+)}$</code> extracts the <code>positive-energy part</code> and <code>$\hat P^{(-)}$</code> extracts the <code>negative-energy part</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>For <code>$\chi,\xi$</code> are orthogonal, we have <code>$\sum_{s=1,2} \chi^{(s)}\chi^{(s)\dagger} =\sum_{s=1,2} \xi^{(s)}\xi^{(s)\dagger}= m$</code> is a c-number</p>
+
+<div>$$\begin{aligned}
+\sum_{s=1,2} u^{(s)}(k)\bar{u}^{(s)}(k) &= \frac 1 m \sum_{s=1,2}  \begin{bmatrix} \sqrt{k_\mu \sigma^{\mu}} \chi^{(s)} \\ \sqrt{k_\mu \bar{\sigma}^{\mu}} \chi^{(s)}\end{bmatrix} [\chi^{(s)\dagger}\sqrt{k_\mu\sigma^{\mu}},\chi^{(s)\dagger}\sqrt{k_\mu\bar{\sigma}^{\mu}}] \gamma^0 \\
+&= \begin{bmatrix} k_\mu \sigma^\mu & m \\ m & k_{\mu}\bar{\sigma}^\mu  \end{bmatrix} \gamma^0 \\
+&= \begin{bmatrix} m & k_{\mu}\sigma^\mu \\  k_{\mu}\bar{\sigma}^\mu& m   \end{bmatrix} \\
+&= (m+k_\mu\gamma^\mu) \\
+\sum_{s=1,2} v^{(s)}(k)\bar{v}^{(s)}(k) &= \frac 1 m \sum_{s=1,2}  \begin{bmatrix} \sqrt{k_\mu \sigma^{\mu}} \xi^{(s)} \\ -\sqrt{k_\mu \bar{\sigma}^{\mu}} \xi^{(s)}\end{bmatrix} [\xi^{(s)\dagger}\sqrt{k_\mu\sigma^{\mu}},-\xi^{(s)\dagger}\sqrt{k_\mu\bar{\sigma}^{\mu}}] \gamma^0 \\
+&=\begin{bmatrix} k_\mu \sigma^\mu & -m \\ -m & k_{\mu}\bar{\sigma}^\mu  \end{bmatrix} \gamma^0 \\
+&=(-m+k_\mu\gamma^{\mu})
+\end{aligned}$$</div>
+
+<p>Then:</p>
+
+<div>$$\Big(\frac{\pm k_\mu\gamma^{\mu}+ m} {2m}\Big)^2 = \frac 1 {4m^2}\Big( k_{\mu}k^\mu \pm 2m k_\mu\gamma^\mu +m^2\Big) = \frac{\pm k_\mu\gamma^\mu+m} {2m} $$</div>
+
+<p>q.e.d.</p>
+
+</details>
+</li>
+
+<li><p><code>Gordon Identities</code> :</p>
+
+<div>$$\begin{aligned}
+2m \bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')\big[(k'+k)^\mu+2\ti S^{\mu\nu}(k'-k)_\nu \big]u^{(s)}(\bm{k}) \\
+-2m \bar{v}^{(s')}(\bm{k}') \gamma^\mu v^{(s)}(\bm{k}) &= \bar{v}^{(s')}(\bm{k}')\big[(k'+k)^\mu+2\ti S^{\mu\nu}(k'-k)_\nu \big]v^{(s)}(\bm{k}) \\
+\end{aligned}$$</div>
+
+<p>Where the 0-components of <code>$k$</code> always is <code>$k_0=\sqrt{m^2+|\bm{k}|^2}$</code></p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>To prove them, one need to notice that:</p>
+
+<div>$$\begin{aligned}
+\gamma^\mu k_\nu \gamma^\nu &= \frac 1 2 \{\gamma^\mu,k_\nu \gamma^\nu\}+\frac 1 2 [\gamma^\mu,k_\nu \gamma^\nu] = k^\mu - 2\ti S^{\mu\nu} k_\nu \\
+k_\nu \gamma^{\nu} \gamma^\mu &= \frac 1 2 \{\gamma^\mu,k_\nu \gamma^\nu\}-\frac 1 2 [\gamma^\mu,k_\nu \gamma^\nu] = k^\mu + 2\ti S^{\mu\nu} k_\nu \\
+\end{aligned}$$</div>
+
+<p>Then, together with:</p>
+
+<div>$$\begin{aligned}
+(k_\mu\gamma^{\mu}-m) u^{(s)}(\bm{k}) &=0 \\
+(k_\mu\gamma^{\mu}+m) v^{(s)}(\bm{k}) &=0 \\
+\bar{u}^{(s)}(\bm{k})(k_\mu\gamma^{\mu}-m)  &=0 \\
+\bar{v}^{(s)}(\bm{k})(k_\mu\gamma^{\mu}+m)  &=0 \\
+\end{aligned}$$</div>
+
+<p>which can be obtained with <code>$\gamma^0\gamma^{\mu\dagger}=\gamma^\mu\gamma^0$</code> . Then we can compute:</p>
+
+<div>$$\begin{aligned}
+m\bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k})&=\bar{u}^{(s')}(\bm{k}') \gamma^\mu k_{\nu}\gamma^{\nu} u^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}') (k^\mu-2\ti S^{\mu\nu}k_\nu) u^{(s)}(\bm{k}) \\
+m\bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k})&=\bar{u}^{(s')}(\bm{k}')  k'_{\nu}\gamma^{\nu} \gamma^\mu u^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}') (k'^\mu+2\ti S^{\mu\nu}k'_\nu) u^{(s)}(\bm{k})
+\end{aligned}$$</div>
+
+<p>Adding these two we have:</p>
+
+<div>$$2m \bar{u}^{(s')}(\bm{k}) \gamma^\mu u^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k})\big[(k'+k)^\mu+2\ti S^{\mu\nu}(k'-k)_\nu \big]u^{(s)}(\bm{k})$$</div>
+
+<p>And for <code>$v$</code> , actually we need only convert <code>$m\rightarrow -m$</code> .</p>
+
+<p>Then these equalities are proved.</p>
+
+</details>
+
+
+<p>One of the special situation is that:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(s')}(\bm{k}) \gamma^\mu u^{(s)}(\bm{k}) &=2k^\mu \delta^{s',s} \\
+\bar{v}^{(s')}(\bm{k}') \gamma^\mu v^{(s)}(\bm{k}) &=2k^{\mu}\delta^{s',s}
+\end{aligned}$$</div></li>
+
+<li><p>Equalities:</p>
+
+<div>$$\begin{aligned}
+2m \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} v^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')\big[(k'-k)^{\mu}+2\ti S^{\mu\nu}(k'+k)_{\nu} \big] v^{(s)}(\bm{k}) \\
+-2m \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} u^{(s)}(\bm{k}) &= \bar{v}^{(s')}(\bm{k}')\big[(k'-k)^{\mu}+2\ti S^{\mu\nu}(k'+k)_{\nu} \big] u^{(s)}(\bm{k}) \\
+\end{aligned}$$</div>
+
+<p>With the special situation:</p>
+
+<div>$$\begin{aligned}
+2m\bar{u}^{(s')}(\bm{k}) \gamma^\mu v^{(s)}(-\bm{k}) &=2k^\mu \bar{u}^{(s')}(\bm{k})v^{(s)}(-\bm{k}) \\
+-2m\bar{v}^{(s')}(\bm{k}) \gamma^\mu u^{(s)}(-\bm{k}) &=2k^\mu \bar{u}^{(s')}(\bm{k})v^{(s)}(-\bm{k}) \\
+\end{aligned}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The proof is similar to what we have done in <code>Gordon Equalities</code> :</p>
+
+<div>$$\begin{aligned}
+-m \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} v^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} k_\nu \gamma^{\nu} v^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}') (k^\mu-2\ti S^{\mu\nu}k_\nu) v^{(s)}(\bm{k}) \\
+m \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} v^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')k'_\nu \gamma^{\nu}\gamma^{\mu}  v^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}')(k'^\mu+2\ti S^{\mu\nu}k'_\nu) v^{(s)}(\bm{k}) \\
+\\
+m \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} u^{(s)}(\bm{k}) &= \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} k_\nu \gamma^{\nu} u^{(s)}(\bm{k}) = \bar{v}^{(s')}(\bm{k}')(k^\mu-2\ti S^{\mu\nu}k_\nu) u^{(s)}(\bm{k}) \\
+-m \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} u^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')k'_\nu \gamma^{\nu}\gamma^{\mu}  v^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}')(k'^\mu+2\ti S^{\mu\nu}k'_\nu) v^{(s)}(\bm{k}) \\
+\end{aligned}$$</div>
+
+<p>Subtracting them will get the proof.</p>
+
+</details>
+</li>
+</ol>
+
+<p>With these properties, we can write down the general solution:</p>
+
+<div>$$\psi(x) = \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big( a(\bm{k},s) u^{(s)}(k)e^{-\ti k_\mu x^\mu} + b(\bm{k,s})^{*} v^{(s)}(k)e^{\ti k_{\mu }x^\mu} \Big)$$</div>
+
+<p>Where <code>$a,b$</code> are complex-valued function, and the factor <code>$\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}$</code> is used to let the <code>$\psi$</code> has a correct unit, and will be normalized when we quantize it.</p>
+
+<p>The canonically momentum:</p>
+
+<div>$$\pi(x)= \ti \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big( a(\bm{k},s)^{*} u^{(s)}(k)^\dagger e^{\ti k_\mu x^\mu} + b(\bm{k,s}) v^{(s)}(k)^\dagger e^{-\ti k_{\mu }x^\mu} \Big)$$</div>
+
+<p>And Hamiltonian (with <code>$\chi^{(r)\dagger}\chi^{(s)} = \xi^{(r)\dagger}\xi^{(s)}=m\delta_r^s$</code> ):</p>
+
+<div>$$H=\sum_s \int \td^3\bm{k} \ \omega_{|\bm{k}|} \Big[ a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^*\Big]$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>For the Hamiltonian of Dirac field:</p>
+
+<div>$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi  \Big\}$$</div>
+
+<p>We need to compute those two items:</p>
+
+<div>$$\begin{aligned}
+
+\int \td^3 \bm{x} \bar{\psi}\psi &=2m \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \\
+& \indent  + \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) a(-\bm{k},s') \bar{v}^{(s)}(\bm{k}) u^{(s')}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t} \\
+& \indent + \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* b(-\bm{k},s')^* \bar{u}^{(s)}(\bm{k}) v^{(s')}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \\
+\\
+-\ti \int \td^3 \bm{x} \bar{\psi} \gamma^i \partial_i \psi &= \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s') \bar{u}^{(s)}(\bm{k}) k_i \gamma^i u^{(s')}(\bm{k}) \\
+& \indent - \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s')^* \bar{v}^{(s)}(\bm{k}) k_i \gamma^i v^{(s')}(\bm{k}) \\
+& \indent  - \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) a(-\bm{k},s') \bar{v}^{(s)}(\bm{k}) k_i \gamma^i u^{(s')}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t} \\
+& \indent + \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* b(-\bm{k},s')^* \bar{u}^{(s)}(\bm{k}) k_i\gamma^i v^{(s')}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \\
+\\
+\end{aligned}$$</div>
+
+<p>According to those equalities:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(s)}(\bm{k})\gamma^j u^{(r)}(\bm{k}) &= 2k^j \delta^{sr} \\
+\bar{v}^{(s)}(\bm{k})\gamma^j v^{(r)}(\bm{k}) &= 2k^j \delta^{sr} \\
+\end{aligned}$$</div>
+
+<p>And:</p>
+
+<div>$$\begin{aligned}
+\bar{u}^{(s)}(\bm{k})\gamma^\mu v^{(s')}(-\bm{k}) &= \frac {k^\mu} m \bar{u}^{(s)}(\bm{k}) v^{(s')}(-\bm{k}) \\
+\bar{v}^{(s)}(\bm{k})\gamma^\mu u^{(s')}(-\bm{k}) &= -\frac {k^\mu} m \bar{v}^{(s)}(\bm{k}) u^{(s')}(-\bm{k}) \\
+\end{aligned}$$</div>
+
+<p>And at last:</p>
+
+<div>$$\begin{aligned}
+m\bar{u}^{(s)}(\bm{k}) v^{(s')}(-\bm{k})&= \bar{u}^{(s)}(\bm{k})(-k_0\gamma^0+k_i\gamma^i)v^{(s')}(-\bm{k}) \\
+&=\bar{u}^{(s)}v^{(s')}(-\bm{k}) (-k_0 k^0+k_i k^i)/m \\
+&=-m\bar{u}^{(s)}v^{(s')}(-\bm{k}) \\
+&=0 \\
+\bar{v}^{(s)}(\bm{k}) u^{(s')}(-\bm{k})&=v^{(s)\dagger}(-(-\bm{k}))\gamma^0u^{(s')}(-\bm{k}) \\
+&=\big( u^{(s')\dagger}(-\bm{k})\gamma^0v^{(s)}(-(-\bm{k}))\big)^\dagger \\
+&=0
+\end{aligned}$$</div>
+
+<p>Then we have:</p>
+
+<div>$$\begin{aligned}
+
+\int \td^3 \bm{x} \bar{\psi}\psi &= 2m \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \\
+\\
+-\ti \int \td^3 \bm{x} \bar{\psi} \gamma^i \partial_i \psi &= \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s') 2k_i k^i\delta^{s',s} \\
+& \indent - \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s')^* 2k_i k^i\delta^{s',s} \\
+\end{aligned}$$</div>
+
+<p>Then:</p>
+
+<div>$$\begin{aligned}
+H &=\int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi  \Big\} \\
+&= \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s) 2k_i k^i- \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s)^* 2k_i k^i \\
+&\indent + 2m^2 \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \\
+&=\sum_s \int \td^3\bm{k} \ \omega_{|\bm{k}|} \Big[ a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^*\Big]
+\end{aligned}$$</div>
+
+</details>
+
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/physics" role="button">Physics </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Classical Fields: Scalar Field</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#dirac-field">
+												 Dirac Field
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#formalism">
+												 Formalism
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#solution-of-the-equation">
+												 Solution of The Equation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#properties-of-dirac-field">
+												 Properties of Dirac Field
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

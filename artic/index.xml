@@ -18,12 +18,7 @@
       
       <guid>https://wzdlc1996.github.io/artic/insitesearch/</guid>
       <description>Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
-Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.
-This article follows the post of Yangming&amp;rsquo;s Blog [Hugo&amp;amp;Algolia] .
-Sign up to Algolia It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by the default, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.
-The direct interface for the user of Algolia is its Dashboard [Dashboard]. And in the indices page we can find how many indices have been used.
-Algolia provides three ways to add records: manual, upload JSON file, and API. Here we will use the third way: API to add our records.
-Tool: hugo-algolia To upload the records of the posts, we need to construct the JSON file to describe the content data.</description>
+Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month.</description>
     </item>
     
     <item>
@@ -34,10 +29,7 @@ Tool: hugo-algolia To upload the records of the posts, we need to construct the 
       <guid>https://wzdlc1996.github.io/artic/zenoeff/</guid>
       <description>Introduction Zeno Paradox , or Arrow paradox of Zeno Paradoxes argues that [Wiki page]:
  If everything when it occupies an equal space is at rest, and if that which is in locomotion is always occupying such a space at any moment, the flying arrow is therefore motionless
- In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990]. This effect is known as Quantum Zeno Effect(QZE) or Turing Paradox now.
-The first experiment of observing the QZE is made by Itano, Heinzen, Bolligner and Wineland in 1990. [Itano 1990] . There are also some other new study in this field, like inverse quantum Zeno effect or Anti-Zeno Effect(AZE) of that the decay can be accelerated by the measurements [Facchi 2000], QZE and AZE by general measurements(without instantaneousness) [Kazuki 2005].
-Here we will introduce the basic theory about QZE and analyze the periodic measurement of a quantum system.
-Unstable System We will discuss the concept unstable system first of all. Generally speaking, unstable systems are those systems who have a finite life time will never return to the initial state spontaneously.</description>
+ In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990].</description>
     </item>
     
   </channel>
