@@ -23,6 +23,16 @@ Note that $\psi$ is a 4-components Dirac Spinor.</description>
     </item>
     
     <item>
+      <title>Perturbation Theory</title>
+      <link>https://wzdlc1996.github.io/notes/quantummechanics/perturbation/</link>
+      <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/quantummechanics/perturbation/</guid>
+      <description>Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0+\lambda \hat V$ , in terms of series of the &amp;quot;small parameter&amp;quot; $\lambda$
+Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one.</description>
+    </item>
+    
+    <item>
       <title>Classical Fields: Scalar Field</title>
       <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</link>
       <pubDate>Sun, 18 Nov 2018 21:49:41 +0800</pubDate>
