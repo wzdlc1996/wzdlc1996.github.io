@@ -24,10 +24,10 @@ Note that $\psi$ is a 4-components Dirac Spinor.</description>
     
     <item>
       <title>Setup an In-Site Search</title>
-      <link>https://wzdlc1996.github.io/artic/insitesearch/</link>
+      <link>https://wzdlc1996.github.io/artic/hugo/insitesearch/</link>
       <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/artic/insitesearch/</guid>
+      <guid>https://wzdlc1996.github.io/artic/hugo/insitesearch/</guid>
       <description>Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
 Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month.</description>
     </item>
@@ -44,10 +44,10 @@ Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat
     
     <item>
       <title>Quantum Zeno Effect</title>
-      <link>https://wzdlc1996.github.io/artic/zenoeff/</link>
+      <link>https://wzdlc1996.github.io/artic/quantummeasurement/zenoeff/</link>
       <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/artic/zenoeff/</guid>
+      <guid>https://wzdlc1996.github.io/artic/quantummeasurement/zenoeff/</guid>
       <description>Introduction Zeno Paradox , or Arrow paradox of Zeno Paradoxes argues that [Wiki page]:
  If everything when it occupies an equal space is at rest, and if that which is in locomotion is always occupying such a space at any moment, the flying arrow is therefore motionless
  In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990].</description>
