@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Classical Theory on Leonard</title>
+    <link>https://wzdlc1996.github.io/tags/classical-theory/</link>
+    <description>Recent content in Classical Theory on Leonard</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh_Hans</language>
+    <lastBuildDate>Tue, 11 Dec 2018 15:21:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://wzdlc1996.github.io/tags/classical-theory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classical Fields: Dirac Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</link>
+      <pubDate>Tue, 11 Dec 2018 15:21:12 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</guid>
+      <description>Dirac Field Formalism [Definition] : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:
+$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$ This Lagrangian are not symmetric to $\psi$ and $\bar{\psi}$ , but this form will not lead the momentum vanish.
+Note that $\psi$ is a 4-components Dirac Spinor.</description>
+    </item>
+    
+    <item>
+      <title>Classical Fields: Scalar Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</link>
+      <pubDate>Sun, 18 Nov 2018 21:49:41 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</guid>
+      <description>Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
+$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
+$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r+\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</description>
+    </item>
+    
+    <item>
+      <title>Classical Field Theory</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</link>
+      <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</guid>
+      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space .</description>
+    </item>
+    
+  </channel>
+</rss>

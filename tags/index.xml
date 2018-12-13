@@ -6,17 +6,35 @@
     <description>Recent content in Tags on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sun, 09 Dec 2018 14:56:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Dec 2018 13:24:17 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Development</title>
-      <link>https://wzdlc1996.github.io/tags/development/</link>
-      <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
+      <title>Approximation</title>
+      <link>https://wzdlc1996.github.io/tags/approximation/</link>
+      <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/tags/development/</guid>
+      <guid>https://wzdlc1996.github.io/tags/approximation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classical Theory</title>
+      <link>https://wzdlc1996.github.io/tags/classical-theory/</link>
+      <pubDate>Tue, 11 Dec 2018 15:21:12 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/classical-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamics</title>
+      <link>https://wzdlc1996.github.io/tags/dynamics/</link>
+      <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/dynamics/</guid>
       <description></description>
     </item>
     
@@ -26,15 +44,6 @@
       <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/tags/front-end/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://wzdlc1996.github.io/tags/linux/</link>
-      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -50,7 +59,7 @@
     <item>
       <title>Math</title>
       <link>https://wzdlc1996.github.io/tags/math/</link>
-      <pubDate>Mon, 12 Nov 2018 11:36:42 +0800</pubDate>
+      <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/tags/math/</guid>
       <description></description>
@@ -66,20 +75,38 @@
     </item>
     
     <item>
-      <title>Physics</title>
-      <link>https://wzdlc1996.github.io/tags/physics/</link>
-      <pubDate>Tue, 11 Dec 2018 15:21:12 +0800</pubDate>
+      <title>Os Setup</title>
+      <link>https://wzdlc1996.github.io/tags/os-setup/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/tags/physics/</guid>
+      <guid>https://wzdlc1996.github.io/tags/os-setup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quantum</title>
       <link>https://wzdlc1996.github.io/tags/quantum/</link>
-      <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
+      <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/tags/quantum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistical Phys</title>
+      <link>https://wzdlc1996.github.io/tags/statistical-phys/</link>
+      <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/statistical-phys/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Symmetry</title>
+      <link>https://wzdlc1996.github.io/tags/symmetry/</link>
+      <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/symmetry/</guid>
       <description></description>
     </item>
     
