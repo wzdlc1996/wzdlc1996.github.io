@@ -6,10 +6,30 @@
     <description>Recent content in Physics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Tue, 11 Dec 2018 15:21:12 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Dec 2018 14:29:47 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/categories/physics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quantization of Free Field: Scalar Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/</link>
+      <pubDate>Thu, 20 Dec 2018 14:29:47 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/</guid>
+      <description>Quantization of Scalar Field Canonical Quantization of Scalar Field Here we only consider the real-valued Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:
+$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^2 \big)$$ To quantized this system, we need let the canonical coordinate and momentum be operators on Hilbert space: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ .</description>
+    </item>
+    
+    <item>
+      <title>Classical Fields: Maxwell Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/</link>
+      <pubDate>Tue, 11 Dec 2018 15:21:14 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/</guid>
+      <description>Maxwell Field Formalism [Definition] : Maxwell Field is the field of 4-vector. The Lagrangian is Lorentz Scalar constructed by the so-called Electromagnetic Tensor:
+$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ .</description>
+    </item>
     
     <item>
       <title>Classical Fields: Dirac Field</title>

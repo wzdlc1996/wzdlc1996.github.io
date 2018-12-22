@@ -8,27 +8,25 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
-$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
-$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r&#43;\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)&#43;\mathcal{L}_R(\phi_i)$">
+  <meta name="description" content="Maxwell Field Formalism [Definition] : Maxwell Field is the field of 4-vector. The Lagrangian is Lorentz Scalar constructed by the so-called Electromagnetic Tensor:
+$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ .">
 
-  <meta property="og:title" content="Classical Fields: Scalar Field" />
-<meta property="og:description" content="Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
-$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
-$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r&#43;\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)&#43;\mathcal{L}_R(\phi_i)$" />
+  <meta property="og:title" content="Classical Fields: Maxwell Field" />
+<meta property="og:description" content="Maxwell Field Formalism [Definition] : Maxwell Field is the field of 4-vector. The Lagrangian is Lorentz Scalar constructed by the so-called Electromagnetic Tensor:
+$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/" /><meta property="article:published_time" content="2018-11-18T21:49:41&#43;08:00"/>
-<meta property="article:modified_time" content="2018-12-11T17:11:00&#43;08:00"/>
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/" /><meta property="article:published_time" content="2018-12-11T15:21:14&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-20T14:21:14&#43;08:00"/>
 
 
 
   <title>
   
-       Classical Fields: Scalar Field | Leonard 
+       Classical Fields: Maxwell Field | Leonard 
   
   </title>
 
-  <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/">
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/">
 
   
   
@@ -436,11 +434,11 @@ autocomplete('#aa-search-input',
     
   </ul>
 
-  <div class="px-4 post-heading">Classical Fields: Scalar Field</div>
+  <div class="px-4 post-heading">Classical Fields: Maxwell Field</div>
 
   <ul class="post-meta li-x mt-1">
     
-      <li>Nov 18, 2018</li>
+      <li>Dec 11, 2018</li>
     
 
     
@@ -456,162 +454,182 @@ autocomplete('#aa-search-input',
           <div class="post-content markdown">
             
 
-<h1 id="klein-gordon-field">Klein-Gordon Field</h1>
+<h1 id="maxwell-field">Maxwell Field</h1>
 
 <h2 id="formalism">Formalism</h2>
 
-<p><em>[Definition]</em> : <code>Klein-Gordon</code> Field is a class of scalar fields. For the <code>real valued</code> field, the Lagrangian(Lorentz-scalar) is:</p>
+<p><em>[Definition]</em> : Maxwell Field is the field of <code>4-vector</code>. The Lagrangian is Lorentz Scalar constructed by the so-called <code>Electromagnetic Tensor</code>:</p>
 
-<div>$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$</div>
+<div>$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$</div>
 
-<p>And for the <code>complex valued</code> field, the Lagrangian is:</p>
+<p>And where <code>$F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$</code> is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of <code>$\partial_0 A_0$</code> .</p>
 
-<div>$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$</div>
+<p>We need to do some adjustment. And this will be used in the <code>Gupta-Bleuler Quantization</code> in the future. And the new Lagrangian is:</p>
 
-<p>It can be treated as two independent real value field: <code>$\phi=\phi_r+\ti \phi_i$</code> and <code>$\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</code></p>
+<div>$$\mathcal{L} = -\frac 1 4 F^{\mu\nu} F_{\mu\nu} - \frac {\xi} 2 (\partial^{\mu}A_\mu)^2$$</div>
 
-<p>We discuss the real valued field hereafter (and we will see that real-valued means <code>neutral</code>):</p>
+<p>Under the <code>Lorentz gauge</code> , we require <code>$\partial^\mu A_\mu=0$</code> , and this Lagrangian is the same to above.</p>
 
-<p>The equation of motion is:</p>
+<p>We can write down the equation of motion:</p>
 
-<div>$$(\partial^{\mu}\partial_{\mu} + m^2) \phi = (\square + m^2)\phi=0$$</div>
+<div>$$\partial_\nu\partial^\nu A_\mu - (1-\xi)\partial_\mu (\partial_\nu A^\nu)=0$$</div>
 
-<p>Where <code>$\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$</code> is <code>d'Alembert operator</code> . <br />
-And the <code>canonically conjugate field</code>(momentum):</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>For the Euler-Lagrange Equation is linear respect to <code>$\mathcal{L}$</code> , we separate it into two terms:</p>
 
-<div>$$\pi = \partial_0 \phi $$</div>
+<div>$$\mathcal{L}=\mathcal{L}_1+\mathcal{L}_2=-\frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 (\partial_\mu A^\mu)^2$$</div>
 
-<p>Then one can write down the Hamiltonian:</p>
+<p>The first term:</p>
 
-<div>$$H = \frac 1 2  \int \td^3 \bm{x} (\pi^2+ \nabla\phi\cdot \nabla \phi+m^2\phi^2)$$</div>
+<div>$$\begin{aligned}
+&\indent \frac {\partial \mathcal{L}_1} {\partial A_\alpha}-\partial_\mu \frac {\partial \mathcal{L}_1} {\partial (\partial_\mu A_\alpha)}\\
+&=\frac 1 4\partial_\beta\Big(\frac {\partial F^{\mu\nu}} {\partial(\partial_\beta A_\alpha)} F_{\mu\nu} +\frac {\partial F_{\mu\nu}} {\partial(\partial_\beta A_\alpha)} F^{\mu\nu} \Big) \\
+&=\frac 1 4 \partial_\beta \Big(\eta^{\mu\gamma}\eta^{\nu\delta}(\delta_\beta^\gamma\delta_\alpha^\delta-\delta_\alpha^\gamma\delta_\beta^\delta)F_{\mu\nu}+(\delta_\beta^\mu\delta_\alpha^\nu-\delta_\alpha^\mu\delta_\beta^\nu)F^{\mu\nu} \Big) \\
+&= \frac 1 4 \partial_\beta \big(F^{\beta\alpha}-F^{\alpha\beta}+F^{\beta\alpha}-F^{\alpha\beta}\big) \\
+&= \partial_{\beta}F^{\beta\alpha} \\
+&= \square A^\alpha-\partial^\alpha(\partial_\mu A^\mu)
+\end{aligned}$$</div>
+
+<p>And the second term:</p>
+
+<div>$$\begin{aligned}
+&\indent \frac {\partial \mathcal{L}_2} {\partial A_\alpha}-\partial_\mu \frac {\partial \mathcal{L}_2} {\partial (\partial_\mu A_\alpha)}\\
+&=\frac {\xi} 2 \partial_{\mu} \frac {\partial (\partial_\nu A^\nu)^2} {\partial(\partial_\mu A_\alpha)}\\
+&=\xi \partial_\mu \big(\partial_\nu A^\nu \eta^{\mu\alpha} \big) \\
+&=\xi \partial^{\alpha}(\partial_\nu A^\nu)
+\end{aligned}$$</div>
+
+<p>Then we have the equation of motion:</p>
+
+<div>$$\square A^\alpha - (1-\xi)\partial^\alpha (\partial_\mu A^\mu)=0$$</div>
+
+<p>Or:</p>
+
+<div>$$\square A_\alpha - (1-\xi)\partial_\alpha (\partial^\mu A_\mu)=0$$</div>
+
+</details>
+
+
+<p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynmann gauge</code> (<code>$\xi=1$</code>) it is also the standard form of wave-equation:</p>
+
+<div>$$\partial_\nu\partial^\nu A_\mu=\square A_\mu=0$$</div>
+
+<p>And the conjugate field:</p>
+
+<div>$$\pi^\mu\equiv \frac {\delta \mathcal{L}} {\delta (\partial_0 A_\mu)}=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <div>$$\begin{aligned}
+\pi^\mu &\equiv \frac {\delta \mathcal{L}} {\delta(\partial_0 A_\mu)} \\
+&= -\frac 1 4 \Big(\frac {\delta F^{\alpha\beta}} {\delta(\partial_0 A_\mu)} F_{\alpha\beta} + \frac {\delta F_{\alpha\beta}} {\delta(\partial_0 A_\mu)} F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \frac {\delta(\partial_\alpha A^\alpha)} {\delta(\partial_0 A_\mu)} \\
+&=-\frac 1 2 \Big((\delta_\alpha^0\delta_\beta^\mu-\delta_\beta^0\delta_\alpha^\mu) F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \delta^\mu_\gamma \delta^0_\alpha \eta^{\gamma\alpha} \\
+&=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)
+\end{aligned}$$</div>
+
+</details>
+
+
+<p>And under the Feynman Gauge <code>$\xi=1$</code> we have the Hamiltonian:</p>
+
+<div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <div>$$\begin{aligned}
+\mathcal{H}&= \pi^\mu \partial_0 A_\mu-\mathcal{L} \\
+&=F^{\mu0}\partial_0 A_\mu +\frac 1 4 F^{\mu\nu}F_{\mu\nu}-\xi \partial_0 A^0 \partial_\mu A^\mu +\frac 1 2 \xi(\partial_\mu A^{\mu})^2 \\
+&=F^{\mu0}\partial_0 A_\mu + \frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
+&=(\partial^\mu A^0 - \partial^0 A^\mu)\partial_0 A_\mu + \frac 1 2 (\partial^\mu A^\nu \partial_\mu A_\nu-\partial^\mu A^\nu \partial_\nu A_\mu)-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
+&=-\sum_i \partial_i A_0 \partial_0 A_i+\sum_i (\partial_0 A_i)^2 + \frac 1 2 \Big((\partial_0 A_0)^2 -\sum_i (\partial_i A_0)^2-\sum_i (\partial_0 A_i)^2 +\sum_{i,j} (\partial_i A_j)^2 \\
+&\indent -(\partial_0 A_0)^2+2\sum_i \partial_i A_0 \partial_0 A_i- \sum_{i,j}\partial_i A_j \partial_j A_i \Big) - \frac {\xi} 2 \partial_\mu A^\mu \sum_{\nu=0}^3 (\partial_\nu A_\nu) \\
+&= \frac 1 2 \Big(\sum_i (\partial_0 A_i)^2 - (\nabla A_0)^2+\sum_i (\nabla A_i)^2-\sum_{i,j}\partial_i A_j \partial_j A_i \Big) - \frac {\xi} 2 \partial_\mu A^\mu (\partial_0 A_0 + \nabla \cdot \bm{A}) \\
+&= \frac 1 2 \sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) - \frac 1 2 (\nabla A_0)^2 -\frac 1 2 \Big(\nabla \cdot \big((\bm{A}\cdot \nabla) \bm{A} \big)-(\bm{A}\cdot \nabla)(\nabla\cdot \bm{A}) \Big) \\
+&\indent -\frac \xi 2 \big((\partial_0 A_0)^2-(\nabla \cdot \bm{A})^2 \big) \\
+&=\frac 1 2 \Big[\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -\xi (\partial_0 A_0)^2 - (\nabla A_0)^2 \Big] - \frac 1 2 \nabla\cdot \Big((\bm{A}\cdot \nabla)\bm{A}-\xi (\nabla \cdot \bm{A})\bm{A} \Big) \\
+&\indent + \frac {1-\xi} 2 (\bm{A}\cdot \nabla)(\nabla\cdot \bm{A})
+\end{aligned}$$</div>
+
+<p>When <code>$\xi =1$</code> , the last term vanishes. And the full-divergence has no contribution to the spatial integral, we have:</p>
+
+<div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
+
+</details>
+
 
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
 
-<p>To solve the field equation, one can use the Fourier transformation:</p>
+<p>We will solve the equation of motion under <code>Feynman Gauge</code> . Which lead to the wave equation form:</p>
 
-<div>$$\phi(x) = \int \frac {\td^3\bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti\omega t} a(\bm{k},\omega) = \int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{-\ti k_\mu x^\mu} a(k)$$</div>
+<div>$$\square A^\mu=0$$</div>
 
-<p>Where the 4-vector <code>$k=(\omega,\bm{k})$</code> . Then the equation will be:</p>
+<p>Similarly, we use the Fourier transform as:</p>
 
-<div>$$\int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} (-k_\mu k^\mu+m^2) e^{-\ti k_\mu x^\mu} a(k) = 0$$</div>
+<div>$$A_\mu(x)=\int \frac {\td \omega \td^3\bm{k}} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti \omega t} a_\mu(\bm{k},\omega)$$</div>
 
-<p>Which requires that <code>$-k_\mu k^\mu+m^2=0$</code> , which is the <code>dispersion relationship</code> :</p>
+<p>Remembering that <code>$A_\mu$</code> is a real-vector, and <code>$k=(\omega,\bm{k})$</code> , with the dispersion relation: <code>$k_\mu k^\mu=0$</code>, the generic solution can be written as:</p>
 
-<div>$$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$</div>
+<div>$$A_\mu(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon_{\mu}(k,\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon_{\mu}(k,\lambda)^* e^{\ti k_\nu x^\nu} \Big)$$</div>
 
-<p>With this relation, we separate the general solution to two items according to the sign of frequency:</p>
+<p>Where <code>$\omega_{|\bm{k}|}=|\bm{k}|^2$</code> , <code>$\lambda$</code> denotes four polarization direction, and <code>$\epsilon_\mu(k,\lambda)$</code> is the corresponding vector.</p>
+
+<p>Here we make a convention about the polarization vector <code>$\epsilon_{\mu}(k,\lambda)$</code> :</p>
+
+<p><em>[Convention]</em> : The polarization vector is defined by the following two condition:</p>
+
+<ol>
+<li><p>For special situation: <code>$k_0=(k,0,0,k)$</code>:</p>
 
 <div>$$\begin{aligned}
-\phi(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
-\pi(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\}
+\epsilon(k_0,0) &= (1,0,0,0)\\
+\epsilon(k_0,1) &= (0,1,0,0) \\
+\epsilon(k_0,2) &= (0,0,1,0) \\
+\epsilon(k_0,3) &= (0,0,0,1)
 \end{aligned}$$</div>
 
-<p>One can rewrite the Hamiltonian with <code>$a(\bm{k})$</code> as:</p>
+<p>Or simply: <code>$\epsilon_\mu(k_0,\lambda) = \delta_{\mu}^\lambda$</code></p></li>
 
-<div>$$H = \frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</div>
+<li><p>For generic situation, let <code>$\Lambda(\omega)k_0=k$</code>, is the Lorentz transform for vector. We have:</p>
 
-<p>In which we hold the order of <code>$a$</code> , which will let the conclusion hold in quantum theory</p>
+<div>$$\epsilon(k,\lambda)=\Lambda(\omega)\epsilon(k_0,\lambda)$$</div></li>
+</ol>
+
+<p><em>[Theorem]</em> : with such the convention, we can prove that polarization vector has the following properties:</p>
+
+<ol>
+<li><code>$\epsilon_\mu(k,\lambda)\epsilon^{\mu*}(k,\lambda')=\eta_{\lambda,\lambda'}$</code></li>
+<li><code>$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^{\mu}(k,\lambda)\epsilon^{\nu *}(k,\lambda)=\eta^{\mu\nu}$</code></li>
+</ol>
+
+<p>For linear-polarization , there will be no need for the conjugation. But for circular polarization, we need the conjugation.</p>
 
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
-    <p>We need to compute three items in Hamiltonian:</p>
+    <p>We prove this theorem by linear-polarization. For circular-polarization is similar.</p>
 
-<div>$$\begin{aligned}
-\int \td^3\bm{x} \pi^2 &= \int \td^3\bm{x} \int \frac {\td^3 \bm{k}_1 \td^3\bm{k}_2 (-\omega_1\omega_2)} {(2\pi)^3} \sqrt{\frac 1 {4\omega_1\omega_2}} \Big\{e^{\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}-\ti(\omega_1+\omega_2)t}a(\bm{k}_1)a(\bm{k}_2) \\
-& \ \ \ \ + e^{-\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}+\ti(\omega_1+\omega_2)t}a(\bm{k}_1)^*a(\bm{k}_2)^* \\
-& \ \ \ \ -e^{\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}-\ti(\omega_1-\omega_2)t} a(\bm{k}_1)a(\bm{k}_2)^* \\
-& \ \ \ \ -e^{-\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}+\ti(\omega_1-\omega_2)t} a(\bm{k}_1)^*a(\bm{k}_2) \Big\} \\
-&=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
-\\
-\int\td^3\bm{x}(\nabla \phi)^2 &= \frac 1 2 \int \td^3 \bm{k} \ \frac 1 {2\omega_{|\bm{k}|}}  |\bm{k}|^2 \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
-\\
-\int\td^3\bm{x}(m \phi)^2 &= \frac 1 2 \int \td^3 \bm{k} \ \frac {m^2} {\omega_{|\bm{k}|}} \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*+e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) + e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
+<ol>
+<li><p>Let <code>$\Lambda k_0=k$</code> , we have <code>$\epsilon_\mu(k,\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(k_0,\lambda)=\Lambda_{\mu}^{\indent \nu}\delta_{\nu}^\lambda=\Lambda_\mu^{\indent \lambda}$</code> . Then:</p>
 
-\end{aligned}$$</div>
+<div>$$\epsilon_\mu(k,\lambda)\epsilon^{\mu*}(k,\lambda')=\Lambda_{\mu}^{\indent \lambda}\Lambda^{\mu\lambda'}=\eta^{\lambda\lambda'}=\eta_{\lambda\lambda'}$$</div></li>
 
-<p>Then we have the result:</p>
+<li><p>With that <code>$\epsilon_\mu(k,\lambda)=\Lambda_\mu^{\indent \lambda}$</code> , we have:</p>
 
-<div>$$H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</div>
+<div>$$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^\mu(k,\lambda)\epsilon^{\nu*}(k,\lambda)=\eta_{\lambda,\lambda'}\Lambda^{\mu\lambda}\Lambda^{\nu\lambda'}=\eta^{\mu\nu}$$</div></li>
+</ol>
 
 </details>
 
 
-<h2 id="charged-klein-gordon-field">Charged Klein-Gordon Field</h2>
-
-<p>Complex valued Klein-Gordon Field has a internal degree of freedom. It allow the complex valued Klein-Gordon Field to describe the charged spin-0 particles. Here we will show it by the Noether Theorem.</p>
-
-<p>Complex valued Klein-Gordon Field has an <code>$\text{U}(1)$</code> symmetry:</p>
-
-<div>$$\phi\rightarrow \phi' = \phi e^{\ti \alpha} \ ; \ \phi^* \rightarrow \phi'^*=\phi' e^{-\ti \alpha}$$</div>
-
-<p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with <code>$\delta x=0 , \delta \phi=\ti \phi\delta \alpha$</code> be the generator)</p>
-
-<div>$$Q = \int \td^3 \bm{x} \frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi)} \delta \phi+\frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi^*)} \delta \phi^* = \ti \int \td^3 \bm{x} \ (\pi \phi - \pi^* \phi^*) $$</div>
-
-<p>With the formalism of complex valued Klein-Gordon Field, we can use two set of real valued Klein-Gordon Field to describe it:</p>
-
-<div>$$\phi_r \sim a(\bm{k}) \ ; \ \phi_i \sim b(\bm{k})$$</div>
-
-<p>And write down the expression of <code>$Q$</code> :</p>
-
-<div>$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</div>
-
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>With:</p>
-
-<div>$$\begin{aligned}
-\phi_r(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\oemga_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
-\pi_r(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\oemga_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
-\phi_i(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\oemga_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\} \\
-\pi_i(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\oemga_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\}
-\end{aligned}$$</div>
-
-<p>And:</p>
-
-<div>$$\phi = \phi_r+\ti \phi_i \ ; \ \pi=\frac 1 2 (\pi_r-\ti\pi_i) $$</div>
-
-<p>That is caused by the fact:</p>
-
-<div>$$\pi=\frac {\delta \mathcal{L}} {\delta \flo{\phi}}=\frac {\delta \mathcal{L}} {\delta \flo{\phi}_r}\frac {\partial\flo{\phi}_r} {\partial \flo{\phi}}+\frac {\delta \mathcal{L}} {\delta \flo{\phi}_i}\frac {\partial\flo{\phi}_i} {\partial \flo{\phi}}$$</div>
-
-<p>Like:</p>
-
-<div>$$\frac {\partial} {\partial z}=\frac {\partial \text{Re} z} {\partial z}\frac {\partial} {\partial \text{Re} z}+\frac {\partial \text{Im} z} {\partial z}\frac {\partial} {\partial \text{Im} z}=\frac 1 2\frac {\partial} {\partial \text{Re} z}+\frac 1 {2\ti}\frac {\partial} {\partial \text{Im} z}$$</div>
-
-<p>with <code>$\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$</code>.</p>
-
-<p>Then the charge:</p>
-
-<div>$$Q=\ti \int \td^3 \bm{x} \ (\pi \phi-\pi^*\phi^*)=\int \td^3 \bm{x} \ (\pi_i \phi_r -\pi_r \phi_i)$$</div>
-
-<p>Then we need only compute the integral of <code>$\pi_i\phi_r$</code> , and another term can be obtained by permute the <code>$a$</code> and <code>$b$</code> :</p>
-
-<div>$$\begin{aligned}
-\int \td^3 \bm{x} \pi_i \phi_r &= \int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3} \ti \omega_1 \frac 1 {\sqrt{4\omega_1\omega_2}}\Big\{-e^{\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} - \ti (\omega_1+\omega_2)t} b(\bm{k}_1)a(\bm{k}_2) \\
-&\indent -e^{\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} - \ti (\omega_1-\omega_2)t} b(\bm{k}_1)a(\bm{k}_2)^* + e^{-\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} + \ti (\omega_1-\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)  \\
-&\indent +e^{-\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} + \ti (\omega_1+\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)^* \Big\} \\
-&=\int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}b(\bm{k})a(-\bm{k})-b(\bm{k})a(\bm{k})^* +b(\bm{k})^* a(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}b(\bm{k})^*a(-\bm{k})^* \Big\} \\
-\int \td^3 \bm{x} \pi_r \phi_i &= \int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(\bm{k})b(-\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(\bm{k})^*b(-\bm{k})^* \Big\} \\
-&=\int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(-\bm{k})b(\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(-\bm{k})^*b(\bm{k})^* \Big\} \\
-\end{aligned}$$</div>
-
-<p>Then we have:</p>
-
-<div>$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</div>
-
-</details>
-
-
-<p>Or with that <code>$c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$</code> , we have:</p>
-
-<div>$$Q=\int \td^3 \bm{k}(c_+(\bm{k})^*c_+(\bm{k})-c_-(\bm{k})^*c_-(\bm{k}))$$</div>
-
-<p>This conclusion hold in Quantum theory where <code>$a,a^*$</code> are not commutable but <code>$a,b$</code> are commutable.</p>
+<p>It is obvious that <code>$\epsilon_\mu(k,\lambda=1,2)k^\mu=0$</code>. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call <code>$\epsilon_\mu(k,\lambda=3)$</code> <code>Vertical Polarization</code> , call <code>$\epsilon_\mu(k,\lambda=0)$</code> <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
 
           </div>
 
@@ -641,10 +659,10 @@ And the <code>canonically conjugate field</code>(momentum):</p>
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://wzdlc1996.github.io/notes/linux/bluetoothaudio/ class="post-meta">Previous
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>Bluetooth Audio Issues</span>
+                    <span>Classical Fields: Dirac Field</span>
                   </div>
                 </a>
               
@@ -652,10 +670,10 @@ And the <code>canonically conjugate field</code>(momentum):</p>
             
             <div class="col-md-6 text-right" >
               
-                <a href=https://wzdlc1996.github.io/notes/quantummechanics/perturbation/ class="post-meta">Next
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/ class="post-meta">Next
                   <div class="pt-2 pb-5 flex-reverse">
                     <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>Perturbation Theory</span>
+                    <span>Quantization of Free Field: Scalar Field</span>
                   </div>
                 </a>
               
@@ -703,8 +721,8 @@ And the <code>canonically conjugate field</code>(momentum):</p>
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#klein-gordon-field">
-												 Klein-Gordon Field
+						 					<a class="nav-link" href="#maxwell-field">
+												 Maxwell Field
 											</a>
 										</li>
 						 
@@ -755,32 +773,6 @@ And the <code>canonically conjugate field</code>(momentum):</p>
 										<li class="nav-item">
 						 					<a class="nav-link" href="#solution-of-the-equation">
 												 Solution of The Equation
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#charged-klein-gordon-field">
-												 Charged Klein-Gordon Field
 											</a>
 										</li>
 						 
