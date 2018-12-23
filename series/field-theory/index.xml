@@ -17,7 +17,7 @@
       <pubDate>Thu, 20 Dec 2018 14:29:47 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/</guid>
-      <description>Quantization of Scalar Field Canonical Quantization of Scalar Field Here we only consider the real-valued Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:
+      <description>Quantization of Klein-Gordon Field Canonical Quantization of real-valued Scalar Field Here we only consider the real-valued Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:
 $$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^2 \big)$$ To quantized this system, we need let the canonical coordinate and momentum be operators on Hilbert space: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ .</description>
     </item>
     
