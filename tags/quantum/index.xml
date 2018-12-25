@@ -6,10 +6,19 @@
     <description>Recent content in Quantum on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Mon, 03 Dec 2018 13:24:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Dec 2018 12:54:43 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/tags/quantum/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scattering Theory</title>
+      <link>https://wzdlc1996.github.io/notes/quantummechanics/scattering/</link>
+      <pubDate>Mon, 17 Dec 2018 12:54:43 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/quantummechanics/scattering/</guid>
+      <description>Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</description>
+    </item>
     
     <item>
       <title>Perturbation Theory</title>

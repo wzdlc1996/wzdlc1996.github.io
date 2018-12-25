@@ -796,15 +796,15 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <p><em>[Definition]</em> : <code>Feynman Propagator</code> or <code>two-point time-ordered Green's Function</code> of Scalar Field is defined as :</p>
 
-<div>$$\ti \Delta_F(x-y):=\bra{0}\mathcal{T}\{\phi(y)\phi(x)^\dagger\}\ket{0} $$</div>
+<div>$$\ti \Delta_F(x-y):=\bra{0}\mathcal{T}\{\phi(x)\phi(y)^\dagger\}\ket{0} $$</div>
 
-<p>Here the time-ordered product is:</p>
+<p>Here the time-ordered product (<code>for bosonic operators</code>) is:</p>
 
 <div>$$\mathcal{T}\{A(x)B(y)\}=\Theta(x^0-y^0)A(x)B(y)+\Theta(y^0-x^0)B(y)A(x)$$</div>
 
 <p>One can compute the propagator:</p>
 
-<div>$$\ti \Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{\ti p\cdot (x-y)} \frac {\ti} {p^2-m^2+\ti \epsilon}$$</div>
+<div>$$\ti \Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$</div>
 
 <p>Where <code>$\epsilon\rightarrow 0^+$</code> .</p>
 
@@ -815,10 +815,10 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
     <p>We compute these two terms in time-ordered product:</p>
 
 <div>$$\begin{aligned}
-\bra{0}\phi(y)\phi(x)^\dagger\ket{0}&= \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot y+\ti k_1\cdot x} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
-&=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{\ti k\cdot (x-y)} \\
-\bra{0}\phi(x)^\dagger\phi(y)\ket{0}&=\int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot x+\ti k_1\cdot y} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
+\bra{0}\phi(x)\phi(y)^\dagger\ket{0}&= \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot x+\ti k_1\cdot y} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
 &=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{-\ti k\cdot (x-y)} \\
+\bra{0}\phi(y)^\dagger\phi(x)\ket{0}&=\int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot y+\ti k_1\cdot x} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
+&=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{\ti k\cdot (x-y)} \\
 \end{aligned}$$</div>
 
 <p>Then we have:</p>
@@ -828,33 +828,33 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 <p>Then we consider the integral:</p>
 
 <div>$$\begin{aligned}
-\int \frac {\td^4 p} {(2\pi)^4} e^{\ti p\cdot x} \frac {\ti} {p^2-m^2+\ti \epsilon}&=\int \frac {\td^3\bm{p}} {(2\pi)^4} \int \td p^0 \frac {\ti e^{\ti p\cdot x}} {(p^0-\omega_{|\bm{p}|}+\ti \epsilon)(p^0+\omega_{|\bm{p}|}-\ti \epsilon)}
+\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot x} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}&=\int \frac {\td^3\bm{p}} {(2\pi)^4} \int \td p^0 \frac {\ti e^{-\ti p\cdot x}} {(p^0-\omega_{|\bm{p}|}+\ti \epsilon)(p^0+\omega_{|\bm{p}|}-\ti \epsilon)}
 \end{aligned}$$</div>
 
-<p>If <code>$x^0\gt 0$</code> , the Jordon&rsquo;s Lemma allow us to use the upper half plane. Then the pole is <code>$-\omega_{|\bm{p}|}+\ti \epsilon$</code> , we have:</p>
+<p>If <code>$x^0\lt 0$</code> , the Jordon&rsquo;s Lemma allow us to use the upper half plane. Then the pole is <code>$-\omega_{|\bm{p}|}+\ti \epsilon$</code> , we have:</p>
 
-<div>$$\text{integral} =2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{-\ti \omega_{|\bm{p}|}x^0-\ti \bm{p}\cdot \bm{x}}} {-2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti \omega_{|\bm{p}|}x^0 + \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti p\cdot x } $$</div>
+<div>$$\text{integral} =2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{\ti \omega_{|\bm{p}|}x^0+\ti \bm{p}\cdot \bm{x}}} {-2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti \omega_{|\bm{p}|}x^0 - \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti p\cdot x } $$</div>
 
-<p>And if <code>$x^0\lt 0$</code> , we can only use the lower half plane. Then the pole is <code>$\omega_{|\bm{p}|}-\ti \epsilon$</code> , we have:</p>
+<p>And if <code>$x^0\gt 0$</code> , we can only use the lower half plane. Then the pole is <code>$\omega_{|\bm{p}|}-\ti \epsilon$</code> , we have:</p>
 
-<div>$$\text{integral} =-2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{\ti \omega_{|\bm{p}|}x^0-\ti \bm{p}\cdot \bm{x}}} {2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti \omega_{|\bm{p}|}x^0 - \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti p\cdot x } $$</div>
+<div>$$\text{integral} =-2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{-\ti \omega_{|\bm{p}|}x^0+\ti \bm{p}\cdot \bm{x}}} {2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti \omega_{|\bm{p}|}x^0 + \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti p\cdot x } $$</div>
 
 <p>That is :</p>
 
-<div>$$\int \frac {\td^4 p} {(2\pi)^4} e^{\ti p\cdot x} \frac {\ti} {p^2-m^2+\ti \epsilon}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big\{\Theta(x^0-y^0)e^{-\ti p\cdot (x-y)} + \Theta(y^0-x^0)e^{\ti p\cdot (x-y)} \Big\}$$</div>
+<div>$$\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot x} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big\{\Theta(x^0-y^0)e^{-\ti p\cdot (x-y)} + \Theta(y^0-x^0)e^{\ti p\cdot (x-y)} \Big\}$$</div>
 
 <p>Or equivalently:</p>
 
-<div>$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{\ti p\cdot x} \frac {\ti} {p^2-m^2+\ti \epsilon}$$</div>
+<div>$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$</div>
 
 </details>
 
 
 <h1 id="discrete-symmetry-of-scalar-field">Discrete Symmetry of Scalar Field</h1>
 
-<h2 id="spatial-inversion">Spatial inversion</h2>
+<h2 id="spatial-inversion">Spatial Inversion</h2>
 
-<p>We hope the spacial inversion will induce a unitary operator so as to:</p>
+<p>We hope the <code>spatial inversion</code> induces a unitary operator so as to:</p>
 
 <div>$$U_P \phi(x^0,\bm{x})U_P^{-1}= e^{\ti \theta_P} \phi(x^0,-\bm{x})$$</div>
 
@@ -872,7 +872,7 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <h2 id="charge-conjugation">Charge Conjugation</h2>
 
-<p>We hope the charge conjugation will induce a unitary operator so as to:</p>
+<p>We hope the <code>charge conjugation</code> induces a unitary operator so as to:</p>
 
 <div>$$U_C \phi(x)U_C^{-1}=e^{\ti \theta_C}\phi(x)^\dagger$$</div>
 
@@ -884,7 +884,7 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <h2 id="time-reversal">Time Reversal</h2>
 
-<p>Time reversal will induce an anti-unitary operator. With conjugation operator <code>$K$</code> we can write it as <code>$U_T K$</code> , where <code>$U_T$</code> is a unitary operator:</p>
+<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator <code>$K$</code> we can write it as <code>$U_T K$</code> , where <code>$U_T$</code> is a unitary operator:</p>
 
 <div>$$(U_T K) \phi(x^0,\bm{x})(U_T K)^{-1} = e^{\ti \theta_T} \phi(-x^0,\bm{x})$$</div>
 
@@ -920,16 +920,23 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/ class="post-meta">Previous
+                <a href=https://wzdlc1996.github.io/notes/quantummechanics/scattering/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>Classical Fields: Maxwell Field</span>
+                    <span>Scattering Theory</span>
                   </div>
                 </a>
               
             </div>
             
             <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Quantization of Free Field: Dirac Field</span>
+                  </div>
+                </a>
               
             </div>
           </div>
@@ -1148,7 +1155,7 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 										<li class="nav-item">
 						 					<a class="nav-link" href="#spatial-inversion">
-												 Spatial inversion
+												 Spatial Inversion
 											</a>
 										</li>
 						 

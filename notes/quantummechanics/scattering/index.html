@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow &#43;\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.">
+
+  <meta property="og:title" content="Scattering Theory" />
+<meta property="og:description" content="Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow &#43;\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/quantummechanics/scattering/" /><meta property="article:published_time" content="2018-12-17T12:54:43&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-17T12:54:43&#43;08:00"/>
+
+
+
+  <title>
+  
+       Scattering Theory | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/quantummechanics/scattering/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128644147-1');
+</script>
+
+
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+    </div>
+
+
+
+
+  </nav>
+
+  
+  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Quantum-Mechanics</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Scattering Theory</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Dec 17, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>8 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h1 id="setup-of-scattering-problem">Setup of Scattering Problem</h1>
+
+<h2 id="rough-picture">Rough Picture</h2>
+
+<ol>
+<li><code>Time-dependent</code> : particle beam (plane wave packet) <code>$\ket{\psi(t=0)}$</code> coming in, interacting with <code>$\hat V$</code> , scattered particles (scattered wave) <code>$\ket{\psi(t\rightarrow +\infty)}$</code> going out.</li>
+
+<li><p><code>Time-independent</code> : a (short-ranged) scattering potential <code>$\hat V$</code> as a perturbation to free particle Hamiltonian <code>$\hat H_0$</code> . The unperturbed state is momentum eigenstate <code>$\ket{\bm{k}}$</code> (with momentum <code>$\hbar\bm{k}$</code>) , and the perturbed state contains scattered wave.</p>
+
+<p>The difficulties in treating the scattering problem as perturbation theory: infinite degeneracy</p></li>
+</ol>
+
+<p>We will only consider non-relativistic particles: <code>$\hat H_0=-\frac {\hbar^2} {2m} \nabla^2$</code></p>
+
+<p>Particle number(probability) current is: <code>$\text{Re}\big(\psi^*(\bm{r})(-\ti\frac \hbar m \nabla)\psi(\bm{r})\big)$</code></p>
+
+<h2 id="scattering-cross-section">Scattering Cross Section</h2>
+
+<p><em>[Definition]</em> : <code>Differential cross section</code> :</p>
+
+<div>$$\frac {\td \sigma} {\td \Omega} := \frac {\td Q_{\text{flux scattered crossing }r^2\td \Omega}} {J_{\text{incoming}}\td \Omega}$$</div>
+
+<p>. Where <code>$\td \sigma$</code> is the particle current scattered into the solid angle element <code>$\td \Omega$</code>, under unit incoming particle current density</p>
+
+<p><em>[Definition]</em> : <code>Cross section</code> is the integral of differential cross section on the full angle: <code>$\sigma=\int \frac {\td \sigma} {\td \Omega}\td \Omega$</code></p>
+
+<p>Incoming plane wave <code>$\ket{\bm{k}}$</code> is not normalizable. Probability is not easily defined. To overcome this one can use free wave packet instead of the plane wave.</p>
+
+<h1 id="lippmann-schwinger-equation">Lippmann-Schwinger Equation</h1>
+
+<p>Take the time-independent approach: <code>$(\hat H_0+\hat V)\ket{\psi}=E\ket{\psi}$</code> . Assume that <code>$\hat V$</code> is sufficiently short-ranged, namely for position <code>$\bm{r}$</code> at a very large distance from the scattering potential <code>$\hat V\approx 0$</code> and <code>$\ket{\psi}=\ket{\bm{k}}$</code>, that is <code>$E=\hbar^2 \bm{k}^2/2m$</code> . Like the perturbation theory we have the <code>Lippmann-Schwinger Equation</code></p>
+
+<div>$$\ket{\psi}=\ket{\bm{k}}+\frac {1} {E-\hat H_0+\ti \epsilon}\hat V\ket{\psi}$$</div>
+
+<p>Where <code>$\ti\epsilon$</code> is used to avoid singularity.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The Lippmann-Schwinger equation can we writen as <code>$E\ket{\psi}-\hat H_0\ket{\psi}+\ti \epsilon \ket{\psi}=\ti\epsilon \ket{\bm{k}}+\hat V \ket{\psi}$</code> . For the Schrodinger equation:</p>
+
+<div>$$\ti \hbar \frac {\td } {\td t}\ket{\psi(t)} = (\hat H_0+\hat V)\ket{\psi(t)}$$</div>
+
+<p>Solution is:</p>
+
+<div>$$\ket{\psi(t)}=e^{-\ti E t/\hbar + \epsilon t/\hbar}\big(\ket{\psi}+\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}\big)-\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}$$</div>
+
+<p>Which satisfies <code>$\ket{\psi(t\rightarrow -\infty)}\propto \ket{\bm{k}}$</code></p>
+
+</details>
+
+
+<p>Assuming that <code>$\hat V=\int \td^3\bm{r} \ V(\bm{r})\ket{\bm{r}}\bra{\bm{r}}$</code> , we can write the <code>$\ket{\psi}$</code> as the wavefunction on coordinate space:</p>
+
+<div>$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>With the equality: <code>$1=\int \td^3 \bm{k}\ket{\bm{k}}\bra{\bm{k}}$</code> , we have:</p>
+
+<div>$$\begin{aligned}
+\bra{\bm{r}}\psi\rangle &= \bra{\bm{r}}\bm{k}\rangle + \int \td^3 \bm{r}' \td^3 \bm{k}' \bra{\bm{r}}\frac {1} {E-\hat H_0+\ti\epsilon} \ket{\bm{k}'}\bra{\bm{k}'}\bm{r}'\rangle \bra{\bm{r}'}\hat V \ket{\psi} \\
+&=\bra{\bm{r}}\bm{k}\rangle +\int \td^3 \bm{r}' \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} V(\bm{r}')\bra{\bm{r}'}\psi\rangle \\
+\end{aligned}$$</div>
+
+<p>For that:</p>
+
+<div>$$\begin{aligned}
+\int \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon}&=\frac 1 {(2\pi)^{3/2}}\int \td^3 \bm{k}' \frac {e^{\ti \bm{k}'\cdot(\bm{r}-\bm{r}')}} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} \\
+&=\frac {2m} {(2\pi)^{3/2}\hbar^2} \int_{0}^{\infty} \td|\bm{k}'|\int_0^{2\pi}\td \theta\int_0^\pi \td \phi |\bm{k}'|^2 \sin \phi \frac {e^{\ti|\bm{k}'||\bm{r}-\bm{r}'|\cos\phi}} {|\bm{k}|^2-|\bm{k}'|^2+\ti \epsilon'} \\
+&=-\frac {2m} {(2\pi)^{3/2}\hbar^2} \frac {2\pi^2} {|\bm{r}-\bm{r}'|}e^{\ti k|\bm{r}-\bm{r}'|}
+\end{aligned}$$</div>
+
+<p>This can be easily proved by the residue theorem.</p>
+
+<p>One can write down that:</p>
+
+<div>$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$</div>
+
+<p>q.e.d.</p>
+
+</details>
+
+
+<p>The further approximation is that: <code>$|\bm{r}-\bm{r}'|\approx |\bm{r}|-\frac {\bm{r}\cdot \bm{r}'} {|\bm{r}|}$</code> with <code>$|\bm{r}|\gg|\bm{r}'|$</code> , since <code>$V$</code> is only nonzero at the neighbor of origin.</p>
+
+<div>$$\psi(\bm{r})\approx \frac 1 {(2\pi)^{3/2}}\Big(e^{\ti \bm{k}\cdot \bm{r}} +f(\bm{k}',\bm{k}) \frac {e^{\ti kr}} {r} \Big) $$</div>
+
+<p>Where <code>$f(\bm{k}',\bm{k})=-\frac {(2\pi)^{3/2}} {4\pi}\frac {2m} {\hbar}\int \td^3 \bm{r}' e^{-\ti \bm{k}'\cdot \bm{r}'}V(\bm{r}')\psi(\bm{r}')$</code></p>
+
+<p>And one can prove that the <code>differential cross section</code>:</p>
+
+<div>$$\frac {\td\sigma} {\td \Omega} = |f(\bm{k}',\bm{k})|^2 $$</div>
+
+<p><em>[Theorem]</em> : <code>Optical theorem</code> : Total cross section is related to the forward scattering amplitude:</p>
+
+<div>$$\sigma \equiv \int \frac {\td \sigma} {\td \Omega} \td \Omega = \frac {4\pi} {k}\text{Im}f(\bm{k},\bm{k})$$</div>
+
+<h1 id="born-approximation">Born Approximation</h1>
+
+<p>Approximate the unknown |ψi on the right-hand-side of Lippmann-Schwinger equation by the incoming plane wave, we have the method called <code>Born Approximation</code> :</p>
+
+<div>$$\ket{\psi} = \ket{\bm{k}} +\frac {1} {E-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}}$$</div>
+
+<p>With Born Approximation, we can write the <code>$f(\bm{k}',\bm{k})$</code> without any unknown function:</p>
+
+<div>$$f(\bm{k}',\bm{k})=-\frac {2m} {4\pi\hbar}\int \td^3 \bm{x} \ e^{-\ti(\bm{k}'-\bm{k})\cdot \bm{x}} V(\bm{x})$$</div>
+
+<p>It is just proportional to the fourier transform of <code>$V(\bm{x})$</code> , and just the function of <code>$\bm{k}'-\bm{k}$</code>.</p>
+
+<p>One can also apply higher approximation on Lippmann-Schwinger function and obtain the <code>Born-Equation</code>:</p>
+
+<div>$$\ket{\psi}=\ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\cdots$$</div>
+
+<h1 id="partial-wave-expansion">Partial Wave Expansion</h1>
+
+<p>Consider the central potential <code>$V(\bm{x})=V(|\bm{x}|)$</code> , then <code>$f$</code> is just the function of the angle between <code>$\bm{k}',\bm{k}$</code> . Define the <code>$\bm{k}$</code> direction as <code>$+z$</code> direction, we have:</p>
+
+<div>$$\psi(\bm{r})\sim e^{\ti kz}+f(\theta)\frac {e^{\ti kr}} r$$</div>
+
+<p>Expand the plane wave into spherical waves:</p>
+
+<div>$$e^{\ti kz} = \sum_{l=0}^{\infty} (2l+1)\ti^l j_l(kr)P_l(\cos\theta) $$</div>
+
+<p>where <code>$j_l$</code> are spherical Bessel function. For large <code>$r$</code> , it is <code>$e^{\ti kz}\sim \frac 1 {2\ti kr}\sum_{l=0}^{\infty} (2l+1)(e^{\ti kr}-(-1)^l e^{-\ti kr})P_l(\cos\theta)$</code></p>
+
+<p>Expand <code>$f(\theta)$</code> into Legendre Polynomials: <code>$f(\theta)=\sum_{l=0}^{\infty}(2l+1)f_l P_l(\cos\theta)$</code></p>
+
+<p>Then the cross section:</p>
+
+<div>$$\sigma =\int \td \Omega \ |f|^2=4\pi \sum_l (2l+1)|f_l|^2$$</div>
+
+<p>Where we used the orthogonality of Legendre Polynomials: <code>$\int_0^{\pi}\sin\theta \td \theta \ P_l(\cos\theta)P_{l'}(\cos\theta)=\frac 2 {2l+1}\delta_{l,l'}$</code></p>
+
+<p>By <code>optical theorem</code>:</p>
+
+<div>$$\sigma=\frac {4\pi} k \text{Im} f(0)=\frac {4\pi} k \sum_l (2l+1)\text{Im}f_l$$</div>
+
+<p>Where we have used <code>$P_l(1)=1$</code> .</p>
+
+<p>Compare these two expression, we have <code>$|f_l|^2 = \frac 1 k \text{Im}f_l$</code> ,  or equivalently, <code>$|1+2\ti kf_l|^2=1$</code>.</p>
+
+<p>Define phase shift <code>$\delta_l$</code> such that <code>$1+2\ti kf_l=e^{2\ti\delta_l}$</code> , then <code>$f_l=\frac 1 k e^{ti \delta_l}\sin\delta_l$</code> . As the result:</p>
+
+<div>$$\psi(\bm{r})\sim \frac 1 {2\ti kr}\sum_l (2l+1)P_l(\cos\theta)\big[e^{2\ti \delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big] $$</div>
+
+<p>At the large <code>$r$</code>. And the cross section:</p>
+
+<div>$$\sigma=\frac {4\pi} {k^2} \sum_l (2l+1)\sin^2 \delta_l$$</div>
+
+<p>The full procedure to solve the scattering question by partial wave method is :</p>
+
+<ol>
+<li><p>Expand <code>$\psi(r)=\sum_l Y_l^0(\theta,\phi)R_l(r)$</code> , where spherical harmonic function <code>$Y_l^0(\theta,\phi)=\sqrt{\frac {2l+1} {4\pi}}P_l(\cos\theta)$</code>. Then radial function satisfies:</p>
+
+<div>$$\Big[-\frac 1 r \frac {\td^2} {\td r^2} r + \frac {l(l+1)} {r^2} +\frac {2m} {\hbar^2} V(r) \Big]R_l(r)=k^2 R_l(r)$$</div>
+
+<p>And <code>$R_l(r)\sim\frac 1 {2\ti kr}\frac 1 {\sqrt{4\pi(2l+1)}}\big[e^{2\ti\delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big]$</code> as <code>$r\rightarrow \infty$</code>.</p></li>
+
+<li><p>To solve <code>$\delta_l$</code> , solve the radial equation of <code>$R_l$</code> first. expand its asymptotical (<code>$r\rightarrow \infty$</code>) form by spherical Bessel function <code>$j_l(kr)$</code> and <code>$n_l(kr)$</code>: <code>$R_l(kr)\sim j_l(kr)\cos(\delta_l)+n_l(kr)\sin\delta_l$</code></p>
+
+<p>Remind of the spherical Bessel function <code>$j_l,n_l$</code> , they are the solution of the equation:</p>
+
+<div>$$\Big[-\frac 1 {\rho} \frac {\td^2} {\td \rho^2} \rho + \frac {l(l+1)} {\rho^2}  \Big]R(\rho)=R(\rho)$$</div>
+
+<p>And has the form:</p>
+
+<div>$$j_l(\rho)=(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\sin\rho} {\rho} \Big) \ ; \ n_l(\rho)=-(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\cos\rho} {\rho} \Big)$$</div>
+
+<p>And the asymptotical behavior:</p>
+
+<div>$$\begin{aligned}
+\rho &\rightarrow 0 \Rightarrow j_l(\rho)\sim \frac {\rho^l} {(2l+1)!!} \ ; \ n_l(\rho)\sim - \frac {(2l+1)!!} {\rho^l}\\
+\rho &\rightarrow \infty \Rightarrow j_l(\rho)\sim \frac {\sin(\rho-l\pi/2)} {\rho} \ ; \ n_l(\rho)\sim \frac {\cos(\rho-l\pi/2)} {\rho}
+\end{aligned}$$</div></li>
+</ol>
+
+<h1 id="scattering-matrix">Scattering Matrix</h1>
+
+<p><em>[Definition]</em> : <code>$\hat S$</code> is the unitary time evolution operator in <code>interaction picture</code> , under the <code>limit</code> that initial time <code>$t_i\rightarrow -\infty$</code> and the final time <code>$t_f\rightarrow +\infty$</code> :</p>
+
+<div>$$\hat S = \lim_{t_i\rightarrow -\infty \\  t_f\rightarrow +\infty} \hat U_I(t_f,t_i)$$</div>
+
+<p>Then from Dyson series, we have:</p>
+
+<div>$$\hat S = 1 +\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 \hat V_I(t_1) + \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty}\td t_1 \int_{-\infty}^{t_1} \td t_2 \hat V_I(t_1)\hat V_I(t_2)+\cdots$$</div>
+
+<p>Where <code>$\hat V_I(t)=e^{\ti \hat H_0 t/\hbar} \hat V e^{-\ti \hat H_0 t/\hbar}$</code></p>
+
+<p>Usually it is a <code>non-convergent integral</code> , to avoid this , we assume that the time of interaction is finite. That is assuming the potential (in <code>Schrodinger picture</code>) depends on time: <code>$\hat V(t)=\hat V e^{-\epsilon |t|}$</code> . With <code>$\epsilon\gt 0$</code> .</p>
+
+<p>Then with the Dyson series we can compute order by order:</p>
+
+<h2 id="1st-order">1st Order</h2>
+
+<div>$$\hat S^{(1)} = -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})$$</div>
+
+<p>Where <code>$\ket{\bm{k}}$</code> is the eigenstate of momentum, or <code>$\hat H_0$</code> .</p>
+
+<div>$$\hat H_0\ket{\bm{k}}=\frac {\hbar \bm{k}^2} {2m} \ket{\bm{k}}\equiv E_{\bm{k}}\ket{\bm{k}}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The first order term in Dyson series is:</p>
+
+<div>$$\begin{aligned}
+&\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 e^{\ti \hat H_0 t_1/\hbar} \hat V e^{-\epsilon |t_1|} e^{-\ti \hat H_0 t_1/\hbar}  \\
+=& \int \td^3 \bm{k}\td^3 \bm{k}' \ \frac {-\ti} \hbar \int_{-\infty}^{+\infty} \td t_1 \ket{\bm{k}}e^{\ti E_{\bm{k}}t/\hbar}\bra{\bm{k}}\hat V\ket{\bm{k}'}e^{-\epsilon |t_1|} e^{-\ti E_{\bm{k}'}t/\hbar} \bra{\bm{k}'} \\
+=& \int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \Big(\frac 1 {\ti(E_{\bm{k}}-E_{\bm{k}'})/\hbar +\epsilon} - \frac 1 {\ti(E_{\bm{k}}-E_{\bm{k}'})/\hbar -\epsilon} \Big)\\
+=& \int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \frac {2\epsilon} {(E_{\bm{k}}-E_{\bm{k}'})^2/\hbar^2 +\epsilon^2} \\
+\sim_{\epsilon\rightarrow 0} &\int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} 2\pi \delta\big(\frac {E_{\bm{k}}-E_{\bm{k}'}} {\hbar} \big) \\
+=& -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})
+\end{aligned}$$</div>
+
+<p>Using that <code>$\lim_{\epsilon\rightarrow 0^+} \frac {2\epsilon} {x^2+\epsilon^2} = 2\pi \delta(x)$</code>.</p>
+
+<p>q.e.d.</p>
+
+</details>
+
+
+<h2 id="2nd-order">2nd Order</h2>
+
+<div>$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>The second order term in Dyson series is:</p>
+
+<div>$$\begin{aligned}
+& \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty} \td t_1 \int_{-\infty}^{t_1}\td t_2 e^{\ti \hat H_0 t_1 /\hbar} \hat V e^{-\epsilon |t_1|} e^{-\ti \hat H_0 t_1/\hbar} e^{\ti \hat H_0 t_2/\hbar} \hat V e^{-\epsilon |t_2|} e^{-\ti \hat H_0 t_2/\hbar} \\
+&= (\frac {-\ti} \hbar)^2 \int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \td^3 \bm{k}_3 \ \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \ket{\bm{k}_2}\bra{\bm{k}_2}\hat V \ket{\bm{k}_3}\bra{\bm{k}_3} \times \\
+& \indent \int_{-\infty}^{+\infty} \td t_1 \int_{-\infty}^{t_1}\td t_2 \ e^{\ti E_{\bm{k}_1}t_1/\hbar-\epsilon|t_1|-\ti E_{\bm{k}_2}t_1/\hbar +\ti E_{\bm{k}_2}t_2/\hbar -\epsilon |t_2|-\ti E_{\bm{k}_3}t_2/\hbar} \\
+&= (\frac {-\ti} \hbar)^2 \int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \td^3 \bm{k}_3 \ \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \ket{\bm{k}_2}\bra{\bm{k}_2}\hat V \ket{\bm{k}_3}\bra{\bm{k}_3} \times \\
+&\indent \Big\{\frac 1 {\ti(E_{\bm{k}_2}-E_{\bm{k}_3})/\hbar +\epsilon}\Big(\frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_3})/\hbar +\epsilon} - \frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_2})/\hbar -\epsilon} \Big) \\
+&\indent - \frac 1 {\ti(E_{\bm{k}_2}-E_{\bm{k}_3})/\hbar -\epsilon}\Big(\frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_3})/\hbar -\epsilon} - \frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_2})/\hbar -\epsilon} \Big) \Big\}
+\end{aligned}$$</div>
+
+<p>Consider:</p>
+
+<div>$$\lim_{\epsilon\rightarrow 0^+} \frac 1 {x+\ti \epsilon} = -\ti \pi \delta(x) + \mathcal{P}\Big(\frac 1 x \Big)$$</div>
+
+<p>Where <code>$\mathcal{P}$</code> means <code>Cauchy principal value</code> . One can reduce the result above to:</p>
+
+<div>$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$</div>
+
+<p>q.e.d.</p>
+
+</details>
+
+
+<h2 id="generic-formula">Generic Formula</h2>
+
+<p>The generic formula of <code>$\hat S$</code> is:</p>
+
+<div>$$\bra{\bm{k}}\hat S -1 \ket{\bm{k}'} = -2\pi \ti \delta(E_{\bm{k}}-E_{\bm{k}'}) \bra{\bm{k}} \Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}'}$$</div>
+
+<p>Is similar to Born expansion.</p>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Re-prove the Optical Theorem
+    </summary>
+    <p>With that <code>$\hat S$</code> is unitary, we have:</p>
+
+<div>$$\int \td^3 \bm{k}' \bra{\bm{k}} \hat S^\dagger\ket{\bm{k}'}\bra{\bm{k}'}\hat S \ket{\bm{k}}=\bra{\bm{k}}\bm{k}\rangle$$</div>
+
+<p>Or equivalently,</p>
+
+<div>$$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle \bra{\bm{k}'}\hat S-1\ket{\bm{k}} + \bra{\bm{k}}\hat S^\dagger -1 \ket{\bm{k}'}\bra{\bm{k}'}\bm{k}\rangle + |\bra{\bm{k}'}\hat S-1\ket{\bm{k}}|^2 \Big)=0$$</div>
+
+<p>Let</p>
+
+<div>$$T(\bm{k}',\bm{k})=\bra{\bm{k}'}\Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}}$$</div>
+
+<p>we can rewrite the equality above as:</p>
+
+<div>$$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle (-2\pi\ti)\delta(E_{\bm{k}}-E_{\bm{k}'}) T(\bm{k}',\bm{k})+2\pi\ti\delta(E_{\bm{k}}-E_{\bm{k}'}) T(\bm{k}',\bm{k})^*\bra{\bm{k}'}\bm{k}\rangle \Big)\\
+=-\int \td^3 \bm{k} \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$</div>
+
+<p>That is:</p>
+
+<div>$$-\int \td^3 \bm{k}' \ 4\pi \delta(E_{\bm{k}}-E_{\bm{k}'}) \text{Im}(\bra{\bm{k}}\bm{k}'\rangle T(\bm{k}',\bm{k})) = \int \td^3 \bm{k}' \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$</div>
+
+<p>That is the optical theorem:</p>
+
+<div>$$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'}) |T(\bm{k}',\bm{k})|^2$$</div>
+
+</details>
+
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/approximation" role="button">approximation </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Classical Fields: Maxwell Field</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Quantization of Free Field: Scalar Field</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#setup-of-scattering-problem">
+												 Setup of Scattering Problem
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#rough-picture">
+												 Rough Picture
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#scattering-cross-section">
+												 Scattering Cross Section
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#lippmann-schwinger-equation">
+												 Lippmann-Schwinger Equation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#born-approximation">
+												 Born Approximation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#partial-wave-expansion">
+												 Partial Wave Expansion
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#scattering-matrix">
+												 Scattering Matrix
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#1st-order">
+												 1st Order
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#2nd-order">
+												 2nd Order
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#generic-formula">
+												 Generic Formula
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

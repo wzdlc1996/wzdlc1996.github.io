@@ -6,10 +6,20 @@
     <description>Recent content in Field Theory on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Thu, 20 Dec 2018 14:29:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 16:27:27 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/field-theory/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quantization of Free Field: Dirac Field</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/</link>
+      <pubDate>Sun, 23 Dec 2018 16:27:27 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/</guid>
+      <description>Quantization of Dirac Field Canonical Quantization of Dirac Spinor Field The Hamiltonian of Dirac Spinor Field is:
+$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi \Big\}$$ Where the $\psi$ should be a 4-component-Dirac-spinor. And the canonical momentum is $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$ . Then with the anti-commutation relationship we need:</description>
+    </item>
     
     <item>
       <title>Quantization of Free Field: Scalar Field</title>
