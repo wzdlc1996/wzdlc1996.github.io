@@ -13,20 +13,20 @@
     
     <item>
       <title>Angular Momentum and Spin</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/spin/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/spin/</link>
       <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/spin/</guid>
       <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
 $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$</description>
     </item>
     
     <item>
       <title>Symmetry in Quantum Mechanics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/symmetry/</link>
       <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/symmetry/</guid>
       <description>Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
  Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:</description>
     </item>

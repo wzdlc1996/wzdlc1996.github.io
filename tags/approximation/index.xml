@@ -13,29 +13,29 @@
     
     <item>
       <title>Introduction to Relativistic Quantum Mechanics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/relativisticqm/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/relativisticqm/</link>
       <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/relativisticqm/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/relativisticqm/</guid>
       <description>Dirac Equation It comes from the dispersion relation in Special Relativistic Theory: $E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$ , transfer $E\rightarrow \ti\hbar \frac {\td} {\td t}$ and $\bm{p}\rightarrow -\ti\hbar \nabla$ , together with the requirement of linear equation, Dirac derived that:
 $$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m c^2 \beta \big)\psi$$ Dirac proved that $\alpha_i,\beta$ should at least be $4\times 4$ matrices.</description>
     </item>
     
     <item>
       <title>Scattering Theory</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/scattering/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/scattering/</link>
       <pubDate>Mon, 17 Dec 2018 12:54:43 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/scattering/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/scattering/</guid>
       <description>Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</description>
     </item>
     
     <item>
       <title>Perturbation Theory</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/perturbation/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/perturbation/</link>
       <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/perturbation/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/perturbation/</guid>
       <description>Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0+\lambda \hat V$ , in terms of series of the &amp;quot;small parameter&amp;quot; $\lambda$
 Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one.</description>
     </item>

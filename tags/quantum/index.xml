@@ -13,29 +13,29 @@
     
     <item>
       <title>Introduction to Relativistic Quantum Mechanics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/relativisticqm/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/relativisticqm/</link>
       <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/relativisticqm/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/relativisticqm/</guid>
       <description>Dirac Equation It comes from the dispersion relation in Special Relativistic Theory: $E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$ , transfer $E\rightarrow \ti\hbar \frac {\td} {\td t}$ and $\bm{p}\rightarrow -\ti\hbar \nabla$ , together with the requirement of linear equation, Dirac derived that:
 $$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m c^2 \beta \big)\psi$$ Dirac proved that $\alpha_i,\beta$ should at least be $4\times 4$ matrices.</description>
     </item>
     
     <item>
       <title>Scattering Theory</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/scattering/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/scattering/</link>
       <pubDate>Mon, 17 Dec 2018 12:54:43 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/scattering/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/scattering/</guid>
       <description>Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</description>
     </item>
     
     <item>
       <title>Perturbation Theory</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/perturbation/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/perturbation/</link>
       <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/perturbation/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/perturbation/</guid>
       <description>Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0+\lambda \hat V$ , in terms of series of the &amp;quot;small parameter&amp;quot; $\lambda$
 Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one.</description>
     </item>
@@ -53,39 +53,39 @@ Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat
     
     <item>
       <title>Angular Momentum and Spin</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/spin/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/spin/</link>
       <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/spin/</guid>
       <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
 $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$</description>
     </item>
     
     <item>
       <title>Symmetry in Quantum Mechanics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/symmetry/</link>
       <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/symmetry/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/symmetry/</guid>
       <description>Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
  Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:</description>
     </item>
     
     <item>
       <title>Quantum Dynamics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/dynamics/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/dynamics/</link>
       <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/dynamics/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/dynamics/</guid>
       <description>Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:</description>
     </item>
     
     <item>
       <title>Identical Particles</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/identicalparticles/</link>
       <pubDate>Mon, 12 Nov 2018 13:42:48 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/identicalparticles/</guid>
       <description>Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
 $$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
  $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:</description>
@@ -93,10 +93,10 @@ $$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert
     
     <item>
       <title>Basic Concepts of Quantum Mechanics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/concepts/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/concepts/</link>
       <pubDate>Mon, 12 Nov 2018 11:36:42 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/concepts/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/concepts/</guid>
       <description>Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&amp;ldquo;ket&amp;rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &amp;ldquo;bra&amp;rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$.</description>
     </item>
     

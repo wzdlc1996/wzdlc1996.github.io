@@ -13,10 +13,10 @@
     
     <item>
       <title>Quantum Dynamics</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/dynamics/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/dynamics/</link>
       <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/dynamics/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/dynamics/</guid>
       <description>Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:</description>
     </item>
     

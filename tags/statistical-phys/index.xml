@@ -13,20 +13,20 @@
     
     <item>
       <title>Angular Momentum and Spin</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/spin/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/spin/</link>
       <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/spin/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/spin/</guid>
       <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
 $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$</description>
     </item>
     
     <item>
       <title>Identical Particles</title>
-      <link>https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/</link>
+      <link>https://wzdlc1996.github.io/notes/qm/identicalparticles/</link>
       <pubDate>Mon, 12 Nov 2018 13:42:48 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/quantummechanics/identicalparticles/</guid>
+      <guid>https://wzdlc1996.github.io/notes/qm/identicalparticles/</guid>
       <description>Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
 $$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
  $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:</description>
