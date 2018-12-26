@@ -6,10 +6,20 @@
     <description>Recent content in Quantum Mechanics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Mon, 17 Dec 2018 12:54:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Dec 2018 12:10:36 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/quantum-mechanics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction to Relativistic Quantum Mechanics</title>
+      <link>https://wzdlc1996.github.io/notes/quantummechanics/relativisticqm/</link>
+      <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/quantummechanics/relativisticqm/</guid>
+      <description>Dirac Equation It comes from the dispersion relation in Special Relativistic Theory: $E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$ , transfer $E\rightarrow \ti\hbar \frac {\td} {\td t}$ and $\bm{p}\rightarrow -\ti\hbar \nabla$ , together with the requirement of linear equation, Dirac derived that:
+$$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m c^2 \beta \big)\psi$$ Dirac proved that $\alpha_i,\beta$ should at least be $4\times 4$ matrices.</description>
+    </item>
     
     <item>
       <title>Scattering Theory</title>
