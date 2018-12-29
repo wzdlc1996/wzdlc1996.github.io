@@ -443,7 +443,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>5 minutes read</li>
+      <li>6 minutes read</li>
     
   </ul>
   
@@ -513,7 +513,7 @@ autocomplete('#aa-search-input',
 </details>
 
 
-<p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynmann gauge</code> (<code>$\xi=1$</code>) it is also the standard form of wave-equation:</p>
+<p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynman gauge</code> (<code>$\xi=1$</code>) it is also the standard form of wave-equation:</p>
 
 <div>$$\partial_\nu\partial^\nu A_\mu=\square A_\mu=0$$</div>
 
@@ -574,38 +574,38 @@ autocomplete('#aa-search-input',
 
 <div>$$A_\mu(x)=\int \frac {\td \omega \td^3\bm{k}} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti \omega t} a_\mu(\bm{k},\omega)$$</div>
 
-<p>Remembering that <code>$A_\mu$</code> is a real-vector, and <code>$k=(\omega,\bm{k})$</code> , with the dispersion relation: <code>$k_\mu k^\mu=0$</code>, the generic solution can be written as:</p>
+<p>Remembering that <code>$A_\mu$</code> is a real-vector, and <code>$k=(\omega_{|\bm{k}|},\bm{k})$</code> , with the dispersion relation: <code>$k_\mu k^\mu=0$</code>, the generic solution can be written as:</p>
 
-<div>$$A_\mu(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon_{\mu}(k,\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon_{\mu}(k,\lambda)^* e^{\ti k_\nu x^\nu} \Big)$$</div>
+<div>$$A_\mu(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon_{\mu}(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon_{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu} \Big)$$</div>
 
-<p>Where <code>$\omega_{|\bm{k}|}=|\bm{k}|^2$</code> , <code>$\lambda$</code> denotes four polarization direction, and <code>$\epsilon_\mu(k,\lambda)$</code> is the corresponding vector.</p>
+<p>Where <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> , <code>$\lambda$</code> denotes four polarization direction, and <code>$\epsilon_\mu(\bm{k},\lambda)$</code> is the corresponding vector.</p>
 
-<p>Here we make a convention about the polarization vector <code>$\epsilon_{\mu}(k,\lambda)$</code> :</p>
+<p>Here we make a convention about the polarization vector <code>$\epsilon_{\mu}(\bm{k},\lambda)$</code> :</p>
 
 <p><em>[Convention]</em> : The polarization vector is defined by the following two condition:</p>
 
 <ol>
-<li><p>For special situation: <code>$k_0=(k,0,0,k)$</code>:</p>
+<li><p>For special situation: <code>$k_{\text{special}}=(|\bm{k}|,0,0,|\bm{k}|)$</code>:</p>
 
 <div>$$\begin{aligned}
-\epsilon(k_0,0) &= (1,0,0,0)\\
-\epsilon(k_0,1) &= (0,1,0,0) \\
-\epsilon(k_0,2) &= (0,0,1,0) \\
-\epsilon(k_0,3) &= (0,0,0,1)
+\epsilon((0,0,|\bm{k}|),0) &= (1,0,0,0)\\
+\epsilon((0,0,|\bm{k}|),1) &= (0,1,0,0) \\
+\epsilon((0,0,|\bm{k}|),2) &= (0,0,1,0) \\
+\epsilon((0,0,|\bm{k}|),3) &= (0,0,0,1)
 \end{aligned}$$</div>
 
-<p>Or simply: <code>$\epsilon_\mu(k_0,\lambda) = \delta_{\mu}^\lambda$</code></p></li>
+<p>Or simply: <code>$\epsilon^\mu(\bm{k}_{\text{special}},\lambda) = \delta^{\mu}_\lambda$</code> . This setting means that they are polarization direction of linear-polarization. For circular-polarization, they could be complex-vector.</p></li>
 
-<li><p>For generic situation, let <code>$\Lambda(\omega)k_0=k$</code>, is the Lorentz transform for vector. We have:</p>
+<li><p>For generic situation, let <code>$\Lambda(\omega)k_{\text{special}}=k$</code>, that is to say <code>$k_{\text{special}}^0=|\bm{k}|$</code> , or no boost, is the Lorentz transform for vector. We have:</p>
 
-<div>$$\epsilon(k,\lambda)=\Lambda(\omega)\epsilon(k_0,\lambda)$$</div></li>
+<div>$$\epsilon(\bm{k},\lambda)=\Lambda(\omega)\epsilon(k_{\text{special}},\lambda)$$</div></li>
 </ol>
 
 <p><em>[Theorem]</em> : with such the convention, we can prove that polarization vector has the following properties:</p>
 
 <ol>
-<li><code>$\epsilon_\mu(k,\lambda)\epsilon^{\mu*}(k,\lambda')=\eta_{\lambda,\lambda'}$</code></li>
-<li><code>$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^{\mu}(k,\lambda)\epsilon^{\nu *}(k,\lambda)=\eta^{\mu\nu}$</code></li>
+<li><code>$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</code></li>
+<li><code>$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^{\mu}(\bm{k},\lambda)\epsilon^{\nu *}(\bm{k},\lambda)=\eta^{\mu\nu}$</code></li>
 </ol>
 
 <p>For linear-polarization , there will be no need for the conjugation. But for circular polarization, we need the conjugation.</p>
@@ -617,19 +617,64 @@ autocomplete('#aa-search-input',
     <p>We prove this theorem by linear-polarization. For circular-polarization is similar.</p>
 
 <ol>
-<li><p>Let <code>$\Lambda k_0=k$</code> , we have <code>$\epsilon_\mu(k,\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(k_0,\lambda)=\Lambda_{\mu}^{\indent \nu}\delta_{\nu}^\lambda=\Lambda_\mu^{\indent \lambda}$</code> . Then:</p>
+<li><p>Let <code>$\Lambda k_{\text{special}}=k$</code> , we have <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(\bm{k}_{\text{special}},\lambda)=\Lambda_{\mu}^{\indent \nu}\eta_{\nu\lambda}=\Lambda_{\mu\lambda}$</code> . Then:</p>
 
-<div>$$\epsilon_\mu(k,\lambda)\epsilon^{\mu*}(k,\lambda')=\Lambda_{\mu}^{\indent \lambda}\Lambda^{\mu\lambda'}=\eta^{\lambda\lambda'}=\eta_{\lambda\lambda'}$$</div></li>
+<div>$$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\Lambda_{\mu\lambda}\Lambda^{\mu}_{\lambda'}=\eta_{\lambda\lambda'}$$</div></li>
 
-<li><p>With that <code>$\epsilon_\mu(k,\lambda)=\Lambda_\mu^{\indent \lambda}$</code> , we have:</p>
+<li><p>With that <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_{\mu\lambda}$</code> , we have:</p>
 
-<div>$$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^\mu(k,\lambda)\epsilon^{\nu*}(k,\lambda)=\eta_{\lambda,\lambda'}\Lambda^{\mu\lambda}\Lambda^{\nu\lambda'}=\eta^{\mu\nu}$$</div></li>
+<div>$$\sum_{\lambda=0}^3 \eta^{\lambda,\lambda}\epsilon^\mu(\bm{k},\lambda)\epsilon^{\nu*}(\bm{k},\lambda)=\eta_{\lambda,\lambda'}\Lambda^{\mu\lambda}\Lambda^{\nu\lambda'}=\eta^{\mu\nu}$$</div></li>
 </ol>
 
 </details>
 
 
-<p>It is obvious that <code>$\epsilon_\mu(k,\lambda=1,2)k^\mu=0$</code>. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call <code>$\epsilon_\mu(k,\lambda=3)$</code> <code>Vertical Polarization</code> , call <code>$\epsilon_\mu(k,\lambda=0)$</code> <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
+<p>It is obvious that <code>$\epsilon_\mu(\bm{k},\lambda=1,2)k^\mu=0$</code>. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call <code>$\epsilon_\mu(\bm{k},\lambda=3)$</code> <code>Vertical Polarization</code> , call <code>$\epsilon_\mu(\bm{k},\lambda=0)$</code> <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
+
+<h2 id="plane-wave-expansion-and-hamiltonian">Plane-Wave Expansion and Hamiltonian</h2>
+
+<p>At last we will write the Hamiltonian of Maxwell Field as the quadratic form of coefficients <code>$a(\bm{k},\lambda)$</code> in plane-wave expansion. Like what we did before, we will hold the order of them so that the formulas can be used in quantum theory in the future. Our discussion will only cover the result of <code>Feynman gauge</code> <code>$\xi=1$</code> :</p>
+
+<p><em>[Theorem]</em> : With the plane wave expansion and Feynman gauge, one can write the Hamiltonian as:</p>
+
+<div>$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>With the plane wave expansion we have:</p>
+
+<div>$$A^\mu (x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon^\mu(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon^{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu}\Big)$$</div>
+
+<p>And the Hamiltonian with Feynman gauge can be written as:</p>
+
+<div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
+
+<p>We will compute this integral:</p>
+
+<div>$$\begin{aligned}
+I_\nu&= \int \td^3 \bm{x} \sum_\mu (\partial_\mu A_\nu)^2 \\
+&= \sum_{\mu}\int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{\lambda_1,\lambda_2} \Big(a_1 \epsilon_{1,\nu}(-\ti k_{1,\mu})e^{-\ti k_1\cdot x}+a_1^*\epsilon_{1,\nu}^* (\ti k_{1,\mu})e^{\ti k_1\cdot x}\Big) \\
+&\indent \cdot\Big(a_2 \epsilon_{2,\nu}(-\ti k_{2,\mu})e^{-\ti k_2\cdot x}+a_2^*\epsilon_{2,\nu}^* (\ti k_{2,\mu})e^{\ti k_2\cdot x}\Big)\\
+&= \sum_\mu \int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} \sum_{\lambda,\lambda'} \Big\{-a(\bm{k},\lambda)a(-\bm{k},\lambda')\epsilon_\nu(\bm{k},\lambda)\epsilon_{\nu}(-\bm{k},\lambda')e^{-2\ti \omega_{|\bm{k}|}t} (k_0^2,-k_1^2,-k_2^2,-k_3^2)^\mu \\
+&\indent + k_\mu^2 a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon_\nu(\bm{k},\lambda')^* + k_\mu^2 a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (\bm{k},\lambda') \\
+&\indent - a(\bm{k},\lambda)^* a(-\bm{k},\lambda')^* \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (-\bm{k},\lambda')^* e^{2\ti \omega_{|\bm{k}|}t} (k_0^2,-k_1^2,-k_2^2,-k_3^2)^\mu  \Big\} \\
+&= \int \td^3 \bm{k} \ \omega_{|\bm{k}|}\sum_{\lambda,\lambda'} \Big\{ a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon_\nu(\bm{k},\lambda')^* + a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (\bm{k},\lambda')  \Big\}
+\end{aligned}$$</div>
+
+<p>Note that <code>$k_0^2-k_1^2-k_2^2-k_3^2=0$</code> , because <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> . And compute the third equality should be carefully, because the delta function of <code>$\delta^3(\bm{k}_1+\bm{k}_2)$</code> leads <code>$k_2=(\omega_{|\bm{k}|},-\bm{k})\neq -k_1$</code> . And in the second equality, <code>$a_i,\epsilon_{i,\nu}$</code> means that <code>$a(\bm{k}_i) , \epsilon_\nu(\bm{k}_1,\lambda_1)$</code> , for the simplicity.</p>
+
+<p>With <code>$H = -\frac 1 2 \sum_\nu \eta^{\nu\nu} I_\nu$</code>, we can write down:</p>
+
+<div>$$H=-\frac 1 2\int \td^3 \bm{k} \ \omega_{|\bm{k}|}\sum_{\lambda,\lambda'}\Big\{ a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon^\nu(\bm{k},\lambda')^* + a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon^\nu (\bm{k},\lambda')  \Big\}$$</div>
+
+<p>With the property of <code>$\epsilon^\mu$</code> : <code>$\epsilon(\bm{k},\lambda)\cdot \epsilon(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</code> , we can write the Hamiltonian as:</p>
+
+<div>$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$</div>
+
+</details>
+
 
           </div>
 
@@ -773,6 +818,32 @@ autocomplete('#aa-search-input',
 										<li class="nav-item">
 						 					<a class="nav-link" href="#solution-of-the-equation">
 												 Solution of The Equation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#plane-wave-expansion-and-hamiltonian">
+												 Plane-Wave Expansion and Hamiltonian
 											</a>
 										</li>
 						 
