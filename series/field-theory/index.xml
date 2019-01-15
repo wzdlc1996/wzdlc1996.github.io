@@ -6,10 +6,29 @@
     <description>Recent content in Field Theory on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Wed, 26 Dec 2018 20:11:35 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jan 2019 14:14:27 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/series/field-theory/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interacting Field Theory: Scattering Theory</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/intftii/</link>
+      <pubDate>Sat, 12 Jan 2019 14:14:27 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/intftii/</guid>
+      <description>Scattering Theory In experiments, the most important way is the scattering between particles. And the only observable we can measure is the scattering cross section . So the interacting Field Theory must build a quantitative analysis about scattering question.
+S matrix and Cross Section With the Lippman-Schwinger Equation, one can express the scattering process as:</description>
+    </item>
+    
+    <item>
+      <title>Interacting Field Theory: Time-ordered Green&#39;s Function</title>
+      <link>https://wzdlc1996.github.io/notes/fieldtheory/intfti/</link>
+      <pubDate>Sun, 30 Dec 2018 15:42:02 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/fieldtheory/intfti/</guid>
+      <description>Basic Introduce Perturbation Theory [Definition] : In quantum field theory, the perturbation theory is a power series respect to the coupling parameter (parameter of interaction term) of the theory. Namely, for a quantity $A(\lambda)$ with $\lambda$ is the coupling parameter, when $\lambda=0$ it is the free field theory. Then the perturbation theory give us:</description>
+    </item>
     
     <item>
       <title>Quantization of Free Field: Maxwell Field</title>

@@ -443,7 +443,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>19 minutes read</li>
+      <li>20 minutes read</li>
     
   </ul>
   
@@ -579,7 +579,7 @@ Any SO(3) rotation can be represented as:</p>
 
 <p><em>[Theorem]</em> : The <code>adjoint representation</code> of SU(2) element <code>$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}}$</code> is the 3x3 rotation matrix <code>$\bm{R}_{\bm{n}}(\theta)$</code> :</p>
 
-<div>$$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} (\bm{\sigma}\cdot \bm{x}) e^{\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} = \sigma \cdot (\bm{R}_{\bm{n}}(\theta)\bm{x})$$</div>
+<div>$$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} (\bm{\sigma}\cdot \bm{x}) e^{\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} = \bm{\sigma} \cdot (\bm{R}_{\bm{n}}(\theta)\bm{x})$$</div>
 
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -692,7 +692,7 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <p>And:</p>
 
-<div>$$D_{m,m'}^{(j)}(\bm{U}) = \sqrt{\frac {(j+m')!(j-m')!} {(j+m)!(j-m)!}} \sum_{k=0}^{j+m} \Big(\begin{array}{cc}j+m \\ k\end{array}\Big)\Big(\begin{array}{cc}j-m \\ j+m'-k\end{array}\Big) u^k v^{j+m-k}(-v^*)^{j+m'-k}(u*)^{j-m-(j+m'-k)}$$</div>
+<div>$$D_{m,m'}^{(j)}(\bm{U}) = \sqrt{\frac {(j+m')!(j-m')!} {(j+m)!(j-m)!}} \sum_{k=0}^{j+m} \Big(\begin{array}{cc}j+m \\ k\end{array}\Big)\Big(\begin{array}{cc}j-m \\ j+m'-k\end{array}\Big) u^k v^{j+m-k}(-v^*)^{j+m'-k}(u^*)^{j-m-(j+m'-k)}$$</div>
 
 <p>This is the (<code>$2j+1$</code>)-dimensional <code>irreducible</code> unitary representation of SU(2) .</p>
 
@@ -1034,11 +1034,44 @@ Then we know that they behaves like boson.</p>
 </details>
 
 
-<p><em>[Theorem]</em> : <code>Rotation</code> of polarization in <code>$\mathcal{H}_{1/2}$</code> .</p>
+<p><em>[Theorem]</em> : <code>Rotation</code> of polarization in <code>$\mathcal{H}_{1/2}$</code> : if <code>$\ket{z_1,z_2}$</code> is the state with polarization of <code>$\bm{n}$</code> , and:</p>
+
+<div>$$e^{-\ti \frac \theta 2 \bm{n'}\cdot \bm \sigma}\begin{bmatrix}z_1 \\ z_2 \end{bmatrix}=\begin{bmatrix}z'_1 \\ z'_2 \end{bmatrix}$$</div>
+
+<p>Then <code>$\ket{z'_1,z'_2}$</code> is the state with polarization of <code>$\bm{R}_{\bm{n}'}(\theta)\bm{n}$</code> , that is to say:</p>
+
+<div>$$(\bm{R}_{\bm{n}'}(\theta)\bm{n})\cdot \hat{\bm{S}}\ket{z'_1,z'_2}=\frac 1 2 \ket{z_1,z_2}$$</div>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    <p>One needs only prove that:</p>
+
+<div>$$[z^*_1,z^*_2]\bm{\sigma}\begin{bmatrix}z_1 \\ z_2 \end{bmatrix}=\bm{n} \ ; \ e^{-\ti \frac \theta 2 \bm{n'}\cdot \bm \sigma}\begin{bmatrix}z_1 \\ z_2 \end{bmatrix}=\begin{bmatrix}z'_1 \\ z'_2 \end{bmatrix} \Rightarrow [z'^*_1,z'^*_2]\bm{\sigma}\begin{bmatrix}z'_1 \\ z'_2 \end{bmatrix} = \bm{R}_{\bm{n}'}(\theta)\bm{n}$$</div>
+
+<p>That is equivalent to prove:</p>
+
+<div>$$e^{\ti \frac \theta 2 \bm{n}'\cdot\bm{\sigma}}\bm{\sigma} e^{-\ti \frac \theta 2 \bm{n}'\cdot\bm{\sigma}}=\big[\bm{R}_{\bm{n}'}(\theta)\big]\bm{\sigma}$$</div>
+
+<p>Where the left-hand-side is the product should be treated as matrix dot vector.</p>
+
+<p>This is similar to what we have shown:</p>
+
+<div>$$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} (\bm{\sigma}\cdot \bm{x}) e^{\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} = \bm{\sigma} \cdot (\bm{R}_{\bm{n}}(\theta)\bm{x})$$</div>
+
+<p>which is equivalent to:</p>
+
+<div>$$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} \bm{\sigma} e^{\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} =[\bm{R}_{\bm{n}}(-\theta)] \bm{\sigma}$$</div>
+
+<p>q.e.d.</p>
+
+</details>
+
 
 <h2 id="addition-of-angular-momentum">Addition of Angular Momentum</h2>
 
-<p>Let us consider a system of momentum <code>$j_1$</code> <code>$+$</code> a system of momentum <code>$j_2$</code></p>
+<p>Let us consider a system of momentum <code>$j_1+$</code> a system of momentum <code>$j_2$</code></p>
 
 <p>The tensor product under SU(2) rotation as:</p>
 
@@ -1916,7 +1949,7 @@ With <code>Condon-Shortley convention</code>, for integer <code>$J$</code> , we 
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2018 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 
