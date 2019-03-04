@@ -6,10 +6,21 @@
     <description>Recent content on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sat, 12 Jan 2019 14:14:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 12:44:33 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manybody: Coherent State</title>
+      <link>https://wzdlc1996.github.io/notes/qm/manybody1/</link>
+      <pubDate>Mon, 25 Feb 2019 12:44:33 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/qm/manybody1/</guid>
+      <description>Boson Coherent State Definition and Properties [Definition] : The generic form of the coherent state from a set of boson mode $\hat a_i$ is:
+$$\ket{\bm{z}}=\exp(\bm{z}\cdot \hat {\bm{a}}^\dagger)\ket{0}=\exp(\sum_{i}z_i \hat a_i^\dagger)\ket{0}$$ [Theorem] : The overlap between two coherent states is:
+$$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With that $\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$ , we have:</description>
+    </item>
     
     <item>
       <title>Interacting Field Theory: Scattering Theory</title>
