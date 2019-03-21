@@ -6,10 +6,19 @@
     <description>Recent content in Measurement on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Thu, 22 Nov 2018 19:23:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Mar 2019 16:10:47 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/tags/measurement/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction to Weak Measurements and Weak Values</title>
+      <link>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</link>
+      <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</guid>
+      <description>Introduction Quantum measurement is always one of the most fascinating questions in quantum mechanics. With the limitation caused by the uncertainty principle, how to find a way to perform a measurement but introduce as little disturbance as possible on the object attracts more and more people in recent years. The theory of weak measurement as a generalization of the ordinary measurement in quantum mechanics was born in such the atmosphere.</description>
+    </item>
     
     <item>
       <title>Quantum Zeno Effect</title>
