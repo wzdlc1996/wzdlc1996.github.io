@@ -6,10 +6,20 @@
     <description>Recent content in Physics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Mon, 25 Feb 2019 12:44:33 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 18:48:01 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/categories/physics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manybody: Introduction to Green&#39;s Function</title>
+      <link>https://wzdlc1996.github.io/notes/qm/manybody2/</link>
+      <pubDate>Tue, 19 Mar 2019 18:48:01 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/qm/manybody2/</guid>
+      <description>Green&amp;rsquo;s Function Giving a set of orthonormal basis for single-particle state $\{\ket{\alpha}\}$ (e.g. coordinate eigenstate $\ket{\bm{r}}$ for spinless particles), we can write down the creation/annihilation operators : $\hat a_\alpha \ , \ \hat a_{\alpha}^\dagger$ in the Fock space, which forms the complete description for the many-body system.
+[Definition] : $n$-particle Real-time Green&#39;s function is a function of $2n$ parameters distinguishing states and $2n$ time variables:</description>
+    </item>
     
     <item>
       <title>Manybody: Coherent State</title>

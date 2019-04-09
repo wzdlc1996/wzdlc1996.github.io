@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wzdlc1996.github.io/notes/qm/manybody2/</loc>
+    <lastmod>2019-03-19T18:48:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</loc>
     <lastmod>2019-03-18T16:10:47+08:00</lastmod>
   </url>
@@ -165,7 +170,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/</loc>
-    <lastmod>2019-03-18T16:10:47+08:00</lastmod>
+    <lastmod>2019-03-19T18:48:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -195,7 +200,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/notes/</loc>
-    <lastmod>2019-02-25T12:44:33+08:00</lastmod>
+    <lastmod>2019-03-19T18:48:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -207,7 +212,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/categories/physics/</loc>
-    <lastmod>2019-02-25T12:44:33+08:00</lastmod>
+    <lastmod>2019-03-19T18:48:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -219,7 +224,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/series/quantum-mechanics/</loc>
-    <lastmod>2019-02-25T12:44:33+08:00</lastmod>
+    <lastmod>2019-03-19T18:48:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -237,7 +242,7 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/tags/statistical-phys/</loc>
-    <lastmod>2019-02-25T12:44:33+08:00</lastmod>
+    <lastmod>2019-03-19T18:48:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
