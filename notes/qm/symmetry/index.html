@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:">
+  <meta name="description" content="The symmetry theory in quantum mechanics. Including some tricks about solve some problems with it.">
 
   <meta property="og:title" content="Symmetry in Quantum Mechanics" />
-<meta property="og:description" content="Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:" />
+<meta property="og:description" content="The symmetry theory in quantum mechanics. Including some tricks about solve some problems with it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/symmetry/" />
 <meta property="article:published_time" content="2018-11-12T14:38:46&#43;08:00"/>
@@ -564,11 +562,12 @@ n &= k_i d_i \ \ k_i\in \mathbb{N}
 
 <p>Where <code>$J =|\det \partial_i (g\bm{x})^j| $</code> is the Jacobian of the transformation.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>for single particle state <code>$\ket{\psi}$</code> , it shall be transformed as:</p>
+    </summary></p>
+
+<p>for single particle state <code>$\ket{\psi}$</code> , it shall be transformed as:</p>
 
 <div>$$\ket{g\psi} = \int \td\bm{x}  \psi(\bm{x})\ket{g\bm{x}} = \int \psi(g^{-1}\bm{x}) \ket{\bm{x}} J^{-1}\td^3 \bm{x}$$</div>
 
@@ -576,8 +575,7 @@ n &= k_i d_i \ \ k_i\in \mathbb{N}
 
 <div>$$(g\psi)(\bm{x}) \equiv \langle \bm{x}\ket{g\psi} = J^{-1}\psi(g^{-1}\bm{x})$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>Usually, we assume <code>$J=1$</code> so that we do not need to worry about normalization. <br>
 Then we can find that the operation satisfies the <code>Associativity</code> :</p>
@@ -651,13 +649,14 @@ For generator <code>$X$</code>, and unitary symmetry <code>$\Phi : g \rightarrow
 <p>which is independent of <code>$\theta$</code> value. <br></p>
 
 <p><em>[Theorem]</em> : When <code>$\hat \Phi(e^{\ti \theta X})$</code> is a symmetry unitary operator, which means that <code>$[\hat \Phi(e^{\ti\theta X}),\hat H]=0$</code> . Then
-<code>$\hat X$</code> is an Hermitian, and it commute with <code>$\hat H$</code> , which means that it is a conserved observable.</p>
+<code>$\hat X$</code> is an Hermitian, and it is commutative with <code>$\hat H$</code> , which means that it is a conserved observable.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Using <code>$\hat \Phi(e^{\ti\theta X})^{-1} \hat H \hat \Phi(e^{\ti\theta X}) = \hat H$</code> , take <code>$\frac {\td} {\td \theta}$</code> at <code>$\theta=0$</code> , and notice that</p>
+    </summary></p>
+
+<p>Using <code>$\hat \Phi(e^{\ti\theta X})^{-1} \hat H \hat \Phi(e^{\ti\theta X}) = \hat H$</code> , take <code>$\frac {\td} {\td \theta}$</code> at <code>$\theta=0$</code> , and notice that</p>
 
 <div>$$\hat X = -\ti \frac {\td} {\td \theta} \hat \Phi(e^{\ti\theta X}) \Big|_{\theta=0} = \ti \frac {\td} {\td \theta} \hat \Phi(e^{\ti \theta X})^{-1} \Big|_{\theta=0}$$</div>
 
@@ -665,8 +664,7 @@ For generator <code>$X$</code>, and unitary symmetry <code>$\Phi : g \rightarrow
 
 <div>$$\ti \hat X \hat H -\ti \hat H \hat X =0 \Rightarrow [\hat H ,\hat X]=0$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="symmetry-level-degeneracy">Symmetry &amp; Level Degeneracy</h2>
 
@@ -772,7 +770,7 @@ absorb a photon of polarization <code>$\bm{E}_{\text{in}}$</code> and emit a pho
 
 <ul>
 <li>Then general rule: find out representation <code>$\hat g$</code> of all symmetry generators, and demand that <code>$\hat g^{-1}\hat H \hat g = \hat H$</code></li>
-<li>For continuous symmetry, <code>$\hat H$</code> should commute with all symmetry generators, or carry vanishing symmetry quantum number.</li>
+<li>For continuous symmetry, <code>$\hat H$</code> should be commutative with all symmetry generators, or carry vanishing symmetry quantum number.</li>
 </ul>
 
 <p>There are some examples:</p>

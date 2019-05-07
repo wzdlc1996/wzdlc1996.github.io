@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dynamics on Leonard</title>
+    <title>dynamics on Leonard</title>
     <link>https://wzdlc1996.github.io/tags/dynamics/</link>
-    <description>Recent content in Dynamics on Leonard</description>
+    <description>Recent content in dynamics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
     <lastBuildDate>Mon, 12 Nov 2018 14:15:58 +0800</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/dynamics/</guid>
-      <description>Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:</description>
+      <description>The dynamics theory of Quantum mechanics. And basic introduction for path-integral formalism.</description>
     </item>
     
   </channel>

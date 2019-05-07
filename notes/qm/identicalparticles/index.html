@@ -8,14 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
-$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
- $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:">
+  <meta name="description" content="Quantum theory for identical particles. Contain Permutation group theory and Second quantization.">
 
   <meta property="og:title" content="Identical Particles" />
-<meta property="og:description" content="Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
-$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
- $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:" />
+<meta property="og:description" content="Quantum theory for identical particles. Contain Permutation group theory and Second quantization." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/identicalparticles/" />
 <meta property="article:published_time" content="2018-11-12T13:42:48&#43;08:00"/>
@@ -513,19 +509,19 @@ This means that <code>$n$</code>-body state: <code>$\psi(x)=\psi(\bm{x}_1,\bm{x}
 
 <p>Where <code>$R(\sigma)$</code> is a complex number of unit modulus.
 <details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Note
-    </summary>
-    <p>the requirement of 1-d representation is come from we believe the wavefunction (with 1 component) can be completely discribe the many-body state</p>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Note
+</summary></p></li>
+</ul>
 
-</details>
-</p></li>
+<p>the requirement of 1-d representation is come from we believe the wavefunction (with 1 component) can be completely discribe the many-body state</p>
 
-<li><p><code>Bosons</code> : correspond to the trivial representation of permutation group, which means any permutation has no effect on the wavefunction. Integer spin particles. <br></p></li>
+<p></details></p>
 
-<li><p><code>Fermions</code> : correspond to the alternative representation of permutation group, which means pariwise exchage changes the sign of the wavefunction. Half-odd-integer spin particles.</p></li>
-
-<li><p>In 2-dimensional space, braiding group instead of permutation group should be considered, there are paticles(anyons) beyond bosons and fermions.</p></li>
+<ul>
+<li><code>Bosons</code> : correspond to the trivial representation of permutation group, which means any permutation has no effect on the wavefunction. Integer spin particles. <br></li>
+<li><code>Fermions</code> : correspond to the alternative representation of permutation group, which means pariwise exchage changes the sign of the wavefunction. Half-odd-integer spin particles.</li>
+<li>In 2-dimensional space, braiding group instead of permutation group should be considered, there are paticles(anyons) beyond bosons and fermions.</li>
 </ul>
 
 <h2 id="the-structure-of-many-body-hilbert-space">The Structure of Many-body Hilbert Space</h2>
@@ -684,11 +680,12 @@ The proof can be obtained by the following formula:
 <p><em>[Rule]</em> : <code>the rule of thumb</code> , to get a <code>many-body</code> Hamiltonian <code>(defined on the Fock space)</code> , simply <code>replace</code> 1-body wavefunction <code>$\psi(x),\psi^*(x)$</code> in the <code>Energy formula</code> for product
 states by <code>$\hat \psi(x), \hat \psi^{\dagger}(x)$</code> , remove the summations over all particles and need some <code>normal ordering</code></p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Examples
-    </summary>
-    <ul>
+    </summary></p>
+
+<ul>
 <li><p><code>kinetic energy</code> : <br>
 In original way, we write the kinetic energy as:</p>
 
@@ -717,8 +714,7 @@ For 2-body interaction, we have the potential energy in original way:</p>
 <div>$$\hat V_2 = \frac 1 2\int V(x,x') \hat \psi^{\dagger}(x)\hat \psi^{\dagger}(x')\hat \psi(x')\hat \psi(x)\td x\td x'$$</div></li>
 </ul>
 
-</details>
-
+<p></details></p>
 
 <h1 id="special-many-body-states">Special Many-body States</h1>
 

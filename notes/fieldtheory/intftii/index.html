@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Scattering Theory In experiments, the most important way is the scattering between particles. And the only observable we can measure is the scattering cross section . So the interacting Field Theory must build a quantitative analysis about scattering question.
-S matrix and Cross Section With the Lippman-Schwinger Equation, one can express the scattering process as:">
+  <meta name="description" content="We will review the scattering theory which has been studied in quantum-mechanics. The main character is the S-matrix and how to compute cross section by it. Then we will introduce the Lehmann-Symanzik-Zimmermann reduction fomula, which will show the connection between time-ordered Green&rsquo;s function and S-matrix in scattering theory. The former can be computed by the Feynman Diagram and Feynman Rule which we have studied in the last section, and the latter is the only thing we can measure in experiments.">
 
   <meta property="og:title" content="Interacting Field Theory: Scattering Theory" />
-<meta property="og:description" content="Scattering Theory In experiments, the most important way is the scattering between particles. And the only observable we can measure is the scattering cross section . So the interacting Field Theory must build a quantitative analysis about scattering question.
-S matrix and Cross Section With the Lippman-Schwinger Equation, one can express the scattering process as:" />
+<meta property="og:description" content="We will review the scattering theory which has been studied in quantum-mechanics. The main character is the S-matrix and how to compute cross section by it. Then we will introduce the Lehmann-Symanzik-Zimmermann reduction fomula, which will show the connection between time-ordered Green&rsquo;s function and S-matrix in scattering theory. The former can be computed by the Feynman Diagram and Feynman Rule which we have studied in the last section, and the latter is the only thing we can measure in experiments." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/intftii/" />
 <meta property="article:published_time" content="2019-01-12T14:14:27&#43;08:00"/>
@@ -483,11 +481,12 @@ autocomplete('#aa-search-input',
 
 <p>Where <code>$M_{\beta\alpha}$</code> is called as <code>Feynman Amplitude</code> or <code>Feynman matrix element</code> , it is Lorentz invariant.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the fact that in/out states are eigenstates of momentum so they are complete in Hilbert space so one can rewrite the Lippman-Schwinger Equation as:</p>
+    </summary></p>
+
+<p>With the fact that in/out states are eigenstates of momentum so they are complete in Hilbert space so one can rewrite the Lippman-Schwinger Equation as:</p>
 
 <div>$$\ket{\psi_\alpha^{(\pm)}}=\ket{\phi_\alpha}+\int \td \beta \ \frac 1 {E_\alpha-E_\beta\pm \ti \epsilon} \ket{\phi_\beta}\bra{\phi_\beta}\hat V \ket{\psi_\alpha^{(\pm)}}$$</div>
 
@@ -526,8 +525,7 @@ autocomplete('#aa-search-input',
 
 <p>Where <code>$M_{\beta\alpha}$</code> is called as <code>Feynman Amplitude</code> . Q.E.D.</p>
 
-</details>
-
+<p></details></p>
 
 <p>Then we can construct the relationship between <code>differential cross section</code>, which is the only thing we can measure in experiments, and <code>$S$</code>-matrix.</p>
 
@@ -549,11 +547,12 @@ autocomplete('#aa-search-input',
 
 <div>$$\td \sigma_{\alpha\rightarrow \beta} := \frac {\td \Gamma_{\alpha\rightarrow \beta}} {u_{1,2}/V}=\frac 1 {(2E_{i,1})(2E_{i,2})u_{1,2}}(2\pi)^4 \delta^4(p_{i,1}+p_{i,2}-\sum_{j=1}^{N_\beta} p_{f,j})\Big(\prod_{j=1}^{N_\beta} \frac {\td^3 \bm{p}_{f,j}} {(2\pi)^3 2 E_{f,j}}\Big)\cdot |M_{\beta\alpha}|^2$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We only prove the generic formula of <code>$\td \Gamma_{\alpha\rightarrow \beta}$</code> here, cases of <code>$N_\alpha=1,2$</code> can be easily obtained from it.</p>
+    </summary></p>
+
+<p>We only prove the generic formula of <code>$\td \Gamma_{\alpha\rightarrow \beta}$</code> here, cases of <code>$N_\alpha=1,2$</code> can be easily obtained from it.</p>
 
 <p>The value of elements of S-matrix we defined above is not the probability, because our normalization of single-particle-state is:</p>
 
@@ -588,8 +587,7 @@ autocomplete('#aa-search-input',
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="lsz-reduction-formula">LSZ Reduction Formula</h2>
 
@@ -614,11 +612,12 @@ autocomplete('#aa-search-input',
 \int_{III} \td^4 x e^{\ti p\cdot x}\bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\cdots\}\ket{\Omega} \rightarrow_{p^0\rightarrow -\omega_{|\bm{p}|}} \bra{\Omega}\mathcal{T}\{\phi(z_1)\cdots\}\ket{-\bm{p}}  \frac {\ti \sqrt{Z}} {p_\mu p^\mu - m^2+\ti \epsilon}\\
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Consider the total Hamiltonian(containing the interaction) <code>$\hat H$</code> leads to a set of energy-eigenstates with 3-momentum is <code>$\bm{0}$</code>, denote it as <code>$\ket{\lambda_0}$</code> , with the energy of <code>$m_\lambda$</code> . Then with the Lorentz-transformation, we have the corresponding states of 3-momentum is <code>$\bm{p}$</code> as <code>$\ket{\lambda_{\bm{p}}}$</code> . It should have the energy of <code>$E_{\bm{p}}(\lambda)=\sqrt{\bm{p}^2+m_\lambda^2}$</code> . Then the Lorentz-covariant complete of Hilbert space is:</p>
+    </summary></p>
+
+<p>Consider the total Hamiltonian(containing the interaction) <code>$\hat H$</code> leads to a set of energy-eigenstates with 3-momentum is <code>$\bm{0}$</code>, denote it as <code>$\ket{\lambda_0}$</code> , with the energy of <code>$m_\lambda$</code> . Then with the Lorentz-transformation, we have the corresponding states of 3-momentum is <code>$\bm{p}$</code> as <code>$\ket{\lambda_{\bm{p}}}$</code> . It should have the energy of <code>$E_{\bm{p}}(\lambda)=\sqrt{\bm{p}^2+m_\lambda^2}$</code> . Then the Lorentz-covariant complete of Hilbert space is:</p>
 
 <div>$$1=\ket{\Omega}\bra{\Omega}+\sum_{\lambda}\int \frac {\td^3 \bm{p}} {(2\pi)^3 2E_{\bm{p}}(\lambda)} \ket{\lambda_{\bm{p}}}\bra{\lambda_{\bm{p}}}$$</div>
 
@@ -646,8 +645,7 @@ autocomplete('#aa-search-input',
 
 <p>One can find that the denominator <code>$p^0-E_{\bm{p}}(\lambda)+\ti \epsilon$</code> is the <code>$p_\mu p^\mu-m_\lambda^2$</code> as <code>$p^0\rightarrow +E_{\bm{p}}(\lambda)$</code> . Then with the condition that the pole is corresponding to a single particle state, the statement get proved. The integral of region III is similar.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Note]</em> : In the real scattering process, the initial/final states is the direct product state of single particle state of determinant momentum, which means that these single-particle states should be separated in the space. To describe such states we need <code>wave-packet</code> . And at last we can let the width of packet in momentum-space to be zero, and they will be back to momentum-eigenstates. We do not do this procedure here, but treated them as the conclusion of such scheme.</p>
 

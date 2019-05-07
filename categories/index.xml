@@ -6,18 +6,10 @@
     <description>Recent content in Categories on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
+    <lastBuildDate>Tue, 19 Mar 2019 18:48:01 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Linux</title>
-      <link>https://wzdlc1996.github.io/categories/linux/</link>
-      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Physics</title>
@@ -38,11 +30,20 @@
     </item>
     
     <item>
-      <title>Tools</title>
+      <title>tools</title>
       <link>https://wzdlc1996.github.io/categories/tools/</link>
       <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://wzdlc1996.github.io/categories/linux/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/categories/linux/</guid>
       <description></description>
     </item>
     

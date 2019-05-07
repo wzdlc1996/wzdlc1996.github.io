@@ -8,10 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space .">
+  <meta name="description" content="The classical field theory. Lagrange &amp; Hamilton Formalism and the Noether Theorem.">
 
   <meta property="og:title" content="Classical Field Theory" />
-<meta property="og:description" content="Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space ." />
+<meta property="og:description" content="The classical field theory. Lagrange &amp; Hamilton Formalism and the Noether Theorem." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalft/" />
 <meta property="article:published_time" content="2018-11-14T15:20:07&#43;08:00"/>
@@ -480,11 +480,12 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 
 <div>$$\frac {\partial \mathcal{L}} {\partial \phi} - \partial_{\mu} \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi)}=0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Because the variation of action is zero:</p>
+    </summary></p>
+
+<p>Because the variation of action is zero:</p>
 
 <div>$$\begin{aligned}
 \delta S &= \int \td^4 x \Big\{\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi +\sum_{\mu=0}^3 \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi)} \delta(\partial_{\mu}\phi)  \Big\} \\
@@ -497,8 +498,7 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 
 <p>Where the variation of field <code>$\delta\phi$</code> at initial(final) time <code>$t_i(t_f)$</code> shall be zero, and the integral on surface of whole space shall vanish too.</p>
 
-</details>
-
+<p></details></p>
 
 <p>It is easy to generalize this equation to the field with multi independent internal degrees of freedom: <code>$\phi\sim \phi^r \ ; \ r=1,\cdots,N$</code> :</p>
 
@@ -526,11 +526,12 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 
 <div>$$\frac {\td F(t)} {\td t} = \{F,H\}_{PB}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>For any functional of <code>$\phi,\pi$</code> : <code>$F(t)=F[\phi,\pi]$</code> , we have its derivative respects of time is:</p>
+    </summary></p>
+
+<p>For any functional of <code>$\phi,\pi$</code> : <code>$F(t)=F[\phi,\pi]$</code> , we have its derivative respects of time is:</p>
 
 <div>$$\frac {\td F(t)} {\td t} = \int \td^3 \bm{x} \Big\{\frac {\delta F} {\delta \phi(x)} \flo{\phi}+\frac {\delta F} {\delta \pi(x)} \flo{\pi} \Big\}$$</div>
 
@@ -554,8 +555,7 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 
 <div>$$\frac {\td F(t)} {\td t} = \{F,H\}_{PB}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>Explicitly, when Hamilton density is only depend on the field, momentum and their gradient:</p>
 
@@ -564,11 +564,12 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 \frac {\partial \pi(\bm{x},t)} {\partial t} &= -\frac {\delta H} {\delta \phi(\bm{x},t)} =- \frac {\partial \mathcal{H}} {\partial \phi} + \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \pi)}
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First we compute the variation&rsquo;s of Hamiltonian in terms of Hamilton density:</p>
+    </summary></p>
+
+<p>First we compute the variation&rsquo;s of Hamiltonian in terms of Hamilton density:</p>
 
 <div>$$\begin{aligned}
 \delta H &=\delta \int \td^3\bm{x} \mathcal{H}(\phi,\pi,\nabla \phi, \nabla\pi)\\
@@ -583,8 +584,7 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 \frac {\delta H} {\delta \phi(\bm{x},t)} &= \frac {\partial \mathcal{H}} {\partial \phi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \pi)}
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>We can also compute the Poisson bracket between fields and momentum. Only noting <code>$f(\bm{x},t)=\int \td^3 \bm{x}' \delta^3(\bm{x}-\bm{x}')f(\bm{x}',t)$</code> :</p>
 
@@ -620,11 +620,12 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 \delta S &= \int \td^4 x \partial_\mu \Big(\mathcal{L}\delta x^\mu +\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\delta \phi - \frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi \delta x^\nu \Big)
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the variation of field:</p>
+    </summary></p>
+
+<p>With the variation of field:</p>
 
 <div>$$\delta\phi = \bar\delta \phi +\partial_\mu \phi \delta x^\mu$$</div>
 
@@ -687,8 +688,7 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 \delta S &= \int \td^4 x \partial_\mu \Big(\mathcal{L}\delta x^\mu +\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\delta \phi - \frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi \delta x^\nu \Big)
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>If it is a symmetric transformation, we require that the integral vanish at arbitrary integral zone. Then the integrand should be zero.</p>
 
@@ -706,11 +706,12 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 
 <div>$$\frac {\td} {\td x^0} \int_V f^0 \td^3 \bm{x}+\oint_{\partial V}\td \bm{S}\cdot \bm{f}=0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <div>$$\begin{aligned}
+    </summary></p>
+
+<div>$$\begin{aligned}
 0&= \int_V \td^3\bm{x} \partial_\mu f^\mu  \\
 &=\int_V \td^3 \bm{x} \frac {\partial} {\partial x^0} f^0 +\int_V \td^3\bm{x} \nabla\cdot \bm{f} \\
 &=\frac {\td} {\td x^0} \int_V f^0 \td^3 \bm{x}+\oint_{\partial V}\td \bm{S}\cdot \bm{f}
@@ -718,8 +719,7 @@ The dynamical variables of the theory are now the values of the field <code>$\ph
 
 <p>Where <code>$\bm{f}=(f^1,f^2,f^3)$</code></p>
 
-</details>
-
+<p></details></p>
 
 <p>When the integral over <code>$\partial V$</code> vanishes when <code>$V\rightarrow \infty$</code> , we have the conserved quantities (also called <code>charge</code>) :</p>
 

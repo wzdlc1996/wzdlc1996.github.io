@@ -8,10 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:">
+  <meta name="description" content="The dynamics theory of Quantum mechanics. And basic introduction for path-integral formalism.">
 
   <meta property="og:title" content="Quantum Dynamics" />
-<meta property="og:description" content="Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:" />
+<meta property="og:description" content="The dynamics theory of Quantum mechanics. And basic introduction for path-integral formalism." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/dynamics/" />
 <meta property="article:published_time" content="2018-11-12T14:15:58&#43;08:00"/>
@@ -477,11 +477,12 @@ autocomplete('#aa-search-input',
 <p>Then for <code>$(\partial_1 \hat U(t',t))\hat U^{\dagger}(t',t)+\hat U(t',t)\partial_1\hat U^{\dagger}(t',t)=0$</code> , one can find that <code>$\hat H$</code> is Hermitian <br>
 Moreover, one can prove that <code>$\frac {\td \hat U(t',t)} {\td t'} \hat U^{\dagger}(t',t)$</code> is independent to <code>$t$</code>:</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <div>$$\begin{aligned}[]
+    </summary></p>
+
+<div>$$\begin{aligned}[]
 \frac {\td \hat U(t,t_0)} {\td t} \hat U^{\dagger}(t,t_0) &= \frac {\td \hat U(t,t'_0)} {\td t} \hat U(t'_0,t_0) (\hat U(t,t'_0)\hat U(t'_0,t_0))^{\dagger} \\
 &= \frac {\td \hat U(t,t'_0)} {\td t} \hat U(t'_0,t_0) \hat U^{\dagger}(t'_0,t_0) \hat U^{\dagger}(t,t'_0) \\
 &= \frac {\td \hat U(t,t'_0)} {\td t} \hat U^{\dagger}(t,t'_0)
@@ -489,8 +490,7 @@ Moreover, one can prove that <code>$\frac {\td \hat U(t',t)} {\td t'} \hat U^{\d
 
 <p>Q.E.D.</p>
 
-</details>
-
+<p></details></p>
 
 <p>Then we define that:
 <em>[Definition]</em> : <code>Hamiltonian</code> is</p>
@@ -543,19 +543,19 @@ By this definition, one can write down the equation that discribes the evolution
 
 <div>$$\hat O_H(t) = \hat U^{\dagger} (t) \hat O_S \hat U(t)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Note
-    </summary>
-    <p>Then for matrix elements in Heisenberg picture, one have: <code>$\bra{\psi}\hat O_H(t)\ket{\phi} = \bra{\psi(t)}\hat O_S \ket{\phi(t)}$</code></p>
+    </summary></p>
 
-</details>
+<p>Then for matrix elements in Heisenberg picture, one have: <code>$\bra{\psi}\hat O_H(t)\ket{\phi} = \bra{\psi(t)}\hat O_S \ket{\phi(t)}$</code></p>
 
+<p></details></p>
 
 <p>The Heisenberg equation of motion:
 <div>$$\hbar \frac {\td} {\td t} \hat O_H(t) = \ti [\hat H_H(t),\hat O_H(t)]$$</div>
 Where <code>$\hat H_H(t) = \hat U^{\dagger}(t)\hat H_S(t)\hat U(t) =\ti \hbar \hat U^{\dagger}(t)\frac {\td} {\td t} \hat U(t) $</code> <br>
-When <code>$\hat H_S(t)$</code> is independent of time, then <code>$\hat H$</code> commutes with <code>$\hat U$</code> , and <code>$\hat H_H = \hat H_S$</code></p>
+When <code>$\hat H_S(t)$</code> is independent of time, then <code>$\hat H$</code> is commutative with <code>$\hat U$</code> , and <code>$\hat H_H = \hat H_S$</code></p>
 
 <h1 id="some-examples-about-dynamics">Some Examples About Dynamics</h1>
 
@@ -634,11 +634,12 @@ The Adiabatic theorem showd that:</p>
 
 <div>$$\ket{\psi(t=0)} = \ket{E_0(t=0)} \Rightarrow \ket{\psi(t)} = \ket{E_0(t)}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof(non-degenerate cases)
-    </summary>
-    <p>For the evolution can be discriped by Schrodinger equation:</p>
+    </summary></p>
+
+<p>For the evolution can be discriped by Schrodinger equation:</p>
 
 <div>$$\ti \hbar \frac {\td} {\td t} \ket{\psi(t)} = \hat H(R(t)) \ket{\psi(t)}$$</div>
 
@@ -669,8 +670,7 @@ Then one have the equation:</p>
 
 <p>Which means that <code>$\ket{\psi(t)}$</code> is the simultaneous ground state .</p>
 
-</details>
-
+<p></details></p>
 
 <h1 id="propagator-and-path-integral">Propagator and Path Integral</h1>
 
@@ -689,11 +689,12 @@ Propagator is the <code>transition probability amplitude</code> for the particle
 
 <p>Where <code>$H(x,p,t)$</code> is the Hamiltonian. <br></p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>When <code>$t'\lt t$</code>, the equation is hold. <br>
+    </summary></p>
+
+<p>When <code>$t'\lt t$</code>, the equation is hold. <br>
 For <code>$t'\gt t$</code>, for the equation of motion of evolution operator:</p>
 
 <div>$$\ti \hbar \frac {\td} {\td t'} \hat U(t',t) = \hat H \hat U(t',t)$$</div>
@@ -708,8 +709,7 @@ For <code>$t'\gt t$</code>, for the equation of motion of evolution operator:</p
 
 <p>For the first term is &ldquo;continuous&rdquo; of <code>$t$</code>. Then the equation proved.</p>
 
-</details>
-
+<p></details></p>
 
 <p>More over, when <code>$\hat H$</code> is independent of time, we can write down the expansion of propagator on energy-eigenstates:</p>
 
@@ -739,8 +739,9 @@ The fourier transform (with a little difference from the one in mathematical) of
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Consider the contour integral of <code>$\frac {\tilde{G}(\omega')} {\omega'-\omega}$</code> on the upper half plane(complex) , with <code>$C_l$</code> along the real axis expect singular point <code>$\omega$</code> (using a little circle <code>$C_r$</code> to evade it) and <code>$C_R$</code> as the infinity large circle.
+    </summary></p>
+
+<p>Consider the contour integral of <code>$\frac {\tilde{G}(\omega')} {\omega'-\omega}$</code> on the upper half plane(complex) , with <code>$C_l$</code> along the real axis expect singular point <code>$\omega$</code> (using a little circle <code>$C_r$</code> to evade it) and <code>$C_R$</code> as the infinity large circle.
 Using Jordon Lemma, the integral on <code>$C_R$</code> is zero. And the whole integral is zero for there is no singular point inner the contour. Then:</p>
 
 <div>$$\text{P} \int_{-\infty}^{\infty} \frac {\tilde{G}(\omega')} {\omega'-\omega} \td \omega' + \int_{C_r}  \frac {\tilde{G}(\omega')} {\omega'-\omega} \td \omega' = 0$$</div>
@@ -753,8 +754,7 @@ Using Jordon Lemma, the integral on <code>$C_R$</code> is zero. And the whole in
 
 <div>$$\text{P} \int_{-\infty}^{\infty} \frac {\tilde{G}(\omega')} {\omega'-\omega} \td \omega' = -\ti \pi \tilde{G}(\omega)$$</div>
 
-</details>
-</p>
+<p></details></p>
 
 <p>Example: <code>$G(t\gt 0) = e^{-\ti E t}$</code> , then <code>$\tilde{G}(\omega) = \frac 1 {\omega -E} - \ti \pi \delta(\omega-E)$</code></p>
 
@@ -786,11 +786,12 @@ Using Jordon Lemma, the integral on <code>$C_R$</code> is zero. And the whole in
 
 <p>One can check these two version of path integral by single particle Hamiltonian: <code>$\hat H = \hat p^2/2m + V(\hat x) = T(\hat p) +V(\hat x)$</code> , the propagator is <code>$K(x',x,t) = \bra{x'}e^{-\ti t \hat H / \hbar} \ket{x}$</code>:</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Check
-    </summary>
-    <ol>
+    </summary></p>
+
+<ol>
 <li><p>Check for version 1: <br>
 Divide this propagation over time <code>$t$</code> into <code>$N$</code> steps, each of time <code>$\epsilon=t/N$</code> :</p>
 
@@ -798,7 +799,7 @@ Divide this propagation over time <code>$t$</code> into <code>$N$</code> steps, 
 
 <p>With the <code>Trotter-Suzuki Approximation</code> : <code>$e^{\eta (\hat A+\hat B)} = e^{\eta \hat A} e^{\eta \hat B} + O(\eta^2)$</code> , one have:</p>
 
-<div>$$\bra{x_{i+1}}e^{-\ti \epsilon \hat H/\hbar} \ket{x_i} \approx \bra{x_{i+1}}e^{-\frac {\ti} {\hbar} \epsilon \frac {\hat p^2} {2m}} \ket{x_i} e^{-\frac {\ti} {\hbar} V(x_i)} = \sqrt{\frac {m} {2\pi\hbar \epsilon \ti}} e^{\frac {\ti} {\hbar} \epsilon \big(\frac {m} 2 (\frac {x_{i+1}-x_i} \epsilon)^2 - V(x_i) \big)} $$</div>
+<div>$$\bra{x_{i+1}}e^{-\ti \epsilon \hat H/\hbar} \ket{x_i} \approx \bra{x_{i+1}}e^{-\frac {\ti} {\hbar} \epsilon \frac {\hat p^2} {2m}} \ket{x_i} e^{-\frac {\ti} {\hbar} \epsilon V(x_i)} = \sqrt{\frac {m} {2\pi\hbar \epsilon \ti}} e^{\frac {\ti} {\hbar} \epsilon \big(\frac {m} 2 (\frac {x_{i+1}-x_i} \epsilon)^2 - V(x_i) \big)} $$</div>
 
 <p>Using this expression, one can write the propagator as:</p>
 
@@ -827,8 +828,7 @@ K(x',x,t) &\approx \int \td p_{N-1}\cdots \td p_1 \td x_{N-1} \cdots \td x_1 \pr
 <p>Where we used <code>$\langle x | p \rangle = (2\pi\hbar)^{-1/2} \exp(\ti px/\hbar)$</code>, and where the measure of paths <code>$\mathcal{D}[x]\mathcal{D}[p]$</code> contains the <code>$(2\pi\hbar)^{-N}$</code> normalization factor</p></li>
 </ol>
 
-</details>
-
+<p></details></p>
 
 <h2 id="stationary-phase-approximation">Stationary Phase Approximation</h2>
 
@@ -866,11 +866,12 @@ where <code>$t$</code> parametrizes a <code>periodic</code> evolution <code>$\ke
 
 <div>$$A(t) := \ti \bra{\psi(t)}\partial_t\ket{\psi(t)}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Note
-    </summary>
-    <ol>
+    </summary></p>
+
+<ol>
 <li>The periodicity requirement : <code>$\ket{\psi(t_{\text{final}})} = \ket{\psi(t_{\text{initial}})} $</code></li>
 <li>Here <code>$t$</code> is just a parameter describing the path in Hilbert space. NOT time-evolution</li>
 
@@ -892,8 +893,7 @@ Berry connection will be:</p>
 <div>$$\int A(t)\td t \rightarrow \int A(t) \td t + [\theta(T)-\theta(0)] \equiv \int A(t)\td t \text{ mod }2\pi$$</div></li>
 </ol>
 
-</details>
-
+<p></details></p>
 
 <h1 id="gauge-invariance-electromagnetic-field">Gauge Invariance &amp; Electromagnetic Field</h1>
 

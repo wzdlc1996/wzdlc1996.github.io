@@ -8,10 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&ldquo;ket&rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &ldquo;bra&rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$.">
+  <meta name="description" content="Some basic concepts for Quantum Mechanics.">
 
   <meta property="og:title" content="Basic Concepts of Quantum Mechanics" />
-<meta property="og:description" content="Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&ldquo;ket&rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &ldquo;bra&rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$." />
+<meta property="og:description" content="Some basic concepts for Quantum Mechanics." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/concepts/" />
 <meta property="article:published_time" content="2018-11-12T11:36:42&#43;08:00"/>
@@ -506,19 +506,19 @@ A <code>natural inner product</code> can be defined on Hilbert space, as the ove
 
 <p>The Gram matrix <code>$G_{i,j}=(\psi_i,\psi_j)$</code> of a set of wavefunction is Hermitian and positive semi-definite.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>For the positive definiteness of inner product, we have:</p>
+    </summary></p>
+
+<p>For the positive definiteness of inner product, we have:</p>
 
 <p><div>$$(\sum_i \lambda_i \psi_i,\sum_j \lambda_j \psi<em>j)=\sum</em>{i,j}\lambda_i^* \lambda<em>j G</em>{i,j}\geq 0$$</div></p>
 
 <p>holds for arbitrary <code>$\bm{\lambda}$</code>, which means that the Gram matrix is semi-definition. <br>
   The Hermitian is eaily to check.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="combining-hilbert-spaces">Combining Hilbert Spaces</h2>
 
@@ -586,19 +586,19 @@ For <code>infinite</code> dimension Hilbert space, the completeness is usually h
 
 <p><em>[Theorem]</em> : A set quantum state <code>$\{\ket{\psi_j}\}$</code> are linear dependent, <code>IFF</code> matrix <code>$A_{i,j}=\langle \psi_i | \psi_j \rangle$</code> is a singular matrix</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The linear dependence is equivalent to the statement:</p>
+    </summary></p>
+
+<p>The linear dependence is equivalent to the statement:</p>
 
 <div>$$\exists k_j (\text{Not all be zero}) \Rightarrow \sum_j k_j \ket{\psi_j}=0$$</div>
 
 <p>That is there is a row or column could be vanished though row-line operation on the determinate <code>$\text{det}A_{i,j} $</code> . <br>
 Then we proved the theorem.</p>
 
-</details>
-
+<p></details></p>
 
 <h1 id="quantum-mechanical-operators">Quantum Mechanical Operators</h1>
 
@@ -668,11 +668,12 @@ For simplicity, we call commutator <code>$[\hat A,\hat B]$</code> as <code>Lie d
 
 <p>or one can write it as : <code>$\text{e}^{\hat A} \hat B \text{e}^{-\hat A}=\exp (\mathcal{L}_{\hat A}) \hat B$</code></p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Define <code>$\hat f (t)=\exp(t\hat A)\hat B\exp(-t\hat A)$</code> , then <code>$\hat f(0)=\hat B$</code> . <br>
+    </summary></p>
+
+<p>Define <code>$\hat f (t)=\exp(t\hat A)\hat B\exp(-t\hat A)$</code> , then <code>$\hat f(0)=\hat B$</code> . <br>
 Then we can check that:</p>
 
 <div>$$\frac {\td} {\td t} \hat f(t)=\hat A \hat f(t)-\hat f(t)\hat A =\mathcal{L}_{\hat A} \hat f(t)$$</div>
@@ -688,8 +689,7 @@ Then we can check that:</p>
 <p>Which can be obtained by Taylor expansion or simplly solve the operator equation.  <br>
 Then we can have the BH-formula at <code>$t=1$</code></p>
 
-</details>
-
+<p></details></p>
 
 <p>Direct sum &amp; tensor product of operator defined like wavefunction. <br>
 For operator <code>$\hat A$</code> defined on <code>$\mathcal{H}_1$</code> , while <code>$\hat B$</code> defined on <code>$\mathcal{H}_2$</code> , <code>$\ket{\psi_i}\in\mathcal{H}_i$</code> :</p>
@@ -742,11 +742,12 @@ In <mark>n(finite)-dimension</mark> Hilbert space, <code>$0\leq S[\hat \rho]\leq
 
 <div>$$S[\lambda \hat \rho_1+(1-\lambda)\hat \rho_2]\geq \lambda S[\hat \rho_1]+(1-\lambda)S[\hat \rho_2] \ \ \ \ \lambda\in(0,1)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First we need to introduce a lemma : <br>
+    </summary></p>
+
+<p>First we need to introduce a lemma : <br>
 <em>[Lemma]</em> : <code>Klein's inequality</code> . Let <code>$\hat A,\hat B$</code> self-adjoint(Hermitian) and <code>$f$</code> is convex from : <code>$\mathbb{R}\rightarrow \mathbb{R}$</code> . Then:</p>
 
 <div>$$\text{Tr}(f(\hat A)-f(\hat B)-(\hat A-\hat B)f'(\hat B))\geq 0$$</div>
@@ -807,8 +808,7 @@ To prove the concavity, we use the Klein&rsquo;s inequality with <code>$f(t)=t\l
 
 <p>The concavity has been proved.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Definition]</em> : <code>Reduced density matrix</code> , given a density metrix <code>$\hat \rho$</code> on <code>$\mathcal{H}_a \otimes \mathcal{H}_b$</code>, reduced density matrix <code>$\hat \rho_a$</code> on <code>$\mathcal{H}_a$</code> is:</p>
 
@@ -820,11 +820,12 @@ To prove the concavity, we use the Klein&rsquo;s inequality with <code>$f(t)=t\l
 
 <div>$$S_{a\otimes b}[\hat \rho] = \text{Tr}_{a\otimes b} (-\hat \rho \log \hat \rho) \leq S_a[\hat \rho_a] + S_b[\hat \rho_b] = \text{Tr}_a (-\hat \rho_a \log \hat \rho_a) + \text{Tr}_b (-\hat \rho_b \log \hat \rho_b) = S_{a\otimes b} [\hat \rho_a \otimes \hat \rho_b]$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First, we introduce the difinition of so called <code>Relative entropy</code>:</p>
+    </summary></p>
+
+<p>First, we introduce the difinition of so called <code>Relative entropy</code>:</p>
 
 <div>$$S[\hat \rho \| \hat \sigma] := -S[\hat \rho] - \text{Tr} (\hat \rho \log \hat \sigma)$$</div>
 
@@ -853,8 +854,7 @@ Then let <code>$\hat \sigma = \hat \rho_a \otimes \hat \rho_b$</code> we have:</
 
 <p>The last equality is simple to prove.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="density-matrix-of-pure-state">Density Matrix of Pure State</h2>
 
@@ -872,11 +872,13 @@ has some special properties:</p>
 
 <p>Where <code>$\lambda_i^2$</code> are eigenvalues of <code>$\hat \rho_a$</code> , and <code>$\phi_i,\varphi_i$</code> are orthonormal eigenstates of <code>$\hat \rho_a, \hat \rho_b$</code> .</p>
 
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>Generally, one can write <code>$\ket{\psi}\in\mathcal{H}_a\otimes \mathcal{H}_b$</code> as the expansion on basis <code>$e_{i,a}$</code> and <code>$e_{i,b}$</code> in <code>$\mathcal{H}_a$</code> and <code>$\mathcal{H}_b$</code> :</p>
+<p><details>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Proof
+</summary></p></li>
+</ol>
+
+<p>Generally, one can write <code>$\ket{\psi}\in\mathcal{H}_a\otimes \mathcal{H}_b$</code> as the expansion on basis <code>$e_{i,a}$</code> and <code>$e_{i,b}$</code> in <code>$\mathcal{H}_a$</code> and <code>$\mathcal{H}_b$</code> :</p>
 
 <div>$$\ket{\psi} = \sum_{i,j} a_{ij}\ket{e_{i,a}}\ket{e_{j,b}}$$</div>
 
@@ -904,24 +906,25 @@ And for the expansion, one can write the reduced density matrix as:</p>
 <p>For <code>$\hat \rho$</code> is Hermitian so <code>$\lambda_i\in\mathbb{R}$</code> . That is <code>$\lambda_i^2$</code> are eigenvalues of <code>$\hat \rho_a$</code> and <code>$\ket{\phi_i}$</code> are <code>$\hat \rho_a$</code> &rsquo;s eigenstates <br>
 Further more, <code>$\lambda_i^2$</code> are also eigenvalues of <code>$\hat \rho_b$</code> and <code>$\ket{\varphi_i}$</code> are <code>$\hat \rho_b$</code>&rsquo;s eigenstates.</p>
 
-</details>
-</li>
+<p></details></p>
 
-<li><p><code>Reciprocity</code> : define reduced density matrix <code>$\hat \rho_b = \text{Tr}_a \hat \rho$</code> on <code>$\mathcal{H}_b$</code> , we have <code>$S_a=S_b$</code> .
+<ol>
+<li><code>Reciprocity</code> : define reduced density matrix <code>$\hat \rho_b = \text{Tr}_a \hat \rho$</code> on <code>$\mathcal{H}_b$</code> , we have <code>$S_a=S_b$</code> .
 <details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>Using Schmidt decomposition: <code>$\ket{\phi}= \sum_i \lambda_i \ket{\phi_i}\ket{\varphi_i}$</code>, then one have:</p>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Proof
+</summary>
+<br /></li>
+</ol>
+
+<p>Using Schmidt decomposition: <code>$\ket{\phi}= \sum_i \lambda_i \ket{\phi_i}\ket{\varphi_i}$</code>, then one have:</p>
 
 <div>$$S_b=-\sum_i \lambda_i^2\log \lambda_i^2=S_a$$</div>
 
 <p>For the details in the previous proof.
 Proved.</p>
 
-</details>
-</p></li>
-</ol>
+<p></details></p>
 
 <h1 id="measurement">Measurement</h1>
 
@@ -957,11 +960,12 @@ That is to say that the original entropy is less than the expectation value of e
 
 <p>Where <code>$\Delta \hat O := (\langle \hat O^2\rangle - \langle \hat O \rangle^2)$</code> , <code>$\langle \hat O \rangle = \text{Tr}\hat O \hat \rho$</code>.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Define the inner product of two operators <code>$\hat A,\hat B$</code>, as <code>$(\hat A,\hat B)=\langle \hat A^{\dagger}\hat B\rangle = \text{Tr}\hat A^{\dagger}\hat B\hat \rho $</code> <br>
+    </summary></p>
+
+<p>Define the inner product of two operators <code>$\hat A,\hat B$</code>, as <code>$(\hat A,\hat B)=\langle \hat A^{\dagger}\hat B\rangle = \text{Tr}\hat A^{\dagger}\hat B\hat \rho $</code> <br>
 Then define two new operators: <code>$\hat A' = \hat A -\langle \hat A\rangle , \hat B'=\hat B-\langle \hat B\rangle$</code>, one have:</p>
 
 <div>$$\begin{aligned}
@@ -978,8 +982,7 @@ The condition for the equality to be true is obviously:</p>
 
 <p>One can solve the equation to obtain the quantum state <code>$\hat \rho$</code> satisfying these condition above.</p>
 
-</details>
-
+<p></details></p>
 
           </div>
 

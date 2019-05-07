@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Quantization of Dirac Field Canonical Quantization of Dirac Spinor Field The Hamiltonian of Dirac Spinor Field is:
-$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi &#43; m \bar{\psi}\psi \Big\}$$ Where the $\psi$ should be a 4-component-Dirac-spinor. And the canonical momentum is $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$ . Then with the anti-commutation relationship we need:">
+  <meta name="description" content="The canonical quantization of Spinor Field(Dirac Field). One can find that the usual quantization procedure(canonical commutation relationship) does not work for it, because it leads to the Hamiltonian with no lower bound. To quantize it correctly, we need modify it as the anti-commutation relationship, which means that Dirac particles are Fermions. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Dirac Field in Quantum Theory">
 
   <meta property="og:title" content="Quantization of Free Field: Dirac Field" />
-<meta property="og:description" content="Quantization of Dirac Field Canonical Quantization of Dirac Spinor Field The Hamiltonian of Dirac Spinor Field is:
-$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi &#43; m \bar{\psi}\psi \Big\}$$ Where the $\psi$ should be a 4-component-Dirac-spinor. And the canonical momentum is $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$ . Then with the anti-commutation relationship we need:" />
+<meta property="og:description" content="The canonical quantization of Spinor Field(Dirac Field). One can find that the usual quantization procedure(canonical commutation relationship) does not work for it, because it leads to the Hamiltonian with no lower bound. To quantize it correctly, we need modify it as the anti-commutation relationship, which means that Dirac particles are Fermions. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Dirac Field in Quantum Theory" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/" />
 <meta property="article:published_time" content="2018-12-23T16:27:27&#43;08:00"/>
@@ -497,11 +495,12 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 \{a(\bm{k},s),a(\bm{k}',s')^\dagger\}&=\{b(\bm{k},s),b(\bm{k}',s')\}=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Using the 3-d delta function: <code>$\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot (\bm{x}-\bm{y})}$</code>, we have:</p>
+    </summary></p>
+
+<p>Using the 3-d delta function: <code>$\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot (\bm{x}-\bm{y})}$</code>, we have:</p>
 
 <div>$$\begin{aligned}
 \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big(u^{(s)}(\bm{k})a(\bm{k},s)+v^{(s)}(-\bm{k})b(-\bm{k},s)^\dagger\Big)&= \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \psi(\bm{x}) \\
@@ -553,8 +552,7 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
 
@@ -562,11 +560,12 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 
 <p>There is also a <code>$\infty$</code> quantity at the right-hand-side. But like what in Klein-Gordon Field, we ignore it.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Result with usual commutation relationship
-    </summary>
-    <p>With usual commutation relationship, we have the Hamiltonian as:</p>
+    </summary></p>
+
+<p>With usual commutation relationship, we have the Hamiltonian as:</p>
 
 <div>$$\begin{aligned}
 \hat H &= \sum_s \int \td^3 \bm{k} \omega_{|\bm{k}|} \Big[a(\bm{k},s)^\dagger a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^\dagger \Big] \\
@@ -577,8 +576,7 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 
 <p>The anti-commutation relationship will let Hamiltonian has a lower bound. In original Dirac theory, the vacuum is defined as the state of all negative energy levels are occupied by negative-energy electrons, the anti-particle is treated as the hole in negative-energy electrons sea. Here <code>$b^\dagger$</code> will generate an anti-electron automatically.</p>
 
-</details>
-
+<p></details></p>
 
 <p>And one can also write the <code>conserved charge</code> of Dirac Field:</p>
 
@@ -593,11 +591,12 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 \bar \psi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{\ti k\cdot x} \bar u^{(s)}(\bm{k}) a(\bm{k},s)^\dagger+e^{-\ti k\cdot x} \bar v^{(s)}(\bm{k}) b(\bm{k},s) \Big)
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We can also check that:</p>
+    </summary></p>
+
+<p>We can also check that:</p>
 
 <div>$$[a(\bm{k},s),\hat H]=\omega_{|\bm{k}|}a(\bm{k}) \ ; \ [b(\bm{k},s),\hat H]=\omega_{|\bm{k}|}b(\bm{k})$$</div>
 
@@ -609,8 +608,7 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 
 <div>$$\psi(x)=e^{\ti t \hat H} \psi(\bm{x})e^{-\ti t \hat H}=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="hilbert-space-of-dirac-spinor-field">Hilbert Space of Dirac Spinor Field</h2>
 
@@ -654,11 +652,12 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
 
 <p>Where <code>$\Lambda_{1/2}(\omega)=\exp(-\frac \ti 4 \sum_{\mu\nu}\sigma_{\mu\nu}\omega_{\mu\nu})=\exp(-\ti\omega_{\mu\nu}S^{\mu\nu}/2)$</code> .</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The proof is similar to what we did for Klein-Gordon Field. Just noting that the property of <code>$u,v$</code> :</p>
+    </summary></p>
+
+<p>The proof is similar to what we did for Klein-Gordon Field. Just noting that the property of <code>$u,v$</code> :</p>
 
 <div>$$u^{(s)}(\bm{k})=\Lambda_{\bm{0}\rightarrow \bm{k}}\Lambda_{\bm{k}'\rightarrow \bm{0}} u^{(s)}(\bm{k}')=\Lambda_{\bm{k}'\rightarrow \bm{k}}u^{(s)}(\bm{k}')$$</div>
 
@@ -675,8 +674,7 @@ U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \fr
 
 <div>$$U(\Lambda)\psi(x)U(\Lambda)^{-1}=\Lambda_{1/2}(\omega)^{-1}\psi(\Lambda x)$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="causality-of-dirac-field">Causality of Dirac Field</h2>
 
@@ -686,11 +684,12 @@ U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \fr
 
 <div>$$\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0 \ ; \ \|x-y\|^2\lt 0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the plane wave expansion:</p>
+    </summary></p>
+
+<p>With the plane wave expansion:</p>
 
 <div>$$\psi(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt {\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s) + e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$</div>
 
@@ -732,8 +731,7 @@ U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \fr
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>We need explain why this equality means the causality of Dirac Field. The core reason is that <mark>local measurable operators are products of even numbers of fermionic fields and their derivatives</mark> . Then the commutator of them can be written as a summation of some anti-commutator of fermionic fields&rsquo; operator, like:</p>
 
@@ -755,11 +753,12 @@ U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \fr
 
 <div>$$\ti \Delta_F(x-y)= \int \frac{\td^4 p} {(2\pi)^4} \frac {\ti (\gamma^\mu p_\mu +m)} {p_\mu p^\mu -m^2 +\ti \epsilon} e^{-\ti p\cdot (x-y)}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We compute these two terms in time-ordered product:</p>
+    </summary></p>
+
+<p>We compute these two terms in time-ordered product:</p>
 
 <div>$$\begin{aligned}
 \bra{0}\psi_\alpha (x)\bar{\psi}_\beta(y)\ket{0} &= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{s_1,s_2} e^{-\ti (k_1\cdot x-k_2\cdot y)} u^{(s_1)}_\alpha(\bm{k}_1) \bar {u}^{(s_2)}_\beta(\bm{k}_2) \bra{0} a(\bm{k}_1,s_1) a(\bm{k}_2,s_2)^\dagger\ket{0} \\
@@ -786,8 +785,7 @@ U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \fr
 
 <div>$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} \frac {\ti} {\gamma^\mu p_\mu -m +\ti \epsilon} e^{-\ti p\cdot (x-y)} $$</div>
 
-</details>
-
+<p></details></p>
 
 <h1 id="discrete-symmetry-of-dirac-field">Discrete Symmetry of Dirac Field</h1>
 
@@ -827,11 +825,12 @@ U_C \psi U_C^{-1} &= -\ti (\bar{\psi}\gamma^0\gamma^2)^T \\
 U_C \bar{\psi} U_C^{-1} &= (-\ti \gamma^0 \gamma^2 \psi)^T
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the property of <code>$u,v$</code> :</p>
+    </summary></p>
+
+<p>With the property of <code>$u,v$</code> :</p>
 
 <div>$$u^{(s)}(\bm{k})=-\ti \gamma^2\Big(v^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(s)}(\bm{k})=-\ti \gamma^2 \Big(u^{(s)}(\bm{k}) \Big)^*$$</div>
 
@@ -847,8 +846,7 @@ U_C \psi U_C^{-1} &=\sum_s \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sq
 
 <p>Another equality&rsquo;s proof is similar.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="time-reversal">Time Reversal</h2>
 
@@ -865,11 +863,12 @@ U_T K \psi(x^0,\bm{x}) (U_T K)^{-1} &= \gamma^1\gamma^3 \psi(-x^0,\bm{x}) \\
 U_T K \bar \psi(x^0,\bm{x}) (U_T K)^{-1} &=  \bar \psi(-x^0,\bm{x}) \gamma^1\gamma^3 \\
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the property of <code>$u,v$</code> :</p>
+    </summary></p>
+
+<p>With the property of <code>$u,v$</code> :</p>
 
 <div>$$u^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(u^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(v^{(s)}(\bm{k}) \Big)^*$$</div>
 
@@ -883,14 +882,13 @@ U_T K \psi(x^0,\bm{x}) (U_T K)^{-1} &=\sum_s\int \frac {\td^3 \bm{k}} {(2\pi)^{3
 &=\gamma^1 \gamma^3 \psi(-x^0,\bm{x})
 \end{aligned}$$</div>
 
-<p>Noting that conjugation operator <code>$K$</code> does not commute to complex number:</p>
+<p>Noting that conjugation operator <code>$K$</code> is not commutative with complex number:</p>
 
 <div>$$K c = c^* K$$</div>
 
 <p>The proof for <code>$\bar \psi$</code> is similar.</p>
 
-</details>
-
+<p></details></p>
 
           </div>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistical Phys on Leonard</title>
+    <title>statistical-phys on Leonard</title>
     <link>https://wzdlc1996.github.io/tags/statistical-phys/</link>
-    <description>Recent content in Statistical Phys on Leonard</description>
+    <description>Recent content in statistical-phys on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
     <lastBuildDate>Tue, 19 Mar 2019 18:48:01 +0800</lastBuildDate>
@@ -17,8 +17,7 @@
       <pubDate>Tue, 19 Mar 2019 18:48:01 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/manybody2/</guid>
-      <description>Green&amp;rsquo;s Function Giving a set of orthonormal basis for single-particle state $\{\ket{\alpha}\}$ (e.g. coordinate eigenstate $\ket{\bm{r}}$ for spinless particles), we can write down the creation/annihilation operators : $\hat a_\alpha \ , \ \hat a_{\alpha}^\dagger$ in the Fock space, which forms the complete description for the many-body system.
-[Definition] : $n$-particle Real-time Green&#39;s function is a function of $2n$ parameters distinguishing states and $2n$ time variables:</description>
+      <description>Classnote for the class in PKU: &amp;lsquo;Quantum Theory for Manybody System&amp;rsquo;. This note gives a review for theory of Green&amp;rsquo;s function. Covers the definition of real-time Green&amp;rsquo;s function of the many body theory at temperature is zero, and the thermal Green&amp;rsquo;s function , or temperature Green&amp;rsquo;s function. And discussion how to extract information from Green&amp;rsquo;s function.</description>
     </item>
     
     <item>
@@ -27,9 +26,7 @@
       <pubDate>Mon, 25 Feb 2019 12:44:33 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/manybody1/</guid>
-      <description>Boson Coherent State Definition and Properties [Definition] : The generic form of the coherent state from a set of boson mode $\hat a_i$ is:
-$$\ket{\bm{z}}=\exp(\bm{z}\cdot \hat {\bm{a}}^\dagger)\ket{0}=\exp(\sum_{i}z_i \hat a_i^\dagger)\ket{0}$$ [Theorem] : The overlap between two coherent states is:
-$$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With that $\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$ , we have:</description>
+      <description>This is the first classnote for the class in PKU: &amp;lsquo;Quantum Theory for Manybody System&amp;rsquo;. This note gives a brief introduction to Grassmann numbers and then define the generic coherent states of Boson and Fermion, and discuss their properties. The coherent state is widely used in the path integral expression for many body system, or the field theory.</description>
     </item>
     
     <item>
@@ -38,8 +35,7 @@ $$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With 
       <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/spin/</guid>
-      <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
-$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$</description>
+      <description>Angular momentum and spin theory in Quantum mechanics. Contain SU(2) and SO(3) basic concepts and their representation theory</description>
     </item>
     
     <item>
@@ -48,9 +44,7 @@ $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inve
       <pubDate>Mon, 12 Nov 2018 13:42:48 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/identicalparticles/</guid>
-      <description>Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
-$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
- $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:</description>
+      <description>Quantum theory for identical particles. Contain Permutation group theory and Second quantization.</description>
     </item>
     
   </channel>

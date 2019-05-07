@@ -8,14 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Introduction Zeno Paradox , or Arrow paradox of Zeno Paradoxes argues that [Wiki page]:
- If everything when it occupies an equal space is at rest, and if that which is in locomotion is always occupying such a space at any moment, the flying arrow is therefore motionless
- In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990].">
+  <meta name="description" content="The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation">
 
   <meta property="og:title" content="Quantum Zeno Effect" />
-<meta property="og:description" content="Introduction Zeno Paradox , or Arrow paradox of Zeno Paradoxes argues that [Wiki page]:
- If everything when it occupies an equal space is at rest, and if that which is in locomotion is always occupying such a space at any moment, the flying arrow is therefore motionless
- In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990]." />
+<meta property="og:description" content="The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/" />
 <meta property="article:published_time" content="2018-11-22T19:23:43&#43;08:00"/>
@@ -495,15 +491,16 @@ autocomplete('#aa-search-input',
 
 <p>This property was firstly pointed out by Krylov and Fock at 1947 [<a href="http://iopscience.iop.org/article/10.1088/0034-4885/41/4/003/pdf">Fonda 1978</a>]</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p><em>[Lemma(Riemann-Lebesgue)]</em> : if <code>$f$</code> is <code>$L^1$</code> integrable on <code>$\mathbb{R}^d$</code> , that is to say , if the Lebesgue integral of <code>$|f|$</code> is finite. Then the Fourier transform of <code>$f$</code> satisfies:</p>
+    </summary></p>
+
+<p><em>[Lemma(Riemann-Lebesgue)]</em> : if <code>$f$</code> is <code>$L^1$</code> integrable on <code>$\mathbb{R}^d$</code> , that is to say , if the Lebesgue integral of <code>$|f|$</code> is finite. Then the Fourier transform of <code>$f$</code> satisfies:</p>
 
 <div>$$F(z)\equiv \int_{\mathbb{R}^d} f(x) e^{-\ti z\cdot x} \td x\rightarrow 0 \text{ as } |z|\rightarrow \infty$$</div>
 
-<p>The proof is followed what is posted on the Wikipedia [Wiki page][8]:</p>
+<p>The proof is followed what is posted on the Wikipedia <a href="https://en.wikipedia.org/wiki/Riemann%E2%80%93Lebesgue_lemma">Wiki page</a>:</p>
 
 <p>For the 1-dimension case:</p>
 
@@ -537,12 +534,11 @@ autocomplete('#aa-search-input',
 
 <p>However, sometimes when we discuss the discrete spectrum, we will let <code>$f$</code> be a linear combination of some <code>Dirac-Delta function</code> . We need to note that Delta function is <code>NOT</code> <code>$L^1$</code> function. In fact it is kind of a functional.</p>
 
-<p>For example [Stackexchange page][9] :</p>
+<p>For example <a href="https://math.stackexchange.com/questions/522603/is-the-dirac-delta-function-l1-integrable">Stackexchange page</a> :</p>
 
 <p>The set <code>$S=\{x\ : \ \delta(x)\neq 0\}=\{0\}$</code> is countable hence has Lebesgue measure of 0. That is to say we should have <code>$\int \delta(x)\td x =0$</code> , but we know that the integral is <code>$1$</code>. Then we know that <code>$\delta(x)$</code> is <code>NOT</code> a <code>$L^1$</code> function.</p>
 
-</details>
-
+<p></details></p>
 
 <p>This property shows that <code>$P(t)$</code> will <code>usually</code>(not discrete spectrum) vanish at time goes too long. But not show the asymptotical behavior of <code>$P(t)$</code> .</p>
 
@@ -552,16 +548,16 @@ autocomplete('#aa-search-input',
 
 <p><em>[Theorem]</em> : The time derivative of <code>$P(t)$</code> vanishes at <code>$t=0$</code></p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>According to the definition of <code>$P(t)$</code> , with <code>$A(t) = \bra{\psi(t=0)}\psi(t)\rangle$</code> , that is to say <code>$P(t)=|A(t)|^2 = A(t) A(-t)$</code> , then we have:</p>
+    </summary></p>
+
+<p>According to the definition of <code>$P(t)$</code> , with <code>$A(t) = \bra{\psi(t=0)}\psi(t)\rangle$</code> , that is to say <code>$P(t)=|A(t)|^2 = A(t) A(-t)$</code> , then we have:</p>
 
 <div>$$\frac {\td P(t)} {\td t}\Bigg|_{t=0} = \frac {\td A(t)} {\td t}\Bigg|_{t=0} A(0) - A(0) \frac {\td A(t)} {\td t}\Bigg|_{t=0}=0 $$</div>
 
-</details>
-
+<p></details></p>
 
 <p>This property shows that the short time behavior of <code>$P(t)$</code> is :</p>
 

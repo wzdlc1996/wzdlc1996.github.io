@@ -17,8 +17,7 @@
       <pubDate>Tue, 19 Mar 2019 18:48:01 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/manybody2/</guid>
-      <description>Green&amp;rsquo;s Function Giving a set of orthonormal basis for single-particle state $\{\ket{\alpha}\}$ (e.g. coordinate eigenstate $\ket{\bm{r}}$ for spinless particles), we can write down the creation/annihilation operators : $\hat a_\alpha \ , \ \hat a_{\alpha}^\dagger$ in the Fock space, which forms the complete description for the many-body system.
-[Definition] : $n$-particle Real-time Green&#39;s function is a function of $2n$ parameters distinguishing states and $2n$ time variables:</description>
+      <description>Classnote for the class in PKU: &amp;lsquo;Quantum Theory for Manybody System&amp;rsquo;. This note gives a review for theory of Green&amp;rsquo;s function. Covers the definition of real-time Green&amp;rsquo;s function of the many body theory at temperature is zero, and the thermal Green&amp;rsquo;s function , or temperature Green&amp;rsquo;s function. And discussion how to extract information from Green&amp;rsquo;s function.</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@
       <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</guid>
-      <description>Introduction Quantum measurement is always one of the most fascinating questions in quantum mechanics. With the limitation caused by the uncertainty principle, how to find a way to perform a measurement but introduce as little disturbance as possible on the object attracts more and more people in recent years. The theory of weak measurement as a generalization of the ordinary measurement in quantum mechanics was born in such the atmosphere.</description>
+      <description>An introduction to weak measurement and weak values. Using the simplest model and perturbation theory to analyze a class of weak measurement process and the concept of weak values. This article gives a comparison between weak measurement and the ordinary measurement in quantum mechanics(which is called as strong measurement) and some interesting application of weak values.</description>
     </item>
     
     <item>
@@ -36,9 +35,7 @@
       <pubDate>Mon, 25 Feb 2019 12:44:33 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/manybody1/</guid>
-      <description>Boson Coherent State Definition and Properties [Definition] : The generic form of the coherent state from a set of boson mode $\hat a_i$ is:
-$$\ket{\bm{z}}=\exp(\bm{z}\cdot \hat {\bm{a}}^\dagger)\ket{0}=\exp(\sum_{i}z_i \hat a_i^\dagger)\ket{0}$$ [Theorem] : The overlap between two coherent states is:
-$$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With that $\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$ , we have:</description>
+      <description>This is the first classnote for the class in PKU: &amp;lsquo;Quantum Theory for Manybody System&amp;rsquo;. This note gives a brief introduction to Grassmann numbers and then define the generic coherent states of Boson and Fermion, and discuss their properties. The coherent state is widely used in the path integral expression for many body system, or the field theory.</description>
     </item>
     
     <item>
@@ -47,8 +44,7 @@ $$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With 
       <pubDate>Sat, 12 Jan 2019 14:14:27 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/intftii/</guid>
-      <description>Scattering Theory In experiments, the most important way is the scattering between particles. And the only observable we can measure is the scattering cross section . So the interacting Field Theory must build a quantitative analysis about scattering question.
-S matrix and Cross Section With the Lippman-Schwinger Equation, one can express the scattering process as:</description>
+      <description>We will review the scattering theory which has been studied in quantum-mechanics. The main character is the S-matrix and how to compute cross section by it. Then we will introduce the Lehmann-Symanzik-Zimmermann reduction fomula, which will show the connection between time-ordered Green&amp;rsquo;s function and S-matrix in scattering theory. The former can be computed by the Feynman Diagram and Feynman Rule which we have studied in the last section, and the latter is the only thing we can measure in experiments.</description>
     </item>
     
     <item>
@@ -57,7 +53,7 @@ S matrix and Cross Section With the Lippman-Schwinger Equation, one can express 
       <pubDate>Sun, 30 Dec 2018 15:42:02 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/intfti/</guid>
-      <description>Basic Introduce Perturbation Theory [Definition] : In quantum field theory, the perturbation theory is a power series respect to the coupling parameter (parameter of interaction term) of the theory. Namely, for a quantity $A(\lambda)$ with $\lambda$ is the coupling parameter, when $\lambda=0$ it is the free field theory. Then the perturbation theory give us:</description>
+      <description>We will introduce the basic Field Theory with interaction considered, which is the main propose of Field Theory actually. We will use the perturbation theory here. And what can we talk is only perturbation-property of Field theory. Our goal is to show the constraint of the form of Lagrangian in Interacting Field Theory. Then we will show the perturbation expansion of the time-ordered Green&amp;rsquo;s function and the corresponding method: Feynman Diagram and Feynman Rules. Green&amp;rsquo;s Function is widely used in field theory, especially in condensed matter theory. But in QFT we just care the connection between it and scattering theory, which will be discussed in next section.</description>
     </item>
     
     <item>
@@ -66,8 +62,7 @@ S matrix and Cross Section With the Lippman-Schwinger Equation, one can express 
       <pubDate>Wed, 26 Dec 2018 20:11:35 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldiii/</guid>
-      <description>Quantization of Maxwell Field Canonical Quantization of Maxwell Field The Hamiltonian of Maxwell Field is(in Feynman Gauge):
-$$H=\frac 1 2\int \td^3 \bm{x} \ \Big\{\sum_{i=1}^3 \Big((\partial_0 A_i)^2+(\nabla A_i)^2\Big)-(\partial_0 A_0)^2 - (\nabla A_0)^2 \Big\}$$ Where $A^\mu$ are vector field. We will use the canonical commutation relationship. For $A_i$ they can be written equivalently as:</description>
+      <description>The canonical quantization of vector Field(Maxwell Field). One can find that the usual quantization procedure(directly using of commutation relationship) does not work for it, because of the Gauge Symmetry. We will introduce the Gupta-Bleuler quantization procedure. It clearly keeps the Lorentz covariance but leads to a Hilbert space with negative matric. For free Maxwell field we can separate them totally, so the probability interpretation will not destroyed. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Maxwell Field in Quantum Theory</description>
     </item>
     
     <item>
@@ -76,8 +71,7 @@ $$H=\frac 1 2\int \td^3 \bm{x} \ \Big\{\sum_{i=1}^3 \Big((\partial_0 A_i)^2+(\na
       <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/relativisticqm/</guid>
-      <description>Dirac Equation It comes from the dispersion relation in Special Relativistic Theory: $E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$ , transfer $E\rightarrow \ti\hbar \frac {\td} {\td t}$ and $\bm{p}\rightarrow -\ti\hbar \nabla$ , together with the requirement of linear equation, Dirac derived that:
-$$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m c^2 \beta \big)\psi$$ Dirac proved that $\alpha_i,\beta$ should at least be $4\times 4$ matrices.</description>
+      <description>The simple introduction to Relativistic Quantum Mechanics. Mainly about the Dirac equation. Gives some basic understanding about the Dirac equation(in Dirac representation). Get to know some basic consequences of Dirac equation: Orbital angular momentum is not conserved, but the total angular momentum; Zeeman coupling term with g factor is 2; Spin-orbit coupling term and Zitterbewegung: Dirac particle cannot be &amp;ldquo;at rest&amp;rdquo; in classical sense. Even with zero momentum and without external potential, it seems to be oscillating.</description>
     </item>
     
     <item>
@@ -86,8 +80,7 @@ $$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m
       <pubDate>Sun, 23 Dec 2018 16:27:27 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/</guid>
-      <description>Quantization of Dirac Field Canonical Quantization of Dirac Spinor Field The Hamiltonian of Dirac Spinor Field is:
-$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi \Big\}$$ Where the $\psi$ should be a 4-component-Dirac-spinor. And the canonical momentum is $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$ . Then with the anti-commutation relationship we need:</description>
+      <description>The canonical quantization of Spinor Field(Dirac Field). One can find that the usual quantization procedure(canonical commutation relationship) does not work for it, because it leads to the Hamiltonian with no lower bound. To quantize it correctly, we need modify it as the anti-commutation relationship, which means that Dirac particles are Fermions. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Dirac Field in Quantum Theory</description>
     </item>
     
     <item>
@@ -96,8 +89,7 @@ $$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \p
       <pubDate>Thu, 20 Dec 2018 14:29:47 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/</guid>
-      <description>Quantization of Klein-Gordon Field Canonical Quantization of real-valued Scalar Field Here we only consider the real-valued Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:
-$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^2 \big)$$ To quantized this system, we need let the canonical coordinate and momentum be operators on Hilbert space: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ .</description>
+      <description>The canonical quantization of Real-valued Scalar Field(Klein Gordon Field). And computation of propagator and discussion, especially the causality property. At last we will discuss the discrete symmetry of Klein Gordon Field in Quantum Theory</description>
     </item>
     
     <item>
@@ -106,7 +98,7 @@ $$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^
       <pubDate>Mon, 17 Dec 2018 12:54:43 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/scattering/</guid>
-      <description>Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</description>
+      <description>Quantum theory for scattering of particles. Theory and applications.</description>
     </item>
     
     <item>
@@ -115,8 +107,7 @@ $$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^
       <pubDate>Tue, 11 Dec 2018 15:21:14 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/</guid>
-      <description>Maxwell Field Formalism [Definition] : Maxwell Field is the field of 4-vector. The Lagrangian is Lorentz Scalar constructed by the so-called Electromagnetic Tensor:
-$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ .</description>
+      <description>The classical field theory for vector field, so-called Maxwell Field. Together with the solution of Maxwell equation and some properties of Maxwell field.</description>
     </item>
     
     <item>
@@ -125,9 +116,7 @@ $$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{
       <pubDate>Tue, 11 Dec 2018 15:21:12 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</guid>
-      <description>Dirac Field Formalism [Definition] : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:
-$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$ This Lagrangian are not symmetric to $\psi$ and $\bar{\psi}$ , but this form will not lead the momentum vanish.
-Note that $\psi$ is a 4-components Dirac Spinor.</description>
+      <description>The classical field theory for Dirac spinor field, so-called Dirac Field. Together with the solution of Dirac equation and some properties of Dirac field.</description>
     </item>
     
     <item>
@@ -136,8 +125,7 @@ Note that $\psi$ is a 4-components Dirac Spinor.</description>
       <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/artic/hugo/insitesearch/</guid>
-      <description>Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
-Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month.</description>
+      <description>How to add a search bar for in site posts in Hugo. We used the Algolia as the solution provider.</description>
     </item>
     
     <item>
@@ -146,8 +134,7 @@ Algolia has a free plan for personal use, which provides 10,000 records and 100,
       <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/perturbation/</guid>
-      <description>Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0+\lambda \hat V$ , in terms of series of the &amp;quot;small parameter&amp;quot; $\lambda$
-Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one.</description>
+      <description>The perturbation theory for quantum mechanics. This is a useful method on solve some problems which we cannot handle it analytically</description>
     </item>
     
     <item>
@@ -156,9 +143,7 @@ Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat
       <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/</guid>
-      <description>Introduction Zeno Paradox , or Arrow paradox of Zeno Paradoxes argues that [Wiki page]:
- If everything when it occupies an equal space is at rest, and if that which is in locomotion is always occupying such a space at any moment, the flying arrow is therefore motionless
- In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990].</description>
+      <description>The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation</description>
     </item>
     
     <item>
@@ -167,9 +152,7 @@ Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat
       <pubDate>Sun, 18 Nov 2018 21:49:41 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</guid>
-      <description>Klein-Gordon Field Formalism [Definition] : Klein-Gordon Field is a class of scalar fields. For the real valued field, the Lagrangian(Lorentz-scalar) is:
-$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$ And for the complex valued field, the Lagrangian is:
-$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$ It can be treated as two independent real value field: $\phi=\phi_r+\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</description>
+      <description>The classical field theory for scalar field, so-called Klein-Gordon Field. Together with the solution of Klein-Gordon equation and some symmetry analysis.</description>
     </item>
     
     <item>
@@ -178,8 +161,7 @@ $$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2
       <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</guid>
-      <description>Switch HSV to A2DP A2DP not working with PulseAudio Here is the explanation from ArchWiki: A2DP not working with PulseAudio
-With Blueman-manager version 2.06 and PulseAudio version 12.2 , there is an issue that one cannot switch to A2DP with GUI. It will post the error message that Fail to change profile to A2DP .</description>
+      <description>How to manager the Bluetooth earphones. Switch HSV to A2DP for the better performance.</description>
     </item>
     
     <item>
@@ -188,7 +170,7 @@ With Blueman-manager version 2.06 and PulseAudio version 12.2 , there is an issu
       <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</guid>
-      <description>Introduction Now we will study Fields . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by $\phi(\bm{x},t)$. Then the field is a system with an infinite number(uncountable) of degrees of freedom.  The dynamical variables of the theory are now the values of the field $\phi(\bm{x})$ at each point of space .</description>
+      <description>The classical field theory. Lagrange &amp;amp; Hamilton Formalism and the Noether Theorem.</description>
     </item>
     
     <item>
@@ -197,8 +179,7 @@ With Blueman-manager version 2.06 and PulseAudio version 12.2 , there is an issu
       <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/spin/</guid>
-      <description>SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
-$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$</description>
+      <description>Angular momentum and spin theory in Quantum mechanics. Contain SU(2) and SO(3) basic concepts and their representation theory</description>
     </item>
     
     <item>
@@ -207,8 +188,7 @@ $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inve
       <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/symmetry/</guid>
-      <description>Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:</description>
+      <description>The symmetry theory in quantum mechanics. Including some tricks about solve some problems with it.</description>
     </item>
     
     <item>
@@ -217,7 +197,7 @@ $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inve
       <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/dynamics/</guid>
-      <description>Time Evolution Unitary Time Evolution [Assumption] : The basic assumption of quantum dynamics is that , the time evolution of a closed system is unitary . [Definition] : Time evolution operator : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a Unitary operator $\hat U(t&#39;,t)$ , one have:</description>
+      <description>The dynamics theory of Quantum mechanics. And basic introduction for path-integral formalism.</description>
     </item>
     
     <item>
@@ -226,9 +206,7 @@ $$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inve
       <pubDate>Mon, 12 Nov 2018 13:42:48 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/identicalparticles/</guid>
-      <description>Outline Fock space is the direct sum of identical particle Hilbert space for all different particle numbers:
-$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:
- $n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$ $\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:</description>
+      <description>Quantum theory for identical particles. Contain Permutation group theory and Second quantization.</description>
     </item>
     
     <item>
@@ -237,7 +215,7 @@ $$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert
       <pubDate>Mon, 12 Nov 2018 11:36:42 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/concepts/</guid>
-      <description>Outline    Terminologies Explanation     Hilbert Space: $\mathcal{H}$ Linear space equipped with an inner product   quantum states(&amp;ldquo;ket&amp;rdquo;) : $\ket{\psi}$ elements in the linear space $\mathcal{H}$   &amp;ldquo;bra&amp;rdquo; : $\bra{\psi}$ linear functionals defined on $\mathcal{H}$ : $\mathcal{H}\rightarrow \mathbb{C}$   quantum mechanical operators linear mappings : $\mathcal{H}_1\rightarrow \mathcal{H}_2$    The Hilbert Space Wavefunction The Hilbert space $\mathcal{H}(V)$ defined on a coordinate space $V$ is a complex linear space formed by all normalizable wavefunction defined on $V$.</description>
+      <description>Some basic concepts for Quantum Mechanics.</description>
     </item>
     
     <item>
@@ -246,9 +224,7 @@ $$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$ Many-body Hilbert
       <pubDate>Mon, 05 Nov 2018 15:45:57 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
-      <description>Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
-[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
-$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis.</description>
+      <description>The preliminary Mathematical knowledge for Quantum Field Theory. Containing the Minkowski Spacetime, Lorentz Group, and the representation theory of Lorentz Group.</description>
     </item>
     
     <item>
@@ -257,8 +233,7 @@ $$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R}
       <pubDate>Wed, 31 Oct 2018 14:48:29 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</guid>
-      <description>Introduction usually, linux has two method to handle the dual-graphic card. The difference between them are:
-   Method Advantages Disadvantages     Bumblebee Uses dGPU(descrete) only when requested. Saving power Manjaro default Some overhead so lower raw performance   PRIME Uses the dGPU directly , Better performance dGPU and iGPU(integrated) both powered on constantly need manual configuration    Step 1.</description>
+      <description>How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card.</description>
     </item>
     
   </channel>

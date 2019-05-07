@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
-$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$">
+  <meta name="description" content="Angular momentum and spin theory in Quantum mechanics. Contain SU(2) and SO(3) basic concepts and their representation theory">
 
   <meta property="og:title" content="Angular Momentum and Spin" />
-<meta property="og:description" content="SU(2) and SO(3) Groups Defining SO(3) Group [Definition] : SO(3) Group is the group of proper rotations in 3-dimensional space. With $\bm{r}=(x,y,z)^T$ , it is the set of 3x3 matrices $\bm{R}$ which satisfy:
-$$\bm{R}^T \bm{R}= \bm{1} , \ \ \det \bm{R}=1$$ SO(3) together with spatial inversion form the O(3) group: $\text{SO}(3) \bigcup I \text{SO}(3) = \text{O}(3)$" />
+<meta property="og:description" content="Angular momentum and spin theory in Quantum mechanics. Contain SU(2) and SO(3) basic concepts and their representation theory" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/spin/" />
 <meta property="article:published_time" content="2018-11-14T11:42:20&#43;08:00"/>
@@ -479,11 +477,13 @@ autocomplete('#aa-search-input',
 
 <div>$$\bm{R}_{\bm{n}}(\theta) \bm{x} = (\bm{x}\cdot \bm{n})\bm{n} +(\bm{x}-(\bm{x}\cdot \bm{n})\bm{n})\cos\theta + (\bm{n}\times \bm{x})\sin\theta $$</div>
 
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>For arbitrary vector <code>$\bm{x}$</code> , one can always decompose it along <code>$\bm{n}$</code> and the vertical one:</p>
+<p><details>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Proof
+</summary></p></li>
+</ol>
+
+<p>For arbitrary vector <code>$\bm{x}$</code> , one can always decompose it along <code>$\bm{n}$</code> and the vertical one:</p>
 
 <div>$$\bm{x} = \bm{x}-(\bm{x}\cdot \bm{n})\bm{n} + (\bm{x}\cdot \bm{n})\bm{n}$$</div>
 
@@ -512,9 +512,9 @@ autocomplete('#aa-search-input',
 
 <div>$$\bm{R}_{\bm{n}}(\theta) = e^{\theta \bm{A}_{\bm{n}}} $$</div>
 
-</details>
-</li>
+<p></details></p>
 
+<ol>
 <li><p>One can also parameterize the SO(3) group by <code>Euler angles</code>:
 Any SO(3) rotation can be represented as:</p>
 
@@ -522,17 +522,17 @@ Any SO(3) rotation can be represented as:</p>
 
 <p>Where <code>$\alpha\in[0,\pi), \beta\in[0,\pi), \gamma\in[0,2\pi)$</code> .</p>
 
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Matrix form
-    </summary>
-    <p>Rotations around <code>$z$</code> and <code>$y$</code> axis are explicitly:</p>
+<p><details>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Matrix form
+</summary></p></li>
+</ol>
+
+<p>Rotations around <code>$z$</code> and <code>$y$</code> axis are explicitly:</p>
 
 <div>$$\bm{R}_{\bm{e}_z}(\theta) = \begin{bmatrix} \cos \theta & -\sin \theta & 0 \\ \sin\theta & \cos \theta & 0 \\ 0 & 0 & 1 \end{bmatrix} \ ; \ \bm{R}_{\bm{e}_y}(\theta) = \begin{bmatrix} \cos \theta & 0 & \sin\theta \\ 0 & 1 & 0 \\ -\sin\theta & 0 & \cos \theta \end{bmatrix}$$</div>
 
-</details>
-</li>
-</ol>
+<p></details></p>
 
 <h2 id="su-2-group-and-its-parameterization">SU(2) Group and Its Parameterization</h2>
 
@@ -579,11 +579,12 @@ Any SO(3) rotation can be represented as:</p>
 
 <div>$$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} (\bm{\sigma}\cdot \bm{x}) e^{\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} = \bm{\sigma} \cdot (\bm{R}_{\bm{n}}(\theta)\bm{x})$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With <code>$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} = \cos (\frac {\theta} 2 ) - \ti \sin (\frac {\theta} 2) \bm{n}\cdot \bm{\sigma}$</code> , and the equality:</p>
+    </summary></p>
+
+<p>With <code>$e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} = \cos (\frac {\theta} 2 ) - \ti \sin (\frac {\theta} 2) \bm{n}\cdot \bm{\sigma}$</code> , and the equality:</p>
 
 <div>$$(\bm{\sigma} \cdot \bm{x}) (\bm{\sigma} \cdot \bm{y})=(\bm{x}\cdot \bm{y}) +\ti \bm{\sigma}\cdot (\bm{x}\times\bm{y})$$</div>
 
@@ -604,8 +605,7 @@ e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} (\bm{\sigma}\cdot \bm{x}) e^{\
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <ol>
 <li>This map is <code>two-to-one</code> mapping from SU(2) to SO(3) . For <code>$\bm{U},-\bm{U}\mapsto \bm{R}_{\bm{n}}(\theta)$</code> . Namely: <code>$\text{SO}(3) \simeq \text{SU}(2)/\mathbb{Z}_2$</code></li>
@@ -648,11 +648,12 @@ e^{-\ti \frac {\theta} 2 \bm{n}\cdot \bm{\sigma}} (\bm{\sigma}\cdot \bm{x}) e^{\
 
 <div>$$\exp(-\ti\theta \bm{J}\cdot \bm{n}) M_b \exp(\ti\theta \bm{J}\cdot \bm{n})=\sum_{c}M_c [\bm{R}_{\bm{n}}(\theta)]_{cb} $$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>By Baker-Hausdorff formula:</p>
+    </summary></p>
+
+<p>By Baker-Hausdorff formula:</p>
 
 <div>$$\text{e}^{-\ti\theta \bm{J}\cdot \bm{n}} M_b \text{e}^{\ti\theta \bm{J}\cdot \bm{n}}=M_b+\ti \theta [M_b,\bm{J}\cdot \bm{n}]+ \frac {(\ti\theta)^2} 2 [[M_b,\bm{J}\cdot \bm{n}],\bm{J}\cdot \bm{n}]+\cdots$$</div>
 
@@ -665,8 +666,7 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 &=-(\delta_{af}\delta_{bd}-\delta_{ad}\delta_{bf})n_an_d M_f=-n_b (n_aM_a)+ M_b
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="schwinger-boson-representation">Schwinger Boson Representation</h2>
 
@@ -708,11 +708,12 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <div>$$\chi_j(e^{-\ti \theta \bm{n}\cdot \bm{J}})=\chi_j(e^{-\ti \theta J_z})=\frac {\sin(\frac {2j+1} 2)\theta} {\sin \frac \theta 2}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Consider <code>$\bm{U}=e^{-\ti \theta J_z} = e^{-\ti\theta \sigma_z/2}$</code> , then it induces:</p>
+    </summary></p>
+
+<p>Consider <code>$\bm{U}=e^{-\ti \theta J_z} = e^{-\ti\theta \sigma_z/2}$</code> , then it induces:</p>
 
 <div>$$z_1\rightarrow e^{-\ti\theta/2} z_1 \ ; \ z_2 \rightarrow e^{\ti \theta/2} z_2$$</div>
 
@@ -729,8 +730,7 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h1 id="angular-momentum">Angular Momentum</h1>
 
@@ -748,11 +748,12 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <div>$$\hat {\bm{L}} = -\ti \bm{x}\times \partial_{\bm{x}} = \hat{\bm{x}}\times \hat{\bm{p}} / \hbar $$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Noting that <code>$(\bm{J}^i)^{j}_{\indent k}=-\ti \epsilon^{ijk}$</code> , one has:</p>
+    </summary></p>
+
+<p>Noting that <code>$(\bm{J}^i)^{j}_{\indent k}=-\ti \epsilon^{ijk}$</code> , one has:</p>
 
 <div>$$\begin{aligned}
 (\bm{n}\cdot \bm{J})\bm{x}\cdot \partial_{\bm{x}} &= \delta_{ij}n^i (\bm{J}^j \bm{x})^k \partial_k \\
@@ -765,8 +766,7 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>This is the <code>orbital angular momentum</code> . And the components:</p>
 
@@ -781,11 +781,12 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 [\hat {\bm{L}}^2,\hat L^{ijk}] &=0
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First:</p>
+    </summary></p>
+
+<p>First:</p>
 
 <div>$$\begin{aligned}[]
 [\hat L^i,\hat L^j] &= \hbar^{-2} \sum_{m_1,n_1;m_2,n_2} \epsilon^{im_1m_2}\epsilon^{jn_1n_2}[\hat x^{m_1}\hat p^{m_2},\hat x^{n_1}\hat p^{n_2}] \\
@@ -815,8 +816,7 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <p>For <code>$\epsilon^{ijk}=-\epsilon^{ikj}$</code>.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : <code>Ladder operator</code> <code>$\hat L_{\pm} = \hat L^1 \pm \ti \hat L^2$</code> . Then:</p>
 
@@ -828,11 +828,12 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 <div>$$\hat {\bm{L}}^2 = (\hat L^3)^2 +\frac 1 2 (\hat L_+\hat L_-+\hat L_-\hat L_+)$$</div></li>
 </ol>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First we check the commutator:</p>
+    </summary></p>
+
+<p>First we check the commutator:</p>
 
 <div>$$[\hat L^3,\hat L_{\pm}] = [\hat L^3,\hat L^1\pm\ti\hat L^2]=\ti\hat L^2\pm \hat L^1 = \pm \hat L_{\pm}$$</div>
 
@@ -848,18 +849,18 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 
 <p>The second property is very trivial.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : <code>Eigenstate/Eigenvalues</code> of Angular momentum. For <code>$[\hat{\bm{L}}^2,\hat L^3]=0$</code> , we can find a set of <code>simultaneous eigenstates</code> of them:</p>
 
 <div>$$\ket{l,m} \ , \ \text{ with } \hat{\bm{L}}^2\ket{l,m}=l(l+1)\ket{l,m} \ ; \ \hat L^3\ket{l,m}=m\ket{l,m}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Let the simultaneous eigenstates are <code>$\ket{\alpha,\beta}\equiv \ket{\hat{\bm{L}}^2=\alpha,\hat L^3=\beta}$</code> . Then for:</p>
+    </summary></p>
+
+<p>Let the simultaneous eigenstates are <code>$\ket{\alpha,\beta}\equiv \ket{\hat{\bm{L}}^2=\alpha,\hat L^3=\beta}$</code> . Then for:</p>
 
 <div>$$\hat {\bm{L}}^2=(\hat L^3)^2+\frac 1 2 (\hat L_+\hat L_-+\hat L_-\hat L_+)=\hat L^3(\hat L^3-1)+\hat L_+\hat L_-=\hat L^3(\hat L^3+1)+\hat L_-\hat L_+$$</div>
 
@@ -894,18 +895,18 @@ Then we know that they behaves like boson.</p>
 
 <p>And <code>$\hat b_{1,2}$</code> are also boson operators. Then one can find that <code>$\hat L^3$</code>&rsquo;s eigenvalue can only be integers.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Note]</em> : <code>Condon-Shortley</code> convention:</p>
 
 <div>$$\hat L_{\pm}\ket{l,m} = \sqrt{l(l+1)-m(m\pm 1)}\ket{l,m\pm 1}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>One can compute the amplitude of <code>$\hat L_{\pm}\ket{l,m}$</code> so that we can get the factor. (there could be a phase factor with modulus is 1):</p>
+    </summary></p>
+
+<p>One can compute the amplitude of <code>$\hat L_{\pm}\ket{l,m}$</code> so that we can get the factor. (there could be a phase factor with modulus is 1):</p>
 
 <div>$$\begin{aligned}
 \bra{l,m}\hat L_{\pm}^\dagger \hat L_{\pm}\ket{l,m} &= \bra{l,m}\hat L_\mp\hat L_{\pm}\ket{l,m} \\
@@ -919,8 +920,7 @@ Then we know that they behaves like boson.</p>
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="spin-1-2">Spin <sup>1</sup>&frasl;<sub>2</sub></h2>
 
@@ -940,11 +940,12 @@ Then we know that they behaves like boson.</p>
 
 <p>Where <code>$\ket{1}=\ket{S_z=1/2} , \ket{2}=\ket{S_z=-1/2}$</code></p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Full version:</p>
+    </summary></p>
+
+<p>Full version:</p>
 
 <div>$$\begin{aligned}
 \hat S^1 &= \frac 1 2 \big( \ket{S_z=1/2}\bra{S_z=-1/2}+\ket{S_z=-1/2}\bra{S_z=1/2}\big) \\
@@ -952,8 +953,7 @@ Then we know that they behaves like boson.</p>
 \hat S^3 &= \frac 1 2 \big( \ket{S_z=1/2}\ket{S_z=1/2} - \ket{S_z=-1/2}\bra{S_z=-1/2}\big)
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : <code>polarization</code> of state in <code>$\mathcal{H}_{1/2}$</code> : For <code>$\mathcal{H}_{1/2}\ni \ket{z_1,z_2} = z_1\ket{S_z=1/2}+z_2\ket{S_z=-1/2}$</code> with <code>$|z_1|^2+|z_2|^2=1$</code> (normalization). It has the polarization direction:</p>
 
@@ -963,11 +963,12 @@ Then we know that they behaves like boson.</p>
 
 <p>Usually one can note <code>$\ket{z_1,z_2}\equiv \ket{\bm{n}}$</code> means the spin <sup>1</sup>&frasl;<sub>2</sub> with polarization direction is <code>$\bm{n}$</code></p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First we prove that <code>$\bm{n}\in \mathbb{R}^3$</code> :</p>
+    </summary></p>
+
+<p>First we prove that <code>$\bm{n}\in \mathbb{R}^3$</code> :</p>
 
 <div>$$\bm{n}=(z_1^*z_2+z_2^*z_1,-\ti z_1^*z_2+\ti z_2^*z_1,z_1^*z_1-z_2^*z_2)$$</div>
 
@@ -993,8 +994,7 @@ Then we know that they behaves like boson.</p>
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With the polarization direction <code>$\bm{n}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$</code> , usually we use that:</p>
 
@@ -1010,11 +1010,12 @@ Then we know that they behaves like boson.</p>
 
 <div>$$\int \ket{\bm{n}}\bra{\bm{n}} \frac {\sin\theta \td \theta \td \phi} {2\pi} = 1$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With <code>$\bm{n}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$</code> :</p>
+    </summary></p>
+
+<p>With <code>$\bm{n}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$</code> :</p>
 
 <div>$$\ket{\bm{n}}=\ket{z_1,z_2}=e^{-\ti\phi/2}\cos\frac \theta 2 \ket{S_z=1/2}+e^{\ti\phi/2}\sin\frac \theta 2 \ket{S_z=-1/2}$$</div>
 
@@ -1029,8 +1030,7 @@ Then we know that they behaves like boson.</p>
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : <code>Rotation</code> of polarization in <code>$\mathcal{H}_{1/2}$</code> : if <code>$\ket{z_1,z_2}$</code> is the state with polarization of <code>$\bm{n}$</code> , and:</p>
 
@@ -1040,11 +1040,12 @@ Then we know that they behaves like boson.</p>
 
 <div>$$(\bm{R}_{\bm{n}'}(\theta)\bm{n})\cdot \hat{\bm{S}}\ket{z'_1,z'_2}=\frac 1 2 \ket{z_1,z_2}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>One needs only prove that:</p>
+    </summary></p>
+
+<p>One needs only prove that:</p>
 
 <div>$$[z^*_1,z^*_2]\bm{\sigma}\begin{bmatrix}z_1 \\ z_2 \end{bmatrix}=\bm{n} \ ; \ e^{-\ti \frac \theta 2 \bm{n'}\cdot \bm \sigma}\begin{bmatrix}z_1 \\ z_2 \end{bmatrix}=\begin{bmatrix}z'_1 \\ z'_2 \end{bmatrix} \Rightarrow [z'^*_1,z'^*_2]\bm{\sigma}\begin{bmatrix}z'_1 \\ z'_2 \end{bmatrix} = \bm{R}_{\bm{n}'}(\theta)\bm{n}$$</div>
 
@@ -1064,8 +1065,7 @@ Then we know that they behaves like boson.</p>
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="addition-of-angular-momentum">Addition of Angular Momentum</h2>
 
@@ -1081,11 +1081,12 @@ Then we know that they behaves like boson.</p>
 
 <div>$$j_1\otimes j_2 = (j_1+j_2) \oplus (j_1+j_2-1) \oplus (j_1+j_2-2)\oplus \cdots \oplus (|j_1-j_2|)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>To prove this theorem, we need the character table of SU(2) : <code>$\chi_j=\sum_{\mu=0}^{2j} x^{j-\mu}$</code> , with <code>$x=e^{\ti\theta}$</code> . Assume that <code>$j_1\gt j_2$</code> , then:</p>
+    </summary></p>
+
+<p>To prove this theorem, we need the character table of SU(2) : <code>$\chi_j=\sum_{\mu=0}^{2j} x^{j-\mu}$</code> , with <code>$x=e^{\ti\theta}$</code> . Assume that <code>$j_1\gt j_2$</code> , then:</p>
 
 <div>$$\chi_{j_1\otimes j_2} = \chi_{j_1}\chi_{j_2} = \sum_{\mu_1=0}^{2j_1}\sum_{\mu_2=0}^{2j_2}x^{j_1+j_2-\mu_1-\mu_2}=\sum_{\mu=0}^{2(j_1+j_2)} c_{\mu}x^{j_1+j_2-\mu} $$</div>
 
@@ -1111,8 +1112,7 @@ Then we know that they behaves like boson.</p>
 
 <p>That is <code>$c'_\mu=c_\mu$</code>, namely the decomposition is correct.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With the <code>total Angular Momentum</code> : <code>$\hat {\bm{J}}=\hat {\bm{J}}_1 \otimes 1 + 1\otimes \hat{\bm{J}}_2$</code> (or simply <code>$\hat {\bm{J}}_1+\hat{\bm{J}}_2$</code>). The theorem shows that:</p>
 
@@ -1141,11 +1141,12 @@ According to analysis above, we have these two properties:</p>
 &\indent + \sqrt{\frac {(J_2+m_2)(J_2-m_2+1)} {(J+m)(J-m+1)}} \bra{J_1,m_1;J_2,m_2-1} J,m-1\rangle \\
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Using the expansion expression:</p>
+    </summary></p>
+
+<p>Using the expansion expression:</p>
 
 <div>$$\ket{J,m}=\sum_{m_1,m_2}\ket{J_1,m_1;J_2,m_2}\bra{J_1,m_1;J_2,m_2}J,m\rangle$$</div>
 
@@ -1157,8 +1158,7 @@ According to analysis above, we have these two properties:</p>
 
 <p>Then we can solve all <code>$\bra{J_1,m_1;J_2,m_2=J-m_1}J,m=J\rangle$</code> up to an overall phase factor</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="wigner-eckart-theorem">Wigner-Eckart Theorem</h2>
 
@@ -1172,11 +1172,12 @@ According to analysis above, we have these two properties:</p>
 
 <p>That is, dependence of <code>$m,m',q$</code> are all in C-G coefficients.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the equation that:</p>
+    </summary></p>
+
+<p>With the equation that:</p>
 
 <div>$$\hat U\hat T_q^{(k)}\hat U^\dagger = \sum_{q'}\hat T_{q'}^{(k)} D_{q',q}^{(k)}(\bm{U}) $$</div>
 
@@ -1207,8 +1208,7 @@ According to analysis above, we have these two properties:</p>
 
 <div>$$\bra{j',m'}\hat T_{q}^{(k)}\ket{j,m}\propto \bra{j',m'}j,m;k,q\rangle$$</div>
 
-</details>
-
+<p></details></p>
 
 <h1 id="time-reversal-symmetry">Time-reversal Symmetry</h1>
 
@@ -1240,11 +1240,13 @@ The Hermitian conjugate is defined by:</p>
 
 <li><p>For linear operator: <code>$\hat K \hat O = \hat O^* \hat K$</code> . Note: <code>$(\bra{\psi}\hat O\ket{\phi})^*=\bra{\psi}\hat O^*\ket{\phi}$</code> only for real states.</p>
 
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>For arbitrary state <code>$\ket{\psi}$</code> , we have:</p>
+<p><details>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Proof
+</summary></p></li>
+</ol>
+
+<p>For arbitrary state <code>$\ket{\psi}$</code> , we have:</p>
 
 <div>$$\begin{aligned}
 \hat K \hat O \ket{\psi} &= \int \td^3 \bm{x}\td^3 \bm{x}' \hat K\ket{\bm{x}'}\bra{\bm{x}'} \hat O \ket{\bm{x}}\bra{\bm{x}}\psi\rangle \\
@@ -1255,11 +1257,11 @@ The Hermitian conjugate is defined by:</p>
 
 <p>That is: <code>$\hat K \hat O = \hat O ^* \hat K$</code> . q.e.d.</p>
 
-</details>
-</li>
+<p></details></p>
 
-<li><p><code>Any anti-linear operator</code> <code>$\hat O = \hat O \hat K \hat K$</code> where <code>$\hat O \hat K$</code> is a linear operator.
-<code>Any anti-unitary operator</code> is of the form <code>$\hat U \hat K$</code> where <code>$\hat U$</code> is a unitary operator</p></li>
+<ol>
+<li><code>Any anti-linear operator</code> <code>$\hat O = \hat O \hat K \hat K$</code> where <code>$\hat O \hat K$</code> is a linear operator.
+<code>Any anti-unitary operator</code> is of the form <code>$\hat U \hat K$</code> where <code>$\hat U$</code> is a unitary operator</li>
 </ol>
 
 <h2 id="time-reversal-symmetry-and-angular-momentum">Time-reversal Symmetry and Angular Momentum</h2>
@@ -1275,11 +1277,13 @@ The Hermitian conjugate is defined by:</p>
 
 <div>$$c_{m+1}=-c_m$$</div>
 
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>We have the matrix element of <code>$\hat J_x$</code> :</p>
+<p><details>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Proof
+</summary></p></li>
+</ol>
+
+<p>We have the matrix element of <code>$\hat J_x$</code> :</p>
 
 <div>$$\bra{J,m'}\hat J_x\ket{J,m} = \frac 1 2 \Big(\delta_{m',m+1}\sqrt{(J-m)(J+m+1)} + \delta_{m'+1,m}\sqrt{(J-m')(J+m'+1)} \Big)$$</div>
 
@@ -1308,9 +1312,9 @@ c^*_{m-1}c_m \sqrt{(J+m)(J-m+1)} &= -\sqrt{(J-m+1)(J+m)}
 
 <div>$$c_{m+1}=-c_m$$</div>
 
-</details>
-</li>
+<p></details></p>
 
+<ol>
 <li><p>Generally, we have <code>$\hat T \ket{J,m}= c (-1)^{J-m}\ket{J,-m}$</code> , with <code>$c$</code> is a constant phase. <br />
 With <code>Condon-Shortley convention</code>, for integer <code>$J$</code> , we let <code>$c=(-1)^J$</code></p>
 

@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Maxwell Field Formalism [Definition] : Maxwell Field is the field of 4-vector. The Lagrangian is Lorentz Scalar constructed by the so-called Electromagnetic Tensor:
-$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ .">
+  <meta name="description" content="The classical field theory for vector field, so-called Maxwell Field. Together with the solution of Maxwell equation and some properties of Maxwell field.">
 
   <meta property="og:title" content="Classical Fields: Maxwell Field" />
-<meta property="og:description" content="Maxwell Field Formalism [Definition] : Maxwell Field is the field of 4-vector. The Lagrangian is Lorentz Scalar constructed by the so-called Electromagnetic Tensor:
-$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$ And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ ." />
+<meta property="og:description" content="The classical field theory for vector field, so-called Maxwell Field. Together with the solution of Maxwell equation and some properties of Maxwell field." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/" />
 <meta property="article:published_time" content="2018-12-11T15:21:14&#43;08:00"/>
@@ -472,11 +470,12 @@ autocomplete('#aa-search-input',
 
 <div>$$\partial_\nu\partial^\nu A_\mu - (1-\xi)\partial_\mu (\partial_\nu A^\nu)=0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>For the Euler-Lagrange Equation is linear respect to <code>$\mathcal{L}$</code> , we separate it into two terms:</p>
+    </summary></p>
+
+<p>For the Euler-Lagrange Equation is linear respect to <code>$\mathcal{L}$</code> , we separate it into two terms:</p>
 
 <div>$$\mathcal{L}=\mathcal{L}_1+\mathcal{L}_2=-\frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 (\partial_\mu A^\mu)^2$$</div>
 
@@ -508,8 +507,7 @@ autocomplete('#aa-search-input',
 
 <div>$$\square A_\alpha - (1-\xi)\partial_\alpha (\partial^\mu A_\mu)=0$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynman gauge</code> (<code>$\xi=1$</code>) it is also the standard form of wave-equation:</p>
 
@@ -519,29 +517,30 @@ autocomplete('#aa-search-input',
 
 <div>$$\pi^\mu\equiv \frac {\delta \mathcal{L}} {\delta (\partial_0 A_\mu)}=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <div>$$\begin{aligned}
+    </summary></p>
+
+<div>$$\begin{aligned}
 \pi^\mu &\equiv \frac {\delta \mathcal{L}} {\delta(\partial_0 A_\mu)} \\
 &= -\frac 1 4 \Big(\frac {\delta F^{\alpha\beta}} {\delta(\partial_0 A_\mu)} F_{\alpha\beta} + \frac {\delta F_{\alpha\beta}} {\delta(\partial_0 A_\mu)} F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \frac {\delta(\partial_\alpha A^\alpha)} {\delta(\partial_0 A_\mu)} \\
 &=-\frac 1 2 \Big((\delta_\alpha^0\delta_\beta^\mu-\delta_\beta^0\delta_\alpha^\mu) F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \delta^\mu_\gamma \delta^0_\alpha \eta^{\gamma\alpha} \\
 &=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>And under the Feynman Gauge <code>$\xi=1$</code> we have the Hamiltonian:</p>
 
 <div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <div>$$\begin{aligned}
+    </summary></p>
+
+<div>$$\begin{aligned}
 \mathcal{H}&= \pi^\mu \partial_0 A_\mu-\mathcal{L} \\
 &=F^{\mu0}\partial_0 A_\mu +\frac 1 4 F^{\mu\nu}F_{\mu\nu}-\xi \partial_0 A^0 \partial_\mu A^\mu +\frac 1 2 \xi(\partial_\mu A^{\mu})^2 \\
 &=F^{\mu0}\partial_0 A_\mu + \frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
@@ -559,8 +558,7 @@ autocomplete('#aa-search-input',
 
 <div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
 
@@ -608,11 +606,12 @@ autocomplete('#aa-search-input',
 
 <p>For linear-polarization , there will be no need for the conjugation. But for circular polarization, we need the conjugation.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We prove this theorem by linear-polarization. For circular-polarization is similar.</p>
+    </summary></p>
+
+<p>We prove this theorem by linear-polarization. For circular-polarization is similar.</p>
 
 <ol>
 <li><p>Let <code>$\Lambda k_{\text{special}}=k$</code> , we have <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(\bm{k}_{\text{special}},\lambda)=\Lambda_{\mu}^{\indent \nu}\eta_{\nu\lambda}=\Lambda_{\mu\lambda}$</code> . Then:</p>
@@ -624,8 +623,7 @@ autocomplete('#aa-search-input',
 <div>$$\sum_{\lambda=0}^3 \eta^{\lambda,\lambda}\epsilon^\mu(\bm{k},\lambda)\epsilon^{\nu*}(\bm{k},\lambda)=\eta_{\lambda,\lambda'}\Lambda^{\mu\lambda}\Lambda^{\nu\lambda'}=\eta^{\mu\nu}$$</div></li>
 </ol>
 
-</details>
-
+<p></details></p>
 
 <p>It is obvious that <code>$\epsilon_\mu(\bm{k},\lambda=1,2)k^\mu=0$</code>. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call <code>$\epsilon_\mu(\bm{k},\lambda=3)$</code> <code>Vertical Polarization</code> , call <code>$\epsilon_\mu(\bm{k},\lambda=0)$</code> <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
 
@@ -637,11 +635,12 @@ autocomplete('#aa-search-input',
 
 <div>$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the plane wave expansion we have:</p>
+    </summary></p>
+
+<p>With the plane wave expansion we have:</p>
 
 <div>$$A^\mu (x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon^\mu(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon^{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu}\Big)$$</div>
 
@@ -671,8 +670,7 @@ I_\nu&= \int \td^3 \bm{x} \sum_\mu (\partial_\mu A_\nu)^2 \\
 
 <div>$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$</div>
 
-</details>
-
+<p></details></p>
 
           </div>
 

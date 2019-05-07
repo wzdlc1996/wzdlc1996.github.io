@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0&#43;\lambda \hat V$ , in terms of series of the &quot;small parameter&quot; $\lambda$
-Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one.">
+  <meta name="description" content="The perturbation theory for quantum mechanics. This is a useful method on solve some problems which we cannot handle it analytically">
 
   <meta property="og:title" content="Perturbation Theory" />
-<meta property="og:description" content="Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0&#43;\lambda \hat V$ , in terms of series of the &quot;small parameter&quot; $\lambda$
-Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one." />
+<meta property="og:description" content="The perturbation theory for quantum mechanics. This is a useful method on solve some problems which we cannot handle it analytically" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/perturbation/" />
 <meta property="article:published_time" content="2018-12-03T13:24:17&#43;08:00"/>
@@ -531,11 +529,13 @@ E_n &= E_n^{(0)} + \lambda \bra{E_n^{(0)}}\hat V \ket{E_n^{(0)}} + \mathcal{O}(\
 E_n &= E_n^{(0)} + \lambda \bra{E_n^{(0)}}\hat V \ket{E_n^{(0)}} + \lambda^2 \sum_{m,m\neq n} \frac {|\bra{E_m^{(0)}}\hat V \ket{E_n^{(0)}}|^2} {E_m^{(0)}-E_n^{(0)}} + \mathcal{O}(\lambda^3)
 \end{aligned}$$</div>
 
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    <p>To compute the Second order expansion, we have:</p>
+<p><details>
+<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    Proof
+</summary></p></li>
+</ol>
+
+<p>To compute the Second order expansion, we have:</p>
 
 <div>$$\begin{aligned}
 \ket{n,\lambda} &= \ket{E_n^{(0)}} + \lambda \hat G_n \hat V \ket{E_n^{(0)}} \\
@@ -553,19 +553,18 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <p>q.e.d.</p>
 
-</details>
-</li>
-</ol>
+<p></details></p>
 
 <p><em>[Theorem]</em> : The normalization factor of <code>$\ket{n,\lambda}=(1-\lambda \hat G_n\hat V)^{-1}\ket{E_n^{0}}$</code> is that <code>$\bra{n,\lambda} n,\lambda \rangle = (Z_n)^{-1} \geq 1$</code> , has the property that:</p>
 
 <div>$$Z_n = \frac {\partial} {\partial E_n^{(0)}} E_n$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Firstly, we need to compute the partial derivative of <code>$\hat G_n$</code> :</p>
+    </summary></p>
+
+<p>Firstly, we need to compute the partial derivative of <code>$\hat G_n$</code> :</p>
 
 <div>$$\frac {\partial} {\partial E_n^{(0)}} \hat G_n = \hat Q_n \frac {-1} {(E_n-\hat H_0)^2} \hat Q \frac {\partial E_n} {\partial E_n^{(0)}}=-\hat G_n^2 \frac {\partial E_n} {\partial E_n^{(0)}}$$</div>
 
@@ -595,8 +594,7 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="degenerate-perturbation-theory">Degenerate Perturbation Theory</h2>
 
@@ -640,11 +638,12 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <div>$$E_n-E_n^{(0)} = \sum_{\alpha,\beta=1}^g \Big(\lambda V_{n,\alpha;n,\beta}+ \sum_{m,m\neq n} \frac {\lambda^2V_{n,\alpha;m}V_{m;n,\beta}} {E_n^{(0)}-E_m^{(0)}} \Big) c_\alpha^* c_\beta + \mathcal{O}(\lambda^3)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>In the 1st perturbation, we actually solve the coefficients by the equation <code>$\bm{V} \bm{c} = \Delta \bm{c}$</code>, where <code>$\bm{c}=(c_\alpha)^T, \bm{V}=\lambda(V_{n,\alpha;n,\beta}) , \Delta = E_n-E_n^{(0)}$</code>.</p>
+    </summary></p>
+
+<p>In the 1st perturbation, we actually solve the coefficients by the equation <code>$\bm{V} \bm{c} = \Delta \bm{c}$</code>, where <code>$\bm{c}=(c_\alpha)^T, \bm{V}=\lambda(V_{n,\alpha;n,\beta}) , \Delta = E_n-E_n^{(0)}$</code>.</p>
 
 <p>The 1st perturbation can completely remove the degeneracy means that this equation has <code>$g$</code> different solution, namely matrix <code>$\bm{V}$</code> has <code>$g$</code> different eigenvalues <code>$\Delta$</code> .</p>
 
@@ -660,8 +659,7 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h1 id="perturbation-expansion-as-unitary-transformations">Perturbation Expansion as Unitary Transformations</h1>
 
@@ -715,11 +713,12 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <div>$$\hat U_I(t)=e^{\ti \hat H_0 t/\hbar} \hat U_S(t)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We have:</p>
+    </summary></p>
+
+<p>We have:</p>
 
 <div>$$\ket{\psi(t)}_I = e^{\ti \hat H_0 t/\hbar} \ket{\psi(t)}_S = \hat U_I(t)\ket{\psi(t=0)}_I = \hat U_I(t)\ket{\psi(t=0)}_S$$</div>
 
@@ -733,8 +732,7 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Definition]</em> : <code>transition probability</code> : let <code>$\ket{i}$</code> and <code>$\ket{f}$</code> be normalized eigenstates of <code>$\hat H_0$</code> respect to energy <code>$E_i,E_f$</code> . Start at state <code>$\ket{i}$</code> at <code>$t=0$</code> , evolve over time <code>$t$</code> , the prabability of final state <code>$\ket{f}$</code> is :</p>
 
@@ -744,11 +742,12 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <div>$$\bra{f}\hat U_I(t)\ket{i} = \bra{f}i\rangle + \frac {-\ti} \hbar \int_{t_1=0}^t e^{\ti(E_f-E_i)t_1/\hbar} V_{fi}(t)\td t_1 +\cdots$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The expression in the definition is caused by the <code>$e^{\ti \hat H_0 t/\hbar}$</code> will just contribute a phase factor, which will not change the probability.</p>
+    </summary></p>
+
+<p>The expression in the definition is caused by the <code>$e^{\ti \hat H_0 t/\hbar}$</code> will just contribute a phase factor, which will not change the probability.</p>
 
 <p>Firstly we compute the probability amplitude:</p>
 
@@ -768,8 +767,7 @@ E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m
 
 <div>$$\bra{f}\hat U_I(t)\ket{i} = \bra{f}i\rangle + \frac {-\ti} \hbar \int_{t_1=0}^t e^{\ti(E_f-E_i)t_1/\hbar} V_{fi}(t)\td t_1 +\cdots$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="transition-probability-constant-perturbation">Transition Probability: Constant Perturbation</h2>
 

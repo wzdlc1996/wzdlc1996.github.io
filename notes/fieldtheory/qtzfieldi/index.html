@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Quantization of Klein-Gordon Field Canonical Quantization of real-valued Scalar Field Here we only consider the real-valued Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:
-$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2&#43;\nabla\phi\cdot \nabla\phi&#43;m^2\phi^2 \big)$$ To quantized this system, we need let the canonical coordinate and momentum be operators on Hilbert space: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ .">
+  <meta name="description" content="The canonical quantization of Real-valued Scalar Field(Klein Gordon Field). And computation of propagator and discussion, especially the causality property. At last we will discuss the discrete symmetry of Klein Gordon Field in Quantum Theory">
 
   <meta property="og:title" content="Quantization of Free Field: Scalar Field" />
-<meta property="og:description" content="Quantization of Klein-Gordon Field Canonical Quantization of real-valued Scalar Field Here we only consider the real-valued Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:
-$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2&#43;\nabla\phi\cdot \nabla\phi&#43;m^2\phi^2 \big)$$ To quantized this system, we need let the canonical coordinate and momentum be operators on Hilbert space: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ ." />
+<meta property="og:description" content="The canonical quantization of Real-valued Scalar Field(Klein Gordon Field). And computation of propagator and discussion, especially the causality property. At last we will discuss the discrete symmetry of Klein Gordon Field in Quantum Theory" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/" />
 <meta property="article:published_time" content="2018-12-20T14:29:47&#43;08:00"/>
@@ -488,11 +486,12 @@ a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\
 
 <div>$$[a(\bm{k}),a(\bm{k}')]=[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0 \ ; \ [a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Using the 3-d delta function: <code>$\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot(\bm{x}-\bm{y})}$</code> , we have:</p>
+    </summary></p>
+
+<p>Using the 3-d delta function: <code>$\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot(\bm{x}-\bm{y})}$</code> , we have:</p>
 
 <div>$$\begin{aligned}
 \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(a(\bm{k})+a(-\bm{k})^\dagger\Big)&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \phi(\bm{x})\\
@@ -528,8 +527,7 @@ a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\
 &=\delta^3(\bm{k}-\bm{k}')
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
 
@@ -550,11 +548,12 @@ a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\
 \pi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the commutator of <code>$a,a^\dagger$</code> and <code>$\hat H$</code>:</p>
+    </summary></p>
+
+<p>With the commutator of <code>$a,a^\dagger$</code> and <code>$\hat H$</code>:</p>
 
 <div>$$\begin{aligned}[]
 [a(\bm{k}),\hat H]&=\omega_{|\bm{k}|} a(\bm{k}) \\
@@ -575,8 +574,7 @@ a_H(\bm{k})^\dagger &= e^{\ti \omega_{|\bm{k}|} t} a(\bm{k})^\dagger
 \pi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="hilbert-space-of-scalar-field">Hilbert Space of Scalar Field</h2>
 
@@ -608,11 +606,12 @@ a_H(\bm{k})^\dagger &= e^{\ti \omega_{|\bm{k}|} t} a(\bm{k})^\dagger
 
 <p>Where <code>$\int \td^3\bm{p} (2\omega_{|\bm{p}|})^{-1}=\int_{p^0\gt 0} \td^4p \  \delta(p^\mu p_\mu-m^2)$</code> is covariant measure.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Consider
+    </summary></p>
+
+<p>Consider
 <div>$$\begin{aligned}
 \bra{\bm{k}}\bm{p}\rangle &amp;= 2\omega_{|\bm{k}|} \delta^3(\bm{k}-\bm{p}) <br />
 &amp;=2\sqrt{m^2+|\bm{k}|^2}\delta(k^1-p^1)\delta(k^2-p^2)\delta(k^3-p^3)
@@ -669,8 +668,7 @@ a_H(\bm{k})^\dagger &= e^{\ti \omega_{|\bm{k}|} t} a(\bm{k})^\dagger
 
 <p>The right-hand-side of the equality is obvious invariant under (Orthochronous) Lorentz Transformation.</p>
 
-</details>
-
+<p></details></p>
 
 <p>In Fock space, the Lorentz transformation for coordinates induces the Unitary transformation for operators (In finite-dimensional space Lorentz group has no unitary representation because it is not <code>tight</code>. But Fock space is infinite-dimensional.).</p>
 
@@ -686,11 +684,12 @@ a_H(\bm{k})^\dagger &= e^{\ti \omega_{|\bm{k}|} t} a(\bm{k})^\dagger
 
 <div>$$\phi'(x'=\Lambda x)\equiv U(\Lambda)\phi(x)U(\Lambda)^{-1} = \phi(x'=\Lambda x)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>For the field operator:</p>
+    </summary></p>
+
+<p>For the field operator:</p>
 
 <div>$$\phi(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\}$$</div>
 
@@ -708,18 +707,18 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <p>together with that <code>$\Lambda$</code> is the special Lorentz Transformation.</p>
 
-</details>
-
+<p></details></p>
 
 <p>For general cases, if <code>$\Lambda$</code> is a general Lorentz Transformation, this conclusion works for operators in Schrodinger equation for they are independent of time, or equivalently, the zero-component of <code>$k$</code> :</p>
 
 <div>$$\phi'(\bm{x}'=\Lambda \bm{x})\equiv U(\Lambda)\phi(\bm{x})U(\Lambda)^{-1} = \phi(\bm{x}'=\Lambda \bm{x})$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Some discussion about this and the classical form
-    </summary>
-    <p>This seems to violate the transformation regulation in Classical theory which is:</p>
+    </summary></p>
+
+<p>This seems to violate the transformation regulation in Classical theory which is:</p>
 
 <div>$$\psi(x)\rightarrow \psi'(x'=\Lambda_{\text{spacetime}}(\omega)x) = \big(\Lambda_{\text{Field}}(\omega)\psi\big)(x=\Lambda_{\text{spacetime}}(\omega)^{-1}x') $$</div>
 
@@ -727,8 +726,7 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <p>We will see this at spinor and vector field, in which the inverse relationship will be much more clear. For the <code>$\Lambda_{\text{Field}}$</code> in those cases are inversion too.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="causality-of-scalar-field">Causality of Scalar Field</h2>
 
@@ -738,11 +736,12 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <div>$$[\phi(x),\phi(y)]=0 \ ; \ \|x-y\|^2\lt 0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the quantization that <code>$[a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$</code> . we have:</p>
+    </summary></p>
+
+<p>With the quantization that <code>$[a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$</code> . we have:</p>
 
 <div>$$\begin{aligned}[]
 [\phi(x),\phi(y)]&= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^{3} \sqrt{4\omega_1\omega_2}}\Big\{[a(\bm{k}_1),a(\bm{k}_2)^\dagger]e^{-\ti k_1\cdot x+\ti k_2\cdot y}+[a(\bm{k}_1)^\dagger,a(\bm{k}_2)]e^{\ti k_1\cdot x-\ti k_2\cdot y} \Big\} \\
@@ -762,8 +761,7 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="complex-valued-scalar-field">Complex-valued Scalar Field</h2>
 
@@ -806,11 +804,12 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <p>Where <code>$\epsilon\rightarrow 0^+$</code> .</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We compute these two terms in time-ordered product:</p>
+    </summary></p>
+
+<p>We compute these two terms in time-ordered product:</p>
 
 <div>$$\begin{aligned}
 \bra{0}\phi(x)\phi(y)^\dagger\ket{0}&= \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot x+\ti k_1\cdot y} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
@@ -845,8 +844,7 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 
 <div>$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$</div>
 
-</details>
-
+<p></details></p>
 
 <h1 id="discrete-symmetry-of-scalar-field">Discrete Symmetry of Scalar Field</h1>
 

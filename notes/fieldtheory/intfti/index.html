@@ -8,10 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Basic Introduce Perturbation Theory [Definition] : In quantum field theory, the perturbation theory is a power series respect to the coupling parameter (parameter of interaction term) of the theory. Namely, for a quantity $A(\lambda)$ with $\lambda$ is the coupling parameter, when $\lambda=0$ it is the free field theory. Then the perturbation theory give us:">
+  <meta name="description" content="We will introduce the basic Field Theory with interaction considered, which is the main propose of Field Theory actually. We will use the perturbation theory here. And what can we talk is only perturbation-property of Field theory. Our goal is to show the constraint of the form of Lagrangian in Interacting Field Theory. Then we will show the perturbation expansion of the time-ordered Green&rsquo;s function and the corresponding method: Feynman Diagram and Feynman Rules. Green&rsquo;s Function is widely used in field theory, especially in condensed matter theory. But in QFT we just care the connection between it and scattering theory, which will be discussed in next section.">
 
   <meta property="og:title" content="Interacting Field Theory: Time-ordered Green&#39;s Function" />
-<meta property="og:description" content="Basic Introduce Perturbation Theory [Definition] : In quantum field theory, the perturbation theory is a power series respect to the coupling parameter (parameter of interaction term) of the theory. Namely, for a quantity $A(\lambda)$ with $\lambda$ is the coupling parameter, when $\lambda=0$ it is the free field theory. Then the perturbation theory give us:" />
+<meta property="og:description" content="We will introduce the basic Field Theory with interaction considered, which is the main propose of Field Theory actually. We will use the perturbation theory here. And what can we talk is only perturbation-property of Field theory. Our goal is to show the constraint of the form of Lagrangian in Interacting Field Theory. Then we will show the perturbation expansion of the time-ordered Green&rsquo;s function and the corresponding method: Feynman Diagram and Feynman Rules. Green&rsquo;s Function is widely used in field theory, especially in condensed matter theory. But in QFT we just care the connection between it and scattering theory, which will be discussed in next section." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/intfti/" />
 <meta property="article:published_time" content="2018-12-30T15:42:02&#43;08:00"/>
@@ -439,7 +439,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>14 minutes read</li>
+      <li>0 minutes read</li>
     
   </ul>
   
@@ -516,11 +516,12 @@ autocomplete('#aa-search-input',
 
 <p>If we demand the <code>Gauge invariance</code> , there will not be any self-interaction term of Maxwell Field like <code>$A^4, A_\mu A^\mu \partial_\nu A^\nu , \cdots$</code> .</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Under Gauge transform:</p>
+    </summary></p>
+
+<p>Under Gauge transform:</p>
 
 <div>$$\begin{aligned}
 \Delta \mathcal{L} &= -\bar{\psi}\gamma^\mu \partial_\mu \theta \psi +\bar\psi\gamma^\mu\partial_\mu \theta \psi + \Delta \mathcal{L}_{\text{Maxwell}}\\
@@ -541,8 +542,7 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <p>For self-interaction of Maxwell Field, one can check they will not have gauge invariance.</p>
 
-</details>
-
+<p></details></p>
 
 <p>One can also write the so-called <code>Scalar QED</code> Lagrangian to describe the interaction between <code>charged Klein-Gordon Field</code> and Maxwell Field:</p>
 
@@ -589,11 +589,12 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <div>$$\mathcal{T}\big\{\hat H_{\text{int},I}(t_1)\cdots \hat H_{\text{int},I}(t_n)\big\}=\sum_{\sigma \in S_n}\Theta(t_{\sigma(1)}-t_{\sigma(2)})\Theta(t_{\sigma(2)}-t_{\sigma(3)})\cdots \Theta(t_{\sigma(n-1)}-t_{\sigma(n)})\hat H_{\text{int},I}(t_{\sigma(1)})\cdots \hat H_{\text{int},I}(t_{\sigma(n)})$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>One can rewrite the differential equation:</p>
+    </summary></p>
+
+<p>One can rewrite the differential equation:</p>
 
 <div>$$\ti\frac {\partial} {\partial t}\hat U_I(t,t_0)=\hat H_{\text{int},I}(t)\hat U_I(t,t_0)$$</div>
 
@@ -621,18 +622,18 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With the time-evolution operator, we can write the operators in Heisenberg Picture for interacting system:</p>
 
 <div>$$\hat O_H(t)=\hat U_I(t,0)^\dagger \hat O_I(t)\hat U_I(t,0)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The time-evolution operator for interaction picture we defined above is:</p>
+    </summary></p>
+
+<p>The time-evolution operator for interaction picture we defined above is:</p>
 
 <div>$$\hat U_I(t,t_0)=\hat U_I(t,t_0)=e^{\ti\hat H_0(t-t_0)}\hat U_S(t,t_0)e^{-\ti\hat H_0t_0}$$</div>
 
@@ -648,8 +649,7 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <div>$$\hat O_H(t)=\hat U_S(t,0)^\dagger \hat O_S \hat U_S(t,0)=\hat U_I(t,0)^\dagger e^{\ti \hat H_0 t} \hat O_Se^{-\ti \hat H_0t}\hat U_I(t,0)=\hat U_I(t,0)^\dagger \hat O_I(t)\hat U_I(t,0)$$</div>
 
-</details>
-
+<p></details></p>
 
 <h2 id="interacting-vacuum">Interacting Vacuum</h2>
 
@@ -663,11 +663,12 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <p>Note that the theorem does not guarantee that if <code>$\ket{\Psi_0}=\ket{0}$</code> is the vacuum of <code>$\hat H_0$</code> the evolved state will be the ground state. But in perturbation theory, we believe it is indeed the ground state.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>In Schrodinger Picture, we have the equation for time-evolution operator:</p>
+    </summary></p>
+
+<p>In Schrodinger Picture, we have the equation for time-evolution operator:</p>
 
 <div>$$\begin{aligned}
 \ti \partial_{t_1}\hat U_{\epsilon,S}(t_1,t_2)&=\hat H_\epsilon(t_1)\hat U_{\epsilon,S}(t_1,t_2)\\
@@ -746,8 +747,7 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <p>It is the eigenstate of interacting system. q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With the Gell-Mann &amp; Low Theorem, one can express the vacuum of interacting system by the vacuum of free system:</p>
 
@@ -767,11 +767,12 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 
 <p>Where <code>$\ket{0}$</code> is the vacuum of non-interacting system.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Without loss of generality, we assume <code>$x_1^0\gt x_2^0\gt \cdots \gt x_n^0$</code> , other cases can be simply obtained by exchange the field operators and add sign <code>$(\pm)$</code> for fermionic operators. Then with the <code>Gell-Mann &amp; Low theorem</code> and for the <code>$n=2$</code> case:</p>
+    </summary></p>
+
+<p>Without loss of generality, we assume <code>$x_1^0\gt x_2^0\gt \cdots \gt x_n^0$</code> , other cases can be simply obtained by exchange the field operators and add sign <code>$(\pm)$</code> for fermionic operators. Then with the <code>Gell-Mann &amp; Low theorem</code> and for the <code>$n=2$</code> case:</p>
 
 <div>$$\begin{aligned}
 G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\infty,0)\phi_1(x_1) \phi_2(x_2)\hat U_{\epsilon,I}(0,-\infty)\ket{0}} {\bra{0}\hat U_{\epsilon,I}(+\infty,-\infty)\ket{0}}\\
@@ -791,8 +792,7 @@ G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\
 
 <p>And deal with the divergence at the final of all computation.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="wick-theorem">Wick Theorem</h2>
 
@@ -811,11 +811,12 @@ G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\
 
 <p>Where <code>$\sigma'$</code> means the number of exchanges between fermionic operators.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We will use mathematical induction to prove this. For <code>$n=2$</code> case:</p>
+    </summary></p>
+
+<p>We will use mathematical induction to prove this. For <code>$n=2$</code> case:</p>
 
 <div>$$\mathcal{N}\{\phi_1\phi_2\}=(\pm 1)^0 \mathcal{N}\{\phi_1\phi_2\}$$</div>
 
@@ -872,8 +873,7 @@ G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\
 
 <p>By the mathematical induction, the theorem has been proved.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Definition]</em> : The <code>Wick Contraction</code> between two field operators are defined as:</p>
 
@@ -891,11 +891,12 @@ G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\
 & \indent +\cdots +\mathcal{N}\{\text{all terms with full Wick's contractions}\} \\
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>One can use the Mathematical induction to prove this. For <code>$n=2$</code> case, if <code>$x_1^0\gt x_2^0$</code></p>
+    </summary></p>
+
+<p>One can use the Mathematical induction to prove this. For <code>$n=2$</code> case, if <code>$x_1^0\gt x_2^0$</code></p>
 
 <div>$$\begin{aligned}
 \mathcal{T}\{\phi_1\phi_2\}&=\phi_1^{(c)}\phi_2^{(c)}+\phi_1^{(a)}\phi_2^{(c)}+\phi_1^{(c)}\phi_2^{(a)}+\phi_1^{(a)}\phi_2^{(a)} \\
@@ -945,8 +946,7 @@ G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\
 
 <p>Then we have proved the <code>$k$</code> to <code>$k+1$</code> . q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With <code>Wick's Theorem</code> , we can convert the problem of computing the time-ordered Green&rsquo;s function to the problem of computing some Wick&rsquo;s contractions&rsquo; sum. And this will be solved with the <code>Feynman Diagram</code> and <code>Feynman rule</code>.</p>
 

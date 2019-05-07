@@ -8,14 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Boson Coherent State Definition and Properties [Definition] : The generic form of the coherent state from a set of boson mode $\hat a_i$ is:
-$$\ket{\bm{z}}=\exp(\bm{z}\cdot \hat {\bm{a}}^\dagger)\ket{0}=\exp(\sum_{i}z_i \hat a_i^\dagger)\ket{0}$$ [Theorem] : The overlap between two coherent states is:
-$$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With that $\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$ , we have:">
+  <meta name="description" content="This is the first classnote for the class in PKU: &lsquo;Quantum Theory for Manybody System&rsquo;. This note gives a brief introduction to Grassmann numbers and then define the generic coherent states of Boson and Fermion, and discuss their properties. The coherent state is widely used in the path integral expression for many body system, or the field theory.">
 
   <meta property="og:title" content="Manybody: Coherent State" />
-<meta property="og:description" content="Boson Coherent State Definition and Properties [Definition] : The generic form of the coherent state from a set of boson mode $\hat a_i$ is:
-$$\ket{\bm{z}}=\exp(\bm{z}\cdot \hat {\bm{a}}^\dagger)\ket{0}=\exp(\sum_{i}z_i \hat a_i^\dagger)\ket{0}$$ [Theorem] : The overlap between two coherent states is:
-$$\bra{\bm{z}}\bm{z}&#39;\rangle=\exp(\bm{z}^*\cdot \bm{z}&#39;)$$  Proof  With that $\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$ , we have:" />
+<meta property="og:description" content="This is the first classnote for the class in PKU: &lsquo;Quantum Theory for Manybody System&rsquo;. This note gives a brief introduction to Grassmann numbers and then define the generic coherent states of Boson and Fermion, and discuss their properties. The coherent state is widely used in the path integral expression for many body system, or the field theory." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/manybody1/" />
 <meta property="article:published_time" content="2019-02-25T12:44:33&#43;08:00"/>
@@ -466,11 +462,12 @@ autocomplete('#aa-search-input',
 
 <div>$$\bra{\bm{z}}\bm{z}'\rangle=\exp(\bm{z}^*\cdot \bm{z}')$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With that <code>$\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$</code> , we have:</p>
+    </summary></p>
+
+<p>With that <code>$\hat b(\bm{z})^\dagger=\bm{z}\cdot \hat {\bm{a}}^\dagger$</code> , we have:</p>
 
 <div>$$[\hat b(\bm{z}), \hat b(\bm{z}')^\dagger]=\bm{z}^* \cdot \bm{z}'$$</div>
 
@@ -483,8 +480,7 @@ autocomplete('#aa-search-input',
 &= \exp(\bm{z}^*\cdot \bm{z}')
 \end{aligned}$$</div>
 
-</details>
-
+<p></details></p>
 
 <p>This shows that different coherent states are not orthogonal, they form an over-complete basis.</p>
 
@@ -496,11 +492,12 @@ autocomplete('#aa-search-input',
 
 <div>$$\int \td \mu(\bm{z})\ket{\bm{z}}\bra{\bm{z}}=1$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We need only prove that <code>$\int \td \mu(\bm{z})\ket{\bm{z}}\bra{\bm{z}}\psi\rangle =\ket{\psi}$</code> . hold for arbitrary <code>$\ket{\psi}$</code> . For the fact that:</p>
+    </summary></p>
+
+<p>We need only prove that <code>$\int \td \mu(\bm{z})\ket{\bm{z}}\bra{\bm{z}}\psi\rangle =\ket{\psi}$</code> . hold for arbitrary <code>$\ket{\psi}$</code> . For the fact that:</p>
 
 <div>$$\hat a_i^\dagger \ket{0}=\frac {\partial} {\partial z_i} \ket{\bm{z}} \Bigg|_{\bm{z}=0}$$</div>
 
@@ -517,18 +514,18 @@ autocomplete('#aa-search-input',
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : The trace of an operator <code>$\hat A$</code> over the entire Boson Fock space can be written with the coherent state:</p>
 
 <div>$$\text{Tr}\hat A:=\sum_{n_1,n_2,\cdots} \bra{n_1,n_2,\cdots}\hat A\ket{n_1,n_2,\cdots}=\int \td \mu(\bm{z}) \bra{\bm{z}}\hat A\ket{\bm{z}}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the expansion of coherent state:</p>
+    </summary></p>
+
+<p>With the expansion of coherent state:</p>
 
 <div>$$\ket{\bm{z}}=\sum_{n=0}^{\infty} \frac 1 {n!} \Big(\sum_i z_i \hat a_i^\dagger\Big)^n \ket{0}=\sum_{n=0}^{\infty}\sum_{k_1+\cdots+k_m=n} \frac {z_1^{k_1}\cdots z_m^{k_m}} {k_1!\cdots k_m!}\prod_{j=1}^m \hat a_j^{\dagger k_j}\ket{0}$$</div>
 
@@ -557,8 +554,7 @@ autocomplete('#aa-search-input',
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : One can construct any many body states of Bosons from coherent state by:</p>
 
@@ -571,11 +567,12 @@ autocomplete('#aa-search-input',
 (\Delta N)^2 &= \frac {\bra{\bm{z}}(\hat N-\bar N)^2\ket{\bm{z}}} {\bra{\bm{z}}\bm{z}\rangle} = \bar N
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the property that:</p>
+    </summary></p>
+
+<p>With the property that:</p>
 
 <div>$$[\hat a_i , e^{\bm{z}\cdot \hat{\bm{a}}^\dagger}]=\sum_{n=1}^{\infty} \frac 1 {n!} [\hat a_i,(\sum_j z_j \hat a_j^\dagger)^n]=\sum_{n=1}^{\infty}\frac n {n!} z_i^n (\bm{z}\cdot \hat {\bm{a}}^\dagger)^{n-1}=z_i e^{\bm{z}\cdot \hat {\bm{a}}^\dagger}$$</div>
 
@@ -608,8 +605,7 @@ autocomplete('#aa-search-input',
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="coherent-state-representation">Coherent State Representation</h2>
 
@@ -629,11 +625,12 @@ autocomplete('#aa-search-input',
 
 <div>$$\bra{\bm{z}}A(\hat {\bm{a}}^\dagger,\hat {\bm{a}})\ket{\bm{z}'}=A(\bm{z}^*,\bm{z}') \exp(\bm{z}^*\cdot \bm{z}')$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The creation/annihilation operator operating on an arbitrary quantum state induces:</p>
+    </summary></p>
+
+<p>The creation/annihilation operator operating on an arbitrary quantum state induces:</p>
 
 <div>$$\begin{aligned}
 \hat a_i \psi(\bm{z}^*) &= \bra{\bm{z}}\hat a_i\ket{\psi} = \bra{0}\frac {\partial} {\partial z_i^*}e^{\bm{z}^*\cdot \hat {\bm{a}}}\ket{\psi} = (\partial_i\psi)(z_1^*,\cdots) \\
@@ -650,18 +647,18 @@ autocomplete('#aa-search-input',
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>At last, the Schrodinger equation in coherent representation is, with the Hamiltonian is normal ordered as <code>$\hat H=H(\hat{\bm{a}}^\dagger,\hat{\bm{a}},t)$</code>:</p>
 
 <div>$$\ti\hbar \frac {\partial \psi(\bm{z}^*,t)} {\partial t}=\int \td \mu(\bm{z}') H(\bm{z}^*,\bm{z}',t)e^{\bm{z}^*\cdot \bm{z'}}\psi(\bm{z}'^*,t)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The generic form of Schrodinger equation is:</p>
+    </summary></p>
+
+<p>The generic form of Schrodinger equation is:</p>
 
 <div>$$\ti\hbar \frac {\td} {\td t}\ket{\psi(t)}=\hat H \ket{\psi(t)}$$</div>
 
@@ -681,14 +678,13 @@ autocomplete('#aa-search-input',
 
 <div>$$\ti\hbar \frac {\partial \psi(\bm{z}^*,t)} {\partial t}=\int \td \mu(\bm{z}') H(\bm{z}^*,\bm{z}',t)e^{\bm{z}^*\cdot \bm{z'}}\psi(\bm{z}'^*,t)$$</div>
 
-</details>
-
+<p></details></p>
 
 <h1 id="fermion-coherent-state">Fermion Coherent State</h1>
 
 <h2 id="introduction-to-grassmann-algebra">Introduction to Grassmann Algebra</h2>
 
-<p><em>[Definition]</em> : <code>Grassmann algebra</code> <code>$\mathcal{G}_N$</code> is defined by a set of generators <code>$\{\xi_\alpha\} \ ; \ \alpha=1,\cdots,N$</code> usually over the <code>Complex field</code> (<code>$\mathbb{C}$</code>$<code>. These generators are called</code>Grassmann variables<code>, which are</code>anti-commute<code>and commute to ordinary complex numbers (c-number)</code>$x\in \mathbb{C}$`:</p>
+<p><em>[Definition]</em> : <code>Grassmann algebra</code> <code>$\mathcal{G}_N$</code> is defined by a set of generators <code>$\{\xi_\alpha\} \ ; \ \alpha=1,\cdots,N$</code> usually over the <code>Complex field</code> (<code>$\mathbb{C}$</code>$ . These generators are called <code>Grassmann variables</code>, which are <code>anti-commutative</code>  and are commutative with ordinary complex numbers (c-number) <code>$x\in \mathbb{C}$</code>:</p>
 
 <div>$$\xi_\alpha\xi_\beta+\xi_\beta\xi_\alpha=0 \ ; \ x\xi = \xi x$$</div>
 
@@ -733,13 +729,13 @@ A(\xi,\xi^*) &= a_0 + a_1 \xi + a'_1 \xi^* + a_{12} \xi^*\xi
 
 <div>$$\partial_\alpha f=v(\xi_{\neg \alpha})$$</div>
 
-<p>The order is important. Note that <code>$\partial_\xi$</code> and <code>$\partial_{\xi^*}$</code> is also anti-commute.</p>
+<p>The order is important. Note that <code>$\partial_\xi$</code> and <code>$\partial_{\xi^*}$</code> is also anti-commutative.</p>
 
 <p><code>Integral</code> is defined to be a linear mapping with properties mimicking those of ordinary integrals. With the properties:</p>
 
 <div>$$\int \td \xi \ 1 =\int \td\xi^* \ 1 = 0 \  ; \ \int \td \xi \ \xi=\int \td \xi^* \xi^* = 1$$</div>
 
-<p>Note that <code>$\int \td \xi^* \ \xi$</code> is not defined. Also <code>integral operators</code> are anti-commute. And <code>$\int \td \xi$</code> can be simply treated as an operator, returns <code>$0$</code> when applied on <code>$1$</code> , and returns <code>$1$</code> when applied on <code>$\xi$</code></p>
+<p>Note that <code>$\int \td \xi^* \ \xi$</code> is not defined. Also <code>integral operators</code> are anti-commutative. And <code>$\int \td \xi$</code> can be simply treated as an operator, returns <code>$0$</code> when applied on <code>$1$</code> , and returns <code>$1$</code> when applied on <code>$\xi$</code></p>
 
 <p><mark>It is obvious that, for Grassmann functions, <code>$\partial_\xi=\int \td\xi$</code></mark></p>
 
@@ -753,11 +749,12 @@ A(\xi,\xi^*) &= a_0 + a_1 \xi + a'_1 \xi^* + a_{12} \xi^*\xi
 
 <div>$$\int \td \xi' \delta(\xi,\xi')f(\xi')=f(\xi)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>For arbitrary function, one has: <code>$f(\xi)=f_0+f_1\xi$</code> . Then:</p>
+    </summary></p>
+
+<p>For arbitrary function, one has: <code>$f(\xi)=f_0+f_1\xi$</code> . Then:</p>
 
 <div>$$\begin{aligned}
 \int \td \xi' \delta(\xi,\xi')f(\xi') &= \int \td \xi' \Big(-(\xi-\xi')(f_0+f_1\xi')\Big) \\
@@ -769,18 +766,18 @@ A(\xi,\xi^*) &= a_0 + a_1 \xi + a'_1 \xi^* + a_{12} \xi^*\xi
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : Scalar product of Grassmann functions:</p>
 
 <div>$$(f,g):=\int \td\xi^* \td \xi e^{-\xi^*\xi}f^*(\xi)g(\xi^*)=f_0^* g_0+f_1^*g_1$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With that <code>$f(\xi)=f_0+f_1\xi \ ; \ g(\xi)=g_0+g_1\xi$</code>, And:</p>
+    </summary></p>
+
+<p>With that <code>$f(\xi)=f_0+f_1\xi \ ; \ g(\xi)=g_0+g_1\xi$</code>, And:</p>
 
 <div>$$e^{-\xi^*\xi}=1-\xi^*\xi+\frac {\xi^*\xi\xi^*\xi} {2!}+\cdots=1-\xi^*\xi$$</div>
 
@@ -795,8 +792,7 @@ A(\xi,\xi^*) &= a_0 + a_1 \xi + a'_1 \xi^* + a_{12} \xi^*\xi
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : Linear Change of Grassmann Varibles. Let <code>$\xi=(\xi_1,\cdots,\xi_N)$</code> generate a Grassmann algebra, let <code>$M$</code> be an invertible complex <code>$N\times N$</code> matrix. And <code>$b$</code> is a complex <code>$N$</code>-vector. Then one can define a new set of Grassmann generators by <code>$\eta := M \xi+b$</code> . Then:</p>
 
@@ -804,13 +800,16 @@ A(\xi,\xi^*) &= a_0 + a_1 \xi + a'_1 \xi^* + a_{12} \xi^*\xi
 
 <p>Where <code>$\td \eta=\td \eta_N\cdots\td \eta_1$</code> , and <code>$\td \xi=\td \xi_N\cdots\td\xi_1$</code> , with the inverted order.</p>
 
-<div>$$ \int \td \eta \ f(\eta)=\frac 1 {\det M}\int \td \ \xi f(M\xi+b)$$</div>
+<div>$$ \int \td \eta \ f(\eta)=\frac 1 {\det M}\int \td \xi f(M\xi+b)$$</div>
 
-<details>
+<p>Noting this variable substitution rule is different from the case of c-number: <code>$\int \td x \ f(x) = \int \td z \frac {\partial(x)} {\partial(z)} f(x(z))$</code> i.e. for linear transform for c-numbers <code>$x=M z+b$</code>, the Jacobian contributes the factor <code>$\det M$</code> but not <code>$(\det M)^{-1}$</code>!</p>
+
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>First, we prove a simple conclusion: shift symmetry of Grassmann integral, with <code>$b\in\mathbb{C}^N$</code> , one has:</p>
+    </summary></p>
+
+<p>First, we prove a simple conclusion: shift symmetry of Grassmann integral, with <code>$b\in\mathbb{C}^N$</code> , one has:</p>
 
 <div>$$\int \td \xi \ f(\xi+b)=\int \td \xi \ f(\xi)$$</div>
 
@@ -848,8 +847,7 @@ Then assume the conclusion works for the case of `$N=k$`, so we have for `$N=k+1
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : The Gaussian integral for Grassmann variables: (the <code>$\prod_i$</code> &rsquo;s order is from <code>$i=1$</code> to <code>$i=N$</code>: <code>$\prod_i\xi_i=\xi_1\xi_2\cdots\xi_N$</code> , same in the following statements.)</p>
 
@@ -857,15 +855,16 @@ Then assume the conclusion works for the case of `$N=k$`, so we have for `$N=k+1
 
 <p>Where <code>$\{\eta_i,\eta_i^*\} , \{J_i,J_i^*\} \ ; \ i=1,\cdots,N$</code> are Grassmann variables, and <code>$H$</code> is an invertible <code>$2N\times 2N$</code> Hermitian matrix.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the linear variables change, let:  <code>$\eta \rightarrow \eta+H^{-1}J \ ; \ \eta^\dagger\rightarrow \eta^\dagger+J^\dagger H^{-1}$</code>, and the integral should be invariant:</p>
+    </summary></p>
+
+<p>With the linear variables change, let:  <code>$\eta \rightarrow \eta+H^{-1}J \ ; \ \eta^\dagger\rightarrow \eta^\dagger+J^\dagger H^{-1}$</code>, and the integral should be invariant:</p>
 
 <div>$$I=\int \prod_i \td \eta_i^* \td \eta_i \exp\Big(-\eta^\dagger H\eta-J^\dagger H^{-1} J\Big)$$</div>
 
-<p>For the exponents terms are sums of even numbers of Grassmann generators, so they commute with each other. So the exponential function can be written as a product of two. And with the diagonalizaiton of <code>$H$</code> and variables change, note the determinant is <code>$1$</code> for the transformation, so we have:</p>
+<p>For the exponents terms are sums of even numbers of Grassmann generators, so they are commutative with each other. So the exponential function can be written as a product of two. And with the diagonalizaiton of <code>$H$</code> and variables change, note the determinant is <code>$1$</code> for the transformation, so we have:</p>
 
 <div>$$\begin{aligned}
 I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \lambda_i \eta_i^*\eta} \\
@@ -876,26 +875,26 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <p>q.e.d.</p>
 
-</details>
+<p></details></p>
 
-
-<h3 id="fermion-coherent-states">Fermion Coherent States</h3>
+<h2 id="fermion-coherent-states">Fermion Coherent States</h2>
 
 <p><em>[Definition]</em> : The generic form of the coherent state from from a set of Fermion mode <code>$\hat a_i$</code> is:</p>
 
 <div>$$\ket{\xi}=\exp\big(-\sum_i \xi_i \hat a_i^\dagger\big)\ket{0}=\prod_i (1-\xi_i \hat a_i^\dagger)\ket{0}$$</div>
 
-<p>Where <code>$\xi_i$</code> are Grassmann generators, and the Fermion Fock space must be enlarged to define a coherent state. These Grassmann numbers and creation/annihilation operators are <code>anti-commute</code>: <code>$\xi\hat a+\hat a \xi=0$</code>. And <code>$(\xi\hat a)^\dagger = \hat a^\dagger \xi^*$</code> . This is much different from the c-numbers and operators.</p>
+<p>Where <code>$\xi_i$</code> are Grassmann generators, and the Fermion Fock space must be enlarged to define a coherent state. These Grassmann numbers and creation/annihilation operators are <code>anti-commutative</code>: <code>$\xi\hat a+\hat a \xi=0$</code>. And <code>$(\xi\hat a)^\dagger = \hat a^\dagger \xi^*$</code> . This is much different from the c-numbers and operators.</p>
 
 <p><em>[Theorem]</em> : The overlap between two coherent states is:</p>
 
 <div>$$\bra{\xi}\xi'\rangle = e^{\xi^*\cdot \xi'}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the definition of Fermion coherent state and the orthogonality of Fermion product state, if:</p>
+    </summary></p>
+
+<p>With the definition of Fermion coherent state and the orthogonality of Fermion product state, if:</p>
 
 <div>$$\ket{\xi}=\ket{0}+\sum_i c_i(\xi) \hat a_i^\dagger \ket{0} + \sum_{i,j} c_{ij}(\xi) \hat a_i^\dagger \hat a_j^\dagger \ket{0}+\cdots$$</div>
 
@@ -922,20 +921,20 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 &=\exp(-\xi^*\cdot \xi')
 \end{aligned}$$</div>
 
-<p>Where we used the property that product of two Grassmann numbers are commute: <code>$\xi_i\xi_j\xi_k\xi_l=\xi_k\xi_l\xi_i\xi_j$</code>. This property shows that a Grassmann number looks like a half of a c-number.</p>
+<p>Where we used the property that product of two Grassmann numbers are commutative: <code>$\xi_i\xi_j\xi_k\xi_l=\xi_k\xi_l\xi_i\xi_j$</code>. This property shows that a Grassmann number looks like a half of a c-number.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : The <code>closure relation</code> for Fermion coherent state:</p>
 
 <div>$$\int \prod_i \td \xi_i^* \td \xi_i e^{-\xi^*\cdot \xi}\ket{\xi}\bra{\xi}=1$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>Because Fermion coherent states cover all <code>$n$</code>-particle states of Fermion:</p>
+    </summary></p>
+
+<p>Because Fermion coherent states cover all <code>$n$</code>-particle states of Fermion:</p>
 
 <div>$$\hat a_{i_1}^\dagger \cdots \hat a_{i_n}^\dagger \ket{0}=(-1)^{n(n+1)/2} \partial_{\xi_{i_1}}\cdots \partial_{\xi_{i_n}}\ket{\xi}$$</div>
 
@@ -957,18 +956,18 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : The trace of an operator(Fermion operator, should have even numbers of Fermion field operators) is:</p>
 
 <div>$$\text{Tr} \hat A:=\sum_{n_1,\cdots}\bra{n_1,\cdots}\hat A \ket{n_1,\cdots}=\int \prod_i \td \xi_i^* \td \xi_i e^{-\xi^* \cdot \xi} \bra{-\xi}\hat A\ket{\xi}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the definition of Coherent state, we can expand it with the occupation basis of Fermions, assume there are <code>$N$</code> different fermion modes.</p>
+    </summary></p>
+
+<p>With the definition of Coherent state, we can expand it with the occupation basis of Fermions, assume there are <code>$N$</code> different fermion modes.</p>
 
 <div>$$\begin{aligned}
 \ket{\xi}&=e^{-\sum_i \xi_i \hat a_i^\dagger}\ket{0}=\ket{0}+\sum_{n=1}^N \frac {(-1)^n} {n!}\Big(\sum_{i=1}^N \xi_i \hat a_i^\dagger\Big)^n\ket{0}\\
@@ -976,7 +975,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 &=\sum_{n=1}^N (-1)^n \sum_{k_1+\cdots+k_N=n,k_i=0,1} \xi_N^{k_N}\cdots \xi_1^{k_1}\ket{k_1,\cdots,k_N}
 \end{aligned}$$</div>
 
-<p>Where we used the property that <code>$\xi_i \hat a_i$</code> is commute with any operators and Grassman generators. Then we have, with the fact that <code>$\hat A$</code> has even number of Fermion field operators so that it commute with any Grassmann generators:</p>
+<p>Where we used the property that <code>$\xi_i \hat a_i$</code> is commutative with any operators and Grassman generators. Then we have, with the fact that <code>$\hat A$</code> has even number of Fermion field operators so that it is commutative with any Grassmann generators:</p>
 
 <div>$$\begin{aligned}
 \int \prod_i \td \xi_i^* \td\xi_i e^{-\xi^*\cdot \xi} \bra{-\xi}\hat A\ket{\xi}&= \int \prod_i \td \xi_i^* \td\xi \prod_i (1-\xi_i^*\xi_i) \sum_{m,n}(-1)^{m+n} \\
@@ -994,7 +993,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 =& (-1)^{n}\delta_{k,l}
 \end{aligned}$$</div>
 
-<p>Where we used that <code>$1-\xi_i^*\xi$</code> commutes with any other Grassmann generators. And if <code>$l_i=k_i$</code>, <code>$l_i+k_i$</code> will be always an even number. Then we have:</p>
+<p>Where we used that <code>$1-\xi_i^*\xi$</code> is commutative with any other Grassmann generators. And if <code>$l_i=k_i$</code>, <code>$l_i+k_i$</code> will be always an even number. Then we have:</p>
 
 <div>$$\begin{aligned}
 \int \prod_i \td \xi_i^* \td\xi_i e^{-\xi^*\cdot \xi} \bra{-\xi}\hat A\ket{\xi}&= \int \prod_i \td \xi_i^* \td\xi \prod_i (1-\xi_i^*\xi_i) \sum_{m,n}(-1)^{m+n} \\
@@ -1006,8 +1005,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <p>Q.E.D.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : One can construct any many body states of Fermions from coherent state by:</p>
 
@@ -1020,15 +1018,16 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 (\Delta N)^2 & := \frac {\bra{\xi}(\hat N-\bar N)^2\ket{\xi}} {\bra{\xi}\xi\rangle} = \bar N
 \end{aligned}$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the commutator:</p>
+    </summary></p>
+
+<p>With the commutator:</p>
 
 <div>$$[\hat a_i , \prod_j (1-\xi_j\hat a_j^\dagger)]=\prod_{j\lt i}(1-\xi_j\hat a_j^\dagger)[\hat a_i,1-\xi_i\hat a_i^\dagger]\prod_{j\gt i}(1-\xi_j\hat a_j^\dagger)=\prod_{j\lt i}(1-\xi_j\hat a_j^\dagger)\xi_i\prod_{j\gt i}(1-\xi_j\hat a_j^\dagger)$$</div>
 
-<p>Where we used the property that <code>$1-\xi_j\hat a_j^\dagger$</code> commute with <code>$a_i$</code> when <code>$i\neq j$</code>, and <code>$\hat a_i\xi_i=-\xi_i\hat a_i$</code>, the anti-commutation relation. Then:</p>
+<p>Where we used the property that <code>$1-\xi_j\hat a_j^\dagger$</code> is commutative with <code>$a_i$</code> when <code>$i\neq j$</code>, and <code>$\hat a_i\xi_i=-\xi_i\hat a_i$</code>, the anti-commutation relation. Then:</p>
 
 <div>$$\bra{\xi}\hat a_i^\dagger \hat a_i\ket{\xi}=\bra{0}\Big(\prod_{j\neq i} (1-\xi_j\hat a_j^\dagger)\Big)^\dagger \xi_i^*\xi_i \prod_{j\neq i} (1-\xi_j\hat a_j^\dagger)\ket{0}=\xi_i^*\xi_i \exp(\sum_{j\neq i}\xi_j^*\xi_j)$$</div>
 
@@ -1036,7 +1035,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <div>$$\bar N=\frac {\bra{\xi}\hat N\ket{\xi}} {\bra{\xi}\xi\rangle}=\frac {\sum_i \xi_i^*\xi_i e^{\xi^*\cdot \xi-\xi_i^*\xi_i}} {e^{\xi^*\cdot \xi}}=\sum_i \xi_i^*\xi_i e^{-\xi_i^*\xi_i}=\sum_i \xi_i^*\xi_i$$</div>
 
-<p>The last identity is caused by <code>$\xi^*\xi e^{-\xi^*\xi}=\xi^*\xi-\xi^*\xi\xi^*\xi=\xi^*\xi$</code> .</p>
+<p>The last identity is caused by <code>$\xi^*\xi e^{-\xi^*\xi}=\xi^*\xi-\xi^*\xi\xi^*\xi=\xi^*\xi$</code>.</p>
 
 <p>And with:</p>
 
@@ -1057,7 +1056,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 &=\bra{\xi}\xi\rangle \Big(\sum_{i,j}\xi_i^*\xi_j^*\xi_j\xi_i+\bar N\Big)=\bra{\xi}\xi\rangle \Big(\bar N^2+\bar N\Big)
 \end{aligned}$$</div>
 
-<p>Then with that <code>$\bar N$</code> is the summation of pairs of Grassmann generators, so it commutes with any single generators or creation/annihilation operators. Then:</p>
+<p>Then with that <code>$\bar N$</code> is the summation of pairs of Grassmann generators, so it is commutative with any single generators or creation/annihilation operators. Then:</p>
 
 <div>$$\begin{aligned}
 (\Delta N)^2 & := \frac {\bra{\xi}(\hat N-\bar N)^2\ket{\xi}} {\bra{\xi}\xi\rangle}\\
@@ -1067,8 +1066,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="coherent-state-representation-1">Coherent State Representation</h2>
 
@@ -1086,11 +1084,12 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <div>$$\bra{\xi}A(\hat {\bm{a}}^\dagger,\hat {\bm{a}})\ket{\xi'}=e^{\xi^*\cdot \xi'}A(\xi^*,\xi')$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The creation/annihilation operator operating on an arbitrary quantum state induces:</p>
+    </summary></p>
+
+<p>The creation/annihilation operator operating on an arbitrary quantum state induces:</p>
 
 <div>$$\begin{aligned}
 \hat a_i\psi(\xi^*) &= \bra{\xi}\hat a_i\ket{\psi} = \bra{0}\partial_{\xi_i^*} e^{\hat {\bm{a}} \cdot \xi^*}\ket{\psi} = (\partial_{\xi_i^*} \psi)(\xi)\\
@@ -1112,18 +1111,18 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>At last, the Schrodinger equation in coherent representation is, with the Hamiltonian is normal ordered as <code>$\hat H=H(\hat {\bm{a}}^\dagger,\hat{\bm{a}},t)$</code>:</p>
 
 <div>$$\ti \hbar \frac {\partial \psi(\xi^*,t)} {\partial t}=\int \prod_{i} \td \xi_i'^*\td \xi_i' e^{\xi'^*\cdot \xi'} H(\xi^*,\xi',t) \psi(\xi'^*,t)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The generic form of Schrodinger equation is:</p>
+    </summary></p>
+
+<p>The generic form of Schrodinger equation is:</p>
 
 <div>$$\ti\hbar \frac {\td } {\td t}\ket{\psi(t)}=\hat H\ket{\psi(t)}$$</div>
 
@@ -1145,8 +1144,7 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
           </div>
 
@@ -1359,8 +1357,6 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 								
 									<ul class="nav">
 								
-									<ul class="nav">
-								
 								
 
 										<li class="nav-item">
@@ -1370,8 +1366,6 @@ I&= e^{-J^\dagger H^{-1} J } \int \prod_i \td \eta_i^* \td \eta_i e^{-\sum_i \la
 										</li>
 						 
 								
-								
-									</ul>
 								
 									</ul>
 								

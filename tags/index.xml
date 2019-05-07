@@ -6,94 +6,13 @@
     <description>Recent content in Tags on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Mon, 24 Dec 2018 12:10:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 18:48:01 +0800</lastBuildDate>
     
 	<atom:link href="https://wzdlc1996.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Approximation</title>
-      <link>https://wzdlc1996.github.io/tags/approximation/</link>
-      <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/approximation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Classical Theory</title>
-      <link>https://wzdlc1996.github.io/tags/classical-theory/</link>
-      <pubDate>Sat, 12 Jan 2019 14:14:27 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/classical-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dynamics</title>
-      <link>https://wzdlc1996.github.io/tags/dynamics/</link>
-      <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/dynamics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Front End</title>
-      <link>https://wzdlc1996.github.io/tags/front-end/</link>
-      <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/front-end/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Manjaro</title>
-      <link>https://wzdlc1996.github.io/tags/manjaro/</link>
-      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/manjaro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Math</title>
-      <link>https://wzdlc1996.github.io/tags/math/</link>
-      <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Measurement</title>
-      <link>https://wzdlc1996.github.io/tags/measurement/</link>
-      <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/measurement/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Os Setup</title>
-      <link>https://wzdlc1996.github.io/tags/os-setup/</link>
-      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/os-setup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Quantum</title>
-      <link>https://wzdlc1996.github.io/tags/quantum/</link>
-      <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/tags/quantum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Statistical Phys</title>
+      <title>statistical-phys</title>
       <link>https://wzdlc1996.github.io/tags/statistical-phys/</link>
       <pubDate>Tue, 19 Mar 2019 18:48:01 +0800</pubDate>
       
@@ -102,11 +21,92 @@
     </item>
     
     <item>
-      <title>Symmetry</title>
+      <title>measurement</title>
+      <link>https://wzdlc1996.github.io/tags/measurement/</link>
+      <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/measurement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quantum</title>
+      <link>https://wzdlc1996.github.io/tags/quantum/</link>
+      <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/quantum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classical-theory</title>
+      <link>https://wzdlc1996.github.io/tags/classical-theory/</link>
+      <pubDate>Sat, 12 Jan 2019 14:14:27 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/classical-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>approximation</title>
+      <link>https://wzdlc1996.github.io/tags/approximation/</link>
+      <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/approximation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>front-end</title>
+      <link>https://wzdlc1996.github.io/tags/front-end/</link>
+      <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>manjaro</title>
+      <link>https://wzdlc1996.github.io/tags/manjaro/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/manjaro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>os-setup</title>
+      <link>https://wzdlc1996.github.io/tags/os-setup/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/os-setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>symmetry</title>
       <link>https://wzdlc1996.github.io/tags/symmetry/</link>
       <pubDate>Wed, 14 Nov 2018 11:42:20 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/tags/symmetry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://wzdlc1996.github.io/tags/math/</link>
+      <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamics</title>
+      <link>https://wzdlc1996.github.io/tags/dynamics/</link>
+      <pubDate>Mon, 12 Nov 2018 14:15:58 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/tags/dynamics/</guid>
       <description></description>
     </item>
     

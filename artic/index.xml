@@ -17,7 +17,7 @@
       <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</guid>
-      <description>Introduction Quantum measurement is always one of the most fascinating questions in quantum mechanics. With the limitation caused by the uncertainty principle, how to find a way to perform a measurement but introduce as little disturbance as possible on the object attracts more and more people in recent years. The theory of weak measurement as a generalization of the ordinary measurement in quantum mechanics was born in such the atmosphere.</description>
+      <description>An introduction to weak measurement and weak values. Using the simplest model and perturbation theory to analyze a class of weak measurement process and the concept of weak values. This article gives a comparison between weak measurement and the ordinary measurement in quantum mechanics(which is called as strong measurement) and some interesting application of weak values.</description>
     </item>
     
     <item>
@@ -26,8 +26,7 @@
       <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/artic/hugo/insitesearch/</guid>
-      <description>Introduction Hugo is a static website constructor, based on GO. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [hugo doc]. Here we use the commercial search service: Algolia [Algolia site] .
-Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month.</description>
+      <description>How to add a search bar for in site posts in Hugo. We used the Algolia as the solution provider.</description>
     </item>
     
     <item>
@@ -36,9 +35,7 @@ Algolia has a free plan for personal use, which provides 10,000 records and 100,
       <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/</guid>
-      <description>Introduction Zeno Paradox , or Arrow paradox of Zeno Paradoxes argues that [Wiki page]:
- If everything when it occupies an equal space is at rest, and if that which is in locomotion is always occupying such a space at any moment, the flying arrow is therefore motionless
- In 1977, Misra and Sudarshan showed [Misra 1977], based on the quantum measurement theory, that an unstable particle will never be found to decay if it is continuously observed [Petrosky 1990].</description>
+      <description>The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation</description>
     </item>
     
   </channel>

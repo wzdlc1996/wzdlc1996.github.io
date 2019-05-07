@@ -8,12 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Leonard">
-  <meta name="description" content="Quantization of Maxwell Field Canonical Quantization of Maxwell Field The Hamiltonian of Maxwell Field is(in Feynman Gauge):
-$$H=\frac 1 2\int \td^3 \bm{x} \ \Big\{\sum_{i=1}^3 \Big((\partial_0 A_i)^2&#43;(\nabla A_i)^2\Big)-(\partial_0 A_0)^2 - (\nabla A_0)^2 \Big\}$$ Where $A^\mu$ are vector field. We will use the canonical commutation relationship. For $A_i$ they can be written equivalently as:">
+  <meta name="description" content="The canonical quantization of vector Field(Maxwell Field). One can find that the usual quantization procedure(directly using of commutation relationship) does not work for it, because of the Gauge Symmetry. We will introduce the Gupta-Bleuler quantization procedure. It clearly keeps the Lorentz covariance but leads to a Hilbert space with negative matric. For free Maxwell field we can separate them totally, so the probability interpretation will not destroyed. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Maxwell Field in Quantum Theory">
 
   <meta property="og:title" content="Quantization of Free Field: Maxwell Field" />
-<meta property="og:description" content="Quantization of Maxwell Field Canonical Quantization of Maxwell Field The Hamiltonian of Maxwell Field is(in Feynman Gauge):
-$$H=\frac 1 2\int \td^3 \bm{x} \ \Big\{\sum_{i=1}^3 \Big((\partial_0 A_i)^2&#43;(\nabla A_i)^2\Big)-(\partial_0 A_0)^2 - (\nabla A_0)^2 \Big\}$$ Where $A^\mu$ are vector field. We will use the canonical commutation relationship. For $A_i$ they can be written equivalently as:" />
+<meta property="og:description" content="The canonical quantization of vector Field(Maxwell Field). One can find that the usual quantization procedure(directly using of commutation relationship) does not work for it, because of the Gauge Symmetry. We will introduce the Gupta-Bleuler quantization procedure. It clearly keeps the Lorentz covariance but leads to a Hilbert space with negative matric. For free Maxwell field we can separate them totally, so the probability interpretation will not destroyed. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Maxwell Field in Quantum Theory" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldiii/" />
 <meta property="article:published_time" content="2018-12-26T20:11:35&#43;08:00"/>
@@ -464,11 +462,12 @@ autocomplete('#aa-search-input',
 
 <div>$$[A^\mu(\bm{x}),(\partial_0 A^\nu)(\bm{x}')]=-\ti \eta^{\mu\nu}\delta^3 (\bm{x}-\bm{x}')$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With Feynman Gauge, we have the canonical momentum as:</p>
+    </summary></p>
+
+<p>With Feynman Gauge, we have the canonical momentum as:</p>
 
 <div>$$\pi^\mu = F^{\mu 0}-\eta^{\mu 0} \partial_\nu A^\nu$$</div>
 
@@ -499,8 +498,7 @@ autocomplete('#aa-search-input',
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>One can rewrite them into the plane-wave expansion. In Schrodinger Picture:</p>
 
@@ -521,11 +519,12 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <div>$$[a(\bm{k},\lambda),a(\bm{k}',\lambda')]=[a(\bm{k},\lambda)^\dagger,a(\bm{k}',\lambda')^\dagger]=0 \ ; \ [a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With that:</p>
+    </summary></p>
+
+<p>With that:</p>
 
 <div>$$\begin{aligned}
 A^\mu(\bm{x})&=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti \bm{k} \cdot \bm{x}} a(\bm{k},\lambda)^\dagger \Big) \\
@@ -587,8 +586,7 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
 
@@ -600,11 +598,12 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <div>$$A^\mu(x)=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti k\cdot x} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti k\cdot x} a(\bm{k},\lambda)^\dagger \Big) $$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>We can also check that:</p>
+    </summary></p>
+
+<p>We can also check that:</p>
 
 <div>$$[a(\bm{k},\lambda),\hat H]=\omega_{|\bm{k}|}a(\bm{k},\lambda) \ ; \ [a(\bm{k},\lambda)^\dagger , \hat H]=-\omega_{|\bm{k}|}a(\bm{k},\lambda)^\dagger$$</div>
 
@@ -620,16 +619,16 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="extended-hilbert-space-and-physical-states">Extended Hilbert Space and Physical States</h2>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Why the extended Hilbert is needed
-    </summary>
-    <p>One can find that this quantization procedure leads to a Hamiltonian <code>without</code> lower bound. Different from the Dirac Field, using anti-commutation relationship has no help, because the negative sign of <code>scalar polarization</code> come from the classical theory.</p>
+    </summary></p>
+
+<p>One can find that this quantization procedure leads to a Hamiltonian <code>without</code> lower bound. Different from the Dirac Field, using anti-commutation relationship has no help, because the negative sign of <code>scalar polarization</code> come from the classical theory.</p>
 
 <p>Moreover, in classical electromagnetic field theory, we know that <code>dof</code>of  electromagnetic wave is 2. But here we have four. In classical we use gauge condition to eliminate them, but in quantum theory, for example, Lorentz gauge <code>$\partial_\mu A^\mu=0$</code> cannot be a equality for operator. Because we have <code>$\pi^0\propto \partial_\mu A^\mu$</code> , let it hold will conflict to commutator relationship.</p>
 
@@ -637,8 +636,7 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>In general, we have to accept that there are some non-physical states in Hilbert space. And on those physical states the theory is legal.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Definition]</em> : The Hilbert generated from the quantization procedure above are larger than what we need. And it is not positive definite. <code>Physical subspace</code> is a subset of the Hilbert space, it is positive definite and describe the physical process can happen in the real world. States in <code>Physical subspace</code> are <code>physical states</code>, and the physical subspace is determined by the condition:</p>
 
@@ -650,11 +648,12 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <div>$$\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\psi_{\text{phys.}}} = 0 \ ; \ \bra{\psi_{\text{phys.}}} \big(a(\bm{k},3)^\dagger-a(\bm{k},0)^\dagger \big)=0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>If <code>$\ket{\Psi}$</code> satisfy <code>$\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\Psi} = 0$</code> , then we have:</p>
+    </summary></p>
+
+<p>If <code>$\ket{\Psi}$</code> satisfy <code>$\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\Psi} = 0$</code> , then we have:</p>
 
 <div>$$\begin{aligned}
 \bra{\Psi'}\partial_\mu A^\mu \ket{\Psi}&=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_\lambda \Big(-\ti k_\mu \epsilon^\mu(\bm{k},\lambda) e^{-\ti k\cdot x} \bra{\Psi} a(\bm{k},\lambda)\ket{\Psi}+\ti k_\mu \epsilon^{\mu*}(\bm{k},\lambda)e^{\ti k\cdot x}\bra{\Psi} a(\bm{k},\lambda)^\dagger \ket{\Psi} \Big) \\
@@ -665,8 +664,7 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p>And this stronger condition leads to</p>
 
@@ -700,11 +698,12 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>That&rsquo;s why they(added states) are also called as <code>states-with-zero-norm</code> .</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>To prove that we should check:</p>
+    </summary></p>
+
+<p>To prove that we should check:</p>
 
 <div>$$[\hat L(\bm{k}),\hat L^\dagger(\bm{k}')]=-\delta^3(\bm{k}-\bm{k}')+\delta^3(\bm{k}-\bm{k}')=0$$</div>
 
@@ -728,8 +727,7 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><em>[Theorem]</em> : The states <code>$\ket{\Phi_c}$</code> for a given <code>$\ket{\Phi_T}$</code> form an <code>equivalence class</code> . The member of this equivalence class are related by gauge transformations. Explicitly speaking, one has:</p>
 
@@ -737,11 +735,12 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>Where <code>$\Lambda$</code> is a function satisfies <code>$\partial_\mu \partial^\mu \Lambda=0$</code> , it will come from gauge transformation.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>One has:</p>
+    </summary></p>
+
+<p>One has:</p>
 
 <div>$$\bra{\Phi_c}A_\mu\ket{\Phi_c}=\bra{\Phi_T}\hat R_c^\dagger [A_\mu, \hat R_c]\ket{\Phi_T}+\bra{\Phi_T}[\hat R_c^\dagger , A_\mu]\ket{\Phi_T}+\bra{\Phi_T} A_\mu \ket{\Phi_T}$$</div>
 
@@ -769,8 +768,7 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <p><mark>With these theorems, we can use <code>$\ket{\Phi_T}$</code> as the representation of each equivalence class. And in this meaning the Maxwell Field is totally quantized.</mark></p>
 
@@ -798,11 +796,12 @@ a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{
 
 <div>$$A'^\mu(x'=\Lambda(\omega)x)\equiv U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} = \big(\Lambda(\omega)^{-1}\big)^\mu_{\indent \nu} A^\nu(x'=\Lambda(\omega) x)$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>The proof is similar to what we did before, just noting <code>$\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\epsilon^\mu(\bm{k},\lambda)$</code> will be independent of <code>$\bm{k}$</code>, which means:</p>
+    </summary></p>
+
+<p>The proof is similar to what we did before, just noting <code>$\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\epsilon^\mu(\bm{k},\lambda)$</code> will be independent of <code>$\bm{k}$</code>, which means:</p>
 
 <div>$$\epsilon^\mu (\Lambda \bm{k},\lambda)=\Lambda^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$$</div>
 
@@ -815,8 +814,7 @@ U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} &= \int \frac {\td^3 \bm{k}} {
 
 <p>q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
 <h2 id="causality-of-maxwell-field">Causality of Maxwell Field</h2>
 
@@ -826,11 +824,12 @@ U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} &= \int \frac {\td^3 \bm{k}} {
 
 <div>$$[A_\mu(x),A_\nu(y)]=0 \ ; \ \|x-y\|^2\lt 0$$</div>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>With the quantization that <code>$[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$</code> . One has:</p>
+    </summary></p>
+
+<p>With the quantization that <code>$[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$</code> . One has:</p>
 
 <div>$$\begin{aligned}[]
 [A_\mu(x),A_\nu(y)]&= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2 \ \delta^3(\bm{k}_1-\bm{k}_2)} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{\lambda_1,\lambda_2} \Big\{-\eta^{\lambda_1\lambda_2}e^{-\ti k_1\cdot x+\ti k_2\cdot y} \epsilon_\mu(\bm{k}_1,\lambda_1)\epsilon_\nu^*(\bm{k}_2,\lambda_2) +\eta^{\lambda_1\lambda_2}e^{\ti k_1\cdot x-\ti k_2\cdot y}\epsilon_\mu^*(\bm{k}_1,\lambda_1)\epsilon_\nu(\bm{k}_2,\lambda_2) \Big\}\\
@@ -839,8 +838,7 @@ U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} &= \int \frac {\td^3 \bm{k}} {
 
 <p>With the similar argument, the causality is proved.</p>
 
-</details>
-
+<p></details></p>
 
 <h1 id="propagator-of-maxwell-field">Propagator of Maxwell Field</h1>
 
@@ -896,11 +894,12 @@ U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} &= \int \frac {\td^3 \bm{k}} {
 
 <p>Do not sum for <code>$\mu$</code> here.</p>
 
-<details>
+<p><details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
-    </summary>
-    <p>For <code>$\epsilon^\mu(-\bm{k},\lambda) = P^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$</code> , and <code>$P^\mu_{\indent \nu}=\eta^{\mu\nu}$</code> , we have:</p>
+    </summary></p>
+
+<p>For <code>$\epsilon^\mu(-\bm{k},\lambda) = P^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$</code> , and <code>$P^\mu_{\indent \nu}=\eta^{\mu\nu}$</code> , we have:</p>
 
 <div>$$\begin{aligned}
 (U_T K) A^\mu(x^0,\bm{x})(U_T K)^{-1} &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^{\mu* }(\bm{k},\lambda)e^{\ti k\cdot x} a(-\bm{k},\lambda) + \epsilon^{\mu}(\bm{k},\lambda) e^{-\ti k\cdot x} a(-\bm{k},\lambda)^\dagger \Big) \\
@@ -910,8 +909,7 @@ U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} &= \int \frac {\td^3 \bm{k}} {
 
 <p>Do not sum for <code>$\mu$</code> here. q.e.d.</p>
 
-</details>
-
+<p></details></p>
 
           </div>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Math on Leonard</title>
+    <title>math on Leonard</title>
     <link>https://wzdlc1996.github.io/tags/math/</link>
-    <description>Recent content in Math on Leonard</description>
+    <description>Recent content in math on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
     <lastBuildDate>Mon, 12 Nov 2018 14:38:46 +0800</lastBuildDate>
@@ -17,8 +17,7 @@
       <pubDate>Mon, 12 Nov 2018 14:38:46 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/symmetry/</guid>
-      <description>Basic of Group Theory Definitions [Definition] : a Group is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:
- Associativity : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted Existence of identity : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$ Existence of inverse : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$  Some concepts about Group are listed following:</description>
+      <description>The symmetry theory in quantum mechanics. Including some tricks about solve some problems with it.</description>
     </item>
     
     <item>
@@ -27,9 +26,7 @@
       <pubDate>Mon, 05 Nov 2018 15:45:57 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
-      <description>Minkowski Spacetime The Structure of Minkowski Spacetime From now on we will study in Minkowski spacetime (non-General Relativity) .
-[Definition] : Minkowski spacetime (non-curved) is a 4-dimension real linear space:
-$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$ Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis.</description>
+      <description>The preliminary Mathematical knowledge for Quantum Field Theory. Containing the Minkowski Spacetime, Lorentz Group, and the representation theory of Lorentz Group.</description>
     </item>
     
   </channel>

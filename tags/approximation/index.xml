@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Approximation on Leonard</title>
+    <title>approximation on Leonard</title>
     <link>https://wzdlc1996.github.io/tags/approximation/</link>
-    <description>Recent content in Approximation on Leonard</description>
+    <description>Recent content in approximation on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
     <lastBuildDate>Mon, 24 Dec 2018 12:10:36 +0800</lastBuildDate>
@@ -17,8 +17,7 @@
       <pubDate>Mon, 24 Dec 2018 12:10:36 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/relativisticqm/</guid>
-      <description>Dirac Equation It comes from the dispersion relation in Special Relativistic Theory: $E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$ , transfer $E\rightarrow \ti\hbar \frac {\td} {\td t}$ and $\bm{p}\rightarrow -\ti\hbar \nabla$ , together with the requirement of linear equation, Dirac derived that:
-$$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m c^2 \beta \big)\psi$$ Dirac proved that $\alpha_i,\beta$ should at least be $4\times 4$ matrices.</description>
+      <description>The simple introduction to Relativistic Quantum Mechanics. Mainly about the Dirac equation. Gives some basic understanding about the Dirac equation(in Dirac representation). Get to know some basic consequences of Dirac equation: Orbital angular momentum is not conserved, but the total angular momentum; Zeeman coupling term with g factor is 2; Spin-orbit coupling term and Zitterbewegung: Dirac particle cannot be &amp;ldquo;at rest&amp;rdquo; in classical sense. Even with zero momentum and without external potential, it seems to be oscillating.</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@ $$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m
       <pubDate>Mon, 17 Dec 2018 12:54:43 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/scattering/</guid>
-      <description>Setup of Scattering Problem Rough Picture  Time-dependent : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out. Time-independent : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</description>
+      <description>Quantum theory for scattering of particles. Theory and applications.</description>
     </item>
     
     <item>
@@ -36,8 +35,7 @@ $$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m
       <pubDate>Mon, 03 Dec 2018 13:24:17 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/notes/qm/perturbation/</guid>
-      <description>Time-Independent Perturbation Theory Nondegenerate Perturbation Theory: The Goal Given a Hamiltonian $\hat H_0$ with nondegenerate energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{(0)}}$ , where $n=0,1,\cdots$ . Compute the eigenvalues and eigenstates of $\hat H= \hat H_0+\lambda \hat V$ , in terms of series of the &amp;quot;small parameter&amp;quot; $\lambda$
-Under the basis $\{\ket{E_n^{(0)}}\}$ , $\hat H_0$ is diagonal matrix, and $\hat V$ is a generic one.</description>
+      <description>The perturbation theory for quantum mechanics. This is a useful method on solve some problems which we cannot handle it analytically</description>
     </item>
     
   </channel>
