@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Leonard">
+  <meta name="description" content="This is an introduction to Probability Theory. Include the definition of Probability Space and Random Variables. Conditional Expectation and How to generate random numbers. Read this would be helpful for understanding further probability theory even Measure theory in the future">
+
+  <meta property="og:title" content="Random Variable" />
+<meta property="og:description" content="This is an introduction to Probability Theory. Include the definition of Probability Space and Random Variables. Conditional Expectation and How to generate random numbers. Read this would be helpful for understanding further probability theory even Measure theory in the future" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/amath/randomvariable/" />
+<meta property="article:published_time" content="2019-10-29T11:36:42+08:00" />
+<meta property="article:modified_time" content="2019-10-29T11:36:42+08:00" />
+
+
+
+  <title>
+  
+       Random Variable | Leonard 
+  
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/amath/randomvariable/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://wzdlc1996.github.io/img/cat.png"
+  
+  >
+
+
+  
+  
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config(
+      {
+          tex2jax: {
+          inlineMath: [['$','$'],['\\(','\\)']],
+          displayMath: [['$$','$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+          TeX: {
+            extensions: ["autobold.js"],
+            Macros:{
+               bm: ["{\\boldsymbol #1}",1],
+               flo: ["\\overset {\\cdot} {#1}",1],
+               td: ["\\text{d}"],
+               ti: ["\\text{i}"],
+               bra: ["{\\langle #1 |}",1],
+               ket: ["{| #1 \\rangle}",1],
+               degree: ["{^\{\\circ\}}",0],
+               indent:["\\ \\ \\ \\",0],
+               rhat: ["\\overset {\\rightarrow} {#1}",1],
+               lhat: ["\\overset {\\leftarrow} {#1}",1],
+               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
+            }
+      });
+  /*  MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax();
+      for(i = 0; i &lt; all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );*/
+</script>
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128644147-1');
+</script>
+
+
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+
+
+    
+      
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+      
+      <a class="navbar-brand" href="https://wzdlc1996.github.io">
+          
+        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Leonard</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
+            </li>
+
+          
+        </ul>
+      </div>
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+    </div>
+
+
+
+
+  </nav>
+
+  
+  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+      
+
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+
+
+        
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>
+            
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+
+            
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+
+
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/mathematics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Mathematics </a></li>
+      
+    
+    
+      
+        <li><a href="https://wzdlc1996.github.io/series/applied-mathematics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Applied-Mathematics</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Random Variable</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Oct 29, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>12 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h1 id="random-variable">Random Variable</h1>
+
+<h2 id="introduction-to-probability-theory">Introduction to Probability Theory</h2>
+
+<h3 id="probability-space">Probability Space</h3>
+
+<p><em>[Definition]</em> : A <code>Probability Space</code> is a triplet <code>$(\Omega, \mathcal{F},\mathbb{P})$</code> of three elements:</p>
+
+<ol>
+<li><code>$\Omega$</code> is a set (called <code>Sample Space</code>) .</li>
+<li><code>$\mathcal{F}$</code> is a <code>Sigma Algebra</code> on <code>$\Omega$</code>. <code>$\mathcal{F}$</code> is a collection of subsets of <code>$\Omega$</code> and has the following properties:
+
+<ul>
+<li><code>$\Omega, \varnothing \in \mathcal{F}$</code></li>
+<li><code>$A\in \mathcal{F} \Rightarrow A^c \equiv \Omega \setminus A \in \mathcal{F}$</code></li>
+<li>A sequence of sets <code>$\{A_i\}_{i=1}^{\infty}$</code> in which <code>$A_i \in \mathcal{F}$</code>, then <code>$\bigcup_{j=1}^{\infty} A_j \in \mathcal{F}$</code></li>
+</ul></li>
+<li><code>$\mathbb{P}$</code> is a <code>Probability Measure</code>: <code>$\mathbb{P}: \mathcal{F}\rightarrow [0,1]$</code> and has the following properties:
+
+<ul>
+<li>(Normalization)<code>$\mathbb{P}(\Omega) = 1$</code></li>
+<li>(Countably additive)<code>$A_1,A_2,\cdots \in \mathcal{F} \ , \ A_i\bigcap A_j=\varnothing \Rightarrow \mathbb{P}(\bigcup_{j=1}^{\infty} A_j) = \sum_{j=1}^{\infty} \mathbb{P}(A_j)$</code></li>
+</ul></li>
+</ol>
+
+<p><em>[Definition]</em> : A <code>Measurable (real-valued) Function</code> on a <code>Measurable Space</code> <code>$(\Omega,\mathcal{F})$</code> is a function <code>$f:\Omega \rightarrow \mathbb{R}$</code>, which has the property:</p>
+
+<div>$$\forall B \in \mathcal{B}(\mathbb{R}) \Rightarrow f^{-1}(B) = \{\omega\in\Omega : f(\omega) \in B\} \in \mathcal{F}$$</div>
+
+<p>Where <code>$\mathcal{B}(\mathbb{R})$</code> is the <code>natural Borel sigma Algebra</code> on <code>$\mathbb{R}$</code>.</p>
+
+<p><em>[Definition]</em> : A <code>Random Variable</code> is a measurable function on a Probability Space.</p>
+
+<p><em>[Definition]</em> : The <code>Distribution</code> or <code>Law</code> of a random variable is a probability measure <code>$\mu$</code> on <code>$\mathbb{R}$</code> defined for any Borel set <code>$B\in \mathcal{B}(\mathbb{R})$</code> by:</p>
+
+<div>$$\mu(B) = \mathbb{P}(X\in B)\equiv \mathbb{P}\{\omega \in \Omega : X(\omega) \in B\}$$</div>
+
+<p><em>[Definition]</em> : The <code>Probability Density Function(pdf)</code> of a random variable is an integrable function <code>$p(x)$</code> on <code>$\mathbb{R}$</code> such that for any set <code>$B\in\mathcal{B}(\mathbb{R})$</code>:</p>
+
+<div>$$\mu(B) = \int_B p(x)\td x$$</div>
+
+<p><em>[Definition]</em> : The <code>Mean</code> or <code>Expectation</code> of a random variable is the <code>Lebesgue Integral</code> of it with respect to probability measure <code>$\mathbb{P}$</code> :</p>
+
+<div>$$\mathbb{E} (X) = \int_{\Omega} X(\omega) \mathbb{P}(\td \omega)\equiv \int_{\Omega} X\td \mathbb{P}$$</div>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Notes
+    </summary></p>
+
+<p>Consider the simplest random variable, which is the linear combination of <code>characteristic function</code> of sum subsets of <code>$\Omega$</code> : <code>$I(\omega;A)=\begin{cases} 1 &amp; \omega\in A\\ 0 &amp; \omega \notin A\end{cases}$</code></p>
+
+<div>$$X(\omega) = \sum_{i} x_i I(\omega;A_i)$$</div>
+
+<p>So <code>$X(\omega)$</code> is <code>$x_i$</code> if <code>$\omega \in A_i$</code>. Here, <code>$x_i\geq 0$</code> is required, the reason will be shown below.</p>
+
+<p>Then we define its expectation is:</p>
+
+<div>$$\mathbb{E}(X) := \sum_i x_i \mathbb{P}(A_i)$$</div>
+
+<p>For any other <strong>non-negative</strong> random variable <code>$X$</code>, we can always construct a sequence of such &ldquo;simple&rdquo; random variables <code>$X_n$</code> to &ldquo;get close to&rdquo; <code>$X$</code>, then we can define the expectation of <code>$X$</code> is the limit of expectations of this sequence:</p>
+
+<div>$$\mathbb{E}(X) = \lim_{n\rightarrow \infty} \mathbb{E}(X_n)$$</div>
+
+<p>The limit in r.h.s. is well-defined only when <code>$x_{i,n}$</code> s are nonnegative by <strong>Monotonous Convergence Theorem</strong> . In general cases, the function is not non-negative, one can always separates it into positive-part and negative-part and then deals them isolatedly and computes the difference between them at last.</p>
+
+<p></details></p>
+
+<p><em>[Definition]</em> : Two random variables <code>$X,Y$</code> are mutually <code>Independent</code>, if for all continuous functions <code>$f,g$</code> one has:</p>
+
+<div>$$\mathbb{E}(f(X)g(Y)) = \mathbb{E}(f(X))\mathbb{E}(g(Y))$$</div>
+
+<h3 id="notions-of-convergence">Notions of Convergence</h3>
+
+<p>In this section, we denote the probability space is <code>$(\Omega, \mathcal{F},\mathbb{P})$</code> , and <code>$\{X_n\}$</code> is a sequence of random variables on it. <code>$\mu_n$</code> is the distribution of <code>$X_n$</code>, while <code>$X$</code> is another random variable with distribution <code>$\mu$</code> on the same probability space.</p>
+
+<p><em>[Definition]</em> : <strong>Almost sure convergence</strong>: <code>$X_n$</code> converges to <code>$X$</code> <code>almost surely</code> as <code>$n\rightarrow \infty$</code> (denoted as <code>$X_n \rightarrow X , \text{a.s.}$</code>) if:</p>
+
+<div>$$\mathbb{P}\big(\{\omega \in \Omega : \lim_{n\rightarrow \infty} X_n(\omega) = X(\omega)\}\big) = 1$$</div>
+
+<p><em>[Definition]</em> : <strong>Convergence in probability</strong>: <code>$X_n$</code> converges to <code>$X$</code> <code>in probability</code> (denoted as <code>$X_n\rightarrow_p X$</code>) if for any <code>$\epsilon \gt 0$</code> :</p>
+
+<div>$$\lim_{n\rightarrow \infty}\mathbb{P}\big(\{\omega \in \Omega : |X_n(\omega) - X(\omega)| \gt \epsilon\}\big)  = 0$$</div>
+
+<p><em>[Definition]</em> : <strong>Convergence in distribution</strong>: <code>$X_n$</code> converges to <code>$X$</code> in distribution (denoted as <code>$X_n \rightarrow_d X$</code>) (i.e. <code>$\mu_n\rightarrow_d \mu$</code> , weak convergence), if for any bounded continuous function <code>$f$</code> :</p>
+
+<div>$$\lim_{n\rightarrow \infty}\mathbb{E}(f(X_n)) = \mathbb{E}(f(X))$$</div>
+
+<p><em>[Definition]</em> : <strong>Convergence in <code>$L^p$</code></strong>: If <code>$X_n, X\in L^p$</code>, i.e., they are <code>$p$</code>-th power integrable. and:</p>
+
+<div>$$\lim_{n\rightarrow \infty}\mathbb{E}(|X_n-X|^p) = 0$$</div>
+
+<p>If <code>$p=1$</code> , that is <code>convergence in mean</code>; if <code>$p=2$</code> that is <code>convergence in mean square</code>.</p>
+
+<p><em>[Remark]</em> : These convergence have the following relations:</p>
+
+<ol>
+<li>If <strong>Almost sure converge</strong> ,then <strong>Converge in probability</strong></li>
+<li>If <strong>Converge in probability</strong> and exists a subsequence is <strong>Almost sure</strong>, then the sequence <strong>Almost sure converge</strong></li>
+<li>If <strong>Converge in probability</strong>, then <strong>Converge in distribution</strong></li>
+<li>If <strong><code>$L^p$</code> converge</strong> for all <code>$p$</code> , then <strong>Converge in probability</strong></li>
+</ol>
+
+<h3 id="conditional-expectation">Conditional Expectation</h3>
+
+<p><em>[Definition]</em> : For any random variable <code>$X$</code> on probability space <code>$(\Omega, \mathcal{F},\mathbb{P})$</code> with <code>$\mathbb{E}(|X|)\lt \infty$</code>, the <code>Conditional Expectation</code> of <code>$X$</code> given <code>$\mathcal{G}$</code>, (<code>$\mathcal{G}\subset \mathcal{F}$</code>) (denoted as <code>$\mathbb{E}(X|\mathcal{G})$</code>) is a random variable <code>$Z$</code>, defined as:</p>
+
+<ol>
+<li><code>$Z$</code> is a random variable which is measurable with respect to <code>$\mathcal{G}$</code></li>
+
+<li><p>For any set <code>$A\in\mathcal{G}$</code> :</p>
+
+<div>$$\int_A Z\td \mathbb{P} = \int_A X \td \mathbb{P}$$</div></li>
+</ol>
+
+<p><em>[Theorem]</em> : <strong>Properties of conditional expectation</strong> . Suppose <code>$X,Y$</code> are random variables on probability space <code>$(\Omega,\mathcal{F},\mathbb{P})$</code> , with <code>$\mathbb{E}(|X|),\mathbb{E}(|Y|)\lt \infty, a,b\in \mathbb{R}$</code> , and <code>$\mathcal{H}\subset \mathcal{G}\subset \mathcal{F}$</code> then (The following assertion is true in the sense of &ldquo;almost surely&rdquo;):</p>
+
+<ol>
+<li><code>$\mathbb{E}(aX+bY|\mathcal{G}) = a \mathbb{E}(X|\mathcal{G}) + b\mathbb{E}(Y|\mathcal{G})$</code></li>
+<li><code>$\mathbb{E}(\mathbb{E}(X|\mathcal{G})) = \mathbb{E}(X)$</code></li>
+<li><code>$X\text{ is }\mathcal{G}\text{-measurable } \Rightarrow\mathbb{E}(X|\mathcal{G}) = X$</code></li>
+<li><code>$\mathbb{E}(\mathbb{E}(X|\mathcal{H})|\mathcal{G}) = \mathbb{E}(X|\mathcal{H})$</code></li>
+<li><code>$\mathbb{E}(\mathbb{E}(X|\mathcal{G})|\mathcal{H}) = \mathbb{E}(X|\mathcal{H})$</code></li>
+<li><code>$X\text{ is independent of }\mathcal{G} \Rightarrow\mathbb{E}(X|\mathcal{G}) = \mathbb{E}(X)$</code></li>
+<li><code>$Y\text{ is }\mathcal{G}\text{-measurable }\Rightarrow \mathbb{E}(XY|\mathcal{G})=Y\mathbb{E}(X|\mathcal{G})$</code></li>
+</ol>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary></p>
+
+<ol>
+<li>Linearity, it can be easy to find by the linearity of integral.</li>
+
+<li><p>With the fact that <code>$\Omega \in\mathcal{G}$</code> , one has <code>$\mathbb{E}(\mathbb{E}(X|\mathcal{G}))=\int_{\Omega} \mathbb{E}(X|\mathcal{G})\td \mathbb{P} = \int_{\Omega} X\td \mathbb{P} = \mathbb{E}(X)$</code></p></li>
+
+<li><p>According to the definition of the conditional expectation, <code>$Z = \mathbb{E}(X|\mathcal{G})$</code> should be a <code>$\mathcal{G}$</code>-measurable random variable such that <code>$\forall A\in\mathcal{G}\Rightarrow \int_A Z\td \mathbb{P} = \int_A X\td \mathbb{P}$</code> . Obviously if we choose <code>$Z = X$</code> these two requirements above are automatically satisfied.</p></li>
+
+<li><p>For <code>$\mathbb{E}(X|\mathcal{H})$</code> is <code>$\mathcal{H}$</code>-measurable, and <code>$\mathcal{H}\subset \mathcal{G}$</code> , so obviously <code>$\mathbb{E}(X|\mathcal{H})$</code> is <code>$\mathcal{G}$</code> measurable. Then according to 3 the property has been proved.</p></li>
+
+<li><p>Denote <code>$Y = \mathbb{E}(X|\mathcal{G})$</code> , then by the definition, <code>$\forall A\in\mathcal{G}\Rightarrow \int_A Y\td \mathbb{P} = \int_A X\td \mathbb{P}$</code> , then let <code>$Z=\mathbb{E}(Y|\mathcal{H})$</code> , then <code>$\forall B\in \mathcal{H}\Rightarrow \int_B Z\td \mathbb{P} = \int_B Y\td \mathbb{P}$</code>. For <code>$\mathcal{H}\subset \mathcal{G}$</code> , so <code>$B\in \mathcal{H}\Rightarrow B\in\mathcal{G}$</code> , then we have <code>$\forall B\in \mathcal{H}\Rightarrow \int_B Y\td \mathbb{P} = \int_B X\td \mathbb{P}$</code> . That is to say, <code>$\forall B\in\mathcal{H}\Rightarrow \int_B Z\td \mathbb{P} = \int_B X\td \mathbb{P}$</code> . Meanwhile, <code>$Z$</code> is <code>$\mathcal{H}$</code>-measurable, so we can say <code>$Z = \mathbb{E}(\mathbb{E}(X|\mathcal{G})|\mathcal{H}) = \mathbb{E}(X|\mathcal{H})$</code></p></li>
+
+<li><p>With random variable <code>$X$</code> we can define a sigma algebra <code>$\sigma(X)$</code> by subsets of <code>$\Omega$</code>: <code>$\{A\ : \ \{X(\omega) : \omega \in A\}\in \mathcal{B}(\mathbb{R})\}$</code> , <code>$\sigma(X)$</code> should be the smallest sigma algebra respect to which <code>$X$</code> is measurable. Then <code>$X$</code> is independent of <code>$\mathcal{G}$</code> means that <code>$\sigma(X)$</code> is independent of <code>$\mathcal{G}$</code> :</p>
+
+<div>$$\forall A\in\sigma(X) \ , \ B\in\mathcal{G} \Rightarrow \mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B)$$</div>
+
+<p>So, <code>$\forall B\in\mathcal{G}$</code> , we choose the characteristic function on <code>$B$</code>: <code>$1_B$</code> , it is a <code>$\mathcal{H}$</code>-measurable random variable, then:</p>
+
+<div>$$\int_B X \td \mathbb{P} = \mathbb{E}(X1_B) = \mathbb{E}(X)\mathbb{E}(1_B) = \mathbb{E}(X)\int_B \td \mathbb{P} = \int_B \mathbb{E}(X)\td \mathbb{P}$$</div>
+
+<p>So <code>$\mathbb{E}(X|\mathcal{H})$</code> should be a constant function, it equals to <code>$\mathbb{E}(X)$</code>. i.e. <code>$\mathbb{E}(X|\mathcal{H}) = \mathbb{E}(X)$</code></p></li>
+
+<li><p>It is not a simple theorem. Technically it is called &ldquo;Pulling out known factor&rdquo; property of conditional expectation. Here, we show a brief(hand-waving proof). For detail see: <a href="https://web.ma.utexas.edu/users/gordanz/notes/conditional_expectation.pdf">Properties of conditional_expectation</a>.</p>
+
+<p>Consider the simplest case of <code>$Y = 1_B$</code> where <code>$B\in\mathcal{G}$</code> . So <code>$Y$</code> is <code>$\mathcal{G}$</code>-measurable. Then we have: <code>$1_B\mathbb{E}(Y|\mathcal{G})$</code> is <code>$\mathcal{G}$</code>-measurable, and for arbitrary <code>$A\in\mathcal{G}$</code> we have:</p>
+
+<div>$$\int_A 1_B\mathbb{E}(Y|\mathcal{G})\td \mathbb{P} = \mathbb{E}\big(1_B \mathbb{E}(Y|\mathcal{G})1_A\big) = \mathbb{E}(\mathbb{E}(Y|\mathcal{G})1_{A\cap B}) = \mathbb{E}(Y 1_{A\cap B}) = \mathbb{E}(1_B Y 1_A) = \int_A 1_B Y\td \mathbb{P}$$</div>
+
+<p>Where we used the property that <code>$A\cap B \in \mathcal{G}$</code>. Then <code>$\mathbb{E}(\mathbb{E}(Y|\mathcal{G}) 1_{A\cap B}) = \int_{A\cap B}\mathbb{E}(Y|\mathcal{G})\td \mathbb{P} = \int_{A\cap B} Y\td \mathbb{P} = \mathbb{E}(Y1_{A\cap B})$</code> . So <code>$\mathbb{E}(1_B Y |\mathcal{G}) = 1_B \mathbb{E}(Y|\mathcal{G})$</code>. For the simplest case the theorem hold.</p>
+
+<p>Then with the linearity, for the simple random variable: <code>$Y = \sum_{i} y_i 1_{B_i}$</code> the theorem hold too. So there exists a sequence <code>$\{X_n\}$</code> of simple random variables such that <code>$X_n \rightarrow X -0^+$</code> . Then with the monotone convergence we can prove the theorem works for arbitrary positive random variables. The general case can always be proven by the method of decomposing random variable into positive part and negative part together with linearity.</p></li>
+</ol>
+
+<p></details></p>
+
+<p><em>[Theorem]</em> : <strong>Conditional Jensen&rsquo;s inequality</strong> . Let <code>$X$</code> be a random variable such that <code>$\mathbb{E}(|X|) \lt \infty$</code> and <code>$\phi : \mathbb{R}\rightarrow \mathbb{R}$</code> is a <strong>convex function</strong> (<code>$\phi(\lambda x_1 + (1-\lambda) x_2) \leq \lambda \phi(x_1)+(1-\lambda)\phi(x_2) \ ; \ \lambda \in(0,1)$</code>) . And <code>$\mathbb{E}(|\phi(X)|)\lt \infty$</code> , then:</p>
+
+<div>$$\mathbb{E}\Big(\phi(X)|\mathcal{G}\Big) \geq \phi\Big(\mathbb{E}(X|\mathcal{G})\Big)$$</div>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary></p>
+
+<p>The convex function can be write as the form of:</p>
+
+<div>$$\phi(x) = \sup \{a_n + b_n x\}$$</div>
+
+<p>Which can be understood in the way that convex function are always located at the region above its tangent line. So we need only to prove:</p>
+
+<div>$$\mathbb{E}\big(\sup\{a_n + b_n X\}|\mathcal{G}\big) \geq \sup\{a_n + b_n \mathbb{E}(X|\mathcal{G})\} = \sup\{\mathbb{E}(a_n + b_n X|\mathcal{G})\}$$</div>
+
+<p>Which can be seen by the monotonicity of conditional expectation: <code>$X \geq Y\Rightarrow \mathbb{E}(X|\mathcal{G}) \geq \mathbb{E}(Y|\mathcal{G})$</code> . So:</p>
+
+<div>$$\mathbb{E}(\sup\{a_n + b_n X\}|\mathcal{G})\geq \mathbb{E}(a_n+b_n X|\mathcal{G})$$</div>
+
+<p>for arbitrary <code>$a_n, b_n$</code> . So:</p>
+
+<div>$$\mathbb{E}(\sup(a_n + b_n X)|\mathcal{G}) \geq \sup \{\mathbb{E}(a_n + b_n X|\mathcal{G})\}$$</div>
+
+<p>with the definition of supremum.</p>
+
+<p></details></p>
+
+<p><em>[Definition]</em> : The <strong>Conditional expectation of <code>$X$</code> with respect of random variable <code>$Y$</code></strong> is defined as:</p>
+
+<div>$$\mathbb{E}(X|Y) = \mathbb{E}(X|\sigma(Y))$$</div>
+
+<p>Where <code>$\sigma(Y)$</code> is the sub-sigma algebra generated by <code>$Y$</code> : <code>$\sigma(Y) = \{Y^{-1}(B) : B \in\mathcal{B}(\mathbb{R})\}$</code></p>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Discrete valued condition
+    </summary></p>
+
+<p>We can check this definition is equivalent to the definition of conditional expectation in junior textbook with discrete valued <code>$Y$</code> .</p>
+
+<p>In this case, the sample space can be decomposed as :</p>
+
+<div>$$\Omega = \bigcup_j \Omega_j$$</div>
+
+<p>Where <code>$\Omega_j = \{\omega : Y(\omega) = Y_j\}$</code> . And the <code>$\sigma(Y)$</code> is simply all possible union of <code>$\{\Omega_j\}$</code> . Then:</p>
+
+<div>$$\int_{\Omega_j}\mathbb{E}(X|Y)\td \mathbb{P} = \int_{\Omega_j}X\td \mathbb{P}$$</div>
+
+<p>The measurability of <code>$\mathbb{E}(X|Y)$</code> with respect to <code>$\sigma(Y)$</code> (<code>$\mathbb{E}(X|Y)$</code> has the same &ldquo;structure&rdquo; as <code>$Y$</code>, i.e., discrete valued.) means <code>$\mathbb{E}(X|Y)$</code> takes constant on each <code>$\Omega_j$</code> . So:</p>
+
+<div>$$\mathbb{E}(X|Y=Y_j) = \frac 1 {\mathbb{P}(\Omega_j)} \int_{\Omega_j} X\td \mathbb{P}$$</div>
+
+<p>Which is what we learned in junior textbook.</p>
+
+<p></details></p>
+
+<p><em>[Theorem]</em> : Let <code>$g(Y)$</code> be any measurable function of <code>$Y$</code>, then:</p>
+
+<div>$$\mathbb{E}\big((X-\mathbb{E}(X|Y))^2\big) \leq \mathbb{E}\big((X-g(Y))^2\big)$$</div>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary></p>
+
+<p>We have:</p>
+
+<div>$$\mathbb{E}\big((X-g(Y))^2\big) = \mathbb{E}\big((X-\mathbb{E}(X|Y))^2\big)+\mathbb{E}\big((\mathbb{E}(X|Y)-g(Y))^2\big)+2\mathbb{E}\big\{(X-\mathbb{E}(X|Y))(\mathbb{E}(X|Y)-g(Y))\big\}$$</div>
+
+<p>And:</p>
+
+<div>$$\begin{aligned}
+\mathbb{E}\big\{(X-\mathbb{E}(X|Y))(\mathbb{E}(X|Y)-g(Y))\big\} &= \mathbb{E}\Big\{\mathbb{E}\big\{(X-\mathbb{E}(X|Y))(\mathbb{E}(X|Y)-g(Y))\big\}\Big|Y\Big\} \\
+&=\mathbb{E}\Big\{(\mathbb{E}(X|Y)-g(Y))\mathbb{E}\big\{X-\mathbb{E}(X|Y)\big\}\Big|Y\Big\} \\
+&=\mathbb{E}\Big\{(\mathbb{E}(X|Y)-g(Y))\big(\mathbb{E}(X|Y)-\mathbb{E}(X|Y)\big)\Big\} \\
+&=0
+\end{aligned}$$</div>
+
+<p>q.e.d.</p>
+
+<p></details></p>
+
+<p>This theorem means that the conditional expectation is the optimal approximation of <code>$X$</code> in <code>$L^2$</code> norm among all of the <code>$Y$</code>-measurable functions. i.e. , if one needs to find a <code>$Y$</code>-measurable function as the approximation of <code>$X$</code> , the conditional expectation <code>$\mathbb{E}(X|Y)$</code> is the optimal choice. Where <code>$Y$</code>-measurable means <code>$\sigma(Y)$</code>-measurable.</p>
+
+<h2 id="generation-of-random-variables">Generation of Random Variables</h2>
+
+<p>The core of widely application of stochastic algorithms is the efficient method to generate random variables of given distribution. In this part we will show a classical way to generate uniformly distributed random variable, and how to generate other distribution from the uniform one.</p>
+
+<h3 id="linear-congruential-generator-lcg">Linear Congruential Generator(LCG)</h3>
+
+<p>LCG is the most commonly used <strong>Pseudo-Random Number Generator(PRNG)</strong> for uniformly distribution : <code>$\mathcal{U}([0,1])$</code> . It has the following simple form:</p>
+
+<div>$$X_{n+1} = (aX_n + b) \mod m$$</div>
+
+<p>Where <code>$a,b,m$</code> are chosen natural numbers beforehand and <code>$X_0$</code> is the seed. The obtained sequence <code>$X_n/m$</code> is the desired pseudo-random number satisfies <code>$\mathcal{U}([0,1])$</code> .</p>
+
+<p>The <code>period</code> for a typical sequence produced by this recursion formula is controlled by the following theorem:</p>
+
+<p><em>[Theorem]</em> : The period of a LCG is <code>$m$</code> if and only if:</p>
+
+<ol>
+<li><code>$b$</code> and <code>$m$</code> are relatively prime.</li>
+<li>every prime factor of <code>$m$</code> divides <code>$a-1$</code></li>
+<li>if <code>$m|4$</code> then <code>$(a-1)|4$</code></li>
+</ol>
+
+<p>For detail see: <a href="https://www.amazon.com/Art-Computer-Programming-Seminumerical-Algorithms/dp/0201896842">D.E. Knuth. The Art of Computer Programming, vol 2</a></p>
+
+<p>There is also a so-called <strong>Minimal Standard Generator</strong> which is a special case of LCG of <code>$b=0$</code> , which is discussed in 1969 by Lewis, Goodman and Miller. Where <code>$a=7^5=16807 , m=2^{31}-1$</code>.</p>
+
+<p>More general LCG takes the following form:</p>
+
+<div>$$X_{n+1}=(a_0 X_n + a_1 X_{n-1}+\cdots + a_j X_{n-j} + b) \mod m$$</div>
+
+<p>Whose period can not proceed <code>$m^{j+1}-1$</code>.</p>
+
+<p>One important fact about the LCG is that it shows very poor distributions of <code>$s$</code>-tuples:</p>
+
+<p><em>[Theorem]</em> : The <code>$s$</code>-tuples <code>$(X_n,X_{n+1},\cdots,X_{n+s-1})$</code> obtained via simple LCG(a,b,m) lie on a maximum of <code>$(s!m)^{1/s}$</code> equidistant parallel hyperplanes within the <code>$s$</code>-dimensional hypercube <code>$(0,1)^{\otimes s}$</code></p>
+
+<p>Which is proven by Marsaglia in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC285899/">Marsaglia 1968</a>. One can see when <code>$s$</code> is large, the deviation with respect to the uniform distribution is apparent.</p>
+
+<h3 id="inverse-transformation-method">Inverse Transformation Method</h3>
+
+<p>The general random variables <code>$Y\in \mathbb{R}$</code> can be generated from <code>$\mathcal{U}([0,1])$</code> in principle based on the following theorem:</p>
+
+<p><em>[Theorem]</em> : (Inverse Transformation Method) . Suppose the distribution function of <code>$Y$</code> is <code>$F(y)$</code> , i.e. <code>$\mathbb{P}(Y\leq y) = F(y)$</code> , which is strictly increasing. <code>$X \sim \mathcal{U}([0,1])$</code> then: <code>$F^{-1}(X)$</code> is the desired random variable.</p>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary></p>
+
+<p>If <code>$F(y)$</code> is strictly increasing, consider the <code>$\hat Y = F^{-1}(X)$</code> we have:</p>
+
+<div>$$\mathbb{P}(\hat Y\leq y) = \mathbb{P}(F^{-1}(X)\leq y) = \mathbb{P}(X\leq F(y)) = F(y)$$</div>
+
+<p>So <code>$\hat Y$</code> and <code>$Y$</code> have the same distribution.</p>
+
+<p>When <code>$F(y)$</code> is only non-decreasing, like there are some parts on <code>$\mathbb{R}$</code> have zero probability. Then we can define the generalized inverse <code>$F^{-1}$</code> as:</p>
+
+<div>$$F^{-1}(u) = \inf \{x: F(x)\geq u\}$$</div>
+
+<p>Then we have:</p>
+
+<div>$$F(F^{-1}(u)) \geq u \ ; \ F^{-1}(F(x)) \leq x$$</div>
+
+<p>So: <code>$\{(u,x) : F^{-1}(u)\leq x\} = \{(u,x) : F(x)\geq u\}$</code>. And:</p>
+
+<div>$$\mathbb{P}(F^{-1}(X) \leq y) = \mathbb{P}(X \leq F(y)) = F(y)$$</div>
+
+<p>q.e.d.</p>
+
+<p></details></p>
+
+<h3 id="box-muller-method-for-gaussian-random-variables">Box-Muller method for Gaussian Random Variables</h3>
+
+<p>The core is the identity of the variable substitution:</p>
+
+<div>$$\frac 1 {2\pi} e^{-\frac {x_1^2+x_2^2} 2} \td x_1 \td x_2 = \frac {\td \theta} {2\pi} \cdot e^{-r^2/r} r\td r$$</div>
+
+<p>So , <code>$\td \theta/2\pi$</code> is the unit of <code>$\mathcal{U}([0,2\pi])$</code> , and <code>$e^{-r^2/2}r\td r$</code> corresponds to the distribution of <code>$F(r) = 1-e^{-r^2/2}$</code> . So the Gaussian Random Variable can be generated with the following manner:</p>
+
+<div>$$Z = R \cos \Theta \ ; \ R=\sqrt{-2\log X} , \Theta = 2\pi Y \ X,Y\sim \mathcal{U}([0,1])$$</div>
+
+<h3 id="acceptance-rejection-method">Acceptance-Rejection Method</h3>
+
+<p>This is another general methodology to sample arbitrary Random Variables. To generate random variables with density <code>$0\leq p(x)\leq d$</code> and <code>$a\leq x\leq b$</code>, the algorithm is:</p>
+
+<p><em>[Algorithm]</em> : To generate <code>$X$</code> of density <code>$p(x)$</code>:
+1.  Generate <code>$X_i \sim \mathcal{U}([a,b])$</code>
+2.  Generate a decision-making <code>$Y_i \sim \mathcal{U}([0,d])$</code>
+3.  If <code>$0\leq Y_i\leq p(X_i)$</code> , accept <code>$X_i$</code>; otherwise, reject
+4.  Back to step 1.</p>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary></p>
+
+<p>The procedure generates a uniformly distribution on <code>$A=\{(x,y):x\in[a,b], y\in[0,p(x)]\}$</code> . So the <code>$X$</code>-marginal distribution</p>
+
+<div>$$\hat p(x) = \int_0^{p(x)}1 \td y = p(x)$$</div>
+
+<p>q.e.d.</p>
+
+<p></details></p>
+
+<p>For the unbounded random variables, we should introduce more comparison functions. The algorithm is:</p>
+
+<p><em>[Algorithm]</em> : Generate the unbounded <code>$X\sim p(x)$</code>:</p>
+
+<ol>
+<li>Generate <code>$X_i = F^{-1}(A Z_i)$</code> where <code>$Z_i \sim \mathcal{U}([0,1])$</code></li>
+<li>Generate decision-making <code>$Y_i \sim\mathcal{U}([0,f(X_i)])$</code></li>
+<li>If <code>$0\leq Y_i \leq p (X_i)$</code> , accept <code>$X_i$</code>; otherwise reject.</li>
+<li>Back to Step 1.</li>
+</ol>
+
+<p>Where <code>$f(x)$</code> is a curve which lies everywhere above the density <code>$p(x)$</code>, and <code>$A = \int_{-\infty}^{\infty} f(x)\td x$</code> , <code>$F(x) = \int_{-\infty}^x f(x)\td x$</code></p>
+
+<p><details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary></p>
+
+<p>The probability of <code>$X_i$</code> lies in interval <code>$[x,x+\td x]$</code> is:</p>
+
+<div>$$\mathbb{P}(X_i\in[x,x+\td x]) = \mathbb{P}(Z_i \in [\frac {F(x)} A , \frac {F(x+\td x)} {A}])\mathbb{P}(\text{accept}) = \frac 1 A f(x)\td x \cdot \frac {p(x)} {f(x)} = \frac 1 A  p(x)\td x$$</div>
+
+<p>q.e.d.</p>
+
+<p></details></p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/math" role="button">math </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/qm/manybody3/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Manybody: Functional Integral Formalism</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#random-variable">
+												 Random Variable
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#introduction-to-probability-theory">
+												 Introduction to Probability Theory
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#probability-space">
+												 Probability Space
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#notions-of-convergence">
+												 Notions of Convergence
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#conditional-expectation">
+												 Conditional Expectation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#generation-of-random-variables">
+												 Generation of Random Variables
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#linear-congruential-generator-lcg">
+												 Linear Congruential Generator(LCG)
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#inverse-transformation-method">
+												 Inverse Transformation Method
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#box-muller-method-for-gaussian-random-variables">
+												 Box-Muller method for Gaussian Random Variables
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#acceptance-rejection-method">
+												 Acceptance-Rejection Method
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+
+
+
+</footer>
+
+
+<script>
+  MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1){
+          all[i].SourceElement().parentNode.className += 'has-jax';
+      }}
+  );
+</script>
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
