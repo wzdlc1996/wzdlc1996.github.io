@@ -646,12 +646,11 @@ class dlManga(object):
     def __init__(self, fold, opt):
         self.session = rq.session()
         self.fold = fold
-        self.session.headers.update(opt)
+        self.opt = opt
     def __call__(self, dic):
-        getFile = self.session.get(dic['URL']).content
+        getFile = rq.get(dic['URL'], headers=self.opt).content
         with open(self.fold+dic[&quot;Name&quot;]+&quot;.jpg&quot;,&quot;wb&quot;) as f:
             f.write(getFile)
-        self.session.close()
 
 with open(&quot;./config.json&quot;,&quot;r&quot;) as f:
     conf = json.load(f)
