@@ -33,7 +33,8 @@
 }
 .aa-input-icon {
   height: 16px;
-  width: 16px;
+  /*width: 16px;*/
+  width: 120px;
   position: absolute;
   top: 50%;
   right: 16px;
