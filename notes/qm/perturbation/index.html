@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>12 minutes read</li>
+      <li>7 minutes read</li>
     
   </ul>
   
@@ -454,404 +454,178 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="time-independent-perturbation-theory">Time-Independent Perturbation Theory</h1>
-
+            <h1 id="time-independent-perturbation-theory">Time-Independent Perturbation Theory</h1>
 <h2 id="nondegenerate-perturbation-theory-the-goal">Nondegenerate Perturbation Theory: The Goal</h2>
-
 <p>Given a Hamiltonian <code>$\hat H_0$</code> with <code>nondegenerate</code> energy eigenvalues <code>$E_n^{(0)}$</code> and eigenstates <code>$\ket{E_n^{(0)}}$</code> , where <code>$n=0,1,\cdots$</code> . Compute the eigenvalues and eigenstates of <code>$\hat H= \hat H_0+\lambda \hat V$</code> , <code>in terms of series of the &quot;small parameter&quot;</code> <code>$\lambda$</code></p>
-
 <p>Under the basis <code>$\{\ket{E_n^{(0)}}\}$</code> , <code>$\hat H_0$</code> is diagonal matrix, and <code>$\hat V$</code> is a generic one. The diagonal elements of <code>$\hat V$</code> will cause the shift of energy without changing the eigenstates; off-diagonal elements mixes eigenstates and shift the energy.</p>
-
 <p>Usually we will find that the off-diagonal elements of <code>$\hat V$</code> cause the <code>level-repulsion</code> , that is to say adding the off-diagonal elements tends to increase the energy gap.</p>
-
 <p><em>[Assumption]</em> : Assume that <code>$\lambda$</code> is sufficiently small, so that <code>$\ket{n,\lambda}$</code> of <code>$\hat H$</code> is adiabatically connected to <code>$\ket{E_n^{(0)}}$</code> . And we can write the (<code>asymptotical</code>) series expansion of the eigenstates and eigenvalues:</p>
-
-<div>$$\begin{aligned}
-E_n &= E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \cdots \\
-\ket{n,\lambda} &= \ket{E_n^{(0)}} + \lambda \ket{E_n^{(1)}} + \lambda^2 \ket{E_n^{(2)}} + \cdots
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Note the <code>$\ket{n,\lambda}$</code> here is <code>NOT</code> normalized. And <code>$\ket{E_n^{(k\gt 0)}}$</code> are orthogonal to <code>$\ket{E_n^{(0)}}$</code> .</p>
-
 <h2 id="formal-perturbation-expansion">Formal Perturbation Expansion</h2>
-
 <p>We define some <code>projection operators</code> :</p>
-
-<div>$$\begin{aligned}
-\hat P &= \ket{E_n^{(0)}}\bra {E_n^{(0)}} \\
-\hat Q &= 1 - \hat P = \sum_{m,m\neq n} \ket{E_m^{(0)}}\bra{E_m^{(0)}} \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>They have such properties: <code>$[\hat H,\hat P]=[\hat H,\hat Q]=0$</code> , and <code>$\hat H\hat P = E_n^{(0)}\hat P, \hat P\hat Q=0$</code> .</p>
-
 <p>Consider the eigenstate of <code>$\hat H=\hat H_0+\lambda \hat V$</code> : <code>$\hat H\ket{n,\lambda}=E_n\ket{n,\lambda}$</code> , with <code>$\ket{n,\lambda}=\hat P\ket{n,\lambda}+\hat Q\ket{n,\lambda}$</code> :</p>
-
-<div>$$(E_n-\hat H_0)\hat Q \ket{n,\lambda} = (E_n^{(0)}-E_n)\hat P \ket{n,\lambda} + \lambda \hat V \ket{n,\lambda} $$</div>
-
+<!-- raw HTML omitted -->
 <p>Apply <code>$\hat Q$</code> on both side we have: <code>$\hat Q (E_n-\hat H_0)\hat Q \ket{n,\lambda}=\lambda \hat Q \hat V\ket{n,\lambda}$</code>. Its eigenvalues are <code>$E_n-E_{m\neq n}^{(0)}$</code>. Assuming they are not zero, we have the &ldquo;inverse&rdquo; of it: <code>$\hat G = \hat Q (E_n-\hat H_0)^{-1}\hat Q$</code> . Then we can solve the perturbation as:</p>
-
-<div>$$\hat Q \ket{n,\lambda} = \lambda \hat G \hat Q \hat V \ket{n,\lambda} = \lambda \hat G \hat V\ket{n,\lambda}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have the solution of eigenstate <code>$\ket{n,\lambda}$</code>:</p>
-
-<div>$$\begin{aligned}
-\ket{n,\lambda} &= \hat P \ket{n,\lambda} + \lambda \hat G \hat V \ket{n,\lambda} \\
-& \Rightarrow \ket{n,\lambda} = (1-\lambda \hat G \hat V)^{-1}\hat P \ket{n,\lambda} = \sum_{k=0}^{\infty} \lambda^k (\hat G \hat V)^k \hat P \ket{n,\lambda} \\
-& (E_n-E_n^{(0)}) \bra{n,\lambda}\hat P \ket{n,\lambda} = \bra{n,\lambda} \lambda \hat P \hat V \ket{n,\lambda}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\hat P \ket{n,\lambda} \propto \ket{E_n^{(0)}}$</code> , usually we just choose they are <code>EQUAL</code>, and the finally normalize it.</p>
-
-<p>And the new eigenvalue can be obtained by apply <code>$\bra{n,\lambda}\hat P$</code> on both side of the eigen equation, with <code>$\hat P \hat H_0 \hat Q =\hat P \hat Q=0$</code>:
-<div>$$(E_n-E_n^{(0)})\bra{n,\lambda}\hat P \ket{n,\lambda} = \lambda \bra{n,\lambda} \hat P \hat V \ket{n,\lambda}$$</div></p>
-
+<p>And the new eigenvalue can be obtained by apply <code>$\bra{n,\lambda}\hat P$</code> on both side of the eigen equation, with <code>$\hat P \hat H_0 \hat Q =\hat P \hat Q=0$</code>:</p>
+<!-- raw HTML omitted -->
 <h2 id="formal-perturbation-expansion-summary">Formal Perturbation Expansion: Summary</h2>
-
 <p>We have the following perturbation expansion:</p>
-
-<div>$$\begin{aligned}
-\ket{n,\lambda}=(1-\lambda \hat G \hat V)^{-1}\hat P_n \ket{n,\lambda} &= \sum_{k=0}^{\infty} \lambda^k (\hat G_n \hat V)^k \ket{E_n^{(0)}} \\
-(E_n-E_n^{(0)})\bra{n,\lambda}\hat P_n \ket{n,\lambda} &= \lambda \bra{n,\lambda} \hat P_n \hat V \ket{n,\lambda}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\hat G_n=\hat Q_n (E_n-\hat H_0)^{-1}\hat Q_n$</code> . They do not really solve the eignestates and eigenvalues in terms of known quantities, for <code>$E_n$</code> is unknown but contained by <code>$\hat G_n$</code>.</p>
-
 <ol>
-<li><p>First order perturbation:</p>
-
-<div>$$\begin{aligned}
-\ket{n,\lambda} &= \ket{E_n^{(0)}} + \mathcal{O}(\lambda) \\
-E_n &= E_n^{(0)} + \lambda \bra{E_n^{(0)}}\hat V \ket{E_n^{(0)}} + \mathcal{O}(\lambda^2)
-\end{aligned}$$</div>
-
-<p>Here the energy is up to <code>$\mathcal{O}(\lambda^2)$</code> but state-vector is up to <code>$\mathcal{O}(\lambda)$</code> . This is caused by that energy is the quadratic form of state-vector.</p></li>
-
-<li><p>Second order perturbation:</p>
-
-<div>$$\begin{aligned}
-\ket{n,\lambda} &= \ket{E_n^{(0)}} + \lambda \sum_{m,m\neq n} \frac {\bra{E_m^{(0)}}\hat V \ket{E_n^{(0)}}} {E_m^{(0)}-E_n^{(0)}} \ket{E_m^{(0)}} + \mathcal{O}(\lambda^2) \\
-E_n &= E_n^{(0)} + \lambda \bra{E_n^{(0)}}\hat V \ket{E_n^{(0)}} + \lambda^2 \sum_{m,m\neq n} \frac {|\bra{E_m^{(0)}}\hat V \ket{E_n^{(0)}}|^2} {E_m^{(0)}-E_n^{(0)}} + \mathcal{O}(\lambda^3)
-\end{aligned}$$</div>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<li>
+<p>First order perturbation:</p>
+<!-- raw HTML omitted -->
+<p>Here the energy is up to <code>$\mathcal{O}(\lambda^2)$</code> but state-vector is up to <code>$\mathcal{O}(\lambda)$</code> . This is caused by that energy is the quadratic form of state-vector.</p>
+</li>
+<li>
+<p>Second order perturbation:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>To compute the Second order expansion, we have:</p>
-
-<div>$$\begin{aligned}
-\ket{n,\lambda} &= \ket{E_n^{(0)}} + \lambda \hat G_n \hat V \ket{E_n^{(0)}} \\
-&= \ket{E_n^{(0)}} + \lambda \sum_m \hat G_n \ket{E_m^{(0)}}\bra{E_m^{(0)}} \hat V \ket{E_n^{(0)}} \\
-&= \ket{E_n^{(0)}} + \lambda \sum_{m,m\neq n} \frac {V_{mn}} {E_n-E_m^{(0)}} \ket{E_m^{(0)}} \\
-&\approx \ket{E_n^{(0)}} + \lambda \sum_{m,m\neq n} \frac {V_{mn}} {E_n^{(0)}-E_m^{(0)}} \ket{E_m^{(0)}}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>up to the first order of <code>$\lambda$</code>. And the energy:</p>
-
-<div>$$\begin{aligned}
-E_n-E_n^{(0)} &= \lambda V_{nn} + \bra{E_n^{(0)}} \lambda \hat V \lambda \sum_{m,m\neq n} \frac {V_{mn}} {E_n^{(0)}-E_m^{(0)}} \ket{E_m^{(0)}} \\
-&=\lambda V_{nn} + \lambda^2 \sum_{m,m\neq n} \frac {V_{mn}V_{nm}} {E_n^{(0)}-E_m^{(0)}}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p><em>[Theorem]</em> : The normalization factor of <code>$\ket{n,\lambda}=(1-\lambda \hat G_n\hat V)^{-1}\ket{E_n^{0}}$</code> is that <code>$\bra{n,\lambda} n,\lambda \rangle = (Z_n)^{-1} \geq 1$</code> , has the property that:</p>
-
-<div>$$Z_n = \frac {\partial} {\partial E_n^{(0)}} E_n$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Firstly, we need to compute the partial derivative of <code>$\hat G_n$</code> :</p>
-
-<div>$$\frac {\partial} {\partial E_n^{(0)}} \hat G_n = \hat Q_n \frac {-1} {(E_n-\hat H_0)^2} \hat Q \frac {\partial E_n} {\partial E_n^{(0)}}=-\hat G_n^2 \frac {\partial E_n} {\partial E_n^{(0)}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the perturbation expansion of energy is:</p>
-
-<div>$$(E_n-E_n^{(0)}) \bra{n,\lambda}\hat P \ket{n,\lambda} = \lambda \bra{n,\lambda}\hat P \hat V \ket{n,\lambda}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With <code>$\bra{n,\lambda}\hat P_n \ket{n,\lambda}=(\bra{n,\lambda}\hat P_n)\hat P_n \ket{n,\lambda}=\bra{E_n^{(0)}}E_n^{(0)}\rangle = 1$</code>, We have:</p>
-
-<div>$$\begin{aligned}
-\frac {\partial E_n} {\partial E_n^{(0)}} - 1 &= \lambda \bra{E_n^{(0)}}\hat V \frac 1 {\partial E_n^{(0)}} \sum_{k=0}^{\infty} \lambda^k (\hat G_n \hat V)^k \ket{E_n^{(0)}} \\
-&= - \frac {\partial E_n} {\partial E_n^{(0)}} \bra{E_n^{(0)}} \hat V \sum_{k=1}^{\infty} \lambda^{k+1} \sum_{l=0}^{k-1} (\hat G_n \hat V)^l \hat G_n (\hat G_n\hat V)^{k-l} \ket{E_n^{(0)}} \\
-\Rightarrow \ \Big(\frac {\partial E_n} {\partial E_n^{(0)}}\Big)^{-1} &= \sum_{k=1}^{\infty} \lambda^{k+1} \sum_{l=0}^{k-1} \bra{E_n^{(0)}} (\hat V \hat G_n)^l (\hat G_n \hat V)^{k-l} \ket{E_n^{(0)}}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>While we have:</p>
-
-<div>$$(Z_n)^{-1} = \sum_{k=0}^{\infty}\sum_{k'=0}^{\infty} \lambda^{k+k'} \bra{E_n} (\hat V \hat G_n)^{k}(\hat G_n\hat V)^{k'}\ket{E_n^{(0)})} $$</div>
-
+<!-- raw HTML omitted -->
 <p>For when <code>$k,k'=0$</code> , the terms vanish because of the projector. we have:</p>
-
-<div>$$\begin{aligned}
-(Z_n)^{-1} &= \sum_{k=1}^{\infty}\sum_{k'=1}^{\infty} \lambda^{k+k'} \bra{E_n} (\hat V \hat G_n)^{k}(\hat G_n\hat V)^{k'}\ket{E_n^{(0)})} \\
-&=\sum_{k=1}^{\infty} \lambda^{k+1} \sum_{l=0}^{k-1} \bra{E_n^{(0)}} (\hat V \hat G_n)^l (\hat G_n \hat V)^{k-l} \ket{E_n^{(0)}}
-=\Big(\frac {\partial E_n} {\partial E_n^{(0)}}\Big)^{-1}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <h2 id="degenerate-perturbation-theory">Degenerate Perturbation Theory</h2>
-
 <p>If energy level <code>$E_n^{(0)}$</code> has g-fold degenerate, then we have <code>$g$</code> orthonormal basis noted as <code>$\ket{E_{n,\alpha}^{(0)}} \ ; \ \alpha=1,\cdots, g$</code> . The projection operators are defined as:</p>
-
-<div>$$\begin{aligned}
-\hat P_n &= \sum_\alpha \ket{E_{n,\alpha}^{(0)}}\bra{E_{n,\alpha}^{(0)}} \\
-\hat Q_n &= 1- \hat P_n
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>The formal expansion are the same, but <code>$\hat P_n \ket{n,\lambda} = \sum_{\alpha} c_\alpha \ket{E_{n,\alpha}^{(0)}}$</code> . Where <code>$c_\alpha$</code> are unknown coefficients. Then we have the result with these unknown coefficients, together with another equation to determine them:</p>
-
-<div>$$\begin{aligned}
-\ket{n,\lambda} = (1-\lambda \hat G_n \hat V)^{-1} \hat P_n \ket{n,\lambda} &= \sum_{k=0}^{\infty} \lambda^k (\hat G_n\hat V)^k \sum_{\alpha=1}^g c_\alpha \ket{E_{n,\alpha}^{(0)}} \\
-(E_n-E_n^{(0)}) c_\alpha &=  \sum_{k=0}^{\infty} \sum_{\beta=1}^g \bra{E_{n,\alpha}^{(0)}} \hat V\lambda^{k+1}(\hat G_n\hat V)^k \ket{E_{n,\beta}^{(0)}} c_\beta
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>The second equation usually is called <code>secular equation</code> . It requires that the determinate is zero, which can determine <code>$E_n$</code> and <code>$c_\alpha$</code> .</p>
-
 <ol>
-<li><p>First order perturbation:</p>
-
-<div>$$\ket{n,\lambda} = \sum_{\alpha} c_\alpha \ket{E_{n,\alpha}^{(0)}}+\mathcal{O}(\lambda)$$</div>
-
+<li>
+<p>First order perturbation:</p>
+<!-- raw HTML omitted -->
 <p>And the energy shift and <code>$c_\alpha$</code> can be obtained by the equation:</p>
-
-<div>$$(E_n-E_n^{(0)})c_\alpha = \lambda \sum_{\beta=1}^g V_{n,\alpha;n,\beta} c_\beta+\mathcal{O}(\lambda^2)$$</div>
-
-<p>up to <code>$\lambda^2$</code> , where <code>$V_{n,\alpha;m,\beta}=\bra{E_{n,\alpha}^{(0)}}\hat V \ket{E_{m,\beta}^{(0)}}$</code></p></li>
-
-<li><p>Second order perturbation:</p>
-
-<div>$$\ket{n,\lambda} = \sum_{\alpha} c_\alpha\Big( \ket{E_{n,\alpha}^{(0)}} + \sum_{m,m\neq n} \frac {\lambda V_{m,n\alpha}} {E_n-E_m^{(0)}} \ket{E_m^{(0)}} \Big) + \mathcal{O}(\lambda^2)$$</div>
-
+<!-- raw HTML omitted -->
+<p>up to <code>$\lambda^2$</code> , where <code>$V_{n,\alpha;m,\beta}=\bra{E_{n,\alpha}^{(0)}}\hat V \ket{E_{m,\beta}^{(0)}}$</code></p>
+</li>
+<li>
+<p>Second order perturbation:</p>
+<!-- raw HTML omitted -->
 <p>And <code>$c_\alpha, E_n$</code> can be obtained by:</p>
-
-<div>$$(E_n-E_n^{(0)})c_\alpha = \sum_{\beta=1}^g \Big(\lambda V_{n,\alpha;n,\beta}+ \sum_{m,m\neq n} \frac {\lambda^2V_{n,\alpha;m}V_{m;n,\beta}} {E_n^{(0)}-E_m^{(0)}} \Big) c_\beta + \mathcal{O}(\lambda^3)$$</div></li>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p><em>[Theorem]</em> : if the first order perturbation has <code>completely</code> remove the degeneracy, we can use <code>normalized</code> <code>$c_\alpha$</code>, namely <code>$\sum_\alpha |c_\alpha|^2=1$</code> from 1st perturbation here to compute the energy shift, and:</p>
-
-<div>$$E_n-E_n^{(0)} = \sum_{\alpha,\beta=1}^g \Big(\lambda V_{n,\alpha;n,\beta}+ \sum_{m,m\neq n} \frac {\lambda^2V_{n,\alpha;m}V_{m;n,\beta}} {E_n^{(0)}-E_m^{(0)}} \Big) c_\alpha^* c_\beta + \mathcal{O}(\lambda^3)$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>In the 1st perturbation, we actually solve the coefficients by the equation <code>$\bm{V} \bm{c} = \Delta \bm{c}$</code>, where <code>$\bm{c}=(c_\alpha)^T, \bm{V}=\lambda(V_{n,\alpha;n,\beta}) , \Delta = E_n-E_n^{(0)}$</code>.</p>
-
 <p>The 1st perturbation can completely remove the degeneracy means that this equation has <code>$g$</code> different solution, namely matrix <code>$\bm{V}$</code> has <code>$g$</code> different eigenvalues <code>$\Delta$</code> .</p>
-
-<p>In the following order perturbation we need to solve the equation <code>$\Delta' \bm{c}'=( \bm{V}+\lambda \bm{W}) \bm{c}'$</code> , or the matrix <code>$\bm{V}+\lambda \bm{W}$</code> &rsquo;s eigenvectors and eigenvalues, this is a nondegenerate perturbation question.</p>
-
+<p>In the following order perturbation we need to solve the equation <code>$\Delta' \bm{c}'=( \bm{V}+\lambda \bm{W}) \bm{c}'$</code> , or the matrix <code>$\bm{V}+\lambda \bm{W}$</code> &lsquo;s eigenvectors and eigenvalues, this is a nondegenerate perturbation question.</p>
 <p>Its first order perturbation result is that <code>$\bm{c}'=\bm{c}+\mathcal{O}(\lambda)$</code> , with <code>$\bm{c}$</code> normalized, we have:</p>
-
-<div>$$\Delta' = \Delta + \lambda \bm{c}^\dagger \bm{W} \bm{c} + \mathcal{O}(\lambda^2\|\bm{W}\|)$$</div>
-
+<!-- raw HTML omitted -->
 <p>That is:</p>
-
-<div>$$E_n-E_n^{(0)} = \bm{c}^\dagger \Big(\lambda V_{n,\alpha;n,\beta}+ \sum_{m,m\neq n} \frac {\lambda^2V_{n,\alpha;m}V_{m;n,\beta}} {E_n^{(0)}-E_m^{(0)}} \Big)\bm{c} + \mathcal{O}(\lambda^3)$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <h1 id="perturbation-expansion-as-unitary-transformations">Perturbation Expansion as Unitary Transformations</h1>
-
 <p>Given <code>$\hat H=\hat H_0+\lambda \hat V$</code> , where <code>$\hat H_0$</code> has known energy levels <code>$E_n^{(0)}$</code> (may be degenerate) . Try to find a sequence of unitary transformations to remove the &ldquo;off-diagonal terms&rdquo;</p>
-
 <p>Here &ldquo;off-diagonal terms&rdquo; means terms connecting eigenstates of <code>$\hat H_0$</code> with different energy. Therefor the procedure only block-diagonalizes the Hamiltonian. Terms (diagonal and off-diagonal) connecting eigenstates of <code>$\hat H_0$</code> with the same energy, namely the matrix in the secular equation of degenerate perturbation theory, will be produced.</p>
-
 <p>Define the projector <code>$\hat P_n$</code> projecting onto <code>$E_n$</code> subspace. Then <code>$1=\sum_n \hat P_n$</code> , and define <code>$\hat V_{nm}=\hat P_n\hat V\hat P_m$</code> . Then we have: <code>$[\hat H_0,\hat V_{nm}]=(E_n^{(0)}-E_m^{(0)})\hat V_{nm}$</code> , for <code>$\hat H_0\hat P_n=\hat P_n\hat H_0=E_n^{(0)}\hat P_n$</code> .</p>
-
 <p>Consider <code>$\hat H^{(1)}=e^{\ti\lambda \hat S_0}\hat H e^{-\ti\lambda \hat S_0}$</code> , by Baker-Hausdorff formula:</p>
-
-<div>$$\hat H^{(1)}=\hat H_0 + \lambda([\ti\hat S_0,\hat H_0]+\hat V)+\lambda^2\Big(\frac 1 2 [\ti\hat S_0,[\ti\hat S_0,\hat H_0]]+[\ti\hat S_0,\hat H_0]\Big)+\cdots$$</div>
-
+<!-- raw HTML omitted -->
 <p>we want to cancel <code>$\hat V_{nm}$</code> terms with <code>$n\neq m$</code> in <code>$\hat H$</code> up to the order <code>$\lambda$</code> , that is to say we need <code>$[\ti\hat S_0,\hat H_0]+\sum_{n\neq m}\hat V_{nm}=0$</code> . the solution is: <code>$\ti\hat S_0=\sum_{n\neq m} (E_n^{(0)}-E_m^{(0)})^{-1}\hat V_{nm}$</code> .</p>
-
 <p>Then we have:</p>
-
-<div>$$\begin{aligned}
-\hat H^{(1)} &= \hat H_0+\lambda \sum_n \hat V_{nn} +\lambda^2 \Big(-\frac 1 2 [\ti\hat S_0,\sum_{n\neq m}\hat V_{nm}]+\lambda^2[\ti\hat S_0,\hat H_0] \Big)+\mathcal{O}(\lambda^3) \\
-&=\hat H_0 + \lambda \sum_n \hat V_{nn} +\lambda^2 \sum_{n\neq m} \frac {\hat V_{nm}\hat V_{mn}} {E_n^{(0)}-E_m^{(0)}}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Which is the 2nd perturbation result.</p>
-
 <p>And this procedure can also be carried out to arbitrary order of <code>$\lambda$</code> , using the unitary transformations with generators of different order of <code>$\lambda$</code> to cancel the off-diagonal elements of the Hamiltonian with the last order.</p>
-
 <h1 id="time-dependent-perturbation-theory">Time-Dependent Perturbation Theory</h1>
-
 <h2 id="the-interaction-picture">The Interaction Picture</h2>
-
 <p>Given the Schrodinger Picture time-dependent Hamiltonian: <code>$\hat H_S(t)=\hat H_0+\hat V_S(t)$</code> , where <code>$\hat H_0$</code> is independent of time, the time evolution is:</p>
-
-<div>$$\ti\hbar \frac {\td} {\td t} \ket{\psi(t)}_S = \Big(\hat H_0+\hat V_S(t)\Big)\ket{\psi(t)}_S$$</div>
-
+<!-- raw HTML omitted -->
 <p><em>[Definition]</em> : <code>Interaction Picture</code> is the the Schrodinger Picture with an unitary transformation:</p>
-
-<div>$$\begin{aligned}
-\ket{\psi}_I &= e^{\ti\hat H_0 t/\hbar }\ket{\psi}_S \\
-\hat O_I(t) &= e^{\ti\hat H_0t/\hbar} \hat O_S(t)e^{-\ti\hat H_0t/\hbar}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then the expectation of observable is invariant. And the time evolution is:</p>
-
-<div>$$\ti\hbar \frac {\td} {\td t} \ket{\psi(t)}_I = \hat V_I(t)\ket{\psi(t)}_I$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then the time evolution operator in the interaction picture: <code>$\ket{\psi(t)}_I = \hat U_I(t)\ket{\psi(t=0)}_I$</code> can be write as the Dyson series:</p>
-
-<div>$$\hat U_I(t)=1+\frac {-\ti} {\hbar}\int_{t_1=0}^t \hat V_I(t_1)\td t_1 + \big(\frac {-\ti} {\hbar} \big)^2 \int_{t_1=0}^t \int_{t_2=0}^{t_1}\hat V_I(t_1)\hat V_I(t_2)\td t_1\td t_2+\cdots$$</div>
-
+<!-- raw HTML omitted -->
 <p>If the time evolution operator in Schrodinger picture is <code>$\hat U_S(t)$</code> , we have the relation:</p>
-
-<div>$$\hat U_I(t)=e^{\ti \hat H_0 t/\hbar} \hat U_S(t)$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>We have:</p>
-
-<div>$$\ket{\psi(t)}_I = e^{\ti \hat H_0 t/\hbar} \ket{\psi(t)}_S = \hat U_I(t)\ket{\psi(t=0)}_I = \hat U_I(t)\ket{\psi(t=0)}_S$$</div>
-
+<!-- raw HTML omitted -->
 <p>That is:</p>
-
-<div>$$\ket{\psi(t)}_S = e^{-\ti \hat H_0 t/\hbar} \hat U_I (t)\ket{\psi(t=0)}_S$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then:</p>
-
-<div>$$\hat U_S(t)=e^{-\ti \hat H_0 t/\hbar} \hat U_I(t)$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p><em>[Definition]</em> : <code>transition probability</code> : let <code>$\ket{i}$</code> and <code>$\ket{f}$</code> be normalized eigenstates of <code>$\hat H_0$</code> respect to energy <code>$E_i,E_f$</code> . Start at state <code>$\ket{i}$</code> at <code>$t=0$</code> , evolve over time <code>$t$</code> , the prabability of final state <code>$\ket{f}$</code> is :</p>
-
-<div>$$\mathbb{P}_{i\rightarrow f}(t) = |\bra{f}\hat U_S(t)\ket{i}|^2 = |\bra{f}\hat U_I(t)\ket{i}|^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>Here we can compute the transition probability order by order by the order-by-order computation of Dyson series for <code>$\hat U_I$</code> . The generic expression is:</p>
-
-<div>$$\bra{f}\hat U_I(t)\ket{i} = \bra{f}i\rangle + \frac {-\ti} \hbar \int_{t_1=0}^t e^{\ti(E_f-E_i)t_1/\hbar} V_{fi}(t)\td t_1 +\cdots$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>The expression in the definition is caused by the <code>$e^{\ti \hat H_0 t/\hbar}$</code> will just contribute a phase factor, which will not change the probability.</p>
-
 <p>Firstly we compute the probability amplitude:</p>
-
-<div>$$\bra{f}\hat U_I(t)\ket{i} = \bra{f}i\rangle + \frac {-\ti} \hbar \int_{t_1=0}^t \bra{f}\hat V_I(t)\ket{i}\td t_1 + \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{t_1=0}^t \int_{t_2=0}^{t_1}\bra{f}\hat V_I(t_1)\hat V_I(t_2)\ket{i}\td t_1\td t_2 + \cdots$$</div>
-
+<!-- raw HTML omitted -->
 <p>We can re write the function in the integral by <code>$\hat V_I(t)=e^{\ti \hat H_0 t/\hbar}\hat V_S(t)e^{-\ti \hat H_0 t/\hbar}$</code> :</p>
-
-<div>$$\begin{aligned}
-\bra{f}\hat V_I(t)\ket{i} &= (e^{-\ti \hat H_0 t/\hbar} \ket{f},\hat V_S(t)e^{-\ti \hat H_0 t/\hbar}\ket{i}) = e^{\ti(E_f-E_i)t/\hbar} V_{fi}(t) \\
-\bra{f}\hat V_I(t_1)\hat V_I(t_2)\ket{i} &= \sum_{E,a}\bra{f}\hat V_I(t_1)\ket{E,a}\bra{E,a}\hat V_I(t_2)\ket{i}=\sum_{E,a}e^{\ti (E_f-E)t_1/\hbar} e^{\ti(E-E_i)t_2/\hbar} V_{f;E,a}(t_1)V_{E,a;i}(t_2) \\
-\cdots
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the index <code>$a$</code> note the degeneracy of energy level : <code>$1=\sum_{E,a}\ket{E,a}\bra{E,a}$</code></p>
-
 <p>Then we can write the integral as:</p>
-
-<div>$$\bra{f}\hat U_I(t)\ket{i} = \bra{f}i\rangle + \frac {-\ti} \hbar \int_{t_1=0}^t e^{\ti(E_f-E_i)t_1/\hbar} V_{fi}(t)\td t_1 +\cdots$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="transition-probability-constant-perturbation">Transition Probability: Constant Perturbation</h2>
-
 <p>We consider the constant perturbation first, which means that <code>$\hat V_S(t)=\hat V$</code> is independent of time. Then up to the first order:</p>
-
-<div>$$\bra{f}\hat U_I(t)\ket{i}=\bra{f}i\rangle - \frac {\ti} {\hbar} \frac {\hbar} {\ti(E_f-E_i)}(e^{\ti(E_f-E_i)t/\hbar}-1)V_{fi}+\mathcal{O}(V^2)$$</div>
-
+<!-- raw HTML omitted -->
 <p>And the probability with <code>$\bra{f}i\rangle=0$</code> :</p>
-
-<div>$$\mathbb{P}_{i\rightarrow f}(t) = \frac {4\sin^2\frac {E_f-E_i} {2\hbar}t} {(E_f-E_i)^2} |V_{fi}|^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>And the <code>transition rate</code> is defined by the average transition probability over time with long time limit. The result is also called as <code>Fermi's Golden Rule</code>:</p>
-
-<div>$$\Gamma_{i\rightarrow f} \equiv \lim_{t\rightarrow +\infty} \frac {\mathbb{P}_{i\rightarrow f}(t)} {t} = \frac {2\pi} \hbar \delta(E_f-E_i)|V_{fi}|^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>One can also define the <code>decay rate</code> , which is the sum of <code>$\Gamma_{i\rightarrow f}$</code> over all final state <code>$f$</code> . And the Fermi&rsquo;s Golden Rule will lead that:</p>
-
-<div>$$\Gamma_i = \sum_f \Gamma_{i\rightarrow f} \approx \int_E \td E \ D(E)\Gamma_{i\rightarrow f(E)} = \frac {2\pi} {\hbar} D(E_i) \big\langle \bra{E_i,a}\hat V \ket{i}\big\rangle_a $$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the index <code>$a$</code> note the degeneracy of energy level, the average is made respecting to <code>$a$</code></p>
-
 <h2 id="transition-probability-harmonic-perturbation">Transition Probability: Harmonic Perturbation</h2>
-
 <p>Let us consider the harmonic perturbation, which is usually appear at the laser lattice. With:</p>
-
-<div>$$\hat V_S(t) = \hat V e^{\ti \omega t} + \hat V^\dagger e^{-\ti \omega t}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\omega$</code> is a nonzero real constant, <code>$\hat V$</code> may not be hermitian but t-independent.</p>
-
 <p>Keep up to 1st order term in the Dyson series:</p>
-
-<div>$$\bra{f}\hat U_I(t)\ket{i}=\bra{f}i\rangle -\Big\{ \frac {V_{fi}} {E_f-E_i+\hbar \omega} (e^{\ti(E_f-E_i+\hbar\omega)t/\hbar}-1)+\frac {V_{fi}^\dagger} {E_f-E_i-\hbar\omega} (e^{\ti(E_f-E_i-\hbar\omega)t/\hbar}-1) \Big\}+\mathcal{O}(V^2)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$V_{fi}=\bra{f}\hat V\ket{i} \ ; \ V_{fi}^\dagger = \bra{f}\hat V^\dagger \ket{i}=V_{if}^*$</code> .</p>
-
 <p>And the transition probability with <code>$\bra{f}i\rangle=0$</code> :</p>
-
-<div>$$\mathbb{P}_{i\rightarrow f}(t) = \frac {4\sin^2\frac {\Delta E+\hbar\omega} {2\hbar}t} {(\Delta E + \hbar \omega)^2} |V_{fi}|^2 +  \frac {4\sin^2\frac {\Delta E-\hbar\omega} {2\hbar}t} {(\Delta E - \hbar \omega)^2} |V_{if}^*|^2 + \frac {4\sin\frac {\Delta E+\hbar\omega}{2\hbar}t \sin\frac {\Delta E-\hbar\omega}{2\hbar}t} {(\Delta E)^2-(\hbar\omega)^2}\Big(V_{fi}^*V_{if}^*e^{-\ti\omega t}+V_{if}V_{fi}e^{\ti\omega t}\Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>&lsquo;Fermi&rsquo;s Golden Rule&rsquo;:</p>
-
-<div>$$\Gamma_{i\rightarrow f} \equiv \lim_{t\rightarrow +\infty} \frac {\mathbb{P}_{i\rightarrow f}(t)} {t} = \frac {2\pi} {\hbar} \Big\{\delta(E_f-E_i+\hbar\omega)|V_{fi}|^2 +\delta(E_f-E_i-\hbar\omega)|V_{if}^*|^2\Big\}$$</div>
-
+<!-- raw HTML omitted -->
 <p><code>Detailed Balance</code> : note that <code>$\Gamma_{i\rightarrow f}(\omega)=\Gamma_{f\rightarrow i}(-\omega)$</code> . Roughly speaking, absorption rate = emission rate. In special cases <code>$V_{if}=V_{fi}$</code> , we will further have <code>$\Gamma_{i\rightarrow f}=\Gamma_{f\rightarrow i}$</code></p>
-
 <h2 id="relation-to-time-independent-theory">Relation to Time-Independent Theory</h2>
-
-<p>Consider a standard time-independent theory question: <code>$\hat H=\hat H_0+\hat V$</code> where the perturbation term <code>$\hat V$</code> is independent of time. <br />
-The <code>normalized</code> eigenstates of <code>$\hat H_0$</code> are <code>$\hat H_0\ket{\psi_n^{(0)}}=E_n^{(0)}\ket{\psi_n^{(0)}}$</code><br />
-The <code>normalized</code> eigenstates of <code>$\hat H$</code> are <code>$\hat H\ket{\psi_n}=E_n\ket{\psi_n}$</code><br />
+<p>Consider a standard time-independent theory question: <code>$\hat H=\hat H_0+\hat V$</code> where the perturbation term <code>$\hat V$</code> is independent of time.<br>
+The <code>normalized</code> eigenstates of <code>$\hat H_0$</code> are <code>$\hat H_0\ket{\psi_n^{(0)}}=E_n^{(0)}\ket{\psi_n^{(0)}}$</code><br>
+The <code>normalized</code> eigenstates of <code>$\hat H$</code> are <code>$\hat H\ket{\psi_n}=E_n\ket{\psi_n}$</code><br>
 For simplicity denote <code>$\bra{\psi_n^{(0)}}\hat V \ket{\psi_m^{(0)}}=V_{nm}$</code></p>
-
 <p>Then with the time-independent theory we have:</p>
-
-<div>$$\bra{\psi_n^{(0)}}\hat U_I(t)\ket{\psi_n^{(0)}}=e^{\ti E_n^{(0)}t/\hbar}\bra{\psi_n^{(0)}}\hat U_S(t)\ket{\psi_n^{(0)}}=\sum_m |\bra{\psi_n^{(0)}}\psi_m\rangle|^2 e^{-\ti E_m t/\hbar} e^{\ti E_n^{(0)}t/\hbar}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Consider non-degenerate case, <code>$\psi_n$</code> has large overlap with only <code>$\ket{\psi_n^{(0)}}$</code> with <code>$Z_n=|\bra{\psi_n^{(0)}}\psi_n\rangle|^2$</code> :</p>
-
-<div>$$\begin{aligned}
-\bra{\psi_n^{(0)}}\hat U_I(t)\ket{\psi_n^{(0)}}&= Z_n e^{-\ti(E_n-E_n^{(0)})t/\hbar}+\sum_{m,m\neq n} |\bra{\psi_n^{(0)}}\psi_m\rangle|^2 e^{-\ti E_m t/\hbar}e^{\ti E_n^{(0)}t/\hbar} \\
-&\approx Z_n + Z_n \frac {-\ti} \hbar (E_n-E_n^{(0)}) t + Z_n \frac 1 2 \Big(\frac {-\ti(E_n-E_n^{(0)})t} \hbar \Big)^2 +\sum_{m,m\neq n} |\bra{\psi_n^{(0)}}\psi_m\rangle|^2 e^{-\ti E_m t/\hbar}e^{\ti E_n^{(0)}t/\hbar}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>While compute <code>$\bra{\psi_n^{(0)}}\hat U_I(t)\ket{\psi_n^{(0)}}$</code> by Dyson series, up to 2nd order this is:</p>
-
-<div>$$\begin{aligned}
-\bra{\psi_n^{(0)}}\hat U_I(t)\ket{\psi_n^{(0)}} &= 1+\frac {-\ti} \hbar \int_{t_1=0}^t \td t_1 \ \bra{\psi_n^{(0)}}\hat V_I(t_1)\ket{\psi_n^{(0)}} + (\frac {-\ti}\hbar)^2 \int_{0}^t \td t_1 \int_0^{t_1}\td t_2 \bra{\psi_n^{(0)}}\hat V_I(t_1)\hat V_I(t_2)\ket{\psi_n^{(0)}} \\
-&=\Big[1-\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {(E_n^{(0)}-E_m^{(0)})^2}\Big] + \frac {-\ti} \hbar \big(V_{nn}+\sum_{m\neq n}\frac {V_{nm}V_{mn}} {E_n^{(0)}-E_m^{(0)}}\big)t+\frac 1 2 \big(\frac {-\ti V_{nn}t} \hbar\big)^2  \\
-&\indent -  \big(\frac {-\ti} \hbar\big)^2 \sum_{m\neq n} V_{nm} V_{mn} \frac {e^{\ti(E_n^{(0)}-E_m^{(0)})t/\hbar}} {\ti(E_m^{(0)}-E_n^{(0)})/\hbar \cdot \ti(E_n^{(0)}-E_m^{(0)})/\hbar}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Compare with these two results:</p>
-
-<div>$$\begin{aligned}
-E_n-E_n^{(0)} &= V_{nn}+\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {E_n^{(0)}-E_m^{(0)}} \\
-Z_n&=1-\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {(E_n^{(0)}-E_m^{(0)})^2}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Consistent with the time-independent perturbation theory.</p>
 
           </div>
@@ -1266,7 +1040,7 @@ Z_n&=1-\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {(E_n^{(0)}-E_m^{(0)})^2}
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>5 minutes read</li>
+      <li>2 minutes read</li>
     
   </ul>
   
@@ -454,163 +454,69 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="klein-gordon-field">Klein-Gordon Field</h1>
-
+            <h1 id="klein-gordon-field">Klein-Gordon Field</h1>
 <h2 id="formalism">Formalism</h2>
-
 <p><em>[Definition]</em> : <code>Klein-Gordon</code> Field is a class of scalar fields. For the <code>real valued</code> field, the Lagrangian(Lorentz-scalar) is:</p>
-
-<div>$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>And for the <code>complex valued</code> field, the Lagrangian is:</p>
-
-<div>$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$</div>
-
+<!-- raw HTML omitted -->
 <p>It can be treated as two independent real value field: <code>$\phi=\phi_r+\ti \phi_i$</code> and <code>$\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</code></p>
-
 <p>We discuss the real valued field hereafter (and we will see that real-valued means <code>neutral</code>):</p>
-
 <p>The equation of motion is:</p>
-
-<div>$$(\partial^{\mu}\partial_{\mu} + m^2) \phi = (\square + m^2)\phi=0$$</div>
-
-<p>Where <code>$\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$</code> is <code>d'Alembert operator</code> . <br />
+<!-- raw HTML omitted -->
+<p>Where <code>$\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$</code> is <code>d'Alembert operator</code> .<br>
 And the <code>canonically conjugate field</code>(momentum):</p>
-
-<div>$$\pi = \partial_0 \phi $$</div>
-
+<!-- raw HTML omitted -->
 <p>Then one can write down the Hamiltonian:</p>
-
-<div>$$H = \frac 1 2  \int \td^3 \bm{x} (\pi^2+ \nabla\phi\cdot \nabla \phi+m^2\phi^2)$$</div>
-
+<!-- raw HTML omitted -->
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
-
 <p>To solve the field equation, one can use the Fourier transformation:</p>
-
-<div>$$\phi(x) = \int \frac {\td^3\bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti\omega t} a(\bm{k},\omega) = \int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{-\ti k_\mu x^\mu} a(k)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the 4-vector <code>$k=(\omega,\bm{k})$</code> . Then the equation will be:</p>
-
-<div>$$\int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} (-k_\mu k^\mu+m^2) e^{-\ti k_\mu x^\mu} a(k) = 0$$</div>
-
+<!-- raw HTML omitted -->
 <p>Which requires that <code>$-k_\mu k^\mu+m^2=0$</code> , which is the <code>dispersion relationship</code> :</p>
-
-<div>$$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With this relation, we separate the general solution to two items according to the sign of frequency:</p>
-
-<div>$$\begin{aligned}
-\phi(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
-\pi(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>One can rewrite the Hamiltonian with <code>$a(\bm{k})$</code> as:</p>
-
-<div>$$H = \frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</div>
-
+<!-- raw HTML omitted -->
 <p>In which we hold the order of <code>$a$</code> , which will let the conclusion hold in quantum theory</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>We need to compute three items in Hamiltonian:</p>
-
-<div>$$\begin{aligned}
-\int \td^3\bm{x} \pi^2 &= \int \td^3\bm{x} \int \frac {\td^3 \bm{k}_1 \td^3\bm{k}_2 (-\omega_1\omega_2)} {(2\pi)^3} \sqrt{\frac 1 {4\omega_1\omega_2}} \Big\{e^{\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}-\ti(\omega_1+\omega_2)t}a(\bm{k}_1)a(\bm{k}_2) \\
-& \ \ \ \ + e^{-\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}+\ti(\omega_1+\omega_2)t}a(\bm{k}_1)^*a(\bm{k}_2)^* \\
-& \ \ \ \ -e^{\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}-\ti(\omega_1-\omega_2)t} a(\bm{k}_1)a(\bm{k}_2)^* \\
-& \ \ \ \ -e^{-\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}+\ti(\omega_1-\omega_2)t} a(\bm{k}_1)^*a(\bm{k}_2) \Big\} \\
-&=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
-\\
-\int\td^3\bm{x}(\nabla \phi)^2 &= \frac 1 2 \int \td^3 \bm{k} \ \frac 1 {2\omega_{|\bm{k}|}}  |\bm{k}|^2 \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
-\\
-\int\td^3\bm{x}(m \phi)^2 &= \frac 1 2 \int \td^3 \bm{k} \ \frac {m^2} {\omega_{|\bm{k}|}} \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*+e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) + e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
-
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<p>\end{aligned}$$<!-- raw HTML omitted --></p>
 <p>Then we have the result:</p>
-
-<div>$$H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="charged-klein-gordon-field">Charged Klein-Gordon Field</h2>
-
 <p>Complex valued Klein-Gordon Field has a internal degree of freedom. It allow the complex valued Klein-Gordon Field to describe the charged spin-0 particles. Here we will show it by the Noether Theorem.</p>
-
 <p>Complex valued Klein-Gordon Field has an <code>$\text{U}(1)$</code> symmetry:</p>
-
-<div>$$\phi\rightarrow \phi' = \phi e^{\ti \alpha} \ ; \ \phi^* \rightarrow \phi'^*=\phi' e^{-\ti \alpha}$$</div>
-
+<!-- raw HTML omitted -->
 <p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with <code>$\delta x=0 , \delta \phi=\ti \phi\delta \alpha$</code> as the generator)</p>
-
-<div>$$Q = \int \td^3 \bm{x} \frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi)} \delta \phi+\frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi^*)} \delta \phi^* \sim \ti \int \td^3 \bm{x} \ (\pi \phi - \pi^* \phi^*) $$</div>
-
+<!-- raw HTML omitted -->
 <p>With the formalism of complex valued Klein-Gordon Field, we can use two set of real valued Klein-Gordon Field to describe it:</p>
-
-<div>$$\phi_r \sim a(\bm{k}) \ ; \ \phi_i \sim b(\bm{k})$$</div>
-
+<!-- raw HTML omitted -->
 <p>And write down the expression of <code>$Q$</code> :</p>
-
-<div>$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>With:</p>
-
-<div>$$\begin{aligned}
-\phi_r(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
-\pi_r(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
-\phi_i(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\} \\
-\pi_i(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And:</p>
-
-<div>$$\phi = \phi_r+\ti \phi_i \ ; \ \pi=\frac 1 2 (\pi_r-\ti\pi_i) $$</div>
-
+<!-- raw HTML omitted -->
 <p>That is caused by the fact:</p>
-
-<div>$$\pi=\frac {\delta \mathcal{L}} {\delta \flo{\phi}}=\frac {\delta \mathcal{L}} {\delta \flo{\phi}_r}\frac {\partial\flo{\phi}_r} {\partial \flo{\phi}}+\frac {\delta \mathcal{L}} {\delta \flo{\phi}_i}\frac {\partial\flo{\phi}_i} {\partial \flo{\phi}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Like:</p>
-
-<div>$$\frac {\partial} {\partial z}=\frac {\partial \text{Re} z} {\partial z}\frac {\partial} {\partial \text{Re} z}+\frac {\partial \text{Im} z} {\partial z}\frac {\partial} {\partial \text{Im} z}=\frac 1 2\frac {\partial} {\partial \text{Re} z}+\frac 1 {2\ti}\frac {\partial} {\partial \text{Im} z}$$</div>
-
+<!-- raw HTML omitted -->
 <p>with <code>$\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$</code>.</p>
-
 <p>Then the charge:</p>
-
-<div>$$Q=\ti \int \td^3 \bm{x} \ (\pi \phi-\pi^*\phi^*)=\int \td^3 \bm{x} \ (\pi_i \phi_r -\pi_r \phi_i)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we need only compute the integral of <code>$\pi_i\phi_r$</code> , and another term can be obtained by permute the <code>$a$</code> and <code>$b$</code> :</p>
-
-<div>$$\begin{aligned}
-\int \td^3 \bm{x} \pi_i \phi_r &= \int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3} \ti \omega_1 \frac 1 {\sqrt{4\omega_1\omega_2}}\Big\{-e^{\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} - \ti (\omega_1+\omega_2)t} b(\bm{k}_1)a(\bm{k}_2) \\
-&\indent -e^{\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} - \ti (\omega_1-\omega_2)t} b(\bm{k}_1)a(\bm{k}_2)^* + e^{-\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} + \ti (\omega_1-\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)  \\
-&\indent +e^{-\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} + \ti (\omega_1+\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)^* \Big\} \\
-&=\int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}b(\bm{k})a(-\bm{k})-b(\bm{k})a(\bm{k})^* +b(\bm{k})^* a(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}b(\bm{k})^*a(-\bm{k})^* \Big\} \\
-\int \td^3 \bm{x} \pi_r \phi_i &= \int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(\bm{k})b(-\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(\bm{k})^*b(-\bm{k})^* \Big\} \\
-&=\int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(-\bm{k})b(\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(-\bm{k})^*b(\bm{k})^* \Big\} \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have:</p>
-
-<div>$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Or with that <code>$c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$</code> , we have:</p>
-
-<div>$$Q=\int \td^3 \bm{k}(c_+(\bm{k})^*c_+(\bm{k})-c_-(\bm{k})^*c_-(\bm{k}))$$</div>
-
+<!-- raw HTML omitted -->
 <p>This conclusion hold in Quantum theory where <code>$a,a^*$</code> are not commutable but <code>$a,b$</code> are commutable.</p>
 
           </div>
@@ -848,7 +754,7 @@ And the <code>canonically conjugate field</code>(momentum):</p>
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

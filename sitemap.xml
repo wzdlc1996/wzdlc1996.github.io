@@ -38,37 +38,12 @@
   </url>
   
   <url>
-    <loc>https://wzdlc1996.github.io/series/applied-mathematics/</loc>
-    <lastmod>2019-10-29T11:36:42+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/tags/math/</loc>
-    <lastmod>2019-10-29T11:36:42+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/categories/mathematics/</loc>
-    <lastmod>2019-10-29T11:36:42+08:00</lastmod>
+    <loc>https://wzdlc1996.github.io/notes/qm/manybody3/</loc>
+    <lastmod>2019-04-07T17:09:13+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wzdlc1996.github.io/notes/</loc>
-    <lastmod>2019-10-29T11:36:42+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/notes/amath/randomvariable/</loc>
-    <lastmod>2019-10-29T11:36:42+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/series/</loc>
-    <lastmod>2019-10-29T11:36:42+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wzdlc1996.github.io/notes/qm/manybody3/</loc>
     <lastmod>2019-04-07T17:09:13+08:00</lastmod>
   </url>
   
@@ -79,6 +54,11 @@
   
   <url>
     <loc>https://wzdlc1996.github.io/series/quantum-mechanics/</loc>
+    <lastmod>2019-04-07T17:09:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/series/</loc>
     <lastmod>2019-04-07T17:09:13+08:00</lastmod>
   </url>
   
@@ -238,6 +218,11 @@
   </url>
   
   <url>
+    <loc>https://wzdlc1996.github.io/tags/math/</loc>
+    <lastmod>2018-11-12T14:38:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzdlc1996.github.io/notes/qm/symmetry/</loc>
     <lastmod>2018-11-12T14:38:46+08:00</lastmod>
   </url>
@@ -275,6 +260,11 @@
   <url>
     <loc>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</loc>
     <lastmod>2018-10-31T14:48:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzdlc1996.github.io/notes/amath/randomvariable/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>

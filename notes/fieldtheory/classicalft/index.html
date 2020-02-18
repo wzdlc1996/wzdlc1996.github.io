@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>5 minutes read</li>
     
   </ul>
   
@@ -454,327 +454,134 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="introduction">Introduction</h1>
-
-<p>Now we will study <code>Fields</code> . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by <code>$\phi(\bm{x},t)$</code>. <br />
-<mark>Then the field is a system with an infinite number(uncountable) of degrees of freedom. </mark> <br />
+            <h1 id="introduction">Introduction</h1>
+<p>Now we will study <code>Fields</code> . Each point of a (finite or infinite) region in space will be associated with some continuous field variable which will be denoted by <code>$\phi(\bm{x},t)$</code>.<br>
+<!-- raw HTML omitted -->Then the field is a system with an infinite number(uncountable) of degrees of freedom. <!-- raw HTML omitted --><br>
 The dynamical variables of the theory are now the values of the field <code>$\phi(\bm{x})$</code> <code>at each point of space</code> . In general, the field can contain some internal degrees of freedom.</p>
-
 <p>The <code>Lagrange function</code> now is a <code>functional</code> of the field and its differential respects to time:</p>
-
-<div>$$L(t) = L[\phi(\bm{x},t),\partial_t\phi(\bm{x},t)]$$</div>
-
+<!-- raw HTML omitted -->
 <p>In general, it depends on the value of <code>$\phi,\partial_t \phi$</code> at all points in space. Note that the functional does not depend on the coordinate <code>$\bm{x}$</code> itself.</p>
-
 <h2 id="the-lagrangian-formalism">The Lagrangian Formalism</h2>
-
 <p>In this series, we will only study a class of fields, which is called as the <code>local field theories</code> without high order of time-derivative. Namely:</p>
-
-<div>$$L(t) = \int \td^3 \bm{x} \mathcal{L}(\phi(\bm{x},t),\nabla \phi(\bm{x},t),\partial_{t}\phi(\bm{x},t))$$</div>
-
+<!-- raw HTML omitted -->
 <p>There should be no high order time-derivative in right-hand-side. Function <code>$\mathcal{L}$</code> is called <code>Lagrange density</code> or <code>Lagrangian</code> in this series. The gradient describes the <code>local interaction</code> of field.</p>
-
 <p>One can write a covariant <code>Action</code> abstractly :</p>
-
-<div>$$S=\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$</div>
-
-<p>where <code>$x$</code> denotes the 4-vector <code>$(\bm{x},t)$</code> and <code>$\td^4x$</code> is the <code>invariant-volume of cell</code>. The invariance of action under Lorentz Transformation requires that <mark>Lagrangian should be a Lorentz-scalar</mark></p>
-
+<!-- raw HTML omitted -->
+<p>where <code>$x$</code> denotes the 4-vector <code>$(\bm{x},t)$</code> and <code>$\td^4x$</code> is the <code>invariant-volume of cell</code>. The invariance of action under Lorentz Transformation requires that <!-- raw HTML omitted -->Lagrangian should be a Lorentz-scalar<!-- raw HTML omitted --></p>
 <p>One can obtain the equation of motion (<code>Euler-Lagrange equation</code>) by variation method:</p>
-
-<div>$$\frac {\partial \mathcal{L}} {\partial \phi} - \partial_{\mu} \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi)}=0$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Because the variation of action is zero:</p>
-
-<div>$$\begin{aligned}
-\delta S &= \int \td^4 x \Big\{\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi +\sum_{\mu=0}^3 \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi)} \delta(\partial_{\mu}\phi)  \Big\} \\
-&=\int \td^4 x \Big\{\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi + \frac {\partial \mathcal{L}} {\partial(\partial_{0}\phi)} \partial_{0}\delta\phi + \sum_{i=1}^3 \frac {\partial \mathcal{L}} {\partial(\partial_i\phi)} \partial_i\delta\phi  \Big\} \\
-&=\int \td^4 x\frac {\partial \mathcal{L}} {\partial \phi} \delta \phi + \int \gamma\td^3\bm{x} \frac {\partial \mathcal{L}} {\partial(\partial_{0}\phi)} \delta\phi \Big|_{t_i}^{t_f} - \int \td^4 x\partial_{0} \frac {\partial \mathcal{L}} {\partial(\partial_{0}\phi)} \delta\phi \\
-&\ \ \ \ + \int_{\partial \Omega} \{\cdots\} -\int \td^4x \sum_{i=1}^3\partial_i \frac {\partial \mathcal{L}} {\partial(\partial_i\phi)} \delta\phi \\
-&=\int \td^4 x \Big\{\frac {\partial \mathcal{L}} {\partial \phi} - \partial_{\mu} \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi)}\Big\}\delta \phi\\
-&=0
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the variation of field <code>$\delta\phi$</code> at initial(final) time <code>$t_i(t_f)$</code> shall be zero, and the integral on surface of whole space shall vanish too.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>It is easy to generalize this equation to the field with multi independent internal degrees of freedom: <code>$\phi\sim \phi^r \ ; \ r=1,\cdots,N$</code> :</p>
-
-<div>$$\frac {\partial \mathcal{L}} {\partial \phi^r} - \partial_{\mu} \frac {\partial \mathcal{L}} {\partial(\partial_{\mu}\phi^r)}=0$$</div>
-
+<!-- raw HTML omitted -->
 <h2 id="the-hamilton-formalism">The Hamilton Formalism</h2>
-
 <p>To apply Hamilton&rsquo;s formalism to a field theory, we need first define the <code>canonically conjugate momentum</code> :</p>
-
-<div>$$\pi(x)\equiv\pi(\bm{x},t)=\frac {\delta L(t)} {\delta\flo{\phi}(\bm{x},t)} = \frac {\partial\mathcal{L}} {\partial (\partial_0 \phi)} $$</div>
-
+<!-- raw HTML omitted -->
 <p>And the <code>Hamiltonian</code> of a field system is:</p>
-
-<div>$$H(t) = \int \td^3 \bm{x} \mathcal{H} =\int \td^3 \bm{x} \Big(\pi(x)\flo{\phi}(x)-\mathcal{L} \Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>And one can define the <code>Poisson Bracket</code> of two functionals <code>$F[\phi,\pi],G[\phi,\pi]$</code> of field and its canonically conjugate field(momentum field):</p>
-
-<div>$$\{F,G\}_{PB}=\int \td^3 \bm{x} \Big\{\frac {\delta F} {\delta \phi(x)}\frac {\delta G} {\delta \pi(x)} - \frac {\delta F} {\delta \pi(x)} \frac {\delta G} {\delta \phi(x)} \Big\} $$</div>
-
+<!-- raw HTML omitted -->
 <p>If <code>$F,G$</code> are all locally depend on field, that means they can expressed as the spatial integral of density functions <code>$\mathcal{F}(\phi(x),\pi(x)),\mathcal{G}(\phi(x),\pi(x))$</code> , the Poisson bracket will be:</p>
-
-<div>$$\{F,G\}_{PB}=\int \td^3 \bm{x} \Big\{\frac {\partial\mathcal{F}} {\partial \phi(x)}\frac {\partial\mathcal{G}} {\partial \pi(x)} - \frac {\partial\mathcal{F}} {\partial \pi(x)} \frac {\partial\mathcal{G}} {\partial \phi(x)} \Big\} $$</div>
-
+<!-- raw HTML omitted -->
 <p>By Poisson bracket, one can write down the equation of motion of the time-dependent function: <code>$F(t)=F[\phi,\pi]$</code> in Hamilton Formalism:</p>
-
-<div>$$\frac {\td F(t)} {\td t} = \{F,H\}_{PB}$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>For any functional of <code>$\phi,\pi$</code> : <code>$F(t)=F[\phi,\pi]$</code> , we have its derivative respects of time is:</p>
-
-<div>$$\frac {\td F(t)} {\td t} = \int \td^3 \bm{x} \Big\{\frac {\delta F} {\delta \phi(x)} \flo{\phi}+\frac {\delta F} {\delta \pi(x)} \flo{\pi} \Big\}$$</div>
-
+<!-- raw HTML omitted -->
 <p>As for Hamiltonian, for we have:</p>
-
-<div>$$H(t) = \int \td^3 \bm{x} \ \pi(x)\flo{\phi}(x)-L$$</div>
-
+<!-- raw HTML omitted -->
 <p>or its variation:</p>
-
-<div>$$\delta H = \int \td^3 \bm{x} \ \pi \delta\flo{\phi} + \delta\pi \flo{\phi} -\delta L $$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\delta L = \int \td^3 \bm{x} \pi \delta \flo{\phi} + \frac {\delta L} {\delta \phi(x)}\delta \phi (x)=\int \td^3 \bm{x} \pi\delta\flo{\phi}+\flo{\pi}\delta \phi$</code></p>
-
 <p>Which is yielded by the mechanics of point system.</p>
-
 <p>Then these equations directly yield:</p>
-
-<div>$$\flo{\phi} = \frac {\delta H} {\delta \pi} \ ; \ \flo{\pi}=-\frac {\delta H} {\delta \phi} $$</div>
-
+<!-- raw HTML omitted -->
 <p>And :</p>
-
-<div>$$\frac {\td F(t)} {\td t} = \{F,H\}_{PB}$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Explicitly, when Hamilton density is only depend on the field, momentum and their gradient:</p>
-
-<div>$$\begin{aligned}
-\frac {\partial \phi(\bm{x},t)} {\partial t} &= \frac {\delta H} {\delta \pi(\bm{x},t)} = \frac {\partial \mathcal{H}} {\partial \pi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \phi)} \\
-\frac {\partial \pi(\bm{x},t)} {\partial t} &= -\frac {\delta H} {\delta \phi(\bm{x},t)} =- \frac {\partial \mathcal{H}} {\partial \phi} + \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \pi)}
-\end{aligned}$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>First we compute the variation&rsquo;s of Hamiltonian in terms of Hamilton density:</p>
-
-<div>$$\begin{aligned}
-\delta H &=\delta \int \td^3\bm{x} \mathcal{H}(\phi,\pi,\nabla \phi, \nabla\pi)\\
-&= \int \td^3 \bm{x} \Big\{\frac {\partial \mathcal{H}} {\partial \phi} \delta \phi+\frac {\partial \mathcal{H}} {\partial \pi}\delta \pi + \frac {\partial \mathcal{H}} {\partial (\nabla \phi)} \cdot \nabla \phi+\frac {\partial \mathcal{H}} {\partial (\nabla \pi) } \cdot \nabla \pi \Big\} \\
-&=\int \td^3 \bm{x}\Big\{\big(\frac {\partial \mathcal{H}} {\partial \phi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla\phi)} \big)\delta \phi+(\phi\leftrightarrow \pi) \Big\} + \int_{\partial \Omega}\{\cdots\}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the integral on area vanishing, we have:</p>
-
-<div>$$\begin{aligned}
-\frac {\delta H} {\delta \pi(\bm{x},t)} &= \frac {\partial \mathcal{H}} {\partial \pi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \phi)} \\
-\frac {\delta H} {\delta \phi(\bm{x},t)} &= \frac {\partial \mathcal{H}} {\partial \phi} - \nabla \cdot \frac {\partial \mathcal{H}} {\partial(\nabla \pi)}
-\end{aligned}$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>We can also compute the Poisson bracket between fields and momentum. Only noting <code>$f(\bm{x},t)=\int \td^3 \bm{x}' \delta^3(\bm{x}-\bm{x}')f(\bm{x}',t)$</code> :</p>
-
-<div>$$\begin{aligned}
-\{\phi(\bm{x},t),\phi(\bm{x}',t)\}_{PB} &= 0 \\
-\{\pi(\bm{x},t),\pi(\bm{x}',t)\}_{PB} &= 0 \\
-\{\phi(\bm{x},t),\pi(\bm{x}',t)\}_{PB} &= \delta^3(\bm{x}-\bm{x}')
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where one can treat the coordinate at left-hand-side as the parameter of the functional: <code>$f(\bm{x},t)\equiv f_{\bm{x}}(t)=f_{\bm{x}}[\phi,\pi]$</code> .</p>
-
 <h1 id="symmetry-of-fields">Symmetry of Fields</h1>
-
-<h2 id="noether-s-theorem">Noether&rsquo;s Theorem</h2>
-
+<h2 id="noethers-theorem">Noether&rsquo;s Theorem</h2>
 <p><em>[Theorem(Noether)]</em> : In classical field theory , a <code>continous symmetric transformation</code> which lets the <code>action invariant</code>, will lead to a <code>conservation of current</code> and <code>movement constant</code></p>
-
 <h3 id="symmetry-induced-by-coordinate-transformation">Symmetry Induced by Coordinate Transformation</h3>
-
 <p>We will discuss a class of symmetry. It comes from the coordinate transformation, with the infinitesimal transform:</p>
-
-<div>$$x^\mu \rightarrow x'^\mu= x^{\mu}+\delta x^{\mu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And the field shall be changed too. There are two contribution to the field variation, one is the change of <code>$\phi$</code> , and another is the change of coordinate:</p>
-
-<div>$$\phi(x)\rightarrow \phi'(x'=x+\delta x) = (\phi+\bar{\delta}\phi)(x+\delta x) = \phi(x)+\bar \delta\phi(x)+\partial_\mu \phi (x)\delta x^\mu $$</div>
-
+<!-- raw HTML omitted -->
 <p>The <code>full variation</code> is: <code>$\delta \phi \equiv \phi'(x')-\phi(x) = \bar\delta\phi(x)+\partial_\mu \phi(x)\delta x^\mu$</code></p>
-
 <p>Then, with the definition of the Action, we can write down its variation:</p>
-
-<div>$$\begin{aligned}
-\delta S &= \int \td^4 x \partial_\mu \Big(\mathcal{L}\delta x^\mu +\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\delta \phi - \frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi \delta x^\nu \Big)
-\end{aligned}$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>With the variation of field:</p>
-
-<div>$$\delta\phi = \bar\delta \phi +\partial_\mu \phi \delta x^\mu$$</div>
-
+<!-- raw HTML omitted -->
 <p>we can compute some quantities which we will use below:</p>
-
-<div>$$\partial_\mu \bar\delta \phi = \partial_\mu (\phi'(x)-\phi(x)) = \bar\delta \partial_\mu(x) $$</div>
-
+<!-- raw HTML omitted -->
 <p>And with that <code>$\delta(\partial_\mu\phi)=\partial'_\mu\phi'(x')-\partial_\mu\phi(x)$</code> and <code>$\partial'_\mu = \partial/\partial x'^\mu$</code> :</p>
-
-<div>$$\begin{aligned}
-\partial_\mu(\delta \phi) &= \partial_{\mu}\phi'(x')-\partial_{\mu}\phi(x) \\
-&=\partial'_{\nu}\phi'(x')\partial_{\mu}x'^{\nu} - \partial_{\mu}\phi(x) \\
-&=\partial'_{\nu}\phi'(x')(\delta_\mu^\nu+\partial_\mu\delta x^\nu) - \partial_{\mu}\phi(x) \\
-&= \delta(\partial_\mu\phi) + \partial'_{\nu}\phi'(x')\partial_\mu\delta x^\nu \\
-&= \delta(\partial_\mu\phi) + \partial_{\lambda}\phi'(x')(\delta_\nu^\lambda + \delta(\cdots))\partial_\mu\delta x^\nu \\
-&\approx \delta(\partial_\mu\phi) + \partial_{\nu}\phi'(x')\partial_\mu\delta x^\nu \\
-&\approx \delta(\partial_\mu\phi) + \partial_{\nu}\phi(x)\partial_\mu\delta x^\nu \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the last two is valid only to <code>first order</code>.</p>
-
 <p>Consider the variation of action:</p>
-
-<div>$$\delta S = \int \td^4 x' \mathcal{L}(\phi'(x'),\partial'_{\mu}\phi'(x'))-\int \td^4 x \mathcal{L}(\phi(x),\partial_\mu \phi(x))$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the variation of 4-cell volume:</p>
-
-<div>$$\td^4 x \rightarrow \td^4 x' =\det \frac {\partial x'^\mu} {\partial x^\nu} \td^4 x=(1+\partial_{\mu}\delta x^{\mu})\td^4 x $$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\partial_{\nu} x'^\mu = \delta_\nu^\mu + \partial_\nu \delta x^{\mu}$</code> , and the first order of determinate will be its trace.</p>
-
 <p>we have:</p>
-
-<div>$$\delta S =\int \td^4 x (\partial_\mu\delta x^\mu \mathcal{L}+\delta \mathcal{L}) $$</div>
-
+<!-- raw HTML omitted -->
 <p>The variation of Lagrange density should be:</p>
-
-<div>$$\begin{aligned}
-\delta \mathcal{L} & \equiv \mathcal{L}(\phi'(x'),\partial'_\mu\phi'(x'))-\mathcal{L}(\phi(x),\partial_\mu \phi(x)) \\
-&=\frac {\partial \mathcal{L}} {\partial \phi} \delta\phi + \frac {\partial \mathcal{L}} {\partial (\partial_\mu\phi)} (\partial_{\mu}\delta \phi-\partial_\mu\delta x^\nu \partial_\nu\phi)
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Let us check the integral with deviation of variations:</p>
-
-<div>$$\begin{aligned}
-\int \td^4 x \mathcal{L}\partial_\mu \delta x^\mu &= \int \td^4 x \partial_\mu( \mathcal{L} \delta x^\mu)-\Big(\frac {\partial \mathcal{L}} {\partial \phi}\partial_\mu\phi+\frac {\partial \mathcal{L}} {\partial (\partial_\nu\phi)}\partial_\mu\partial_\nu\phi\Big)\delta x^\mu \\
-\\
-\int \td^4 x \frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\mu(\delta\phi) &=\int \td^4 x\partial_\mu \Big(\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\delta\phi \Big) -\int \td^4 x \Big(\partial_\mu\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\Big)\delta\phi  \\
-&=\int \td^4 x\partial_\mu \Big(\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\delta\phi \Big)-\int \td^4 x \Big(\frac {\partial \mathcal{L}} {\partial\phi}\Big)\delta\phi \\
-\\
-\int \td^4 x \frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}(\partial_\nu\phi \partial_\mu\delta x^\nu) &=\int\td^4 x\partial_\mu\Big(\frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi\delta x^\nu \Big)- \int \td^4 x \partial_\mu \Big(\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi\Big)\delta x^\nu \\
-&=\int\td^4 x\partial_\mu\Big(\frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi\delta x^\nu \Big)- \int \td^4 x \Big(\frac {\partial \mathcal{L}} {\partial\phi}\partial_\nu\phi+\frac {\partial\mathcal{L}}{\partial(\partial_\mu\phi)}\partial_\mu\partial_\nu\phi\Big)\delta x^\nu
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the last equality comes from the Lagrange equation.</p>
-
 <p>Then we have:</p>
-
-<div>$$\begin{aligned}
-\delta S &= \int \td^4 x \partial_\mu \Big(\mathcal{L}\delta x^\mu +\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi)}\delta \phi - \frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi)}\partial_\nu\phi \delta x^\nu \Big)
-\end{aligned}$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>If it is a symmetric transformation, we require that the integral vanish at arbitrary integral zone. Then the integrand should be zero.</p>
-
 <p>Generalize it to the field with multiple degrees of freedom:</p>
-
-<div>$$f^\mu=\mathcal{L}\delta x^\mu +\frac {\partial \mathcal{L}} {\partial(\partial_\mu\phi^r)}\delta \phi^r - \frac {\partial\mathcal{L}} {\partial(\partial_\mu\phi^r)}\partial_\nu\phi^r \delta x^\nu$$</div>
-
+<!-- raw HTML omitted -->
 <p>we have the equation:</p>
-
-<div>$$\partial_\mu f^\mu=0$$</div>
-
+<!-- raw HTML omitted -->
 <p>It has the form of continuous equation.</p>
-
 <p>With the Gauss Theorem we have the <code>conservation law</code>:</p>
-
-<div>$$\frac {\td} {\td x^0} \int_V f^0 \td^3 \bm{x}+\oint_{\partial V}\td \bm{S}\cdot \bm{f}=0$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
-<div>$$\begin{aligned}
-0&= \int_V \td^3\bm{x} \partial_\mu f^\mu  \\
-&=\int_V \td^3 \bm{x} \frac {\partial} {\partial x^0} f^0 +\int_V \td^3\bm{x} \nabla\cdot \bm{f} \\
-&=\frac {\td} {\td x^0} \int_V f^0 \td^3 \bm{x}+\oint_{\partial V}\td \bm{S}\cdot \bm{f}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Where <code>$\bm{f}=(f^1,f^2,f^3)$</code></p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>When the integral over <code>$\partial V$</code> vanishes when <code>$V\rightarrow \infty$</code> , we have the conserved quantities (also called <code>charge</code>) :</p>
-
-<div>$$G := \int f^0 \td^3 \bm{x} =\text{const}.$$</div>
-
+<!-- raw HTML omitted -->
 <h3 id="example-spatial-time-homogeneous">Example: Spatial-Time Homogeneous</h3>
-
 <p>As an example, let us consider the system with spatial-time homogeneous. The infinitesimal transformation is:</p>
-
-<div>$$\begin{aligned}
-x^\mu\rightarrow x'^{\mu}=x^\mu-\epsilon^\mu
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>The field shall be invariant, that is: <code>$\phi'(x')=\phi(x)$</code>, then we have: <code>$\delta \phi=0, \delta x^\mu=-\epsilon^\mu$</code> . Then the Noether current:</p>
-
-<div>$$f^\mu=-\mathcal{L} \epsilon^\mu + \frac {\partial \mathcal{L}} {\partial(\partial_\mu \phi)} \partial_\nu \phi \epsilon^\nu=\Big(-\mathcal{L} \delta_\nu^\mu + \frac {\partial \mathcal{L}} {\partial(\partial_\mu \phi)} \partial_\nu\phi \Big)\epsilon^\nu\equiv T^\mu_{\indent \nu}\epsilon^\nu$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$T^\mu_{\indent \nu}$</code> usually is called <code>Energy-Momentum Tensor</code></p>
-
 <p>Spatial-time homogeneous requires that <code>$\epsilon^\nu$</code> can be arbitrary, that is we have the conservation law:</p>
-
-<div>$$\partial_\mu T^\mu_{\indent \nu}=0$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\nu=0,1,2,3$</code> , there are four conserved charge:</p>
-
-<div>$$\begin{aligned}
-E&=\int \td^3 \bm{x} T^{00} = \int \td^3 \bm{x} \ (\pi \partial_0\phi - \mathcal{L}) = H \\
-P^i &= \int \td^3 \bm{x} T^{0i} = \int \td^3 \bm{x} \ \pi \partial^i \phi \sim -\int \td^3 \bm{x} \pi \nabla \phi
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Namely, energy-momentum conserved.</p>
-
 <h2 id="fields-under-lorentz-transformation">Fields under Lorentz Transformation</h2>
-
 <p>In relativity Field theory, we will only study those fields:</p>
-
 <ol>
 <li>Fields obey some rules when the spacetime transformed by Lorentz transformation.</li>
-<li>The <code>action</code> , as the integral of Lagrangian density over spacetime, should be invariant with the spacetimes transformation(Lorentz transformation). That is, <mark>The action of Field system should be a <code>scalar</code></mark></li>
+<li>The <code>action</code> , as the integral of Lagrangian density over spacetime, should be invariant with the spacetimes transformation(Lorentz transformation). That is, <!-- raw HTML omitted -->The action of Field system should be a <code>scalar</code><!-- raw HTML omitted --></li>
 </ol>
-
 <p>These two requirements come from <code>Relativity principle</code> , which claims that the mechanics in different frames should be the same.</p>
-
 <p>With this requirements, the field should be the basis of a representation of Lorentz Group. And obey the transformation rule:</p>
-
-<div>$$\psi(x)\rightarrow \psi'(x'=\Lambda_{\text{spacetime}}(\omega)x) = \big(\Lambda_{\text{Field}}(\omega)\psi\big)(x=\Lambda_{\text{spacetime}}(\omega)^{-1}x') $$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\omega$</code> is the parameter of Lorentz transformation. This equality will lead that such fact: when one in frame <code>$S$</code> find that at point <code>$x$</code> the field is <code>$\psi$</code> , then the one in frame <code>$S'$</code> should find that this field at point <code>$x'=\Lambda_{\text{spacetime}}x$</code> should be <code>$\psi'=\Lambda_{\text{Field}}\psi$</code>.</p>
-
 <p>In fact, this principle can also be generalized to <code>Poincare Group</code> , if the spatial is <code>homogeneous</code>.</p>
 
           </div>
@@ -965,7 +772,7 @@ P^i &= \int \td^3 \bm{x} T^{0i} = \int \td^3 \bm{x} \ \pi \partial^i \phi \sim -
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#noether-s-theorem">
+						 					<a class="nav-link" href="#noethers-theorem">
 												 Noether’s Theorem
 											</a>
 										</li>
@@ -1120,7 +927,7 @@ P^i &= \int \td^3 \bm{x} T^{0i} = \int \td^3 \bm{x} \ \pi \partial^i \phi \sim -
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

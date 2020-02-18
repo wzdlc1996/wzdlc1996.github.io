@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>6 minutes read</li>
+      <li>3 minutes read</li>
     
   </ul>
   
@@ -454,229 +454,100 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="maxwell-field">Maxwell Field</h1>
-
+            <h1 id="maxwell-field">Maxwell Field</h1>
 <h2 id="formalism">Formalism</h2>
-
 <p><em>[Definition]</em> : Maxwell Field is the field of <code>4-vector</code>. The Lagrangian is Lorentz Scalar constructed by the so-called <code>Electromagnetic Tensor</code>:</p>
-
-<div>$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And where <code>$F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$</code> is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of <code>$\partial_0 A_0$</code> .</p>
-
 <p>We need to do some adjustment. And this will be used in the <code>Gupta-Bleuler Quantization</code> in the future. And the new Lagrangian is:</p>
-
-<div>$$\mathcal{L} = -\frac 1 4 F^{\mu\nu} F_{\mu\nu} - \frac {\xi} 2 (\partial^{\mu}A_\mu)^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>Under the <code>Lorentz gauge</code> , we require <code>$\partial^\mu A_\mu=0$</code> , and this Lagrangian is the same to above.</p>
-
 <p>We can write down the equation of motion:</p>
-
-<div>$$\partial_\nu\partial^\nu A_\mu - (1-\xi)\partial_\mu (\partial_\nu A^\nu)=0$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>For the Euler-Lagrange Equation is linear respect to <code>$\mathcal{L}$</code> , we separate it into two terms:</p>
-
-<div>$$\mathcal{L}=\mathcal{L}_1+\mathcal{L}_2=-\frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 (\partial_\mu A^\mu)^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>The first term:</p>
-
-<div>$$\begin{aligned}
-&\indent \frac {\partial \mathcal{L}_1} {\partial A_\alpha}-\partial_\mu \frac {\partial \mathcal{L}_1} {\partial (\partial_\mu A_\alpha)}\\
-&=\frac 1 4\partial_\beta\Big(\frac {\partial F^{\mu\nu}} {\partial(\partial_\beta A_\alpha)} F_{\mu\nu} +\frac {\partial F_{\mu\nu}} {\partial(\partial_\beta A_\alpha)} F^{\mu\nu} \Big) \\
-&=\frac 1 4 \partial_\beta \Big(\eta^{\mu\gamma}\eta^{\nu\delta}(\delta_\beta^\gamma\delta_\alpha^\delta-\delta_\alpha^\gamma\delta_\beta^\delta)F_{\mu\nu}+(\delta_\beta^\mu\delta_\alpha^\nu-\delta_\alpha^\mu\delta_\beta^\nu)F^{\mu\nu} \Big) \\
-&= \frac 1 4 \partial_\beta \big(F^{\beta\alpha}-F^{\alpha\beta}+F^{\beta\alpha}-F^{\alpha\beta}\big) \\
-&= \partial_{\beta}F^{\beta\alpha} \\
-&= \square A^\alpha-\partial^\alpha(\partial_\mu A^\mu)
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And the second term:</p>
-
-<div>$$\begin{aligned}
-&\indent \frac {\partial \mathcal{L}_2} {\partial A_\alpha}-\partial_\mu \frac {\partial \mathcal{L}_2} {\partial (\partial_\mu A_\alpha)}\\
-&=\frac {\xi} 2 \partial_{\mu} \frac {\partial (\partial_\nu A^\nu)^2} {\partial(\partial_\mu A_\alpha)}\\
-&=\xi \partial_\mu \big(\partial_\nu A^\nu \eta^{\mu\alpha} \big) \\
-&=\xi \partial^{\alpha}(\partial_\nu A^\nu)
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have the equation of motion:</p>
-
-<div>$$\square A^\alpha - (1-\xi)\partial^\alpha (\partial_\mu A^\mu)=0$$</div>
-
+<!-- raw HTML omitted -->
 <p>Or:</p>
-
-<div>$$\square A_\alpha - (1-\xi)\partial_\alpha (\partial^\mu A_\mu)=0$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynman gauge</code> (<code>$\xi=1$</code>) it is also the standard form of wave-equation:</p>
-
-<div>$$\partial_\nu\partial^\nu A_\mu=\square A_\mu=0$$</div>
-
+<!-- raw HTML omitted -->
 <p>And the conjugate field:</p>
-
-<div>$$\pi^\mu\equiv \frac {\delta \mathcal{L}} {\delta (\partial_0 A_\mu)}=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
-<div>$$\begin{aligned}
-\pi^\mu &\equiv \frac {\delta \mathcal{L}} {\delta(\partial_0 A_\mu)} \\
-&= -\frac 1 4 \Big(\frac {\delta F^{\alpha\beta}} {\delta(\partial_0 A_\mu)} F_{\alpha\beta} + \frac {\delta F_{\alpha\beta}} {\delta(\partial_0 A_\mu)} F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \frac {\delta(\partial_\alpha A^\alpha)} {\delta(\partial_0 A_\mu)} \\
-&=-\frac 1 2 \Big((\delta_\alpha^0\delta_\beta^\mu-\delta_\beta^0\delta_\alpha^\mu) F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \delta^\mu_\gamma \delta^0_\alpha \eta^{\gamma\alpha} \\
-&=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)
-\end{aligned}$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>And under the Feynman Gauge <code>$\xi=1$</code> we have the Hamiltonian:</p>
-
-<div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
-<div>$$\begin{aligned}
-\mathcal{H}&= \pi^\mu \partial_0 A_\mu-\mathcal{L} \\
-&=F^{\mu0}\partial_0 A_\mu +\frac 1 4 F^{\mu\nu}F_{\mu\nu}-\xi \partial_0 A^0 \partial_\mu A^\mu +\frac 1 2 \xi(\partial_\mu A^{\mu})^2 \\
-&=F^{\mu0}\partial_0 A_\mu + \frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
-&=(\partial^\mu A^0 - \partial^0 A^\mu)\partial_0 A_\mu + \frac 1 2 (\partial^\mu A^\nu \partial_\mu A_\nu-\partial^\mu A^\nu \partial_\nu A_\mu)-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
-&=-\sum_i \partial_i A_0 \partial_0 A_i+\sum_i (\partial_0 A_i)^2 + \frac 1 2 \Big((\partial_0 A_0)^2 -\sum_i (\partial_i A_0)^2-\sum_i (\partial_0 A_i)^2 +\sum_{i,j} (\partial_i A_j)^2 \\
-&\indent -(\partial_0 A_0)^2+2\sum_i \partial_i A_0 \partial_0 A_i- \sum_{i,j}\partial_i A_j \partial_j A_i \Big) - \frac {\xi} 2 \partial_\mu A^\mu \sum_{\nu=0}^3 (\partial_\nu A_\nu) \\
-&= \frac 1 2 \Big(\sum_i (\partial_0 A_i)^2 - (\nabla A_0)^2+\sum_i (\nabla A_i)^2-\sum_{i,j}\partial_i A_j \partial_j A_i \Big) - \frac {\xi} 2 \partial_\mu A^\mu (\partial_0 A_0 + \nabla \cdot \bm{A}) \\
-&= \frac 1 2 \sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) - \frac 1 2 (\nabla A_0)^2 -\frac 1 2 \Big(\nabla \cdot \big((\bm{A}\cdot \nabla) \bm{A} \big)-(\bm{A}\cdot \nabla)(\nabla\cdot \bm{A}) \Big) \\
-&\indent -\frac \xi 2 \big((\partial_0 A_0)^2-(\nabla \cdot \bm{A})^2 \big) \\
-&=\frac 1 2 \Big[\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -\xi (\partial_0 A_0)^2 - (\nabla A_0)^2 \Big] - \frac 1 2 \nabla\cdot \Big((\bm{A}\cdot \nabla)\bm{A}-\xi (\nabla \cdot \bm{A})\bm{A} \Big) \\
-&\indent + \frac {1-\xi} 2 (\bm{A}\cdot \nabla)(\nabla\cdot \bm{A})
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>When <code>$\xi =1$</code> , the last term vanishes. And the full-divergence has no contribution to the spatial integral, we have:</p>
-
-<div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
-
 <p>We will solve the equation of motion under <code>Feynman Gauge</code> . Which lead to the wave equation form:</p>
-
-<div>$$\square A^\mu=0$$</div>
-
+<!-- raw HTML omitted -->
 <p>Similarly, we use the Fourier transform as:</p>
-
-<div>$$A_\mu(x)=\int \frac {\td \omega \td^3\bm{k}} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti \omega t} a_\mu(\bm{k},\omega)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Remembering that <code>$A_\mu$</code> is a real-vector, and <code>$k=(\omega_{|\bm{k}|},\bm{k})$</code> , with the dispersion relation: <code>$k_\mu k^\mu=0$</code>, the generic solution can be written as:</p>
-
-<div>$$A_\mu(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon_{\mu}(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon_{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu} \Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> , <code>$\lambda$</code> denotes four polarization direction, and <code>$\epsilon_\mu(\bm{k},\lambda)$</code> is the corresponding vector.</p>
-
 <p>Here we make a convention about the polarization vector <code>$\epsilon_{\mu}(\bm{k},\lambda)$</code> :</p>
-
 <p><em>[Convention]</em> : The polarization vector is defined by the following two condition:</p>
-
 <ol>
-<li><p>For special situation: <code>$k_{\text{special}}=(|\bm{k}|,0,0,|\bm{k}|)$</code>:</p>
-
-<div>$$\begin{aligned}
-\epsilon((0,0,|\bm{k}|),0) &= (1,0,0,0)\\
-\epsilon((0,0,|\bm{k}|),1) &= (0,1,0,0) \\
-\epsilon((0,0,|\bm{k}|),2) &= (0,0,1,0) \\
-\epsilon((0,0,|\bm{k}|),3) &= (0,0,0,1)
-\end{aligned}$$</div>
-
-<p>Or simply: <code>$\epsilon^\mu(\bm{k}_{\text{special}},\lambda) = \delta^{\mu}_\lambda$</code> . This setting means that they are polarization direction of linear-polarization. For circular-polarization, they could be complex-vector.</p></li>
-
-<li><p>For generic situation, let <code>$\Lambda(\omega)k_{\text{special}}=k$</code>, that is to say <code>$k_{\text{special}}^0=|\bm{k}|$</code> , or no boost, is the Lorentz transform for vector. We have:</p>
-
-<div>$$\epsilon(\bm{k},\lambda)=\Lambda(\omega)\epsilon(k_{\text{special}},\lambda)$$</div></li>
+<li>
+<p>For special situation: <code>$k_{\text{special}}=(|\bm{k}|,0,0,|\bm{k}|)$</code>:</p>
+<!-- raw HTML omitted -->
+<p>Or simply: <code>$\epsilon^\mu(\bm{k}_{\text{special}},\lambda) = \delta^{\mu}_\lambda$</code> . This setting means that they are polarization direction of linear-polarization. For circular-polarization, they could be complex-vector.</p>
+</li>
+<li>
+<p>For generic situation, let <code>$\Lambda(\omega)k_{\text{special}}=k$</code>, that is to say <code>$k_{\text{special}}^0=|\bm{k}|$</code> , or no boost, is the Lorentz transform for vector. We have:</p>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p><em>[Theorem]</em> : with such the convention, we can prove that polarization vector has the following properties:</p>
-
 <ol>
 <li><code>$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</code></li>
 <li><code>$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^{\mu}(\bm{k},\lambda)\epsilon^{\nu *}(\bm{k},\lambda)=\eta^{\mu\nu}$</code></li>
 </ol>
-
 <p>For linear-polarization , there will be no need for the conjugation. But for circular polarization, we need the conjugation.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>We prove this theorem by linear-polarization. For circular-polarization is similar.</p>
-
 <ol>
-<li><p>Let <code>$\Lambda k_{\text{special}}=k$</code> , we have <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(\bm{k}_{\text{special}},\lambda)=\Lambda_{\mu}^{\indent \nu}\eta_{\nu\lambda}=\Lambda_{\mu\lambda}$</code> . Then:</p>
-
-<div>$$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\Lambda_{\mu\lambda}\Lambda^{\mu}_{\lambda'}=\eta_{\lambda\lambda'}$$</div></li>
-
-<li><p>With that <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_{\mu\lambda}$</code> , we have:</p>
-
-<div>$$\sum_{\lambda=0}^3 \eta^{\lambda,\lambda}\epsilon^\mu(\bm{k},\lambda)\epsilon^{\nu*}(\bm{k},\lambda)=\eta_{\lambda,\lambda'}\Lambda^{\mu\lambda}\Lambda^{\nu\lambda'}=\eta^{\mu\nu}$$</div></li>
+<li>
+<p>Let <code>$\Lambda k_{\text{special}}=k$</code> , we have <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(\bm{k}_{\text{special}},\lambda)=\Lambda_{\mu}^{\indent \nu}\eta_{\nu\lambda}=\Lambda_{\mu\lambda}$</code> . Then:</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>With that <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_{\mu\lambda}$</code> , we have:</p>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>It is obvious that <code>$\epsilon_\mu(\bm{k},\lambda=1,2)k^\mu=0$</code>. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call <code>$\epsilon_\mu(\bm{k},\lambda=3)$</code> <code>Vertical Polarization</code> , call <code>$\epsilon_\mu(\bm{k},\lambda=0)$</code> <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
-
 <h2 id="plane-wave-expansion-and-hamiltonian">Plane-Wave Expansion and Hamiltonian</h2>
-
 <p>At last we will write the Hamiltonian of Maxwell Field as the quadratic form of coefficients <code>$a(\bm{k},\lambda)$</code> in plane-wave expansion. Like what we did before, we will hold the order of them so that the formulas can be used in quantum theory in the future. Our discussion will only cover the result of <code>Feynman gauge</code> <code>$\xi=1$</code> :</p>
-
 <p><em>[Theorem]</em> : With the plane wave expansion and Feynman gauge, one can write the Hamiltonian as:</p>
-
-<div>$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>With the plane wave expansion we have:</p>
-
-<div>$$A^\mu (x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon^\mu(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon^{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu}\Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>And the Hamiltonian with Feynman gauge can be written as:</p>
-
-<div>$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$</div>
-
+<!-- raw HTML omitted -->
 <p>We will compute this integral:</p>
-
-<div>$$\begin{aligned}
-I_\nu&= \int \td^3 \bm{x} \sum_\mu (\partial_\mu A_\nu)^2 \\
-&= \sum_{\mu}\int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{\lambda_1,\lambda_2} \Big(a_1 \epsilon_{1,\nu}(-\ti k_{1,\mu})e^{-\ti k_1\cdot x}+a_1^*\epsilon_{1,\nu}^* (\ti k_{1,\mu})e^{\ti k_1\cdot x}\Big) \\
-&\indent \cdot\Big(a_2 \epsilon_{2,\nu}(-\ti k_{2,\mu})e^{-\ti k_2\cdot x}+a_2^*\epsilon_{2,\nu}^* (\ti k_{2,\mu})e^{\ti k_2\cdot x}\Big)\\
-&= \sum_\mu \int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} \sum_{\lambda,\lambda'} \Big\{-a(\bm{k},\lambda)a(-\bm{k},\lambda')\epsilon_\nu(\bm{k},\lambda)\epsilon_{\nu}(-\bm{k},\lambda')e^{-2\ti \omega_{|\bm{k}|}t} (k_0^2,-k_1^2,-k_2^2,-k_3^2)^\mu \\
-&\indent + k_\mu^2 a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon_\nu(\bm{k},\lambda')^* + k_\mu^2 a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (\bm{k},\lambda') \\
-&\indent - a(\bm{k},\lambda)^* a(-\bm{k},\lambda')^* \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (-\bm{k},\lambda')^* e^{2\ti \omega_{|\bm{k}|}t} (k_0^2,-k_1^2,-k_2^2,-k_3^2)^\mu  \Big\} \\
-&= \int \td^3 \bm{k} \ \omega_{|\bm{k}|}\sum_{\lambda,\lambda'} \Big\{ a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon_\nu(\bm{k},\lambda')^* + a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (\bm{k},\lambda')  \Big\}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Note that <code>$k_0^2-k_1^2-k_2^2-k_3^2=0$</code> , because <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> . And compute the third equality should be carefully, because the delta function of <code>$\delta^3(\bm{k}_1+\bm{k}_2)$</code> leads <code>$k_2=(\omega_{|\bm{k}|},-\bm{k})\neq -k_1$</code> . And in the second equality, <code>$a_i,\epsilon_{i,\nu}$</code> means that <code>$a(\bm{k}_i) , \epsilon_\nu(\bm{k}_1,\lambda_1)$</code> , for the simplicity.</p>
-
 <p>With <code>$H = -\frac 1 2 \sum_\nu \eta^{\nu\nu} I_\nu$</code>, we can write down:</p>
-
-<div>$$H=-\frac 1 2\int \td^3 \bm{k} \ \omega_{|\bm{k}|}\sum_{\lambda,\lambda'}\Big\{ a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon^\nu(\bm{k},\lambda')^* + a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon^\nu (\bm{k},\lambda')  \Big\}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the property of <code>$\epsilon^\mu$</code> : <code>$\epsilon(\bm{k},\lambda)\cdot \epsilon(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</code> , we can write the Hamiltonian as:</p>
-
-<div>$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$</div>
-
-<p></details></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
           </div>
 
@@ -913,7 +784,7 @@ I_\nu&= \int \td^3 \bm{x} \sum_\mu (\partial_\mu A_\nu)^2 \\
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

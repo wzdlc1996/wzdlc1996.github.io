@@ -449,13 +449,9 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="introduction">Introduction</h1>
-
+            <h1 id="introduction">Introduction</h1>
 <p>usually, linux has two method to handle the dual-graphic card. The difference between
 them are:</p>
-
 <table>
 <thead>
 <tr>
@@ -464,167 +460,127 @@ them are:</p>
 <th align="left">Disadvantages</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Bumblebee</td>
-<td align="left">Uses dGPU(descrete) only when requested.  Saving power <br> Manjaro default</td>
+<td align="left">Uses dGPU(descrete) only when requested.  Saving power <!-- raw HTML omitted --> Manjaro default</td>
 <td align="left">Some overhead so lower raw performance</td>
 </tr>
-
 <tr>
 <td align="left">PRIME</td>
 <td align="left">Uses the dGPU directly , Better performance</td>
-<td align="left">dGPU and iGPU(integrated) both powered on constantly <br> need manual configuration</td>
+<td align="left">dGPU and iGPU(integrated) both powered on constantly <!-- raw HTML omitted --> need manual configuration</td>
 </tr>
 </tbody>
 </table>
-
 <h1 id="step-1-remove-bumblebee">Step 1. Remove Bumblebee</h1>
-
 <p>Usually manjaro can be easily installed choosing the <code>free drive</code> mode, but <code>nouveau</code>
 is hard to use. And sometimes it make user cannot entry the x-system.
 One way is that noting <code>nouveau</code> in <code>blacklist</code> , use command:</p>
-
-<pre><code class="language-shell">sudo nano /etc/modprob.d/usrBlack.blacklist
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/modprob.d/usrBlack.blacklist
 
 blacklist nouveau
-</code></pre>
-
-<p>Then to use the graphic card, one can run <code>mhwd-tui</code> to install the non-free driver and
+</code></pre></div><p>Then to use the graphic card, one can run <code>mhwd-tui</code> to install the non-free driver and
 Bumblebee to manage dual graphic card.
 First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd.
 One can simply remove them using the <code>mhwd</code> command in terminal or via <code>Manjaro Settings Manager</code>
 In other distribution, the work is the same. User can using their package manager to do it.
 Or more directly, do <strong>NOT</strong> install bumblebee, directly install PRIME after truning off nouveau.</p>
-
 <h1 id="step-2-install-closed-source-driver">Step 2. Install Closed-source Driver</h1>
-
 <p>One can follow the following articles to install the driver according to what he use:</p>
-
 <ul>
 <li><a href="https://wiki.archlinux.org/index.php/ATI">ATI</a> to install drivers for ATI/AMD GPUs</li>
 <li><a href="https://wiki.archlinux.org/index.php/NVIDIA">NVIDIA</a> to install drivers for NVIDIA GPUs</li>
 </ul>
-
 <p>To be careful, user should query which version of the driver is the best for their hardware.</p>
-
-<h1 id="step3-fix-mhwd-s-configuration">Step3. Fix MHWD&rsquo;s Configuration</h1>
-
+<h1 id="step3-fix-mhwds-configuration">Step3. Fix MHWD&rsquo;s Configuration</h1>
 <p>this is for Manjaro Linux, for <code>mhwd</code> does the sensible thing and puts configuration in place as though the NVIDIA GPU was the only device available.
 Other distribution can jump to Step 4</p>
-
 <ol>
-<li><p><strong>Remove Old Config File</strong></p>
-
+<li>
+<p><strong>Remove Old Config File</strong></p>
 <p>Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:</p>
-
-<pre><code class="language-shell">#/etc/X11/xorg.conf.d/optimus.conf
-Section &quot;Module&quot;
-    Load &quot;modesetting&quot;
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf.d/optimus.conf</span>
+Section <span class="s2">&#34;Module&#34;</span>
+    Load <span class="s2">&#34;modesetting&#34;</span>
 EndSection
-Section &quot;Device&quot;
-    Identifier &quot;nvidia&quot;
-    Driver &quot;nvidia&quot;
-    BusID &quot;PCI&quot;
-    Option &quot;AllowEmptyInitialConfiguration&quot;
+Section <span class="s2">&#34;Device&#34;</span>
+    Identifier <span class="s2">&#34;nvidia&#34;</span>
+    Driver <span class="s2">&#34;nvidia&#34;</span>
+    BusID <span class="s2">&#34;PCI&#34;</span>
+    Option <span class="s2">&#34;AllowEmptyInitialConfiguration&#34;</span>
 EndSection
-</code></pre>
-
-<p>While the BusID value can be find by command: <code>lspci | grep -E &quot;VGA|3D&quot;</code></p></li>
-
-<li><p><strong>Write Blacklist</strong>
+</code></pre></div><p>While the BusID value can be find by command: <code>lspci | grep -E &quot;VGA|3D&quot;</code></p>
+</li>
+<li>
+<p><strong>Write Blacklist</strong>
 One need to remove two files: <code>/etc/modprobe.d/mhwd-gpu.conf</code> and <code>/etc/modprobe.d/mhwd-nvidia.conf</code> and write a new one:</p>
-
-<pre><code class="language-shell">blacklist nouveau
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">blacklist nouveau
 blacklist nvidiafb
 blacklist rivafb
-</code></pre></li>
+</code></pre></div></li>
 </ol>
-
-<h1 id="step-4-enable-nvdia-drm-modeset">Step 4. Enable <code>nvdia-drm.modeset</code></h1>
-
+<h1 id="step-4-enable-nvdia-drmmodeset">Step 4. Enable <code>nvdia-drm.modeset</code></h1>
 <p>PRIME relies on <code>vidia-drm</code> , one need to creat a new file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/modprobe.d/nvidia-drm.conf</span>
 
-<pre><code class="language-shell">#/etc/modprobe.d/nvidia-drm.conf
-
-options nvidia_drm modeset = 1
-</code></pre>
-
-<h1 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h1>
-
+options nvidia_drm <span class="nv">modeset</span> <span class="o">=</span> <span class="m">1</span>
+</code></pre></div><h1 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h1>
 <p>First for other distribution but manjaro, user need to edit the file <code>/etc/X11/xorg.conf</code> , if X.Org and X server version <code>1.17.2+</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf</span>
 
-<pre><code class="language-shell">#/etc/X11/xorg.conf
-
-Section &quot;Module&quot;
-    Load &quot;modesetting&quot;
+Section <span class="s2">&#34;Module&#34;</span>
+    Load <span class="s2">&#34;modesetting&#34;</span>
 EndSection
 
-Section &quot;Device&quot;
-    Identifier &quot;nvidia&quot;
-    Driver &quot;nvidia&quot;
-    BusID &quot;PCI&quot;
-    Option &quot;AllowEmptyInitialConfiguration&quot;
+Section <span class="s2">&#34;Device&#34;</span>
+    Identifier <span class="s2">&#34;nvidia&#34;</span>
+    Driver <span class="s2">&#34;nvidia&#34;</span>
+    BusID <span class="s2">&#34;PCI&#34;</span>
+    Option <span class="s2">&#34;AllowEmptyInitialConfiguration&#34;</span>
 EndSection
-</code></pre>
-
-<p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
-
-<pre><code class="language-shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
+</code></pre></div><p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-</code></pre>
-
-<p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
-
+</code></pre></div><p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
 <ol>
-<li><p><code>LightDM</code>
+<li>
+<p><code>LightDM</code>
 Edit the file <code>/etc/lightdm/lightdm.conf</code> :</p>
-
-<pre><code class="language-shell">[Seat:*]
-display-setup-script = optimus.sh
-</code></pre></li>
-
-<li><p><code>GDM</code>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Seat:*<span class="o">]</span>
+display-setup-script <span class="o">=</span> optimus.sh
+</code></pre></div></li>
+<li>
+<p><code>GDM</code>
 GDM is the defult display manager of Gnome 3 . one should create two new .desktop files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/gdm/greeter/autostart/optimus.desktop</span>
+<span class="c1">#/etc/xdg/autostart/optimus.desktop</span>
 
-<pre><code class="language-shell">#/usr/share/gdm/greeter/autostart/optimus.desktop
-#/etc/xdg/autostart/optimus.desktop
-
-[Desktop Entry]
-Type=Application
-Name=Optimus
-Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot;
-NoDisplay=true
-X-GNOME-Autostart-Phase=DisplayServer
-</code></pre>
-
-<p>Or user can create one and link those two by command <code>ln -s</code></p></li>
-
-<li><p><code>SDDM</code>
+<span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Name</span><span class="o">=</span>Optimus
+<span class="nv">Exec</span><span class="o">=</span>sh -c <span class="s2">&#34;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&#34;</span>
+<span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">true</span>
+X-GNOME-Autostart-Phase<span class="o">=</span>DisplayServer
+</code></pre></div><p>Or user can create one and link those two by command <code>ln -s</code></p>
+</li>
+<li>
+<p><code>SDDM</code>
 SDDM is the default display manager of KDE . one should write those two command to file <code>/usr/share/sddm/script/Xsetup</code> like:</p>
-
-<pre><code class="language-shell">#/usr/share/sddm/scripts/Xsetup
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/sddm/scripts/Xsetup</span>
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-</code></pre></li>
+</code></pre></div></li>
 </ol>
-
 <h1 id="step-6-reboot">Step 6. Reboot</h1>
-
 <p>If everything is set correctly, when user reboot, DM will load and he can log in. And:</p>
-
-<pre><code class="language-shell">$ glxinfo | grep -i vendor
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ glxinfo <span class="p">|</span> grep -i vendor
 server glx vendor string: NVIDIA Corporation
 client glx vendor string: NVIDIA Corporation
 OpenGL vendor string: NVIDIA Corporation
-</code></pre>
-
-<hr>
-
+</code></pre></div><!-- raw HTML omitted -->
 <h1 id="references">References</h1>
-
 <ol>
 <li><a href="https://wiki.archlinux.org/index.php/PRIME">PRIME - ArchWiki</a></li>
 <li><a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus">NVIDIA Optimus - Arch Wiki</a></li>
@@ -783,7 +739,7 @@ OpenGL vendor string: NVIDIA Corporation
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#step3-fix-mhwd-s-configuration">
+						 					<a class="nav-link" href="#step3-fix-mhwds-configuration">
 												 Step3. Fix MHWD’s Configuration
 											</a>
 										</li>
@@ -805,7 +761,7 @@ OpenGL vendor string: NVIDIA Corporation
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#step-4-enable-nvdia-drm-modeset">
+						 					<a class="nav-link" href="#step-4-enable-nvdia-drmmodeset">
 												 Step 4. Enable nvdia-drm.modeset
 											</a>
 										</li>
@@ -938,7 +894,7 @@ OpenGL vendor string: NVIDIA Corporation
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

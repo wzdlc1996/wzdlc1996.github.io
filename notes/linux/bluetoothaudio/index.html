@@ -449,43 +449,33 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="switch-hsv-to-a2dp">Switch HSV to A2DP</h1>
-
+            <h1 id="switch-hsv-to-a2dp">Switch HSV to A2DP</h1>
 <h2 id="a2dp-not-working-with-pulseaudio">A2DP not working with PulseAudio</h2>
-
 <p>Here is the explanation from ArchWiki: <a href="https://wiki.archlinux.org/index.php/Bluetooth_headset#A2DP_not_working_with_PulseAudio">A2DP not working with PulseAudio</a></p>
-
 <p>With <code>Blueman-manager</code> version <code>2.06</code> and <code>PulseAudio</code> version <code>12.2</code> , there is an issue that one cannot switch to A2DP with GUI. It will post the error message that <code>Fail to change profile to A2DP</code> . It seems only happening in Gnome. One need to avoid the <code>GDM</code> to start <code>PulseAudio</code>. The solution is:</p>
-
 <ol>
-<li><p>Edit <code>/etc/pulse/default.pa</code> to close the default Bluetooth discover of pulse.</p>
+<li>
+<p>Edit <code>/etc/pulse/default.pa</code> to close the default Bluetooth discover of pulse.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /etc/pulse/default.pa
 
-<pre><code class="language-shell">nano /etc/pulse/default.pa
-
-# load-module module-bluetooth-discover
-</code></pre></li>
-
-<li><p>Edit <code>/usr/bin/start-pulseaudio-x11</code> to open bluetooth discover by <code>pactl</code> . It should be:</p>
-
-<pre><code class="language-shell">nano /usr/bin/start-pulseaudio-x11
-if
+<span class="c1"># load-module module-bluetooth-discover</span>
+</code></pre></div></li>
+<li>
+<p>Edit <code>/usr/bin/start-pulseaudio-x11</code> to open bluetooth discover by <code>pactl</code> . It should be:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /usr/bin/start-pulseaudio-x11
+<span class="k">if</span>
 ...
-    if [ x”$SESSION_MANAGER” != x ] ; then
-    /usr/bin/pactl load-module module-x11-xsmp “display=$DISPLAY session_manager=$SESSION_MANAGER” &gt; /dev/null
-    fi
+    <span class="k">if</span> <span class="o">[</span> x”<span class="nv">$SESSION_MANAGER</span>” !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    /usr/bin/pactl load-module module-x11-xsmp “display<span class="o">=</span><span class="nv">$DISPLAY</span> <span class="nv">session_manager</span><span class="o">=</span><span class="nv">$SESSION_MANAGER</span>” &gt; /dev/null
+    <span class="k">fi</span>
 
- #Insert this line#
+ <span class="c1">#Insert this line#</span>
  /usr/bin/pactl load-module module-bluetooth-discover
- fi
-</code></pre>
-
-<p>Usually this block of code is at the last line.</p></li>
+ <span class="k">fi</span>
+</code></pre></div><p>Usually this block of code is at the last line.</p>
+</li>
 </ol>
-
 <p>This solution is from:</p>
-
 <ol>
 <li><a href="http://m.php.cn/article/364011.html">Linux &amp; Bluetooth</a></li>
 <li><a href="https://bbs.archlinux.org/viewtopic.php?id=194006">BBS. Arch at #17</a></li>
@@ -671,7 +661,7 @@ if
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

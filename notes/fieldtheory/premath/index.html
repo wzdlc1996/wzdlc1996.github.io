@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>14 minutes read</li>
+      <li>9 minutes read</li>
     
   </ul>
   
@@ -454,561 +454,247 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="minkowski-spacetime">Minkowski Spacetime</h1>
-
+            <h1 id="minkowski-spacetime">Minkowski Spacetime</h1>
 <h2 id="the-structure-of-minkowski-spacetime">The Structure of Minkowski Spacetime</h2>
-
 <p>From now on we will study in <code>Minkowski spacetime</code> (non-General Relativity) .</p>
-
 <p><em>[Definition]</em> : <code>Minkowski spacetime (non-curved)</code> is a 4-dimension real linear space:</p>
-
-<div>$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Usually we note the vector as a lowercase of letter with a Greek superscript like<code>$x\sim x^{\mu}$</code>and ignore the basis.
 with the <code>metric</code> :</p>
-
-<div>$$\eta_{\mu\nu}=\eta^{\mu\nu} = (+,-,-,-)$$</div>
-
+<!-- raw HTML omitted -->
 <p>And <code>dual vector</code> of <code>$x$</code> :</p>
-
-<div>$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>where the <a href="https://en.wikipedia.org/wiki/Einstein_notation"><code>Einstein Summation Convention</code></a> has been applied.
 The <code>inner product</code> in Minkowski spacetime is:</p>
-
-<div>$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <h2 id="lorentz-transformation">Lorentz Transformation</h2>
-
 <p><em>[Definition]</em> : <code>Lorentz Transformation</code> is a linear transformation which hold the inner product invariant:</p>
-
-<div>$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x'^{\mu} = \Lambda^{\mu}_{\ \ \ \  \nu} x ^{\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With <code>$\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda^{\nu}_{\ \ \ \  \beta} = \eta_{\alpha\beta}$</code>
 Or equivalently:<code>$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$</code></p>
-
 <p><em>[Theorem]</em> : By<code>$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$</code>, we have:</p>
-
-<div>$$(\Lambda^{-1})^{\mu}_{\ \ \ \  \nu} = \Lambda_{\nu}^{\ \ \ \  \mu}$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>We have<code>$\Lambda^{\mu}_{\ \ \ \  \alpha}\Lambda^{\nu}_{\ \ \ \  \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$</code>, for<code>$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$</code>, we have:</p>
-
-<div>$$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu}^{\ \ \ \  \beta} = \delta_{\alpha}^{\beta}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Or with the raising and lowering indices pairly will not change the value:</p>
-
-<div>$$\Lambda_{\alpha}^{\ \ \ \  \mu} \Lambda^{\alpha}_{\ \ \ \  \nu} = \delta_{\nu}^{\mu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\Lambda$</code>and<code>$\Lambda^{-1}$</code> shall satisfy:</p>
-
-<div>$$\Lambda \Lambda^{-1} = 1 \Leftrightarrow (\Lambda)^{\mu}_{\ \ \ \  \alpha} (\Lambda^{-1})^{\alpha}_{\ \ \ \  \nu} = \delta_{\nu}^{\mu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the comparation between these two equality above, we have:</p>
-
-<div>$$(\Lambda^{-1})^{\mu}_{\ \ \ \  \alpha} = \Lambda_{\alpha}^{\ \ \ \  \mu}$$</div>
-
-<p></details></p>
-
-<p>In Special Relativity, Lorentz transformation describes the coordinate transformation between two reference frames. We can classify Lorentz transformation by if it contain the time reversal and space inversion:
-<ol>
-  <li><code>Proper, Orthochronous</code> : <code>$\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</code> </li>
-  <li><code>Improper, Orthochronous</code> :<code>$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</code></li>
-  <li><code>Improper, Non-orthochronous</code> :<code>$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\leq -1$</code></li>
-  <li><code>Proper, Non-orthochronous</code> :<code>$\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\leq -1$</code></li>
-</ol>
-With <code>Proper Orthochronous</code> (<code>Restricted Lorentz Group</code>) noted as<code>$\text{SO}^+(1,3)$</code>, we can construct the Lorentz Group<code>$\text{O}(1,3)$</code>as:</p>
-
-<div>$$\{ 1,P,T,PT \} \text{SO}^+(1,3) = \text{O}(1,3)$$</div>
-
-<p>Where<code>$P=(+,-,-,-)$</code>is the space inversion and<code>$T=(-,+,+,+)$</code>is the time reversal. They also induce those 4 (not connected)components of<code>$\text{O}(1,3)$</code>. <mark>These 4 components are connected (but not simply connected)</mark></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>In Special Relativity, Lorentz transformation describes the coordinate transformation between two reference frames. We can classify Lorentz transformation by if it contain the time reversal and space inversion:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Where<code>$P=(+,-,-,-)$</code>is the space inversion and<code>$T=(-,+,+,+)$</code>is the time reversal. They also induce those 4 (not connected)components of<code>$\text{O}(1,3)$</code>. <!-- raw HTML omitted -->These 4 components are connected (but not simply connected)<!-- raw HTML omitted --></p>
 <h2 id="scalar-vector-and-tensor">Scalar, Vector and Tensor</h2>
-
 <p><em>[Definition]</em> : <code>Scalars</code> are some quantities, which is invariant when reference frame changes.</p>
-
 <p><em>[Definition]</em> : <code>Vectors</code> are those <code>4-components quantities</code>, which are transformed by <code>Lorentz Transformation</code> when reference frame changes: <code>$v'^{\mu} = \Lambda^{\mu}_{\indent \nu}v^{\nu}$</code> . For example, position <code>$x=(x^0,\bm{x})$</code> is a vector</p>
-
 <p><em>[Definition]</em> : <code>Tensors</code> are multilinear maps from <code>$\mathcal{M}$</code>s and their <code>dual space</code> to scalars</p>
-
 <p>For <code>$(m,n)$</code> type tensor <code>$T$</code> , it is the multilinear map:</p>
-
-<div>$$T :\mathcal{M}^{\times m} \times (\mathcal{M}^* )^{\times n} \rightarrow \mathbb{R}$$</div>
-
-<p>Here, we use <code>$\mathcal{M}$</code> to note the vector space and <code>$\mathcal{M}^* $</code> to note the dual-vector space. The Minkowski spacetime is also a vector space <code>$\mathcal{M}$</code> describing the space-time coordinates. <br>
+<!-- raw HTML omitted -->
+<p>Here, we use <code>$\mathcal{M}$</code> to note the vector space and <code>$\mathcal{M}^* $</code> to note the dual-vector space. The Minkowski spacetime is also a vector space <code>$\mathcal{M}$</code> describing the space-time coordinates. <!-- raw HTML omitted -->
 In a reference frame, one can write the tensor <code>$T$</code> as a quantity with <code>$4(m+n)$</code> indices:</p>
-
-<div>$$T \sim T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent \indent \nu_1,\cdots,\nu_n} \ \ \ \mu_p,\nu_q \in \{0,1,2,3\}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And:</p>
-
-<div>$$T(v_1,v_2,\cdots,v_m,u_1,\cdots,u_n) = T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent  \indent \nu_1,\cdots,\nu_n} (v_1)^{\mu_1}(v_2)^{\mu_2}\cdots (v_m)^{\mu_m} (u_1)_{\nu_1}\cdots (u_n)_{\nu_n}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then the transformation of the tensor shall be:</p>
-
-<div>$$(T')_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent  \indent \nu_1,\cdots,\nu_n} = T_{\alpha_1,\cdots,\alpha_m}^{\indent \indent \indent \indent \beta_1,\cdots,\beta_n} \Lambda_{\mu_1}^{\indent \alpha_1}\cdots
-\Lambda_{\mu_m}^{\indent \alpha_m} \Lambda^{\nu_1}_{\indent \beta_1}\cdots \Lambda^{\nu_n}_{\indent \beta_n}$$</div>
-
+<!-- raw HTML omitted -->
 <h1 id="lorentz-group">Lorentz group</h1>
-
 <h2 id="basic-concept">Basic Concept</h2>
-
 <p><em>[Definition]</em> : <code>Lorentz Group</code> , or mathematically, <code>Generalized Orthogonal Group</code> <code>$\text{O}(1,3;\mathbb{R})$</code> , is the <code>metrix Lie Group</code> that preserves the quadratic form:</p>
-
-<div>$$(x^0,x^1,x^2,x^3) \mapsto (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>on <code>$\mathbb{R}^4$</code> . Which is a <code>6-D noncompact non-abelian real Lie group, not connected</code></p>
-
 <p><em>[Definition]</em> : <code>Restricted Lorentz Group</code> : <code>$\text{SO}^+(1,3)$</code>, is the connected component of Lorentz Group which contains the <code>identity element</code></p>
-
 <h2 id="lie-algebra-of-restricted-lorentz-group">Lie Algebra of Restricted Lorentz Group</h2>
-
 <p><em>[Definition]</em> : <code>Vector representation</code> of <code>$\text{SO}^+(1,3)$</code> is its representation by <code>$4\times 4$</code> real metrix.</p>
-
 <p><em>[Theorem]</em> : The common form of elements in <code>$\text{SO}^+(1,3)$</code> is:</p>
-
-<div>$$\Lambda = \exp \Big(-\frac {\ti} 2 \omega_{\mu,\nu} J^{\mu,\nu} \Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$J^{\mu\nu} = -J^{\nu\mu}$</code> are generators, and <code>$\omega_{\mu\nu}=-\omega_{\nu\mu}$</code> are six independent parameters</p>
-
 <p>With the following notations:</p>
-
-<div>$$\begin{aligned}
-\theta^i &= \frac 1 2 \sum_{jk} \epsilon^{ijk}\omega^{jk} \ ; \ L^i = \frac 1 2 \sum_{jk} \epsilon^{ijk}J^{jk} \\
-\eta^i &= \omega_{0,i} \ ; \ K^i = J^{0,i}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>One can rewrite the expression as</p>
-
-<div>$$\Lambda = \exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\theta^i,\eta^i$</code> are real number, and <code>$L^i,K^i$</code> are generators.</p>
-
 <p>Usually, <code>$L^i$</code> generate the <code>rotation</code> in <code>$\mathbb{R}^3$</code> , and <code>$K^i$</code> generate the <code>boost</code> .</p>
-
 <p>They satisfy the commutation relation as:</p>
-
-<div>$$\begin{aligned}[]
-[L^i,L^j] &= \ti \epsilon^{ijk}L^k \\
-[L^i,K^j] &= \ti \epsilon^{ijk}K^k \\
-[K^i,K^j] &= -\ti \epsilon^{ijk} L^k
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>summation of $k$ is over ${1,2,3}$</p>
-
 <p>where $\epsilon^{ijk}$ is the covariant <code>Levi-Civita</code> simbol. Which equals <code>$1$</code> if <code>$ijk$</code> are even permutation of <code>$123$</code> , and <code>$-1$</code> for odd ones. And vanishes for otherwise.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>Let us begin with the infinitesimal Lorentz Transformation in vector representation. Let <code>$J^{\mu\nu}$</code> be the generators. For
 Lorentz Group is six dimension. Then there should be only six independent generators . Letting <code>$J^{\mu\nu}=-J^{\nu\mu}$</code> will satisfy it.
 With <code>$\omega_{\mu\nu}$</code> be the parameter (Also <code>$\omega_{\mu\nu}=-\omega_{\nu\mu}$</code> so that there are only 6 independent parameters), we can write down the general expression:</p>
-
-<div>$$\Lambda^{\mu}_{\indent \nu} = \exp\Big(-\frac {\ti} {2} \omega_{\alpha\beta} J^{\alpha\beta} \Big)^{\mu}_{\indent \nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>The infinitesimal transformation will be : <code>$\Lambda^{\mu}_{\indent \nu} \approx \delta^{\mu}_{\nu} -\frac {\ti} 2 \omega_{\alpha\beta} (J^{\alpha\beta})^{\mu}_{\indent \nu}$</code>
 For Lorentz Transform should satisfy:</p>
-
-<div>$$\Lambda^{\mu}_{\indent \lambda}\Lambda^{\nu}_{\indent \delta} \eta_{\mu\nu} = \eta_{\lambda\delta}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have:</p>
-
-<div>$$\omega_{\alpha\beta}(J^{\alpha\beta})_{\delta\lambda} + \omega_{\alpha\beta}(J^{\alpha\beta})_{\lambda\delta} = 0$$</div>
-
+<!-- raw HTML omitted -->
 <p>This shall be hold for arbitary <code>$\omega$</code> , so we have that:</p>
-
-<div>$$(J^{\alpha\beta})_{\mu\nu} = - (J^{\alpha\beta})_{\mu\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Which shows that the generators in vector representation are anti-symmetric metrices.
 One can choose these matrix arbitarily. One of those is:</p>
-
-<div>$$(J^{\alpha\beta})_{\mu\nu} = \ti (\delta_{\mu}^{\alpha}\delta_{\nu}^{\beta}-\delta_{\nu}^{\alpha}\delta_{\mu}^{\beta})$$</div>
-
+<!-- raw HTML omitted -->
 <p>The commutation relation are invariant among the representation. They are:</p>
-
-<div>$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu \nu} =\ti\Big\{\delta^{\delta}_{\alpha}(J^{\beta\gamma})+\delta^{\alpha}_{\gamma}(J^{\delta\beta})+\delta^{\beta}_{\delta}(J^{\gamma\alpha})+\delta_{\beta}^{\gamma}(J^{\alpha\delta}) \Big\}_{\mu\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>By the simple property:</p>
-
-<div>$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu\nu} = \sum_\lambda (J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - J^{\gamma\delta})_{\mu\lambda}(J^{\alpha\beta})_{\lambda\nu} = \sum_{\lambda}(J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - (\mu\leftrightarrow \nu)$$</div>
-
-<p></details></p>
-
-<p>Here we write down all matrix form of these generators in vector representation, the simbol $\sim$ means that the right-hand-side matrix is the matrix of left-hand-side <code>$A$</code> &rsquo;s elements <code>$A^{\mu}_{\indent \nu}$</code></p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Matrix Form
-    </summary></p>
-
-<div>$$\begin{aligned}
-J^{01}&=-J^{10}\sim \ti \begin{bmatrix}0&1&0&0\\ 1&0&0&0\\ 0&0&0&0 \\ 0&0&0&0  \end{bmatrix} \ ; \
-J^{02}=-J^{20}\sim \ti \begin{bmatrix}0&0&1&0\\ 0&0&0&0\\ 1&0&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
-J^{03}=-J^{30}\sim \ti \begin{bmatrix} 0&0&0&1\\ 0&0&0&0\\ 0&0&0&0\\ 1&0&0&0 \end{bmatrix} \\
-J^{12}&=-J^{21}\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&-1&0\\ 0&1&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
-J^{23}=-J^{32}\sim\ti\begin{bmatrix}0&0&0&0\\ 0&0&0&0\\ 0&0&0&-1\\ 0&0&1&0 \end{bmatrix} \ ; \
-J^{31}=J^{-31}\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&0&1\\ 0&0&0&0\\ 0&-1&0&0 \end{bmatrix}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Here we write down all matrix form of these generators in vector representation, the simbol $\sim$ means that the right-hand-side matrix is the matrix of left-hand-side <code>$A$</code> &lsquo;s elements <code>$A^{\mu}_{\indent \nu}$</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>And for <code>$\bm{L},\bm{K}$</code> :</p>
-
-<div>
-$$\begin{aligned}
-L^1&\sim \ti \begin{bmatrix}0&0&0&0\\ 0&0&0&0\\ 0&0&0& -1\\ 0&0&1&0 \end{bmatrix} \ ; \
-L^2\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&0&1\\ 0&0&0&0\\ 0&-1&0&0 \end{bmatrix} \ ; \
-L^3\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&-1&0\\ 0&1&0&0\\ 0&0&0&0 \end{bmatrix} \\
-K^2&\sim\ti\begin{bmatrix}0&1&0&0\\ 1&0&0&0\\ 0&0&0&0 \\ 0&0&0&0  \end{bmatrix} \ ; \
-K^2\sim\ti \begin{bmatrix}0&0&1&0\\ 0&0&0&0\\ 1&0&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
-K^3\sim \ti \begin{bmatrix} 0&0&0&1\\ 0&0&0&0\\ 0&0&0&0\\ 1&0&0&0 \end{bmatrix}
-\end{aligned}$$
-</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="weyl-spinor-representation">Weyl Spinor Representation</h2>
-
 <p><em>[Theorem]</em> :     With the definition of <code>$L^i,K^i$</code> (or for simplicity <code>$\bm{L},\bm{K}$</code>) , one can define the new generator:</p>
-
-<div>$$\bm{J}^{(1)} := \frac 1 2 (\bm{L}+\ti \bm{K}) \ \ \bm{J}^{(2)} := \frac 1 2 (\bm{L}-\ti \bm{K})$$</div>
-
+<!-- raw HTML omitted -->
 <p>And induce the new commutation relation:</p>
-
-<div>$$[J^{(\alpha),i},J^{(\beta),j}] = \ti \delta_{\alpha,\beta} \epsilon^{ijk} J^{(\alpha),k} \ \ ; \ \ \alpha,\beta=1,2$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>For <code>$\alpha=\beta=1$</code> , we have:</p>
-
-<div>$$\begin{aligned}[]
-[J^i,J^j] &= \frac 1 4 \Big([L^i,L^j]-[K^i,K^j] + \ti ([L^i,K^j]+[K^i,L^j]) \Big) \\
-&= \frac 1 4 \Big(\ti \epsilon^{ijk} L^k +\ti \epsilon^{ijk} L^k +\ti (\ti\epsilon^{ijk} K^k - \ti \epsilon^{jik}K^k) \Big) \\
-&= \frac 1 2 \epsilon^{ijk}\ti(L^k+\ti K^k) \\
-&= \ti \epsilon^{ijk} J^k
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And when <code>$\alpha\neq\beta$</code> , there will be additional minus sign which let the result to be vanished.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>One can find that <code>$\{J_i^{(1,2)}\}$</code> forms two <code>$\text{su}(2)$</code> Lie Algebra.</p>
-
 <p>In some degree, we can say that the Lorentz Group is the direct product of two <code>$\text{SU}(2)$</code> Group with complex parameters.</p>
-
 <p><em>[Definition]</em> : For Lorentz Group looks like the direct product of two <code>$\text{SU}(2)$</code> , we can use a piar of indeces of <code>$\text{SU}(2)$</code> representation
 to note any representations of Lorentz Group , which can be written as <code>$(j_1,j_2)$</code>
-Then , the basis of (<sup>1</sup>&frasl;<sub>2</sub>,0) called as <code>left-handed Weyl Spinor</code> , and the basis of (0,<sup>1</sup>&frasl;<sub>2</sub>) called as <code>right-handed Weyl Spinor</code></p>
-
+Then , the basis of (1/2,0) called as <code>left-handed Weyl Spinor</code> , and the basis of (0,1/2) called as <code>right-handed Weyl Spinor</code></p>
 <p>Using the <code>covariance</code> form of <code>Pauli Matrices</code> :</p>
-
-<div>$$\sigma^0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \ , \ \sigma^1 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \ , \ \sigma^2 = \begin{bmatrix} 0 & -\ti \\ \ti & 0\end{bmatrix} \ , \ \sigma^3 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>We can write the matrix representation of Lorentz Group by spinor basis:</p>
-
-<div>$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big) \ , \ \Lambda_R = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}+\ti \bm{\eta})^i \big)$$</div>
-
+<!-- raw HTML omitted -->
 <h2 id="parity-transformation">Parity-Transformation</h2>
-
-<p><em>[Definition]</em> : <code>Parity-Transformation</code> is the Spatial inversion transformation.</p>
-
+<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Parity-Transformation</code> is the Spatial inversion transformation.</p>
 <p>In Minkowski space-time, we have the matrix form of the Parity-Transformation:</p>
-
-<div>$$P\sim \text{diag}(1,-1,-1,-1)$$</div>
-
+<!-- raw HTML omitted -->
 <p>It is obviously that <code>$P^2=1$</code> . That means they are self-identity.</p>
-
 <p>The question is: when Parity-Transformation is operated on the space-time, what will happen on the Lorentz Transformation of these elements(vectors and spinors)</p>
-
 <p>Because we know the matrix form of Parity-Transformation of 4-vectors, we will begin with them.</p>
-
 <ul>
-<li><p>Vectors transform as:</p>
-
-<div>$$v^{\mu} \rightarrow \Lambda(\omega)^{\mu}_{\indent \nu} v^{\nu}$$</div>
-
+<li>
+<p>Vectors transform as:</p>
+<!-- raw HTML omitted -->
 <p>Then under Parity transformation it shall be :</p>
-
-<div>$$P v^{\mu} \rightarrow P \Lambda(\omega)^{\mu}_{\indent \nu} v^{\nu}= P \Lambda(\omega)^{\mu}_{\indent \nu} P P v^{\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>That means under Parity Transformation, elements in (Restricted) Lorentz Group shall be transformed by:</p>
-
-<div>$$ \Lambda \rightarrow P \Lambda P = \Lambda' $$</div>
-
-<p><code>$\Lambda'$</code> shall be in one component of the Lorentz Group too. Let <code>$\Lambda=\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})$</code> , then we can derive the transformation of the generators <code>$\bm{L},\bm{K}$</code> under Parity Transformation, with parameters <code>$\bm{\theta},\bm{\eta}$</code> invariant.</p></li>
+<!-- raw HTML omitted -->
+<p><code>$\Lambda'$</code> shall be in one component of the Lorentz Group too. Let <code>$\Lambda=\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})$</code> , then we can derive the transformation of the generators <code>$\bm{L},\bm{K}$</code> under Parity Transformation, with parameters <code>$\bm{\theta},\bm{\eta}$</code> invariant.</p>
+</li>
 </ul>
-
-<p><em>[Theorem]</em> : Under Parity Transformation, we have:</p>
-
-<div>$$P\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K}) P = \Lambda(\bm{\theta},\bm{\eta};\bm{L} , -\bm{K}) $$</div>
-
+<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : Under Parity Transformation, we have:</p>
+<!-- raw HTML omitted -->
 <p>That means that the 3-vector <code>$\bm{L}$</code> transforms like <code>Pseudovector</code> and <code>$\bm{K}$</code> transforms like <code>vector</code></p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>For the explicit expression of <code>$\Lambda$</code> is:</p>
-
-<div>$$\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K}) = \exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>we have:</p>
-
-<div>$$\begin{aligned}
-P\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})P &= \exp\big(-\ti \sum_{i=1}^3 P(\theta^i L^i + \eta^i K^i)P\big) \\
-&=\exp\big(-\ti \sum_{i=1}^3 (\theta^i PL^iP + \eta^i PK^iP)\big) \\
-&=\Lambda(\bm{\theta},\bm{\eta};P\bm{L}P,P\bm{K}P)
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For the matrix form of <code>$\bm{L}$</code> and <code>$\bm{K}$</code> , we can check that:</p>
-
-<div>$$\begin{aligned}
-P L^i P &= L^i \\
-P K^i P &= -K^i
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Q.E.D.</p>
-
-<p></details></p>
-
-<p><mark> This theorem hold for spinor representation too</mark> , with the form : <code>$P\Lambda_{L(R)}P = \Lambda_{R(L)}$</code> and <code>$P a_{l(r)} = a_{r(l)}$</code></p>
-
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --> This theorem hold for spinor representation too<!-- raw HTML omitted --> , with the form : <code>$P\Lambda_{L(R)}P = \Lambda_{R(L)}$</code> and <code>$P a_{l(r)} = a_{r(l)}$</code></p>
 <p>In some degree, we say that Parity-Transformation will exchange the left-handed spinor and right-handed spinor. For the difference between left/right handed spinor is <code>$L\leftrightarrow L , K\leftrightarrow -K$</code> (That is why they are called as <code>handed</code>)</p>
-
 <h1 id="spinor-space">Spinor Space</h1>
-
 <p><em>[Definition]</em> : <code>1/2-spinor space</code> is a 2-dimension complex linear space used for the irrep. of Lorentz Group.
-To handle the Lorentz Group, we need two <sup>1</sup>&frasl;<sub>2</sub>-spinor spaces, ususally noted as (<sup>1</sup>&frasl;<sub>2</sub>,0) and (0,<sup>1</sup>&frasl;<sub>2</sub>).
+To handle the Lorentz Group, we need two 1/2-spinor spaces, ususally noted as (1/2,0) and (0,1/2).
 We will separate the spinor in different space by the subscripts <code>$_l,_r$</code> .
 A spinor is noted as a pair of complex number, or a complex column vector.</p>
-
 <p>In this section, our goal is to construct some <code>invariants</code> of Lorentz Group or some quantities we have known from spinor spaces
 When spinor operated by the elements of Lorentz Group, it performs as the linear transformation with the 2x2 matrix above.</p>
-
 <h2 id="scalars">Scalars</h2>
-
 <p><em>[Theorem]</em> : For any two left-handed spinors: <code>$a_l,b_l$</code> , the quadratic form:</p>
-
-<div>$$(a_l)^1(b_l)^2-(a_l)^2(b_l)^1 = (a_l)^T \epsilon b_l$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\epsilon = \ti \sigma^2$</code> , is invariant under Lorentz Transformation.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>consider the Lorentz Transformation with parameter <code>$\bm{\theta},\bm{\eta}$</code> , then we have:</p>
-
-<div>$$a_l \rightarrow \Lambda_L a_l \ \ b_l \rightarrow \Lambda_L b_l$$</div>
-Where `$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_i \sigma^i (\theta^i - \ti \eta^i) \big) $` .
-With the property of Pauli matrices:
-
-<div>$$\exp(\ti \bm{x}\cdot \bm{\sigma}) = \cos(x) + \ti \sin (x) \bm{n}_x\cdot \bm{\sigma}$$</div>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>For complex vector <code>$\bm{x}\in \mathbb{C}^3$</code> , this formula shall be treated as:</p>
-
-<div>$$\exp(\ti \bm{x}\cdot \bm{\sigma}) = \sum_{k=0}^{\infty} \frac {(-1)^k} {(2k)!} \big(\sum_{i=1}^3 (x^i)^2 \big)^k + \ti \sum_{k=0}^{\infty} \frac {(-1)^k} {(2k+1)!} \big(\sum_{i=1}^3 (x^i)^2 \big)^k \big(\sum_{i=1}^3 x^i \sigma^i \big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we can write down the general expression of the matrix:</p>
-
-<div>$$\Lambda_L = z_0+z_1\sigma^1+z_2\sigma^2+z_3\sigma^3$$</div>
-
+<!-- raw HTML omitted -->
 <p>with <code>$-z_1^2-z_2^2-z_3^2+z_0^2=1$</code>
 Then:</p>
-
-<div>$$a_l^T\epsilon b_l \rightarrow \ti a_l^T (\sum_{i=0}^{3} z_i (\sigma^i)^T) \sigma^2 \sum_{i=0}^{3} z_i (\sigma^i) b_l$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\sigma^2\sigma^i\sigma^2=-\sigma^{iT}$</code> , we have <code>$i,j\neq 0$</code>:</p>
-
-<div>$$\begin{aligned}
-\sigma^{iT} \sigma^2\sigma^j &= -\sigma^2\sigma^i\sigma^j = -\sigma^2 \delta_{ij} -\ti \epsilon^{ijk} \sigma^2\sigma^k \\
-&= -\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - \epsilon^{ijk}\epsilon^{2kl}\sigma^l \\
-&= -\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - (\delta_{il}\delta_{j2}-\delta_{i2}\delta_{jl})\sigma^l \\
-&=-\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - \delta_{j2}\sigma^i+\delta_{i2}\sigma^j
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And:</p>
-
-<div>$$\begin{aligned}
-\sigma^{0T}\sigma^2\sigma^j &= \delta_{2j} +\ti \epsilon^{2jk}\sigma^k \\
-\sigma^{iT}\sigma^2\sigma^0 &= -\sigma^2\sigma^i = -\delta_{2i}-\ti \epsilon^{2ik}\sigma^k \\
-\sigma^{0T}\sigma^2\sigma^0 &= \sigma^2
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then:</p>
-
-<div>$$\sum_{i,j=0}^3 z_iz_j \sigma^{iT} \sigma^2\sigma^j =z_0^2 \sigma^2 -\sum_{i=1}^3 z_i^2 \sigma^2 = \sigma^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>Which means the quadratic form is indeed invariant.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <h2 id="vectors">Vectors</h2>
-
 <p><em>[Theorem]</em> : For any left-handed Weyl spionor $a_l$ and right-handed Weyl spinor $b_r$ , Let <code>$\bar{\sigma}^{\mu}=\sigma_{\mu}=\eta_{\mu\nu}\sigma^{\nu}$</code> , one can construct some quantities with 4-components:</p>
-
-<div>$$\begin{aligned}
-a^{\mu} &= a_l^{\dagger}\bar{\sigma}^{\mu}a_l \\
-b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Are <code>vectors</code> . Namely, they transformed by the (4-)vector-rep. of Lorentz group under Lorentz Transformation.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>According to the transformation regulation of spinor, we have:</p>
-
-<div>$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then for $a_l \rightarrow \Lambda_L a_l$ , one have:</p>
-
-<div>$$a^{\mu}\rightarrow a_l^{\dagger} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L a_l $$</div>
-
+<!-- raw HTML omitted -->
 <p>For the completion of Pauli matrices in 4x4 Hermitian matrices space:</p>
-
-<div>$$\begin{aligned}[]
-\Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L &= \eta_{\mu\nu} z_{\alpha}^{*}z_{\beta} \sigma^{\alpha}\sigma^{\nu}\sigma^{\beta} \\
-&= (\Lambda)^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>We need to check if <code>$L^{\mu}_{\indent \nu}$</code> is the the vector representation of Lorentz Group, which shall be written as:</p>
-
-<div>$$\Lambda^{\mu}_{\indent \nu} = \exp(-\frac \ti 2 \omega_{\alpha\beta}J^{\alpha\beta})^{\mu}_{\indent \nu}=\exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)^{\mu}_{\indent \nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>We need only to check whether the infinitesimal transformation is consistent or not. Which means that we need to check the following two equalities(generator equalities):</p>
-
-<div>$$\begin{aligned}
-\partial_{\theta^i} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L|_{\bm{\eta}=\bm{\theta}=0} &= \partial_{\theta^i} \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}|_{\bm{\eta}=\bm{\theta}=0} \\
-\partial_{\eta^i} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L|_{\bm{\eta}=\bm{\theta}=0} &= \partial_{\eta^i} \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}|_{\bm{\eta}=\bm{\theta}=0}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Which is:</p>
-
-<div>$$\begin{aligned}
-\frac \ti 2[\sigma^i,\bar{\sigma}^{\mu}] &= -\ti (L^i)^{\mu}_{\indent \nu}\bar{\sigma}^{\nu} \\
--\frac 1 2\{\sigma^i,\bar{\sigma}^{\mu}\} &= -\ti (K^i)^{\mu}_{\indent \nu}\bar{\sigma}^{\nu}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>By the matrix form of <code>$\bm{L},\bm{K}$</code> we can check these equalities</p>
-
 <p>Which is similar for the right-handed Weyl spinor.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <h2 id="dirac-spinor">Dirac Spinor</h2>
-
 <p>Sometimes we need a Parity-conserved theory, in which two handed spinor should be involved simultaneously. The simplest way is the <code>direct sum</code> of two spinor. This is called as <code>Dirac spinor</code> :</p>
-
-<div>$$\psi_{\alpha} = \begin{bmatrix} a_l \\ b_r \end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\psi_{\alpha}$</code> is a Dirac spinor. It has 4 components, the first two form a left-handed Weyl spinor, and the last two form a right-handed Weyl spinor.</p>
-
 <p>We define following 4x4 <code>$\gamma$</code> matrices, which will be widely used in field theory:</p>
-
-<div>$$\gamma^{\mu} = \begin{bmatrix} \bm{0} & \sigma^{\mu} \\ \bar{\sigma}^{\mu} & \bm{0}\end{bmatrix}$$</div>
-
-<p><mark>This is a little different from some others book. Usually this forms of gamma matrices is called that in <code>Weyl(Chiral) basis</code> </mark></p>
-
-<p>In <code>Dirac basis</code> , <code>$\gamma^{1,2,3}$</code> are the same, but <code>$\gamma^0 = \text{diag}(1,1,-1,-1)$</code>.</p>
-
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->This is a little different from some others book. Usually this forms of gamma matrices is called that in <code>Weyl(Chiral) basis</code> <!-- raw HTML omitted --></p>
+<p>In <code>Dirac basis</code> , <code>$\gamma^{1,2,3}$</code> are the same, but <code>$\gamma^0 = \text{diag}(1,1,-1,-1)$ </code>.</p>
 <p>One can check that they satisfy a anti-commutation relation:</p>
-
-<div>$$\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu} = 2\eta^{\mu\nu}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we know that under Parity transformation, the Dirac spinor should exchange its two Weyl spinors: <code>$\psi \rightarrow \psi'=\gamma^0\psi$</code></p>
-
 <p>Another important matrix is:</p>
-
-<div>$$\gamma_5=\gamma^5 = \ti \gamma^0\gamma^1\gamma^2\gamma^3 = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>It is anti-commutative with any <code>$\gamma^\mu$</code> : <code>$\{\gamma^5,\gamma^{\mu}\}=0$</code>. And one can construct <code>Projector</code> by it:</p>
-
-<div>$$P_L = \frac 1 2 (1-\gamma_5) \ ; \ P_R=\frac 1 2 (1+\gamma_5)$$</div>
-
+<!-- raw HTML omitted -->
 <p>They will get the left(right)-handed part of a Dirac spinor.</p>
-
 <p>We can use Dirac spinor to construct some quantities, with <code>$\bar{\psi} = \psi^\dagger \gamma^0$</code></p>
-
 <ol>
-<li><p><code>Parity-invariant</code> Lorentz Scalar and Vector:</p>
-
-<div>$$S = \bar{\psi}\psi \ ; \ V^\mu = \bar{\psi}\gamma^\mu\psi$$</div>
-
-<p>This shows that the matrices in spinor space <code>$\gamma^\mu$</code> seem like a vector in Minkowski spacetime.</p></li>
-
-<li><p><code>Pseudo-Scalar</code> <code>$P$</code> , <code>Pseudo-Vector</code> <code>$A^\mu$</code> and Tensor <code>$T^{\mu\nu}$</code> :</p>
-
-<div>$$P=\bar{\psi}\gamma^5\psi \ ; \ A^\mu=\bar{\psi}\gamma_5\gamma^\mu\psi \ ; \ T_{\mu\nu}=\bar{\psi}\sigma_{\mu\nu}\psi$$</div>
-
-<p>Where <code>$\sigma_{\mu\nu}=\frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</code></p></li>
+<li>
+<p><code>Parity-invariant</code> Lorentz Scalar and Vector:</p>
+<!-- raw HTML omitted -->
+<p>This shows that the matrices in spinor space <code>$\gamma^\mu$</code> seem like a vector in Minkowski spacetime.</p>
+</li>
+<li>
+<p><code>Pseudo-Scalar</code> <code>$P$</code> , <code>Pseudo-Vector</code> <code>$A^\mu$</code> and Tensor <code>$T^{\mu\nu}$</code> :</p>
+<!-- raw HTML omitted -->
+<p>Where <code>$\sigma_{\mu\nu}=\frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</code></p>
+</li>
 </ol>
-
-<p><em>[Definition (Clifford Algebra)]</em> : There are 16 independent Dirac matrices: <code>$1,\gamma_5,\gamma_{\mu},\gamma_5\gamma_{\mu},\sigma_{\mu\nu}$</code> . They together with normal matrices product form an <code>algebra</code> , called as <code>Clifford Algebra</code></p>
-
+<p><!-- raw HTML omitted -->[Definition (Clifford Algebra)]<!-- raw HTML omitted --> : There are 16 independent Dirac matrices: <code>$1,\gamma_5,\gamma_{\mu},\gamma_5\gamma_{\mu},\sigma_{\mu\nu}$</code> . They together with normal matrices product form an <code>algebra</code> , called as <code>Clifford Algebra</code></p>
 <p>Finally, even it is trivial, we will give the transformation relationship of Dirac Spinor under the Lorentz Transformation:</p>
-
-<div>$$\psi \rightarrow \psi' = \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi = \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi $$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\omega_{\mu\nu}$</code> are the parameters of <code>$\Lambda$</code></p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>Similar to what we have done before, we need only check the equalities of generators:</p>
-
-<div>$$\begin{aligned}
-\partial_{\theta^i} \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi \Bigg|_{\bm{\theta}=\bm{\eta}=0} &= \partial_{\theta^i} \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi\Big|_{\bm{\theta}=\bm{\eta}=0} \\
-\partial_{\eta^i} \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi \Bigg|_{\bm{\theta}=\bm{\eta}=0} &= \partial_{\eta^i} \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi\Big|_{\bm{\theta}=\bm{\eta}=0}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With <code>$\theta^i =  \epsilon^{ijk}\omega^{jk}/2 = \epsilon^{ijk}\omega_{jk}/2  , \eta^i=\omega_{0i}$</code> That is to check the equalities:</p>
-
-<div>$$\begin{aligned}
-\begin{bmatrix} -\ti \sigma^i /2 & 0 \\ 0 & -\ti \sigma^i/2 \end{bmatrix} \psi  &= -\sum_{jk}\frac {\ti} 4 \sigma_{jk}\epsilon^{ijk} \psi \\
-\begin{bmatrix} -\sigma^i/2 & 0 \\ 0 & \sigma^i/2 \end{bmatrix} \psi &= -(\frac {\ti} 2 \sigma_{0i}) \psi
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\sigma_{\mu\nu} = \frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</code> , we can calculate it in Weyl basis:</p>
-
-<div>$$\begin{aligned}
-\sigma_{\mu\nu} &= \frac {\ti} 2 \Bigg(\begin{bmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{bmatrix}\begin{bmatrix} 0 & \sigma^\nu \\ \bar{\sigma}^\nu & 0 \end{bmatrix}-\begin{bmatrix} 0 & \sigma^\nu \\ \bar{\sigma}^\nu & 0 \end{bmatrix}\begin{bmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{bmatrix}\Bigg) \\
-&= \frac {\ti} 2 \begin{bmatrix} \sigma^\mu \bar{\sigma}^\nu -\sigma^\nu \bar{\sigma}^\mu & 0 \\ 0 & \bar{\sigma}^\mu \sigma^\nu - \bar{\sigma}^\nu\sigma^\mu \end{bmatrix}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the Pauli matrices&rsquo; property: <code>$[\sigma^i,\sigma^j] = 2\ti \epsilon^{ijk}\sigma^k$</code> , we have:</p>
-
-<div>$$\begin{aligned}
-\sigma_{i0} &= \ti \begin{bmatrix} \sigma^i & 0 \\ 0 & -\sigma^i \end{bmatrix} \\
-\sigma_{ij} &= \epsilon^{ijk} \begin{bmatrix}\sigma^k & 0 \\ 0 & \sigma^k \end{bmatrix}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have:</p>
-
-<div>$$\begin{aligned}
--\frac {\ti} 2 \sigma_{0i} &= \begin{bmatrix} -\sigma^i/2 & 0 \\ 0 &\sigma^i /2\end{bmatrix} \\
--\sum_{jk} \frac {\ti} 4 \sigma_{jk}\epsilon^{ijk} &= -2\delta_i^l \begin{bmatrix}\sigma^l & 0 \\ 0 & \sigma^l \end{bmatrix} \frac {\ti} 4 = \begin{bmatrix}-\ti\sigma^i/2 & 0 \\ 0 & -\ti\sigma^i/2 \end{bmatrix}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>The equalities are checked.</p>
-
-<p></details></p>
+<!-- raw HTML omitted -->
 
           </div>
 
@@ -1040,6 +726,13 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
           
           <div class="row pt-3">
             <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/amath/randomvariable/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span></span>
+                  </div>
+                </a>
               
             </div>
             
@@ -1467,7 +1160,7 @@ b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

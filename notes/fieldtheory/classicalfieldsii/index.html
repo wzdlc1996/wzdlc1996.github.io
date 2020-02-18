@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>16 minutes read</li>
+      <li>7 minutes read</li>
     
   </ul>
   
@@ -454,435 +454,177 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="dirac-field">Dirac Field</h1>
-
+            <h1 id="dirac-field">Dirac Field</h1>
 <h2 id="formalism">Formalism</h2>
-
 <p><em>[Definition]</em> : Dirac field is the field of Dirac Spinor. The Lagrangian is Lorentz Scalar constructed by Dirac Spinor:</p>
-
-<div>$$\mathcal{L} = \bar{\psi}(\ti\gamma^\mu\partial_\mu-m)\psi$$</div>
-
+<!-- raw HTML omitted -->
 <p>This Lagrangian are not symmetric to <code>$\psi$</code> and <code>$\bar{\psi}$</code> , but this form will not lead the momentum vanish.</p>
-
 <p>Note that <code>$\psi$</code> is a 4-components Dirac Spinor. And these four components are independent. So we have the equation of motion:</p>
-
-<div>$$(\ti \gamma^\mu \partial_\mu -m)\psi = 0$$</div>
-
+<!-- raw HTML omitted -->
 <p>To let the form of the Dirac equation invariant under Lorentz Transformation, one need requires that the Dirac field transforms as:</p>
-
-<div>$$\psi(x)\rightarrow \psi'(x') = \Lambda_{1/2}\psi(x'=L(\omega) x) \ ; \ \Lambda_{1/2} = \exp(-\frac {\ti} 4 \omega_{\mu\nu} \sigma^{\mu\nu}) $$</div>
-
+<!-- raw HTML omitted -->
 <p>And the <code>canonically conjugate field</code> are also quantity with 4 components:</p>
-
-<div>$$\pi = \ti \bar{\psi}\gamma^0 = \ti \psi^\dagger$$</div>
-
+<!-- raw HTML omitted -->
 <p>The Hamiltonian:</p>
-
-<div>$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi  \Big\} $$</div>
-
+<!-- raw HTML omitted -->
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
-
 <p>To solve the Dirac Equation, one can also use the Fourier Transformation. Remember that <code>$\psi$</code> are 4-components quantity:</p>
-
-<div>$$\psi = \int \frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti \omega t} a(\bm{k},\omega) $$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$a(\bm{k},\omega)$</code> are 4-components Dirac spinor, and also let <code>$k=(\omega,\bm{k})$</code>. Then one can write:</p>
-
-<div>$$k_{\mu}\gamma^{\mu} a(\bm{k},\omega) -m a(\bm{k},\omega) = 0$$</div>
-
+<!-- raw HTML omitted -->
 <p>In the basis that <code>$\gamma^{\mu} = \begin{bmatrix} 0 &amp; \sigma^{\mu} \\ \bar{\sigma}^{\mu} &amp; 0 \end{bmatrix}$</code> , we can solve this equation of matrix. The homogeneous equation has non-trivial solution, that requires:</p>
-
-<div>$$\det(k_{\mu}\gamma^{\mu} -m) =0 \Rightarrow (-k_0^2+k_1^2+k_2^2+k_3^2+m^2)^2\equiv (m^2-k_\mu k^\mu)^2=0 $$</div>
-
+<!-- raw HTML omitted -->
 <p>Namely : <code>$\omega^2 = m^2+|\bm{k}|^2$</code> or <code>$\omega \equiv \pm \omega_{\bm{k}} = \pm \sqrt{m^2+|\bm{k}|^2}$</code></p>
-
 <p>Then we can rewrite the general solution as:</p>
-
-<div>$$\psi^{(+)} \propto e^{\ti \bm{k}\cdot \bm{x}-\ti \omega_{\bm{k}} t} u(\bm{k}) \ ; \ \psi^{(-)}\propto e^{-\ti \bm{k}\cdot \bm{x}+\ti \omega_{\bm{k}} t} v(\bm{k})$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the two spinor: <code>$u=\begin{bmatrix} u_l\\ u_r\end{bmatrix} , v=\begin{bmatrix} v_l\\ v_r\end{bmatrix}$</code> shall satisfy:</p>
-
-<div>$$\begin{aligned}
-(k_{\mu}\gamma^\mu -m) u &= 0\\
-(k_{\mu}\gamma^\mu +m) v &=0
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Using the equality:</p>
-
-<div>$$(k_\mu\gamma^\mu-m)(k_{\mu}\gamma^\mu +m) = 0 $$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>With <code>$\sigma^i\sigma^j =\delta_i^j +\ti \epsilon^{ijk}\sigma^k$</code></p>
-
-<div>$$\begin{aligned}
-(k_\mu\sigma^\mu)(k_\mu\bar{\sigma}^\mu) &= k_0^2 + k_0k_i\sigma^i-k_ik_0\sigma^i -k_ik_j(\delta_i^j+\ti \epsilon^{ijk}\sigma^k) \\
-&=k_0^2-k_ik_i\\
-&=k_\mu k^\mu
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then for <code>$k_\mu\gamma^\mu = \begin{bmatrix} 0 &amp; k_\mu \sigma^\mu \\ k_\mu \bar{\sigma}^\mu &amp; 0 \end{bmatrix}$</code> , we have:</p>
-
-<div>$$(k_\mu\gamma^\mu-m)(k_{\mu}\gamma^\mu +m) = \begin{bmatrix} k_\mu k^\mu & 0 \\ 0 & k_\mu k^\mu \end{bmatrix} -m^2 =0$$</div>
-
+<!-- raw HTML omitted -->
 <p>with <code>$k_\mu k^\mu = m^2$</code></p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>With two sets of <code>2-components quantities</code> : <code>$\chi^{(s)},\xi^{(s)} \ ; \ s=1,2$</code> , we can write down(widely used convention):</p>
-
-<div>$$u^{(s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</div>
-
-<p><mark>The factor is added so that <code>$\bar{u}u,\bar{v}v$</code> are Lorentz scalar</mark> , and <code>$\chi,\xi$</code> are just 2x1 matrices (basis of 2-D linear space), <mark>They are not Weyl spinor!</mark>. Under Lorentz Transformation they are invariant.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->The factor is added so that <code>$\bar{u}u,\bar{v}v$</code> are Lorentz scalar<!-- raw HTML omitted --> , and <code>$\chi,\xi$</code> are just 2x1 matrices (basis of 2-D linear space), <!-- raw HTML omitted -->They are not Weyl spinor!<!-- raw HTML omitted -->. Under Lorentz Transformation they are invariant.</p>
+<!-- raw HTML omitted -->
 <p>With <code>$u$</code> , we have:</p>
-
-<div>$$\begin{aligned}
-\bar{u}u &= u^\dagger \gamma^0 u \\
-&=\frac {1} {2m(m+\omega_{|\bm{k}|})} [\chi^{\dagger},\chi^\dagger](m+k_\mu \gamma^{\mu\dagger}) \gamma^0 (m+k_\mu \gamma^\mu) \begin{bmatrix} \chi \\ \chi \end{bmatrix} \\
-&=\frac {1} {2m(m+\omega_{|\bm{k}|})} [\chi^{\dagger},\chi^\dagger]\begin{bmatrix} m\sigma^0 & k_\mu \bar{\sigma}^{\mu} \\ k_\mu \sigma^\mu & m \sigma^0\end{bmatrix} \begin{bmatrix} 0 & \sigma^0\\ \sigma^0 & 0\end{bmatrix} \begin{bmatrix} m\sigma^0 & k_\mu \sigma^{\mu} \\ k_\mu \bar{\sigma}^\mu & m \sigma^0\end{bmatrix} \begin{bmatrix} \chi \\ \chi \end{bmatrix} \\
-&=\frac {1} {2m(m+\omega_{|\bm{k}|})} [\chi^{\dagger},\chi^\dagger]\begin{bmatrix} 2m k_\mu \bar{\sigma}^{\mu} & k_\mu k^\mu +m^2 \\ k_\mu k^\mu +m^2 & 2m k_\mu \sigma^\mu\end{bmatrix} \begin{bmatrix} \chi \\ \chi \end{bmatrix} \\
-&=\frac {m k_0 (\chi^\dagger \chi + \chi^\dagger \chi) + m^2(\chi^\dagger\chi + \chi^\dagger \chi)} {m(m+\omega_{|\bm{k}|})} \\
-&=2\chi^\dagger \chi
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Is invariant under Lorentz transformation.</p>
-
 <p>The more general formulas are:</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(s)}u^{(r)} &= 2 \chi^{(s)\dagger}\chi^{(r)} \\
-\bar{v}^{(s)}v^{(r)} &= -2 \xi^{(s)\dagger}\xi^{(r)} \\
-\end{aligned}$$</div>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Sometimes one can write them as a much beautiful form:</p>
-
-<div>$$u^{(s)}(\bm{k})=\frac {1} {\sqrt{m}} \begin{bmatrix} \sqrt{k_\mu \sigma^\mu} \chi^{(s)} \\ \sqrt{k_\mu \bar{\sigma}^\mu}\chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {1} {\sqrt{m}} \begin{bmatrix} \sqrt{k_\mu \sigma^\mu} \xi^{(s)} \\ -\sqrt{k_\mu \bar{\sigma}^{\mu}} \xi^{(s)}\end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>This form of <code>$u,v$</code> will satisfy the equation automatically. With the convention that the square-root of matrix is the branch that have position eigenvalue.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>The equation for <code>$u_{l(r)},v_{l(r)}$</code> are:</p>
-
-<div>$$\begin{aligned}
-k_\mu \sigma^\mu u_r -m u_l &=0 \\
-k_\mu \bar{\sigma}^\mu u_l - m u_r &=0\\
-k_\mu \sigma^\mu v_r +m v_l &=0 \\
-k_\mu \bar{\sigma}^\mu v_l + m v_r &=0
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$(k_\mu\sigma^\mu)(k_\mu\bar{\sigma}^{\mu})=k_\mu k^\mu$</code> , there are only two independent equations((1) and (3), (2) are the same as (1), and (4) are the same as (2)). One can easily check that the form above satisfy these equations.</p>
-
 <p>More over, we can check that <code>$\bar{u}u,\bar{v}v$</code> are Lorentz scalar, remember <code>$k_{\mu}\sigma^{\mu}$</code> is Hermitian.</p>
-
-<div>$$\begin{aligned}
-\bar{u} u &= u^{\dagger} \gamma^0 u \\
-&= \frac 1 m \Big(\chi^\dagger \sqrt{k_\mu\sigma^\mu}\sqrt{k_\mu \bar{\sigma}^\mu} \chi + \chi^\dagger \sqrt{k_\mu\bar{\sigma}^\mu}\sqrt{k_\mu \sigma^\mu} \chi  \Big) \\
-&= 2\chi^\dagger \chi
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Check for <code>$v$</code> is similar, the general form are still:</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(s)}u^{(r)} &= 2 \chi^{(s)\dagger}\chi^{(r)} \\
-\bar{v}^{(s)}v^{(r)} &= -2 \xi^{(s)\dagger}\xi^{(r)} \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>One can also directly prove they are the same. Notice that <code>$k_\mu \sigma^\mu$</code> is Hermitian:</p>
-
-<div>$$\sqrt{k_\mu \sigma^\mu} = a_\mu \sigma^\mu$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then square the both sides:</p>
-
-<div>$$k_\mu \sigma^\mu = a_0^2 + 2a_0 a_i \sigma^i + a_i a_j \sigma^i\sigma^j = |a|^2+2a_0 a_i \sigma^i$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$|a|^2 = a_0^2 +a_1^2 +a_2^2 +a_3^2$</code> . Then one can write the equation:</p>
-
-<div>$$\begin{aligned}
-k_0 &= |a|^2 \\
-k_i &= 2a_0 a_i
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then eliminate <code>$a_i$</code> , one have: <code>$k_0 = a_0^2 + \sum_{i=1}^3k_i^2/(4a_0^2)$</code></p>
-
 <p>One can solve that:</p>
-
-<div>$$\begin{cases}
-& a_0 = \sqrt{\frac 1 2 (k_0 \pm m)} \\
-& a_i = k_i/(2a_0)
-\end{cases}$$</div>
-
+<!-- raw HTML omitted -->
 <p>We need the positive branch, for <code>$\det a_\mu \sigma^\mu = a_\mu a^\mu=2a_0^2-k_0=\lambda_1\lambda_2 \gt 0$</code> , we need to choose the branch that <code>$a_0=\sqrt{(k_0+m)/2}$</code> . Then:</p>
-
-<div>$$\sqrt{k_\mu\sigma^\mu} = \frac {m\sigma^0+k_\mu \sigma^\mu} {\sqrt{2(m+k_0)}} $$</div>
-
+<!-- raw HTML omitted -->
 <p>Similarly, one can write:</p>
-
-<div>$$\sqrt{k_\mu\bar{\sigma}^\mu} = \frac {m\sigma^0+k_\mu \bar{\sigma}^\mu} {\sqrt{2(m+k_0)}} $$</div>
-
+<!-- raw HTML omitted -->
 <p>That is:</p>
-
-<div>$$\frac 1 {\sqrt{m}} \begin{bmatrix} \sqrt{k_\mu \sigma^\mu} \chi \\ \pm \sqrt{k_\mu\bar{\sigma}^{\mu}} \chi \end{bmatrix} = \frac {m\pm k_\mu\gamma^\mu} {\sqrt{2m(m+k_0)}} \begin{bmatrix} \chi \\ \pm \chi \end{bmatrix} $$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>Here the 2-component quantities <code>$\chi,\xi$</code> are arbitrary. In fact, they are relative to the spin of Dirac particle. We introduce a useful convention about them:</p>
-
 <p>Given a direction <code>$\bm{n}$</code> , we define <code>$\chi^{(s=1,2)}$</code> are eigenvector of the matrix <code>$\bm{n}\cdot \bm{\sigma}$</code> , which means the spin projected to <code>$\bm{n}$</code> :</p>
-
-<div>$$(\bm{n}\cdot \bm{\sigma}) \chi^{(\pm)} = \pm \chi^{(\pm)}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\pm$</code> denote the index of which denote the spin-up/down along <code>$\bm{n}$</code> .</p>
-
 <p>Then let corresponding <code>$\xi^{(pm)}$</code> are spin-inversion 2-component quantity:</p>
-
-<div>$$\xi^{(\pm)} = (-\ti \sigma^2) \Big(\chi^{(\pm)} \Big)^*$$</div>
-
+<!-- raw HTML omitted -->
 <p>Which leads to <code>$(\bm{n}\cdot \bm{\sigma})\xi^{(\pm)}=\mp \xi^{(\pm)}$</code> . According to the property <code>$\sigma^2 \bm{\sigma} \sigma^2 = -\bm{\sigma}^*$</code> . Note that this &ldquo;spin-inverse&rdquo; operator are not <code>reflexive relation</code>! Let <code>$A x= (-\ti\sigma^2) (x^*)$</code> , one can find that: <code>$A A x = -x$</code></p>
-
 <p>If <code>$\bm{n}=|\bm{n}|(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$</code> , one can choose that:</p>
-
-<div>$$\chi^{(+)}(\bm{p}) = \begin{bmatrix} \cos(\theta/2) \\ e^{\ti \phi}\sin (\theta/2)\end{bmatrix} \ ; \ \chi^{(-)}(\bm{p})=\begin{bmatrix} -e^{-\ti\phi}\sin(\theta/2) \\ \cos(\theta/2) \end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <h2 id="properties-of-dirac-field">Properties of Dirac Field</h2>
-
 <ol>
-<li><p>According to the definition above. <code>$u^{(s)},v^{(s)}$</code> as the function of <code>$k=(\omega,\bm{k})$</code> has the property:</p>
-
-<div>$$\begin{aligned}
-u^{(s)}(k) &= \exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu}) u^{(s)}(k=(m,\bm{0})) \\
-v^{(s)}(k) &= \exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu}) v^{(s)}(k=(m,\bm{0})) \\
-\end{aligned}$$</div>
-
+<li>
+<p>According to the definition above. <code>$u^{(s)},v^{(s)}$</code> as the function of <code>$k=(\omega,\bm{k})$</code> has the property:</p>
+<!-- raw HTML omitted -->
 <p>Where <code>$S^{\mu\nu}=\frac 1 2 \sigma_{\mu\nu}$</code> and <code>$\omega_{\mu\nu}$</code> are the parameters of Lorentz transformation, which let:</p>
-
-<div>$$\Lambda(\omega)(m,\bm{0}) = k$$</div>
-
+<!-- raw HTML omitted -->
 <p>Similarly:</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(s)}(k) &= \bar{u}^{(s)}(k=(m,\bm{0})) \exp(\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})  \\
-v^{(s)}(k) &= \bar{v}^{(s)}(k=(m,\bm{0})) \exp(\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})  \\
-\end{aligned}$$</div>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>One can check the formular of Lorentz Transformation:</p>
-
-<div>$$\exp(-\ti a \bm{n}\cdot \bm{K}) (1,\bm{0})\equiv \Lambda(\bm{\theta}=\bm{0},\bm{\eta}=a \bm{n};\bm{L},\bm{K}) (1,\bm{0}) = (\cosh a , \sinh a \ \bm{n})$$</div>
-
+<!-- raw HTML omitted -->
 <p>where <code>$|\bm{n}|=1$</code>, namely <code>$\bm{n}$</code> is a unit 3-vector.</p>
-
 <p>With the relation that: <code>$\omega_{0,i}=\eta^i$</code> , we have that:</p>
-
-<div>$$\Lambda(\omega_{\mu\nu}=\delta_{\mu}^0 \delta_{\nu}^i \eta^i-\delta_{\nu}^0 \delta_{\mu}^i \eta^i)(m,\bm{0})=k$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\eta^i=a k^i/|\bm{k}|$</code> and <code>$a=\sinh^{-1}(|\bm{k}|/m)$</code></p>
-
 <p>With this parameter:</p>
-
-<div>$$\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu}) =\exp(-\ti \sum_{i=1}^3 \eta^i S^{0,i})=\begin{bmatrix} \cosh \frac a 2 +\sinh \frac a 2 \frac {k_i\sigma^i} {|\bm{k}|} & 0 \\ 0 &\cosh \frac a 2 -\sinh \frac a 2 \frac {k_i\sigma^i} {|\bm{k}|} \end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$u^{(s)}(k=(m,\bm{0}))=\begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(k=(m,\bm{0}))=\begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$</code> , we have:</p>
-
-<div>$$\begin{aligned}
-\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})u^{(s)}(k=(m,\bm{0})) &= \Big(\cosh \frac a 2 + \sinh \frac a 2 \frac 1 {|\bm{k}|} k_i \gamma^i \Big)u^{(s)}(k=(m,\bm{0})) \\
-\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})v^{(s)}(k=(m,\bm{0})) &= \Big(\cosh \frac a 2 - \sinh \frac a 2 \frac 1 {|\bm{k}|} k_i \gamma^i \Big)v^{(s)}(k=(m,\bm{0}))
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For the formula of hyperbolic-sin/cos:</p>
-
-<div>$$\cosh^2 \frac a 2 = \frac {\cosh a+1} 2 \ ; \ \sinh^2 \frac a 2 = \frac {\cosh a -1} 2 \ ; \ \cosh^2 a-\sinh^2 a= 1$$</div>
-
+<!-- raw HTML omitted -->
 <p>We have:</p>
-
-<div>$$\begin{aligned}
-\cosh \frac a 2 &= \sqrt{\frac 1 2 (1+\sqrt{\frac {m^2 +|\bm{k}|^2} {m^2}})} = \sqrt{\frac {m+k_0} {2m}} = \frac {m+k_0} {\sqrt{{2m(m+\omega_{|\bm{k}|})}}} \\
-\sinh \frac a 2 &= \sqrt{\frac 1 2 (-1+\sqrt{\frac {m^2 +|\bm{k}|^2} {m^2}})} = \sqrt{\frac {-m+k_0} {2m}} = \frac {|\bm{k}|} {\sqrt{{2m(m+\omega_{|\bm{k}|})}}}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$k_0=\sqrt{m^2+\bm{k}^2}=\omega_{|\bm{k}|}$</code></p>
-
 <p>Then we have:</p>
-
-<div>$$\begin{aligned}
-\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})u^{(s)}(k=(m,\bm{0})) &= \frac {m+k_\mu \gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} u^{(s)}(k=(m,\bm{0})) \\
-\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})v^{(s)}(k=(m,\bm{0})) &= \frac {m-k_\mu \gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}}v^{(s)}(k=(m,\bm{0}))
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Noting that for <code>$v$</code> :</p>
-
-<div>$$k_0 \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix} =-k_0 \begin{bmatrix}0 & \sigma^0 \\ \sigma^0 & 0 \end{bmatrix}\begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}=-k_0\gamma^0 \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Additionally:</p>
-
-<div>$$\gamma^0\big[\exp(-\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})\big]^\dagger \gamma^0 = \exp(\frac {\ti} 2 \omega_{\mu\nu} S^{\mu\nu})$$</div>
-
+<!-- raw HTML omitted -->
 <p>We can prove the formula about <code>$\bar{u},\bar{v}$</code></p>
-
 <p>Then this property is proved.</p>
-
-<p></details></p>
-
-<ol>
-<li><p><code>$u^{(s)},v^{(s)}$</code> as the function of 4-vector <code>$(k=(k_0\equiv \omega_{|\bm{k}|},\bm{k}))$</code> has the property :</p>
-
-<div>$$\begin{aligned}
-u^{(s)}(k) & = \Lambda_{0\rightarrow k}\Lambda_{k'\rightarrow 0} u^{(s)}(k') \\
-v^{(s)}(k) & = \Lambda_{0\rightarrow k}\Lambda_{k'\rightarrow 0} v^{(s)}(k')
-\end{aligned}$$</div>
-
-<p>Where <code>$\Lambda_{k_1\rightarrow k_2}$</code> is the Lorentz Transformation for Dirac Spinor <code>$\Lambda_{k_1\rightarrow k_2} =\exp(-\ti \omega_{\mu\nu}S^{\mu\nu}/2)$</code> with parameter <code>$\omega$</code> inducing 4-vector Lorentz Transformation: <code>$\Lambda(\omega)k_1=k_2$</code> . Obviously <code>$\Lambda_{k_1\rightarrow k_2} = \Lambda_{k_2\rightarrow k_1}^{-1}$</code></p></li>
-
-<li><p><code>$u^{(s)}$</code> and <code>$v^{(s)}$</code> satisfy(with <code>$\bar{x}=x^\dagger \gamma^0$</code> for Dirac spinor <code>$x$</code> ) :</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(r)}(k)u^{(s)}(k) &= 2(\chi^{(r)})^\dagger \chi^{(s)} \\
-\bar{v}^{(r)}(k)v^{(s)}(k) &= -2(\xi^{(r)})^\dagger \xi^{(s)} \\
-\bar{u}^{(r)}(k)v^{(s)}(k) &= \bar{v}^{(r)}(k)u^{(s)}(k)=0
-\end{aligned}$$</div>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+<ol start="2">
+<li>
+<p><code>$u^{(s)},v^{(s)}$</code> as the function of 4-vector <code>$(k=(k_0\equiv \omega_{|\bm{k}|},\bm{k}))$</code> has the property :</p>
+<!-- raw HTML omitted -->
+<p>Where <code>$\Lambda_{k_1\rightarrow k_2}$</code> is the Lorentz Transformation for Dirac Spinor <code>$\Lambda_{k_1\rightarrow k_2} =\exp(-\ti \omega_{\mu\nu}S^{\mu\nu}/2)$</code> with parameter <code>$\omega$</code> inducing 4-vector Lorentz Transformation: <code>$\Lambda(\omega)k_1=k_2$</code> . Obviously <code>$\Lambda_{k_1\rightarrow k_2} = \Lambda_{k_2\rightarrow k_1}^{-1}$</code></p>
+</li>
+<li>
+<p><code>$u^{(s)}$</code> and <code>$v^{(s)}$</code> satisfy(with <code>$\bar{x}=x^\dagger \gamma^0$</code> for Dirac spinor <code>$x$</code> ) :</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>The first two equality has been proved. We consider the third one:</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(r)}(k)v^{(s)}(k)&=u^{(r)\dagger}(k)\gamma^0 v^{(s)}(k) \\
-&=\frac 1 m [\chi^{(r)\dagger}\sqrt{k_\mu\sigma^{\mu}},\chi^{(r)\dagger}\sqrt{k_\mu\bar{\sigma}^{\mu}}] \gamma^0 \begin{bmatrix} \sqrt{k_\mu \sigma^{\mu}} \xi^{(s)} \\ -\sqrt{k_\mu \bar{\sigma}^{\mu}} \xi^{(s)}\end{bmatrix} \\
-&= \frac 1 m (-k_\mu k^\mu \chi^{(r)\dagger}\xi^{(s)}+k_{\mu}k^{\mu} \chi^{(r)\dagger}\xi^{(s)})\\
-&= 0
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
-<ol>
-<li><p>With the special choose of</p>
-
-<div>$$\chi^{(r)\dagger}\chi^{(s)} = \xi^{(r)\dagger}\xi^{(s)} = \delta_{r}^{s} m$$</div>
-
+<!-- raw HTML omitted -->
+<ol start="4">
+<li>
+<p>With the special choose of</p>
+<!-- raw HTML omitted -->
 <p>We can define the <code>Energy Projector</code> :</p>
-
-<div>$$\begin{aligned}
-P^{(+)} &= \frac 1 {2m} \sum_{s=1,2} u^{(s)}(k)\bar{u}^{(s)}(k) = \frac {k_{\mu}\gamma^{\mu}+m} {2m} \\
-P^{(-)} &= -\frac 1 {2m} \sum_{s=1,2} v^{(s)}(k)\bar{v}^{(s)}(k) = \frac {-k_{\mu}\gamma^{\mu}+m} {2m}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the equality that <code>$(k_{\mu}\gamma^{\mu}+m)(k_{\mu}\gamma^{\mu}-m)=0$</code> and <code>$k_{\mu}\gamma^{\mu}k_\nu \gamma^\nu = k_{\mu}k^{\mu}$</code> , one can find that:</p>
-
-<div>$$\begin{aligned}
-P^{(+) 2} &= P^{(+)} \\
-P^{(-) 2} &= P^{(-)} \\
-P^{(+)}P^{(-)} &= P^{(-)}P^{(+)} = 0 \\
-P^{(+)} +P^{(-)} & = 1
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>That is why call them <code>Projector</code> .</p>
-
 <p>More over, acting any solution of free Dirac equation, <code>$P^{(+)}$</code> extracts the <code>positive-energy part</code> and <code>$P^{(-)}$</code> extracts the <code>negative-energy part</code></p>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>For <code>$\chi,\xi$</code> are orthogonal, we have <code>$\sum_{s=1,2} \chi^{(s)}\chi^{(s)\dagger} =\sum_{s=1,2} \xi^{(s)}\xi^{(s)\dagger}= m$</code> is a c-number</p>
-
-<div>$$\begin{aligned}
-\sum_{s=1,2} u^{(s)}(k)\bar{u}^{(s)}(k) &= \frac 1 m \sum_{s=1,2}  \begin{bmatrix} \sqrt{k_\mu \sigma^{\mu}} \chi^{(s)} \\ \sqrt{k_\mu \bar{\sigma}^{\mu}} \chi^{(s)}\end{bmatrix} [\chi^{(s)\dagger}\sqrt{k_\mu\sigma^{\mu}},\chi^{(s)\dagger}\sqrt{k_\mu\bar{\sigma}^{\mu}}] \gamma^0 \\
-&= \begin{bmatrix} k_\mu \sigma^\mu & m \\ m & k_{\mu}\bar{\sigma}^\mu  \end{bmatrix} \gamma^0 \\
-&= \begin{bmatrix} m & k_{\mu}\sigma^\mu \\  k_{\mu}\bar{\sigma}^\mu& m   \end{bmatrix} \\
-&= (m+k_\mu\gamma^\mu) \\
-\sum_{s=1,2} v^{(s)}(k)\bar{v}^{(s)}(k) &= \frac 1 m \sum_{s=1,2}  \begin{bmatrix} \sqrt{k_\mu \sigma^{\mu}} \xi^{(s)} \\ -\sqrt{k_\mu \bar{\sigma}^{\mu}} \xi^{(s)}\end{bmatrix} [\xi^{(s)\dagger}\sqrt{k_\mu\sigma^{\mu}},-\xi^{(s)\dagger}\sqrt{k_\mu\bar{\sigma}^{\mu}}] \gamma^0 \\
-&=\begin{bmatrix} k_\mu \sigma^\mu & -m \\ -m & k_{\mu}\bar{\sigma}^\mu  \end{bmatrix} \gamma^0 \\
-&=(-m+k_\mu\gamma^{\mu})
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then:</p>
-
-<div>$$\Big(\frac{\pm k_\mu\gamma^{\mu}+ m} {2m}\Big)^2 = \frac 1 {4m^2}\Big( k_{\mu}k^\mu \pm 2m k_\mu\gamma^\mu +m^2\Big) = \frac{\pm k_\mu\gamma^\mu+m} {2m} $$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
-<ol>
-<li><p><code>Gordon Identities</code> :</p>
-
-<div>$$\begin{aligned}
-2m \bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')\big[(k'+k)^\mu+2\ti S^{\mu\nu}(k'-k)_\nu \big]u^{(s)}(\bm{k}) \\
--2m \bar{v}^{(s')}(\bm{k}') \gamma^\mu v^{(s)}(\bm{k}) &= \bar{v}^{(s')}(\bm{k}')\big[(k'+k)^\mu+2\ti S^{\mu\nu}(k'-k)_\nu \big]v^{(s)}(\bm{k}) \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<ol start="5">
+<li>
+<p><code>Gordon Identities</code> :</p>
+<!-- raw HTML omitted -->
 <p>Where the 0-components of <code>$k$</code> always is <code>$k_0=\sqrt{m^2+|\bm{k}|^2}$</code></p>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>To prove them, one need to notice that:</p>
-
-<div>$$\begin{aligned}
-\gamma^\mu k_\nu \gamma^\nu &= \frac 1 2 \{\gamma^\mu,k_\nu \gamma^\nu\}+\frac 1 2 [\gamma^\mu,k_\nu \gamma^\nu] = k^\mu - 2\ti S^{\mu\nu} k_\nu \\
-k_\nu \gamma^{\nu} \gamma^\mu &= \frac 1 2 \{\gamma^\mu,k_\nu \gamma^\nu\}-\frac 1 2 [\gamma^\mu,k_\nu \gamma^\nu] = k^\mu + 2\ti S^{\mu\nu} k_\nu \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then, together with:</p>
-
-<div>$$\begin{aligned}
-(k_\mu\gamma^{\mu}-m) u^{(s)}(\bm{k}) &=0 \\
-(k_\mu\gamma^{\mu}+m) v^{(s)}(\bm{k}) &=0 \\
-\bar{u}^{(s)}(\bm{k})(k_\mu\gamma^{\mu}-m)  &=0 \\
-\bar{v}^{(s)}(\bm{k})(k_\mu\gamma^{\mu}+m)  &=0 \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>which can be obtained with <code>$\gamma^0\gamma^{\mu\dagger}=\gamma^\mu\gamma^0$</code> . Then we can compute:</p>
-
-<div>$$\begin{aligned}
-m\bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k})&=\bar{u}^{(s')}(\bm{k}') \gamma^\mu k_{\nu}\gamma^{\nu} u^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}') (k^\mu-2\ti S^{\mu\nu}k_\nu) u^{(s)}(\bm{k}) \\
-m\bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k})&=\bar{u}^{(s')}(\bm{k}')  k'_{\nu}\gamma^{\nu} \gamma^\mu u^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}') (k'^\mu+2\ti S^{\mu\nu}k'_\nu) u^{(s)}(\bm{k})
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Adding these two we have:</p>
-
-<div>$$2m \bar{u}^{(s')}(\bm{k}) \gamma^\mu u^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k})\big[(k'+k)^\mu+2\ti S^{\mu\nu}(k'-k)_\nu \big]u^{(s)}(\bm{k})$$</div>
-
+<!-- raw HTML omitted -->
 <p>And for <code>$v$</code> , actually we need only convert <code>$m\rightarrow -m$</code> .</p>
-
 <p>Then these equalities are proved.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <pre><code>One of the special situation is that:
 
 &lt;div&gt;$$\begin{aligned}
@@ -890,259 +632,121 @@ m\bar{u}^{(s')}(\bm{k}') \gamma^\mu u^{(s)}(\bm{k})&=\bar{u}^{(s')}(\bm{k}')  k'
 \bar{v}^{(s')}(\bm{k}') \gamma^\mu v^{(s)}(\bm{k}) &amp;=2k^{\mu}\delta^{s',s}
 \end{aligned}$$&lt;/div&gt;
 </code></pre>
-
-<ol>
-<li><p>Equalities:</p>
-
-<div>$$\begin{aligned}
-2m \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} v^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')\big[(k'-k)^{\mu}+2\ti S^{\mu\nu}(k'+k)_{\nu} \big] v^{(s)}(\bm{k}) \\
--2m \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} u^{(s)}(\bm{k}) &= \bar{v}^{(s')}(\bm{k}')\big[(k'-k)^{\mu}+2\ti S^{\mu\nu}(k'+k)_{\nu} \big] u^{(s)}(\bm{k}) \\
-\end{aligned}$$</div>
-
+<ol start="6">
+<li>
+<p>Equalities:</p>
+<!-- raw HTML omitted -->
 <p>With the special situation:</p>
-
-<div>$$\begin{aligned}
-2m\bar{u}^{(s')}(\bm{k}) \gamma^\mu v^{(s)}(-\bm{k}) &=2k^\mu \bar{u}^{(s')}(\bm{k})v^{(s)}(-\bm{k}) \\
--2m\bar{v}^{(s')}(\bm{k}) \gamma^\mu u^{(s)}(-\bm{k}) &=2k^\mu \bar{u}^{(s')}(\bm{k})v^{(s)}(-\bm{k}) \\
-\end{aligned}$$</div>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>The proof is similar to what we have done in <code>Gordon Equalities</code> :</p>
-
-<div>$$\begin{aligned}
--m \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} v^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} k_\nu \gamma^{\nu} v^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}') (k^\mu-2\ti S^{\mu\nu}k_\nu) v^{(s)}(\bm{k}) \\
-m \bar{u}^{(s')}(\bm{k}')\gamma^{\mu} v^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')k'_\nu \gamma^{\nu}\gamma^{\mu}  v^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}')(k'^\mu+2\ti S^{\mu\nu}k'_\nu) v^{(s)}(\bm{k}) \\
-\\
-m \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} u^{(s)}(\bm{k}) &= \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} k_\nu \gamma^{\nu} u^{(s)}(\bm{k}) = \bar{v}^{(s')}(\bm{k}')(k^\mu-2\ti S^{\mu\nu}k_\nu) u^{(s)}(\bm{k}) \\
--m \bar{v}^{(s')}(\bm{k}')\gamma^{\mu} u^{(s)}(\bm{k}) &= \bar{u}^{(s')}(\bm{k}')k'_\nu \gamma^{\nu}\gamma^{\mu}  v^{(s)}(\bm{k}) = \bar{u}^{(s')}(\bm{k}')(k'^\mu+2\ti S^{\mu\nu}k'_\nu) v^{(s)}(\bm{k}) \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Subtracting them will get the proof.</p>
-
-<p></details></p>
-
-<ol>
-<li><p>With the convention that <code>$\xi^{(s)} = (-\ti \sigma^2) \Big(\chi^{(s)} \Big)^*$</code> , we can check:</p>
-
-<div>$$u^{(s)}(\bm{k})=-\ti \gamma^2\Big(v^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(s)}(\bm{k})=-\ti \gamma^2 \Big(u^{(s)}(\bm{k}) \Big)^*$$</div>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+<ol start="7">
+<li>
+<p>With the convention that <code>$\xi^{(s)} = (-\ti \sigma^2) \Big(\chi^{(s)} \Big)^*$</code> , we can check:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>Using the definition of <code>$u,v$</code> :</p>
-
-<div>$$u^{(s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\xi^{(s)}=(-\ti \sigma^2)(\chi^{(s)})^*$</code> , we have:</p>
-
-<div>$$v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} -\ti\sigma^2 \chi^{(s)*} \\ \ti \sigma^2\chi^{(s)*}\end{bmatrix}=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}}(-\ti \gamma^2)\Big( \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix}\Big)^*$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we need only prove that:</p>
-
-<div>$$(m-k_\mu\gamma^\mu)(-\ti\gamma^2)=-\ti \gamma^2 (m+k_\mu \gamma^\mu)^*$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\ti\gamma^2$</code> is real matrix and <code>$(\gamma^2)^2=-1$</code>, we have it is equivalent to <code>$(m+k_\mu\gamma^\mu)^*=-\ti \gamma^2 (m+k_\mu \gamma^\mu)(-\ti\gamma^2)$</code> , which means what we need to prove for these two equalities are equivalent.</p>
-
 <p>Then what we need is to prove <code>$-k_\mu\gamma^\mu\gamma^2 = \gamma^2 (k_\mu \gamma^\mu)^*$</code></p>
-
 <p>With the property of Pauli matrices: <code>$\sigma^2 \sigma^j \sigma^2 = -\sigma^{j*}$</code> , we can prove that <code>$\gamma^2\gamma^\mu\gamma^2=\gamma^{\mu*}$</code> :</p>
-
-<div>$$\gamma^2\gamma^\mu\gamma^2=\begin{bmatrix} 0 & \sigma^2 \\ -\sigma^2 & 0\end{bmatrix}\begin{bmatrix} 0 & \sigma^\mu \\ \sigma_\mu & 0\end{bmatrix}\begin{bmatrix} 0 & \sigma^2 \\ -\sigma^2 & 0\end{bmatrix}=\begin{bmatrix}0 & \sigma^2 \sigma_\mu\sigma^2 \\ \sigma^2 \sigma^\mu \sigma^2 & 0\end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\mu=0$</code> , that is <code>$\gamma^2\gamma^0\gamma^2=\gamma^0=\gamma^{0*}$</code> , and for <code>$\mu=1,2,3$</code> , it is <code>$\gamma^2\gamma^j\gamma^2=\gamma^{j*}$</code></p>
-
 <p>Then we have:</p>
-
-<div>$$(k_\mu \gamma^\mu)^* = \gamma^2 (k_\mu\gamma^\mu)\gamma^2\Rightarrow -k_\mu\gamma^\mu\gamma^2 = \gamma^2 (k_\mu \gamma^\mu)^*$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
-<ol>
-<li><p>With the convention that <code>$x^{(\bar{s})} = (-\ti \sigma^2) \Big(x^{(s)} \Big)^*$</code> , where <code>$x=\chi,\xi$</code> , we can check:</p>
-
-<div>$$u^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(u^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(v^{(s)}(\bm{k}) \Big)^*$$</div>
-
+<!-- raw HTML omitted -->
+<ol start="8">
+<li>
+<p>With the convention that <code>$x^{(\bar{s})} = (-\ti \sigma^2) \Big(x^{(s)} \Big)^*$</code> , where <code>$x=\chi,\xi$</code> , we can check:</p>
+<!-- raw HTML omitted -->
 <p>Where <code>$u^{(\bar{s})}$</code> is generated by <code>$\chi^{(\bar{s})}$</code> , similar for <code>$v$</code> .</p>
-
-<p><details>
-<summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-    Proof
-</summary></p></li>
+<!-- raw HTML omitted -->
+</li>
 </ol>
-
 <p>Using the definition of <code>$u,v$</code>:</p>
-
-<div>$$u^{(s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>According to the convention, we have:</p>
-
-<div>$$u^{(\bar s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix}-\ti \sigma^2 \chi^{(s)*}\\ -\ti \sigma^2 \chi^{(s)*}\end{bmatrix} \ ; \ v^{(\bar s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix}-\ti \sigma^2 \xi^{(s)*}\\ -\ti \sigma^2 \xi^{(s)*}\end{bmatrix}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we need only to prove that:</p>
-
-<div>$$(m\pm (k^0,-\bm{k})\cdot \gamma)\begin{bmatrix}-\ti \sigma^2 & 0 \\ 0 & -\ti\sigma^2\end{bmatrix}=-\gamma^1\gamma^3(m\pm k_\mu \gamma^\mu)^*$$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\begin{bmatrix}-\ti \sigma^2 &amp; 0 \\ 0 &amp; -\ti\sigma^2\end{bmatrix}=-\gamma^1\gamma^3$</code> , we need only prove that:</p>
-
-<div>$$((k^0,-\bm{k})\cdot \gamma) \gamma^1\gamma^3=\gamma^1\gamma^3 (k_\mu\gamma^\mu)^*$$</div>
-
+<!-- raw HTML omitted -->
 <p>Or</p>
-
-<div>$$\gamma^0\gamma^1\gamma^3=\gamma^1\gamma^3\gamma^0 \ ; \ \gamma^i\gamma^1\gamma^3=-\gamma^1\gamma^3\gamma^{i*}$$</div>
-
+<!-- raw HTML omitted -->
 <p>It can be easily checked by compute.</p>
-
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <h2 id="plane-wave-expansion-and-hamiltonian">Plane-Wave Expansion and Hamiltonian</h2>
-
 <p>With these properties, we can write down the general solution:</p>
-
-<div>$$\psi(x) = \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big( a(\bm{k},s) u^{(s)}(k)e^{-\ti k_\mu x^\mu} + b(\bm{k,s})^{*} v^{(s)}(k)e^{\ti k_{\mu }x^\mu} \Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$a,b$</code> are complex-valued function, and the factor <code>$\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}$</code> is used to let the <code>$\psi$</code> has a correct unit, and will be normalized when we quantize it.</p>
-
 <p>The canonically momentum:</p>
-
-<div>$$\pi(x)= \ti \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big( a(\bm{k},s)^{*} u^{(s)}(k)^\dagger e^{\ti k_\mu x^\mu} + b(\bm{k,s}) v^{(s)}(k)^\dagger e^{-\ti k_{\mu }x^\mu} \Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>And Hamiltonian (with <code>$\chi^{(r)\dagger}\chi^{(s)} = \xi^{(r)\dagger}\xi^{(s)}=m\delta_r^s$</code> ):</p>
-
-<div>$$H=\sum_s \int \td^3\bm{k} \ \omega_{|\bm{k}|} \Big[ a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^*\Big]$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>For the Hamiltonian of Dirac field:</p>
-
-<div>$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi  \Big\}$$</div>
-
+<!-- raw HTML omitted -->
 <p>We need to compute those two items:</p>
-
-<div>$$\begin{aligned}
-
-\int \td^3 \bm{x} \bar{\psi}\psi &=2m \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \\
-& \indent  + \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) a(-\bm{k},s') \bar{v}^{(s)}(\bm{k}) u^{(s')}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t} \\
-& \indent + \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* b(-\bm{k},s')^* \bar{u}^{(s)}(\bm{k}) v^{(s')}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \\
-\\
--\ti \int \td^3 \bm{x} \bar{\psi} \gamma^i \partial_i \psi &= \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s') \bar{u}^{(s)}(\bm{k}) k_i \gamma^i u^{(s')}(\bm{k}) \\
-& \indent - \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s')^* \bar{v}^{(s)}(\bm{k}) k_i \gamma^i v^{(s')}(\bm{k}) \\
-& \indent  - \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) a(-\bm{k},s') \bar{v}^{(s)}(\bm{k}) k_i \gamma^i u^{(s')}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t} \\
-& \indent + \sum_{s,s'}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* b(-\bm{k},s')^* \bar{u}^{(s)}(\bm{k}) k_i\gamma^i v^{(s')}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \\
-\\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<p>\int \td^3 \bm{x} \bar{\psi}\psi &amp;=2m \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \<br>
+&amp; \indent  + \sum_{s,s&rsquo;}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) a(-\bm{k},s&rsquo;) \bar{v}^{(s)}(\bm{k}) u^{(s&rsquo;)}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t} \<br>
+&amp; \indent + \sum_{s,s&rsquo;}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* b(-\bm{k},s&rsquo;)^* \bar{u}^{(s)}(\bm{k}) v^{(s&rsquo;)}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \<br>
+\<br>
+-\ti \int \td^3 \bm{x} \bar{\psi} \gamma^i \partial_i \psi &amp;= \sum_{s,s&rsquo;} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s&rsquo;) \bar{u}^{(s)}(\bm{k}) k_i \gamma^i u^{(s&rsquo;)}(\bm{k}) \<br>
+&amp; \indent - \sum_{s,s&rsquo;} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s&rsquo;)^* \bar{v}^{(s)}(\bm{k}) k_i \gamma^i v^{(s&rsquo;)}(\bm{k}) \<br>
+&amp; \indent  - \sum_{s,s&rsquo;}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) a(-\bm{k},s&rsquo;) \bar{v}^{(s)}(\bm{k}) k_i \gamma^i u^{(s&rsquo;)}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t} \<br>
+&amp; \indent + \sum_{s,s&rsquo;}\int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* b(-\bm{k},s&rsquo;)^* \bar{u}^{(s)}(\bm{k}) k_i\gamma^i v^{(s&rsquo;)}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \<br>
+\<br>
+\end{aligned}$$<!-- raw HTML omitted --></p>
 <p>According to those equalities:</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(s)}(\bm{k})\gamma^j u^{(r)}(\bm{k}) &= 2k^j \delta^{sr} \\
-\bar{v}^{(s)}(\bm{k})\gamma^j v^{(r)}(\bm{k}) &= 2k^j \delta^{sr} \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And:</p>
-
-<div>$$\begin{aligned}
-\bar{u}^{(s)}(\bm{k})\gamma^\mu v^{(s')}(-\bm{k}) &= \frac {k^\mu} m \bar{u}^{(s)}(\bm{k}) v^{(s')}(-\bm{k}) \\
-\bar{v}^{(s)}(\bm{k})\gamma^\mu u^{(s')}(-\bm{k}) &= -\frac {k^\mu} m \bar{v}^{(s)}(\bm{k}) u^{(s')}(-\bm{k}) \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>And at last:</p>
-
-<div>$$\begin{aligned}
-m\bar{u}^{(s)}(\bm{k}) v^{(s')}(-\bm{k})&= \bar{u}^{(s)}(\bm{k})(-k_0\gamma^0+k_i\gamma^i)v^{(s')}(-\bm{k}) \\
-&=\bar{u}^{(s)}(\bm{k})v^{(s')}(-\bm{k}) (-k_0 k^0+k_i k^i)/m \\
-&=-m\bar{u}^{(s)}(\bm{k})v^{(s')}(-\bm{k}) \\
-&=0 \\
-\bar{v}^{(s)}(\bm{k}) u^{(s')}(-\bm{k})&=v^{(s)\dagger}(-(-\bm{k}))\gamma^0u^{(s')}(-\bm{k}) \\
-&=\big( u^{(s')\dagger}(-\bm{k})\gamma^0v^{(s)}(-(-\bm{k}))\big)^\dagger \\
-&=0
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have:</p>
-
-<div>$$\begin{aligned}
-
-\int \td^3 \bm{x} \bar{\psi}\psi &= 2m \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \\
-\\
--\ti \int \td^3 \bm{x} \bar{\psi} \gamma^i \partial_i \psi &= \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s') 2k_i k^i\delta^{s',s} \\
-& \indent - \sum_{s,s'} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s')^* 2k_i k^i\delta^{s',s} \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
+<p>\int \td^3 \bm{x} \bar{\psi}\psi &amp;= 2m \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \<br>
+\<br>
+-\ti \int \td^3 \bm{x} \bar{\psi} \gamma^i \partial_i \psi &amp;= \sum_{s,s&rsquo;} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s&rsquo;) 2k_i k^i\delta^{s&rsquo;,s} \<br>
+&amp; \indent - \sum_{s,s&rsquo;} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s&rsquo;)^* 2k_i k^i\delta^{s&rsquo;,s} \<br>
+\end{aligned}$$<!-- raw HTML omitted --></p>
 <p>Then:</p>
-
-<div>$$\begin{aligned}
-H &=\int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi  \Big\} \\
-&= \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ a(\bm{k},s)^* a(\bm{k},s) 2k_i k^i- \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \ b(\bm{k},s) b(\bm{k},s)^* 2k_i k^i \\
-&\indent + 2m^2 \sum_{s} \int \td^3 \bm{k} \frac 1 {2\omega_{|\bm{k}|}} \  a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^* \\
-&=\sum_s \int \td^3\bm{k} \ \omega_{|\bm{k}|} \Big[ a(\bm{k},s)^* a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^*\Big]
-\end{aligned}$$</div>
-
-<p></details></p>
-
-<h1 id="u-1-symmetry-of-dirac-field-and-charge">U(1) Symmetry of Dirac Field and Charge</h1>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="u1-symmetry-of-dirac-field-and-charge">U(1) Symmetry of Dirac Field and Charge</h1>
 <p>Like the complex-valued Scalar Field, there is a <code>$\text{U}(1)$</code> symmetry for Dirac Field: Lagrangian is invariant if field is changed by a phase factor.</p>
-
-<div>$$\mathcal{L} \rightarrow \mathcal{L}'=\bar{\psi} e^{-\ti \alpha}(\ti \gamma^\mu \partial_\mu -m)e^{\ti \alpha}\psi = \mathcal{L}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we can compute the conserved chage(with <code>$\delta x=0\ ; \ \delta \psi=\ti \psi \delta\alpha$</code> as the generator):</p>
-
-<div>$$Q=\int \td^3 \bm{x} \frac {\partial\mathcal{L}} {\partial(\partial_0\psi)} \cdot \delta \psi\sim \int \td^3 \bm{x} \ \bar{\psi}\gamma^0\psi $$</div>
-
+<!-- raw HTML omitted -->
 <p>With the plane-wave expansion, one can write it with <code>$a,b$</code> coefficients with holding the order:</p>
-
-<div>$$Q=\int \td^3 \bm{x} \ \psi^\dagger \psi =\sum_{s=1,2}\int \td^3 \bm{k} \Big(a(\bm{k},s)^* a(\bm{k},s)+b(\bm{k},s)b(\bm{k},s)^*\Big)$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>With:</p>
-
-<div>$$\psi(x) = \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big( a(\bm{k},s) u^{(s)}(\bm{k})e^{-\ti k_\mu x^\mu} + b(\bm{k,s})^{*} v^{(s)}(\bm{k})e^{\ti k_{\mu }x^\mu} \Big) $$</div>
-
+<!-- raw HTML omitted -->
 <p>For <code>$\bar{\psi}\gamma^0\psi=\psi^\dagger \psi$</code> , we have:</p>
-
-<div>$$\begin{aligned}
-\int \td^3 \bm{x} \ \psi^\dagger \psi &=\sum_{s,r} \int \frac {\td^3 \bm{k} \td^3 \bm{k}'} {(2\pi)^3 \sqrt{4\omega\omega'}} \Big(a(\bm{k},s)^* a(\bm{k}',r) u^{(s)}(\bm{k})^\dagger u^{(r)}(\bm{k}') e^{-\ti (k'-k)\cdot x} \\
-&\indent + b(\bm{k},s) b(\bm{k}',r)^* v^{(s)}(\bm{k})^\dagger v^{(r)}(\bm{k}') e^{\ti (k'-k)\cdot x} \\
-&\indent + a(\bm{k},s)^* b(\bm{k}',r)^* u^{(s)}(\bm{k})^\dagger v^{(r)}(\bm{k}') e^{\ti(k'+k)\cdot x} \\
-&\indent + b(\bm{k},s)a(\bm{k}',r) v^{(s)}(\bm{k})^\dagger u^{(r)}(\bm{k}') e^{-\ti (k'+k)\cdot x}  \Big) \\
-&= \sum_{s,r}\int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}}  \Big(a(\bm{k},s)^* a(\bm{k},r) u^{(s)}(\bm{k})^\dagger u^{(r)}(\bm{k}) + b(\bm{k},s) b(\bm{k},r)^* v^{(s)}(\bm{k})^\dagger v^{(r)}(\bm{k}) \\
-&\indent + a(\bm{k},s)^* b(-\bm{k},r)^* u^{(s)}(\bm{k})^\dagger v^{(r)}(-\bm{k}) e^{2\ti \omega_{|\bm{k}|}t} \\
-&\indent + b(\bm{k},s)a(-\bm{k},r) v^{(s)}(\bm{k})^\dagger u^{(r)}(-\bm{k}) e^{-2\ti \omega_{|\bm{k}|}t}  \Big) \\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>and using the following equalities:</p>
-
-<div>$$\bar{u}^{(s)}(\bm{k})\gamma^0 u^{(r)}(\bm{k})=\bar{v}^{(s)}(\bm{k})\gamma^0 v^{(r)}(\bm{k})=2k^0 \delta^{sr} $$</div>
-
+<!-- raw HTML omitted -->
 <p>And with that <code>$(m+k_\mu \gamma^\mu)^\dagger=(m+(k^0,-\bm{k})\cdot \gamma)$</code> , and that <code>$(m+k_\mu \gamma^\mu)(m-k_\mu \gamma^\mu)=0$</code> , we have:</p>
-
-<div>$$u^{(s)\dagger}(\bm{k})v^{(r)}(-\bm{k})=\begin{bmatrix}\chi^{(s)\dagger} & \chi^{(s)\dagger}\end{bmatrix} \frac {(m+k_\mu\gamma^\mu)^\dagger (m-(k^0,-\bm{k})\cdot \gamma)} {2m(m+k^0)}\begin{bmatrix} \xi^{(r)} \\ - \xi^{(r)}\end{bmatrix}=0$$</div>
-
+<!-- raw HTML omitted -->
 <p>Similarly <code>$v^{(s)\dagger}(\bm{k})u^{(r)}(-\bm{k})=0$</code> . Then we have:</p>
-
-<div>$$\int \td^3 \bm{x} \ \psi^\dagger \psi =\sum_{s=1,2}\int \td^3 \bm{k} \Big(a(\bm{k},s)^* a(\bm{k},s)+b(\bm{k},s)b(\bm{k},s)^*\Big)$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
+<!-- raw HTML omitted -->
 
           </div>
 
@@ -1360,7 +964,7 @@ H &=\int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#u-1-symmetry-of-dirac-field-and-charge">
+						 					<a class="nav-link" href="#u1-symmetry-of-dirac-field-and-charge">
 												 U(1) Symmetry of Dirac Field and Charge
 											</a>
 										</li>
@@ -1427,7 +1031,7 @@ H &=\int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

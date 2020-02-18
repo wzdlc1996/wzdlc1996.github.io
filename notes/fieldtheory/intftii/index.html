@@ -445,7 +445,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>12 minutes read</li>
+      <li>10 minutes read</li>
     
   </ul>
   
@@ -454,222 +454,101 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="scattering-theory">Scattering Theory</h1>
-
+            <h1 id="scattering-theory">Scattering Theory</h1>
 <p>In experiments, the most important way is the scattering between particles. And the only observable we can measure is the <code>scattering cross section</code> . So the interacting Field Theory must build a quantitative analysis about scattering question.</p>
-
 <h2 id="s-matrix-and-cross-section">S matrix and Cross Section</h2>
-
 <p>With the <code>Lippman-Schwinger Equation</code>, one can express the scattering process as:</p>
-
-<div>$$\ket{\psi_\alpha^{(\pm)}} = \ket{\phi_{\text{in}/\text{out},\alpha}}+\frac 1 {E_\alpha -\hat H_0\pm \ti \epsilon} \hat V \ket{\psi_\alpha^{(\pm)}}\Rightarrow \ket{\psi_\alpha^{(\pm)}}=\hat \Omega^{(\pm)}\ket{\phi_{\text{in}/\text{out},\alpha}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$\ket{\phi_{\text{in}/\text{out},\alpha}}$</code> is the direct product state of <code>free single particle states</code> . And <code>$E_\alpha$</code> is their energy, <code>$\alpha$</code> is some <code>quantum number</code> to mark the state. And it is also the energy of <code>$\ket{\psi_\alpha^{(\pm)}}$</code> respect to the interacting Hamiltonian. And the operator <code>$\hat \Omega^{(\pm)}$</code> are also called as <code>Moller Wave operators</code></p>
-
 <p>The state <code>$\ket{\psi_\alpha^{(\pm)}}$</code> , can be treated as the mediate-state in the scattering, they evolute to the in/out state at time <code>$t\rightarrow \pm \infty$</code> .</p>
-
 <p><em>[Definition]</em> : <code>S-matrix</code> describes the <code>probability amplitude</code> of state <code>$\alpha$</code> at <code>$t\rightarrow -\infty$</code> <code>jumps</code> to the state
- <code>$\beta$</code> at <code>$t\rightarrow +\infty$</code> with the action of scattering potential:</p>
-
-<div>$$S_{\beta\alpha}:=\bra{\psi_\beta^{(-)}}\psi_\alpha^{(+)}\rangle \equiv \bra{\phi_{\text{out},\beta}}\hat \Omega^{(-)\dagger}\hat \Omega^{(+)}\ket{\phi_{\text{in},\alpha}}$$</div>
-
+<code>$\beta$</code> at <code>$t\rightarrow +\infty$</code> with the action of scattering potential:</p>
+<!-- raw HTML omitted -->
 <p>It is obviously a <code>unitary matrix</code>:</p>
-
-<div>$$\sum_\beta S_{\alpha\beta}^* S_{\gamma\beta} = \sum_\beta S_{\beta\alpha}^* S_{\beta\gamma} = \delta_{\alpha\gamma}$$</div>
-
+<!-- raw HTML omitted -->
 <p>In fact, <code>$S$</code> matrix is the limit of evolution operator: <code>$\hat S = \hat U_I(+\infty,-\infty)$</code> .</p>
-
 <p><em>[Theorem]</em> : In <code>Lorentz covariant</code> theory, S matrix must have the form of:</p>
-
-<div>$$S_{\beta\alpha}=\delta(\alpha-\beta)+(2\pi)^4 \delta^4(p_\beta-p_\alpha)(\ti M_{\beta\alpha})$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$M_{\beta\alpha}$</code> is called as <code>Feynman Amplitude</code> or <code>Feynman matrix element</code> , it is Lorentz invariant.</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
 <p>With the fact that in/out states are eigenstates of momentum so they are complete in Hilbert space so one can rewrite the Lippman-Schwinger Equation as:</p>
-
-<div>$$\ket{\psi_\alpha^{(\pm)}}=\ket{\phi_\alpha}+\int \td \beta \ \frac 1 {E_\alpha-E_\beta\pm \ti \epsilon} \ket{\phi_\beta}\bra{\phi_\beta}\hat V \ket{\psi_\alpha^{(\pm)}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>For a given inward wave packet, the time-evolution of it should be:</p>
-
-<div>$$\ket{\Psi^{(+)}_g(t)}=\int \td \alpha \ g(\alpha)e^{-\ti E_\alpha t} \ket{\psi_\alpha^{(+)}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>At time <code>$t\rightarrow -\infty$</code> , it is reduced to <code>$\ket{\Psi_g^{(+)}(t\rightarrow -\infty)} = \int \td \alpha \ g(\alpha)e^{-\ti E_\alpha t} \ket{\phi_\alpha}$</code> . Then with the Lippman-Schwinger equation we have:</p>
-
-<div>$$\ket{\Psi^{(+)}_g(t)}=\int \td \alpha \ g(\alpha)e^{-\ti E_\alpha t}\ket{\phi_\alpha} +\int \td \beta \ \ket{\phi_\beta} \int \td \alpha \ g(\alpha) \frac {e^{-\ti E_\alpha t} \bra{\phi_\beta}\hat V\ket{\psi_\alpha^{(+)}}} {E_\alpha-E_\beta+\ti\epsilon}$$</div>
-
+<!-- raw HTML omitted -->
 <p>One can find that when <code>$t\rightarrow -\infty$</code> the integral of the second term can be computed with the <code>residue theorem</code> and the integral over upper-half plane(semi-circle and line) . The integral on semi-circle vanishes because the factor <code>$e^{-\ti E_\alpha t}\sim e^{- t \text{Im}(z)}$</code> vanishes exponentially. Then the singularities come from <code>$g(\alpha)$</code> and <code>$\bra{\phi_\beta}\hat V\ket{\psi_\alpha^{(+)}}$</code> , they can only contribute singularities with finite imagine part(if <code>$g$</code> and <code>$\hat V$</code> are not too singular), which vanish too. The term <code>$\frac 1 {E_\alpha-E_\beta+\ti \epsilon}$</code> will only contribute the singularity of <code>$E_\beta-\ti\epsilon$</code> which is not in the contour. Then the integral vanishes, and we checked that <code>$\ket{\Psi_g^{(+)}(t\rightarrow -\infty)} = \int \td \alpha \ g(\alpha)e^{-\ti E_\alpha t} \ket{\phi_\alpha}$</code>.</p>
-
 <p>Then we consider the case of <code>$t\rightarrow +\infty$</code> , we need to choose the lower-half plane. With the similar argument, the integral of second term will only contribute the residue of <code>$E_\beta-\ti\epsilon$</code>, that is:</p>
-
-<div>$$\begin{aligned}
-\ket{\Psi_g^{(+)}(t\rightarrow +\infty)}&=\int \td \alpha \ g(\alpha) e^{-\ti E_\alpha t}\ket{\phi_\alpha}+\int \td \beta \ \ket{\phi_\beta} (-2\pi \ti)\int \td \alpha \ \delta(E_\alpha-E_\beta)g(\alpha)e^{-\ti E_\alpha t}\bra{\phi_\beta}\hat V \ket{\psi_\alpha^{(+)}} \\
-&=\int \td \beta \td \alpha \ e^{-\ti E_\beta t} \ket{\phi_\beta} g(\alpha)\Big(\delta(\alpha-\beta)-2\pi\ti \delta(E_\beta-E_\alpha)\bra{\phi_\beta}\hat V \ket{\psi_\alpha^{(+)}}\Big)
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the definition of <code>$\hat S$</code>, we have: <code>$\ket{\psi_\alpha^{(+)}}=\int \td \beta \ket{\psi_\beta^{(-)}} S_{\beta\alpha}$</code> , then:</p>
-
-<div>$$\ket{\Psi_g^{(+)}(t)}=\int \td \alpha \ g(\alpha)e^{-\ti E_\alpha t} \int \td \beta \ \ket{\psi_\beta^{(-)}}S_{\beta\alpha}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Since the scattering should leave the energy invariant, that is to say <code>$S_{\beta\alpha}$</code> contain the factor <code>$\delta(E_\alpha-E_\beta)$</code> , then:</p>
-
-<div>$$\ket{\Psi_g^{(+)}(t)}=\int \td \beta \ e^{-\ti E_\beta t} \ket{\psi_\beta^{(-)}}\int \td \alpha \ g(\alpha) S_{\beta\alpha}\rightarrow_{t\rightarrow +\infty} \int \td \beta \ e^{-\ti E_\beta t} \ket{\phi_\beta}\int \td \alpha \ g(\alpha) S_{\beta\alpha}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the integrand of <code>$\beta$</code> are simply the outward wave. Compare these two equalities, one can write down:</p>
-
-<div>$$S_{\beta\alpha}=\delta(\beta-\alpha)-2\pi\ti \delta(E_\beta-E_\alpha)\bra{\phi_\beta}\hat V\ket{\psi_\alpha^{(+)}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>If the theory is Lorentz covariant, then the conservation of energy leads to the conservation of 4-momentum. That is to say:</p>
-
-<div>$$S_{\beta\alpha}=\delta(\beta-\alpha)+\delta^4(p_\beta-p_\alpha) K_{\beta\alpha}\equiv\delta(\beta-\alpha)+(2\pi)^4\delta^4(p_\beta-p_\alpha) \big(\ti M_{\beta\alpha}\big) $$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$M_{\beta\alpha}$</code> is called as <code>Feynman Amplitude</code> . Q.E.D.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p>Then we can construct the relationship between <code>differential cross section</code>, which is the only thing we can measure in experiments, and <code>$S$</code>-matrix.</p>
-
 <p><em>[Theorem]</em> : For a scattering process:</p>
-
-<div>$$p_{i,1}+\cdots +p_{i,N_\alpha}\rightarrow p_{f,1} + \cdots + p_{f,N_\beta}$$</div>
-
+<!-- raw HTML omitted -->
 <p>with different initial/final states <code>$\beta\neq \alpha$</code> , and denote the particle numbers of initial/final are <code>$N_\alpha, N_\beta$</code>, total momentum <code>$p_\beta=\sum_j p_{f,j} \ ; \ p_\alpha=\sum_j p_{i,j}$</code> . Then the <code>transition rate</code> is::</p>
-
-<div>$$\td \Gamma_{\alpha\rightarrow \beta}=\lim_{T\rightarrow +\infty} \frac {\td P_{\alpha\rightarrow \beta}} {T}=\Big(\prod_{j=1}^{N_\alpha}\frac 1 {2E_{i,j}V}\Big)(2\pi)^4  \delta^4(p_\beta-p_\alpha)V\Big(\prod_{j=1}^{N_\beta} \frac {\td^3 \bm{p}_{f,j}} {(2\pi)^3} \frac 1 {2E_{f,j}}\Big)\cdot |M_{\beta\alpha}|^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$E_{i,j}$</code> is the energy of <code>$j$</code>-th initial momentum, and <code>$E_{f,j}$</code> is the energy of <code>$j$</code>-th final momentum. <code>$V$</code> is the volume of the system, which comes from the <code>box-normalization</code>.</p>
-
 <p>For the special case of <code>$N_\alpha=1$</code> , it is the <code>decay rate</code> of particle. At the frame of <code>$E_\alpha=m_\alpha$</code> (particle-static), it is:</p>
-
-<div>$$\td \Gamma_{\alpha\rightarrow \beta} = \frac 1 {2m_\alpha}(2\pi)^4 \delta^4\big(\sum_{j=1}^{N_\beta} p_{f,j}-(m_\alpha,0,0,0)\big)\Big(\prod_{j=1}^{N_\beta} \frac {\td^3 \bm{p}_{f,j}} {(2\pi)^3 2E_{f,j}}\Big)\cdot |M_{\beta\alpha}|^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>For the special case of <code>$N_\alpha=2$</code> , or 2-body-scattering, with the current speed is <code>$u_{1,2}=|v_{1,z}-v_{2,z}|$</code> , is the &ldquo;relative velocity&rdquo; in experiment-frame. And <code>$u_{1,2}/V$</code> is the density of current. Then we have the <code>differential cross section</code>:</p>
-
-<div>$$\td \sigma_{\alpha\rightarrow \beta} := \frac {\td \Gamma_{\alpha\rightarrow \beta}} {u_{1,2}/V}=\frac 1 {(2E_{i,1})(2E_{i,2})u_{1,2}}(2\pi)^4 \delta^4(p_{i,1}+p_{i,2}-\sum_{j=1}^{N_\beta} p_{f,j})\Big(\prod_{j=1}^{N_\beta} \frac {\td^3 \bm{p}_{f,j}} {(2\pi)^3 2 E_{f,j}}\Big)\cdot |M_{\beta\alpha}|^2$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>We only prove the generic formula of <code>$\td \Gamma_{\alpha\rightarrow \beta}$</code> here, cases of <code>$N_\alpha=1,2$</code> can be easily obtained from it.</p>
-
 <p>The value of elements of S-matrix we defined above is not the probability, because our normalization of single-particle-state is:</p>
-
-<div>$$\bra{\bm{k}'}\bm{k}\rangle = (2\pi)^32E_{\bm{k}}\delta^3(\bm{k}-\bm{k}')$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$E_{\bm{k}}=\omega_{|\bm{k}|}$</code> , (in natural unit system, <code>$\hbar=1$</code>) . Then the probability of final momentum in the cell <code>$\td^3 \bm{p}$</code> (in fact we need the factor <code>$V(2\pi)^{-3}$</code> to measure the number of states in the phase-cell) should be:</p>
-
-<div>$$\td P_{\alpha\rightarrow \beta}=\frac {|S_{\beta\alpha}|^2} {\bra{\phi_\alpha}\phi_\alpha\rangle\bra{\phi_\beta}\phi_\beta\rangle}\prod_{i=1}^{N_\beta} \frac {V\td^3 \bm{p}_{f,j}} {(2\pi)^3}\sim \Big(\prod_{j=1}^{N_\alpha} \frac 1 {2E_{i,j}\delta^3(\bm{0})(2\pi)^3}\Big)\Big(\prod_{j=1}^{N_\beta} \frac 1 {2E_{f,j}\delta^3(\bm{0})(2\pi)^3}\Big)|S_{\beta\alpha}|^2 \prod_{i=1}^{N_\beta} \frac {V\td^3 \bm{p}_{f,j}} {(2\pi)^3}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the formula of <code>$S_{\beta\alpha}$</code> , noting <code>$\alpha\neq \beta$</code> , we have:</p>
-
-<div>$$|S_{\beta\alpha}|^2=|M_{\beta\alpha}^2|(2\pi)^8 \delta^4(p_\beta-p_\alpha)^2=|M_{\beta\alpha}^2|(2\pi)^8 \delta^4(p_\beta-p_\alpha)\delta^4(0)$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we begin to deal with those illegal factor <code>$\delta(0)$</code> . Our method comes from the <code>box-normalization</code> actually, using:</p>
-
-<div>$$\begin{aligned}
-\delta^3(\bm{0})&\sim \lim_{\bm{k}'\rightarrow \bm{k}} \int \td^3 \bm{x}\frac {e^{\ti (\bm{k}'-\bm{k})\cdot \bm{x}}} {(2\pi)^3} =\frac {V} {(2\pi)^3}\\
-\delta^4(0)&\sim \lim_{k'\rightarrow k} \int \td^3 \bm{x}\td t\frac {e^{\ti (\bm{k}-\bm{k}') \cdot \bm{x}+\ti (\omega-\omega')t}} {(2\pi)^4} =\frac {VT} {(2\pi)^4}\\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then we have:</p>
-
-<div>$$\begin{aligned}
-\td P_{\alpha\rightarrow \beta}&=\Big(\prod_{j=1}^{N_\alpha} \frac 1 {2E_{i,j}\delta^3(\bm{0})(2\pi)^3}\Big)\Big(\prod_{j=1}^{N_\beta} \frac 1 {2E_{f,j}\delta^3(\bm{0})(2\pi)^3}\Big)|S_{\beta\alpha}|^2 \prod_{i=1}^{N_\beta} \frac {V\td^3 \bm{p}_{f,j}} {(2\pi)^3}\\
-&=\Big(\prod_{j=1}^{N_\alpha} \frac 1 {2E_{i,j}V}\Big)\Big(\prod_{j=1}^{N_\beta} \frac 1 {2E_{f,j}V}\Big)(2\pi)^4 \delta^4(p_\beta-p_\alpha)VT\prod_{i=1}^{N_\beta} \frac {V\td^3 \bm{p}_{f,j}} {(2\pi)^3}\cdot |M_{\beta\alpha}|^2\\
-&=\Big(\prod_{j=1}^{N_\alpha} \frac 1 {2E_{i,j}V}\Big)(2\pi)^4 \delta^4(p_\beta-p_\alpha)VT\prod_{i=1}^{N_\beta} \frac {\td^3 \bm{p}_{f,j}} {2E_{f,j}(2\pi)^3}\cdot |M_{\beta\alpha}|^2\\
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Then the transition rate:</p>
-
-<div>$$\td \Gamma_{\alpha\rightarrow \beta}=\lim_{T\rightarrow +\infty} \frac {\td P_{\alpha\rightarrow \beta}} {T}=\Big(\prod_{j=1}^{N_\alpha}\frac 1 {2E_{i,j}V}\Big)(2\pi)^4  \delta^4(p_\beta-p_\alpha)V\Big(\prod_{j=1}^{N_\beta} \frac {\td^3 \bm{p}_{f,j}} {(2\pi)^3} \frac 1 {2E_{f,j}}\Big)\cdot |M_{\beta\alpha}|^2$$</div>
-
+<!-- raw HTML omitted -->
 <p>q.e.d.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <h2 id="lsz-reduction-formula">LSZ Reduction Formula</h2>
-
 <p><code>Lehmann-Symanzik-Zimmermann Reduction Formula</code> (or LSZ reduction formula) combines elements of S-matrix and Time-ordered Green&rsquo;s function, where the latter one can be easily computed by Feynman Diagrams and Feynman rules in the level of perturbation theory.</p>
-
 <p>Here, we will derive it with scalar field, it can be easily generalized to other field theory.</p>
-
 <p>First of all, consider the Fourier transform of one argument of time-ordered Green&rsquo;s function:</p>
-
-<div>$$\int \td^4 x \ e^{\ti p\cdot x} \bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\phi(z_2)\cdots\}\ket{\Omega}$$</div>
-
+<!-- raw HTML omitted -->
 <p>To analyze its analyticity on the complex <code>$p^0$</code> plane, one can rewrite the integral of <code>$x^0$</code> by:</p>
-
-<div>$$\int_{-\infty}^{+\infty}\td x^0=\int_{T_+}^{+\infty} \td x^0+\int_{T_-}^{T_+}\td x^0+\int_{-\infty}^{T_+}\td x^0$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where <code>$T_+\gt \max\{z_i^0\} \ ; \ T_-\lt \min\{z_i^0\}$</code> . They are finite real numbers. The second integral region is finite, so it does not cause any singularities. To analyze the singular detail of it we need to consider those two infinite integral.</p>
-
 <p>In these two regions, one can prove that if the pole of <code>$p^0\rightarrow \pm \omega_{|\bm{p}|}$</code> is corresponding to a <code>single-particle state</code>:</p>
-
-<div>$$\begin{aligned}
-\int_I \td^4 x e^{\ti p\cdot x}\bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\cdots\}\ket{\Omega} \rightarrow_{p^0\rightarrow +\omega_{|\bm{p}|}} \frac {\ti \sqrt{Z}} {p_\mu p^\mu - m^2+\ti \epsilon} \bra{\bm{p}}\mathcal{T}\{\phi(z_1)\cdots\}\ket{\Omega} \\
-\int_{III} \td^4 x e^{\ti p\cdot x}\bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\cdots\}\ket{\Omega} \rightarrow_{p^0\rightarrow -\omega_{|\bm{p}|}} \bra{\Omega}\mathcal{T}\{\phi(z_1)\cdots\}\ket{-\bm{p}}  \frac {\ti \sqrt{Z}} {p_\mu p^\mu - m^2+\ti \epsilon}\\
-\end{aligned}$$</div>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Consider the total Hamiltonian(containing the interaction) <code>$\hat H$</code> leads to a set of energy-eigenstates with 3-momentum is <code>$\bm{0}$</code>, denote it as <code>$\ket{\lambda_0}$</code> , with the energy of <code>$m_\lambda$</code> . Then with the Lorentz-transformation, we have the corresponding states of 3-momentum is <code>$\bm{p}$</code> as <code>$\ket{\lambda_{\bm{p}}}$</code> . It should have the energy of <code>$E_{\bm{p}}(\lambda)=\sqrt{\bm{p}^2+m_\lambda^2}$</code> . Then the Lorentz-covariant complete of Hilbert space is:</p>
-
-<div>$$1=\ket{\Omega}\bra{\Omega}+\sum_{\lambda}\int \frac {\td^3 \bm{p}} {(2\pi)^3 2E_{\bm{p}}(\lambda)} \ket{\lambda_{\bm{p}}}\bra{\lambda_{\bm{p}}}$$</div>
-
+<!-- raw HTML omitted -->
 <p>The sum of <code>$\lambda$</code> should cover all eigenstates of zero-3-momentum. And in general cases, the energy spectrum can be continuous, then the sum should be treated as integral.</p>
-
 <p>We use this complete relation on the integral on region I, together with the property of <code>$\bra{\Omega}\phi\ket{\Omega}=0$</code> , which is to say the field on vacuum is zero:</p>
-
-<div>$$\int_I \td^4 x e^{\ti p\cdot x}\bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\cdots\}\ket{\Omega}=\int_{T_+}^{+\infty}\td x^0 e^{\ti p^0 x^0}\int \td^3 \bm{x} e^{-\ti \bm{p}\cdot \bm{x}}\sum_{\lambda}\int \frac {\td^3 \bm{q}} {(2\pi)^3 2E_{\bm{q}}(\lambda)}\bra{\Omega}\phi(x)\ket{\lambda_{\bm{q}}}\bra{\lambda_{\bm{q}}}\mathcal{T}\{\phi(z_1)\cdots\}\ket{\Omega}$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the property of Heisenberg Field operator and the relation between space-time transition and momentum, we have: <code>$\phi(x)=e^{\ti \hat P \cdot x} \phi(0)e^{-\ti \hat P \cdot x}$</code> Then:</p>
-
-<div>$$\bra{\Omega}\phi(x)\ket{\lambda_{\bm{p}}}=\bra{\Omega}\phi(0)\ket{\lambda_{\bm{p}}}e^{-\ti p\cdot x}$$</div>
-
-<p>Consider the Lorentz Boost <code>$\hat U$</code>, which induces <code>$\hat U\ket{\lambda_{\bm{p}}}=\ket{\lambda_0}$</code> . With the invariance of vacuum, and the transformation regulation of scalar field: <code>$\hat U \phi(0)\hat U^{-1}=\phi(0)$</code> , <mark>Which should be treated carefully for other fields</mark> , we have:</p>
-
-<div>$$\bra{\Omega}\phi(x)\ket{\lambda_{\bm{p}}}=\bra{\Omega}\hat U^{-1}\hat U\phi(0)\hat U^{-1}\hat U\ket{\lambda_{\bm{p}}}e^{-\ti p\cdot x}=\bra{\Omega}\phi(0)\ket{\lambda_0} e^{-\ti p\cdot x}$$</div>
-
+<!-- raw HTML omitted -->
+<p>Consider the Lorentz Boost <code>$\hat U$</code>, which induces <code>$\hat U\ket{\lambda_{\bm{p}}}=\ket{\lambda_0}$</code> . With the invariance of vacuum, and the transformation regulation of scalar field: <code>$\hat U \phi(0)\hat U^{-1}=\phi(0)$</code> , <!-- raw HTML omitted -->Which should be treated carefully for other fields<!-- raw HTML omitted --> , we have:</p>
+<!-- raw HTML omitted -->
 <p>Where <code>$p^0=E_{\bm{p}}(\lambda)$</code> . Let <code>$Z=|\bra{\Omega}\phi(0)\ket{\lambda_0}|^2$</code> (called &ldquo;wavefunction renormalization factor&rdquo;), then up to an over-all-phase-factor:</p>
-
-<div>$$\int_I \td^4 x e^{\ti p\cdot x}\bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\cdots\}\ket{\Omega}=\int_{T_+}^{+\infty}\td x^0 e^{\ti p^0 x^0}\int \td^3 \bm{x}e^{-\ti \bm{p}\cdot \bm{x}}\sum_{\lambda}\int \frac {\td^3 \bm{q} \ \sqrt{Z}e^{-\ti q\cdot x}} {(2\pi)^3 2E_{\bm{q}}(\lambda)}\bra{\lambda_{\bm{q}}}\mathcal{T}\{\phi(z_1)\cdots\}\ket{\Omega}$$</div>
-
-<p>The integral of <code>$x$</code> can be computed firstly, which means <mark>we are exchanging the order of integrals</mark> , with the convergence factor <code>$e^{-\epsilon x^0}$</code> , where <code>$\epsilon\gt 0$</code>. And the integral of <code>$\bm{x}$</code> leads to <code>$\delta^3(\bm{p}-\bm{q})$</code> , so :</p>
-
-<div>$$\int_I \td^4 x e^{\ti p\cdot x}\bra{\Omega}\mathcal{T}\{\phi(x)\phi(z_1)\cdots\}\ket{\Omega}=\sum_{\lambda} \frac {\sqrt{Z}} {2E_{\bm{p}}(\lambda)} \frac {\ti e^{\ti(p^0-E_{\bm{p}}(\lambda)+\ti \epsilon)T_{+}}} {p^0-E_{\bm{p}}(\lambda)+\ti\epsilon}\bra{\lambda_{\bm{p}}}\mathcal{T}\{\phi(z_1)\cdots\}\ket{\Omega}$$</div>
-
+<!-- raw HTML omitted -->
+<p>The integral of <code>$x$</code> can be computed firstly, which means <!-- raw HTML omitted -->we are exchanging the order of integrals<!-- raw HTML omitted --> , with the convergence factor <code>$e^{-\epsilon x^0}$</code> , where <code>$\epsilon\gt 0$</code>. And the integral of <code>$\bm{x}$</code> leads to <code>$\delta^3(\bm{p}-\bm{q})$</code> , so :</p>
+<!-- raw HTML omitted -->
 <p>One can find that the denominator <code>$p^0-E_{\bm{p}}(\lambda)+\ti \epsilon$</code> is the <code>$p_\mu p^\mu-m_\lambda^2$</code> as <code>$p^0\rightarrow +E_{\bm{p}}(\lambda)$</code> . Then with the condition that the pole is corresponding to a single particle state, the statement get proved. The integral of region III is similar.</p>
-
-<p></details></p>
-
+<!-- raw HTML omitted -->
 <p><em>[Note]</em> : In the real scattering process, the initial/final states is the direct product state of single particle state of determinant momentum, which means that these single-particle states should be separated in the space. To describe such states we need <code>wave-packet</code> . And at last we can let the width of packet in momentum-space to be zero, and they will be back to momentum-eigenstates. We do not do this procedure here, but treated them as the conclusion of such scheme.</p>
-
 <p>Using the lemma above to reduce field operators and generate single-particle states recurrently, one can write the relation of elements of S-matrix and the time-ordered Green&rsquo;s function, which is :</p>
-
 <p><em>[Theorem(LSZ)]</em> : If we compute the Fourier transform of the time-ordered Green&rsquo;s function of a theory, and check the analyticity on <code>$p_i^0$</code> plane, the highest singularity is corresponding to the contribution of poles of a series of single-particle states. Apart from the <code>wavefunction renormalization factor</code> , the residue of this multi-pole is an element of the S-matrix of this theory:</p>
-
-<div>$$\begin{aligned}
-\Big(\prod_{i=1}^n \int \td^4 x_i e^{\ti p_i\cdot x_i}\Big)\Big(\prod_{j=1}^m \int \td^4 y_j e^{-\ti k_j\cdot x_j}\Big)\bra{\Omega}\mathcal{T}\{\phi(x_1)\cdots\phi(x_n)\phi(y_1)\cdots\phi(y_n)\}\ket{\Omega} \\
-\rightarrow_{\text{on-shell}} \Big(\prod_{i=1}^n \frac{\ti \sqrt{Z}} {|p_i|^2-m^2+\ti\epsilon}\Big)\Big(\prod_{j=1}^m \frac{\ti \sqrt{Z}} {|k_j|^2-m^2+\ti \epsilon}\Big)\bra{\bm{p}_1,\cdots,\bm{p}_n}\hat S\ket{\bm{k}_1,\cdots,\bm{k}_m}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where on-shell means that we need to let <code>$p_i^0=+\omega_{|\bm{p}_i|} \ ; \ k_i^0=+\omega_{|\bm{k}_i|}$</code></p>
-
 <h2 id="perturbation-theory-for-scattering">Perturbation Theory for Scattering</h2>
-
 <p>Now we have construct all needed elements for Interacting Field Theory, with the sense of <code>perturbation theory</code>. Because of the fact that the only measurable observable is <code>scattering cross section</code>, we can list the process of how to compute it with what we have construced:</p>
-
 <ol>
 <li>Write down the interacting Field Theory, or the Lagrangian.</li>
 <li>Separate the Free Hamiltonian and Interacting Hamiltonian.</li>
@@ -677,13 +556,9 @@ autocomplete('#aa-search-input',
 <li>Use the LSZ reduction formula to express it with time-ordered Green&rsquo;s function.</li>
 <li>Use the Feynman-Diagram and Feynman-Rule to compute the perturbation expansion.</li>
 </ol>
-
 <p>Compute the Green&rsquo;s function and its residue is very hard, but with the Feynman-Diagram/Rule, one can simplify this procedure. We will introduce this briefly here. The detailed calculation will be shown in following some posts.</p>
-
 <p>Generally speaking, because of the denominator of Gell-Man &amp; Low theorem, all disconnected Feynman diagrams&rsquo; contribution will reduce it. So we need only consider connected Feynman Diagrams. The following are some terminology of Feynman Diagram:</p>
-
 <p><em>[Definiton]</em> : A Feynman Diagram(connected) is made up with some point and lines.</p>
-
 <ol>
 <li><code>outer points</code> : are those space-time points appear in the Green&rsquo;s function, or arguments of Green&rsquo;s function.</li>
 <li><code>inner points</code> : are those space-time points appear in the Dyson series, they are integral variables and not arguments of Green&rsquo;s function.</li>
@@ -693,31 +568,17 @@ autocomplete('#aa-search-input',
 <li><code>Amputated diagrams</code> : For a generic Feynman Diagram, begin with every outer line to its inner part. One can separate the diagram into two part by cut a line(&ldquo;amputate&rdquo;). The most minimal diagram which cannot be separated into two disconnected part by the amputate is a <code>Amputated diagram</code>, which means one need to go along the line as far as possible.</li>
 <li><code>1PI diagrams</code> : or <code>one particle irreducible diagrams</code> , are those two-outer-point diagrams who cannot be separated into two disconnected part by cut a line. It is a special case of amputated diagrams.</li>
 </ol>
-
 <p>We will use the 2-particle <code>$\rightarrow$</code> 2-particle scattering as the example. We need to compute a 4-point-Green-function. With the concept above we can find that the Feynman diagram can be write as an <code>Amputated 4-point diagram</code> and four full-propagator. Then we treated them one by one.</p>
-
 <h3 id="full-propagator-self-energy">Full-Propagator, Self-Energy</h3>
-
 <p>First we consider the <code>full propagator</code>. It is the 2-point Green&rsquo;s function of the interacting Field Theory. With the 1PI diagram, we can find that it should be the sum of all 1PI diagram chains. It looks like a geometry series. With the 1PI diagram contribute is <code>$-\ti \Sigma(p)$</code>. one can write the full propagator as:</p>
-
-<div>$$\begin{aligned}
-G(p)&=\frac {\ti} {|p|^2-m_0^2}+\frac {\ti} {|p|^2-m_0^2}\big(-\ti \Sigma(p)\big)\frac {\ti} {|p|^2-m_0^2}+\cdots \\
-&= \frac {\ti} {p_\mu p^\mu - m_0^2-\Sigma(p)}\rightarrow_{\text{on-shell}} \frac {\ti Z} {p_\mu p^\mu-m^2+\ti \epsilon}
-\end{aligned}$$</div>
-
+<!-- raw HTML omitted -->
 <p>Where the on-shell means that the highest order singularity. Here <code>$m_0$</code> which appears in the Free Lagrangian is called <code>bare mass</code>, and <code>$m$</code> as the pole of full-propagator is called <code>physical mass</code>. Because of this <code>$\Sigma(p)$</code> is also called <code>self-energy</code>.</p>
-
 <p>The <code>wavefunction renormalization factor</code> appears here can be easily checked by applying the LSZ reduction formula on this 2-point Green&rsquo;s function. We can get clear about it now, it is the residue of full propagator at the pole of physical mass.</p>
-
 <h3 id="feynman-amplitude-amputated-function">Feynman Amplitude, Amputated Function</h3>
-
 <p>Then we consider the amputated 4-point function. With the LSZ reduction formula, and the on-shell behavior of outer line propagator(full propagator). we have:</p>
-
-<div>$$\bra{\bm{p}_1,\bm{p}_2}\hat S\ket{\bm{k}_1,\bm{k}_2}=(\sqrt{Z})^4\times (\text{connected, amputated 4 points Green's function})$$</div>
-
+<!-- raw HTML omitted -->
 <p>With the spatial-time homogeneous, which induces a delta function for 4-momentum to hold the energy-momentum conservation, we can write the much generic formula, about Feynman Amplitude and amputated Green&rsquo;s function:</p>
-
-<div>$$\ti M=(\sqrt{Z})^{n+2}\times(\text{connected, amputated \(n\)+2 points Green's function})$$</div>
+<!-- raw HTML omitted -->
 
           </div>
 
@@ -1014,7 +875,7 @@ G(p)&=\frac {\ti} {|p|^2-m_0^2}+\frac {\ti} {|p|^2-m_0^2}\big(-\ti \Sigma(p)\big
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

@@ -449,311 +449,245 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            
-
-<h1 id="introduction">Introduction</h1>
-
+            <h1 id="introduction">Introduction</h1>
 <p><code>Hugo</code> is a static website constructor, based on <code>GO</code>. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [<a href="https://gohugo.io/tools/search/">hugo doc</a>]. Here we use the commercial search service: <code>Algolia</code> [<a href="https://www.algolia.com/">Algolia site</a>] .</p>
-
 <p>Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.</p>
-
 <p>This article follows the post of Yangming&rsquo;s Blog [<a href="https://www.qikqiak.com/post/hugo-integrated-algolia-search/">Hugo&amp;Algolia</a>] .</p>
-
 <h1 id="sign-up-to-algolia">Sign up to Algolia</h1>
-
 <p>It is allowed to sign up to Algolia with the authorization of Github or Google accounts. And by the default, Algolia will construct an app to us. For new user there is a 14-day-free-trial with much more records and permitted operations. One can get to learned during these two weeks.</p>
-
 <p>The direct interface for the user of Algolia is its <code>Dashboard</code> [<a href="https://www.algolia.com/dashboard">Dashboard</a>]. And in the indices page we can find how many indices have been used.</p>
-
 <p>Algolia provides three ways to add records: manual, upload <code>JSON</code> file, and API. Here we will use the third way: <code>API</code> to add our records.</p>
-
 <h1 id="tool-hugo-algolia">Tool: hugo-algolia</h1>
-
 <p>To upload the records of the posts, we need to construct the <code>JSON</code> file to describe the content data. There is a open-source tool <code>hugo-algolia</code> to handle this easily. The github-site is : [<a href="https://github.com/10Dimensional/hugo-algolia">Github site</a>].</p>
-
 <blockquote>
 <p>This tool is used to generate and send indices from Hugo static sites for use with Algolia</p>
 </blockquote>
-
 <p>And it supports YAML, JSON, and TOML front matter.</p>
-
 <p>The installation is easy to do with <code>npm</code>:</p>
-
-<pre><code class="language-shell">npm install hugo-algolia
-</code></pre>
-
-<p>remember to let it executable with <code>chmod +x</code></p>
-
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install hugo-algolia
+</code></pre></div><p>remember to let it executable with <code>chmod +x</code></p>
 <p>And one can simply use it with TOML front file to generate the JSON file:</p>
-
-<pre><code class="language-shell">hugo-algolia --config ./config.toml
-</code></pre>
-
-<p>It will generate a JSON file in the <code>$hugoroot/public</code> folder, in which all posts in <code>$hugoroot/content</code> will be listed.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">hugo-algolia --config ./config.toml
+</code></pre></div><p>It will generate a JSON file in the <code>$hugoroot/public</code> folder, in which all posts in <code>$hugoroot/content</code> will be listed.</p>
 <p>One can also use the <code>-s</code> flag to send them to Algolia. However this tool can not read the <code>appID</code> and <code>key</code> in <code>TOML</code> file, we can make some hack on it. A temporal adjustment is edit the file <code>$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js</code>, rewrite the function <code>HugoAlgolia.prototype.setCredentials</code> :</p>
-
-<pre><code class="language-js">//$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js
-
-HugoAlgolia.prototype.setCredentials = function() {
-/*
-   Original code, one can find that it called the module &quot;matter&quot; to handle the
-   YAML file. Now YAML can handle the TOML too with the same usage, but the
-   author of hugo-algolia has not correct it yet.
-
-   const configMeta = matter.read(self.pathToCredentials);
-   const creds = configMeta.data.algolia;
-
-   if (creds) {
-     self.algoliaCredentials = {
-       indexName: creds.index,
-       key: write_key &amp;&amp; write_key !== undefined ? write_key : creds.key,
-       appID: creds.appID
-     };
-     self.localIndexName = creds.index;
-   }
-*/
-/*
-   Here we directly write the &quot;index&quot;, &quot;key&quot;, and &quot;appID&quot; here so that them can
-   be send to Algolia correctly.
-
-*/
-   self.algoliaCredentials = {
-       indexName: &quot;Your Index Name&quot;,
-       key: &quot;Administrator's Key&quot;,
-       appID: &quot;The Application ID&quot;
-     };
-     self.localIndexName = &quot;Your Index Name&quot;;
- };
-</code></pre>
-
-<p>With the adjustment, we can use the command:</p>
-
-<pre><code class="language-shell">hugo-algolia -s --config ./config.toml
-</code></pre>
-
-<p>at hugo root folder to generate the JSON indices file and send them to Algolia.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js
+</span><span class="c1"></span>
+<span class="nx">HugoAlgolia</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setCredentials</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+<span class="cm">/*
+</span><span class="cm">   Original code, one can find that it called the module &#34;matter&#34; to handle the
+</span><span class="cm">   YAML file. Now YAML can handle the TOML too with the same usage, but the
+</span><span class="cm">   author of hugo-algolia has not correct it yet.
+</span><span class="cm">
+</span><span class="cm">   const configMeta = matter.read(self.pathToCredentials);
+</span><span class="cm">   const creds = configMeta.data.algolia;
+</span><span class="cm">
+</span><span class="cm">   if (creds) {
+</span><span class="cm">     self.algoliaCredentials = {
+</span><span class="cm">       indexName: creds.index,
+</span><span class="cm">       key: write_key &amp;&amp; write_key !== undefined ? write_key : creds.key,
+</span><span class="cm">       appID: creds.appID
+</span><span class="cm">     };
+</span><span class="cm">     self.localIndexName = creds.index;
+</span><span class="cm">   }
+</span><span class="cm">*/</span>
+<span class="cm">/*
+</span><span class="cm">   Here we directly write the &#34;index&#34;, &#34;key&#34;, and &#34;appID&#34; here so that them can
+</span><span class="cm">   be send to Algolia correctly.
+</span><span class="cm">
+</span><span class="cm">*/</span>
+   <span class="nx">self</span><span class="p">.</span><span class="nx">algoliaCredentials</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="nx">indexName</span><span class="o">:</span> <span class="s2">&#34;Your Index Name&#34;</span><span class="p">,</span>
+       <span class="nx">key</span><span class="o">:</span> <span class="s2">&#34;Administrator&#39;s Key&#34;</span><span class="p">,</span>
+       <span class="nx">appID</span><span class="o">:</span> <span class="s2">&#34;The Application ID&#34;</span>
+     <span class="p">}</span><span class="p">;</span>
+     <span class="nx">self</span><span class="p">.</span><span class="nx">localIndexName</span> <span class="o">=</span> <span class="s2">&#34;Your Index Name&#34;</span><span class="p">;</span>
+ <span class="p">}</span><span class="p">;</span>
+</code></pre></div><p>With the adjustment, we can use the command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">hugo-algolia -s --config ./config.toml
+</code></pre></div><p>at hugo root folder to generate the JSON indices file and send them to Algolia.</p>
 <p>After this process we can find them under the <code>indices</code> page in the dashboard.</p>
-
 <h1 id="front-end-setup">Front-end Setup</h1>
-
 <p>Now we have submitted posts we want to Algolia. Then we need to make a front-end UI to use it. It is different for different hugo themes. Here we use a simple one:</p>
-
 <p>we will add a little icon which is a <code>&lt;a&gt;</code> element actually, and when one click on it, there will be a <code>modal</code> subpage by the <code>bootstrap 4</code> library. And there will be a input dialog in it. Then we can use it to search the posts.</p>
-
 <p>We need to add the <code>bootstrap 4</code> in the site, and because of the dependence, we need also add the <code>jquery</code> lib. Edit the <code>$themepath/layouts/partials/head.html</code> file:</p>
-
-<pre><code class="language-html">&lt;!--$themepath/layouts/partials/head.html--&gt;
-&lt;!--Bootstrap--&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot; integrity=&quot;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&quot; crossorigin=&quot;anonymous&quot;&gt;
-&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; integrity=&quot;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js&quot; integrity=&quot;sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js&quot; integrity=&quot;sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>One need to remove the origin <code>bootstrap css</code> importation if exists.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--</span><span class="c">$themepath/layouts/partials/head.html</span><span class="c">--&gt;</span>
+<span class="c">&lt;!--</span><span class="c">Bootstrap</span><span class="c">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p"></span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://code.jquery.com/jquery-3.3.1.slim.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>One need to remove the origin <code>bootstrap css</code> importation if exists.</p>
 <p>Then we can make the front-end ui:</p>
-
 <p>First we need to add a file like <code>$themepath/layouts/partials/search.html</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--</span><span class="c">$themepath/layouts/partials/search.html</span><span class="c">--&gt;</span>
 
-<pre><code class="language-html">&lt;!--$themepath/layouts/partials/search.html--&gt;
-
-&lt;div class=&quot;aa-input-container&quot; id=&quot;aa-input-container&quot;&gt;
-    &lt;input type=&quot;search&quot; id=&quot;aa-search-input&quot; class=&quot;aa-input-search&quot; placeholder=&quot;Search for titles or URIs...&quot; name=&quot;search&quot; autocomplete=&quot;off&quot; /&gt;
-    &lt;svg class=&quot;aa-input-icon&quot; viewBox=&quot;654 -372 1664 1664&quot;&gt;
-        &lt;path d=&quot;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&quot; /&gt;
-    &lt;/svg&gt;
-&lt;/div&gt;
-&lt;script src=&quot;{{ &quot;https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js&quot; | absURL }}&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;{{ &quot;https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js&quot; | absURL }}&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-/*here you need to write your appID and apiKey(not administrator key!)*/
-var client = algoliasearch(&quot;Application ID&quot;, &quot;API Key&quot;);
-var index = client.initIndex('Your Index Name');
-autocomplete('#aa-search-input',
-{ hint: false}, {
-    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
-    displayKey: 'name',
-    templates: {
-        suggestion: function(suggestion) {
-            console.log(suggestion);
-            /*here the link format might be need to correct according to your site */
-            return '&lt;span&gt;' + '&lt;a href=&quot;/' + suggestion.uri.toLowerCase() + '/&quot;&gt;' +
-            suggestion._highlightResult.title.value + '&lt;/a&gt;&lt;/span&gt;';
-        }
-    }
-});
-&lt;/script&gt;
-</code></pre>
-
-<p>Where the <code>svg</code> element is a little magnifier icon.</p>
-
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-container&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;aa-input-container&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;aa-search-input&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-search&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Search for titles or URIs...&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&#34;off&#34;</span> <span class="p">/</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-icon&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;654 -372 1664 1664&#34;</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&#34;</span> <span class="p">/</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">svg</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">https:</span><span class="err">/</span><span class="err">/</span><span class="na">res</span><span class="err">.</span><span class="na">cloudinary</span><span class="err">.</span><span class="na">com</span><span class="err">/</span><span class="na">jimmysong</span><span class="err">/</span><span class="na">raw</span><span class="err">/</span><span class="na">upload</span><span class="err">/</span><span class="na">rootsongjc-hugo</span><span class="err">/</span><span class="na">algoliasearch</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}</span><span class="err">}</span><span class="err">&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">https:</span><span class="err">/</span><span class="err">/</span><span class="na">res</span><span class="err">.</span><span class="na">cloudinary</span><span class="err">.</span><span class="na">com</span><span class="err">/</span><span class="na">jimmysong</span><span class="err">/</span><span class="na">raw</span><span class="err">/</span><span class="na">upload</span><span class="err">/</span><span class="na">rootsongjc-hugo</span><span class="err">/</span><span class="na">autocomplete</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}</span><span class="err">}</span><span class="err">&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p"></span><span class="p">&gt;</span>
+<span class="cm">/*here you need to write your appID and apiKey(not administrator key!)*/</span>
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">algoliasearch</span><span class="p">(</span><span class="s2">&#34;Application ID&#34;</span><span class="p">,</span> <span class="s2">&#34;API Key&#34;</span><span class="p">)</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">initIndex</span><span class="p">(</span><span class="s1">&#39;Your Index Name&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="nx">autocomplete</span><span class="p">(</span><span class="s1">&#39;#aa-search-input&#39;</span><span class="p">,</span>
+<span class="p">{</span> <span class="nx">hint</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="nx">autocomplete</span><span class="p">.</span><span class="nx">sources</span><span class="p">.</span><span class="nx">hits</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="p">{</span><span class="nx">hitsPerPage</span><span class="o">:</span> <span class="mi">8</span><span class="p">}</span><span class="p">)</span><span class="p">,</span>
+    <span class="nx">displayKey</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+    <span class="nx">templates</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">suggestion</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">suggestion</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">suggestion</span><span class="p">)</span><span class="p">;</span>
+            <span class="cm">/*here the link format might be need to correct according to your site */</span>
+            <span class="k">return</span> <span class="s1">&#39;&lt;span&gt;&#39;</span> <span class="o">+</span> <span class="s1">&#39;&lt;a href=&#34;/&#39;</span> <span class="o">+</span> <span class="nx">suggestion</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">(</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#34;&gt;&#39;</span> <span class="o">+</span>
+            <span class="nx">suggestion</span><span class="p">.</span><span class="nx">_highlightResult</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39;&lt;/a&gt;&lt;/span&gt;&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>Where the <code>svg</code> element is a little magnifier icon.</p>
 <p>Then we need to make a entry. For <code>AllinOne</code> theme: [<a href="https://github.com/orianna-zzo/AllinOne">AllinOne homepage</a>] , we will set it on the left of <code>navbar</code>. Edit the file <code>$themepath/layouts/partials/site-navbar.html</code> , add this <code>&lt;a&gt;</code> element at the end of the <code>&lt;div&gt;</code> in the label <code>&lt;nav&gt;</code> , before the last <code>&lt;/div&gt;</code> notation.</p>
-
-<pre><code class="language-html">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;
-&lt;a data-toggle=&quot;modal&quot; data-target=&quot;#modalSearch&quot; style=&quot;outline: none;&quot;&gt;
-  &lt;svg class=&quot;aa-input-butn&quot; viewBox=&quot;654 -372 1664 1664&quot;&gt;
-  &lt;path d=&quot;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&quot; /&gt;
-  &lt;/svg&gt;
-&lt;/a&gt;
-</code></pre>
-
-<p>And add the following <code>&lt;div&gt;</code> after the <code>&lt;nav&gt;</code> :</p>
-
-<pre><code class="language-html">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;
-&lt;!-- Modal --&gt;
-&lt;div class=&quot;modal fade&quot; id=&quot;modalSearch&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
-  &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
-    &lt;div class=&quot;modal-content&quot;&gt;
-      &lt;div class=&quot;modal-header&quot;&gt;
-        &lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalLabel&quot;&gt;Search&lt;/h5&gt;
-        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
-          &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;modal-body&quot;&gt;
-        {{ partial &quot;search.html&quot; . }}
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>You need also add a <code>CSS</code> file in which to assign the style of these elements:</p>
-
-<p><details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        CSS file
-    </summary></p>
-
-<pre><code class="language-CSS">/*#themepath/static/css/search.css*/
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
-.aa-input-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-}
-.aa-input-container span,.aa-input-container input {
-    width: inherit;
-}
-.aa-input-search {
-  width: 300px;
-  padding: 12px 28px 12px 12px;
-  border: 2px solid #e4e4e4;
-  border-radius: 4px;
-  -webkit-transition: .2s;
-  transition: .2s;
-  font-family: &quot;Montserrat&quot;, sans-serif;
-  box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
-  font-size: 11px;
-  box-sizing: border-box;
-  color: #333;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.aa-input-search::-webkit-search-decoration, .aa-input-search::-webkit-search-cancel-button, .aa-input-search::-webkit-search-results-button, .aa-input-search::-webkit-search-results-decoration {
-    display: none;
-}
-.aa-input-search:focus {
-    outline: 0;
-    border-color: #3a96cf;
-    box-shadow: 4px 4px 0 rgba(58, 150, 207, 0.1);
-}
-.aa-input-icon {
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  fill: #e4e4e4;
-}
-.aa-input-butn {
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  fill: #e4e4e4;
-}
-.aa-hint {
-  color: #e4e4e4;
-}
-.aa-dropdown-menu {
-  background-color: #fff;
-  border: 2px solid rgba(228, 228, 228, 0.6);
-  border-top-width: 1px;
-  font-family: &quot;Montserrat&quot;, sans-serif;
-  width: 300px;
-  margin-top: 10px;
-  box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
-  font-size: 11px;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.aa-suggestion {
-  padding: 12px;
-  border-top: 1px solid rgba(228, 228, 228, 0.6);
-  cursor: pointer;
-  -webkit-transition: .2s;
-  transition: .2s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.aa-suggestion:hover, .aa-suggestion.aa-cursor {
-    background-color: rgba(241, 241, 241, 0.35);
-}
-.aa-suggestion &gt; span:first-child {
-    color: #333;
-}
-.aa-suggestion &gt; span:last-child {
-    text-transform: uppercase;
-    color: #a9a9a9;
-}
-.aa-suggestion &gt; span:first-child em, .aa-suggestion &gt; span:last-child em {
-  font-weight: 700;
-  font-style: normal;
-  background-color: rgba(58, 150, 207, 0.1);
-  padding: 2px 0 2px 2px;
-}
-</code></pre>
-
-<p></details></p>
-
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--</span><span class="c">$themepath/layouts/partials/site</span><span class="c">-</span><span class="c">navbar.html</span><span class="c">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#modalSearch&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;outline: none;&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-butn&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;654 -372 1664 1664&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&#34;</span> <span class="p">/</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="p">/</span><span class="nt">svg</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div><p>And add the following <code>&lt;div&gt;</code> after the <code>&lt;nav&gt;</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--</span><span class="c">$themepath/layouts/partials/site</span><span class="c">-</span><span class="c">navbar.html</span><span class="c">--&gt;</span>
+<span class="c">&lt;!--</span><span class="c"> Modal </span><span class="c">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;modalSearch&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span><span class="p"></span><span class="p">&gt;</span>Search<span class="p">&lt;</span><span class="p">/</span><span class="nt">h5</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Close&#34;</span><span class="p"></span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="p">/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p"></span><span class="p">&gt;</span>
+        {{ partial &#34;search.html&#34; . }}
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>You need also add a <code>CSS</code> file in which to assign the style of these elements:</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS"><span class="c">/*#themepath/static/css/search.css*/</span>
+<span class="p">@</span><span class="k">import</span> <span class="s1">&#39;https://fonts.googleapis.com/css?family=Montserrat:400,700&#39;</span><span class="p">;</span>
+<span class="p">.</span><span class="nc">aa-input-container</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-input-container</span> <span class="nt">span</span><span class="o">,</span><span class="p">.</span><span class="nc">aa-input-container</span> <span class="nt">input</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="kc">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-input-search</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">28</span><span class="kt">px</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#e4e4e4</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span> <span class="mf">.2</span><span class="kt">s</span><span class="p">;</span>
+  <span class="k">transition</span><span class="p">:</span> <span class="mf">.2</span><span class="kt">s</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;Montserrat&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">0</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mi">11</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">appearance</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="kp">-moz-</span><span class="k">appearance</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="k">appearance</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-input-search</span><span class="p">::</span><span class="nd">-webkit-search-decoration</span><span class="o">,</span> <span class="p">.</span><span class="nc">aa-input-search</span><span class="p">::</span><span class="nd">-webkit-search-cancel-button</span><span class="o">,</span> <span class="p">.</span><span class="nc">aa-input-search</span><span class="p">::</span><span class="nd">-webkit-search-results-button</span><span class="o">,</span> <span class="p">.</span><span class="nc">aa-input-search</span><span class="p">::</span><span class="nd">-webkit-search-results-decoration</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-input-search</span><span class="p">:</span><span class="nd">focus</span> <span class="p">{</span>
+    <span class="k">outline</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">border-color</span><span class="p">:</span> <span class="mh">#3a96cf</span><span class="p">;</span>
+    <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">0</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-input-icon</span> <span class="p">{</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">right</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">)</span><span class="p">;</span>
+          <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">fill</span><span class="p">:</span> <span class="mh">#e4e4e4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-input-butn</span> <span class="p">{</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">)</span><span class="p">;</span>
+          <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">fill</span><span class="p">:</span> <span class="mh">#e4e4e4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-hint</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#e4e4e4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-dropdown-menu</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">228</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">border-top-width</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;Montserrat&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">0</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mi">11</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-suggestion</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">228</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span> <span class="mf">.2</span><span class="kt">s</span><span class="p">;</span>
+  <span class="k">transition</span><span class="p">:</span> <span class="mf">.2</span><span class="kt">s</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kp">-webkit-</span><span class="n">box</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kp">-ms-</span><span class="n">flexbox</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="n">box-pack</span><span class="p">:</span> <span class="kc">justify</span><span class="p">;</span>
+      <span class="kp">-ms-</span><span class="n">flex-pack</span><span class="p">:</span> <span class="kc">justify</span><span class="p">;</span>
+          <span class="k">justify-content</span><span class="p">:</span> <span class="kc">space</span><span class="o">-</span><span class="n">between</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="n">box-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+      <span class="kp">-ms-</span><span class="n">flex-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+          <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-suggestion</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span> <span class="p">.</span><span class="nc">aa-suggestion</span><span class="p">.</span><span class="nc">aa-cursor</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-suggestion</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-suggestion</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="p">:</span><span class="nd">last-child</span> <span class="p">{</span>
+    <span class="k">text-transform</span><span class="p">:</span> <span class="kc">uppercase</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#a9a9a9</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">aa-suggestion</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="p">:</span><span class="nd">first-child</span> <span class="nt">em</span><span class="o">,</span> <span class="p">.</span><span class="nc">aa-suggestion</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="p">:</span><span class="nd">last-child</span> <span class="nt">em</span> <span class="p">{</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>
+  <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><!-- raw HTML omitted -->
 <p>And add it to the <code>$themepath/layouts/partials/head.html</code> to let it contain the css file:</p>
-
-<pre><code class="language-html">&lt;!--$themepath/layouts/partials/head.html--&gt;
-&lt;!--Search--&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ &quot;css/search.css&quot; | absURL }}&quot; /&gt;
-</code></pre>
-
-<p>There might be a little bug of the bootstrap modal, which let the <code>padding-right</code> of <code>body</code> increase at each time to use the modal. To correct this, we can add a line to the <code>$themepath/static/css/main.css</code> :</p>
-
-<pre><code class="language-CSS">body {
-  padding-right: 0px !important;
-}
-</code></pre>
-
-<h1 id="result">Result</h1>
-
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--</span><span class="c">$themepath/layouts/partials/head.html</span><span class="c">--&gt;</span>
+<span class="c">&lt;!--</span><span class="c">Search</span><span class="c">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">css</span><span class="err">/</span><span class="na">search</span><span class="err">.</span><span class="na">css</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}</span><span class="err">}</span><span class="err">&#34;</span> <span class="p">/</span><span class="p">&gt;</span>
+</code></pre></div><p>There might be a little bug of the bootstrap modal, which let the <code>padding-right</code> of <code>body</code> increase at each time to use the modal. To correct this, we can add a line to the <code>$themepath/static/css/main.css</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-CSS" data-lang="CSS"><span class="nt">body</span> <span class="p">{</span>
+  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h1 id="result">Result</h1>
 <p>After all, we will have a search icon in the left of the navigation bar. It will be looked like:</p>
-
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/hugo/InsiteSearch_1.png"/></div>
-
+<!-- raw HTML omitted -->
 <h1 id="reference">Reference</h1>
-
 <ol>
 <li><a href="https://gohugo.io/tools/search/">Hugo official doc</a></li>
 <li><a href="https://www.algolia.com/">Algolia official page</a></li>
@@ -1030,7 +964,7 @@ autocomplete('#aa-search-input',
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

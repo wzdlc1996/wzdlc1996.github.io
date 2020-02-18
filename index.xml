@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>Random Variable</title>
-      <link>https://wzdlc1996.github.io/notes/amath/randomvariable/</link>
-      <pubDate>Tue, 29 Oct 2019 11:36:42 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/notes/amath/randomvariable/</guid>
-      <description>This is an introduction to Probability Theory. Include the definition of Probability Space and Random Variables. Conditional Expectation and How to generate random numbers. Read this would be helpful for understanding further probability theory even Measure theory in the future</description>
-    </item>
-    
-    <item>
       <title>Manybody: Functional Integral Formalism</title>
       <link>https://wzdlc1996.github.io/notes/qm/manybody3/</link>
       <pubDate>Sun, 07 Apr 2019 17:09:13 +0800</pubDate>
@@ -261,6 +252,16 @@
       
       <guid>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</guid>
       <description>How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wzdlc1996.github.io/notes/amath/randomvariable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/amath/randomvariable/</guid>
+      <description>Random Variable Introduction to Probability Theory Probability Space [Definition] : A Probability Space is a triplet $(\Omega, \mathcal{F},\mathbb{P})$ of three elements:
+ $\Omega$ is a set (called Sample Space) . $\mathcal{F}$ is a Sigma Algebra on $\Omega$. $\mathcal{F}$ is a collection of subsets of $\Omega$ and has the following properties:  $\Omega, \varnothing \in \mathcal{F}$ $A\in \mathcal{F} \Rightarrow A^c \equiv \Omega \setminus A \in \mathcal{F}$ A sequence of sets $\{A_i\}_{i=1}^{\infty}$ in which $A_i \in \mathcal{F}$, then $\bigcup_{j=1}^{\infty} A_j \in \mathcal{F}$   $\mathbb{P}$ is a Probability Measure: $\mathbb{P}: \mathcal{F}\rightarrow [0,1]$ and has the following properties:  (Normalization)$\mathbb{P}(\Omega) = 1$ (Countably additive)$A_1,A_2,\cdots \in \mathcal{F} \ , \ A_i\bigcap A_j=\varnothing \Rightarrow \mathbb{P}(\bigcup_{j=1}^{\infty} A_j) = \sum_{j=1}^{\infty} \mathbb{P}(A_j)$    [Definition] : A Measurable (real-valued) Function on a Measurable Space $(\Omega,\mathcal{F})$ is a function $f:\Omega \rightarrow \mathbb{R}$, which has the property:</description>
     </item>
     
   </channel>
