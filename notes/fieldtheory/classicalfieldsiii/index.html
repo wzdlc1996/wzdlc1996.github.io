@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The classical field theory for vector field, so-called Maxwell Field. Together with the solution of Maxwell equation and some properties of Maxwell field.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Classical Fields: Maxwell Field | Leonard 
-  
+    
+     Classical Fields: Maxwell Field | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>3 minutes read</li>
+      <li>6 minutes read</li>
     
   </ul>
   
@@ -457,97 +394,280 @@ autocomplete('#aa-search-input',
             <h1 id="maxwell-field">Maxwell Field</h1>
 <h2 id="formalism">Formalism</h2>
 <p><em>[Definition]</em> : Maxwell Field is the field of <code>4-vector</code>. The Lagrangian is Lorentz Scalar constructed by the so-called <code>Electromagnetic Tensor</code>:</p>
-<!-- raw HTML omitted -->
-<p>And where <code>$F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$</code> is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of <code>$\partial_0 A_0$</code> .</p>
+
+$$\mathcal{L}=-\frac 1 4 F^{\mu\nu}F_{\mu\nu}$$
+
+
+<p>And where $F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is an anti-symmetry tensor. This form will let the zero components of conjugate field vanish because it is independent of $\partial_0 A_0$ .</p>
 <p>We need to do some adjustment. And this will be used in the <code>Gupta-Bleuler Quantization</code> in the future. And the new Lagrangian is:</p>
-<!-- raw HTML omitted -->
-<p>Under the <code>Lorentz gauge</code> , we require <code>$\partial^\mu A_\mu=0$</code> , and this Lagrangian is the same to above.</p>
+
+$$\mathcal{L} = -\frac 1 4 F^{\mu\nu} F_{\mu\nu} - \frac {\xi} 2 (\partial^{\mu}A_\mu)^2$$
+
+
+<p>Under the <code>Lorentz gauge</code> , we require $\partial^\mu A_\mu=0$ , and this Lagrangian is the same to above.</p>
 <p>We can write down the equation of motion:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>For the Euler-Lagrange Equation is linear respect to <code>$\mathcal{L}$</code> , we separate it into two terms:</p>
-<!-- raw HTML omitted -->
-<p>The first term:</p>
-<!-- raw HTML omitted -->
-<p>And the second term:</p>
-<!-- raw HTML omitted -->
-<p>Then we have the equation of motion:</p>
-<!-- raw HTML omitted -->
-<p>Or:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynman gauge</code> (<code>$\xi=1$</code>) it is also the standard form of wave-equation:</p>
-<!-- raw HTML omitted -->
+
+$$\partial_\nu\partial^\nu A_\mu - (1-\xi)\partial_\mu (\partial_\nu A^\nu)=0$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+For the Euler-Lagrange Equation is linear respect to $\mathcal{L}$ , we separate it into two terms:
+
+
+$$\mathcal{L}=\mathcal{L}_1+\mathcal{L}_2=-\frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 (\partial_\mu A^\mu)^2$$
+
+
+
+The first term:
+
+
+$$\begin{aligned}
+&\indent \frac {\partial \mathcal{L}_1} {\partial A_\alpha}-\partial_\mu \frac {\partial \mathcal{L}_1} {\partial (\partial_\mu A_\alpha)}\\
+&=\frac 1 4\partial_\beta\Big(\frac {\partial F^{\mu\nu}} {\partial(\partial_\beta A_\alpha)} F_{\mu\nu} +\frac {\partial F_{\mu\nu}} {\partial(\partial_\beta A_\alpha)} F^{\mu\nu} \Big) \\
+&=\frac 1 4 \partial_\beta \Big(\eta^{\mu\gamma}\eta^{\nu\delta}(\delta_\beta^\gamma\delta_\alpha^\delta-\delta_\alpha^\gamma\delta_\beta^\delta)F_{\mu\nu}+(\delta_\beta^\mu\delta_\alpha^\nu-\delta_\alpha^\mu\delta_\beta^\nu)F^{\mu\nu} \Big) \\
+&= \frac 1 4 \partial_\beta \big(F^{\beta\alpha}-F^{\alpha\beta}+F^{\beta\alpha}-F^{\alpha\beta}\big) \\
+&= \partial_{\beta}F^{\beta\alpha} \\
+&= \square A^\alpha-\partial^\alpha(\partial_\mu A^\mu)
+\end{aligned}$$
+
+
+
+And the second term:
+
+
+$$\begin{aligned}
+&\indent \frac {\partial \mathcal{L}_2} {\partial A_\alpha}-\partial_\mu \frac {\partial \mathcal{L}_2} {\partial (\partial_\mu A_\alpha)}\\
+&=\frac {\xi} 2 \partial_{\mu} \frac {\partial (\partial_\nu A^\nu)^2} {\partial(\partial_\mu A_\alpha)}\\
+&=\xi \partial_\mu \big(\partial_\nu A^\nu \eta^{\mu\alpha} \big) \\
+&=\xi \partial^{\alpha}(\partial_\nu A^\nu)
+\end{aligned}$$
+
+
+
+Then we have the equation of motion:
+
+
+$$\square A^\alpha - (1-\xi)\partial^\alpha (\partial_\mu A^\mu)=0$$
+
+
+
+Or:
+
+
+$$\square A_\alpha - (1-\xi)\partial_\alpha (\partial^\mu A_\mu)=0$$
+
+
+
+
+
+</details>
+
+<p>That is, under <code>Lorentz gauge</code> it is the same to the standard wave-equation. And under <code>Feynman gauge</code> ($\xi=1$) it is also the standard form of wave-equation:</p>
+
+$$\partial_\nu\partial^\nu A_\mu=\square A_\mu=0$$
+
+
 <p>And the conjugate field:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>And under the Feynman Gauge <code>$\xi=1$</code> we have the Hamiltonian:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>When <code>$\xi =1$</code> , the last term vanishes. And the full-divergence has no contribution to the spatial integral, we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\pi^\mu\equiv \frac {\delta \mathcal{L}} {\delta (\partial_0 A_\mu)}=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+
+$$\begin{aligned}
+\pi^\mu &\equiv \frac {\delta \mathcal{L}} {\delta(\partial_0 A_\mu)} \\
+&= -\frac 1 4 \Big(\frac {\delta F^{\alpha\beta}} {\delta(\partial_0 A_\mu)} F_{\alpha\beta} + \frac {\delta F_{\alpha\beta}} {\delta(\partial_0 A_\mu)} F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \frac {\delta(\partial_\alpha A^\alpha)} {\delta(\partial_0 A_\mu)} \\
+&=-\frac 1 2 \Big((\delta_\alpha^0\delta_\beta^\mu-\delta_\beta^0\delta_\alpha^\mu) F^{\alpha\beta} \Big)- \xi \partial_\nu A^\nu \delta^\mu_\gamma \delta^0_\alpha \eta^{\gamma\alpha} \\
+&=F^{\mu0}-\xi\eta^{\mu0}(\partial_\nu A^\nu)
+\end{aligned}$$
+
+
+
+
+</details>
+
+<p>And under the Feynman Gauge $\xi=1$ we have the Hamiltonian:</p>
+
+$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+
+$$\begin{aligned}
+\mathcal{H}&= \pi^\mu \partial_0 A_\mu-\mathcal{L} \\
+&=F^{\mu0}\partial_0 A_\mu +\frac 1 4 F^{\mu\nu}F_{\mu\nu}-\xi \partial_0 A^0 \partial_\mu A^\mu +\frac 1 2 \xi(\partial_\mu A^{\mu})^2 \\
+&=F^{\mu0}\partial_0 A_\mu + \frac 1 4 F^{\mu\nu} F_{\mu\nu}-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
+&=(\partial^\mu A^0 - \partial^0 A^\mu)\partial_0 A_\mu + \frac 1 2 (\partial^\mu A^\nu \partial_\mu A_\nu-\partial^\mu A^\nu \partial_\nu A_\mu)-\frac {\xi} 2 \partial_{\mu} A^{\mu} \sum_{\nu=0}^3 \partial_\nu A_{\nu} \\
+&=-\sum_i \partial_i A_0 \partial_0 A_i+\sum_i (\partial_0 A_i)^2 + \frac 1 2 \Big((\partial_0 A_0)^2 -\sum_i (\partial_i A_0)^2-\sum_i (\partial_0 A_i)^2 +\sum_{i,j} (\partial_i A_j)^2 \\
+&\indent -(\partial_0 A_0)^2+2\sum_i \partial_i A_0 \partial_0 A_i- \sum_{i,j}\partial_i A_j \partial_j A_i \Big) - \frac {\xi} 2 \partial_\mu A^\mu \sum_{\nu=0}^3 (\partial_\nu A_\nu) \\
+&= \frac 1 2 \Big(\sum_i (\partial_0 A_i)^2 - (\nabla A_0)^2+\sum_i (\nabla A_i)^2-\sum_{i,j}\partial_i A_j \partial_j A_i \Big) - \frac {\xi} 2 \partial_\mu A^\mu (\partial_0 A_0 + \nabla \cdot \bm{A}) \\
+&= \frac 1 2 \sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) - \frac 1 2 (\nabla A_0)^2 -\frac 1 2 \Big(\nabla \cdot \big((\bm{A}\cdot \nabla) \bm{A} \big)-(\bm{A}\cdot \nabla)(\nabla\cdot \bm{A}) \Big) \\
+&\indent -\frac \xi 2 \big((\partial_0 A_0)^2-(\nabla \cdot \bm{A})^2 \big) \\
+&=\frac 1 2 \Big[\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -\xi (\partial_0 A_0)^2 - (\nabla A_0)^2 \Big] - \frac 1 2 \nabla\cdot \Big((\bm{A}\cdot \nabla)\bm{A}-\xi (\nabla \cdot \bm{A})\bm{A} \Big) \\
+&\indent + \frac {1-\xi} 2 (\bm{A}\cdot \nabla)(\nabla\cdot \bm{A})
+\end{aligned}$$
+
+
+
+When $\xi =1$ , the last term vanishes. And the full-divergence has no contribution to the spatial integral, we have:
+
+
+$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$
+
+
+
+
+</details>
+
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
 <p>We will solve the equation of motion under <code>Feynman Gauge</code> . Which lead to the wave equation form:</p>
-<!-- raw HTML omitted -->
+
+$$\square A^\mu=0$$
+
+
 <p>Similarly, we use the Fourier transform as:</p>
-<!-- raw HTML omitted -->
-<p>Remembering that <code>$A_\mu$</code> is a real-vector, and <code>$k=(\omega_{|\bm{k}|},\bm{k})$</code> , with the dispersion relation: <code>$k_\mu k^\mu=0$</code>, the generic solution can be written as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> , <code>$\lambda$</code> denotes four polarization direction, and <code>$\epsilon_\mu(\bm{k},\lambda)$</code> is the corresponding vector.</p>
-<p>Here we make a convention about the polarization vector <code>$\epsilon_{\mu}(\bm{k},\lambda)$</code> :</p>
+
+$$A_\mu(x)=\int \frac {\td \omega \td^3\bm{k}} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti \omega t} a_\mu(\bm{k},\omega)$$
+
+
+<p>Remembering that $A_\mu$ is a real-vector, and $k=(\omega_{|\bm{k}|},\bm{k})$ , with the dispersion relation: $k_\mu k^\mu=0$, the generic solution can be written as:</p>
+
+$$A_\mu(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt{\frac 1 {2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon_{\mu}(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon_{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu} \Big)$$
+
+
+<p>Where $\omega_{|\bm{k}|}=|\bm{k}|$ , $\lambda$ denotes four polarization direction, and $\epsilon_\mu(\bm{k},\lambda)$ is the corresponding vector.</p>
+<p>Here we make a convention about the polarization vector $\epsilon_{\mu}(\bm{k},\lambda)$ :</p>
 <p><em>[Convention]</em> : The polarization vector is defined by the following two condition:</p>
 <ol>
 <li>
-<p>For special situation: <code>$k_{\text{special}}=(|\bm{k}|,0,0,|\bm{k}|)$</code>:</p>
-<!-- raw HTML omitted -->
-<p>Or simply: <code>$\epsilon^\mu(\bm{k}_{\text{special}},\lambda) = \delta^{\mu}_\lambda$</code> . This setting means that they are polarization direction of linear-polarization. For circular-polarization, they could be complex-vector.</p>
+<p>For special situation: $k_{\text{special}}=(|\bm{k}|,0,0,|\bm{k}|)$:</p>
+
+$$\begin{aligned}
+    \epsilon((0,0,|\bm{k}|),0) &= (1,0,0,0)\\
+    \epsilon((0,0,|\bm{k}|),1) &= (0,1,0,0) \\
+    \epsilon((0,0,|\bm{k}|),2) &= (0,0,1,0) \\
+    \epsilon((0,0,|\bm{k}|),3) &= (0,0,0,1)
+    \end{aligned}$$
+
+
+<p>Or simply: $\epsilon^\mu(\bm{k}<em>{\text{special}},\lambda) = \delta^{\mu}</em>\lambda$ . This setting means that they are polarization direction of linear-polarization. For circular-polarization, they could be complex-vector.</p>
 </li>
 <li>
-<p>For generic situation, let <code>$\Lambda(\omega)k_{\text{special}}=k$</code>, that is to say <code>$k_{\text{special}}^0=|\bm{k}|$</code> , or no boost, is the Lorentz transform for vector. We have:</p>
-<!-- raw HTML omitted -->
+<p>For generic situation, let $\Lambda(\omega)k_{\text{special}}=k$, that is to say $k_{\text{special}}^0=|\bm{k}|$ , or no boost, is the Lorentz transform for vector. We have:</p>
+
+$$\epsilon(\bm{k},\lambda)=\Lambda(\omega)\epsilon(k_{\text{special}},\lambda)$$
+
+
 </li>
 </ol>
 <p><em>[Theorem]</em> : with such the convention, we can prove that polarization vector has the following properties:</p>
 <ol>
-<li><code>$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</code></li>
-<li><code>$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^{\mu}(\bm{k},\lambda)\epsilon^{\nu *}(\bm{k},\lambda)=\eta^{\mu\nu}$</code></li>
+<li>$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</li>
+<li>$\sum_{\lambda=0}^3 \eta_{\lambda,\lambda}\epsilon^{\mu}(\bm{k},\lambda)\epsilon^{\nu *}(\bm{k},\lambda)=\eta^{\mu\nu}$</li>
 </ol>
 <p>For linear-polarization , there will be no need for the conjugation. But for circular polarization, we need the conjugation.</p>
-<!-- raw HTML omitted -->
-<p>We prove this theorem by linear-polarization. For circular-polarization is similar.</p>
-<ol>
-<li>
-<p>Let <code>$\Lambda k_{\text{special}}=k$</code> , we have <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(\bm{k}_{\text{special}},\lambda)=\Lambda_{\mu}^{\indent \nu}\eta_{\nu\lambda}=\Lambda_{\mu\lambda}$</code> . Then:</p>
-<!-- raw HTML omitted -->
-</li>
-<li>
-<p>With that <code>$\epsilon_\mu(\bm{k},\lambda)=\Lambda_{\mu\lambda}$</code> , we have:</p>
-<!-- raw HTML omitted -->
-</li>
-</ol>
-<!-- raw HTML omitted -->
-<p>It is obvious that <code>$\epsilon_\mu(\bm{k},\lambda=1,2)k^\mu=0$</code>. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call <code>$\epsilon_\mu(\bm{k},\lambda=3)$</code> <code>Vertical Polarization</code> , call <code>$\epsilon_\mu(\bm{k},\lambda=0)$</code> <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We prove this theorem by linear-polarization. For circular-polarization is similar.
+
+1.  Let $\Lambda k_{\text{special}}=k$ , we have $\epsilon_\mu(\bm{k},\lambda)=\Lambda_\mu^{\indent \nu}\epsilon_\nu(\bm{k}_{\text{special}},\lambda)=\Lambda_{\mu}^{\indent \nu}\eta_{\nu\lambda}=\Lambda_{\mu\lambda}$ . Then:
+
+    
+$$\epsilon_\mu(\bm{k},\lambda)\epsilon^{\mu*}(\bm{k},\lambda')=\Lambda_{\mu\lambda}\Lambda^{\mu}_{\lambda'}=\eta_{\lambda\lambda'}$$
+
+
+
+2.  With that $\epsilon_\mu(\bm{k},\lambda)=\Lambda_{\mu\lambda}$ , we have:
+
+    
+$$\sum_{\lambda=0}^3 \eta^{\lambda,\lambda}\epsilon^\mu(\bm{k},\lambda)\epsilon^{\nu*}(\bm{k},\lambda)=\eta_{\lambda,\lambda'}\Lambda^{\mu\lambda}\Lambda^{\nu\lambda'}=\eta^{\mu\nu}$$
+
+
+
+
+</details>
+
+<p>It is obvious that $\epsilon_\mu(\bm{k},\lambda=1,2)k^\mu=0$. We usually call them <code>Horizontal Polarization</code> or <code>Physical Polarization</code> . Call $\epsilon_\mu(\bm{k},\lambda=3)$ <code>Vertical Polarization</code> , call $\epsilon_\mu(\bm{k},\lambda=0)$ <code>Scalar Polarization</code> . The latter two are also called as <code>Non-physical Polarization</code>.</p>
 <h2 id="plane-wave-expansion-and-hamiltonian">Plane-Wave Expansion and Hamiltonian</h2>
-<p>At last we will write the Hamiltonian of Maxwell Field as the quadratic form of coefficients <code>$a(\bm{k},\lambda)$</code> in plane-wave expansion. Like what we did before, we will hold the order of them so that the formulas can be used in quantum theory in the future. Our discussion will only cover the result of <code>Feynman gauge</code> <code>$\xi=1$</code> :</p>
+<p>At last we will write the Hamiltonian of Maxwell Field as the quadratic form of coefficients $a(\bm{k},\lambda)$ in plane-wave expansion. Like what we did before, we will hold the order of them so that the formulas can be used in quantum theory in the future. Our discussion will only cover the result of <code>Feynman gauge</code> $\xi=1$ :</p>
 <p><em>[Theorem]</em> : With the plane wave expansion and Feynman gauge, one can write the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the plane wave expansion we have:</p>
-<!-- raw HTML omitted -->
-<p>And the Hamiltonian with Feynman gauge can be written as:</p>
-<!-- raw HTML omitted -->
-<p>We will compute this integral:</p>
-<!-- raw HTML omitted -->
-<p>Note that <code>$k_0^2-k_1^2-k_2^2-k_3^2=0$</code> , because <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> . And compute the third equality should be carefully, because the delta function of <code>$\delta^3(\bm{k}_1+\bm{k}_2)$</code> leads <code>$k_2=(\omega_{|\bm{k}|},-\bm{k})\neq -k_1$</code> . And in the second equality, <code>$a_i,\epsilon_{i,\nu}$</code> means that <code>$a(\bm{k}_i) , \epsilon_\nu(\bm{k}_1,\lambda_1)$</code> , for the simplicity.</p>
-<p>With <code>$H = -\frac 1 2 \sum_\nu \eta^{\nu\nu} I_\nu$</code>, we can write down:</p>
-<!-- raw HTML omitted -->
-<p>With the property of <code>$\epsilon^\mu$</code> : <code>$\epsilon(\bm{k},\lambda)\cdot \epsilon(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$</code> , we can write the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the plane wave expansion we have:
+
+
+$$A^\mu (x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{\lambda=0}^3 \Big(a(\bm{k},\lambda)\epsilon^\mu(\bm{k},\lambda)e^{-\ti k_\nu x^\nu}+a(\bm{k},\lambda)^* \epsilon^{\mu}(\bm{k},\lambda)^* e^{\ti k_\nu x^\nu}\Big)$$
+
+
+
+And the Hamiltonian with Feynman gauge can be written as:
+
+
+$$H = \frac 1 2 \int \td^3 \bm{x} \Big\{\sum_i \Big((\partial_0 A_i)^2 + (\nabla A_i)^2 \Big) -(\partial_0 A_0)^2 - (\nabla A_0)^2\Big\}$$
+
+
+
+We will compute this integral:
+
+
+$$\begin{aligned}
+I_\nu&= \int \td^3 \bm{x} \sum_\mu (\partial_\mu A_\nu)^2 \\
+&= \sum_{\mu}\int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{\lambda_1,\lambda_2} \Big(a_1 \epsilon_{1,\nu}(-\ti k_{1,\mu})e^{-\ti k_1\cdot x}+a_1^*\epsilon_{1,\nu}^* (\ti k_{1,\mu})e^{\ti k_1\cdot x}\Big) \\
+&\indent \cdot\Big(a_2 \epsilon_{2,\nu}(-\ti k_{2,\mu})e^{-\ti k_2\cdot x}+a_2^*\epsilon_{2,\nu}^* (\ti k_{2,\mu})e^{\ti k_2\cdot x}\Big)\\
+&= \sum_\mu \int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} \sum_{\lambda,\lambda'} \Big\{-a(\bm{k},\lambda)a(-\bm{k},\lambda')\epsilon_\nu(\bm{k},\lambda)\epsilon_{\nu}(-\bm{k},\lambda')e^{-2\ti \omega_{|\bm{k}|}t} (k_0^2,-k_1^2,-k_2^2,-k_3^2)^\mu \\
+&\indent + k_\mu^2 a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon_\nu(\bm{k},\lambda')^* + k_\mu^2 a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (\bm{k},\lambda') \\
+&\indent - a(\bm{k},\lambda)^* a(-\bm{k},\lambda')^* \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (-\bm{k},\lambda')^* e^{2\ti \omega_{|\bm{k}|}t} (k_0^2,-k_1^2,-k_2^2,-k_3^2)^\mu  \Big\} \\
+&= \int \td^3 \bm{k} \ \omega_{|\bm{k}|}\sum_{\lambda,\lambda'} \Big\{ a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon_\nu(\bm{k},\lambda')^* + a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon_\nu (\bm{k},\lambda')  \Big\}
+\end{aligned}$$
+
+
+
+Note that $k_0^2-k_1^2-k_2^2-k_3^2=0$ , because $\omega_{|\bm{k}|}=|\bm{k}|$ . And compute the third equality should be carefully, because the delta function of $\delta^3(\bm{k}_1+\bm{k}_2)$ leads $k_2=(\omega_{|\bm{k}|},-\bm{k})\neq -k_1$ . And in the second equality, $a_i,\epsilon_{i,\nu}$ means that $a(\bm{k}_i) , \epsilon_\nu(\bm{k}_1,\lambda_1)$ , for the simplicity.
+
+With $H = -\frac 1 2 \sum_\nu \eta^{\nu\nu} I_\nu$, we can write down:
+
+
+$$H=-\frac 1 2\int \td^3 \bm{k} \ \omega_{|\bm{k}|}\sum_{\lambda,\lambda'}\Big\{ a(\bm{k},\lambda)a(\bm{k},\lambda')^*\epsilon_\nu(\bm{k},\lambda)\epsilon^\nu(\bm{k},\lambda')^* + a(\bm{k},\lambda)^* a(\bm{k},\lambda) \epsilon_\nu(\bm{k},\lambda)^* \epsilon^\nu (\bm{k},\lambda')  \Big\}$$
+
+
+
+With the property of $\epsilon^\mu$ : $\epsilon(\bm{k},\lambda)\cdot \epsilon(\bm{k},\lambda')=\eta_{\lambda,\lambda'}$ , we can write the Hamiltonian as:
+
+
+$$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big( a(\bm{k},\lambda)a(\bm{k},\lambda)^*+a(\bm{k},\lambda)^* a(\bm{k},\lambda)\big) - \big(a(\bm{k},0)a(\bm{k},0)^*+a(\bm{k},0)^* a(\bm{k},0)\big) \Big) $$
+
+
+
+
+</details>
+
 
           </div>
 
@@ -746,7 +866,7 @@ autocomplete('#aa-search-input',
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -788,23 +908,8 @@ autocomplete('#aa-search-input',
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -828,13 +933,39 @@ autocomplete('#aa-search-input',
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -847,9 +978,6 @@ autocomplete('#aa-search-input',
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

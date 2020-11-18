@@ -6,11 +6,7 @@
     <description>Recent content in Artics on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Fri, 22 Nov 2019 19:24:24 +0800</lastBuildDate>
-    
-	<atom:link href="https://wzdlc1996.github.io/artic/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 Nov 2019 19:24:24 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/artic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>对漫画柜页面加密的解析和漫画爬虫</title>
       <link>https://wzdlc1996.github.io/artic/other/mangaspider/</link>

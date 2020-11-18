@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="Quantum theory for scattering of particles. Theory and applications.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Scattering Theory | Leonard 
-  
+    
+     Scattering Theory | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/qm/scattering/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>5 minutes read</li>
+      <li>9 minutes read</li>
     
   </ul>
   
@@ -458,148 +395,381 @@ autocomplete('#aa-search-input',
 <h2 id="rough-picture">Rough Picture</h2>
 <ol>
 <li>
-<p><code>Time-dependent</code> : particle beam (plane wave packet) <code>$\ket{\psi(t=0)}$</code> coming in, interacting with <code>$\hat V$</code> , scattered particles (scattered wave) <code>$\ket{\psi(t\rightarrow +\infty)}$</code> going out.</p>
+<p><code>Time-dependent</code> : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out.</p>
 </li>
 <li>
-<p><code>Time-independent</code> : a (short-ranged) scattering potential <code>$\hat V$</code> as a perturbation to free particle Hamiltonian <code>$\hat H_0$</code> . The unperturbed state is momentum eigenstate <code>$\ket{\bm{k}}$</code> (with momentum <code>$\hbar\bm{k}$</code>) , and the perturbed state contains scattered wave.</p>
+<p><code>Time-independent</code> : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</p>
 <p>The difficulties in treating the scattering problem as perturbation theory: infinite degeneracy</p>
 </li>
 </ol>
-<p>We will only consider non-relativistic particles: <code>$\hat H_0=-\frac {\hbar^2} {2m} \nabla^2$</code></p>
-<p>Particle number(probability) current is: <code>$\text{Re}\big(\psi^*(\bm{r})(-\ti\frac \hbar m \nabla)\psi(\bm{r})\big)$</code></p>
+<p>We will only consider non-relativistic particles: $\hat H_0=-\frac {\hbar^2} {2m} \nabla^2$</p>
+<p>Particle number(probability) current is: $\text{Re}\big(\psi^*(\bm{r})(-\ti\frac \hbar m \nabla)\psi(\bm{r})\big)$</p>
 <h2 id="scattering-cross-section">Scattering Cross Section</h2>
 <p><em>[Definition]</em> : <code>Differential cross section</code> :</p>
-<!-- raw HTML omitted -->
-<p>. Where <code>$\td \sigma$</code> is the particle current scattered into the solid angle element <code>$\td \Omega$</code>, under unit incoming particle current density</p>
-<p><em>[Definition]</em> : <code>Cross section</code> is the integral of differential cross section on the full angle: <code>$\sigma=\int \frac {\td \sigma} {\td \Omega}\td \Omega$</code></p>
-<p>Incoming plane wave <code>$\ket{\bm{k}}$</code> is not normalizable. Probability is not easily defined. To overcome this one can use free wave packet instead of the plane wave.</p>
+
+$$\frac {\td \sigma} {\td \Omega} := \frac {\td Q_{\text{flux scattered crossing }r^2\td \Omega}} {J_{\text{incoming}}\td \Omega}$$
+
+
+<p>. Where $\td \sigma$ is the particle current scattered into the solid angle element $\td \Omega$, under unit incoming particle current density</p>
+<p><em>[Definition]</em> : <code>Cross section</code> is the integral of differential cross section on the full angle: $\sigma=\int \frac {\td \sigma} {\td \Omega}\td \Omega$</p>
+<p>Incoming plane wave $\ket{\bm{k}}$ is not normalizable. Probability is not easily defined. To overcome this one can use free wave packet instead of the plane wave.</p>
 <h1 id="lippmann-schwinger-equation">Lippmann-Schwinger Equation</h1>
-<p>Take the time-independent approach: <code>$(\hat H_0+\hat V)\ket{\psi}=E\ket{\psi}$</code> . Assume that <code>$\hat V$</code> is sufficiently short-ranged, namely for position <code>$\bm{r}$</code> at a very large distance from the scattering potential <code>$\hat V\approx 0$</code> and <code>$\ket{\psi}=\ket{\bm{k}}$</code>, that is <code>$E=\hbar^2 \bm{k}^2/2m$</code> .(Here we argue <code>$\ket{\psi}$</code> and <code>$\ket{\bm{k}}$</code> have the same energy, which means we are only considering <code>elastic scattering</code>) Like the perturbation theory we have the <code>Lippmann-Schwinger Equation</code></p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\ti\epsilon$</code> is used to avoid singularity.</p>
-<!-- raw HTML omitted -->
-<p>The Lippmann-Schwinger equation can we writen as <code>$E\ket{\psi}-\hat H_0\ket{\psi}+\ti \epsilon \ket{\psi}=\ti\epsilon \ket{\bm{k}}+\hat V \ket{\psi}$</code> . For the time-evolution of <code>$\ket{\psi}$</code> can be obtained by the Schrodinger equation:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>Then the solution is:</p>
-<!-- raw HTML omitted -->
-<p>Or equivalently,</p>
-<!-- raw HTML omitted -->
-<p>Which satisfies <code>$\ket{\psi(t\rightarrow -\infty)}\propto \ket{\bm{k}}$</code> , mimic the scattering process. With this meaning, one can also write it as the form of:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$(+)$</code> corresponding to the <code>$\ket{\bm{k}}_{\text{in}}$</code> , because <code>$\ket{\psi^{(+)}(t\rightarrow -\infty)} = \ket{\bm{k}}_{\text{in}}$</code> ,<br>
-And <code>$(-)$</code> corresponding to the <code>$\ket{\bm{k}}_{\text{out}}$</code> , because <code>$\ket{\psi^{(-)}(t\rightarrow +\infty)} = \ket{\bm{k}}_{\text{out}}$</code> .</p>
-<!-- raw HTML omitted -->
-<p>Assuming that <code>$\hat V=\int \td^3\bm{r} \ V(\bm{r})\ket{\bm{r}}\bra{\bm{r}}$</code> , we can write the <code>$\ket{\psi}$</code> as the wavefunction on coordinate space:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the equality: <code>$1=\int \td^3 \bm{k}\ket{\bm{k}}\bra{\bm{k}}$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>For that:</p>
-<!-- raw HTML omitted -->
-<p>This can be easily proved by the residue theorem.</p>
-<p>One can write down that:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
-<p>The further approximation is that: <code>$|\bm{r}-\bm{r}'|\approx |\bm{r}|-\frac {\bm{r}\cdot \bm{r}'} {|\bm{r}|}$</code> with <code>$|\bm{r}|\gg|\bm{r}'|$</code> , since <code>$V$</code> is only nonzero at the neighbor of origin.</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$f(\bm{k}',\bm{k})=-\frac {(2\pi)^{3/2}} {4\pi}\frac {2m} {\hbar}\int \td^3 \bm{r}' e^{-\ti \bm{k}'\cdot \bm{r}'}V(\bm{r}')\psi(\bm{r}')$</code></p>
+<p>Take the time-independent approach: $(\hat H_0+\hat V)\ket{\psi}=E\ket{\psi}$ . Assume that $\hat V$ is sufficiently short-ranged, namely for position $\bm{r}$ at a very large distance from the scattering potential $\hat V\approx 0$ and $\ket{\psi}=\ket{\bm{k}}$, that is $E=\hbar^2 \bm{k}^2/2m$ .(Here we argue $\ket{\psi}$ and $\ket{\bm{k}}$ have the same energy, which means we are only considering <code>elastic scattering</code>) Like the perturbation theory we have the <code>Lippmann-Schwinger Equation</code></p>
+
+$$\ket{\psi}=\ket{\bm{k}}+\frac {1} {E-\hat H_0+\ti \epsilon}\hat V\ket{\psi}$$
+
+
+<p>Where $\ti\epsilon$ is used to avoid singularity.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+The Lippmann-Schwinger equation can we writen as $E\ket{\psi}-\hat H_0\ket{\psi}+\ti \epsilon \ket{\psi}=\ti\epsilon \ket{\bm{k}}+\hat V \ket{\psi}$ . For the time-evolution of $\ket{\psi}$ can be obtained by the Schrodinger equation:
+
+
+$$\ti \hbar \frac {\td } {\td t}\ket{\psi(t)} = (\hat H_0+\hat V)\ket{\psi(t)}=(E+\ti\epsilon)\ket{\psi(t)}-\ti\epsilon\ket{\bm{k}}$$
+
+
+
+Then we have:
+
+
+$$\ti\hbar \frac {\td} {\td t} \Big(e^{\ti Et/\hbar -\epsilon t/\hbar}\ket{\psi(t)}\Big)=-\ti \epsilon e^{\ti Et/\hbar -\epsilon t/\hbar}\ket{\bm{k}}$$
+
+
+
+Then the solution is:
+
+
+$$\ket{\psi(t)}=e^{-\ti Et/\hbar+\epsilon t/\hbar}\Big(\ket{\psi(t=0)}-\frac {e^{\ti Et/\hbar-\epsilon t/\hbar}-1} {\ti E-\epsilon} \ti \epsilon \ket{\bm{k}}\Big)$$
+
+
+
+Or equivalently,
+
+
+$$\ket{\psi(t)}=e^{-\ti E t/\hbar + \epsilon t/\hbar}\big(\ket{\psi}+\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}\big)-\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}$$
+
+
+
+Which satisfies $\ket{\psi(t\rightarrow -\infty)}\propto \ket{\bm{k}}$ , mimic the scattering process. With this meaning, one can also write it as the form of:
+
+
+$$\begin{aligned}
+\ket{\psi^{(\pm)}}=\ket{\bm{k}}_{\text{in}/\text{out}}+\frac 1 {E-\hat H_0\pm \ti \epsilon} \hat V \ket{\psi^{(\pm)}}
+\end{aligned}$$
+
+
+
+Where $(+)$ corresponding to the $\ket{\bm{k}}_{\text{in}}$ , because $\ket{\psi^{(+)}(t\rightarrow -\infty)} = \ket{\bm{k}}_{\text{in}}$ , \
+And $(-)$ corresponding to the $\ket{\bm{k}}_{\text{out}}$ , because $\ket{\psi^{(-)}(t\rightarrow +\infty)} = \ket{\bm{k}}_{\text{out}}$ .
+
+
+</details>
+
+<p>Assuming that $\hat V=\int \td^3\bm{r} \ V(\bm{r})\ket{\bm{r}}\bra{\bm{r}}$ , we can write the $\ket{\psi}$ as the wavefunction on coordinate space:</p>
+
+$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the equality: $1=\int \td^3 \bm{k}\ket{\bm{k}}\bra{\bm{k}}$ , we have:
+
+
+$$\begin{aligned}
+\bra{\bm{r}}\psi\rangle &= \bra{\bm{r}}\bm{k}\rangle + \int \td^3 \bm{r}' \td^3 \bm{k}' \bra{\bm{r}}\frac {1} {E-\hat H_0+\ti\epsilon} \ket{\bm{k}'}\bra{\bm{k}'}\bm{r}'\rangle \bra{\bm{r}'}\hat V \ket{\psi} \\
+&=\bra{\bm{r}}\bm{k}\rangle +\int \td^3 \bm{r}' \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} V(\bm{r}')\bra{\bm{r}'}\psi\rangle \\
+\end{aligned}$$
+
+
+
+For that:
+
+
+$$\begin{aligned}
+\int \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon}&=\frac 1 {(2\pi)^{3/2}}\int \td^3 \bm{k}' \frac {e^{\ti \bm{k}'\cdot(\bm{r}-\bm{r}')}} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} \\
+&=\frac {2m} {(2\pi)^{3/2}\hbar^2} \int_{0}^{\infty} \td|\bm{k}'|\int_0^{2\pi}\td \theta\int_0^\pi \td \phi |\bm{k}'|^2 \sin \phi \frac {e^{\ti|\bm{k}'||\bm{r}-\bm{r}'|\cos\phi}} {|\bm{k}|^2-|\bm{k}'|^2+\ti \epsilon'} \\
+&=-\frac {2m} {(2\pi)^{3/2}\hbar^2} \frac {2\pi^2} {|\bm{r}-\bm{r}'|}e^{\ti k|\bm{r}-\bm{r}'|}
+\end{aligned}$$
+
+
+
+This can be easily proved by the residue theorem.
+
+One can write down that:
+
+
+$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$
+
+
+
+q.e.d.
+
+
+</details>
+
+<p>The further approximation is that: $|\bm{r}-\bm{r}'|\approx |\bm{r}|-\frac {\bm{r}\cdot \bm{r}'} {|\bm{r}|}$ with $|\bm{r}|\gg|\bm{r}'|$ , since $V$ is only nonzero at the neighbor of origin.</p>
+
+$$\psi(\bm{r})\approx \frac 1 {(2\pi)^{3/2}}\Big(e^{\ti \bm{k}\cdot \bm{r}} +f(\bm{k}',\bm{k}) \frac {e^{\ti kr}} {r} \Big) $$
+
+
+<p>Where $f(\bm{k}',\bm{k})=-\frac {(2\pi)^{3/2}} {4\pi}\frac {2m} {\hbar}\int \td^3 \bm{r}' e^{-\ti \bm{k}'\cdot \bm{r}'}V(\bm{r}')\psi(\bm{r}')$</p>
 <p>And one can prove that the <code>differential cross section</code>:</p>
-<!-- raw HTML omitted -->
+
+$$\frac {\td\sigma} {\td \Omega} = |f(\bm{k}',\bm{k})|^2 $$
+
+
 <p><em>[Theorem]</em> : <code>Optical theorem</code> : Total cross section is related to the forward scattering amplitude:</p>
-<!-- raw HTML omitted -->
+
+$$\sigma \equiv \int \frac {\td \sigma} {\td \Omega} \td \Omega = \frac {4\pi} {k}\text{Im}f(\bm{k},\bm{k})$$
+
+
 <h1 id="born-approximation">Born Approximation</h1>
 <p>Approximate the unknown |ψi on the right-hand-side of Lippmann-Schwinger equation by the incoming plane wave, we have the method called <code>Born Approximation</code> :</p>
-<!-- raw HTML omitted -->
-<p>With Born Approximation, we can write the <code>$f(\bm{k}',\bm{k})$</code> without any unknown function:</p>
-<!-- raw HTML omitted -->
-<p>It is just proportional to the fourier transform of <code>$V(\bm{x})$</code> , and just the function of <code>$\bm{k}'-\bm{k}$</code>.</p>
+
+$$\ket{\psi} = \ket{\bm{k}} +\frac {1} {E-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}}$$
+
+
+<p>With Born Approximation, we can write the $f(\bm{k}',\bm{k})$ without any unknown function:</p>
+
+$$f(\bm{k}',\bm{k})=-\frac {2m} {4\pi\hbar}\int \td^3 \bm{x} \ e^{-\ti(\bm{k}'-\bm{k})\cdot \bm{x}} V(\bm{x})$$
+
+
+<p>It is just proportional to the fourier transform of $V(\bm{x})$ , and just the function of $\bm{k}'-\bm{k}$.</p>
 <p>One can also apply higher approximation on Lippmann-Schwinger function and obtain the <code>Born-Equation</code>:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\psi}=\ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\cdots$$
+
+
 <h1 id="partial-wave-expansion">Partial Wave Expansion</h1>
-<p>Consider the central potential <code>$V(\bm{x})=V(|\bm{x}|)$</code> , then <code>$f$</code> is just the function of the angle between <code>$\bm{k}',\bm{k}$</code> . Define the <code>$\bm{k}$</code> direction as <code>$+z$</code> direction, we have:</p>
-<!-- raw HTML omitted -->
+<p>Consider the central potential $V(\bm{x})=V(|\bm{x}|)$ , then $f$ is just the function of the angle between $\bm{k}',\bm{k}$ . Define the $\bm{k}$ direction as $+z$ direction, we have:</p>
+
+$$\psi(\bm{r})\sim e^{\ti kz}+f(\theta)\frac {e^{\ti kr}} r$$
+
+
 <p>Expand the plane wave into spherical waves:</p>
-<!-- raw HTML omitted -->
-<p>where <code>$j_l$</code> are spherical Bessel function. For large <code>$r$</code> , it is <code>$e^{\ti kz}\sim \frac 1 {2\ti kr}\sum_{l=0}^{\infty} (2l+1)(e^{\ti kr}-(-1)^l e^{-\ti kr})P_l(\cos\theta)$</code></p>
-<p>Expand <code>$f(\theta)$</code> into Legendre Polynomials: <code>$f(\theta)=\sum_{l=0}^{\infty}(2l+1)f_l P_l(\cos\theta)$</code></p>
+
+$$e^{\ti kz} = \sum_{l=0}^{\infty} (2l+1)\ti^l j_l(kr)P_l(\cos\theta) $$
+
+
+<p>where $j_l$ are spherical Bessel function. For large $r$ , it is $e^{\ti kz}\sim \frac 1 {2\ti kr}\sum_{l=0}^{\infty} (2l+1)(e^{\ti kr}-(-1)^l e^{-\ti kr})P_l(\cos\theta)$</p>
+<p>Expand $f(\theta)$ into Legendre Polynomials: $f(\theta)=\sum_{l=0}^{\infty}(2l+1)f_l P_l(\cos\theta)$</p>
 <p>Then the cross section:</p>
-<!-- raw HTML omitted -->
-<p>Where we used the orthogonality of Legendre Polynomials: <code>$\int_0^{\pi}\sin\theta \td \theta \ P_l(\cos\theta)P_{l'}(\cos\theta)=\frac 2 {2l+1}\delta_{l,l'}$</code></p>
+
+$$\sigma =\int \td \Omega \ |f|^2=4\pi \sum_l (2l+1)|f_l|^2$$
+
+
+<p>Where we used the orthogonality of Legendre Polynomials: $\int_0^{\pi}\sin\theta \td \theta \ P_l(\cos\theta)P_{l'}(\cos\theta)=\frac 2 {2l+1}\delta_{l,l'}$</p>
 <p>By <code>optical theorem</code>:</p>
-<!-- raw HTML omitted -->
-<p>Where we have used <code>$P_l(1)=1$</code> .</p>
-<p>Compare these two expression, we have <code>$|f_l|^2 = \frac 1 k \text{Im}f_l$</code> ,  or equivalently, <code>$|1+2\ti kf_l|^2=1$</code>.</p>
-<p>Define phase shift <code>$\delta_l$</code> such that <code>$1+2\ti kf_l=e^{2\ti\delta_l}$</code> , then <code>$f_l=\frac 1 k e^{ti \delta_l}\sin\delta_l$</code> . As the result:</p>
-<!-- raw HTML omitted -->
-<p>At the large <code>$r$</code>. And the cross section:</p>
-<!-- raw HTML omitted -->
+
+$$\sigma=\frac {4\pi} k \text{Im} f(0)=\frac {4\pi} k \sum_l (2l+1)\text{Im}f_l$$
+
+
+<p>Where we have used $P_l(1)=1$ .</p>
+<p>Compare these two expression, we have $|f_l|^2 = \frac 1 k \text{Im}f_l$ ,  or equivalently, $|1+2\ti kf_l|^2=1$.</p>
+<p>Define phase shift $\delta_l$ such that $1+2\ti kf_l=e^{2\ti\delta_l}$ , then $f_l=\frac 1 k e^{ti \delta_l}\sin\delta_l$ . As the result:</p>
+
+$$\psi(\bm{r})\sim \frac 1 {2\ti kr}\sum_l (2l+1)P_l(\cos\theta)\big[e^{2\ti \delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big] $$
+
+
+<p>At the large $r$. And the cross section:</p>
+
+$$\sigma=\frac {4\pi} {k^2} \sum_l (2l+1)\sin^2 \delta_l$$
+
+
 <p>The full procedure to solve the scattering question by partial wave method is :</p>
 <ol>
 <li>
-<p>Expand <code>$\psi(r)=\sum_l Y_l^0(\theta,\phi)R_l(r)$</code> , where spherical harmonic function <code>$Y_l^0(\theta,\phi)=\sqrt{\frac {2l+1} {4\pi}}P_l(\cos\theta)$</code>. Then radial function satisfies:</p>
-<!-- raw HTML omitted -->
-<p>And <code>$R_l(r)\sim\frac 1 {2\ti kr}\frac 1 {\sqrt{4\pi(2l+1)}}\big[e^{2\ti\delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big]$</code> as <code>$r\rightarrow \infty$</code>.</p>
+<p>Expand $\psi(r)=\sum_l Y_l^0(\theta,\phi)R_l(r)$ , where spherical harmonic function $Y_l^0(\theta,\phi)=\sqrt{\frac {2l+1} {4\pi}}P_l(\cos\theta)$. Then radial function satisfies:</p>
+
+$$\Big[-\frac 1 r \frac {\td^2} {\td r^2} r + \frac {l(l+1)} {r^2} +\frac {2m} {\hbar^2} V(r) \Big]R_l(r)=k^2 R_l(r)$$
+
+
+<p>And $R_l(r)\sim\frac 1 {2\ti kr}\frac 1 {\sqrt{4\pi(2l+1)}}\big[e^{2\ti\delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big]$ as $r\rightarrow \infty$.</p>
 </li>
 <li>
-<p>To solve <code>$\delta_l$</code> , solve the radial equation of <code>$R_l$</code> first. expand its asymptotical (<code>$r\rightarrow \infty$</code>) form by spherical Bessel function <code>$j_l(kr)$</code> and <code>$n_l(kr)$</code>: <code>$R_l(kr)\sim j_l(kr)\cos(\delta_l)+n_l(kr)\sin\delta_l$</code></p>
-<p>Remind of the spherical Bessel function <code>$j_l,n_l$</code> , they are the solution of the equation:</p>
-<!-- raw HTML omitted -->
+<p>To solve $\delta_l$ , solve the radial equation of $R_l$ first. expand its asymptotical ($r\rightarrow \infty$) form by spherical Bessel function $j_l(kr)$ and $n_l(kr)$: $R_l(kr)\sim j_l(kr)\cos(\delta_l)+n_l(kr)\sin\delta_l$</p>
+<p>Remind of the spherical Bessel function $j_l,n_l$ , they are the solution of the equation:</p>
+
+$$\Big[-\frac 1 {\rho} \frac {\td^2} {\td \rho^2} \rho + \frac {l(l+1)} {\rho^2}  \Big]R(\rho)=R(\rho)$$
+
+
 <p>And has the form:</p>
-<!-- raw HTML omitted -->
+
+$$j_l(\rho)=(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\sin\rho} {\rho} \Big) \ ; \ n_l(\rho)=-(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\cos\rho} {\rho} \Big)$$
+
+
 <p>And the asymptotical behavior:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+    \rho &\rightarrow 0 \Rightarrow j_l(\rho)\sim \frac {\rho^l} {(2l+1)!!} \ ; \ n_l(\rho)\sim - \frac {(2l+1)!!} {\rho^l}\\
+    \rho &\rightarrow \infty \Rightarrow j_l(\rho)\sim \frac {\sin(\rho-l\pi/2)} {\rho} \ ; \ n_l(\rho)\sim \frac {\cos(\rho-l\pi/2)} {\rho}
+    \end{aligned}$$
+
+
 </li>
 </ol>
 <h1 id="scattering-matrix">Scattering Matrix</h1>
-<p><em>[Definition]</em> : <code>$\hat S$</code> is the unitary time evolution operator in <code>interaction picture</code> , under the <code>limit</code> that initial time <code>$t_i\rightarrow -\infty$</code> and the final time <code>$t_f\rightarrow +\infty$</code> :</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : $\hat S$ is the unitary time evolution operator in <code>interaction picture</code> , under the <code>limit</code> that initial time $t_i\rightarrow -\infty$ and the final time $t_f\rightarrow +\infty$ :</p>
+
+$$\hat S = \lim_{t_i\rightarrow -\infty \\  t_f\rightarrow +\infty} \hat U_I(t_f,t_i)$$
+
+
 <p>Then from Dyson series, we have:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\hat V_I(t)=e^{\ti \hat H_0 t/\hbar} \hat V e^{-\ti \hat H_0 t/\hbar}$</code></p>
-<p>Usually it is a <code>non-convergent integral</code> , to avoid this , we assume that the time of interaction is finite. That is assuming the potential (in <code>Schrodinger picture</code>) depends on time: <code>$\hat V(t)=\hat V e^{-\epsilon |t|}$</code> . With <code>$\epsilon\gt 0$</code> .</p>
+
+$$\hat S = 1 +\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 \hat V_I(t_1) + \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty}\td t_1 \int_{-\infty}^{t_1} \td t_2 \hat V_I(t_1)\hat V_I(t_2)+\cdots$$
+
+
+<p>Where $\hat V_I(t)=e^{\ti \hat H_0 t/\hbar} \hat V e^{-\ti \hat H_0 t/\hbar}$</p>
+<p>Usually it is a <code>non-convergent integral</code> , to avoid this , we assume that the time of interaction is finite. That is assuming the potential (in <code>Schrodinger picture</code>) depends on time: $\hat V(t)=\hat V e^{-\epsilon |t|}$ . With $\epsilon\gt 0$ .</p>
 <p>Then with the Dyson series we can compute order by order:</p>
 <h2 id="1st-order">1st Order</h2>
-<!-- raw HTML omitted -->
-<p>Where <code>$\ket{\bm{k}}$</code> is the eigenstate of momentum, or <code>$\hat H_0$</code> .</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The first order term in Dyson series is:</p>
-<!-- raw HTML omitted -->
-<p>Using that <code>$\lim_{\epsilon\rightarrow 0^+} \frac {2\epsilon} {x^2+\epsilon^2} = 2\pi \delta(x)$</code>.</p>
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$\hat S^{(1)} = -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})$$
+
+
+<p>Where $\ket{\bm{k}}$ is the eigenstate of momentum, or $\hat H_0$ .</p>
+
+$$\hat H_0\ket{\bm{k}}=\frac {\hbar \bm{k}^2} {2m} \ket{\bm{k}}\equiv E_{\bm{k}}\ket{\bm{k}}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+The first order term in Dyson series is:
+
+
+$$\begin{aligned}
+&\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 e^{\ti \hat H_0 t_1/\hbar} \hat V e^{-\epsilon |t_1|} e^{-\ti \hat H_0 t_1/\hbar}  \\
+=& \int \td^3 \bm{k}\td^3 \bm{k}' \ \frac {-\ti} \hbar \int_{-\infty}^{+\infty} \td t_1 \ket{\bm{k}}e^{\ti E_{\bm{k}}t/\hbar}\bra{\bm{k}}\hat V\ket{\bm{k}'}e^{-\epsilon |t_1|} e^{-\ti E_{\bm{k}'}t/\hbar} \bra{\bm{k}'} \\
+=& \int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \Big(\frac 1 {\ti(E_{\bm{k}}-E_{\bm{k}'})/\hbar +\epsilon} - \frac 1 {\ti(E_{\bm{k}}-E_{\bm{k}'})/\hbar -\epsilon} \Big)\\
+=& \int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \frac {2\epsilon} {(E_{\bm{k}}-E_{\bm{k}'})^2/\hbar^2 +\epsilon^2} \\
+\sim_{\epsilon\rightarrow 0} &\int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} 2\pi \delta\big(\frac {E_{\bm{k}}-E_{\bm{k}'}} {\hbar} \big) \\
+=& -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})
+\end{aligned}$$
+
+
+
+Using that $\lim_{\epsilon\rightarrow 0^+} \frac {2\epsilon} {x^2+\epsilon^2} = 2\pi \delta(x)$.
+
+q.e.d.
+
+
+</details>
+
 <h2 id="2nd-order">2nd Order</h2>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The second order term in Dyson series is:</p>
-<!-- raw HTML omitted -->
-<p>Consider:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\mathcal{P}$</code> means <code>Cauchy principal value</code> . One can reduce the result above to:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+The second order term in Dyson series is:
+
+
+$$\begin{aligned}
+& \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty} \td t_1 \int_{-\infty}^{t_1}\td t_2 e^{\ti \hat H_0 t_1 /\hbar} \hat V e^{-\epsilon |t_1|} e^{-\ti \hat H_0 t_1/\hbar} e^{\ti \hat H_0 t_2/\hbar} \hat V e^{-\epsilon |t_2|} e^{-\ti \hat H_0 t_2/\hbar} \\
+&= (\frac {-\ti} \hbar)^2 \int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \td^3 \bm{k}_3 \ \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \ket{\bm{k}_2}\bra{\bm{k}_2}\hat V \ket{\bm{k}_3}\bra{\bm{k}_3} \times \\
+& \indent \int_{-\infty}^{+\infty} \td t_1 \int_{-\infty}^{t_1}\td t_2 \ e^{\ti E_{\bm{k}_1}t_1/\hbar-\epsilon|t_1|-\ti E_{\bm{k}_2}t_1/\hbar +\ti E_{\bm{k}_2}t_2/\hbar -\epsilon |t_2|-\ti E_{\bm{k}_3}t_2/\hbar} \\
+&= (\frac {-\ti} \hbar)^2 \int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \td^3 \bm{k}_3 \ \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \ket{\bm{k}_2}\bra{\bm{k}_2}\hat V \ket{\bm{k}_3}\bra{\bm{k}_3} \times \\
+&\indent \Big\{\frac 1 {\ti(E_{\bm{k}_2}-E_{\bm{k}_3})/\hbar +\epsilon}\Big(\frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_3})/\hbar +\epsilon} - \frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_2})/\hbar -\epsilon} \Big) \\
+&\indent - \frac 1 {\ti(E_{\bm{k}_2}-E_{\bm{k}_3})/\hbar -\epsilon}\Big(\frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_3})/\hbar -\epsilon} - \frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_2})/\hbar -\epsilon} \Big) \Big\}
+\end{aligned}$$
+
+
+
+Consider:
+
+
+$$\lim_{\epsilon\rightarrow 0^+} \frac 1 {x+\ti \epsilon} = -\ti \pi \delta(x) + \mathcal{P}\Big(\frac 1 x \Big)$$
+
+
+
+Where $\mathcal{P}$ means `Cauchy principal value` . One can reduce the result above to:
+
+
+$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$
+
+
+
+q.e.d.
+
+
+</details>
+
 <h2 id="generic-formula">Generic Formula</h2>
-<p>The generic formula of <code>$\hat S$</code> is:</p>
-<!-- raw HTML omitted -->
+<p>The generic formula of $\hat S$ is:</p>
+
+$$\bra{\bm{k}}\hat S -1 \ket{\bm{k}'} = -2\pi \ti \delta(E_{\bm{k}}-E_{\bm{k}'}) \bra{\bm{k}} \Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}'}$$
+
+
 <p>Is similar to Born expansion.</p>
-<!-- raw HTML omitted -->
-<p>With that <code>$\hat S$</code> is unitary, we have:</p>
-<!-- raw HTML omitted -->
-<p>Or equivalently,</p>
-<!-- raw HTML omitted -->
-<p>Let</p>
-<!-- raw HTML omitted -->
-<p>we can rewrite the equality above as:</p>
-<!-- raw HTML omitted -->
-<p>That is:</p>
-<!-- raw HTML omitted -->
-<p>That is the optical theorem:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Re-prove the Optical Theorem
+    </summary>
+    
+
+With that $\hat S$ is unitary, we have:
+
+
+$$\int \td^3 \bm{k}' \bra{\bm{k}} \hat S^\dagger\ket{\bm{k}'}\bra{\bm{k}'}\hat S \ket{\bm{k}}=\bra{\bm{k}}\bm{k}\rangle$$
+
+
+
+Or equivalently,
+
+
+$$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle \bra{\bm{k}'}\hat S-1\ket{\bm{k}} + \bra{\bm{k}}\hat S^\dagger -1 \ket{\bm{k}'}\bra{\bm{k}'}\bm{k}\rangle + |\bra{\bm{k}'}\hat S-1\ket{\bm{k}}|^2 \Big)=0$$
+
+
+
+Let
+
+
+$$T(\bm{k}',\bm{k})=\bra{\bm{k}'}\Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}}$$
+
+
+
+we can rewrite the equality above as:
+
+
+$$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle (-2\pi\ti)\delta(E_{\bm{k}}-E_{\bm{k}'}) T(\bm{k}',\bm{k})+2\pi\ti\delta(E_{\bm{k}}-E_{\bm{k}'}) T(\bm{k}',\bm{k})^*\bra{\bm{k}'}\bm{k}\rangle \Big)\\
+=-\int \td^3 \bm{k} \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$
+
+
+
+That is:
+
+
+$$-\int \td^3 \bm{k}' \ 4\pi \delta(E_{\bm{k}}-E_{\bm{k}'}) \text{Im}(\bra{\bm{k}}\bm{k}'\rangle T(\bm{k}',\bm{k})) = \int \td^3 \bm{k}' \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$
+
+
+
+That is the optical theorem:
+
+
+$$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'}) |T(\bm{k}',\bm{k})|^2$$
+
+
+
+
+</details>
+
 
           </div>
 
@@ -941,7 +1111,7 @@ And <code>$(-)$</code> corresponding to the <code>$\ket{\bm{k}}_{\text{out}}$</c
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -983,23 +1153,8 @@ And <code>$(-)$</code> corresponding to the <code>$\ket{\bm{k}}_{\text{out}}$</c
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1023,13 +1178,39 @@ And <code>$(-)$</code> corresponding to the <code>$\ket{\bm{k}}_{\text{out}}$</c
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1042,9 +1223,6 @@ And <code>$(-)$</code> corresponding to the <code>$\ket{\bm{k}}_{\text{out}}$</c
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

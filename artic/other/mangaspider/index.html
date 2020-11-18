@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="最近在准备可视化课程的大作业, 正好学习一下python爬虫的知识并且实际地练练手. 就选择了漫画柜网站, 顺便也能够爬一点漫画下来到本地看. 这篇文章主要记录了一下对漫画柜网站的分析和js逆向的过程, 因为是拿来给自己看并且面向中文用户的, 所以就用中文来写了. 同时会分享一下用来下载漫画的爬虫代码. Recently during the preparation of the final project of Visualization class, I plan to learn python spider systematically. As a good choice for practice, I analyzed the logic of the website of Manhuagui(manhuagui.com) and write a simple code for download mangas efficiently. This article mainly covers the analyzation and reverses its javascript, which would be like a boring detective store. Because this article is written for Chinese web users, it is in Chinese. Sorry for those users of the English language.">
 
@@ -19,9 +19,9 @@
 
 
   <title>
-  
-       对漫画柜页面加密的解析和漫画爬虫 | Leonard 
-  
+    
+     对漫画柜页面加密的解析和漫画爬虫 | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/artic/other/mangaspider/">
@@ -37,168 +37,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -242,8 +182,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -265,7 +204,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -286,7 +225,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -305,7 +244,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -324,7 +263,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -351,7 +290,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -387,8 +326,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -401,8 +339,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -451,55 +388,73 @@ autocomplete('#aa-search-input',
           <div class="post-content markdown">
             <h1 id="获取漫画柜上一本漫画的内容索引">获取漫画柜上一本漫画的内容索引</h1>
 <p><a href="https://www.manhuagui.com/">漫画柜</a> 上的每本漫画都有一个属于自己的 <code>mangaID</code> , 我们选择一部漫画点进去从链接名称上就能看出来: 像<a href="https://www.manhuagui.com/comic/17201">终将成为你</a> 的链接就是 <code>&quot;https://www.manhuagui.com/comic/17201&quot;</code> . 而点进去之后我们可以看到章节列表. 使用浏览器的 <code>Develop tools</code> (一般来说热键是 <code>f12</code> ), 我们可以看看它的页面布局:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_9.png"/></div>
+
 <p>这些章节都被存放在有着 <code>id=chapter-list-0</code> 的 <code>&lt;div&gt;</code> 中, 来用 <code>python</code> 获取一下看看:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">bs4</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">https://www.manhuagui.com/comic/17201/</span><span class="s2">&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">lxml</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">chapter-list-0</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://www.manhuagui.com/comic/17201/&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
+<span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;chapter-list-0&#39;</span><span class="p">)</span>
 
-<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">chapter-list cf mt10</span><span class="s2">&#34;</span> <span class="nb">id</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">chapter-list-0</span><span class="s2">&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="n">ul</span> <span class="n">style</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">display:block</span><span class="s2">&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">status0</span><span class="s2">&#34;</span> <span class="n">href</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">/comic/17201/455630.html</span><span class="s2">&#34;</span> <span class="n">target</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">_blank</span><span class="s2">&#34;</span> <span class="n">title</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">第45话</span><span class="s2">&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="err">第</span><span class="mi">45</span><span class="err">话</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">36</span><span class="n">p</span><span class="o">&lt;</span><span class="o">/</span><span class="n">i</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="o">/</span><span class="n">span</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="o">/</span><span class="n">a</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="o">/</span><span class="n">li</span><span class="o">&gt;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="p">]</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&#34;chapter-list cf mt10&#34;</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;chapter-list-0&#34;</span><span class="o">&gt;&lt;</span><span class="n">ul</span> <span class="n">style</span><span class="o">=</span><span class="s2">&#34;display:block&#34;</span><span class="o">&gt;&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s2">&#34;status0&#34;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&#34;/comic/17201/455630.html&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&#34;第45话&#34;</span><span class="o">&gt;&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="err">第</span><span class="mi">45</span><span class="err">话</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">36</span><span class="n">p</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;...</span><span class="p">]</span>
 </code></pre></div><p>看起来包括链接, 话数, 图片数在内的都拿到了. 那么我们就该去看看每个章节的图片怎么下过来了.</p>
 <h1 id="漫画柜的漫画呈现方式分析">漫画柜的漫画呈现方式分析</h1>
 <h2 id="从页面布局上观察">从页面布局上观察</h2>
 <p>同刚才不同, 漫画柜并不是静态地将漫画图片呈现给用户的. 如果点进去一部漫画的某个章节, 使用浏览器的 <code>Develop tools</code> 我们会看到如下的界面:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_1.png"/></div>
+
 <p>立即看到它有一个用 <code>id=mangaBox</code> 标记的 <code>&lt;div&gt;</code> 节点来放置图片, 并且 <code>&lt;img&gt;</code> 标签上就是我们要的图片链接. 看起来如果我们直接下载这个链接就可以了. 事不宜迟, 我们上 <code>requests.get</code> 来看看:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">bs4</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">https://www.manhuagui.com/comic/17201/179054.html</span><span class="s2">&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">lxml</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">mangaBox</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://www.manhuagui.com/comic/17201/179054.html&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
+<span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;mangaBox&#39;</span><span class="p">)</span>
 </code></pre></div><p>这段代码会帮助我们找到刚才看到的页面里的所有 <code>id=mangaBox</code> 的标签, 那么结果是什么呢?</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_2.png"/></div>
+
 <p>标签找到了, 但里边没有东西. 这说明页面里边这个图片是动态呈现的. 而 <code>requests.get</code> 并不能帮助我们完成这个工作. 一些人可能会选择 <code>selenium</code> 通过调用一个无头浏览器来绕过去这一部分, 就像真实地使用浏览器打开一样, 获取到图片的信息. 但这里并不打算这么做.</p>
 <h2 id="发现页面里的-javascript-存在问题">发现页面里的 Javascript 存在问题</h2>
 <p>既然是靠 js 来加载的, 那要么是使用 <code>load</code> 事件完成的, 要么这段代码就在放漫画的 <code>div</code> 后边. 看了一眼 <code>html</code> 的事件列表, 并没有发现和呈现漫画有关的代码. 而 <code>div</code> 之后的 <code>script</code> 标签只有两个, 其中一个还是 <code>jQuery</code> 的压缩代码. 但另一个就有的瞧了:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_3.png"/></div>
+
 <p>这么长一段太值得怀疑了, 还使用了 <code>\x</code> 的 <code>utf-8</code> 编码来掩饰自己, 用 python 来解码一下:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x65</span><span class="se">\x76</span><span class="se">\x61</span><span class="se">\x6c</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">utf-8</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">eval</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x65\x76\x61\x6c</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+<span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;eval&#39;</span>
 </code></pre></div><p>不是别的, 这段代码开头的正是 <code>window.eval</code> 方法! 那答案已经很明显了, 把它执行的部分放进 <code>console</code> 里跑跑看, 注意加上括号告诉这个匿名函数是要被执行的:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_4.png"/></div>
+
 <p>终于找到你了!</p>
 <h2 id="分析获取图片的代码的其他问题">分析获取图片的代码的其他问题</h2>
 <p>接下来的问题是, 这段代码有没有调用别的函数, 检查起来很容易, 新开一个标签页用 <code>console</code> 跑一下就可以了. 如果能成功运行的话就意味着这个代码是独立的片段, 我们要的所有信息都可以通过运行它来得到.</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_5.png"/></div>
+
 <p>看来并没有那么简单啊. 不过很奇怪, 提示的错误的这个 <code>splic</code> 是什么东西, 代码里好像没出现啊. 不要着急, 看看它前面调用这个方法的对象, 不就是那串乱七八糟的字符么. 它后边有个同样用 <code>utf-8</code> 编码做了掩饰, 老规矩, 解码看看</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x73</span><span class="se">\x70</span><span class="se">\x6c</span><span class="se">\x69</span><span class="se">\x63</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">utf-8</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">splic</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x73\x70\x6c\x69\x63</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+<span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;splic&#39;</span>
 </code></pre></div><p>找到了. 怪不得无法运行, 这个东西不是 js 字符串的标准方法, 应该是来自于之前页面的代码定义的. 这里就没有什么好办法了, 只能打开刚才页面里的 js 来搜索这个函数. 除了 <code>splic</code> 同样也要用 <code>'\x73\x70\x6c\x69\x63'</code> 来找.</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_6.png"/></div>
+
 <p>还真被找着了!. 又是大段大段的 <code>utf-8</code> 编码, 但问题不大, 我们只要看看这个含有这串字符的段落是什么东西就够了. 一个简单的方案就是把它复制进浏览器的 <code>Console</code> 运行一下就够了, 但一定要完整地复制. 比如这里, 我们就需要从 <code>(function(i,k,a,n,m,an){...</code> 复制到最后一个分号. 当然也可以先复制进文件里再用 python 解码. 最终我们得到了这个:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_7.png"/></div>
+
 <p>一切都明了了, 原来 <code>splic</code> 正是:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">splic</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span><span class="p">{</span><span class="k">return</span> <span class="nx">LZString</span><span class="p">.</span><span class="nx">decompressFromBase64</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span><span class="p">}</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">splic</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span><span class="k">return</span> <span class="nx">LZString</span><span class="p">.</span><span class="nx">decompressFromBase64</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="nx">f</span><span class="p">)};</span>
 </code></pre></div><p>那么刚才的那段代码也就清楚了, 注意到 <code>\x7c</code> 其实是字符 <code>'|'</code> . 而里边的 <code>LZString</code> , google一下发现是一种压缩算法, 甚至找到了它的 <a href="https://github.com/pieroxy/lz-string">github页面</a> , 发现有python的移植. 赶紧解码看看:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">lzstring</span>
-<span class="n">lzstring</span><span class="o">.</span><span class="n">LZString</span><span class="o">.</span><span class="n">decompressFromBase64</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">D7BWAcHNgdwUwEbmARgOwCYAMLiBpvHQPbVhwBLAYwH0cAWEi6lAVnqpzVcYDZOcBmXiiyCAnIIyDcZNhgHTqGCfKwYWyjHXVSGKnspQAOXtmMdlWMehFYmdcqQAmwAGakANnADOwcgDsAhgC2cMBIFKGOwKSBkAAi/gAu/sCAE36AYDqACEaAXHKABvKhAcG8WBxFPADKALIAEkVG5mo6KkXabFiajXI6GHWJABbANBwAXgCupEO9APa+kDCT5L1wMx6+pCSedK6rnotOyoPAKy7+bp4hnkkJI96BDiyebiQATnAAkqsJwACqAGI0GgApNAAUQAjgBFABqAE8uOC3G5JgAZNCxaC+OAADwSrycCER5AA1pRyORnnAAG641AGPgiGgtag0PQ6PgNNh8docsyslkczoc4TqMTKPhKVmMtritgM3g0AVM9lMrnUOm8Ph1HQ0LBAA==</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">lzstring</span><span class="o">.</span><span class="n">LZString</span><span class="o">.</span><span class="n">decompressFromBase64</span><span class="p">(</span><span class="s2">&#34;D7BWAcHNgdwUwEbmARgOwCYAMLiBpvHQPbVhwBLAYwH0cAWEi6lAVnqpzVcYDZOcBmXiiyCAnIIyDcZNhgHTqGCfKwYWyjHXVSGKnspQAOXtmMdlWMehFYmdcqQAmwAGakANnADOwcgDsAhgC2cMBIFKGOwKSBkAAi/gAu/sCAE36AYDqACEaAXHKABvKhAcG8WBxFPADKALIAEkVG5mo6KkXabFiajXI6GHWJABbANBwAXgCupEO9APa+kDCT5L1wMx6+pCSedK6rnotOyoPAKy7+bp4hnkkJI96BDiyebiQATnAAkqsJwACqAGI0GgApNAAUQAjgBFABqAE8uOC3G5JgAZNCxaC+OAADwSrycCER5AA1pRyORnnAAG641AGPgiGgtag0PQ6PgNNh8docsyslkczoc4TqMTKPhKVmMtritgM3g0AVM9lMrnUOm8Ph1HQ0LBAA==&#34;</span><span class="p">)</span>
 
-<span class="n">Output</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">||jpg|webp|17201|第01回|pic_014|pic_015|pic_017|pic_016|pic_013|pic_010|pic_019|pic_012|pic_011|pic_023|pic_022|pic_025|pic_024|pic_021|pic_026|pic_018|pic_020|pic_027|pic_009|179054|cid|files|cname|bpic|bid|imgData|终将成为你|bname|pic_007||pic_006|SMH|pic_008|pic_005|pic_002|pic_001|pic_004|pic_003|pic_028|path|47|zuizhongwochengleni|ps4|finished|pic_047|len|false|status|md5|sl|preInit|UF424J7EqQVy6QlloL7Dg|nextId|block_cc|prevId|183941|pic_046|pic_035|pic_034|pic_037|pic_036|pic_033|pic_030|pic_029|pic_032|pic_031|pic_042|pic_041|pic_043|pic_045|pic_044|pic_039|pic_038|pic_040</span><span class="s1">&#39;</span>
+<span class="n">Output</span><span class="p">:</span> <span class="s1">&#39;||jpg|webp|17201|第01回|pic_014|pic_015|pic_017|pic_016|pic_013|pic_010|pic_019|pic_012|pic_011|pic_023|pic_022|pic_025|pic_024|pic_021|pic_026|pic_018|pic_020|pic_027|pic_009|179054|cid|files|cname|bpic|bid|imgData|终将成为你|bname|pic_007||pic_006|SMH|pic_008|pic_005|pic_002|pic_001|pic_004|pic_003|pic_028|path|47|zuizhongwochengleni|ps4|finished|pic_047|len|false|status|md5|sl|preInit|UF424J7EqQVy6QlloL7Dg|nextId|block_cc|prevId|183941|pic_046|pic_035|pic_034|pic_037|pic_036|pic_033|pic_030|pic_029|pic_032|pic_031|pic_042|pic_041|pic_043|pic_045|pic_044|pic_039|pic_038|pic_040&#39;</span>
 </code></pre></div><p>再把这串解码后的字符串放回到原来的位置, 当然要把 <code>.split('|')</code> 加上, 再在空白的标签页里跑跑看:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_8.png"/></div>
+
 <p>完美.</p>
 <h1 id="python-程序实现">Python 程序实现</h1>
 <h2 id="流程总结">流程总结</h2>
@@ -520,49 +475,51 @@ autocomplete('#aa-search-input',
 <span class="kn">import</span> <span class="nn">bs4</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="n">baseURL</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">https://www.manhuagui.com</span><span class="s2">&#34;</span>
-<span class="n">imgURL</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">https://i.hamreus.com</span><span class="s2">&#34;</span>
+<span class="n">baseURL</span> <span class="o">=</span> <span class="s2">&#34;https://www.manhuagui.com&#34;</span>
+<span class="n">imgURL</span> <span class="o">=</span> <span class="s2">&#34;https://i.hamreus.com&#34;</span>
 </code></pre></div><h3 id="章节信息的获取">章节信息的获取</h3>
 <p>章节信息的获取十分简单, 就是我们上面做的操作循环执行就可以了. 为了方便后边的使用, 我们把章节按照名字和url的规则存放为字典:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">./config.json</span><span class="s2">&#34;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">r</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./config.json&#34;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="n">baseSite</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">User-Agent</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">User-Agent</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">}</span><span class="p">)</span>
-    <span class="n">formatedSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">baseSite</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">lxml</span><span class="s2">&#34;</span><span class="p">)</span>
-    <span class="n">allChapLis</span> <span class="o">=</span> <span class="n">formatedSite</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">chapter-list-0</span><span class="s2">&#34;</span><span class="p">)</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">baseSite</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]})</span>
+    <span class="n">formatedSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">baseSite</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&#34;lxml&#34;</span><span class="p">)</span>
+    <span class="n">allChapLis</span> <span class="o">=</span> <span class="n">formatedSite</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&#34;chapter-list-0&#34;</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="n">allChapLis</span><span class="p">:</span>
-        <span class="n">allLinks</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">a</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">allLinks</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">aTags</span> <span class="ow">in</span> <span class="n">allLinks</span><span class="p">:</span>
             <span class="n">det</span> <span class="o">=</span> <span class="n">aTags</span><span class="o">.</span><span class="n">attrs</span>
-            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Text</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">aTags</span><span class="o">.</span><span class="n">getText</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">URL</span><span class="s2">&#34;</span><span class="p">:</span><span class="n">baseURL</span><span class="o">+</span><span class="n">det</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">href</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">}</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;Text&#34;</span><span class="p">:</span> <span class="n">aTags</span><span class="o">.</span><span class="n">getText</span><span class="p">(),</span> <span class="s2">&#34;URL&#34;</span><span class="p">:</span><span class="n">baseURL</span><span class="o">+</span><span class="n">det</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]})</span>
     <span class="k">return</span> <span class="n">res</span>
 </code></pre></div><h3 id="根据章节url获得分页图片链接">根据章节url获得分页图片链接</h3>
 <p>这一步的核心事实上只是在python中执行 javascript 代码, 我们这里使用了 <a href="https://github.com/amol-/dukpy">amol-/dukpy</a> 库, 十分感谢作者的贡献.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getCoreInfo</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">./config.json</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">r</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getCoreInfo</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./config.json&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="n">getSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">User-Agent</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">User-Agent</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">}</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">lxml</span><span class="s2">&#34;</span><span class="p">)</span>
-    <span class="n">jsSlic</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;</span><span class="s2">&gt;window.*(</span><span class="s2">\</span><span class="s2">(function</span><span class="s2">\</span><span class="s2">(p.*?)&lt;/script&gt;</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">getSite</span><span class="p">)</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">coreStr</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;</span><span class="s2">[0-9],</span><span class="s2">&#39;</span><span class="s2">([A-Za-z0-9+/=]+?)</span><span class="s2">&#39;</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">jsSlic</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">getSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]})</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&#34;lxml&#34;</span><span class="p">)</span>
+    <span class="n">jsSlic</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;&gt;window.*(\(function\(p.*?)&lt;/script&gt;&#34;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">getSite</span><span class="p">))</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">coreStr</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;[0-9],&#39;([A-Za-z0-9+/=]+?)&#39;&#34;</span><span class="p">,</span> <span class="n">jsSlic</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">decStr</span> <span class="o">=</span> <span class="n">lzstring</span><span class="o">.</span><span class="n">LZString</span><span class="o">.</span><span class="n">decompressFromBase64</span><span class="p">(</span><span class="n">coreStr</span><span class="p">)</span>
-    <span class="n">jsNew</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;</span><span class="s2">&#39;</span><span class="s2">[A-Za-z0-9+/=]*</span><span class="s2">&#39;</span><span class="s2">\</span><span class="s2">[.*</span><span class="s2">\</span><span class="s2">]</span><span class="s2">\</span><span class="s2">(</span><span class="s2">&#39;</span><span class="se">\\</span><span class="s2">x7c</span><span class="s2">&#39;</span><span class="s2">\</span><span class="s2">)</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#39;</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">decStr</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#39;</span><span class="s2">.split(</span><span class="s2">&#39;</span><span class="s2">|</span><span class="s2">&#39;</span><span class="s2">)</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">jsSlic</span><span class="p">)</span>
+    <span class="n">jsNew</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;&#39;[A-Za-z0-9+/=]*&#39;\[.*\]\(&#39;</span><span class="se">\\</span><span class="s2">x7c&#39;\)&#34;</span><span class="p">,</span> <span class="s2">&#34;&#39;&#34;</span><span class="o">+</span><span class="n">decStr</span><span class="o">+</span><span class="s2">&#34;&#39;.split(&#39;|&#39;)&#34;</span><span class="p">,</span> <span class="n">jsSlic</span><span class="p">)</span>
     <span class="n">sol</span> <span class="o">=</span> <span class="n">dukpy</span><span class="o">.</span><span class="n">evaljs</span><span class="p">(</span><span class="n">jsNew</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;</span><span class="s2">(</span><span class="s2">\</span><span class="s2">{.*</span><span class="s2">\</span><span class="s2">})</span><span class="s2">&#34;</span><span class="p">,</span><span class="n">sol</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;(\{.*\})&#34;</span><span class="p">,</span><span class="n">sol</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">getDlSetting</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">getDlSetting</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">getCoreInfo</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">pathURLs</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">pathURLs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">picid</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">pic</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">files</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">:</span>
-        <span class="n">mangaurl</span> <span class="o">=</span> <span class="n">imgURL</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">path</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;</span><span class="s2">.*?</span><span class="s2">\</span><span class="s2">.[a-z]*</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">pic</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">fullurl</span> <span class="o">=</span> <span class="n">mangaurl</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">?cid=</span><span class="s2">&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">cid</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">&amp;md5=</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sl</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">md5</span><span class="s1">&#39;</span><span class="p">]</span>
-        <span class="n">pathURLs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Name</span><span class="s2">&#34;</span><span class="p">:</span> <span class="sa"></span><span class="s2">&#34;</span><span class="si">%05d</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">picid</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">URL</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">fullurl</span><span class="p">}</span><span class="p">)</span>
-        <span class="n">picid</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
-    <span class="n">refURL</span> <span class="o">=</span> <span class="n">baseURL</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">/comic/</span><span class="s2">&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bid</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">/</span><span class="s2">&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">cid</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">.html</span><span class="s2">&#34;</span>
-    <span class="k">return</span> <span class="n">pathURLs</span><span class="p">,</span> <span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Referer</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">refURL</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">pic</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;files&#39;</span><span class="p">]:</span>
+        <span class="n">mangaurl</span> <span class="o">=</span> <span class="n">imgURL</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;.*?\.[a-z]*&#34;</span><span class="p">,</span> <span class="n">pic</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">fullurl</span> <span class="o">=</span> <span class="n">mangaurl</span><span class="o">+</span><span class="s2">&#34;?cid=&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;cid&#39;</span><span class="p">])</span><span class="o">+</span><span class="s2">&#34;&amp;md5=&#34;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sl&#39;</span><span class="p">][</span><span class="s1">&#39;md5&#39;</span><span class="p">]</span>
+        <span class="n">pathURLs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;Name&#34;</span><span class="p">:</span> <span class="s2">&#34;</span><span class="si">%05d</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">picid</span><span class="p">,</span> <span class="s2">&#34;URL&#34;</span><span class="p">:</span> <span class="n">fullurl</span><span class="p">})</span>
+        <span class="n">picid</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">refURL</span> <span class="o">=</span> <span class="n">baseURL</span><span class="o">+</span><span class="s2">&#34;/comic/&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;bid&#39;</span><span class="p">])</span><span class="o">+</span><span class="s2">&#34;/&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;cid&#39;</span><span class="p">])</span><span class="o">+</span><span class="s2">&#34;.html&#34;</span>
+    <span class="k">return</span> <span class="n">pathURLs</span><span class="p">,</span> <span class="p">{</span><span class="s2">&#34;Referer&#34;</span><span class="p">:</span> <span class="n">refURL</span><span class="p">}</span>
 </code></pre></div><p>这个部分有一个坑是试图获取图片的时候, 发现直接使用 <code>requests.get</code> 会报 <code>403</code> 错误, 研究发现是没有加入 <code>requests headers</code> 信息. 对于漫画柜来说, 这部分只要加入 <code>User-Agent</code> 和 <code>Referer</code> 信息就可以了. 这似乎是最基本的反爬机制, 但这里显然还是十分简单的. 这部分信息可以在浏览器的 <code>Develop tools</code> 中找到, 注意它在 <code>Network</code> 标签下:</p>
-<!-- raw HTML omitted -->
+
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_10.png"/></div>
+
 <h2 id="分章节存放漫画分页图片">分章节存放漫画分页图片</h2>
 <p>由于这个代码运行的时间很长, 所以我们使用了 <code>multiprocessing</code> 库来并行处理, 同时使用 <code>progressbar2</code> 库来展示一个进度条:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -576,39 +533,39 @@ autocomplete('#aa-search-input',
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">progressbar</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">https://www.manhuagui.com/comic/17201/</span><span class="s2">&#34;</span>
-<span class="n">foldpref</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">./test/</span><span class="s2">&#34;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://www.manhuagui.com/comic/17201/&#34;</span>
+<span class="n">foldpref</span> <span class="o">=</span> <span class="s2">&#34;./test/&#34;</span>
 
-<span class="k">class</span> <span class="nc">dlManga</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fold</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">rq</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">dlManga</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fold</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">rq</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fold</span> <span class="o">=</span> <span class="n">fold</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">opt</span> <span class="o">=</span> <span class="n">opt</span>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dic</span><span class="p">)</span><span class="p">:</span>
-        <span class="n">getFile</span> <span class="o">=</span> <span class="n">rq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dic</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">URL</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fold</span><span class="o">+</span><span class="n">dic</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Name</span><span class="s2">&#34;</span><span class="p">]</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">.jpg</span><span class="s2">&#34;</span><span class="p">,</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">wb</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dic</span><span class="p">):</span>
+        <span class="n">getFile</span> <span class="o">=</span> <span class="n">rq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dic</span><span class="p">[</span><span class="s1">&#39;URL&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">opt</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fold</span><span class="o">+</span><span class="n">dic</span><span class="p">[</span><span class="s2">&#34;Name&#34;</span><span class="p">]</span><span class="o">+</span><span class="s2">&#34;.jpg&#34;</span><span class="p">,</span><span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">getFile</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">./config.json</span><span class="s2">&#34;</span><span class="p">,</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">r</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./config.json&#34;</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="n">chapList</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">totNum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chapList</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">progressbar</span><span class="o">.</span><span class="n">progressbar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">totNum</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">progressbar</span><span class="o">.</span><span class="n">progressbar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">totNum</span><span class="p">)):</span>
     <span class="n">chap</span> <span class="o">=</span> <span class="n">chapList</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
-    <span class="n">chapPath</span> <span class="o">=</span> <span class="n">foldpref</span><span class="o">+</span><span class="n">chap</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Text</span><span class="s2">&#34;</span><span class="p">]</span><span class="o">+</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">/</span><span class="s2">&#34;</span>
+    <span class="n">chapPath</span> <span class="o">=</span> <span class="n">foldpref</span><span class="o">+</span><span class="n">chap</span><span class="p">[</span><span class="s2">&#34;Text&#34;</span><span class="p">]</span><span class="o">+</span><span class="s2">&#34;/&#34;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">foldpref</span><span class="o">+</span><span class="n">chap</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Text</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">foldpref</span><span class="o">+</span><span class="n">chap</span><span class="p">[</span><span class="s2">&#34;Text&#34;</span><span class="p">])</span>
     <span class="k">except</span> <span class="n">FileExistsError</span><span class="p">:</span>
         <span class="k">pass</span>
-    <span class="n">dlDic</span><span class="p">,</span> <span class="n">addOption</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">getDlSetting</span><span class="p">(</span><span class="n">chap</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">URL</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">)</span>
-    <span class="n">headerOption</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">User-Agent</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">User-Agent</span><span class="s2">&#34;</span><span class="p">]</span><span class="p">}</span>
+    <span class="n">dlDic</span><span class="p">,</span> <span class="n">addOption</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">getDlSetting</span><span class="p">(</span><span class="n">chap</span><span class="p">[</span><span class="s2">&#34;URL&#34;</span><span class="p">])</span>
+    <span class="n">headerOption</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]}</span>
     <span class="n">headerOption</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">addOption</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
-        <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">dlManga</span><span class="p">(</span><span class="n">chapPath</span><span class="p">,</span> <span class="n">headerOption</span><span class="p">)</span><span class="p">,</span> <span class="n">dlDic</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="o">+</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">dlManga</span><span class="p">(</span><span class="n">chapPath</span><span class="p">,</span> <span class="n">headerOption</span><span class="p">),</span> <span class="n">dlDic</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="o">+</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">__main__</span><span class="s2">&#34;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
     <span class="k">pass</span>
 </code></pre></div><p>当然也可以将上面的代码块放在 <code>if __name__==&quot;__main__&quot;:</code> 下来运行. 不过这里一般不会出现在其他文件导入这个文件的情形, 因此没有做这样的处理.</p>
 <p>代码放置在 <a href="https://github.com/wzdlc1996/mangaSpider">wzdlc1996/mangaSpider</a> 下.</p>
@@ -985,7 +942,7 @@ autocomplete('#aa-search-input',
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1027,23 +984,8 @@ autocomplete('#aa-search-input',
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1067,13 +1009,39 @@ autocomplete('#aa-search-input',
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1086,9 +1054,6 @@ autocomplete('#aa-search-input',
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

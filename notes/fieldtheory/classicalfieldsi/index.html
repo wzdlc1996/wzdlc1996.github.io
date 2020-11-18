@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The classical field theory for scalar field, so-called Klein-Gordon Field. Together with the solution of Klein-Gordon equation and some symmetry analysis.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Classical Fields: Scalar Field | Leonard 
-  
+    
+     Classical Fields: Scalar Field | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>2 minutes read</li>
+      <li>5 minutes read</li>
     
   </ul>
   
@@ -457,67 +394,198 @@ autocomplete('#aa-search-input',
             <h1 id="klein-gordon-field">Klein-Gordon Field</h1>
 <h2 id="formalism">Formalism</h2>
 <p><em>[Definition]</em> : <code>Klein-Gordon</code> Field is a class of scalar fields. For the <code>real valued</code> field, the Lagrangian(Lorentz-scalar) is:</p>
-<!-- raw HTML omitted -->
+
+$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$
+
+
 <p>And for the <code>complex valued</code> field, the Lagrangian is:</p>
-<!-- raw HTML omitted -->
-<p>It can be treated as two independent real value field: <code>$\phi=\phi_r+\ti \phi_i$</code> and <code>$\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</code></p>
+
+$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$
+
+
+<p>It can be treated as two independent real value field: $\phi=\phi_r+\ti \phi_i$ and $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$</p>
 <p>We discuss the real valued field hereafter (and we will see that real-valued means <code>neutral</code>):</p>
 <p>The equation of motion is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$</code> is <code>d'Alembert operator</code> .<br>
+
+$$(\partial^{\mu}\partial_{\mu} + m^2) \phi = (\square + m^2)\phi=0$$
+
+
+<p>Where $\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$ is <code>d'Alembert operator</code> .<br>
 And the <code>canonically conjugate field</code>(momentum):</p>
-<!-- raw HTML omitted -->
+
+$$\pi = \partial_0 \phi $$
+
+
 <p>Then one can write down the Hamiltonian:</p>
-<!-- raw HTML omitted -->
+
+$$H = \frac 1 2  \int \td^3 \bm{x} (\pi^2+ \nabla\phi\cdot \nabla \phi+m^2\phi^2)$$
+
+
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
 <p>To solve the field equation, one can use the Fourier transformation:</p>
-<!-- raw HTML omitted -->
-<p>Where the 4-vector <code>$k=(\omega,\bm{k})$</code> . Then the equation will be:</p>
-<!-- raw HTML omitted -->
-<p>Which requires that <code>$-k_\mu k^\mu+m^2=0$</code> , which is the <code>dispersion relationship</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\phi(x) = \int \frac {\td^3\bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti\omega t} a(\bm{k},\omega) = \int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{-\ti k_\mu x^\mu} a(k)$$
+
+
+<p>Where the 4-vector $k=(\omega,\bm{k})$ . Then the equation will be:</p>
+
+$$\int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} (-k_\mu k^\mu+m^2) e^{-\ti k_\mu x^\mu} a(k) = 0$$
+
+
+<p>Which requires that $-k_\mu k^\mu+m^2=0$ , which is the <code>dispersion relationship</code> :</p>
+
+$$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$
+
+
 <p>With this relation, we separate the general solution to two items according to the sign of frequency:</p>
-<!-- raw HTML omitted -->
-<p>One can rewrite the Hamiltonian with <code>$a(\bm{k})$</code> as:</p>
-<!-- raw HTML omitted -->
-<p>In which we hold the order of <code>$a$</code> , which will let the conclusion hold in quantum theory</p>
-<!-- raw HTML omitted -->
-<p>We need to compute three items in Hamiltonian:</p>
-<!-- raw HTML omitted -->
-<p>\end{aligned}$$<!-- raw HTML omitted --></p>
-<p>Then we have the result:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\phi(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
+\pi(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\}
+\end{aligned}$$
+
+
+<p>One can rewrite the Hamiltonian with $a(\bm{k})$ as:</p>
+
+$$H = \frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$
+
+
+<p>In which we hold the order of $a$ , which will let the conclusion hold in quantum theory</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We need to compute three items in Hamiltonian:
+
+
+$$\begin{aligned}
+\int \td^3\bm{x} \pi^2 &= \int \td^3\bm{x} \int \frac {\td^3 \bm{k}_1 \td^3\bm{k}_2 (-\omega_1\omega_2)} {(2\pi)^3} \sqrt{\frac 1 {4\omega_1\omega_2}} \Big\{e^{\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}-\ti(\omega_1+\omega_2)t}a(\bm{k}_1)a(\bm{k}_2) \\
+& \ \ \ \ + e^{-\ti(\bm{k}_1+\bm{k}_2)\cdot \bm{x}+\ti(\omega_1+\omega_2)t}a(\bm{k}_1)^*a(\bm{k}_2)^* \\
+& \ \ \ \ -e^{\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}-\ti(\omega_1-\omega_2)t} a(\bm{k}_1)a(\bm{k}_2)^* \\
+& \ \ \ \ -e^{-\ti(\bm{k}_1-\bm{k}_2)\cdot \bm{x}+\ti(\omega_1-\omega_2)t} a(\bm{k}_1)^*a(\bm{k}_2) \Big\} \\
+&=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
+\\
+\int\td^3\bm{x}(\nabla \phi)^2 &= \frac 1 2 \int \td^3 \bm{k} \ \frac 1 {2\omega_{|\bm{k}|}}  |\bm{k}|^2 \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*-e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) - e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
+\\
+\int\td^3\bm{x}(m \phi)^2 &= \frac 1 2 \int \td^3 \bm{k} \ \frac {m^2} {\omega_{|\bm{k}|}} \Big\{a(\bm{k})^* a(\bm{k})+a(\bm{k}) a(\bm{k})^*+e^{-2\ti \omega t} a(\bm{k})a(-\bm{k}) + e^{2\ti \omega t} a(\bm{k})^{*}a(-\bm{k})^*  \Big\} \\
+
+\end{aligned}$$
+
+
+
+Then we have the result:
+
+
+$$H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$
+
+
+
+
+</details>
+
 <h2 id="charged-klein-gordon-field">Charged Klein-Gordon Field</h2>
 <p>Complex valued Klein-Gordon Field has a internal degree of freedom. It allow the complex valued Klein-Gordon Field to describe the charged spin-0 particles. Here we will show it by the Noether Theorem.</p>
-<p>Complex valued Klein-Gordon Field has an <code>$\text{U}(1)$</code> symmetry:</p>
-<!-- raw HTML omitted -->
-<p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with <code>$\delta x=0 , \delta \phi=\ti \phi\delta \alpha$</code> as the generator)</p>
-<!-- raw HTML omitted -->
+<p>Complex valued Klein-Gordon Field has an $\text{U}(1)$ symmetry:</p>
+
+$$\phi\rightarrow \phi' = \phi e^{\ti \alpha} \ ; \ \phi^* \rightarrow \phi'^*=\phi' e^{-\ti \alpha}$$
+
+
+<p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with $\delta x=0 , \delta \phi=\ti \phi\delta \alpha$ as the generator)</p>
+
+$$Q = \int \td^3 \bm{x} \frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi)} \delta \phi+\frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi^*)} \delta \phi^* \sim \ti \int \td^3 \bm{x} \ (\pi \phi - \pi^* \phi^*) $$
+
+
 <p>With the formalism of complex valued Klein-Gordon Field, we can use two set of real valued Klein-Gordon Field to describe it:</p>
-<!-- raw HTML omitted -->
-<p>And write down the expression of <code>$Q$</code> :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With:</p>
-<!-- raw HTML omitted -->
-<p>And:</p>
-<!-- raw HTML omitted -->
-<p>That is caused by the fact:</p>
-<!-- raw HTML omitted -->
-<p>Like:</p>
-<!-- raw HTML omitted -->
-<p>with <code>$\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$</code>.</p>
-<p>Then the charge:</p>
-<!-- raw HTML omitted -->
-<p>Then we need only compute the integral of <code>$\pi_i\phi_r$</code> , and another term can be obtained by permute the <code>$a$</code> and <code>$b$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Or with that <code>$c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>This conclusion hold in Quantum theory where <code>$a,a^*$</code> are not commutable but <code>$a,b$</code> are commutable.</p>
+
+$$\phi_r \sim a(\bm{k}) \ ; \ \phi_i \sim b(\bm{k})$$
+
+
+<p>And write down the expression of $Q$ :</p>
+
+$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With:
+
+
+$$\begin{aligned}
+\phi_r(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
+\pi_r(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
+\phi_i(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\} \\
+\pi_i(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} b(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} b(\bm{k})^* \Big\}
+\end{aligned}$$
+
+
+
+And:
+
+
+$$\phi = \phi_r+\ti \phi_i \ ; \ \pi=\frac 1 2 (\pi_r-\ti\pi_i) $$
+
+
+
+That is caused by the fact:
+
+
+$$\pi=\frac {\delta \mathcal{L}} {\delta \flo{\phi}}=\frac {\delta \mathcal{L}} {\delta \flo{\phi}_r}\frac {\partial\flo{\phi}_r} {\partial \flo{\phi}}+\frac {\delta \mathcal{L}} {\delta \flo{\phi}_i}\frac {\partial\flo{\phi}_i} {\partial \flo{\phi}}$$
+
+
+
+Like:
+
+
+$$\frac {\partial} {\partial z}=\frac {\partial \text{Re} z} {\partial z}\frac {\partial} {\partial \text{Re} z}+\frac {\partial \text{Im} z} {\partial z}\frac {\partial} {\partial \text{Im} z}=\frac 1 2\frac {\partial} {\partial \text{Re} z}+\frac 1 {2\ti}\frac {\partial} {\partial \text{Im} z}$$
+
+
+
+with $\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$.
+
+Then the charge:
+
+
+$$Q=\ti \int \td^3 \bm{x} \ (\pi \phi-\pi^*\phi^*)=\int \td^3 \bm{x} \ (\pi_i \phi_r -\pi_r \phi_i)$$
+
+
+
+Then we need only compute the integral of $\pi_i\phi_r$ , and another term can be obtained by permute the $a$ and $b$ :
+
+
+$$\begin{aligned}
+\int \td^3 \bm{x} \pi_i \phi_r &= \int \td^3 \bm{x} \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3} \ti \omega_1 \frac 1 {\sqrt{4\omega_1\omega_2}}\Big\{-e^{\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} - \ti (\omega_1+\omega_2)t} b(\bm{k}_1)a(\bm{k}_2) \\
+&\indent -e^{\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} - \ti (\omega_1-\omega_2)t} b(\bm{k}_1)a(\bm{k}_2)^* + e^{-\ti (\bm{k}_1-\bm{k}_2)\cdot \bm{x} + \ti (\omega_1-\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)  \\
+&\indent +e^{-\ti (\bm{k}_1+\bm{k}_2)\cdot \bm{x} + \ti (\omega_1+\omega_2)t} b(\bm{k}_1)^*a(\bm{k}_2)^* \Big\} \\
+&=\int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}b(\bm{k})a(-\bm{k})-b(\bm{k})a(\bm{k})^* +b(\bm{k})^* a(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}b(\bm{k})^*a(-\bm{k})^* \Big\} \\
+\int \td^3 \bm{x} \pi_r \phi_i &= \int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(\bm{k})b(-\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(\bm{k})^*b(-\bm{k})^* \Big\} \\
+&=\int \td^3 \bm{k} \ \ti \frac 1 2\Big\{ -e^{-2\ti\omega_{|\bm{k}|}t}a(-\bm{k})b(\bm{k})-a(\bm{k})b(\bm{k})^* +a(\bm{k})^* b(\bm{k}) +e^{2\ti\omega_{|\bm{k}|}t}a(-\bm{k})^*b(\bm{k})^* \Big\} \\
+\end{aligned}$$
+
+
+
+Then we have:
+
+
+$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$
+
+
+
+
+
+</details>
+
+<p>Or with that $c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$ , we have:</p>
+
+$$Q=\int \td^3 \bm{k}(c_+(\bm{k})^*c_+(\bm{k})-c_-(\bm{k})^*c_-(\bm{k}))$$
+
+
+<p>This conclusion hold in Quantum theory where $a,a^*$ are not commutable but $a,b$ are commutable.</p>
 
           </div>
 
@@ -716,7 +784,7 @@ And the <code>canonically conjugate field</code>(momentum):</p>
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -758,23 +826,8 @@ And the <code>canonically conjugate field</code>(momentum):</p>
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -798,13 +851,39 @@ And the <code>canonically conjugate field</code>(momentum):</p>
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -817,9 +896,6 @@ And the <code>canonically conjugate field</code>(momentum):</p>
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

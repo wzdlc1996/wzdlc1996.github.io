@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The canonical quantization of Spinor Field(Dirac Field). One can find that the usual quantization procedure(canonical commutation relationship) does not work for it, because it leads to the Hamiltonian with no lower bound. To quantize it correctly, we need modify it as the anti-commutation relationship, which means that Dirac particles are Fermions. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Dirac Field in Quantum Theory">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Quantization of Free Field: Dirac Field | Leonard 
-  
+    
+     Quantization of Free Field: Dirac Field | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>5 minutes read</li>
+      <li>11 minutes read</li>
     
   </ul>
   
@@ -457,171 +394,566 @@ autocomplete('#aa-search-input',
             <h1 id="quantization-of-dirac-field">Quantization of Dirac Field</h1>
 <h2 id="canonical-quantization-of-dirac-spinor-field">Canonical Quantization of Dirac Spinor Field</h2>
 <p>The Hamiltonian of Dirac Spinor Field is:</p>
-<!-- raw HTML omitted -->
-<p>Where the <code>$\psi$</code> should be a 4-component-Dirac-spinor. And the <code>canonical momentum</code> is <code>$\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$</code> . Then with the <code>anti-commutation relationship</code> we need:</p>
-<!-- raw HTML omitted -->
+
+$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi \Big\}$$
+
+
+<p>Where the $\psi$ should be a 4-component-Dirac-spinor. And the <code>canonical momentum</code> is $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$ . Then with the <code>anti-commutation relationship</code> we need:</p>
+
+$$\{\pi_\alpha (\bm{x}),\pi_\beta(\bm{x}')\}=\{\psi_\alpha(\bm{x}),\psi_\beta(\bm{x}')\}=0 \ ; \ \{\psi_\alpha(\bm{x}),\pi_\beta(\bm{x}')\}=\ti \delta_{\alpha\beta}\delta^3(\bm{x}-\bm{x}')$$
+
+
 <p>Which means that:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}[]
+\{\psi_\alpha(\bm{x}),\psi_\beta(\bm{x}')\}&=0 \\
+\{\psi_\alpha(\bm{x}),\psi_\beta(\bm{x}')^\dagger\}&=\delta_{\alpha\beta}\delta^3(\bm{x}-\bm{x}')
+\end{aligned}$$
+
+
 <p>One can rewrite them into the plane wave expansion. In Schrodinger Picture:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$a,b$</code> are operators, and <code>$\omega_{|\bm{k}|}=\sqrt{m^2+|\bm{k}|^2}$</code> . Spinors:</p>
-<!-- raw HTML omitted -->
-<p>With the 2-component quantities <code>$\chi,\xi$</code> satisfy <code>$\chi^{(r)\dagger}\chi^{(s)}=\xi^{(r)\dagger}\xi^{(s)}=\delta_r^s m$</code> .</p>
-<p>We can write the inverse transform, which will represent <code>$a,b$</code> by <code>$\psi,\psi^\dagger$</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\psi(\bm{x})=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{\ti \bm{k}\cdot \bm{x}} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{-\ti \bm{k}\cdot \bm{x}} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$
+
+
+<p>Where $a,b$ are operators, and $\omega_{|\bm{k}|}=\sqrt{m^2+|\bm{k}|^2}$ . Spinors:</p>
+
+$$u^{(s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$
+
+
+<p>With the 2-component quantities $\chi,\xi$ satisfy $\chi^{(r)\dagger}\chi^{(s)}=\xi^{(r)\dagger}\xi^{(s)}=\delta_r^s m$ .</p>
+<p>We can write the inverse transform, which will represent $a,b$ by $\psi,\psi^\dagger$ :</p>
+
+$$\begin{aligned}
+a(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} u^{(s)\dagger}(\bm{k}) \psi(\bm{x}) \\
+b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti\bm{k}\cdot \bm{x}}\psi (\bm{x})^\dagger v^{(s)}(\bm{k})
+\end{aligned}$$
+
+
 <p>And their commutation relation:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Using the 3-d delta function: <code>$\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot (\bm{x}-\bm{y})}$</code>, we have:</p>
-<!-- raw HTML omitted -->
-<p>With the orthogonal property of <code>$u,v$</code>:</p>
-<!-- raw HTML omitted -->
-<p>And using that <code>$(m+k_\mu \gamma^\mu)^{\dagger}=(m+(k^0,-\bm{k})\cdot \gamma)$</code> and <code>$(m+k_\mu \gamma^\mu)(m-k_\mu \gamma^\mu)=0$</code> , one can prove that:</p>
-<!-- raw HTML omitted -->
-<p>Then noting that <code>$\gamma$</code> matrices and spinors  are commutable to operators <code>$a,b$</code>, we can write down:</p>
-<!-- raw HTML omitted -->
-<p>Then we can check the commutation relationship. Obviously:</p>
-<!-- raw HTML omitted -->
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>Similarly, we can prove that: <code>$\{b(\bm{k},s),b(\bm{k}',s')\}=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')$</code> . And:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\{a(\bm{k},s),b(\bm{k}',s')\}&=\{a(\bm{k},s)^\dagger,b(\bm{k}',s')^\dagger\}=0 \\
+\{a(\bm{k},s),a(\bm{k}',s')\}&=\{b(\bm{k},s),b(\bm{k}',s')\}=0 \\
+\{a(\bm{k},s),b(\bm{k}',s')^\dagger\}&=\{a(\bm{k},s)^\dagger,b(\bm{k}',s')\}=0 \\
+\{a(\bm{k},s),a(\bm{k}',s')^\dagger\}&=\{b(\bm{k},s),b(\bm{k}',s')\}=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')
+\end{aligned}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+Using the 3-d delta function: $\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot (\bm{x}-\bm{y})}$, we have:
+
+
+$$\begin{aligned}
+\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big(u^{(s)}(\bm{k})a(\bm{k},s)+v^{(s)}(-\bm{k})b(-\bm{k},s)^\dagger\Big)&= \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \psi(\bm{x}) \\
+\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_{s=1,2} \Big(u^{(s)}(-\bm{k})^\dagger a(-\bm{k},s)^\dagger +v^{(s)}(\bm{k})^\dagger b(\bm{k},s)\Big)&= \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \psi(\bm{x})^\dagger
+\end{aligned}$$
+
+
+
+With the orthogonal property of $u,v$:
+
+
+$$\begin{aligned}
+u^{(s')\dagger}(\bm{k})u^{(s)}(\bm{k})&=\bar{u}^{(s')}(\bm{k})\gamma^0 u^{(s)}(\bm{k}) =2 k^0 \delta^{s,s'} \\
+v^{(s')\dagger}(\bm{k})v^{(s)}(\bm{k})&=\bar{v}^{(s')}(\bm{k})\gamma^0 v^{(s)}(\bm{k}) =2 k^0 \delta^{s,s'}
+\end{aligned}$$
+
+
+
+And using that $(m+k_\mu \gamma^\mu)^{\dagger}=(m+(k^0,-\bm{k})\cdot \gamma)$ and $(m+k_\mu \gamma^\mu)(m-k_\mu \gamma^\mu)=0$ , one can prove that:
+
+
+$$u^{(s')\dagger}(\bm{k})v^{(s)}(-\bm{k})=0$$
+
+
+
+Then noting that $\gamma$ matrices and spinors  are commutable to operators $a,b$, we can write down:
+
+
+$$\begin{aligned}
+a(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} u^{(s)\dagger}(\bm{k}) \psi(\bm{x}) \\
+b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti\bm{k}\cdot \bm{x}}\psi (\bm{x})^\dagger v^{(s)}(\bm{k})
+\end{aligned}$$
+
+
+
+Then we can check the commutation relationship. Obviously:
+
+
+$$\begin{aligned}[]
+\{a(\bm{k},s),a(\bm{k}',s')\}&=\{b(\bm{k},s),b(\bm{k}',s')\}=0 \\
+\{a(\bm{k},s),b(\bm{k}',s')^\dagger\}&=\{a(\bm{k},s)^\dagger,b(\bm{k}',s')\}=0 \\
+\end{aligned}$$
+
+
+
+Then:
+
+
+$$\begin{aligned}[]
+\{a(\bm{k},s),a(\bm{k}',s')^\dagger\}&= \frac 1 {\sqrt{4\omega \omega'}} \int \frac {\td^3 \bm{x}\td^3 \bm{x}'} {(2\pi)^3} e^{-\ti \bm{k}\cdot \bm{x}+\ti \bm{k}'\cdot \bm{x}'} \{u^{(s)\dagger}(\bm{k})\psi(\bm{x}),\psi(\bm{x}')^\dagger u^{(s')}(\bm{k}')\} \\
+&= \frac 1 {\sqrt{4\omega \omega'}} \int \frac {\td^3 \bm{x}\td^3 \bm{x}'} {(2\pi)^3} e^{-\ti \bm{k}\cdot \bm{x}+\ti \bm{k}'\cdot \bm{x}'} \delta^3(\bm{x}-\bm{x}') u^{(s)\dagger}(\bm{k})u^{(s')}(\bm{k}') \\
+&= \frac 1 {\sqrt{4\omega \omega'}}  u^{(s)\dagger}(\bm{k})u^{(s')}(\bm{k}') \delta^3(\bm{k}-\bm{k}') \\
+&=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')
+\end{aligned}$$
+
+
+
+Similarly, we can prove that: $\{b(\bm{k},s),b(\bm{k}',s')\}=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')$ . And:
+
+
+$$\begin{aligned}[]
+\{a(\bm{k},s),b(\bm{k}',s')\}&= \frac 1 {\sqrt{4\omega \omega'}} \int \frac {\td^3 \bm{x}\td^3 \bm{x}'} {(2\pi)^3} e^{-\ti \bm{k}\cdot \bm{x}-\ti \bm{k}'\cdot \bm{x}'} \{u^{(s)\dagger}(\bm{k})\psi(\bm{x}),\psi(\bm{x}')^\dagger v^{(s')}(\bm{k}')\} \\
+&=\frac 1 {\sqrt{4\omega \omega'}} \int \frac {\td^3 \bm{x}\td^3 \bm{x}'} {(2\pi)^3} e^{-\ti \bm{k}\cdot \bm{x}-\ti \bm{k}'\cdot \bm{x}'} \delta^3(\bm{x}-\bm{x}') u^{(s)\dagger}(\bm{k})v^{(s')}(\bm{k}') \\
+&=\frac 1 {\sqrt{4\omega \omega'}}u^{(s)\dagger}(\bm{k})v^{(s')}(\bm{k}') \delta^3(\bm{k}+\bm{k}') \\
+&=0
+\end{aligned}$$
+
+
+
+q.e.d.
+
+
+</details>
+
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
-<p>There is also a <code>$\infty$</code> quantity at the right-hand-side. But like what in Klein-Gordon Field, we ignore it.</p>
-<!-- raw HTML omitted -->
-<p>With usual commutation relationship, we have the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
-<p>Even we ignore the <code>$\infty$</code> quantity, the Hamiltonian still has no lower bound, which is caused by the <code>negative-energy</code> electrons.</p>
-<p>The anti-commutation relationship will let Hamiltonian has a lower bound. In original Dirac theory, the vacuum is defined as the state of all negative energy levels are occupied by negative-energy electrons, the anti-particle is treated as the hole in negative-energy electrons sea. Here <code>$b^\dagger$</code> will generate an anti-electron automatically.</p>
-<!-- raw HTML omitted -->
+
+$$\hat H = \sum_s \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big[a(\bm{k},s)^\dagger a(\bm{k},s) + b(\bm{k},s)^\dagger b(\bm{k},s) \Big]$$
+
+
+<p>There is also a $\infty$ quantity at the right-hand-side. But like what in Klein-Gordon Field, we ignore it.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Result with usual commutation relationship
+    </summary>
+    
+
+With usual commutation relationship, we have the Hamiltonian as:
+
+
+$$\begin{aligned}
+\hat H &= \sum_s \int \td^3 \bm{k} \omega_{|\bm{k}|} \Big[a(\bm{k},s)^\dagger a(\bm{k},s) - b(\bm{k},s) b(\bm{k},s)^\dagger \Big] \\
+& \sim \sum_s \int \td^3 \bm{k} \omega_{|\bm{k}|} \Big[a(\bm{k},s)^\dagger a(\bm{k},s) - b(\bm{k},s)^\dagger b(\bm{k},s) \Big]+ \int \td^3 \bm{k} \ \omega_{|\bm{k}|}\delta^3(\bm{0})
+\end{aligned}$$
+
+
+
+Even we ignore the $\infty$ quantity, the Hamiltonian still has no lower bound, which is caused by the `negative-energy` electrons.
+
+The anti-commutation relationship will let Hamiltonian has a lower bound. In original Dirac theory, the vacuum is defined as the state of all negative energy levels are occupied by negative-energy electrons, the anti-particle is treated as the hole in negative-energy electrons sea. Here $b^\dagger$ will generate an anti-electron automatically.
+
+
+</details>
+
 <p>And one can also write the <code>conserved charge</code> of Dirac Field:</p>
-<!-- raw HTML omitted -->
-<p>Which shows that the particles created by <code>$a,b$</code> have <code>different charge</code>.</p>
+
+$$\hat Q =\sum_{s=1,2}\int \td^3 \bm{k} \Big(a(\bm{k},s)^\dagger a(\bm{k},s)-b(\bm{k},s)^\dagger b(\bm{k},s)\Big) $$
+
+
+<p>Which shows that the particles created by $a,b$ have <code>different charge</code>.</p>
 <p>One can also write these operators in <code>Heisenberg Picture</code> :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>We can also check that:</p>
-<!-- raw HTML omitted -->
-<p>And:</p>
-<!-- raw HTML omitted -->
-<p>same for <code>$b$</code> . Then:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\psi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)\\
+\bar \psi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{\ti k\cdot x} \bar u^{(s)}(\bm{k}) a(\bm{k},s)^\dagger+e^{-\ti k\cdot x} \bar v^{(s)}(\bm{k}) b(\bm{k},s) \Big)
+\end{aligned}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We can also check that:
+
+
+$$[a(\bm{k},s),\hat H]=\omega_{|\bm{k}|}a(\bm{k}) \ ; \ [b(\bm{k},s),\hat H]=\omega_{|\bm{k}|}b(\bm{k})$$
+
+
+
+And:
+
+
+$$a_H(\bm{k})=e^{\ti t \hat H} a(\bm{k})e^{-\ti t \hat H} = e^{-\ti \omega_{|\bm{k}|}t} a(\bm{k})$$
+
+
+
+same for $b$ . Then:
+
+
+$$\psi(x)=e^{\ti t \hat H} \psi(\bm{x})e^{-\ti t \hat H}=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$
+
+
+
+
+</details>
+
 <h2 id="hilbert-space-of-dirac-spinor-field">Hilbert Space of Dirac Spinor Field</h2>
-<p><em>[Definition]</em> : <code>vacuum of the Dirac Field</code> is the ground state of it. Denoting it as <code>$\ket{0}$</code> , we will find:</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>vacuum of the Dirac Field</code> is the ground state of it. Denoting it as $\ket{0}$ , we will find:</p>
+
+$$a(\bm{k},s)\ket{0}=b(\bm{k},s)\ket{0}=0 \ ; \ \forall \bm{k},s$$
+
+
 <p><em>[Definition]</em> : <code>1-particle</code> state is defined as:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\bm{k},s,\text{Fermion}} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k},s)^\dagger \ket{0}$$
+
+
 <p>And <code>1-anti-particle</code> state is defined as:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\bm{k},s,\text{anti-Fermion}} = \sqrt{2\omega_{|\bm{k}|}} b(\bm{k},s)^\dagger \ket{0}$$
+
+
 <p>With this definition, we can prove(like what we did for Scalar field):</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\Lambda_{\bm{k}\rightarrow 0}k=(m,0,0,0)$</code> only contains the boost. The behavior of spin under spatial-rotation will be discussed in following.</p>
+
+$$\bra{\Lambda_{\bm{k}\rightarrow \bm{0}}\bm{k},s}\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}',s'\rangle = \bra{\bm{k},s}\bm{k}',s'\rangle=2\omega_{|\bm{k}|}\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')$$
+
+
+<p>Where $\Lambda_{\bm{k}\rightarrow 0}k=(m,0,0,0)$ only contains the boost. The behavior of spin under spatial-rotation will be discussed in following.</p>
 <p>And the <code>complete relation</code> in <code>1-(anti-)particle</code> subspace is also:</p>
-<!-- raw HTML omitted -->
+
+$$1_{\text{one-(anti-)particle}} = \sum_{s=1,2} \int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} \ket{\bm{k},s,(\text{anti})}\bra{\bm{k},s,(\text{anti})}$$
+
+
 <p>Also has the covariant integral measure:</p>
-<!-- raw HTML omitted -->
-<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) <code>$x\rightarrow x'=\Lambda(\omega) x$</code> , the corresponding operator on Hilbert space is <code>$U(\Lambda(\omega))$</code> , then we have:</p>
-<!-- raw HTML omitted -->
-<p>The vacuum is unique <code>$U(\Lambda)\ket{0}=\ket{0}$</code> . Then:</p>
-<!-- raw HTML omitted -->
-<p>same for anti-Fermion operator <code>$b$</code>. Then one can check that the field operator will be:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\Lambda_{1/2}(\omega)=\exp(-\frac \ti 4 \sum_{\mu\nu}\sigma_{\mu\nu}\omega_{\mu\nu})=\exp(-\ti\omega_{\mu\nu}S^{\mu\nu}/2)$</code> .</p>
-<!-- raw HTML omitted -->
-<p>The proof is similar to what we did for Klein-Gordon Field. Just noting that the property of <code>$u,v$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Same for <code>$v$</code> . Where <code>$\Lambda_{\bm{k}'\rightarrow \bm{k}}=\Lambda_{1/2}(\omega)$</code> with the <code>$\omega$</code> that satisfies <code>$\Lambda(\omega)\bm{k}'=\bm{k}$</code> .</p>
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>Then similarly using that <code>$k_\mu x^\mu=(\Lambda k)_\mu (\Lambda x)^\mu$</code> and the covariant integral measure, we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\int \frac {\td^3 \bm{p}} {2\omega_{|\bm{p}|}} = \int \td^4 p \delta(p_\mu p^\mu -m^2) \Theta(p^0)$$
+
+
+<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) $x\rightarrow x'=\Lambda(\omega) x$ , the corresponding operator on Hilbert space is $U(\Lambda(\omega))$ , then we have:</p>
+
+$$U(\Lambda(\omega))\ket{\bm{k},s}=\ket{\Lambda(\omega) \bm{k},s}$$
+
+
+<p>The vacuum is unique $U(\Lambda)\ket{0}=\ket{0}$ . Then:</p>
+
+$$U(\Lambda(\omega)) a(\bm{k},s)^\dagger U(\Lambda(\omega))^{-1} = \sqrt {\frac {\omega_{|\bm{\Lambda(\omega)\bm{k}}|}} {\omega_{|\bm{k}|}} } a(\Lambda(\omega)\bm{k},s)^\dagger$$
+
+
+<p>same for anti-Fermion operator $b$. Then one can check that the field operator will be:</p>
+
+$$\psi'(x'=\Lambda(\omega)x) \equiv U(\Lambda(\omega))\psi(x)U(\Lambda(\omega))^{-1}=\Lambda_{1/2}(\omega)^{-1} \psi(x'=\Lambda(\omega)x)$$
+
+
+<p>Where $\Lambda_{1/2}(\omega)=\exp(-\frac \ti 4 \sum_{\mu\nu}\sigma_{\mu\nu}\omega_{\mu\nu})=\exp(-\ti\omega_{\mu\nu}S^{\mu\nu}/2)$ .</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+The proof is similar to what we did for Klein-Gordon Field. Just noting that the property of $u,v$ :
+
+
+$$u^{(s)}(\bm{k})=\Lambda_{\bm{0}\rightarrow \bm{k}}\Lambda_{\bm{k}'\rightarrow \bm{0}} u^{(s)}(\bm{k}')=\Lambda_{\bm{k}'\rightarrow \bm{k}}u^{(s)}(\bm{k}')$$
+
+
+
+Same for $v$ . Where $\Lambda_{\bm{k}'\rightarrow \bm{k}}=\Lambda_{1/2}(\omega)$ with the $\omega$ that satisfies $\Lambda(\omega)\bm{k}'=\bm{k}$ .
+
+Then:
+
+
+$$\begin{aligned}
+U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\sqrt{2\omega_{|\Lambda \bm{k}|}}} {2\omega_{|\bm{k}|}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\Lambda\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\Lambda\bm{k},s)^\dagger \Big) \\
+&=\Lambda_{1/2}(\omega)^{-1} \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\sqrt{2\omega_{|\Lambda \bm{k}|}}} {2\omega_{|\bm{k}|}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\Lambda\bm{k}) a(\Lambda\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\Lambda\bm{k}) b(\Lambda\bm{k},s)^\dagger \Big)
+\end{aligned}$$
+
+
+
+Then similarly using that $k_\mu x^\mu=(\Lambda k)_\mu (\Lambda x)^\mu$ and the covariant integral measure, we have:
+
+
+$$U(\Lambda)\psi(x)U(\Lambda)^{-1}=\Lambda_{1/2}(\omega)^{-1}\psi(\Lambda x)$$
+
+
+
+
+</details>
+
 <h2 id="causality-of-dirac-field">Causality of Dirac Field</h2>
 <p>Our quantization will not violent to the causality demanded by special Relativistic Theory. That is to say:</p>
-<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points <code>$x,y$</code> with spacelike interval: <code>$\|x-y\|^2\lt 0$</code>. Then the field operators are commutable:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the plane wave expansion:</p>
-<!-- raw HTML omitted -->
-<p>And the anti-commutation relation:</p>
-<!-- raw HTML omitted -->
-<p>Same for <code>$b$</code> , and vanish for all of other types. Then we have:</p>
-<!-- raw HTML omitted -->
-<p>With</p>
-<!-- raw HTML omitted -->
-<p>Then with that <code>$\bar x = x^\dagger \gamma^0$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\partial_{x,\mu}=\frac {\partial} {\partial x^\mu}$</code> , and</p>
-<!-- raw HTML omitted -->
-<p>Is invariant under Lorentz transform. And we have proved that when <code>$\|x-y\|^2\lt 0$</code> , we have <code>$D(x-y)=D(y-x)$</code> in the discussion of causality of Scalar field. Then we proved when <code>$\|x-y\|^2\lt 0$</code>, <code>$\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0$</code></p>
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
-<p>We need explain why this equality means the causality of Dirac Field. The core reason is that <!-- raw HTML omitted -->local measurable operators are products of even numbers of fermionic fields and their derivatives<!-- raw HTML omitted --> . Then the commutator of them can be written as a summation of some anti-commutator of fermionic fields&rsquo; operator, like:</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points $x,y$ with spacelike interval: $|x-y|^2\lt 0$. Then the field operators are commutable:</p>
+
+$$\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0 \ ; \ \|x-y\|^2\lt 0$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the plane wave expansion:
+
+
+$$\psi(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\sqrt {\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s) + e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$
+
+
+
+And the anti-commutation relation:
+
+
+$$\{a(\bm{k},s),a(\bm{k}',s')^\dagger\}=\delta^{s,s'}\delta^3 (\bm{k}-\bm{k}')$$
+
+
+
+Same for $b$ , and vanish for all of other types. Then we have:
+
+
+$$\{\psi_\alpha(x),\psi_\beta(y)^\dagger\} = \int \frac {\td^3 \bm{k}} {(2\pi)^3} \frac 1 {2\omega_{|\bm{k}|}} \sum_{s=1,2} \Big(e^{-\ti k\cdot (x-y)} u^{(s)}_\alpha(\bm{k})u^{(s)}_\beta(\bm{k})^* + e^{\ti k\cdot (x-y)} v^{(s)}_\alpha(\bm{k})v^{(s)}_\beta(\bm{k})^* \Big)$$
+
+
+
+With
+
+
+$$\begin{aligned}
+\sum_{s=1,2} u^{(s)}_\alpha(\bm{k})\bar u^{(s)}_\beta(\bm{k})&= \sum_{s=1,2} (u^{(s)}(\bm{k})\bar u^{(s)}(\bm{k}))_{\alpha\beta}=(m+k_\mu\gamma^\mu)_{\alpha\beta} \\
+\sum_{s=1,2} v^{(s)}_\alpha(\bm{k})\bar v^{(s)}_\beta(\bm{k})&= \sum_{s=1,2} (v^{(s)}(\bm{k})\bar v^{(s)}(\bm{k}))_{\alpha\beta}=-(m-k_\mu\gamma^\mu)_{\alpha\beta} \\
+\end{aligned}$$
+
+
+
+Then with that $\bar x = x^\dagger \gamma^0$ , we have:
+
+
+$$\begin{aligned}
+\sum_{s=1,2} u^{(s)}_\alpha(\bm{k}) u^{(s)}_\beta(\bm{k})^*&= \sum_{s=1,2} (u^{(s)}(\bm{k})\bar u^{(s)}(\bm{k})\gamma^0)_{\alpha\beta}=(m\gamma^0+k_\mu\gamma^\mu\gamma^0)_{\alpha\beta} \\
+\sum_{s=1,2} v^{(s)}_\alpha(\bm{k}) v^{(s)}_\beta(\bm{k})^*&= \sum_{s=1,2} (v^{(s)}(\bm{k})\bar v^{(s)}(\bm{k})\gamma^0)_{\alpha\beta}=(-m\gamma^0+k_\mu\gamma^\mu\gamma^0)_{\alpha\beta} \\
+\end{aligned}$$
+
+
+
+Then we have:
+
+
+$$\begin{aligned}
+\{\psi_\alpha(x),\psi_\beta(y)^\dagger\} &= \int \frac {\td^3 \bm{k}} {(2\pi)^3} \frac 1 {2\omega_{|\bm{k}|}} \Big(e^{-\ti k\cdot (x-y)} (m\gamma^0+k_\mu\gamma^\mu \gamma^0) - e^{\ti k\cdot (x-y)} (m\gamma^0-k_\mu\gamma^\mu \gamma^0) \Big)_{\alpha\beta} \\
+&=(m\gamma^0+\ti\gamma^\mu\gamma^0 \partial_{x,\mu})\int \td^4 k \ \delta(k_\mu k^\mu-m^2)\Theta(k^0)\Big(e^{-\ti k\cdot(x-y)}-e^{\ti k\cdot (x-y)}\Big)\\
+&=(m\gamma^0+\ti\gamma^\mu\gamma^0 \partial_{x,\mu}) (D(x-y)-D(y-x))
+\end{aligned}$$
+
+
+
+Where $\partial_{x,\mu}=\frac {\partial} {\partial x^\mu}$ , and
+
+
+$$D(x)=\int \td^4 k \ \delta(k_\mu k^\mu-m^2)\Theta(k^0) e^{-\ti k_\mu x^\mu}$$
+
+
+
+Is invariant under Lorentz transform. And we have proved that when $\|x-y\|^2\lt 0$ , we have $D(x-y)=D(y-x)$ in the discussion of causality of Scalar field. Then we proved when $\|x-y\|^2\lt 0$, $\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0$
+
+q.e.d.
+
+
+</details>
+
+<p>We need explain why this equality means the causality of Dirac Field. The core reason is that <mark>local measurable operators are products of even numbers of fermionic fields and their derivatives</mark> . Then the commutator of them can be written as a summation of some anti-commutator of fermionic fields' operator, like:</p>
+
+$$[\hat A \hat B,\hat C\hat D]=\hat A\{\hat B,\hat C\}\hat D-\hat A\hat C\{\hat B,\hat D\}-\{\hat A,\hat C\}\hat D\hat B+\hat C\{\hat A,\hat D\}\hat B$$
+
+
 <p>which will be zero for spacelike interval. That is to say the two local observables with spacelike interval can be measured exactly on the same system(Heisenberg&rsquo;s inequality) . And this is what the <code>causality</code> means.</p>
 <h1 id="propagator-of-dirac-field">Propagator of Dirac Field</h1>
 <p>For <code>fermionic operators</code>, we need adjust the definition of <code>time-ordered product</code>:</p>
-<!-- raw HTML omitted -->
+
+$$\mathcal{T}\{A(x)B(y)\}=\Theta(x^0-y^0)A(x)B(y)-\Theta(y^0-x^0)B(y)A(x)$$
+
+
 <p><em>[Theorem]</em> the <code>Feynman propagator</code> of Dirac Field is:</p>
-<!-- raw HTML omitted -->
+
+$$\ti \Delta_{F}(x-y)_{\alpha\beta}:=\bra{0}\mathcal{T}\{\psi_\alpha(x)\bar{\psi}_\beta(y)\}\ket{0}$$
+
+
 <p>One can also write it as the matrix form:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>We compute these two terms in time-ordered product:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>For the integral:</p>
-<!-- raw HTML omitted -->
-<p>We can write that:</p>
-<!-- raw HTML omitted -->
-<p>Some times we also write it as :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\ti \Delta_F(x-y)= \int \frac{\td^4 p} {(2\pi)^4} \frac {\ti (\gamma^\mu p_\mu +m)} {p_\mu p^\mu -m^2 +\ti \epsilon} e^{-\ti p\cdot (x-y)}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We compute these two terms in time-ordered product:
+
+
+$$\begin{aligned}
+\bra{0}\psi_\alpha (x)\bar{\psi}_\beta(y)\ket{0} &= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{s_1,s_2} e^{-\ti (k_1\cdot x-k_2\cdot y)} u^{(s_1)}_\alpha(\bm{k}_1) \bar {u}^{(s_2)}_\beta(\bm{k}_2) \bra{0} a(\bm{k}_1,s_1) a(\bm{k}_2,s_2)^\dagger\ket{0} \\
+&= \int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} \sum_{s=1,2} e^{-\ti k\cdot (x-y)} u_\alpha^{(s)}(\bm{k}) \bar u_\beta^{(s)}(\bm{k}) \\
+&=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{-\ti k\cdot (x-y)} (m+k_\mu \gamma^\mu)_{\alpha\beta} \\
+\bra{0}\bar{\psi}_\beta(y)\psi_\alpha (x)\ket{0} &= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{s_1,s_2} e^{-\ti (k_1\cdot y-k_2\cdot x)} \bar v^{(s_1)}_\beta(\bm{k}_1) v^{(s_2)}_\alpha(\bm{k}_2) \bra{0} b(\bm{k}_1,s_1) b(\bm{k}_2,s_2)^\dagger\ket{0} \\
+&= \int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} \sum_{s=1,2} e^{\ti k\cdot (x-y)} v_\alpha^{(s)}(\bm{k}) \bar v_\beta^{(s)}(\bm{k}) \\
+&=-\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{\ti k\cdot (x-y)} (m-k_\mu \gamma^\mu)_{\alpha\beta} \\
+\end{aligned}$$
+
+
+
+Then we have:
+
+
+$$\ti \Delta_F(x-y) = \int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}}\Big(e^{-\ti k\cdot (x-y)} \Theta(x^0-y^0) (m+k_\mu \gamma^\mu)  +e^{\ti k\cdot (x-y)}\Theta(y^0-x^0)(m-k_\mu\gamma^\mu)\Big)$$
+
+
+
+For the integral:
+
+
+$$\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot x} \frac {\ti f(p)} {p_\mu p^\mu-m^2+\ti \epsilon}=\int_{p^0=\omega_{|\bm{p}|}} \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big(\Theta(x^0)e^{-\ti p\cdot x}f(p^0=\omega_{|\bm{p}|},\bm{p})+\Theta(-x^0)e^{\ti p\cdot x} f(p^0=-\omega_{|\bm{p}|},-\bm{p}) \Big)$$
+
+
+
+We can write that:
+
+
+$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} \frac {\ti (m+p_\mu \gamma^\mu)} {p_\mu p^\mu -m^2 +\ti \epsilon} e^{-\ti p\cdot (x-y)} $$
+
+
+
+Some times we also write it as :
+
+
+$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} \frac {\ti} {\gamma^\mu p_\mu -m +\ti \epsilon} e^{-\ti p\cdot (x-y)} $$
+
+
+
+
+</details>
+
 <h1 id="discrete-symmetry-of-dirac-field">Discrete Symmetry of Dirac Field</h1>
 <h2 id="spatial-inversion">Spatial Inversion</h2>
 <p>We hope the <code>spatial inversion</code> induces a unitary operator so as to:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$A_P$</code> is a unitary matrix in Dirac-Spinor space. This is a little different to what for Scalar field. And <code>$U_P\ket{0}=\ket{0}$</code> .</p>
+
+$$U_P \psi(x^0,\bm{x}) U_P^{-1} = A_P \psi(x^0,\bm{x})$$
+
+
+<p>Where $A_P$ is a unitary matrix in Dirac-Spinor space. This is a little different to what for Scalar field. And $U_P\ket{0}=\ket{0}$ .</p>
 <p>For creation operators, we demand the unitary operator of spatial inversion will cause the direction-inverse of momentum:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\eta_a,\eta_b$</code> are c-numbers. If we demand all observables(even number of fermionic operators&rsquo; product) invariant under two spatial inversion:</p>
-<!-- raw HTML omitted -->
-<p>In early discussion, we know that under parity-transformation, Weyl spinor will change the chirality. That means <code>$A_P\propto \gamma^0$</code> . That means we should let <code>$\eta_b^*=-\eta_a$</code> . And:</p>
-<!-- raw HTML omitted -->
+
+$$U_P a(\bm{k},s) U_P^{-1} = \eta_a a(-\bm{k},s)\ ; \ U_P b(\bm{k},s) U_P^{-1} = \eta_b b(-\bm{k},s)$$
+
+
+<p>Where $\eta_a,\eta_b$ are c-numbers. If we demand all observables(even number of fermionic operators' product) invariant under two spatial inversion:</p>
+
+$$\eta_a^2=\pm 1\ ; \ \eta_b^2 =\pm1$$
+
+
+<p>In early discussion, we know that under parity-transformation, Weyl spinor will change the chirality. That means $A_P\propto \gamma^0$ . That means we should let $\eta_b^*=-\eta_a$ . And:</p>
+
+$$\begin{aligned}
+U_P \psi(x^0,\bm{x}) U_P^{-1} &= \eta_a \gamma^0 \psi(x^0,-\bm{x})\\
+U_P \bar \psi(x^0,\bm{x}) U_P^{-1} &= \eta_a^* \psi(x^0,-\bm{x})\gamma^0
+\end{aligned}$$
+
+
 <h2 id="charge-conjugation">Charge Conjugation</h2>
 <p>We hope the <code>charge conjugation</code> induces a unitary operator which can exchange the fermion and anti-fermion:</p>
-<!-- raw HTML omitted -->
-<p>With the convention of <code>$\chi,\xi$</code> : <code>$\xi^{(s)}=(-\ti\sigma^2) (\chi^{(s)})^*$</code> , we can prove that:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the property of <code>$u,v$</code> :</p>
-<!-- raw HTML omitted -->
-<p>we have:</p>
-<!-- raw HTML omitted -->
-<p>Another equality&rsquo;s proof is similar.</p>
-<!-- raw HTML omitted -->
+
+$$U_C a(\bm{k},s)U_C^{-1} = b(\bm{k},s) \ ; \ U_C b(\bm{k},s)U_C^{-1} = a(\bm{k},s)$$
+
+
+<p>With the convention of $\chi,\xi$ : $\xi^{(s)}=(-\ti\sigma^2) (\chi^{(s)})^*$ , we can prove that:</p>
+
+$$\begin{aligned}
+U_C \psi U_C^{-1} &= -\ti (\bar{\psi}\gamma^0\gamma^2)^T \\
+U_C \bar{\psi} U_C^{-1} &= (-\ti \gamma^0 \gamma^2 \psi)^T
+\end{aligned}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the property of $u,v$ :
+
+
+$$u^{(s)}(\bm{k})=-\ti \gamma^2\Big(v^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(s)}(\bm{k})=-\ti \gamma^2 \Big(u^{(s)}(\bm{k}) \Big)^*$$
+
+
+
+we have:
+
+
+$$\begin{aligned}
+U_C \psi U_C^{-1} &=\sum_s \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) U_C a(\bm{k},s)U_C^{-1}+e^{\ti k\cdot x} v^{(s)}(\bm{k}) U_C b(\bm{k},s)^\dagger U_C^{-1} \Big) \\
+&= \sum_s\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) b(\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) a(\bm{k},s)^\dagger \Big) \\
+&=-\ti \gamma^2\sum_s \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(e^{-\ti k\cdot x} (v^{(s)})^* (\bm{k}) b(\bm{k},s)+e^{\ti k\cdot x} (u^{(s)}(\bm{k}))^* a(\bm{k},s)^\dagger \Big) \\
+&=-\ti \gamma^2 \gamma^0 \bar {\psi}^T \\
+&= -\ti (\bar{\psi}\gamma^0\gamma^2)^T
+\end{aligned}$$
+
+
+
+Another equality's proof is similar.
+
+
+</details>
+
 <h2 id="time-reversal">Time Reversal</h2>
-<p>ime reversal will induce an anti-unitary operator. With conjugation operator <code>$K$</code> we can write it as <code>$U_T K$</code> , where <code>$U_T$</code> is a unitary operator. We hope the <code>time reversal</code> will inverse the spin and momentum. Where the spin-inversion should be <code>$x^{(\bar s)}=-\ti \sigma^2 (x^{(s)})^*$</code> . Then we demand:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$a(\bm{k},\bar 1)=a(\bm{k},2)\ ; \ a(\bm{k},\bar 2)=-a(\bm{k},1)$</code> , same for <code>$b$</code> .</p>
+<p>ime reversal will induce an anti-unitary operator. With conjugation operator $K$ we can write it as $U_T K$ , where $U_T$ is a unitary operator. We hope the <code>time reversal</code> will inverse the spin and momentum. Where the spin-inversion should be $x^{(\bar s)}=-\ti \sigma^2 (x^{(s)})^*$ . Then we demand:</p>
+
+$$U_T K a(\bm{k},s) (U_T K)^{-1} = a(-\bm{k},\bar{s}) \ ; \ U_T K b(\bm{k},s) (U_T K)^{-1} = b(-\bm{k},\bar{s})$$
+
+
+<p>Where $a(\bm{k},\bar 1)=a(\bm{k},2)\ ; \ a(\bm{k},\bar 2)=-a(\bm{k},1)$ , same for $b$ .</p>
 <p>Then we can prove that:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the property of <code>$u,v$</code> :</p>
-<!-- raw HTML omitted -->
-<p>we have:</p>
-<!-- raw HTML omitted -->
-<p>Noting that conjugation operator <code>$K$</code> is not commutative with complex number:</p>
-<!-- raw HTML omitted -->
-<p>The proof for <code>$\bar \psi$</code> is similar.</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+U_T K \psi(x^0,\bm{x}) (U_T K)^{-1} &= \gamma^1\gamma^3 \psi(-x^0,\bm{x}) \\
+U_T K \bar \psi(x^0,\bm{x}) (U_T K)^{-1} &=  \bar \psi(-x^0,\bm{x}) \gamma^1\gamma^3 \\
+\end{aligned}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the property of $u,v$ :
+
+
+$$u^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(u^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(v^{(s)}(\bm{k}) \Big)^*$$
+
+
+
+we have:
+
+
+$$\begin{aligned}
+U_T K \psi(x^0,\bm{x}) (U_T K)^{-1} &=\sum_s\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big((U_T K) e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s)(U_T K)^{-1}\\
+&\indent  + (U_T K) e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger (U_T K)^{-1} \Big) \\
+&=\sum_s\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big( e^{+\ti k\cdot x} u^{(s)}(\bm{k})^* a(-\bm{k},\bar{s}) +  e^{-\ti k\cdot x} v^{(s)}(\bm{k})^* b(-\bm{k},\bar{s})^\dagger \Big) \\
+&=\gamma^1\gamma^3 \sum_{\bar s}\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big( e^{+\ti k\cdot x} u^{(\bar s)}(-\bm{k}) a(-\bm{k},\bar{s}) +  e^{-\ti k\cdot x} v^{(\bar s)}(-\bm{k}) b(-\bm{k},\bar{s})^\dagger \Big) \\
+&=\gamma^1 \gamma^3 \psi(-x^0,\bm{x})
+\end{aligned}$$
+
+
+
+Noting that conjugation operator $K$ is not commutative with complex number:
+
+
+$$K c = c^* K$$
+
+
+
+The proof for $\bar \psi$ is similar.
+
+
+</details>
+
 
           </div>
 
@@ -942,7 +1274,7 @@ autocomplete('#aa-search-input',
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -984,23 +1316,8 @@ autocomplete('#aa-search-input',
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1024,13 +1341,39 @@ autocomplete('#aa-search-input',
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1043,9 +1386,6 @@ autocomplete('#aa-search-input',
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

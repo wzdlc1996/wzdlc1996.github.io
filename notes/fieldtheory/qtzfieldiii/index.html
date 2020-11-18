@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The canonical quantization of vector Field(Maxwell Field). One can find that the usual quantization procedure(directly using of commutation relationship) does not work for it, because of the Gauge Symmetry. We will introduce the Gupta-Bleuler quantization procedure. It clearly keeps the Lorentz covariance but leads to a Hilbert space with negative matric. For free Maxwell field we can separate them totally, so the probability interpretation will not destroyed. Then we will computation of propagator and do some discussion. At last we will discuss the discrete symmetry of Maxwell Field in Quantum Theory">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Quantization of Free Field: Maxwell Field | Leonard 
-  
+    
+     Quantization of Free Field: Maxwell Field | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldiii/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>6 minutes read</li>
+      <li>11 minutes read</li>
     
   </ul>
   
@@ -457,192 +394,591 @@ autocomplete('#aa-search-input',
             <h1 id="quantization-of-maxwell-field">Quantization of Maxwell Field</h1>
 <h2 id="canonical-quantization-of-maxwell-field">Canonical Quantization of Maxwell Field</h2>
 <p>The Hamiltonian of Maxwell Field is(in <code>Feynman Gauge</code>):</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$A^\mu$</code> are vector field. We will use the canonical commutation relationship. For <code>$A_i$</code> they can be written equivalently as:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With Feynman Gauge, we have the canonical momentum as:</p>
-<!-- raw HTML omitted -->
-<p>If we use the canonical commutation relationship as :</p>
-<!-- raw HTML omitted -->
-<p>Because the canonical momentum of <code>$A^\mu$</code> is <code>$\pi_\mu=\frac {\delta L} {\delta \partial_0 A^\mu}$</code> which should be a covariance vector.</p>
-<p>And any other commutator vanish, it is equivalent to:</p>
-<!-- raw HTML omitted -->
-<p>For that <code>$[A^\mu(\bm{x}),A^\nu(\bm{x}')]=0$</code> , we will have that</p>
-<!-- raw HTML omitted -->
-<p>That is <code>$[A^\mu(\bm{x}),\partial_i A^\nu(\bm{x}')]=0$</code> . Then the canonical commutation relationship should be:</p>
-<!-- raw HTML omitted -->
-<p>That is</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$H=\frac 1 2\int \td^3 \bm{x} \ \Big\{\sum_{i=1}^3 \Big((\partial_0 A_i)^2+(\nabla A_i)^2\Big)-(\partial_0 A_0)^2 - (\nabla A_0)^2 \Big\}$$
+
+
+<p>Where $A^\mu$ are vector field. We will use the canonical commutation relationship. For $A_i$ they can be written equivalently as:</p>
+
+$$[A^\mu(\bm{x}),(\partial_0 A^\nu)(\bm{x}')]=-\ti \eta^{\mu\nu}\delta^3 (\bm{x}-\bm{x}')$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With Feynman Gauge, we have the canonical momentum as:
+
+
+$$\pi^\mu = F^{\mu 0}-\eta^{\mu 0} \partial_\nu A^\nu$$
+
+
+
+If we use the canonical commutation relationship as :
+
+
+$$[A^\mu(\bm{x}),\pi_\nu (\bm{x}')]=\ti\delta^\mu_\nu \delta^3(\bm{x}-\bm{x}')$$
+
+
+
+Because the canonical momentum of $A^\mu$ is $\pi_\mu=\frac {\delta L} {\delta \partial_0 A^\mu}$ which should be a covariance vector.
+
+And any other commutator vanish, it is equivalent to:
+
+
+$$[A^\mu(\bm{x}),\partial^\nu A^0(\bm{x})-(\partial^0 A^\nu)(\bm{x})-\eta^{\nu 0}\Big((\partial_0 A^0)(\bm{x})+\sum_i \partial_i A^i(\bm{x})\Big)]=\ti\delta^{\mu\nu}\delta^3(\bm{x}-\bm{x}')$$
+
+
+
+For that $[A^\mu(\bm{x}),A^\nu(\bm{x}')]=0$ , we will have that
+
+
+$$\partial_{\bm{x}'}[A^\mu(\bm{x}),A^\nu(\bm{x}')]=0$$
+
+
+
+That is $[A^\mu(\bm{x}),\partial_i A^\nu(\bm{x}')]=0$ . Then the canonical commutation relationship should be:
+
+
+$$\begin{aligned}[]
+[A^0(\bm{x}),-(\partial_0 A_0)(\bm{x})] &= \ti \delta^3(\bm{x}-\bm{x}') \\
+[A^i(\bm{x}),-(\partial^0 A_i)(\bm{x})] &= \ti \delta^3(\bm{x}-\bm{x}')
+\end{aligned}$$
+
+
+
+That is
+
+
+$$[A^\mu(\bm{x}),(\partial_0 A^\nu)(\bm{x}')]=-\ti \eta^{\mu\nu}\delta^3 (\bm{x}-\bm{x}')$$
+
+
+
+q.e.d.
+
+
+</details>
+
 <p>One can rewrite them into the plane-wave expansion. In Schrodinger Picture:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$a$</code> is operators and <code>$\omega_{|\bm{k}|}=|\bm{k}|$</code> . Polarization vectors have the property:</p>
-<!-- raw HTML omitted -->
-<p>We can write the inverse transformation, which will represent <code>$a, a^\dagger$</code> by <code>$A^\mu$</code> and <code>$\partial_0 A^\mu$</code> :</p>
-<!-- raw HTML omitted -->
+
+$$A^\mu(\bm{x})=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti \bm{k} \cdot \bm{x}} a(\bm{k},\lambda)^\dagger \Big) $$
+
+
+<p>Where $a$ is operators and $\omega_{|\bm{k}|}=|\bm{k}|$ . Polarization vectors have the property:</p>
+
+$$\epsilon(\bm{k},\lambda)\cdot \epsilon(\bm{k},\lambda')^*=\eta^{\lambda\lambda'} \ ; \ \sum_\lambda \eta^{\lambda\lambda} \epsilon^\mu(\bm{k},\lambda)\epsilon^{\nu*}(\bm{k},\lambda)=\eta^{\mu\nu}$$
+
+
+<p>We can write the inverse transformation, which will represent $a, a^\dagger$ by $A^\mu$ and $\partial_0 A^\mu$ :</p>
+
+$$\begin{aligned}
+a(\bm{k},\lambda) &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},\lambda')^* \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{-\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},\lambda') \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+\end{aligned}$$
+
+
 <p>And their commutation relationship:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With that:</p>
-<!-- raw HTML omitted -->
-<p>The inverse of Fourier transformation is:</p>
-<!-- raw HTML omitted -->
-<p>That is:</p>
-<!-- raw HTML omitted -->
-<p>With <code>$\epsilon_\mu(\bm{k},\lambda) \epsilon^\mu(\bm{k},\lambda')^*=\eta^{\lambda\lambda'}$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$i=1,2,3$</code> . And similarly:</p>
-<!-- raw HTML omitted -->
-<p>One can also write it as:</p>
-<!-- raw HTML omitted -->
-<p>Then we need to compute their commutator:</p>
-<!-- raw HTML omitted -->
-<p>And for the same reason <code>$[a(\bm{k},\lambda)^\dagger,a(\bm{k}',\lambda')^\dagger]=0$</code> . Then:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$[a(\bm{k},\lambda),a(\bm{k}',\lambda')]=[a(\bm{k},\lambda)^\dagger,a(\bm{k}',\lambda')^\dagger]=0 \ ; \ [a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With that:
+
+
+$$\begin{aligned}
+A^\mu(\bm{x})&=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti \bm{k} \cdot \bm{x}} a(\bm{k},\lambda)^\dagger \Big) \\
+\partial_0A^\mu(\bm{x}) &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {-\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}}\Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k},\lambda) - \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti \bm{k} \cdot \bm{x}} a(\bm{k},\lambda)^\dagger \Big)
+\end{aligned}$$
+
+
+
+The inverse of Fourier transformation is:
+
+
+$$\begin{aligned}
+\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda) a(\bm{k},\lambda)+\epsilon^{\mu*}(-\bm{k},\lambda)a(-\bm{k},\lambda)^\dagger\Big )&= \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} A^\mu(\bm{x}) \\
+\frac {-\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda) a(\bm{k},\lambda)-\epsilon^{\mu*}(-\bm{k},\lambda)a(-\bm{k},\lambda)^\dagger\Big )&= \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} \partial_0 A^\mu(\bm{x}) \\
+\end{aligned}$$
+
+
+
+That is:
+
+
+$$\sum_\lambda \epsilon^\mu(\bm{k},\lambda)a(\bm{k},\lambda)=\int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti\bm{k}\cdot \bm{x}}\Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big)$$
+
+
+
+With $\epsilon_\mu(\bm{k},\lambda) \epsilon^\mu(\bm{k},\lambda')^*=\eta^{\lambda\lambda'}$ , we have:
+
+
+$$\begin{aligned}
+a(\bm{k},0)&= \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},0)^* \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+a(\bm{k},i)&= -\int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},i)^* \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+\end{aligned}$$
+
+
+
+Where $i=1,2,3$ . And similarly:
+
+
+$$\begin{aligned}
+a(\bm{k},0)^\dagger &= \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{-\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},0) \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+a(\bm{k},i)^\dagger &= -\int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{-\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},i) \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+\end{aligned}$$
+
+
+
+One can also write it as:
+
+
+$$\begin{aligned}
+a(\bm{k},\lambda) &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},\lambda')^* \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{-\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},\lambda') \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
+\end{aligned}$$
+
+
+
+Then we need to compute their commutator:
+
+
+$$\begin{aligned}[]
+[a(\bm{k},\lambda),a(\bm{k}',\lambda')]&= \sum_{\lambda_1,\lambda_2}\int \frac{\td^3 \bm{x}_1\td^3 \bm{x}_2} {(2\pi)^{3}}  \ e^{\ti \bm{k}\cdot \bm{x}_1+\ti \bm{k}'\cdot \bm{x}_2}\epsilon_{\mu_1}(\bm{k},\lambda_1)^* \epsilon_{\mu_2}(\bm{k}',\lambda_2)^* \\
+&\indent \cdot \Big(\ti \sqrt{\frac {\omega_{|\bm{k}|}} {4\omega_{|\bm{k}'|}}} [A^{\mu_1}(\bm{x}_1),\partial_0 A^{\mu_2}(\bm{x}_2)]+\ti \sqrt{\frac {\omega_{|\bm{k}'|}} {4\omega_{|\bm{k}|}}} [\partial_0 A^{\mu_1}(\bm{x}_1),A^{\mu_2}(\bm{x}_2)]\Big) \\
+&= \sum_{\lambda_1,\lambda_2}\int \frac{\td^3 \bm{x}_1\td^3 \bm{x}_2} {(2\pi)^{3}} \ e^{\ti \bm{k}\cdot \bm{x}_1+\ti \bm{k}'\cdot \bm{x}_2}\epsilon_{\mu_1}(\bm{k},\lambda_1)^* \epsilon_{\mu_2}(\bm{k}',\lambda_2)^* \\
+&\indent \cdot \Big( \sqrt{\frac {\omega_{|\bm{k}|}} {4\omega_{|\bm{k}'|}}} - \sqrt{\frac {\omega_{|\bm{k}'|}} {4\omega_{|\bm{k}|}}}\Big)\eta^{\mu_1\mu_2}\delta^3(\bm{x}_1-\bm{x_2}) \\
+&=0
+\end{aligned}$$
+
+
+
+And for the same reason $[a(\bm{k},\lambda)^\dagger,a(\bm{k}',\lambda')^\dagger]=0$ . Then:
+
+
+$$\begin{aligned}[]
+[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger] &= \sum_{\lambda_1,\lambda_2} \int \frac{\td^3 \bm{x}_1\td^3 \bm{x}_2} {(2\pi)^{3}} \ e^{\ti \bm{k}\cdot \bm{x}_1-\ti \bm{k}'\cdot \bm{x}_2}\epsilon_{\mu_1}(\bm{k},\lambda_1)^* \epsilon_{\mu_2}(\bm{k}',\lambda_2) \\
+&\indent \cdot \Big(-\ti \sqrt{\frac {\omega_{|\bm{k}|}} {4\omega_{|\bm{k}'|}}} [A^{\mu_1}(\bm{x}_1),\partial_0 A^{\mu_2}(\bm{x}_2)]+\ti \sqrt{\frac {\omega_{|\bm{k}'|}} {4\omega_{|\bm{k}|}}} [\partial_0 A^{\mu_1}(\bm{x}_1),A^{\mu_2}(\bm{x}_2)]\Big) \\
+&= \sum_{\lambda_1,\lambda_2}\int \frac{\td^3 \bm{x}_1\td^3 \bm{x}_2} {(2\pi)^{3}} \ e^{\ti \bm{k}\cdot \bm{x}_1-\ti \bm{k}'\cdot \bm{x}_2}\epsilon_{\mu_1}(\bm{k},\lambda_1)^* \epsilon_{\mu_2}(\bm{k}',\lambda_2) \\
+&\indent \cdot \Big(- \sqrt{\frac {\omega_{|\bm{k}|}} {4\omega_{|\bm{k}'|}}}- \sqrt{\frac {\omega_{|\bm{k}'|}} {4\omega_{|\bm{k}|}}}\Big)\eta^{\mu_1\mu_2}\delta^3(\bm{x}_1-\bm{x}_2) \\
+&=\sum_{\lambda_1,\lambda_2} \epsilon_\mu(\bm{k},\lambda_1)^* \epsilon^\mu(\bm{k}',\lambda_2) (-1) \delta^3(\bm{k}-\bm{k}') \\
+&=-\eta^{\lambda_1\lambda_2}\delta^3(\bm{k}-\bm{k}')
+\end{aligned}$$
+
+
+
+q.e.d.
+
+
+</details>
+
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
-<p>There is also a <code>$\infty$</code> quantity at the right-hand-side. But like usual, we ignore it.</p>
+
+$$\hat H=\int \td^3 \bm{k} \ \Big(\sum_{\lambda=1}^3 a(\bm{k},\lambda)^\dagger a(\bm{k},\lambda) - a(\bm{k},0)^\dagger a(\bm{k},0) \Big) $$
+
+
+<p>There is also a $\infty$ quantity at the right-hand-side. But like usual, we ignore it.</p>
 <p>One can also write these operators in Heisenberg Picture :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>We can also check that:</p>
-<!-- raw HTML omitted -->
-<p>It hold for <code>$\lambda=0$</code> component cause the <code>$\eta^{00}=-\eta^{ii}$</code> .</p>
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>And:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$A^\mu(x)=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti k\cdot x} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti k\cdot x} a(\bm{k},\lambda)^\dagger \Big) $$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We can also check that:
+
+
+$$[a(\bm{k},\lambda),\hat H]=\omega_{|\bm{k}|}a(\bm{k},\lambda) \ ; \ [a(\bm{k},\lambda)^\dagger , \hat H]=-\omega_{|\bm{k}|}a(\bm{k},\lambda)^\dagger$$
+
+
+
+It hold for $\lambda=0$ component cause the $\eta^{00}=-\eta^{ii}$ .
+
+Then:
+
+
+$$a_H(\bm{k},\lambda)=e^{-\ti \omega_{|\bm{k}|}t} a(\bm{k},\lambda)$$
+
+
+
+And:
+
+
+$$A^\mu(x)=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti k\cdot x} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti k\cdot x} a(\bm{k},\lambda)^\dagger \Big) $$
+
+
+
+q.e.d.
+
+
+</details>
+
 <h2 id="extended-hilbert-space-and-physical-states">Extended Hilbert Space and Physical States</h2>
-<!-- raw HTML omitted -->
-<p>One can find that this quantization procedure leads to a Hamiltonian <code>without</code> lower bound. Different from the Dirac Field, using anti-commutation relationship has no help, because the negative sign of <code>scalar polarization</code> come from the classical theory.</p>
-<p>Moreover, in classical electromagnetic field theory, we know that <code>dof</code>of  electromagnetic wave is 2. But here we have four. In classical we use gauge condition to eliminate them, but in quantum theory, for example, Lorentz gauge <code>$\partial_\mu A^\mu=0$</code> cannot be a equality for operator. Because we have <code>$\pi^0\propto \partial_\mu A^\mu$</code> , let it hold will conflict to commutator relationship.</p>
-<p>At last, we find that commutator for <code>$\lambda=0$</code> component is irregular: <code>$[a(\bm{k},0),a(\bm{k}',0)]=-\delta^3 (\bm{k}-\bm{k}')$</code> . That is to say if we normalize the vacuum <code>$\bra{0}0\rangle=1$</code> , then <code>$\bra{0} a(\bm{k},0) a(\bm{k}',0)^\dagger\ket{0}=-\delta^3 (\bm{k}-\bm{k}')\lt 0$</code> . Shows that our Hilbert space should cover some state with negative modulus. This is dangerous to Quantum theory especially for possibility interpretation.</p>
-<p>In general, we have to accept that there are some non-physical states in Hilbert space. And on those physical states the theory is legal.</p>
-<!-- raw HTML omitted -->
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Why the extended Hilbert is needed
+    </summary>
+    
+
+One can find that this quantization procedure leads to a Hamiltonian `without` lower bound. Different from the Dirac Field, using anti-commutation relationship has no help, because the negative sign of `scalar polarization` come from the classical theory.
+
+Moreover, in classical electromagnetic field theory, we know that `dof`of  electromagnetic wave is 2. But here we have four. In classical we use gauge condition to eliminate them, but in quantum theory, for example, Lorentz gauge $\partial_\mu A^\mu=0$ cannot be a equality for operator. Because we have $\pi^0\propto \partial_\mu A^\mu$ , let it hold will conflict to commutator relationship.
+
+At last, we find that commutator for $\lambda=0$ component is irregular: $[a(\bm{k},0),a(\bm{k}',0)]=-\delta^3 (\bm{k}-\bm{k}')$ . That is to say if we normalize the vacuum $\bra{0}0\rangle=1$ , then $\bra{0} a(\bm{k},0) a(\bm{k}',0)^\dagger\ket{0}=-\delta^3 (\bm{k}-\bm{k}')\lt 0$ . Shows that our Hilbert space should cover some state with negative modulus. This is dangerous to Quantum theory especially for possibility interpretation.
+
+In general, we have to accept that there are some non-physical states in Hilbert space. And on those physical states the theory is legal.
+
+
+</details>
+
 <p><em>[Definition]</em> : The Hilbert generated from the quantization procedure above are larger than what we need. And it is not positive definite. <code>Physical subspace</code> is a subset of the Hilbert space, it is positive definite and describe the physical process can happen in the real world. States in <code>Physical subspace</code> are <code>physical states</code>, and the physical subspace is determined by the condition:</p>
-<!-- raw HTML omitted -->
+
+$$\bra{\psi_{\text{phys.}}} \partial_\mu A^\mu \ket{\psi_{\text{phys.}}} =0$$
+
+
 <p>Which is the quantum version of <code>Lorentz gauge</code>.</p>
 <p>A stronger constraint(much more convenient for it is an eigen-equation) is</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>If <code>$\ket{\Psi}$</code> satisfy <code>$\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\Psi} = 0$</code> , then we have:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\psi_{\text{phys.}}} = 0 \ ; \ \bra{\psi_{\text{phys.}}} \big(a(\bm{k},3)^\dagger-a(\bm{k},0)^\dagger \big)=0$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+If $\ket{\Psi}$ satisfy $\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\Psi} = 0$ , then we have:
+
+
+$$\begin{aligned}
+\bra{\Psi'}\partial_\mu A^\mu \ket{\Psi}&=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_\lambda \Big(-\ti k_\mu \epsilon^\mu(\bm{k},\lambda) e^{-\ti k\cdot x} \bra{\Psi} a(\bm{k},\lambda)\ket{\Psi}+\ti k_\mu \epsilon^{\mu*}(\bm{k},\lambda)e^{\ti k\cdot x}\bra{\Psi} a(\bm{k},\lambda)^\dagger \ket{\Psi} \Big) \\
+&=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \sum_\lambda \Big(-\ti (\delta_\lambda^0-\delta_\lambda^3) e^{-\ti k\cdot x} \bra{\Psi} a(\bm{k},\lambda)\ket{\Psi}+\ti (\delta_\lambda^0-\delta_\lambda^3)e^{\ti k\cdot x}\bra{\Psi} a(\bm{k},\lambda)^\dagger \ket{\Psi} \Big) \\
+&=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(\ti e^{-\ti k\cdot x} \bra{\Psi} a(\bm{k},3)-a(\bm{k},0)\ket{\Psi}-\ti e^{\ti k\cdot x}\bra{\Psi} a(\bm{k},3)^\dagger-a(\bm{k},0)^\dagger \ket{\Psi} \Big) \\
+&=0
+\end{aligned}$$
+
+
+
+q.e.d.
+
+
+</details>
+
 <p>And this stronger condition leads to</p>
-<!-- raw HTML omitted -->
+
+$$\bra{\psi_{\text{phys.}}}a(\bm{k},0)^\dagger a(\bm{k},0)\ket{\psi_{\text{phys.}}}=\bra{\psi_{\text{phys.}}}a(\bm{k},3)^\dagger a(\bm{k},3)\ket{\psi_{\text{phys.}}}$$
+
+
 <p>This shows that in <code>physical subspace</code> , the expectation of Hamiltonian is:</p>
-<!-- raw HTML omitted -->
+
+$$\bra{\psi_{\text{phys.}}}\hat H\ket{\psi_{\text{phys.}}} = \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \sum_{\lambda=1,2} \bra{\psi_{\text{phys.}}} a(\bm{k},\lambda)^\dagger a(\bm{k},\lambda) \ket{\psi_{\text{phys.}}}$$
+
+
 <p>The right-hand-side is positive definite.</p>
 <p>And we have the structure of physical subspace:</p>
-<p><em>[Definition]</em> : <code>vacuum of the Maxwell Field</code> is the ground state of it. Denoting it as <code>$\ket{0}$</code> , it satisfies:</p>
-<!-- raw HTML omitted -->
-<p>Obviously, <code>$\ket{0}$</code> is a physical state.</p>
+<p><em>[Definition]</em> : <code>vacuum of the Maxwell Field</code> is the ground state of it. Denoting it as $\ket{0}$ , it satisfies:</p>
+
+$$a(\bm{k},\lambda)\ket{0}=0 \ ; \ \forall \bm{k},\lambda=0,1,2,3$$
+
+
+<p>Obviously, $\ket{0}$ is a physical state.</p>
 <p><em>[Theorem]</em> : Any physical states can be expressed as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\ket{\Phi_T}$</code> is the state which contains <code>only</code> transverse photons(polarizations) , and operator <code>$\hat R_c$</code> creates the admixture of longitudinal and scalar photons:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$c$</code> are arbitrary functions and <code>$\hat L^\dagger(\bm{k})=a(\bm{k},3)^\dagger - a(\bm{k},0)^\dagger$</code> . And:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\Phi_c} = \hat R_c \ket{\Phi_T}$$
+
+
+<p>Where $\ket{\Phi_T}$ is the state which contains <code>only</code> transverse photons(polarizations) , and operator $\hat R_c$ creates the admixture of longitudinal and scalar photons:</p>
+
+$$\hat R_c = 1+\int \td^3 \ c(\bm{k})\hat L^\dagger(\bm{k}) + \int \td^3 \bm{k}\td^3 \bm{k}' \ c(\bm{k},\bm{k}') \hat L^\dagger(\bm{k})\hat L^\dagger(\bm{k}')+\cdots$$
+
+
+<p>Where $c$ are arbitrary functions and $\hat L^\dagger(\bm{k})=a(\bm{k},3)^\dagger - a(\bm{k},0)^\dagger$ . And:</p>
+
+$$\bra{\Phi_c}\Phi_c\rangle = \bra{\Phi_T}\Phi_T\rangle$$
+
+
 <p>That&rsquo;s why they(added states) are also called as <code>states-with-zero-norm</code> .</p>
-<!-- raw HTML omitted -->
-<p>To prove that we should check:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$\hat L(\bm{k})\ket{\Phi_T}=0$</code> by the definition, we have:</p>
-<!-- raw HTML omitted -->
-<p>Any other states are this state with different number of scalar photons and longitudinal photons, obviously they are not physical state.</p>
-<p>This property also leads to:</p>
-<!-- raw HTML omitted -->
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
-<p><em>[Theorem]</em> : The states <code>$\ket{\Phi_c}$</code> for a given <code>$\ket{\Phi_T}$</code> form an <code>equivalence class</code> . The member of this equivalence class are related by gauge transformations. Explicitly speaking, one has:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\Lambda$</code> is a function satisfies <code>$\partial_\mu \partial^\mu \Lambda=0$</code> , it will come from gauge transformation.</p>
-<!-- raw HTML omitted -->
-<p>One has:</p>
-<!-- raw HTML omitted -->
-<p>Where we used <code>$\hat R_c^\dagger \ket{\Phi_T}=\ket{\Phi_T}$</code> . By using the fact that the commutators of <code>$A_\mu$</code> with <code>$\hat L(\bm{k}),\hat L^\dagger (\bm{k})$</code> are c-numbers:</p>
-<!-- raw HTML omitted -->
-<p>We obtain:</p>
-<!-- raw HTML omitted -->
-<p>And with <code>$\epsilon_\mu(\bm{k},3)+\epsilon_\mu(\bm{k},0)\propto k_\mu$</code> , which can be easily checked by the Lorentz-covariance. We have:</p>
-<!-- raw HTML omitted -->
-<p>Where:</p>
-<!-- raw HTML omitted -->
-<p>Since <code>$k^0=|\bm{k}|$</code> , we have <code>$\square \Lambda=0$</code> . The gauge function <code>$\Lambda$</code> is consistent with the Lorentz gauge condition.</p>
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->With these theorems, we can use <code>$\ket{\Phi_T}$</code> as the representation of each equivalence class. And in this meaning the Maxwell Field is totally quantized.<!-- raw HTML omitted --></p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+To prove that we should check:
+
+
+$$[\hat L(\bm{k}),\hat L^\dagger(\bm{k}')]=-\delta^3(\bm{k}-\bm{k}')+\delta^3(\bm{k}-\bm{k}')=0$$
+
+
+
+Then we have:
+
+
+$$\hat L(\bm{k})\hat R_c=\hat R_c\hat L(\bm{k})$$
+
+
+
+For $\hat L(\bm{k})\ket{\Phi_T}=0$ by the definition, we have:
+
+
+$$\hat L(\bm{k}) \hat R_c \ket{\Phi_T}=0\Rightarrow \hat R_c \ket{\Phi_T} \in \text{physical subspace}$$
+
+
+
+Any other states are this state with different number of scalar photons and longitudinal photons, obviously they are not physical state.
+
+This property also leads to:
+
+
+$$[\hat R_c,\hat R_c^\dagger]=0$$
+
+
+
+Then:
+
+
+$$\bra{\Phi_c}\Phi_c\rangle =\bra{\Phi_T}\hat R_c \hat R_c^\dagger \ket{\Phi_T}=\bra{\Phi_T}(1+a \hat L)\ket{\Phi_T}=\bra{\Phi_T}\Phi_T\rangle $$
+
+
+
+q.e.d.
+
+
+</details>
+
+<p><em>[Theorem]</em> : The states $\ket{\Phi_c}$ for a given $\ket{\Phi_T}$ form an <code>equivalence class</code> . The member of this equivalence class are related by gauge transformations. Explicitly speaking, one has:</p>
+
+$$\bra{\Phi_c}A_\mu \ket{\Phi_c} = \bra{\Phi_T}A_\mu \ket{\Phi_T} + \partial_\mu \Lambda$$
+
+
+<p>Where $\Lambda$ is a function satisfies $\partial_\mu \partial^\mu \Lambda=0$ , it will come from gauge transformation.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+One has:
+
+
+$$\bra{\Phi_c}A_\mu\ket{\Phi_c}=\bra{\Phi_T}\hat R_c^\dagger [A_\mu, \hat R_c]\ket{\Phi_T}+\bra{\Phi_T}[\hat R_c^\dagger , A_\mu]\ket{\Phi_T}+\bra{\Phi_T} A_\mu \ket{\Phi_T}$$
+
+
+
+Where we used $\hat R_c^\dagger \ket{\Phi_T}=\ket{\Phi_T}$ . By using the fact that the commutators of $A_\mu$ with $\hat L(\bm{k}),\hat L^\dagger (\bm{k})$ are c-numbers:
+
+
+$$[A_\mu,\hat L^\dagger (\bm{k})]=\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}e^{-\ti k\cdot x}(\epsilon_\mu(\bm{k},3)+\epsilon_\mu(\bm{k},0))$$
+
+
+
+We obtain:
+
+
+$$\bra{\Phi_c}A_\mu\ket{\Phi_c}=\int \td^3 \bm{k} \ c(\bm{k})[A_\mu,\hat L^\dagger(\bm{k})]+\int \td^3 \bm{k} \ c(\bm{k})^* [\hat L(\bm{k}),A_\mu]+\bra{\Phi_T} A_\mu \ket{\Phi_T}$$
+
+
+
+And with $\epsilon_\mu(\bm{k},3)+\epsilon_\mu(\bm{k},0)\propto k_\mu$ , which can be easily checked by the Lorentz-covariance. We have:
+
+
+$$\begin{aligned}
+\bra{\Phi_c}A_\mu\ket{\Phi_c}&=\int \td^3 \bm{k} \ c(\bm{k})[A_\mu,\hat L^\dagger(\bm{k})]+\int \td^3 \bm{k} \ c(\bm{k})^* [\hat L(\bm{k}),A_\mu]+\bra{\Phi_T} A_\mu \ket{\Phi_T} \\
+&=\int \frac {\td^3\bm{k}} {\sqrt{2\omega_{|\bm{k}|}}} k_\mu (e^{-\ti k\cdot x} A c(\bm{k})+e^{\ti k\cdot x}A^* c(\bm{k})^* ) +\bra{\Phi_T} A_\mu \ket{\Phi_T} \\
+&=\partial_\mu\Lambda +\bra{\Phi_T} A_\mu \ket{\Phi_T}
+\end{aligned}$$
+
+
+
+Where:
+
+
+$$\Lambda=\ti \int \frac {\td^3 \bm{k}} {\sqrt{2\omega_{|\bm{k}|}}} (e^{-\ti k\cdot x} A c(\bm{k})-e^{\ti k\cdot x} A^* c(\bm{k})^*)$$
+
+
+
+Since $k^0=|\bm{k}|$ , we have $\square \Lambda=0$ . The gauge function $\Lambda$ is consistent with the Lorentz gauge condition.
+
+q.e.d.
+
+
+</details>
+
+<p><mark>With these theorems, we can use $\ket{\Phi_T}$ as the representation of each equivalence class. And in this meaning the Maxwell Field is totally quantized.</mark></p>
 <p><em>[Definition]</em> : <code>1-particle</code> state is defined as:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\bm{k},\lambda=1,2} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k},\lambda=1,2)^\dagger \ket{0}$$
+
+
 <p>And the Lorentz covariance:</p>
-<!-- raw HTML omitted -->
+
+$$\bra{\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\bm{k},\lambda }\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}} \bm{k}',\lambda'\rangle = \bra{\bm{k},\lambda}\bm{k}',\lambda'\rangle = 2\omega_{|\bm{k}|}\delta_{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$$
+
+
 <p>And the Lorentz covariant integral:</p>
-<!-- raw HTML omitted -->
-<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) <code>$x\rightarrow x'=\Lambda(\omega)x$</code> , the corresponding operator on Hilbert space is <code>$U(\Lambda(\omega))$</code> , then we have:</p>
-<!-- raw HTML omitted -->
+
+$$\int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} = \int \td^4 k \ \delta(k_\mu k^\mu)\Theta(k^0) $$
+
+
+<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) $x\rightarrow x'=\Lambda(\omega)x$ , the corresponding operator on Hilbert space is $U(\Lambda(\omega))$ , then we have:</p>
+
+$$U(\Lambda(\omega))\ket{\bm{k},\lambda}=\ket{\Lambda(\omega),\lambda}$$
+
+
 <p>The vacuum is unique, then:</p>
-<!-- raw HTML omitted -->
+
+$$U(\Lambda(\omega))a(\bm{k},s)^\dagger U(\Lambda(\omega))^{-1} = \sqrt{\frac {\omega_{|\Lambda(\omega)\bm{k}|}} {\omega_{|\bm{k}|}} } a(\Lambda(\omega)\bm{k},\lambda)^\dagger$$
+
+
 <p>Then one can check that the field operator will be:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The proof is similar to what we did before, just noting <code>$\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\epsilon^\mu(\bm{k},\lambda)$</code> will be independent of <code>$\bm{k}$</code>, which means:</p>
-<!-- raw HTML omitted -->
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$A'^\mu(x'=\Lambda(\omega)x)\equiv U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} = \big(\Lambda(\omega)^{-1}\big)^\mu_{\indent \nu} A^\nu(x'=\Lambda(\omega) x)$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+The proof is similar to what we did before, just noting $\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\epsilon^\mu(\bm{k},\lambda)$ will be independent of $\bm{k}$, which means:
+
+
+$$\epsilon^\mu (\Lambda \bm{k},\lambda)=\Lambda^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$$
+
+
+
+Then:
+
+
+$$\begin{aligned}
+U(\Lambda(\omega))A^\mu(x)U(\Lambda(\omega))^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\sqrt{2\omega_{|\Lambda\bm{k}|}}} {2\omega_{|\bm{k}|}} \sum_{\lambda} \Big(e^{-\ti k\cdot x} \epsilon^\mu(\bm{k},\lambda) a(\Lambda \bm{k},\lambda)+e^{\ti k\cdot x} \epsilon^{\mu*}(\bm{k},\lambda)a(\Lambda \bm{k},\lambda)^\dagger \Big)\\
+&=(\Lambda^{-1})^\mu_{\indent \nu} A^\nu(\Lambda x)
+\end{aligned}$$
+
+
+
+q.e.d.
+
+
+</details>
+
 <h2 id="causality-of-maxwell-field">Causality of Maxwell Field</h2>
 <p>Our quantization will not violent to the causality demanded by special Relativistic Theory. That is to say:</p>
-<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points <code>$x,y$</code> with spacelike interval: <code>$\|x-y\|^2\lt 0$</code> , the field operators are commutable:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the quantization that <code>$[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$</code> . One has:</p>
-<!-- raw HTML omitted -->
-<p>With the similar argument, the causality is proved.</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points $x,y$ with spacelike interval: $|x-y|^2\lt 0$ , the field operators are commutable:</p>
+
+$$[A_\mu(x),A_\nu(y)]=0 \ ; \ \|x-y\|^2\lt 0$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the quantization that $[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$ . One has:
+
+
+$$\begin{aligned}[]
+[A_\mu(x),A_\nu(y)]&= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2 \ \delta^3(\bm{k}_1-\bm{k}_2)} {(2\pi)^3 \sqrt{4\omega_1\omega_2}} \sum_{\lambda_1,\lambda_2} \Big\{-\eta^{\lambda_1\lambda_2}e^{-\ti k_1\cdot x+\ti k_2\cdot y} \epsilon_\mu(\bm{k}_1,\lambda_1)\epsilon_\nu^*(\bm{k}_2,\lambda_2) +\eta^{\lambda_1\lambda_2}e^{\ti k_1\cdot x-\ti k_2\cdot y}\epsilon_\mu^*(\bm{k}_1,\lambda_1)\epsilon_\nu(\bm{k}_2,\lambda_2) \Big\}\\
+&=-\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} \eta_{\mu\nu} \Big(e^{-\ti k\cdot (x-y)}-e^{\ti k\cdot(x-y)} \Big)
+\end{aligned}$$
+
+
+
+With the similar argument, the causality is proved.
+
+
+</details>
+
 <h1 id="propagator-of-maxwell-field">Propagator of Maxwell Field</h1>
 <p><em>[Definition]</em> : <code>Feynman Propagator</code> of Maxwell Field is defined as:</p>
-<!-- raw HTML omitted -->
+
+$$\ti \Delta_F(x-y):= \bra{0}\mathcal{T}(A_\mu(x)A_\nu(y))\ket{0}$$
+
+
 <p>And Maxwell Field is bosonic. One can compute that:</p>
-<!-- raw HTML omitted -->
-<p>The calculation is similar to Scalar field, with <code>$m=0$</code> , and <code>$\bra{0}a(\bm{k},\lambda)a(\bm{k}',\lambda')^\dagger\ket{0}=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$</code>. That is why there are a factor <code>$-\eta_{\mu\nu}$</code> here.</p>
-<p>This form only work for <code>Feynman Gauge</code>: <code>$\xi=1$</code> . The generic form is:</p>
-<!-- raw HTML omitted -->
+
+$$\ti\Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot(x-y)} \Big(\frac {-\ti \eta_{\mu\nu}} {p_\mu p^\mu +\ti \epsilon} \Big)$$
+
+
+<p>The calculation is similar to Scalar field, with $m=0$ , and $\bra{0}a(\bm{k},\lambda)a(\bm{k}',\lambda')^\dagger\ket{0}=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$. That is why there are a factor $-\eta_{\mu\nu}$ here.</p>
+<p>This form only work for <code>Feynman Gauge</code>: $\xi=1$ . The generic form is:</p>
+
+$$\ti \Delta_F(x-y) =\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)}(-\ti) \Big\{\frac {\eta_{\mu\nu}} {p_\mu p^\mu +\ti \epsilon} + \frac {1-\xi} {\xi} \frac {p_\mu p_\nu} {(p_\mu p^\mu+\ti \epsilon)^2} \Big\}$$
+
+
 <h1 id="discrete-symmetry-of-maxwell-field">Discrete Symmetry of Maxwell Field</h1>
 <h2 id="spatial-inversion">Spatial Inversion</h2>
 <p>We hope the <code>Spatial Inversion</code> induces a unitary operator so as to</p>
-<!-- raw HTML omitted -->
-<p>For Maxwell Field, <code>$\eta_\gamma=-1$</code> , which is different from the real-valued scalar field.</p>
+
+$$U_P A_\mu(x^0,\bm{x}) U_P^{-1} = \eta_\gamma A_\mu(x^0,-\bm{x})$$
+
+
+<p>For Maxwell Field, $\eta_\gamma=-1$ , which is different from the real-valued scalar field.</p>
 <p>For creation/annihilation operators:</p>
-<!-- raw HTML omitted -->
+
+$$U_P a(\bm{k},\lambda) U_P^{-1} = - a(-\bm{k},\lambda)$$
+
+
 <h2 id="charge-conjugation">Charge Conjugation</h2>
 <p><code>Charge conjugation</code> for photon is:</p>
-<!-- raw HTML omitted -->
+
+$$U_C A_\mu (x) U_C^{-1}=-A_\mu(x)$$
+
+
 <p>Same to creation/annihilation operators:</p>
-<!-- raw HTML omitted -->
+
+$$U_C a(\bm{k},\lambda) U_C^{-1}=-a(\bm{k},\lambda)$$
+
+
 <h2 id="time-reversal">Time Reversal</h2>
-<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator <code>$K$</code> we can write it as <code>$U_T K$</code> , where <code>$U_T$</code> is a unitary operator. For creation/annihilation operators:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$\lambda$</code> denotes the <code>helicity</code>, <code>time reversal</code> inverse momentum and spin, so <code>$\lambda$</code> should be leave invariant.</p>
+<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator $K$ we can write it as $U_T K$ , where $U_T$ is a unitary operator. For creation/annihilation operators:</p>
+
+$$(U_T K) a(\bm{k},\lambda) (U_T K)^{-1}= a(-\bm{k},\lambda)$$
+
+
+<p>For $\lambda$ denotes the <code>helicity</code>, <code>time reversal</code> inverse momentum and spin, so $\lambda$ should be leave invariant.</p>
 <p>Then we can prove that:</p>
-<!-- raw HTML omitted -->
-<p>Do not sum for <code>$\mu$</code> here.</p>
-<!-- raw HTML omitted -->
-<p>For <code>$\epsilon^\mu(-\bm{k},\lambda) = P^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$</code> , and <code>$P^\mu_{\indent \nu}=\eta^{\mu\nu}$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>Do not sum for <code>$\mu$</code> here. q.e.d.</p>
-<!-- raw HTML omitted -->
+
+$$(U_T K) A_\mu(x^0,\bm{x})(U_T K)^{-1}= \eta_{\mu\mu} A_\mu(-x^0,\bm{x})$$
+
+
+<p>Do not sum for $\mu$ here.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+For $\epsilon^\mu(-\bm{k},\lambda) = P^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$ , and $P^\mu_{\indent \nu}=\eta^{\mu\nu}$ , we have:
+
+
+$$\begin{aligned}
+(U_T K) A^\mu(x^0,\bm{x})(U_T K)^{-1} &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^{\mu* }(\bm{k},\lambda)e^{\ti k\cdot x} a(-\bm{k},\lambda) + \epsilon^{\mu}(\bm{k},\lambda) e^{-\ti k\cdot x} a(-\bm{k},\lambda)^\dagger \Big) \\
+&=\eta^{\mu\mu} \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^{\mu* }(-\bm{k},\lambda)e^{\ti k\cdot x} a(-\bm{k},\lambda) + \epsilon^{\mu}(-\bm{k},\lambda) e^{-\ti k\cdot x} a(-\bm{k},\lambda)^\dagger \Big) \\
+&=\eta^{\mu\mu} A^\mu (-x^0,\bm{x})
+\end{aligned}$$
+
+
+
+Do not sum for $\mu$ here. q.e.d.
+
+
+</details>
+
 
           </div>
 
@@ -963,7 +1299,7 @@ autocomplete('#aa-search-input',
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1005,23 +1341,8 @@ autocomplete('#aa-search-input',
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1045,13 +1366,39 @@ autocomplete('#aa-search-input',
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1064,9 +1411,6 @@ autocomplete('#aa-search-input',
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

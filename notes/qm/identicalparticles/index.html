@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="Quantum theory for identical particles. Contain Permutation group theory and Second quantization.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Identical Particles | Leonard 
-  
+    
+     Identical Particles | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/qm/identicalparticles/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>8 minutes read</li>
+      <li>11 minutes read</li>
     
   </ul>
   
@@ -456,232 +393,433 @@ autocomplete('#aa-search-input',
           <div class="post-content markdown">
             <h1 id="outline">Outline</h1>
 <p><code>Fock space</code> is the direct sum of identical particle Hilbert space for all different particle numbers:</p>
-<!-- raw HTML omitted -->
+
+$$\mathcal{F}=\mathcal{H}_0\oplus \mathcal{H}_1 \oplus\cdots$$
+
+
 <p>Many-body Hilbert space of fermions and bosons is (Anti-)Symmetrized tensor product space:</p>
 <ul>
 <li>
-<p><code>$n$</code>-body Hilbert space for identical particles <code>$\mathcal{H}_n$</code> is a subspace of <code>$(\mathcal{H})^{\otimes n}$</code></p>
+<p>$n$-body Hilbert space for identical particles $\mathcal{H}_n$ is a subspace of $(\mathcal{H})^{\otimes n}$</p>
 </li>
 <li>
-<p><code>$\mathcal{H}_n$</code> is the image of multi-linear (anti-)symmetrization mapping:</p>
-<!-- raw HTML omitted -->
+<p>$\mathcal{H}_n$ is the image of multi-linear (anti-)symmetrization mapping:</p>
+
+$$\mathcal{S}:(\mathcal{H}_1)^{\otimes n}\rightarrow \mathcal{H}_n$$
+
+
 </li>
 <li>
 <p>The (anti-)symmetrization mapping is defined on a tensor product basis as:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+    \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for boson} \\
+    \mathcal{S}:\ket{1}\cdots\ket{n}\mapsto \frac 1 {\sqrt{n!}}\sum_{\sigma\in S_n} (-1)^{\sigma} \ket{\sigma(1)}\cdots\ket{\sigma(n)} \ \ & \text{for fermion}
+    \end{aligned}$$
+
+
 </li>
 </ul>
 <p>Second quantization language and some simple many-body wavefunction</p>
 <h1 id="the-fock-space">The Fock Space</h1>
 <h2 id="permutation-group">Permutation Group</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>permutation</code> is a map : <code>$\sigma=\begin{pmatrix}1 &amp; 2 &amp; \cdots &amp; n \\ \sigma(1) &amp; \sigma(2) &amp; \cdots &amp; \sigma(n)\end{pmatrix}\equiv\{j,\sigma(j)\}$</code> means replacing <code>$j$</code> by <code>$\sigma(j)$</code> , and <code>$\sigma(j)\in\{1,2,\cdots,n\}$</code> <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Transposition</code> : <code>$(i,j)$</code> means exchange <code>$i$</code> and <code>$j$</code> while keeping others fixed. <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->Any permutation can be represented as a product of transpositions of neighbors <code>$(i,i+1)$</code><!-- raw HTML omitted --> , and the number of transpositions is defined as the parity of the permutation. <!-- raw HTML omitted -->
-The <code>sign(signature)</code> of a permutation : <code>$(-1)^{\sigma}$</code> , is <code>$+1$</code> for even one and <code>$-1$</code> for odd one. It can be rewritten as:</p>
-<!-- raw HTML omitted -->
-<p>And satisfies <code>$(-1)^{\sigma\cdot \mu} = (-1)^{\sigma}(-1)^{\mu}$</code> <!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>permutation</code> is a map : $\sigma=\begin{pmatrix}1 &amp; 2 &amp; \cdots &amp; n \ \sigma(1) &amp; \sigma(2) &amp; \cdots &amp; \sigma(n)\end{pmatrix}\equiv{j,\sigma(j)}$ means replacing $j$ by $\sigma(j)$ , and $\sigma(j)\in{1,2,\cdots,n}$ <br>
+<em>[Definition]</em> : <code>Transposition</code> : $(i,j)$ means exchange $i$ and $j$ while keeping others fixed. <br>
+<mark>Any permutation can be represented as a product of transpositions of neighbors $(i,i+1)$</mark> , and the number of transpositions is defined as the parity of the permutation. <br>
+The <code>sign(signature)</code> of a permutation : $(-1)^{\sigma}$ , is $+1$ for even one and $-1$ for odd one. It can be rewritten as:</p>
+
+$$(-1)^{\sigma} = \prod_{i\lt j} \text{sgn }(\sigma(j)-\sigma(i))$$
+
+
+<p>And satisfies $(-1)^{\sigma\cdot \mu} = (-1)^{\sigma}(-1)^{\mu}$ <br>
 There are only two 1-d representation of permutation group:</p>
 <ol>
-<li>the trivial one <code>$R(\sigma)=1$</code></li>
-<li>the alternative one <code>$R(\sigma)=(-1)^{\sigma}$</code></li>
+<li>the trivial one $R(\sigma)=1$</li>
+<li>the alternative one $R(\sigma)=(-1)^{\sigma}$</li>
 </ol>
 <h2 id="traditional-treatment">Traditional Treatment</h2>
-<p>The configuration of <code>$n$</code> indentical particles <code>$x=(\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n)$</code> has the same physical picture with all permutations of <code>$\bm{x}_1,\cdots,\bm{x}_n$</code> <!-- raw HTML omitted -->
-This means that <code>$n$</code>-body state: <code>$\psi(x)=\psi(\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n)$</code> should be <code>'invariant'</code> under permutations of <code>$\bm{x}_i$</code> : <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->the wavefunction may get complex phase, but the density matrix should be the same<!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->[Assumption]<!-- raw HTML omitted --> : the n-body wavefunction is a 1-d representation of the permutation group <code>$S_n$</code> , then there are only two possibilities: bosons and fermions.</p>
+<p>The configuration of $n$ indentical particles $x=(\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n)$ has the same physical picture with all permutations of $\bm{x}_1,\cdots,\bm{x}_n$ <br>
+This means that $n$-body state: $\psi(x)=\psi(\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n)$ should be <code>'invariant'</code> under permutations of $\bm{x}_i$ : <br>
+<mark>the wavefunction may get complex phase, but the density matrix should be the same</mark></p>
+<p><em>[Assumption]</em> : the n-body wavefunction is a 1-d representation of the permutation group $S_n$ , then there are only two possibilities: bosons and fermions.</p>
 <ul>
 <li>
-<p>Being a 1-d representation means, for <code>$\sigma \in S_n$</code> ,</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$R(\sigma)$</code> is a complex number of unit modulus.</p>
-<!-- raw HTML omitted -->
+<p>Being a 1-d representation means, for $\sigma \in S_n$ ,</p>
+
+$$\psi(\bm{x}_{\sigma(1)},\cdots,\bm{x}_{\sigma(n)}) = R(\sigma) \psi(\bm{x}_1,\cdots,\bm{x}_n)$$
+
+
+<p>Where $R(\sigma)$ is a complex number of unit modulus.
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note
+    </summary>
+    
+
+the requirement of 1-d representation is come from we believe the wavefunction (with 1 component) can be completely discribe the many-body state
+
+    
+</details>
+</p>
 </li>
-</ul>
-<p>the requirement of 1-d representation is come from we believe the wavefunction (with 1 component) can be completely discribe the many-body state</p>
-<!-- raw HTML omitted -->
-<ul>
-<li><code>Bosons</code> : correspond to the trivial representation of permutation group, which means any permutation has no effect on the wavefunction. Integer spin particles. <!-- raw HTML omitted --></li>
-<li><code>Fermions</code> : correspond to the alternative representation of permutation group, which means pariwise exchage changes the sign of the wavefunction. Half-odd-integer spin particles.</li>
-<li>In 2-dimensional space, braiding group instead of permutation group should be considered, there are paticles(anyons) beyond bosons and fermions.</li>
+<li>
+<p><code>Bosons</code> : correspond to the trivial representation of permutation group, which means any permutation has no effect on the wavefunction. Integer spin particles. <br></p>
+</li>
+<li>
+<p><code>Fermions</code> : correspond to the alternative representation of permutation group, which means pariwise exchage changes the sign of the wavefunction. Half-odd-integer spin particles.</p>
+</li>
+<li>
+<p>In 2-dimensional space, braiding group instead of permutation group should be considered, there are paticles(anyons) beyond bosons and fermions.</p>
+</li>
 </ul>
 <h2 id="the-structure-of-many-body-hilbert-space">The Structure of Many-body Hilbert Space</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Fock space</code> : the Hilbert space of identical particles with indefinite particle number, is the <code>direct sum</code> of 0-partile &amp; 1-particle &amp; &hellip; Hilbert space:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : 0-particle Hilbert space: noted as <code>$\mathcal{H}_0$</code> , is a 1-d Hilbert space with only the <code>vacuum state</code> : <code>$\ket{0}$</code> <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : 1-particle Hilbert space: noted as <code>$\mathcal{H}_1$</code> , is the linear space of 1-body wavefunction. can be finite or infinite dimension.</p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>$n(\gt2)$</code>-particle Hilbert space: noted as <code>$\mathcal{H}_n$</code> , is a subspace of the tensor product <code>$(\mathcal{H}_1)^{\otimes n} \equiv \bigotimes_{i=1}^n \mathcal{H}_1$</code>, with (anti-)symmetrization between the factor <code>$\mathcal{H}_1$</code>s</p>
+<p><em>[Definition]</em> : <code>Fock space</code> : the Hilbert space of identical particles with indefinite particle number, is the <code>direct sum</code> of 0-partile &amp; 1-particle &amp; &hellip; Hilbert space:</p>
+
+$$\mathcal{F}= \mathcal{H}_0 \oplus \mathcal{H}_1 \oplus \mathcal{H}_2 \oplus \cdots$$
+
+
+<p><em>[Definition]</em> : 0-particle Hilbert space: noted as $\mathcal{H}_0$ , is a 1-d Hilbert space with only the <code>vacuum state</code> : $\ket{0}$ <br>
+<em>[Definition]</em> : 1-particle Hilbert space: noted as $\mathcal{H}_1$ , is the linear space of 1-body wavefunction. can be finite or infinite dimension.</p>
+<p><em>[Definition]</em> : $n(\gt2)$-particle Hilbert space: noted as $\mathcal{H}_n$ , is a subspace of the tensor product $(\mathcal{H}<em>1)^{\otimes n} \equiv \bigotimes</em>{i=1}^n \mathcal{H}_1$, with (anti-)symmetrization between the factor $\mathcal{H}_1$s</p>
 <ul>
 <li>
-<p>There shall be a (linear) map, maps the direct product state to the state of <code>$\mathcal{H}_n$</code> like:</p>
-<!-- raw HTML omitted -->
-<p>And permutations of <code>$\psi_i$</code> produce the same n-body state, up to a phase.</p>
+<p>There shall be a (linear) map, maps the direct product state to the state of $\mathcal{H}_n$ like:</p>
+
+$$\mathcal{S} : (\mathcal{H}_1)^{\otimes n} \rightarrow \mathcal{H}_n ; \ \ \ket{\psi_1}\otimes\ket{\psi_2}\otimes \cdots \otimes \ket{\psi_n} \mapsto \ket{\psi_1,\psi_2,\cdots,\psi_n}$$
+
+
+<p>And permutations of $\psi_i$ produce the same n-body state, up to a phase.</p>
 </li>
 <li>
-<p><code>Bosons</code>: permutations of <code>$\psi_i$</code> are trivial:</p>
-<!-- raw HTML omitted -->
+<p><code>Bosons</code>: permutations of $\psi_i$ are trivial:</p>
+
+$$\mathcal{S} : \ket{\psi_1}\cdots\ket{\psi_n} \mapsto \frac 1 {\sqrt{n!}} \sum_{\sigma \in S_n} \ket{\psi_{\sigma(1)}}\cdots\ket{\psi_{\sigma(n)}}$$
+
+
 <p>And</p>
-<!-- raw HTML omitted -->
-<p>And the wavefunction is the coefficient on the coordinate eigenstate basis <code>$\ket{\bm{x}_i}$</code> , we have:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\psi_{\sigma(1)},\cdots,\psi_{\sigma(n)}} = \ket{\psi_1,\cdots,\psi_n}$$
+
+
+<p>And the wavefunction is the coefficient on the coordinate eigenstate basis $\ket{\bm{x}_i}$ , we have:</p>
+
+$$\psi(\bm{x}_1,\cdots,\bm{x}_n) = \frac 1 {\sqrt{n!}} \sum_{\sigma\in S_n}\prod_i \psi_{\sigma(i)}(\bm{x}_i)\equiv \frac 1 {\sqrt{n!}}\text{perm}[\psi_j(\bm{x}_i)]$$
+
+
 <p>The norm of the wavefunction is:</p>
-<!-- raw HTML omitted -->
+
+$$\sqrt{\text{perm}[\langle \psi_i |\psi_j\rangle]} = \sqrt{\sum_{\sigma\in S_n}\prod_i \langle \psi_i|\psi_{\sigma(i)}\rangle}$$
+
+
 </li>
 <li>
-<p><code>Fermions</code>: permutations of <code>$\psi_i$</code> produce the factor <code>$(-1)^{\sigma}$</code> :</p>
-<!-- raw HTML omitted -->
+<p><code>Fermions</code>: permutations of $\psi_i$ produce the factor $(-1)^{\sigma}$ :</p>
+
+$$\mathcal{S} : \ket{\psi_1}\cdots\ket{\psi_n} \mapsto \frac 1 {\sqrt{n!}} \sum_{\sigma \in S_n} (-1)^{\sigma} \ket{\psi_{\sigma(1)}}\cdots\ket{\psi_{\sigma(n)}}$$
+
+
 <p>And</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>
+$$\ket{\psi_{\sigma(1)},\cdots,\psi_{\sigma(n)}} =(-1)^{\sigma} \ket{\psi_1,\cdots,\psi_n}$$
+
+
+And the wavefunction is the coefficient on the coordinate eigenstate basis $\ket{\bm{x}_i}$ , we have:</p>
+
+$$\psi(\bm{x}_1,\cdots,\bm{x}_n) = \frac 1 {\sqrt{n!}} \sum_{\sigma\in S_n}(-1)^{\sigma} \prod_i \psi_{\sigma(i)}(\bm{x}_i) = \frac 1 {\sqrt{n!}}\det[\psi_j(\bm{x}_i)]$$
+
+
 <p>The norm of the wavefunction is:</p>
-<!-- raw HTML omitted -->
+
+$$\sqrt{\det[\langle \psi_i|\psi_j\rangle]}$$
+
+
 </li>
 </ul>
 <h2 id="basis-of-many-body-hilbert-space">Basis of Many-body Hilbert Space</h2>
-<p>Given a complete orthonormal basis <code>$\{\ket{j}\}_{j=1}^{J}$</code> , we can construct the basis of <code>$\mathcal{H}_n$</code> :</p>
+<p>Given a complete orthonormal basis ${\ket{j}}_{j=1}^{J}$ , we can construct the basis of $\mathcal{H}_n$ :</p>
 <ul>
 <li>
-<p><code>Bosons</code>: basis are <code>$\ket{i_1,i_2,\cdots,i_n}$</code> , for all <code>$1\leq i_1\leq i_2 \leq \cdots \leq i_n\leq m$</code> <!-- raw HTML omitted -->
-These basis are <code>orthogonal , but not normalized</code> . And the number of basis (dimension of <code>$\mathcal{H}_n)$</code> is <code>$\begin{pmatrix} n+J-1 \\ n \end{pmatrix} = \frac {\Gamma(n+J)} {\Gamma(n+1)\Gamma(J)}$</code></p>
+<p><code>Bosons</code>: basis are $\ket{i_1,i_2,\cdots,i_n}$ , for all $1\leq i_1\leq i_2 \leq \cdots \leq i_n\leq m$ <br>
+These basis are <code>orthogonal , but not normalized</code> . And the number of basis (dimension of $\mathcal{H}_n)$ is $\begin{pmatrix} n+J-1 \ n \end{pmatrix} = \frac {\Gamma(n+J)} {\Gamma(n+1)\Gamma(J)}$</p>
 </li>
 <li>
-<p><code>Fermions</code>: basis are <code>$\ket{i_1,i_2,\cdots,i_n}$</code> , for all <code>$1\lt i_1\lt i_2 \lt \cdots \lt i_n\lt m$</code> <!-- raw HTML omitted -->
-When <code>$J\leq n$</code> , there is no many-body state, which is known as <code>Pauli exclusion</code> <!-- raw HTML omitted -->
-These basis are <code>orthonormal</code> . And the number of basis (dimension of <code>$\mathcal{H}_n)$</code> is <code>$\begin{pmatrix} J \\ n \end{pmatrix} = \frac {\Gamma(1+J)} {\Gamma(n+1)\Gamma(J-n+1)}$</code></p>
+<p><code>Fermions</code>: basis are $\ket{i_1,i_2,\cdots,i_n}$ , for all $1\lt i_1\lt i_2 \lt \cdots \lt i_n\lt m$ <br>
+When $J\leq n$ , there is no many-body state, which is known as <code>Pauli exclusion</code> <br>
+These basis are <code>orthonormal</code> . And the number of basis (dimension of $\mathcal{H}_n)$ is $\begin{pmatrix} J \ n \end{pmatrix} = \frac {\Gamma(1+J)} {\Gamma(n+1)\Gamma(J-n+1)}$</p>
 </li>
 </ul>
 <h2 id="occupation-number-rep">Occupation Number Rep.</h2>
-<p>denote the above basis <code>$\ket{i_1,i_2,\cdots,i_n}$</code> as <code>$\ket{1^{n_1},\cdots,m^{n_m}}$</code> , where <code>$n_j$</code> is the number of appearance of <code>$i_j$</code> , For <code>$n-$</code>particle state, <code>$\sum n_i=n$</code>.</p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Occupation basis</code> is the <code>normalized</code> state of this vector:</p>
-<!-- raw HTML omitted -->
-<p>For fermion , <code>$n_j=0 \text{ or }1$</code></p>
+<p>denote the above basis $\ket{i_1,i_2,\cdots,i_n}$ as $\ket{1^{n_1},\cdots,m^{n_m}}$ , where $n_j$ is the number of appearance of $i_j$ , For $n-$particle state, $\sum n_i=n$.</p>
+<p><em>[Definition]</em> : <code>Occupation basis</code> is the <code>normalized</code> state of this vector:</p>
+
+$$\ket{n_1,\cdots,n_m} = (n_1!)^{-1/2}(n_2!)^{-1/2}\cdots(n_m!)^{-1/2}\ket{1^{n_1},\cdots,m^{n_m}}$$
+
+
+<p>For fermion , $n_j=0 \text{ or }1$</p>
 <h1 id="second-quantization">Second Quantization</h1>
 <h2 id="creation--annihilation-operators">Creation &amp; Annihilation Operators</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Creation operator</code> is an operator maps vector from <code>$\mathcal{H}_n$</code> to one in <code>$\mathcal{H}_{n+1}$</code> :</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>Creation operator</code> is an operator maps vector from $\mathcal{H}<em>n$ to one in $\mathcal{H}</em>{n+1}$ :</p>
+
+$$\hat \psi^{\dagger} : \mathcal{H}_n \rightarrow \mathcal{H}_{n+1} \  \ ; \ \hat \psi^{\dagger}\ket{\psi_1,\cdots,\psi_n} = \ket{\psi,\psi_1,\cdots,\psi_n}$$
+
+
 <p>In occupation basis, it is :</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Annihilation operator</code> is an operator maps vector from <code>$\mathcal{H}_n$</code> to one in <code>$\mathcal{H}_{n-1}$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\nu=\pm 1$</code> for bosons <code>$\nu=1$</code>, for fermions <code>$\nu=-1$</code> <!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\text{For bosons: } & \hat a_i^{\dagger} \ket{\cdots,n_i,\cdots} = \sqrt{n_i+1}\ket{\cdots,(n_i+1),\cdots} \\
+\text{For fermions: } & \hat a_i^{\dagger} \ket{\cdots,n_i=0,\cdots} = (-1)^{\sum_{j=1}^{i-1} n_j}\ket{\cdots,n_i=1,\cdots}
+\end{aligned}$$
+
+
+<p><em>[Definition]</em> : <code>Annihilation operator</code> is an operator maps vector from $\mathcal{H}<em>n$ to one in $\mathcal{H}</em>{n-1}$ :</p>
+
+$$\hat \psi : \mathcal{H}_n \rightarrow \mathcal{H}_{n-1} \ \ ; \ \hat \psi \ket{\psi_1,\cdots,\psi_n} = \sum_{i=1}^n (\nu)^{i-1} \langle \psi |\psi_i \rangle \ket{\psi_1,\cdots,\psi_{i-1},\psi_{i+1},\cdots,\psi_n}$$
+
+
+<p>Where $\nu=\pm 1$ for bosons $\nu=1$, for fermions $\nu=-1$ <br>
 In occupation basis, it is:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\text{For bosons: } & \hat a_i \ket{\cdots,n_i,\cdots} = \sqrt{n_i}\ket{\cdots,(n_i-1),\cdots} \\
+\text{For fermions: } & \hat a_i \ket{\cdots,n_i=1,\cdots} = (-1)^{\sum_{j=1}^{i-1} n_j}\ket{\cdots,n_i=0,\cdots}
+\end{aligned}$$
+
+
 <p>And:</p>
-<!-- raw HTML omitted -->
+
+$$\ket{n_1,n_2,\cdots,n_m} = \frac {1} {\sqrt{\prod_j n_j!}}\prod_{j=1}^m \hat e_j^{\dagger n_j}\ket{0}$$
+
+
 <p>For vacuum, we have:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : <code>(Anti-)Commutation relations</code> : <!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>occupation number operator</code> : <code>$\hat n_{\psi} = \hat \psi^{\dagger}\hat \psi $</code>:</p>
+
+$$\begin{aligned}
+\hat \psi \ket{0}&=0 \text{ for any annihilation operator} \\
+\bra{0}\hat \psi^{\dagger} &= 0 \text{ for any creation operator}
+\end{aligned}$$
+
+
+<p><em>[Theorem]</em> : <code>(Anti-)Commutation relations</code> : <br></p>
+
+$$\begin{aligned}
+\text{For bosons: } & [\hat\psi,\hat\psi^{\dagger}] = 1 \\
+\text{For fermions: } & \{\hat\psi,\hat\psi^{\dagger}\} = 1
+\end{aligned}$$
+
+
+<p><em>[Definition]</em> : <code>occupation number operator</code> : $\hat n_{\psi} = \hat \psi^{\dagger}\hat \psi $:</p>
 <ul>
-<li><code>$[\hat n_{\psi},\hat\psi^{\dagger}]=\hat \psi^{\dagger}$</code> , namely <code>$\hat \psi^{\dagger}$</code> increases eigenvalue of <code>$\hat n_{\psi}$</code> by 1</li>
-<li><code>$[\hat n_{\psi},\hat\psi]=-\hat \psi$</code> , namely <code>$\hat \psi$</code> decreases eigenvalue of <code>$\hat n_{\psi}$</code> by 1</li>
-<li>Eigenvalues of <code>$\hat n_{\psi}$</code> are non-negative integers</li>
-<li>Occupation basis <code>$\ket{n_1,\cdots,n_m}$</code> are eigenstates of <code>$\hat n_i$</code> , with eigenvalue <code>$n_i$</code></li>
+<li>$[\hat n_{\psi},\hat\psi^{\dagger}]=\hat \psi^{\dagger}$ , namely $\hat \psi^{\dagger}$ increases eigenvalue of $\hat n_{\psi}$ by 1</li>
+<li>$[\hat n_{\psi},\hat\psi]=-\hat \psi$ , namely $\hat \psi$ decreases eigenvalue of $\hat n_{\psi}$ by 1</li>
+<li>Eigenvalues of $\hat n_{\psi}$ are non-negative integers</li>
+<li>Occupation basis $\ket{n_1,\cdots,n_m}$ are eigenstates of $\hat n_i$ , with eigenvalue $n_i$</li>
 </ul>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : <code>General (Anti-)Commutation relations</code> :</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : <code>Basis change</code> : <code>$\hat \psi^{\dagger} = \sum_i \langle e_i |\psi \rangle \hat {e_i}^{\dagger}$</code> , sum is over a complete orthonormal basis</p>
+<p><em>[Theorem]</em> : <code>General (Anti-)Commutation relations</code> :</p>
+
+$$\begin{aligned}
+\text{For bosons: } & [\hat\psi,\hat\psi'^{\dagger}] = \langle \psi|\psi'\rangle \ , \ [\hat \psi,\hat \psi']=0=[\hat \psi^{\dagger},\hat \psi'^{\dagger}] \\
+\text{For fermions: } & \{\hat\psi,\hat\psi^{\dagger}\} = \langle \psi|\psi'\rangle \ , \ \{\hat \psi,\hat \psi'\}=0=\{\hat \psi^{\dagger},\hat \psi'^{\dagger}\}
+\end{aligned}$$
+
+
+<p><em>[Theorem]</em> : <code>Basis change</code> : $\hat \psi^{\dagger} = \sum_i \langle e_i |\psi \rangle \hat {e_i}^{\dagger}$ , sum is over a complete orthonormal basis</p>
 <h2 id="some-calculation-tricks">Some Calculation Tricks</h2>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : for orthonormal basis of creation(annihilation) operators <code>$\hat e_j^{\dagger}, \hat e_i$</code> , the commutator:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : By the above fact, we have:</p>
-<!-- raw HTML omitted -->
-<p>Where the summation over the sequence <code>$(i'_1,\cdots,i'_n)$</code> which is <code>$(i_1,\cdots,i_n)$</code> with one appearance of <code>$j$</code> replaced by <code>$i$</code></p>
+<p><em>[Theorem]</em> : for orthonormal basis of creation(annihilation) operators $\hat e_j^{\dagger}, \hat e_i$ , the commutator:</p>
+<p>
+$$[\hat e_i^{\dagger}\hat e_j , \hat e_k^{\dagger}] = \delta_{jk}\hat e_i^{\dagger}$$
+
+
+This is true for both bosons and fermions. <br>
+The proof can be obtained by the following formula:
+
+$$[\hat A\hat B,\hat C] = \hat A[\hat B,\hat C]+[\hat A,\hat C]\hat B = \hat A\{\hat B,\hat C\}-\{\hat A,\hat C\}\hat B$$
+
+</p>
+<p><em>[Theorem]</em> : By the above fact, we have:</p>
+
+$$\hat e_i^{\dagger}\hat e_j \hat e_{i_1}^{\dagger}\cdots\hat e_{i_n}^{\dagger} \ket{0}=\sum_{i'_1,i'_2,\cdots,i'_n} \hat e_{i'_1}^{\dagger}\cdots\hat e_{i'_n}^{\dagger}\ket{0}$$
+
+
+<p>Where the summation over the sequence $(i'_1,\cdots,i'_n)$ which is $(i_1,\cdots,i_n)$ with one appearance of $j$ replaced by $i$</p>
 <h2 id="the-second-quantization">The Second Quantization</h2>
-<p><!-- raw HTML omitted -->[Rule]<!-- raw HTML omitted --> : <code>the rule of thumb</code> , to get a <code>many-body</code> Hamiltonian <code>(defined on the Fock space)</code> , simply <code>replace</code> 1-body wavefunction <code>$\psi(x),\psi^*(x)$</code> in the <code>Energy formula</code> for product
-states by <code>$\hat \psi(x), \hat \psi^{\dagger}(x)$</code> , remove the summations over all particles and need some <code>normal ordering</code></p>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p><code>kinetic energy</code> : <!-- raw HTML omitted -->
-In original way, we write the kinetic energy as:</p>
-<!-- raw HTML omitted -->
-<p>Then the corresponding many-body term is:</p>
-<!-- raw HTML omitted -->
-</li>
-<li>
-<p><code>1-body potential energy</code> : <!-- raw HTML omitted -->
-In original way , we write the 1-body potential energy as:</p>
-<!-- raw HTML omitted -->
-<p>And the corresponding many-body term is :</p>
-<!-- raw HTML omitted -->
-</li>
-<li>
-<p><code>2-body potential energy</code> : <!-- raw HTML omitted -->
-For 2-body interaction, we have the potential energy in original way:</p>
-<!-- raw HTML omitted -->
-<p>The corresponding many-body term is :</p>
-<!-- raw HTML omitted -->
-</li>
-</ul>
-<!-- raw HTML omitted -->
+<p><em>[Rule]</em> : <code>the rule of thumb</code> , to get a <code>many-body</code> Hamiltonian <code>(defined on the Fock space)</code> , simply <code>replace</code> 1-body wavefunction $\psi(x),\psi^*(x)$ in the <code>Energy formula</code> for product
+states by $\hat \psi(x), \hat \psi^{\dagger}(x)$ , remove the summations over all particles and need some <code>normal ordering</code></p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Examples
+    </summary>
+    
+
+-   `kinetic energy` : <br>
+    In original way, we write the kinetic energy as:
+
+    
+$$T = \sum_i \int \psi^*_i(x)\big(-\frac {\partial_x^2} {2m}\big)\psi_i(x)\td x$$
+
+
+
+    Then the corresponding many-body term is:
+
+    
+$$\hat T = \int \hat \psi^{\dagger}(x)\big(-\frac {\partial_x^2} {2m} \big) \hat \psi(x)\td x= \int \hat \psi^{\dagger}(p)\big(\frac {p^2} {2m} \big) \hat \psi(p)\td p$$
+
+
+
+-   `1-body potential energy` : <br>
+    In original way , we write the 1-body potential energy as:
+
+    
+$$V_1 = \sum_i \int V(x)\psi^*_i(x)\psi_i(x)\td x$$
+
+
+
+    And the corresponding many-body term is :
+
+    
+$$\hat V_1 = \int V(x)\hat \psi^{\dagger}(x)\hat \psi(x)\td x$$
+
+
+
+-   `2-body potential energy` : <br>
+    For 2-body interaction, we have the potential energy in original way:
+
+    
+$$V_2 = \frac 1 2 \sum_{i\neq j} \int V(x,x')\psi_i^*(x)\psi_i(x)\psi_j^*(x')\psi_j(x')\td x\td x'$$
+
+
+
+    The corresponding many-body term is :
+
+    
+$$\hat V_2 = \frac 1 2\int V(x,x') \hat \psi^{\dagger}(x)\hat \psi^{\dagger}(x')\hat \psi(x')\hat \psi(x)\td x\td x'$$
+
+
+
+
+</details>
+
 <h1 id="special-many-body-states">Special Many-body States</h1>
 <h2 id="fermion-product-statefermi-sea">Fermion Product State(Fermi Sea)</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : the Fermion Product State is:</p>
-<!-- raw HTML omitted -->
-<p>Norm of this state is given by the Gram determinant: <code>$\sqrt{\text{det}[\langle \psi_i|\psi_j\rangle]}$</code> . <!-- raw HTML omitted -->
-If <code>$\psi_i$</code> are linearly dependent , this state vanishes. <!-- raw HTML omitted -->
-Linearly independent <code>$\psi_i$</code> span a n-dimensional 1-body Hilbert space. Given a complete orthonormal basis of this sapce <code>$c_i$</code> , then:</p>
-<!-- raw HTML omitted -->
-<p>And this state is the eigenstate of <code>$\hat n=\sum_i \hat c_i^{\dagger}\hat c_i$</code> with eigenvalue is <code>$n$</code>. <!-- raw HTML omitted -->
+<p><em>[Definition]</em> : the Fermion Product State is:</p>
+
+$$|\psi_1,\cdots,\psi_n\rangle = \prod_{i=1}^n \hat \psi_i^{\dagger}\ket{0}$$
+
+
+<p>Norm of this state is given by the Gram determinant: $\sqrt{\text{det}[\langle \psi_i|\psi_j\rangle]}$ . <br>
+If $\psi_i$ are linearly dependent , this state vanishes. <br>
+Linearly independent $\psi_i$ span a n-dimensional 1-body Hilbert space. Given a complete orthonormal basis of this sapce $c_i$ , then:</p>
+
+$$\ket{\psi_1,\cdots,\psi_n} = \text{det}[\langle c_i|\psi_j\rangle] \ket{c_1,\cdots,c_n}$$
+
+
+<p>And this state is the eigenstate of $\hat n=\sum_i \hat c_i^{\dagger}\hat c_i$ with eigenvalue is $n$. <br>
 The <code>parent Hamiltonian</code> of this state is:</p>
-<!-- raw HTML omitted -->
+
+$$\hat H = -\sum_{i=1}^n \hat c_i^{\dagger}\hat c_i + \sum_{i=n+1}^m \hat c_i^{\dagger}\hat c_i$$
+
+
 <p>Namely, the unique ground state of this Hamiltonian is this fermion product state.</p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Particle-hole Transformation of Fermions</code> of a single fermion mode: formally <code>$\hat c_i \leftrightarrow \hat c_i^{\dagger}$</code>. <!-- raw HTML omitted -->
-This will preserve the anti-commutation relations. <!-- raw HTML omitted -->
-This correspongds to a unitary transformation on the Fock space: <code>$\hat U = (\hat c_i+\hat c_i^{\dagger})\cdot (-1)^{\sum_{j\neq i}\hat c_j^{\dagger}\hat c_j}$</code> , this will let:</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>Particle-hole Transformation of Fermions</code> of a single fermion mode: formally $\hat c_i \leftrightarrow \hat c_i^{\dagger}$. <br>
+This will preserve the anti-commutation relations. <br>
+This correspongds to a unitary transformation on the Fock space: $\hat U = (\hat c_i+\hat c_i^{\dagger})\cdot (-1)^{\sum_{j\neq i}\hat c_j^{\dagger}\hat c_j}$ , this will let:</p>
+
+$$\hat U^{\dagger}\hat U = \hat 1 \ \ \hat U \hat c_i\hat U^{\dagger} = \hat c_i^{\dagger} \ \ \hat U \hat c_j\hat U^{\dagger} = \hat c_j  \text{ for } j\neq i$$
+
+
 <p>And the unitary transformation on occupation number basis is:</p>
-<!-- raw HTML omitted -->
-<p>And the factor <code>$(-1)^{\sum_{j\gt i}n_j}$</code> is preserve the matrix elements of <code>$\hat \psi_j , \hat \psi_k^{\dagger}$</code> for <code>$j\gt i$</code>. <!-- raw HTML omitted -->
-In particular, the new &ldquo;vacuum&rdquo; is originally <code>$\ket{0,\cdots,n_i=1,\cdots,0}$</code>.</p>
+
+$$\ket{\cdots,n_i=0,\cdots}\leftrightarrow (-1)^{\sum_{j\gt i} n_j} \ket{\cdots,n_i=1,\cdots}$$
+
+
+<p>And the factor $(-1)^{\sum_{j\gt i}n_j}$ is preserve the matrix elements of $\hat \psi_j , \hat \psi_k^{\dagger}$ for $j\gt i$. <br>
+In particular, the new &ldquo;vacuum&rdquo; is originally $\ket{0,\cdots,n_i=1,\cdots,0}$.</p>
 <h2 id="fermion-pairing-statebcs-state">Fermion Pairing State(BCS state)</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : Consider two orthonormal fermion modes <code>$c_1, c_2$</code> , the pairing state is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\lambda \in\mathbb{C}$</code> <!-- raw HTML omitted -->
-This state is <code>not</code> an eigenstate of fermion number operator <code>$\hat c_1^{\dagger}\hat c_1+\hat c_2^{\dagger}\hat c_2$</code> . <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Bogoliubov</code> transformation which defines the <code>Boogoliubov quasiparticles</code> :</p>
-<!-- raw HTML omitted -->
-<p>where <code>$u=(1+|\lambda|^2)^{-1/2} $</code> and <code>$v=-\lambda(1+|\lambda|^2)^{-1/2}$</code> . <!-- raw HTML omitted -->
-This two operator satisfy: <code>$\{\hat \gamma_i,\hat \gamma_j^{\dagger}\}=\delta_{ij}$</code> <!-- raw HTML omitted -->
-The pairing state is vanished by <code>$\hat \gamma_i$</code> , namely <code>$\hat \gamma \ket{\lambda}=0$</code> <!-- raw HTML omitted -->
+<p><em>[Definition]</em> : Consider two orthonormal fermion modes $c_1, c_2$ , the pairing state is:</p>
+
+$$\ket{\lambda} = (1+|\lambda|^2)^{-1/2}\exp(\lambda \hat c_1^{\dagger}\hat c_2^{\dagger}) \ket{0}$$
+
+
+<p>Where $\lambda \in\mathbb{C}$ <br>
+This state is <code>not</code> an eigenstate of fermion number operator $\hat c_1^{\dagger}\hat c_1+\hat c_2^{\dagger}\hat c_2$ . <br>
+<em>[Definition]</em> : <code>Bogoliubov</code> transformation which defines the <code>Boogoliubov quasiparticles</code> :</p>
+
+$$\begin{aligned}
+\hat \gamma_1 &= u\hat c_1+v \hat c_2^{\dagger} \\
+\hat \gamma_2 &= -v\hat c_1^{\dagger}+u\hat c_2
+\end{aligned}$$
+
+
+<p>where $u=(1+|\lambda|^2)^{-1/2} $ and $v=-\lambda(1+|\lambda|^2)^{-1/2}$ . <br>
+This two operator satisfy: ${\hat \gamma_i,\hat \gamma_j^{\dagger}}=\delta_{ij}$ <br>
+The pairing state is vanished by $\hat \gamma_i$ , namely $\hat \gamma \ket{\lambda}=0$ <br>
 And the <code>parent Hamiltonian</code> is</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Generic fermion pairing state</code> is defined as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$c_i$</code> are some orthonormal basis, and <code>$f_{ij}=-f_{ji}$</code> are some complex numbers. <!-- raw HTML omitted -->
-By a orthogonal transformation <code>$\hat c_i^{\dagger} \rightarrow O_{ij}\hat {(c')}_j^{\dagger}$</code> , where <code>$\bm{O}$</code> is an orthogonal matrix, the antisymmetric matrix <code>$\bm{f}$</code>  can be brought into a standard form:</p>
-<!-- raw HTML omitted -->
-<p>the state becomes <code>$\propto \exp(\lambda_1 \hat{c'}_1^{\dagger} \hat{c'}_2^{\dagger}+\lambda \hat{c'}_3^{\dagger}\hat {c'}_4^{\dagger}+\cdots)\ket{0}$</code> . <!-- raw HTML omitted -->
-Bogoliubov transformations can be defined on <code>$\hat {c'}_{2i-1}$</code> &amp; <code>$\hat {c'}_{2i}$</code>.</p>
+
+$$\hat H = \hat \gamma_1^{\dagger}\hat \gamma_1 +\hat \gamma_2^{\dagger}\hat \gamma_2$$
+
+
+<p><em>[Definition]</em> : <code>Generic fermion pairing state</code> is defined as:</p>
+
+$$\ket{\{f_{ij}\}} \propto \exp(\frac 1 2 \sum_{i,j}f_{ij}\hat c_i^{\dagger}\hat c_j^{\dagger})\ket{0}$$
+
+
+<p>Where $c_i$ are some orthonormal basis, and $f_{ij}=-f_{ji}$ are some complex numbers. <br>
+By a orthogonal transformation $\hat c_i^{\dagger} \rightarrow O_{ij}\hat {(c')}_j^{\dagger}$ , where $\bm{O}$ is an orthogonal matrix, the antisymmetric matrix $\bm{f}$  can be brought into a standard form:</p>
+
+$$\bm{O}^T \bm{f}\bm{O} = \begin{bmatrix} 0 & \lambda_1 & 0 & 0 & \cdots \\ -\lambda_1 & 0&0&0&\cdots \\ 0&0&0& \lambda_2&\cdots \\ 0&0& -\lambda_2&0&\cdots \\ \vdots&\vdots&\vdots&\vdots&\ddots\end{bmatrix}$$
+
+
+<p>the state becomes $\propto \exp(\lambda_1 \hat{c'}_1^{\dagger} \hat{c'}_2^{\dagger}+\lambda \hat{c'}<em>3^{\dagger}\hat {c'}<em>4^{\dagger}+\cdots)\ket{0}$ . <br>
+Bogoliubov transformations can be defined on $\hat {c'}</em>{2i-1}$ &amp; $\hat {c'}</em>{2i}$.</p>
 <h2 id="boson-coherent-state">Boson Coherent State</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : The coherent state from a single boson mode <code>$\hat b$</code> is:</p>
-<!-- raw HTML omitted -->
-<p>where <code>$z\in \mathbb{C}$</code> . <!-- raw HTML omitted -->
-This state is <code>not</code> an eigenstate of boson number <code>$\hat b^{\dagger}\hat b$</code> , but <code>$\hat b\ket{z}=z\ket{z}$</code> , therefor this state vanished by <code>$\hat b'=\hat b-z$</code> <!-- raw HTML omitted -->
-The <code>parent Hamiltonian</code> is thus <code>$\hat H = (\hat b-z)^{\dagger}(\hat b-z)$</code> <!-- raw HTML omitted -->
+<p><em>[Definition]</em> : The coherent state from a single boson mode $\hat b$ is:</p>
+
+$$\ket{z} = e^{-|z|^2/2}e^{z\hat b^{\dagger}} \ket{0}$$
+
+
+<p>where $z\in \mathbb{C}$ . <br>
+This state is <code>not</code> an eigenstate of boson number $\hat b^{\dagger}\hat b$ , but $\hat b\ket{z}=z\ket{z}$ , therefor this state vanished by $\hat b'=\hat b-z$ <br>
+The <code>parent Hamiltonian</code> is thus $\hat H = (\hat b-z)^{\dagger}(\hat b-z)$ <br>
 The inner product between two Boson Coherent state is:</p>
-<!-- raw HTML omitted -->
+
+$$\langle z'|z\rangle = e^{-(|z|^2+|z'|^2)/2} e^{z(z')^* } $$
+
+
 <h2 id="boson-pairing-state">Boson Pairing State</h2>
-<p>Consider two orthonormal boson modes <code>$\hat b_1,\hat b_2$</code> , the boson pairing state is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\lambda \in \mathbb{C} , |\lambda|\lt 1$</code> . <!-- raw HTML omitted -->
-This state is <code>not</code> an eigenstate of boson number : <code>$\hat b_1^{\dagger}\hat b_1+\hat b_2^{\dagger}\hat b_2$</code> <!-- raw HTML omitted -->
+<p>Consider two orthonormal boson modes $\hat b_1,\hat b_2$ , the boson pairing state is:</p>
+
+$$\ket{\lambda} = (1-|\lambda|^2)^{1/2}\exp(\lambda \hat b_1^{\dagger}\hat b_2^{\dagger})\ket{0}$$
+
+
+<p>Where $\lambda \in \mathbb{C} , |\lambda|\lt 1$ . <br>
+This state is <code>not</code> an eigenstate of boson number : $\hat b_1^{\dagger}\hat b_1+\hat b_2^{\dagger}\hat b_2$ <br>
 Bogoliubov transformation:</p>
-<!-- raw HTML omitted -->
-<p>where <code>$u=(1-|\lambda|^2)^{-1/2} , v=-\lambda(1-|\lambda|^2)^{-1/2}$</code>.
-Then <code>$\hat \gamma_i\ket{\lambda}=0$</code> <!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\hat \gamma_1 &= u\hat b_1+v\hat b_2^{\dagger} \\
+\hat \gamma_2 &= u\hat b_2+v\hat b_1^{\dagger}
+\end{aligned}$$
+
+
+<p>where $u=(1-|\lambda|^2)^{-1/2} , v=-\lambda(1-|\lambda|^2)^{-1/2}$.
+Then $\hat \gamma_i\ket{\lambda}=0$ <br>
 The <code>parent Hamiltonian </code> is:</p>
-<!-- raw HTML omitted -->
+
+$$\hat H =\hat \gamma_1^{\dagger}\hat \gamma_1+\hat \gamma_2^{\dagger}\hat \gamma_2$$
+
+
 <h1 id="the-wick-expansion">The Wick Expansion</h1>
-<p>Let <code>$\ket{0}$</code> be the single-particle vacuum , Let <code>$\hat A_i (i=1,\cdots,2n)$</code> be a set of single-particle operators, namely linear cominations of annihilation and creation operators, then
-<code>$\bra{0}\hat A_1\hat A_2\cdots\hat A_{2n}\ket{0}$</code> is the <code>Hafnian(Pfaffian)</code> of matrix <code>$\bra{0}\hat A_i\hat A_j\ket{0}$</code> for bosons(fermions) . <!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Hafnian</code> of <code>$2n\times 2n$</code> symmetric matrix <code>$M_{ij}$</code> is :</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Pfaffian</code> of <code>$2n\times 2n$</code> anti-symmetric matrix <code>$M_{ij}$</code> is :</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Notes]<!-- raw HTML omitted --> : this is true only for such <code>free particle</code> states <code>$\ket{0}$</code> , the matrix <code>$\bra{0}\hat A_i\hat A_j\ket{0}$</code> may not be symmetric or anti-symmetric, but the above definition of Hafnian/Pfaffian still works for the Wick expansion</p>
+<p>Let $\ket{0}$ be the single-particle vacuum , Let $\hat A_i (i=1,\cdots,2n)$ be a set of single-particle operators, namely linear cominations of annihilation and creation operators, then
+$\bra{0}\hat A_1\hat A_2\cdots\hat A_{2n}\ket{0}$ is the <code>Hafnian(Pfaffian)</code> of matrix $\bra{0}\hat A_i\hat A_j\ket{0}$ for bosons(fermions) . <br></p>
+<p><em>[Definition]</em> : <code>Hafnian</code> of $2n\times 2n$ symmetric matrix $M_{ij}$ is :</p>
+
+$$\text{Hf}(\bm{M}) = \frac 1 {n!} \sum_{\sigma\in S_{2n}, \sigma(1)\lt \sigma(2), \sigma(3)\lt \sigma(4),\cdots} M_{\sigma(1)\sigma(2)} M_{\sigma(3)\sigma(4)}\cdots M_{\sigma(2n-1)\sigma(2n)}$$
+
+
+<p><em>[Definition]</em> : <code>Pfaffian</code> of $2n\times 2n$ anti-symmetric matrix $M_{ij}$ is :</p>
+
+$$\text{Pf}(\bm{M}) = \frac 1 {n!} \sum_{\sigma\in S_{2n}, \sigma(1)\lt \sigma(2), \sigma(3)\lt \sigma(4),\cdots} (-1)^{\sigma} M_{\sigma(1)\sigma(2)} M_{\sigma(3)\sigma(4)}\cdots M_{\sigma(2n-1)\sigma(2n)}$$
+
+
+<p><em>[Notes]</em> : this is true only for such <code>free particle</code> states $\ket{0}$ , the matrix $\bra{0}\hat A_i\hat A_j\ket{0}$ may not be symmetric or anti-symmetric, but the above definition of Hafnian/Pfaffian still works for the Wick expansion</p>
 
           </div>
 
@@ -1205,7 +1343,7 @@ The <code>parent Hamiltonian </code> is:</p>
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1247,23 +1385,8 @@ The <code>parent Hamiltonian </code> is:</p>
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1287,13 +1410,39 @@ The <code>parent Hamiltonian </code> is:</p>
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1306,9 +1455,6 @@ The <code>parent Hamiltonian </code> is:</p>
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

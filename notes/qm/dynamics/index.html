@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The dynamics theory of Quantum mechanics. And basic introduction for path-integral formalism.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Quantum Dynamics | Leonard 
-  
+    
+     Quantum Dynamics | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/qm/dynamics/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>15 minutes read</li>
     
   </ul>
   
@@ -456,268 +393,565 @@ autocomplete('#aa-search-input',
           <div class="post-content markdown">
             <h1 id="time-evolution">Time Evolution</h1>
 <h2 id="unitary-time-evolution">Unitary Time Evolution</h2>
-<p><!-- raw HTML omitted -->[Assumption]<!-- raw HTML omitted --> : The basic assumption of quantum dynamics is that , the time evolution of a closed system is <code>unitary</code> . <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Time evolution operator</code> : That means if we note the quantum state at time <code>$t$</code> as <code>$\ket{\psi(t)}$</code> , then there is a <code>Unitary operator</code>
-<code>$\hat U(t',t)$</code> , one have:</p>
-<!-- raw HTML omitted -->
+<p><em>[Assumption]</em> : The basic assumption of quantum dynamics is that , the time evolution of a closed system is <code>unitary</code> . <br>
+<em>[Definition]</em> : <code>Time evolution operator</code> : That means if we note the quantum state at time $t$ as $\ket{\psi(t)}$ , then there is a <code>Unitary operator</code>
+$\hat U(t',t)$ , one have:</p>
+
+$$\ket{\psi(t')} = \hat U(t',t)\ket{\psi(t)}$$
+
+
 <p>The evolution operator has the following property:</p>
-<!-- raw HTML omitted -->
+
+$$\hat U(t'',t')\hat U(t',t)=\hat U(t'',t) \ \ ; \ \hat U(t,t)=\hat 1$$
+
+
 <p>It is usually <code>continuous</code> and <code>reversible</code></p>
 <p>The infinitesimal time evolution:</p>
-<!-- raw HTML omitted -->
+
+$$\hat U(t+\td t,t) = \hat 1 -\frac {\ti} {\hbar} \hat H(t)\td t +O(dt^2)$$
+
+
 <p>Where the Hamiltonian is:</p>
-<!-- raw HTML omitted -->
-<p>Then for <code>$(\partial_1 \hat U(t',t))\hat U^{\dagger}(t',t)+\hat U(t',t)\partial_1\hat U^{\dagger}(t',t)=0$</code> , one can find that <code>$\hat H$</code> is Hermitian <!-- raw HTML omitted -->
-Moreover, one can prove that <code>$\frac {\td \hat U(t',t)} {\td t'} \hat U^{\dagger}(t',t)$</code> is independent to <code>$t$</code>:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Q.E.D.</p>
-<!-- raw HTML omitted -->
+
+$$\hat H(t) = \ti \hbar \frac {\td} {\td t'} \hat U(t',t)\Big|_{t'=t}=\ti \hbar \frac {\td \hat U(t',t)} {\td t'} \hat U^{\dagger}(t',t)\Big|_{t'=t}$$
+
+
+<p>Then for $(\partial_1 \hat U(t',t))\hat U^{\dagger}(t',t)+\hat U(t',t)\partial_1\hat U^{\dagger}(t',t)=0$ , one can find that $\hat H$ is Hermitian <br>
+Moreover, one can prove that $\frac {\td \hat U(t',t)} {\td t'} \hat U^{\dagger}(t',t)$ is independent to $t$:</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+
+$$\begin{aligned}[]
+\frac {\td \hat U(t,t_0)} {\td t} \hat U^{\dagger}(t,t_0) &= \frac {\td \hat U(t,t'_0)} {\td t} \hat U(t'_0,t_0) (\hat U(t,t'_0)\hat U(t'_0,t_0))^{\dagger} \\
+&= \frac {\td \hat U(t,t'_0)} {\td t} \hat U(t'_0,t_0) \hat U^{\dagger}(t'_0,t_0) \hat U^{\dagger}(t,t'_0) \\
+&= \frac {\td \hat U(t,t'_0)} {\td t} \hat U^{\dagger}(t,t'_0)
+\end{aligned}$$
+
+
+
+Q.E.D.
+
+</details>
+
 <p>Then we define that:
-<!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Hamiltonian</code> is</p>
-<!-- raw HTML omitted -->
-<p>which is independent to initial time <code>$t_0$</code> <!-- raw HTML omitted -->
+<em>[Definition]</em> : <code>Hamiltonian</code> is</p>
+
+$$\hat H(t) = \ti \hbar \frac {\td \hat U(t,t_0)} {\td t} \hat U^{\dagger} (t,t_0)$$
+
+
+<p>which is independent to initial time $t_0$ <br>
 By this definition, one can write down the equation that discribes the evolution of evolution operator:</p>
-<!-- raw HTML omitted -->
+
+$$\ti \hbar \frac {\partial} {\partial t} \hat U(t,t_0) = \hat H(t) \hat U(t,t_0)$$
+
+
 <h2 id="schrodinger-equation-and-schrodinger-picture">Schrodinger Equation and Schrodinger Picture</h2>
-<p>Applying the evolution equation of <code>$\hat U(t,t_0)$</code>, one can derive the evolution equation of quantum state:</p>
-<!-- raw HTML omitted -->
-<p>When <code>$\hat H$</code> is independent to <code>$t$</code> , one can &ldquo;solve&rdquo; this as:</p>
-<!-- raw HTML omitted -->
+<p>Applying the evolution equation of $\hat U(t,t_0)$, one can derive the evolution equation of quantum state:</p>
+
+$$\ti \hbar \frac{\td} {\td t}  \ket{\psi(t)} = \hat H(t)\ket{\psi(t)}$$
+
+
+<p>When $\hat H$ is independent to $t$ , one can &ldquo;solve&rdquo; this as:</p>
+
+$$\ket{\psi(t)} = \exp((t-t_0) \hat H/\ti \hbar) \ket{\psi(t_0)} \ ; \ \ \hat U(t,t_0) = \exp\big(\frac {(t-t_0)} {\ti \hbar} \hat H\big)$$
+
+
 <p>In general, one can write that :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\mathcal{T}$</code> means time-ordering:</p>
+
+$$\hat U(t,t_0) = \mathcal{T}\Big(\exp\big(-\frac {\ti} {\hbar} \int_{t'=t_0}^t \hat H (t')\td t' \big) \Big)\equiv \sum_{n=0}^{\infty} \Big(\frac {1} {\ti \hbar}\Big)^n \frac 1 {n!} \int_{t_1,\cdots,t_n=t_0}^t \td t_1\cdots \td t_n \mathcal{T}\big(\prod_{i} \hat H (t_i) \big)$$
+
+
+<p>Where $\mathcal{T}$ means time-ordering:</p>
 <ul>
-<li>For <code>Bosonic</code> <code>$\hat A,\hat B$</code> , <code>$\mathcal{T}(\hat A(t)\hat B(t')) = \begin{cases} \hat A(t)\hat B(t') &amp; t\gt t' \\ \hat B(t')\hat A(t) &amp; t'\gt t\end{cases}$</code></li>
-<li>For <code>Fermionic</code> <code>$\hat A,\hat B$</code> , <code>$\mathcal{T}(\hat A(t)\hat B(t')) = \begin{cases} \hat A(t)\hat B(t') &amp; t\gt t' \\ (-1)\hat B(t')\hat A(t) &amp; t'\gt t\end{cases}$</code></li>
+<li>For <code>Bosonic</code> $\hat A,\hat B$ , $\mathcal{T}(\hat A(t)\hat B(t')) = \begin{cases} \hat A(t)\hat B(t') &amp; t\gt t' \ \hat B(t')\hat A(t) &amp; t'\gt t\end{cases}$</li>
+<li>For <code>Fermionic</code> $\hat A,\hat B$ , $\mathcal{T}(\hat A(t)\hat B(t')) = \begin{cases} \hat A(t)\hat B(t') &amp; t\gt t' \ (-1)\hat B(t')\hat A(t) &amp; t'\gt t\end{cases}$</li>
 </ul>
 <p>And this is equivalent to the <code>Dyson series</code> :</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : eigenstates of Hamiltonian are <code>Stationary states</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\hat U(t,t_0) = \hat 1 + \frac {1} {\ti \hbar} \int_{t_1=t_0}^t \hat H(t_1)\td t_1 + \Big(\frac 1 {\ti\hbar} \Big)^2 \int_{t_2=t_0}^t \int_{t_1=t_0}^{t_2} \hat H(t_2)\hat H(t_1)\td t_2\td t_1 +\cdots$$
+
+
+<p><em>[Theorem]</em> : eigenstates of Hamiltonian are <code>Stationary states</code> :</p>
+
+$$\ket{E,t} = e^{-\ti E(t-t_0)}\ket{E,t_0} \ \ \text{ where }\hat H\ket{E,t}=E\ket{E,t}$$
+
+
 <p>And expectation value of any operator does not change over time, density matrix does not change over time.</p>
-<p>This is the <code>Schorodinger picture</code> (subscript <code>$_S$</code> hereafter) : <!-- raw HTML omitted -->time evolution is implemented on the state<!-- raw HTML omitted --></p>
+<p>This is the <code>Schorodinger picture</code> (subscript $_S$ hereafter) : <mark>time evolution is implemented on the state</mark></p>
 <h2 id="the-heisenberg-picture">The Heisenberg Picture</h2>
-<p>The <code>Heisenberg picture</code> (subscript <code>$_H$</code> hereafter) : <!-- raw HTML omitted -->time evolution is encoded in operators, while the states have no evolution<!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : the time-dependent operator <code>$\hat O_H(t)$</code> in the Heisenberg picture is:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Then for matrix elements in Heisenberg picture, one have: <code>$\bra{\psi}\hat O_H(t)\ket{\phi} = \bra{\psi(t)}\hat O_S \ket{\phi(t)}$</code></p>
-<!-- raw HTML omitted -->
-<p>The Heisenberg equation of motion:</p>
-<!-- raw HTML omitted -->
+<p>The <code>Heisenberg picture</code> (subscript $_H$ hereafter) : <mark>time evolution is encoded in operators, while the states have no evolution</mark></p>
+<p><em>[Definition]</em> : the time-dependent operator $\hat O_H(t)$ in the Heisenberg picture is:</p>
+
+$$\hat O_H(t) = \hat U^{\dagger} (t) \hat O_S \hat U(t)$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note
+    </summary>
+    
+Then for matrix elements in Heisenberg picture, one have: $\bra{\psi}\hat O_H(t)\ket{\phi} = \bra{\psi(t)}\hat O_S \ket{\phi(t)}$
+
+</details>
+
+<p>The Heisenberg equation of motion:
+
+$$\hbar \frac {\td} {\td t} \hat O_H(t) = \ti [\hat H_H(t),\hat O_H(t)]$$
+
+
+Where $\hat H_H(t) = \hat U^{\dagger}(t)\hat H_S(t)\hat U(t) =\ti \hbar \hat U^{\dagger}(t)\frac {\td} {\td t} \hat U(t) $ <br>
+When $\hat H_S(t)$ is independent of time, then $\hat H$ is commutative with $\hat U$ , and $\hat H_H = \hat H_S$</p>
 <h1 id="some-examples-about-dynamics">Some Examples About Dynamics</h1>
 <h2 id="liouville-equation">Liouville Equation</h2>
-<p>In Schrodinger picture, For <code>$\hat \rho(t)  = \sum_i \lambda_i \ket{\psi_i(t)}\bra{\psi_i(t)}$</code> , one can write down:</p>
-<!-- raw HTML omitted -->
+<p>In Schrodinger picture, For $\hat \rho(t)  = \sum_i \lambda_i \ket{\psi_i(t)}\bra{\psi_i(t)}$ , one can write down:</p>
+
+$$\ti \hbar \frac {\td \hat \rho(t)} {\td t} = [\hat H_S(t),\hat \rho(t)]$$
+
+
 <p>But in Heisenberg picture, the density matrix will never change by time</p>
 <h2 id="single-particle-dynamics">Single Particle Dynamics</h2>
 <p>Consider time independent Hamiltonian:</p>
-<!-- raw HTML omitted -->
+
+$$\hat H = \frac {\hat {\bm{p}}^2} {2m} +V(\hat {\bm{x}})$$
+
+
 <ul>
 <li>
 <p>In Schrodinger picture, one can obtain a continuity equation:</p>
-<!-- raw HTML omitted -->
-<p>where probability density <code>$\rho(\bm{x},t) = \psi^*(\bm{x},t)\psi(\bm{x},t) = \bra{\bm{x}}\hat \rho\ket{\bm{x}}$</code> <!-- raw HTML omitted -->
-and probability current <code>$\bm{J}(\bm{x},t) = \frac {\hbar} m \text{Im}\big(\psi^*(\bm{x},t)\nabla\psi(\bm{x},t) \big)$</code></p>
+
+$$\frac {\partial} {\partial t} \rho(\bm{x},t) + \nabla \cdot \bm{J}(\bm{x},t)=0$$
+
+
+<p>where probability density $\rho(\bm{x},t) = \psi^<em>(\bm{x},t)\psi(\bm{x},t) = \bra{\bm{x}}\hat \rho\ket{\bm{x}}$ <br>
+and probability current $\bm{J}(\bm{x},t) = \frac {\hbar} m \text{Im}\big(\psi^</em>(\bm{x},t)\nabla\psi(\bm{x},t) \big)$</p>
 </li>
 <li>
-<p>In Heisenberg picture, one can obtain the Ehrenfest theorem: <!-- raw HTML omitted -->
-the equation of motion of position <code>$\hat{\bm{x}}_{H} $</code> and momentum <code>$\hat{\bm{p}}_H$</code> are:</p>
-<!-- raw HTML omitted -->
+<p>In Heisenberg picture, one can obtain the Ehrenfest theorem: <br>
+the equation of motion of position $\hat{\bm{x}}_{H} $ and momentum $\hat{\bm{p}}_H$ are:</p>
+
+$$\begin{aligned}
+    \frac {\td} {\td t} \hat{\bm{x}}_H(t) &= \frac {\ti} {\hbar} [\hat H,\hat{\bm{x}}_H] = \frac {\hat{\bm{p}}_H} {m} \\
+    \frac {\td} {\td t} \hat{\bm{p}}_H(t) &= \frac {\ti} {\hbar} [\hat H,\hat{\bm{p}}_H] = -\nabla V(\hat{\bm{x}})
+    \end{aligned}$$
+
+
 <p>Then one can write down a equation which is similar to the classical equation of motion :</p>
-<!-- raw HTML omitted -->
+
+$$m \frac {\td^2} {\td t^2} \langle \hat{\bm{x}}\rangle = - \langle \nabla V(\hat{\bm{x}})\rangle$$
+
+
 </li>
 </ul>
 <h2 id="1d-harmonic-oscillator">1D Harmonic Oscillator</h2>
 <p>Having time-independent Hamiltonian:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\hat a =\sqrt{\frac {m\omega} {2\hbar}}(\hat x +\frac {\ti} {m\omega} \hat p)$</code> and satisfies: <code>$[\hat a,\hat a^{\dagger}] = 1$</code>. <!-- raw HTML omitted -->
-One can solve the equation of motion: <code>$\frac {\td} {td t} \hat a(t) = \frac {\ti} {\hbar} [\hat H,\hat a(t)] = -\ti \omega \hat a(t)$</code> and obtain <code>$\hat a(t) = e^{-\ti \omega t} \hat a(0)$</code>. Then one can obtain the:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>The coherent state</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\hat H = \frac {\hat p^2} {2m} +\frac {m \omega^2} 2 \hat x^2 = \hbar \omega(\hat a^{\dagger}\hat a + \frac 1 2)$$
+
+
+<p>Where $\hat a =\sqrt{\frac {m\omega} {2\hbar}}(\hat x +\frac {\ti} {m\omega} \hat p)$ and satisfies: $[\hat a,\hat a^{\dagger}] = 1$. <br>
+One can solve the equation of motion: $\frac {\td} {td t} \hat a(t) = \frac {\ti} {\hbar} [\hat H,\hat a(t)] = -\ti \omega \hat a(t)$ and obtain $\hat a(t) = e^{-\ti \omega t} \hat a(0)$. Then one can obtain the:</p>
+
+$$\begin{aligned}
+\hat x(t) &= \cos(\omega t) \hat x(0)+\frac 1 {m\omega} \sin(\omega t) \hat p(0) \\
+\hat p(t) &= -m\omega \sin(\omega t) \hat x(0) + \cos(\omega t) \hat p(0)
+\end{aligned}$$
+
+
+<p><em>[Definition]</em> : <code>The coherent state</code> :</p>
+
+$$e^{-|z|^2/2}e^{z\hat a^{\dagger}} \ket{0} \ \ \text{with } \langle \hat a(0)\rangle = z$$
+
+
 <p>Then one have :</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->The coherent satisfies the minimal uncertainty relation for <code>$\hat x$</code> and <code>$\hat p$</code><!-- raw HTML omitted --> :</p>
-<!-- raw HTML omitted -->
-<p>Then <code>$\Delta x^2 \Delta p^2 = \hbar^2/4$</code></p>
+
+$$\langle \hat x(0)\rangle = \sqrt{\frac {2\hbar} {m\omega}} \text{Re} z \ \ \langle\hat p(0)\rangle = \sqrt{2\hbar m \omega} \text{Im}(z)$$
+
+
+<p><mark>The coherent satisfies the minimal uncertainty relation for $\hat x$ and $\hat p$</mark> :</p>
+
+$$\Delta x^2 = \langle \hat x^2\rangle - (\langle \hat x \rangle)^2 = \frac {\hbar} {2m\omega} \ \ \Delta p^2 = \langle \hat p^2\rangle - (\langle \hat p\rangle)^2 = \frac {\hbar m \omega} 2 $$
+
+
+<p>Then $\Delta x^2 \Delta p^2 = \hbar^2/4$</p>
 <h2 id="adiabatic-theorem">Adiabatic Theorem</h2>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : When system is instantaneous ground state(s) and the Hamiltonian changes <code>slowly</code> with time, then the system will remain to be (one of) the instantaneous ground state(s) at later times. <!-- raw HTML omitted -->
-For system&rsquo;s Hamiltonian is dependent of time by a parameter <code>$R$</code> :</p>
-<!-- raw HTML omitted -->
-<p>The instantaneous eigenstates of Hamiltonian are <code>$\hat H(t)\ket{E_n(t)} = E_n(t) \ket{E_n(t)}$</code>. <!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : When system is instantaneous ground state(s) and the Hamiltonian changes <code>slowly</code> with time, then the system will remain to be (one of) the instantaneous ground state(s) at later times. <br>
+For system&rsquo;s Hamiltonian is dependent of time by a parameter $R$ :</p>
+
+$$\hat H(t) = \hat H(R(t))$$
+
+
+<p>The instantaneous eigenstates of Hamiltonian are $\hat H(t)\ket{E_n(t)} = E_n(t) \ket{E_n(t)}$. <br>
 The Adiabatic theorem showd that:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>For the evolution can be discriped by Schrodinger equation:</p>
-<!-- raw HTML omitted -->
-<p>One can expand the <code>$\ket{\psi(t)}$</code> by the eigenstates <code>$\ket{E_n(t)}$</code>, as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\theta_n(t) = \frac {-1} {\hbar} \int_0^t \td t' E_n(t')$</code> <!-- raw HTML omitted -->
-Then one have the equation:</p>
-<!-- raw HTML omitted -->
-<p>For differentiating the both side of the eigenstates function:</p>
-<!-- raw HTML omitted -->
-<p>One have when <code>$m\neq n$</code>:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>With the initial condition: <code>$c_n(t=0) = \delta_{0,n}$</code> , and the Hamiltonian changes very slow. One can solve the equation:</p>
-<!-- raw HTML omitted -->
-<p>Which means that <code>$\ket{\psi(t)}$</code> is the simultaneous ground state .</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\psi(t=0)} = \ket{E_0(t=0)} \Rightarrow \ket{\psi(t)} = \ket{E_0(t)}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof(non-degenerate cases)
+    </summary>
+    
+
+For the evolution can be discriped by Schrodinger equation:
+
+
+$$\ti \hbar \frac {\td} {\td t} \ket{\psi(t)} = \hat H(R(t)) \ket{\psi(t)}$$
+
+
+
+One can expand the $\ket{\psi(t)}$ by the eigenstates $\ket{E_n(t)}$, as:
+
+
+$$\ket{\psi(t)} = \sum_i c_i(t)e^{\ti \theta_n(t)} \ket{E_n(t)}$$
+
+
+
+Where $\theta_n(t) = \frac {-1} {\hbar} \int_0^t \td t' E_n(t')$ <br>
+Then one have the equation:
+
+
+$$\ti \hbar \frac {\td} {\td t} c_n(t) = - \sum_m c_m(t) \bra{E_n(t)}\frac {\td} {\td t} \ket{E_m(t)} e^{\ti(\theta_m(t)-\theta_n(t))}$$
+
+
+
+For differentiating the both side of the eigenstates function:
+
+
+$$\hat H(t) \frac {\td} {\td t}\ket{E_n(t)} + \frac {\td \hat H(t)} {\td t} \ket{E_n(t)} = \frac {\td E_n(t)} {\td t} \ket{E_n(t)} + E_n(t)\frac {\td } {\td t} \ket{E_n(t)}$$
+
+
+
+One have when $m\neq n$:
+
+
+$$\bra{E_n(t)}\frac {\td} {\td t} \ket{E_m(t)} = \frac {1} {E_m(t)-E_n(t)} \bra{E_n(t)}\frac {\td \hat H(t)} {\td t} \ket{E_m(t)}  $$
+
+
+
+Then we have:
+
+
+$$\ti \hbar \frac {\td } {\td t} c_n(t) = -c_n(t) \bra{E_n(t)}\frac {\td} {\td t} \ket{E_n(t)} - \sum_{m\neq n} \frac {c_m(t)} {E_n(t)-E_m(t)}  \bra{E_n(t)}\frac {\td \hat H(t)} {\td t} \ket{E_m(t)} e^{\ti(\theta_m(t)-\theta_n(t))}$$
+
+
+
+With the initial condition: $c_n(t=0) = \delta_{0,n}$ , and the Hamiltonian changes very slow. One can solve the equation:
+
+
+$$c_n(t) = \delta_{0,n} \exp\big(\int_0^t \td t' \bra{E_n(t')}\frac {\td} {\td t'} \ket{E_n(t')} \big)  $$
+
+
+
+Which means that $\ket{\psi(t)}$ is the simultaneous ground state .
+
+</details>
+
 <h1 id="propagator-and-path-integral">Propagator and Path Integral</h1>
 <h2 id="propagator">Propagator</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : The <code>propagator</code> is the time-evolution operator represented in coordinate basis:</p>
-<!-- raw HTML omitted -->
-<p>And <code>$K(x',t;x,t)=\delta(x'-x)$</code> . By this definition we have: <code>$\psi(x',t') = \int K(x',t';x,t)\psi(x,t)\td x$</code>. <!-- raw HTML omitted -->
-Propagator is the <code>transition probability amplitude</code> for the particle(system) to state at <code>$x$</code> at time <code>$t$</code> and end up at <code>$x',t'$</code>.</p>
-<p>Customarily, when <code>$t'\lt t$</code> <code>define</code> that <code>$K(x',t';x,t)\equiv 0$</code> . And <code>$K$</code> is the <code>Green function </code> satisfying:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$H(x,p,t)$</code> is the Hamiltonian. <!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p>When <code>$t'\lt t$</code>, the equation is hold. <!-- raw HTML omitted -->
-For <code>$t'\gt t$</code>, for the equation of motion of evolution operator:</p>
-<!-- raw HTML omitted -->
-<p>one can write down:</p>
-<!-- raw HTML omitted -->
-<p>Then we consider the situation of <code>$t'=t$</code>, then <code>$K(x',t';x,t)=\delta(x'-x)$</code> , And:</p>
-<!-- raw HTML omitted -->
-<p>For the first term is &ldquo;continuous&rdquo; of <code>$t$</code>. Then the equation proved.</p>
-<!-- raw HTML omitted -->
-<p>More over, when <code>$\hat H$</code> is independent of time, we can write down the expansion of propagator on energy-eigenstates:</p>
-<!-- raw HTML omitted -->
-<p>For free particle: <code>$\hat H = \hat p^2/2m$</code> , one can compute:</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : The <code>propagator</code> is the time-evolution operator represented in coordinate basis:</p>
+
+$$K(x',t';x,t):=\langle x'|\hat U(t',t)|x\rangle$$
+
+
+<p>And $K(x',t;x,t)=\delta(x'-x)$ . By this definition we have: $\psi(x',t') = \int K(x',t';x,t)\psi(x,t)\td x$. <br>
+Propagator is the <code>transition probability amplitude</code> for the particle(system) to state at $x$ at time $t$ and end up at $x',t'$.</p>
+<p>Customarily, when $t'\lt t$ <code>define</code> that $K(x',t';x,t)\equiv 0$ . And $K$ is the <code>Green function </code> satisfying:</p>
+
+$$\Big\{H\big(x',-\ti \hbar \frac {\partial} {\partial x'},t\big)-\ti \hbar \frac {\partial} {\partial t}\Big\} K(x',t';x,t) = -\ti \hbar \delta(x'-x)\delta(t'-t)$$
+
+
+<p>Where $H(x,p,t)$ is the Hamiltonian. <br></p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+When $t'\lt t$, the equation is hold. <br>
+For $t'\gt t$, for the equation of motion of evolution operator:
+
+
+$$\ti \hbar \frac {\td} {\td t'} \hat U(t',t) = \hat H \hat U(t',t)$$
+
+
+
+one can write down:
+
+
+$$\bra{x'}\hat H \hat U(t',t) - \ti \hbar \frac {\td} {\td t'} \hat U(t',t)  \ket{x} = (H(x',-\ti\hbar \partial_{x'},t') - \ti \hbar \frac {\td} {\td t'})K(x',t';x,t)=0$$
+
+
+
+Then we consider the situation of $t'=t$, then $K(x',t';x,t)=\delta(x'-x)$ , And:
+
+
+$$\int_{t-\epsilon}^{t+\epsilon} (H(x',-\ti \hbar \partial_{x'},t')-\ti \hbar \frac {\td} {\td t'}) K(x',t';x,t) \td t' = -\ti \hbar (K(x',t+\epsilon;x,t)-K(x',t-\epsilon;x,t)) \approx -\ti\hbar \delta(x'-x)$$
+
+
+
+For the first term is "continuous" of $t$. Then the equation proved.
+
+</details>
+
+<p>More over, when $\hat H$ is independent of time, we can write down the expansion of propagator on energy-eigenstates:</p>
+
+$$K(x',t';x,t) = \sum_E e^{-\ti E(t'-t)/\hbar} \langle x'|E\rangle\langle E|x\rangle \ \ \text{ for } t'\gt t$$
+
+
+<p>For free particle: $\hat H = \hat p^2/2m$ , one can compute:</p>
+
+$$K(x',t';x,t) = \sqrt{\frac {m} {2\pi\hbar (t'-t)\ti}} \exp\big[\frac {\ti m (x'-x)^2} {2\hbar (t'-t)} \big]$$
+
+
 <h2 id="causal-functions">Causal Functions</h2>
-<p>The propagator and <code>$G(t',t):=\text{Tr}\hat U(t',t) = \int \td x K(x,t';x,t)$</code> are <code>Causal functions</code> : nonzero only for <code>later(</code>$t&rsquo;\gt t$<code>)</code> times. <!-- raw HTML omitted -->
-The fourier transform (with a little difference from the one in mathematical) of causal function <code>$G(t)$</code> with <code>$G(t\lt 0)=0$</code> is:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$G(t\lt 0)=0$</code> , <code>$\tilde{G}(\omega'+\ti \omega'')$</code> will be <code>non-singular(analytic)</code> for all <code>$\omega''\in\mathbb{R}^+$</code>, and tends to zero fast enough at infinity with <code>$\omega''\gt 0$</code></p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : <code>Kramer-Kronig relation</code>(Hilbert transform). For such functions <code>$\tilde{G}(\omega)$</code> , one have:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\text{P}$</code> means the Cauchy principle value of integral.</p>
-<!-- raw HTML omitted -->
-<p>Consider the contour integral of <code>$\frac {\tilde{G}(\omega')} {\omega'-\omega}$</code> on the upper half plane(complex) , with <code>$C_l$</code> along the real axis expect singular point <code>$\omega$</code> (using a little circle <code>$C_r$</code> to evade it) and <code>$C_R$</code> as the infinity large circle.
-Using Jordon Lemma, the integral on <code>$C_R$</code> is zero. And the whole integral is zero for there is no singular point inner the contour. Then:</p>
-<!-- raw HTML omitted -->
-<p>The integral on <code>$C_r$</code> can be compute with the expansion of integrated function near the point:</p>
-<!-- raw HTML omitted -->
-<p>Then one have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Example: <code>$G(t\gt 0) = e^{-\ti E t}$</code> , then <code>$\tilde{G}(\omega) = \frac 1 {\omega -E} - \ti \pi \delta(\omega-E)$</code></p>
+<p>The propagator and $G(t',t):=\text{Tr}\hat U(t',t) = \int \td x K(x,t';x,t)$ are <code>Causal functions</code> : nonzero only for <code>later($t'\gt t$)</code> times. <br>
+The fourier transform (with a little difference from the one in mathematical) of causal function $G(t)$ with $G(t\lt 0)=0$ is:</p>
+
+$$\tilde{G}(\omega) = -\ti \int G(t) e^{\ti \omega t}\td t$$
+
+
+<p>For $G(t\lt 0)=0$ , $\tilde{G}(\omega'+\ti \omega'')$ will be <code>non-singular(analytic)</code> for all $\omega''\in\mathbb{R}^+$, and tends to zero fast enough at infinity with $\omega''\gt 0$</p>
+<p><em>[Theorem]</em> : <code>Kramer-Kronig relation</code>(Hilbert transform). For such functions $\tilde{G}(\omega)$ , one have:</p>
+
+$$\begin{aligned}
+\text{Re} \tilde{G}(\omega) &= \frac 1 {\pi} \text{P} \int_{-\infty}^{\infty} \frac {\text{Im}\tilde{G}(\omega')} {\omega'-\omega} \td \omega' \\
+\text{Im} \tilde{G}(\omega) &= -\frac 1 {\pi} \text{P} \int_{-\infty}^{\infty} \frac {\text{Re}\tilde{G}(\omega')} {\omega'-\omega} \td \omega'
+\end{aligned}$$
+
+
+<p>Where $\text{P}$ means the Cauchy principle value of integral.
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+Consider the contour integral of $\frac {\tilde{G}(\omega')} {\omega'-\omega}$ on the upper half plane(complex) , with $C_l$ along the real axis expect singular point $\omega$ (using a little circle $C_r$ to evade it) and $C_R$ as the infinity large circle.
+Using Jordon Lemma, the integral on $C_R$ is zero. And the whole integral is zero for there is no singular point inner the contour. Then:
+
+
+$$\text{P} \int_{-\infty}^{\infty} \frac {\tilde{G}(\omega')} {\omega'-\omega} \td \omega' + \int_{C_r}  \frac {\tilde{G}(\omega')} {\omega'-\omega} \td \omega' = 0$$
+
+
+
+The integral on $C_r$ can be compute with the expansion of integrated function near the point:
+
+
+$$\int_{C_r}\frac {\tilde{G}(\omega')} {\omega'-\omega} \sim \int_{0}^{\pi} \frac {\tilde{G}(\omega + r e^{\ti \theta})} {r e^{\ti \theta}} r \ti e^{\ti\theta} \td \theta = \ti \pi \tilde{G}(\omega) $$
+
+
+
+Then one have:
+
+
+$$\text{P} \int_{-\infty}^{\infty} \frac {\tilde{G}(\omega')} {\omega'-\omega} \td \omega' = -\ti \pi \tilde{G}(\omega)$$
+
+
+
+
+</details>
+</p>
+<p>Example: $G(t\gt 0) = e^{-\ti E t}$ , then $\tilde{G}(\omega) = \frac 1 {\omega -E} - \ti \pi \delta(\omega-E)$</p>
 <h2 id="path-integral-in-quantum-mechanics">Path Integral in Quantum Mechanics</h2>
 <p>The goal of path integral is that try to describe the quantum dynamics from a <code>&quot;classical&quot; point of view</code> , as particle moving in coordinate space(or coordinate-momentum phase space).</p>
 <ol>
 <li>
 <p>Path Integral Version #1</p>
-<!-- raw HTML omitted -->
+
+$$K(x',x,t) = \int \mathcal{D}[x(\tau)] \exp\big(\frac {\ti} {\hbar} \int_0^t L(x(\tau),\flo{x}(\tau))\td \tau \big) = \int \mathcal{D}[x]\exp\big[\frac {\ti} {\hbar} S \big]$$
+
+
 <ul>
-<li><code>$\int \mathcal{D}[x]$</code> : <code>functional integral</code> over all <code>path</code> <code>$x(\tau)$</code> with <code>$x(0)=x ; x(t)=x'$</code> . The measure of path is very diffcult to define.</li>
-<li><code>$L(x,\flo{x})$</code> : <code>Lagrangian</code></li>
-<li><code>$\flo{x} \equiv \frac {\td x(\tau)} {\td \tau}$</code> : the <code>velocity</code> on path <code>$x(\tau)$</code></li>
-<li><code>$S[x(\tau)]\equiv \int_0^t L(x(\tau),\flo{x}(\tau))\td \tau$</code> : the <code>action</code> of path <code>$x(\tau)$</code></li>
+<li>$\int \mathcal{D}<input checked="" disabled="" type="checkbox"> $ : <code>functional integral</code> over all <code>path</code> $x(\tau)$ with $x(0)=x ; x(t)=x'$ . The measure of path is very diffcult to define.</li>
+<li>$L(x,\flo{x})$ : <code>Lagrangian</code></li>
+<li>$\flo{x} \equiv \frac {\td x(\tau)} {\td \tau}$ : the <code>velocity</code> on path $x(\tau)$</li>
+<li>$S[x(\tau)]\equiv \int_0^t L(x(\tau),\flo{x}(\tau))\td \tau$ : the <code>action</code> of path $x(\tau)$</li>
 </ul>
 </li>
 <li>
 <p>Path Integral Version #2:</p>
-<!-- raw HTML omitted -->
+
+$$K(x',x,t) = \int \mathcal{D}[x(\tau)]\mathcal{D}[p(\tau)] \exp \big(\frac {\ti} {\hbar} \int_0^t \{p \flo{x} - H(p,x) \} \big)$$
+
+
 <ul>
-<li><code>$\int \mathcal{D}[p]$</code> : <code>functional integral</code> over all path in momentum space, with proper measure. Path of <code>$p$</code> has no boundary condition</li>
-<li><code>$H(p,x)$</code> : <code>Hamiltonian</code></li>
+<li>$\int \mathcal{D}[p]$ : <code>functional integral</code> over all path in momentum space, with proper measure. Path of $p$ has no boundary condition</li>
+<li>$H(p,x)$ : <code>Hamiltonian</code></li>
 </ul>
 </li>
 </ol>
-<p>One can check these two version of path integral by single particle Hamiltonian: <code>$\hat H = \hat p^2/2m + V(\hat x) = T(\hat p) +V(\hat x)$</code> , the propagator is <code>$K(x',x,t) = \bra{x'}e^{-\ti t \hat H / \hbar} \ket{x}$</code>:</p>
-<!-- raw HTML omitted -->
-<ol>
-<li>
-<p>Check for version 1: <!-- raw HTML omitted -->
-Divide this propagation over time <code>$t$</code> into <code>$N$</code> steps, each of time <code>$\epsilon=t/N$</code> :</p>
-<!-- raw HTML omitted -->
-<p>With the <code>Trotter-Suzuki Approximation</code> : <code>$e^{\eta (\hat A+\hat B)} = e^{\eta \hat A} e^{\eta \hat B} + O(\eta^2)$</code> , one have:</p>
-<!-- raw HTML omitted -->
-<p>Using this expression, one can write the propagator as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$x_0=x, x_N= x'$</code> . When <code>$N\rightarrow \infty$</code> the summation at the index will be the integral. <!-- raw HTML omitted -->
-With the measure of path being:</p>
-<!-- raw HTML omitted -->
-<p>one can write that:</p>
-<!-- raw HTML omitted -->
-</li>
-<li>
-<p>Check for version 2: <!-- raw HTML omitted -->
-With the same setting: <code>$K(x',x,t) = \bra{x'}(e^{-\ti \epsilon \hat H / \hbar})^N \ket{x}$</code> and <code>$e^{-\ti \epsilon \hat H/\hbar} = e^{-\ti \epsilon T(\hat p)/\hbar} e^{-\ti \epsilon V(\hat x)/\hbar} + O(\epsilon^2)$</code> <!-- raw HTML omitted -->
-Then insert <code>$N-1$</code> resolution of identity in terms of <code>$\hat x$</code> eigenstates, and <code>$N$</code> resolution of identity in terms of <code>$\hat p$</code> eigenstates:</p>
-<!-- raw HTML omitted -->
-<p>Where we used <code>$\langle x | p \rangle = (2\pi\hbar)^{-1/2} \exp(\ti px/\hbar)$</code>, and where the measure of paths <code>$\mathcal{D}[x]\mathcal{D}[p]$</code> contains the <code>$(2\pi\hbar)^{-N}$</code> normalization factor</p>
-</li>
-</ol>
-<!-- raw HTML omitted -->
+<p>One can check these two version of path integral by single particle Hamiltonian: $\hat H = \hat p^2/2m + V(\hat x) = T(\hat p) +V(\hat x)$ , the propagator is $K(x',x,t) = \bra{x'}e^{-\ti t \hat H / \hbar} \ket{x}$:</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Check
+    </summary>
+    
+1.  Check for version 1: <br>
+    Divide this propagation over time $t$ into $N$ steps, each of time $\epsilon=t/N$ :
+
+    
+$$K(x',x,t) = \bra{x'} (e^{-\frac {\ti} {\hbar} \epsilon \hat H})^N \ket{x} = \int \td x_{N-1}\td x_{N-2}\cdots \td x_{1} \bra{x'}e^{-\ti \epsilon \hat H/\hbar}\ket{x_{N-1}}\cdots\bra{x_1}e^{-\ti \epsilon \hat H/\hbar}\ket{x}$$
+
+
+
+    With the `Trotter-Suzuki Approximation` : $e^{\eta (\hat A+\hat B)} = e^{\eta \hat A} e^{\eta \hat B} + O(\eta^2)$ , one have:
+
+    
+$$\bra{x_{i+1}}e^{-\ti \epsilon \hat H/\hbar} \ket{x_i} \approx \bra{x_{i+1}}e^{-\frac {\ti} {\hbar} \epsilon \frac {\hat p^2} {2m}} \ket{x_i} e^{-\frac {\ti} {\hbar} \epsilon V(x_i)} = \sqrt{\frac {m} {2\pi\hbar \epsilon \ti}} e^{\frac {\ti} {\hbar} \epsilon \big(\frac {m} 2 (\frac {x_{i+1}-x_i} \epsilon)^2 - V(x_i) \big)} $$
+
+
+
+    Using this expression, one can write the propagator as:
+
+    
+$$K(x',x,t) \approx \int \td x_{N-1}\cdots \td x_1 \big(\frac m {2\pi \hbar \epsilon \ti} \big)^{N/2} \exp \Big(\frac {\ti} {\hbar} \sum_{i=0}^{N-1} \epsilon \big[\frac {m} 2 (\frac {x_{i+1}-x_i} \epsilon)^2 - V(x_i) \big] \Big)$$
+
+
+
+    Where $x_0=x, x_N= x'$ . When $N\rightarrow \infty$ the summation at the index will be the integral. <br>
+    With the measure of path being:
+
+    
+$$\mathcal{D}[x] = \lim_{N\rightarrow \infty} \prod_{i=1}^{N-1} \td x_i \big(\frac {m N} {2\pi\hbar t \ti} \big)^{N/2}$$
+
+
+
+    one can write that:
+
+    
+$$K(x',x,t) = \int \mathcal{D}[x(\tau)] \exp \big(\frac {\ti} {\hbar} \int_0^t [\frac {m \flo{x}^2} 2 - V(x)]\td \tau \big) = \int \mathcal{D}[x] \exp(\frac {\ti} {\hbar} \int_0^t L(x,\flo{x}) \td \tau)$$
+
+
+
+2.  Check for version 2: <br>
+    With the same setting: $K(x',x,t) = \bra{x'}(e^{-\ti \epsilon \hat H / \hbar})^N \ket{x}$ and $e^{-\ti \epsilon \hat H/\hbar} = e^{-\ti \epsilon T(\hat p)/\hbar} e^{-\ti \epsilon V(\hat x)/\hbar} + O(\epsilon^2)$ <br>
+    Then insert $N-1$ resolution of identity in terms of $\hat x$ eigenstates, and $N$ resolution of identity in terms of $\hat p$ eigenstates:
+
+    
+$$\begin{aligned}
+    K(x',x,t) &\approx \int \td p_{N-1}\cdots \td p_1 \td x_{N-1} \cdots \td x_1 \prod_{i=1}^{N-1} \bra{x_i} e^{-\ti \epsilon T(\hat p)/\hbar} \ket{p_{i-1}} \bra{p_{i-1}} e^{-\ti \epsilon V(\hat x)/\hbar} \ket{x_{i-1}} \\
+    &=\int \td p_{N-1}\cdots \td p_1 \td x_{N-1} \cdots \td x_1\exp \big(-\frac {\ti} {\hbar} \sum_{i=0}^{N-1} \epsilon(T(p_i)+V(x_i)) \big) \prod_{i=1}^{N} \langle x_i|p_{i-1}\rangle\langle p_{i-1}|x_{i-1}\rangle \\
+    &=\int (2\pi\hbar)^N \td p_{N-1}\cdots \td p_1 \td x_{N-1} \cdots \td x_1 \exp\big(\frac {\ti} {\hbar}\sum_{i=0}^{N-1} \epsilon (p_i \frac {x_{i+1}-x_i} {\epsilon} - T(p_i)-V(x_i)) \big) \\
+    &\approx \int \mathcal{D}[x]\mathcal{D}[p] \exp(\frac {\ti} {\hbar} \int_0^t [p\flo{x}-H(p,x)]\td \tau )
+    \end{aligned}$$
+
+
+
+    Where we used $\langle x | p \rangle = (2\pi\hbar)^{-1/2} \exp(\ti px/\hbar)$, and where the measure of paths $\mathcal{D}[x]\mathcal{D}[p]$ contains the $(2\pi\hbar)^{-N}$ normalization factor
+
+
+</details>
+
 <h2 id="stationary-phase-approximation">Stationary Phase Approximation</h2>
-<p>For the integral <code>$\int e^{\ti k f(x)}\td x$</code> with large <code>$k$</code> , most contribution comes from <code>$x_s$</code> where <code>$f$</code> is <code>stationary</code> , namely <code>$f'(x_s)=0$</code> . Then using the Taylor expansion to <code>$(x-x_s)^2$</code> , one can prove this approximation:</p>
-<!-- raw HTML omitted -->
+<p>For the integral $\int e^{\ti k f(x)}\td x$ with large $k$ , most contribution comes from $x_s$ where $f$ is <code>stationary</code> , namely $f'(x_s)=0$ . Then using the Taylor expansion to $(x-x_s)^2$ , one can prove this approximation:</p>
+
+$$\int e^{\ti k f(x)} \td x \approx \sum_{x_s \in \{x:f'(x)=0\}} \sqrt{\frac {2\pi \ti} {kf''(x_s)}} e^{\ti k f(x_s)}$$
+
+
 <p>For n-dimensional integral:</p>
-<!-- raw HTML omitted -->
+
+$$\int e^{\ti k f(\bm{x}) } \td^n \bm{x} \approx \sum_{\bm{x}_s \in \{\bm{x}:\nabla f(\bm{x}) = \bm{0} \}} \Big(\frac {2\pi \ti} k \Big)^{n/2} \Big(\det \frac {\partial^2 f(\bm{x}_s)} {\partial x_i \partial x_j} \Big)^{-1/2} e^{\ti k f(\bm{x}_s)}$$
+
+
 <h1 id="geometric-phase">Geometric Phase</h1>
-<p>Consider an <code>adiabatic periodic evolution</code> of a Hamiltonian <code>$\hat H(t)$</code> with <code>$\hat H(T)=\hat H(0)$</code> . Suppose the Hamiltonian always has a <code>unique</code> ground state <code>$\ket{E_0(t)}$</code>. <!-- raw HTML omitted -->
-We care for that after the periodic evolution, what is the phase acquired by the ground state. <!-- raw HTML omitted -->
-The phase factor is <code>$\bra{E_0(0)} \hat U(T)\ket{E_0(0)}$</code> where <code>$\hat U(T) = \mathcal{T} \exp(-\frac {\ti} {\hbar} \int_{0}^T \hat H(t')\td t' )$</code> . <!-- raw HTML omitted -->
-Note that <code>$\hat U(t)\ket{E_0(0)}$</code> is not exactly <code>$\ket{E_0(t)}$</code> , but by the adiabatic theorem, they will only differ by a complex phase.</p>
-<p>Divide <code>$T$</code> into <code>$N$</code> intervals of <code>$\epsilon = T/N$</code> , define <code>$t_n=n\epsilon$</code> . Then <code>up to</code> <code>$O(\epsilon^2)$</code> error, we have the expansion:</p>
-<!-- raw HTML omitted -->
-<p>Note that <code>$\ket{E_0(T)}=\ket{E_0(0)}$</code> , and by adiabatic theorem, <code>$\hat U(t) \ket{E_0(0)}$</code> will always at the ground state. Then <code>$\ket{E_0(t_i)}\bra{E_0(t_i)}$</code> is always like <code>$\hat 1$</code> when operated on it.  <!-- raw HTML omitted -->
-When <code>$\epsilon \rightarrow 0$</code> (<code>$N\rightarrow \infty$</code>) limit, the first factor becomes <code>$e^{-\frac {\ti} {\hbar} \int_0^T E_0(t)\td t}$</code>, which is the expected <code>dynamic phase</code> acquired from time-evolution <!-- raw HTML omitted -->
+<p>Consider an <code>adiabatic periodic evolution</code> of a Hamiltonian $\hat H(t)$ with $\hat H(T)=\hat H(0)$ . Suppose the Hamiltonian always has a <code>unique</code> ground state $\ket{E_0(t)}$. <br>
+We care for that after the periodic evolution, what is the phase acquired by the ground state. <br>
+The phase factor is $\bra{E_0(0)} \hat U(T)\ket{E_0(0)}$ where $\hat U(T) = \mathcal{T} \exp(-\frac {\ti} {\hbar} \int_{0}^T \hat H(t')\td t' )$ . <br>
+Note that $\hat U(t)\ket{E_0(0)}$ is not exactly $\ket{E_0(t)}$ , but by the adiabatic theorem, they will only differ by a complex phase.</p>
+<p>Divide $T$ into $N$ intervals of $\epsilon = T/N$ , define $t_n=n\epsilon$ . Then <code>up to</code> $O(\epsilon^2)$ error, we have the expansion:</p>
+
+$$\bra{E_0(0)}\hat U(T)\ket{E_0(0)} \approx \prod_{i=0}^{N-1} \bra{E_0(t_{i+1})} e^{-\frac {\ti} {\hbar } \epsilon \hat H(t_i)} \ket{E_0(t_i)} = e^{-\frac {\ti} {\hbar} \epsilon \sum_{i=0}^{N-1} E(t_i) } \prod_{i=0}^{N-1} \langle E_0(t_{i+1})| E_0(t_i)\rangle$$
+
+
+<p>Note that $\ket{E_0(T)}=\ket{E_0(0)}$ , and by adiabatic theorem, $\hat U(t) \ket{E_0(0)}$ will always at the ground state. Then $\ket{E_0(t_i)}\bra{E_0(t_i)}$ is always like $\hat 1$ when operated on it.  <br>
+When $\epsilon \rightarrow 0$ ($N\rightarrow \infty$) limit, the first factor becomes $e^{-\frac {\ti} {\hbar} \int_0^T E_0(t)\td t}$, which is the expected <code>dynamic phase</code> acquired from time-evolution <br>
 The second factor is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$A(t) = \ti \bra {E_0(t)}\partial_t \ket{E_0(t)}$</code></p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>the Berry's phase</code> :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<ol>
-<li>
-<p>The periodicity requirement : <code>$\ket{\psi(t_{\text{final}})} = \ket{\psi(t_{\text{initial}})} $</code></p>
-</li>
-<li>
-<p>Here <code>$t$</code> is just a parameter describing the path in Hilbert space. NOT time-evolution</p>
-</li>
-<li>
-<p>With note 2 in mind, one can write the Berry phase like(just in this format):</p>
-<!-- raw HTML omitted -->
-</li>
-<li>
-<p>Then one can find that Berry phase does NOT depend on the speed of &ldquo;evolution&rdquo; , just depend on the path (geometric) in Hilbert Space</p>
-</li>
-<li>
-<p>The Berry phase does NOT depend on <code>$\hbar$</code> , for it does not depend on speed.</p>
-</li>
-<li>
-<p><code>Gauge transformation</code> of the Berry connection: with the transformation: <code>$\ket{\psi(t)}\rightarrow e^{\ti \theta(t)}\ket{\psi(t)}$</code> where <code>$\theta(T)-\theta(0)\equiv 0 \text{ mod }2\pi$</code> : <!-- raw HTML omitted -->
-Berry connection will be:</p>
-<!-- raw HTML omitted -->
-<p>But the Berry phase will be:</p>
-<!-- raw HTML omitted -->
-</li>
-</ol>
-<!-- raw HTML omitted -->
+
+$$\prod_{i=0}^{N-1} \langle E_0(t_{i+1})| E_0(t_i)\rangle \approx \prod_{i=1}^N \langle E_0(t_i)| 1-\epsilon \frac {\partial} {\partial t}\ket{E_0(t_i)} \approx \exp\big(\sum_{i=1}^N \epsilon \ti A(t_i) \big) \approx \exp(\ti \int_0^T A(\tau)\td \tau)$$
+
+
+<p>Where $A(t) = \ti \bra {E_0(t)}\partial_t \ket{E_0(t)}$</p>
+<p><em>[Definition]</em> : <code>the Berry's phase</code> :
+
+$$\int A(t)\td t \equiv \int \ti \bra{\psi(t)}\partial_t \ket{\psi(t)} \td t$$
+
+
+where $t$ parametrizes a <code>periodic</code> evolution $\ket{\psi(t)}$. And $\ket{\psi(t)}$ is the instantaneous eigenstate of time-dependent Hamiltonian $\hat H(t)$ , we also assume they are non-degenerate.  <br>
+<em>[Definition]</em> : <code>the Berry connection</code> :</p>
+
+$$A(t) := \ti \bra{\psi(t)}\partial_t\ket{\psi(t)}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note
+    </summary>
+    
+
+1.  The periodicity requirement : $\ket{\psi(t_{\text{final}})} = \ket{\psi(t_{\text{initial}})} $
+2.  Here $t$ is just a parameter describing the path in Hilbert space. NOT time-evolution
+3.  With note 2 in mind, one can write the Berry phase like(just in this format):
+
+    
+$$\oint_{C\in \mathcal{H}} \ti \bra{\psi}\td \ket{\psi}$$
+
+
+
+4.  Then one can find that Berry phase does NOT depend on the speed of "evolution" , just depend on the path (geometric) in Hilbert Space
+
+5.  The Berry phase does NOT depend on $\hbar$ , for it does not depend on speed.
+
+6.  `Gauge transformation` of the Berry connection: with the transformation: $\ket{\psi(t)}\rightarrow e^{\ti \theta(t)}\ket{\psi(t)}$ where $\theta(T)-\theta(0)\equiv 0 \text{ mod }2\pi$ : <br>
+    Berry connection will be:
+
+    
+$$A(t)\rightarrow \ti \bra{\psi(t)}e^{-\ti \theta(t)} \partial_t e^{\ti \theta(t)}\ket{\psi(t)} = A(t)-\frac {\td \theta} {\td t}$$
+
+
+
+    But the Berry phase will be:
+
+    
+$$\int A(t)\td t \rightarrow \int A(t) \td t + [\theta(T)-\theta(0)] \equiv \int A(t)\td t \text{ mod }2\pi$$
+
+
+
+
+
+</details>
+
 <h1 id="gauge-invariance--electromagnetic-field">Gauge Invariance &amp; Electromagnetic Field</h1>
-<p>We have known that adding a global phase factor <code>$\ket{\psi}\rightarrow e^{\ti\theta}\ket{\psi}$</code> with real <code>$\theta$</code> independent of <code>$\bm{x},t$</code>  will not change the Schorodinger equation and any expectation value of observables. <!-- raw HTML omitted -->
+<p>We have known that adding a global phase factor $\ket{\psi}\rightarrow e^{\ti\theta}\ket{\psi}$ with real $\theta$ independent of $\bm{x},t$  will not change the Schorodinger equation and any expectation value of observables. <br>
 However, with the transformation:</p>
-<!-- raw HTML omitted -->
+
+$$\psi(\bm{x},t) \rightarrow e^{\ti \theta(\bm{x},t)} \psi(\bm{x},t)$$
+
+
 <p>we have:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\partial_t \psi &\rightarrow e^{\ti\theta}\partial_t \psi + (\ti\partial_t \theta) e^{\ti \theta} \psi \\
+\partial_{\bm{x}} \psi &\rightarrow e^{\ti\theta}\partial_{\bm{x}}\psi + (\ti\partial_{\bm{x}}\theta)e^{\ti\theta} \psi
+\end{aligned}$$
+
+
 <p>Then the Schrodinger equation will not be preserved.</p>
-<p>To make the theory formally <code>gauge invariant</code> under arbitary <code>$\psi\rightarrow e^{\ti \theta}\psi$</code> , one need to absorb the differential of <code>$\theta$</code> into the transformation of a <code>Gauge Field</code> <!-- raw HTML omitted -->
-Define a 4-component space-time-dependent real-value <code>Gauge Field</code> <code>$(a_0,\bm{a})$</code> , and the <code>canonical momentum</code> : <code>$\hat P = \hat p - \hbar \bm{a}$</code> <!-- raw HTML omitted -->
-Demand the gauge transform to be : <code>$\psi\rightarrow e^{\ti\theta}\psi , \bm{a}\rightarrow \bm{a}+\partial_{\bm{x}}\theta , a_0\rightarrow a_0+\partial_t \theta$</code> . Then one can check That <code>$\hat P \psi \rightarrow e^{\ti\theta}\hat P\psi$</code> <!-- raw HTML omitted -->
+<p>To make the theory formally <code>gauge invariant</code> under arbitary $\psi\rightarrow e^{\ti \theta}\psi$ , one need to absorb the differential of $\theta$ into the transformation of a <code>Gauge Field</code> <br>
+Define a 4-component space-time-dependent real-value <code>Gauge Field</code> $(a_0,\bm{a})$ , and the <code>canonical momentum</code> : $\hat P = \hat p - \hbar \bm{a}$ <br>
+Demand the gauge transform to be : $\psi\rightarrow e^{\ti\theta}\psi , \bm{a}\rightarrow \bm{a}+\partial_{\bm{x}}\theta , a_0\rightarrow a_0+\partial_t \theta$ . Then one can check That $\hat P \psi \rightarrow e^{\ti\theta}\hat P\psi$ <br>
 Modify the Schrodinger equation as:</p>
-<!-- raw HTML omitted -->
-<p>This will be <code>invariant</code> under the above gauge transformation <!-- raw HTML omitted -->
+
+$$\big[\frac {\hat P^2} {2m}+V(\bm{x})\big]\psi = \hbar (\ti\partial_t + a_0)\psi$$
+
+
+<p>This will be <code>invariant</code> under the above gauge transformation <br>
 MOdify the definition of probability current density as</p>
-<!-- raw HTML omitted -->
+
+$$\bm{J}(\bm{x},t) = \text{Re}\big[\psi^* \frac {\hat P} {m} \psi \big] = -\ti \frac {\hbar} {2m} (\psi^*\partial_{\bm{x}}\psi - \psi \partial_{\bm{x}}\psi^*) - \frac {\hbar} m \bm{a}\rho$$
+
+
 <p>This is invariant under the gauge transformation, so continuity equation is preserved.</p>
 
           </div>
@@ -1216,7 +1450,7 @@ MOdify the definition of probability current density as</p>
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1258,23 +1492,8 @@ MOdify the definition of probability current density as</p>
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1298,13 +1517,39 @@ MOdify the definition of probability current density as</p>
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1317,9 +1562,6 @@ MOdify the definition of probability current density as</p>
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

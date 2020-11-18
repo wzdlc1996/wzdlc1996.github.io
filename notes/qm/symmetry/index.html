@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The symmetry theory in quantum mechanics. Including some tricks about solve some problems with it.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Symmetry in Quantum Mechanics | Leonard 
-  
+    
+     Symmetry in Quantum Mechanics | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/qm/symmetry/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>11 minutes read</li>
     
   </ul>
   
@@ -456,243 +393,373 @@ autocomplete('#aa-search-input',
           <div class="post-content markdown">
             <h1 id="basic-of-group-theory">Basic of Group Theory</h1>
 <h2 id="definitions">Definitions</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : a <code>Group</code> is a set <code>$G$</code> with a binary multiplication : <code>$\circ : G\times G\rightarrow G$</code> defined. satisfying:</p>
+<p><em>[Definition]</em> : a <code>Group</code> is a set $G$ with a binary multiplication : $\circ : G\times G\rightarrow G$ defined. satisfying:</p>
 <ol>
-<li><code>Associativity</code> : <code>$f\circ (g\circ h) = (f\circ g)\circ h$</code> . In the following <code>$\circ$</code> will be omitted</li>
-<li><code>Existence of identity</code> : <code>$\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$</code></li>
-<li><code>Existence of inverse</code> : <code>$\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$</code></li>
+<li><code>Associativity</code> : $f\circ (g\circ h) = (f\circ g)\circ h$ . In the following $\circ$ will be omitted</li>
+<li><code>Existence of identity</code> : $\exists 1 \in G \Rightarrow(\forall g \in G \Rightarrow 1g=g1=g)$</li>
+<li><code>Existence of inverse</code> : $\forall g \in G \exists g^{-1}\in G \Rightarrow g^{-1}g = g g^{-1} =1$</li>
 </ol>
 <p>Some concepts about Group are listed following:</p>
 <ul>
 <li>
-<p><code>Order of group</code> : <code>$|G|$</code> is the number of finite group elements</p>
+<p><code>Order of group</code> : $|G|$ is the number of finite group elements</p>
 </li>
 <li>
-<p><code>Order of an element</code> : <code>$|g|$</code> is the <code>minimal integer</code> <code>$n$</code> s.t. <code>$g^n=1$</code> , or <code>$\infty$</code> if <code>$n$</code> does not exist</p>
+<p><code>Order of an element</code> : $|g|$ is the <code>minimal integer</code> $n$ s.t. $g^n=1$ , or $\infty$ if $n$ does not exist</p>
 </li>
 <li>
-<p><code>Abelian group</code> :if <code>$\forall g,h\in G \Rightarrow gh=hg $</code></p>
+<p><code>Abelian group</code> :if $\forall g,h\in G \Rightarrow gh=hg $</p>
 </li>
 <li>
-<p><code>subgroup</code> : <code>$H\leq G$</code> : a <code>subset</code> <code>$H\subset G$</code> which is also a group under multiplication <code>$\circ$</code></p>
+<p><code>subgroup</code> : $H\leq G$ : a <code>subset</code> $H\subset G$ which is also a group under multiplication $\circ$</p>
 </li>
 <li>
-<p><code>left(right) coset</code> : <code>$gH(Hg) := \{gh(hg) : h\in H \}$</code></p>
+<p><code>left(right) coset</code> : $gH(Hg) := {gh(hg) : h\in H }$</p>
 </li>
 <li>
-<p><code>Normal subgroup</code> : <code>$H \unlhd G$</code> a <code>subgroup</code> satisfying <code>$\forall g \in G \Rightarrow gH=Hg$</code></p>
+<p><code>Normal subgroup</code> : $H \unlhd G$ a <code>subgroup</code> satisfying $\forall g \in G \Rightarrow gH=Hg$</p>
 </li>
 <li>
-<p><code>Quotient group</code> : <code>$G/H$</code> is the group of cosets for normal subgroup <code>$H$</code> of <code>$G$</code>:</p>
-<!-- raw HTML omitted -->
+<p><code>Quotient group</code> : $G/H$ is the group of cosets for normal subgroup $H$ of $G$:</p>
+
+$$H\unlhd G \Rightarrow G/H := \{gH : g\in G \} \text{ with } a,b\in G/H \Rightarrow a\circ b :=g_a g_b H \in G/H$$
+
+
 </li>
 <li>
-<p><code>Conjugacy class</code> : <code>$f,h\in G$</code> are conjugate if <code>$\exists g \in G \Rightarrow gfg^{-1}=h$</code> <!-- raw HTML omitted --> all elements conjugate to <code>$f$</code> form the <code>conjugacy class</code> of <code>$f$</code></p>
+<p><code>Conjugacy class</code> : $f,h\in G$ are conjugate if $\exists g \in G \Rightarrow gfg^{-1}=h$ <br> all elements conjugate to $f$ form the <code>conjugacy class</code> of $f$</p>
 </li>
 <li>
-<p><code>Direct product of groups</code> : <code>$G\times H$</code> is the set of <code>$(g,h)$</code> with <code>$g\in G, h \in H$</code> , and <code>$(g',h')\circ(g,h)=(g'g,h'h)\in G\times H$</code></p>
+<p><code>Direct product of groups</code> : $G\times H$ is the set of $(g,h)$ with $g\in G, h \in H$ , and $(g',h')\circ(g,h)=(g&rsquo;g,h&rsquo;h)\in G\times H$</p>
 </li>
 </ul>
 <h2 id="representation-theory">Representation Theory</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Linear Representation</code> of group <code>$G$</code> on <code>linear space</code> <code>$V$</code> is a map <code>$R:G\rightarrow \text{GL}(V)$</code> :</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>Linear Representation</code> of group $G$ on <code>linear space</code> $V$ is a map $R:G\rightarrow \text{GL}(V)$ :</p>
+
+$$\forall g,h\in G \Rightarrow R(g)R(h)=R(gh)$$
+
+
 <p>This property is usually called as <code>homomorphism</code></p>
-<p><!-- raw HTML omitted -->[Note]<!-- raw HTML omitted --> :   one can find that if <code>$R$</code> is a representation, then <code>$\bm{A}R\bm{A}^{-1}$</code> with <code>$\bm{A}$</code> is a non-singular constant matrix. These representation called as <code>equivalent</code> to <code>$R$</code></p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Adjoint Representation</code> of Lie groups: the representation space is the Lie Algebra <code>$\text{L}G$</code> . The representation is defined as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$gxg^{-1} = -\ti \frac {\td} {\td t} (ge^{\ti t x}g^{-1})|_{t=0}$</code></p>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Reducible representations</code> : <code>$\exists W \subset V \Rightarrow (\forall g \in G \Rightarrow R(g)V = V)$</code> . The contrary concept is <code>Irreducible representations (irrep.)</code></p>
+<p><em>[Note]</em> :   one can find that if $R$ is a representation, then $\bm{A}R\bm{A}^{-1}$ with $\bm{A}$ is a non-singular constant matrix. These representation called as <code>equivalent</code> to $R$</p>
+<p><em>[Definition]</em> : <code>Adjoint Representation</code> of Lie groups: the representation space is the Lie Algebra $\text{L}G$ . The representation is defined as:</p>
+
+$$g x g^{-1} = x R(g) \ \ \forall g\in G, x\in \text{L}G$$
+
+
+<p>Where $gxg^{-1} = -\ti \frac {\td} {\td t} (ge^{\ti t x}g^{-1})|_{t=0}$</p>
+<p><em>[Definition]</em> : <code>Reducible representations</code> : $\exists W \subset V \Rightarrow (\forall g \in G \Rightarrow R(g)V = V)$ . The contrary concept is <code>Irreducible representations (irrep.)</code></p>
 <h2 id="orthogonality-theorem">Orthogonality Theorem</h2>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : for any two irreps of (finite) group <code>$G$</code> , one has:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\delta_{R,R'}=1$</code> when <code>$R,R'$</code> are equivalent, it is <code>$0$</code> otherwise</p>
-<p><!-- raw HTML omitted -->[Note]<!-- raw HTML omitted --> : For <code>Compact</code> Lie group, with the definition of <code>Haar measure</code> <code>$\td\mu(g)$</code> (invariant under action of group elements: <code>$\td\mu(g'g)=\td \mu(g)$</code>) , then one has:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Character</code> : <code>$\chi_R(g) = \text{Tr}R(g)$</code> <!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : for any two irreps of (finite) group $G$ , one has:</p>
+
+$$\sum_{g\in G} R(g)^*_{ij}R'(g)_{i'j'} = \frac {|G|} {\text{dim}R} \delta_{ii'}\delta_{jj'}\delta_{R,R'}$$
+
+
+<p>Where $\delta_{R,R'}=1$ when $R,R'$ are equivalent, it is $0$ otherwise</p>
+<p><em>[Note]</em> : For <code>Compact</code> Lie group, with the definition of <code>Haar measure</code> $\td\mu(g)$ (invariant under action of group elements: $\td\mu(g&rsquo;g)=\td \mu(g)$) , then one has:</p>
+
+$$\int \td \mu(g) R(g)^*_{ij}R'(g)_{i'j'} = \frac {\int \td \mu(g)} {\text{dim}R} \delta_{ii'}\delta_{jj'}\delta_{R,R'}$$
+
+
+<p><em>[Definition]</em> : <code>Character</code> : $\chi_R(g) = \text{Tr}R(g)$ <br>
 Equivalent representations have the same character , and conjugacy class have the same character.</p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\delta_{R,R'}=1$</code> when <code>$R,R'$</code> are equivalent, it is <code>$0$</code> otherwise</p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : For <code>finite group</code> <code>$G$</code> ,  let <code>$n=|G|$</code> , <code>$m$</code> is the <code>number of conjugacy classes</code> , <code>$r$</code> is the <code>number of inequivalent irreps</code> , <code>$d_i$</code> is the <code>dimemsions of irrep.</code> <code>$i$</code> , then:</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> :</p>
+
+$$\sum_{g\in G} \chi_R(g)^*\chi_{R'}(g) = |G|\delta_{R,R'}$$
+
+
+<p>Where $\delta_{R,R'}=1$ when $R,R'$ are equivalent, it is $0$ otherwise</p>
+<p><em>[Theorem]</em> : For <code>finite group</code> $G$ ,  let $n=|G|$ , $m$ is the <code>number of conjugacy classes</code> , $r$ is the <code>number of inequivalent irreps</code> , $d_i$ is the <code>dimemsions of irrep.</code> $i$ , then:</p>
+
+$$\begin{aligned}
+m&=r \\
+\sum_i d_i^2 &= n=|G| \\
+n &= k_i d_i \ \ k_i\in \mathbb{N}
+\end{aligned}$$
+
+
 <h2 id="projection-operator">Projection Operator</h2>
-<p>Given a possibly reducible representation <code>$R$</code> of group <code>$G$</code> , and the characters of one irrep <code>$\chi_{R'}$</code> , it is possible to build an irrep. <code>$R'$</code> on the representation space of <code>$R$</code> :</p>
+<p>Given a possibly reducible representation $R$ of group $G$ , and the characters of one irrep $\chi_{R'}$ , it is possible to build an irrep. $R'$ on the representation space of $R$ :</p>
 <ol>
 <li>
-<p>Denote the orthonormal basis of representation <code>$R$</code> by <code>$\ket{e_i} \ \ i=1,\cdots,\text{dim}R$</code> . The action of group element <code>$g$</code> on the basis is:</p>
-<!-- raw HTML omitted -->
+<p>Denote the orthonormal basis of representation $R$ by $\ket{e_i} \ \ i=1,\cdots,\text{dim}R$ . The action of group element $g$ on the basis is:</p>
+
+$$\hat g \ket{e_i} = \sum_j \ket{e_j}R(g)_{ji}$$
+
+
 </li>
 <li>
 <p>Build new basis</p>
-<!-- raw HTML omitted -->
+
+$$\ket{\tilde{e}_i} =\sum_{g\in G} \hat g\ket{e_i}\chi_{R'}^* (g) = \sum_{g\in G} \sum_j \ket{e_j}R(g)_{ji}\chi_{R'}^*(g) $$
+
+
 <p>These are usually <code>NOT</code> linearly independent and not orthonormal.</p>
 </li>
 <li>
-<p>If <code>$R$</code>  contains irrep <code>$R'$</code> , then <code>$\ket {\tilde{e}_i}$</code> will span a finite dimensional space <!-- raw HTML omitted -->(not all <code>$\ket{\tilde{e}_i})$</code> are zero<!-- raw HTML omitted --> , then the group <code>$G$</code> is represented on this subspace as  <!-- raw HTML omitted -->(several copies of)<!-- raw HTML omitted --> the irrep <code>$R'$</code></p>
+<p>If $R$  contains irrep $R'$ , then $\ket {\tilde{e}_i}$ will span a finite dimensional space <mark>(not all $\ket{\tilde{e}_i})$ are zero</mark> , then the group $G$ is represented on this subspace as  <mark>(several copies of)</mark> the irrep $R'$</p>
 </li>
 </ol>
 <h1 id="conservatin-law--degeneracy">Conservatin Law &amp; Degeneracy</h1>
 <h2 id="symmetry-as-unitary-operator-1-particle-hilbert-space">Symmetry as Unitary Operator: 1-Particle Hilbert Space</h2>
-<p>Think of a symmetry group <code>$G$</code> acting on the coordinate space, and induces the transformation: <code>$\bm{x}\rightarrow g\bm{x}$</code> , This shall induce unitary transformations let:</p>
-<!-- raw HTML omitted -->
+<p>Think of a symmetry group $G$ acting on the coordinate space, and induces the transformation: $\bm{x}\rightarrow g\bm{x}$ , This shall induce unitary transformations let:</p>
+
+$$\ket{\bm{x}}\rightarrow \ket{g\bm{x}}$$
+
+
 <p>Then we can derive the transformation on arbitary single-particle state:</p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : For single-particle state <code>$\ket{\psi}$</code> , when group <code>$G$</code> &lsquo;s element <code>$g$</code> acts on coordinate space, it will be transformed to:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$J =|\det \partial_i (g\bm{x})^j| $</code> is the Jacobian of the transformation.</p>
-<!-- raw HTML omitted -->
-<p>for single particle state <code>$\ket{\psi}$</code> , it shall be transformed as:</p>
-<!-- raw HTML omitted -->
-<p>Then we have</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Usually, we assume <code>$J=1$</code> so that we do not need to worry about normalization. <!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : For single-particle state $\ket{\psi}$ , when group $G$ &rsquo;s element $g$ acts on coordinate space, it will be transformed to:</p>
+
+$$(g\psi)(\bm{x}) = J^{-1}\psi(g^{-1}\bm{x})$$
+
+
+<p>Where $J =|\det \partial_i (g\bm{x})^j| $ is the Jacobian of the transformation.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+for single particle state $\ket{\psi}$ , it shall be transformed as:
+
+
+$$\ket{g\psi} = \int \td\bm{x}  \psi(\bm{x})\ket{g\bm{x}} = \int \psi(g^{-1}\bm{x}) \ket{\bm{x}} J^{-1}\td^3 \bm{x}$$
+
+
+
+Then we have
+
+
+$$(g\psi)(\bm{x}) \equiv \langle \bm{x}\ket{g\psi} = J^{-1}\psi(g^{-1}\bm{x})$$
+
+
+
+</details>
+
+<p>Usually, we assume $J=1$ so that we do not need to worry about normalization. <br>
 Then we can find that the operation satisfies the <code>Associativity</code> :</p>
-<!-- raw HTML omitted -->
-<p>Moreover , one can define the unitary operator of the operation <code>$g$</code> with a orthonormal basis <code>$\ket{e_i}$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Then one can find that <code>$\ket{g\psi} = \hat g \ket{\psi}$</code> <!-- raw HTML omitted -->
-Then the matrix representation will be a <code>unitary representation</code> of <code>$g$</code> :</p>
-<!-- raw HTML omitted -->
+
+$$(h(g\psi))(\bm{x}) = ((hg)\psi)(\bm{x})$$
+
+
+<p>Moreover , one can define the unitary operator of the operation $g$ with a orthonormal basis $\ket{e_i}$ :</p>
+
+$$\hat g = \sum_i \ket{ge_i} \bra{e_i}$$
+
+
+<p>Then one can find that $\ket{g\psi} = \hat g \ket{\psi}$ <br>
+Then the matrix representation will be a <code>unitary representation</code> of $g$ :</p>
+
+$$(\bm{U}(g))_{ij} = \bra{e_i} \hat g \ket{e_j} =\langle e_i \ket{ge_j}$$
+
+
 <p>It is easy to check that:</p>
-<!-- raw HTML omitted -->
+
+$$\bm{U}(gh) = \bm{U}(g)\bm{U}(h)$$
+
+
 <h2 id="symmetry-as-unitary-operator-fock-space">Symmetry as Unitary Operator: Fock Space</h2>
-<p>First of all , we announce an Implicit assumption: <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->The vacuum is invariant under symmetry.<!-- raw HTML omitted --> (this shall be carefull to treat!)</p>
-<p>Symmetry operation <code>$g$</code> defined on single particle Hilbert space induces symmetry operation of Fock space. As the tensor product restricted in the (anti-)symmetrized many-body Hilbert space. <!-- raw HTML omitted -->
+<p>First of all , we announce an Implicit assumption: <br>
+<mark>The vacuum is invariant under symmetry.</mark> (this shall be carefull to treat!)</p>
+<p>Symmetry operation $g$ defined on single particle Hilbert space induces symmetry operation of Fock space. As the tensor product restricted in the (anti-)symmetrized many-body Hilbert space. <br>
 One can also consider the symmetry operations on the annihilation/creation operators:</p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : The creation operator <code>$\hat \psi^{\dagger}$</code> transforms as <code>$\ket{\psi}$</code> , while annihilation operator <code>$\hat \psi$</code> transforms as <code>$\bra{\psi}$</code> <!-- raw HTML omitted -->
-With this one can find that the particle number will be invariant under symmetry operation. <!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : The creation operator $\hat \psi^{\dagger}$ transforms as $\ket{\psi}$ , while annihilation operator $\hat \psi$ transforms as $\bra{\psi}$ <br>
+With this one can find that the particle number will be invariant under symmetry operation. <br>
 For fermion, on can find that:</p>
-<!-- raw HTML omitted -->
+
+$$\prod_i \hat{ge_i}^{\dagger} = \det g \prod_i \hat e_i^{\dagger}$$
+
+
 <h2 id="symmetry-as-unitary-operator-action-on-operators">Symmetry as Unitary Operator: Action on Operators</h2>
 <p>It is similar to the Heisenberg picture. The action of symmetry operation on state can be transfered to the action of operators:</p>
-<!-- raw HTML omitted -->
+
+$$\hat O \rightarrow_g \hat {gO}$$
+
+
 <p>There are two convention usually used:</p>
 <ol>
 <li>
 <p>Like the Heisenberg picture, let the symmetry operation only acts on operator:</p>
-<!-- raw HTML omitted -->
+
+$$\bra {g\psi} \hat O \ket{g\psi} = \bra{\psi} \hat {gO} \ket{\psi} \Rightarrow \hat{gO} = \hat g^{-1} \hat O \hat g$$
+
+
 </li>
 <li>
 <p>Demand the matrix element to be invariant under symmetry operation:</p>
-<!-- raw HTML omitted -->
+
+$$\bra{g\psi}\hat {gO} \ket{g\psi} = \bra{\psi}\hat O\ket{\psi} \Rightarrow \hat {gO} = \hat g \hat O \hat g^{-1}$$
+
+
 </li>
 </ol>
-<p>The set of linear operators <code>$\hat O_i$</code> can also form a linear representation of the group:</p>
-<!-- raw HTML omitted -->
+<p>The set of linear operators $\hat O_i$ can also form a linear representation of the group:</p>
+
+$$\hat {gO_i} = \sum_j \hat {O_j} R(g)_{ji}$$
+
+
 <h2 id="symmetry-generators-as-conserved-observables">Symmetry Generators as Conserved Observables</h2>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : The Hamiltonian is invariant under the action of <code>$g$</code> , which means that:</p>
-<!-- raw HTML omitted -->
-<p>for all states <code>$\psi,\phi$</code> , then for the unitary symmetry <code>$\hat g$</code> , one have:</p>
-<!-- raw HTML omitted -->
-<p>In quantum mechanics, the <!-- raw HTML omitted -->generators of continuous unitary symmetry corresponds to conserved observables<!-- raw HTML omitted --> . <!-- raw HTML omitted -->
-For generator <code>$X$</code>, and unitary symmetry <code>$\Phi : g \rightarrow \hat g \equiv \hat \Phi(g)$</code> , the corresponding observables is:</p>
-<!-- raw HTML omitted -->
-<p>which is independent of <code>$\theta$</code> value. <!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : When <code>$\hat \Phi(e^{\ti \theta X})$</code> is a symmetry unitary operator, which means that <code>$[\hat \Phi(e^{\ti\theta X}),\hat H]=0$</code> . Then
-<code>$\hat X$</code> is an Hermitian, and it is commutative with <code>$\hat H$</code> , which means that it is a conserved observable.</p>
-<!-- raw HTML omitted -->
-<p>Using <code>$\hat \Phi(e^{\ti\theta X})^{-1} \hat H \hat \Phi(e^{\ti\theta X}) = \hat H$</code> , take <code>$\frac {\td} {\td \theta}$</code> at <code>$\theta=0$</code> , and notice that</p>
-<!-- raw HTML omitted -->
-<p>one have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : The Hamiltonian is invariant under the action of $g$ , which means that:</p>
+
+$$\bra{g\psi} \hat H \ket{g\phi} = \bra{\psi} \hat H \ket{\phi}$$
+
+
+<p>for all states $\psi,\phi$ , then for the unitary symmetry $\hat g$ , one have:</p>
+
+$$[\hat H ,\hat g]=0$$
+
+
+<p>In quantum mechanics, the <mark>generators of continuous unitary symmetry corresponds to conserved observables</mark> . <br>
+For generator $X$, and unitary symmetry $\Phi : g \rightarrow \hat g \equiv \hat \Phi(g)$ , the corresponding observables is:</p>
+
+$$\hat X = -\ti \hat \Phi(e^{\ti \theta X})^{-1} \frac {\td} {\td \theta} \hat \Phi(e^{\ti \theta X})$$
+
+
+<p>which is independent of $\theta$ value. <br></p>
+<p><em>[Theorem]</em> : When $\hat \Phi(e^{\ti \theta X})$ is a symmetry unitary operator, which means that $[\hat \Phi(e^{\ti\theta X}),\hat H]=0$ . Then
+$\hat X$ is an Hermitian, and it is commutative with $\hat H$ , which means that it is a conserved observable.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+Using $\hat \Phi(e^{\ti\theta X})^{-1} \hat H \hat \Phi(e^{\ti\theta X}) = \hat H$ , take $\frac {\td} {\td \theta}$ at $\theta=0$ , and notice that
+
+
+$$\hat X = -\ti \frac {\td} {\td \theta} \hat \Phi(e^{\ti\theta X}) \Big|_{\theta=0} = \ti \frac {\td} {\td \theta} \hat \Phi(e^{\ti \theta X})^{-1} \Big|_{\theta=0}$$
+
+
+
+one have:
+
+
+$$\ti \hat X \hat H -\ti \hat H \hat X =0 \Rightarrow [\hat H ,\hat X]=0$$
+
+
+
+
+</details>
+
 <h2 id="symmetry--level-degeneracy">Symmetry &amp; Level Degeneracy</h2>
-<p>A symmetry <code>$g$</code> satisfies <code>$[\hat H , \hat g]=0$</code> , which means that <code>$g$</code> does not change energy eigenvalues. <!-- raw HTML omitted -->
-Degenerate energy eigenstates form a representation space of the symmetry group. Representation of <code>$g$</code> is <code>block diagonalized</code> in energy eigenbasis. <!-- raw HTML omitted -->
+<p>A symmetry $g$ satisfies $[\hat H , \hat g]=0$ , which means that $g$ does not change energy eigenvalues. <br>
+Degenerate energy eigenstates form a representation space of the symmetry group. Representation of $g$ is <code>block diagonalized</code> in energy eigenbasis. <br>
 Specially, nondegenerate energy eigenstates are 1-dimension representations.</p>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : The existence of non-commuting symmetry generators:</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : The existence of non-commuting symmetry generators:</p>
+
+$$\hat X, \hat Y \Rightarrow ([\hat H,\hat X]=[\hat H,\hat Y]=0 ) \text{ and } ([\hat X,\hat Y]\neq 0)$$
+
+
 <p><code>usually</code> implies degeneracy of energy levels.</p>
-<p><!-- raw HTML omitted -->[Note]<!-- raw HTML omitted --> :</p>
+<p><em>[Note]</em> :</p>
 <ol>
 <li>
-<p>If <code>$[\hat X,\hat Y]=\ti z$</code> is a non-zero c-number, there must be degeneracy. For unitary operator <code>$e^{\ti \hat X}$</code> changes eigenvalue of <code>$\hat Y$</code> by <code>$z$</code> (Landau level)</p>
+<p>If $[\hat X,\hat Y]=\ti z$ is a non-zero c-number, there must be degeneracy. For unitary operator $e^{\ti \hat X}$ changes eigenvalue of $\hat Y$ by $z$ (Landau level)</p>
 </li>
 <li>
-<p>If <code>$[\hat X,\hat Y]$</code> is not a c-number, there may be a non-degeneracy energy level. <code>IF</code> the state is vanished by commutators of all order:</p>
-<!-- raw HTML omitted -->
+<p>If $[\hat X,\hat Y]$ is not a c-number, there may be a non-degeneracy energy level. <code>IF</code> the state is vanished by commutators of all order:</p>
+<p>
+$$0=[\hat X,\hat Y]\ket{E} = [\hat X,[\hat X,\hat Y]]\ket{E}=[\hat Y,[\hat X,\hat Y]]\ket{E}=\cdots$$
+
+
+(ground state pf electron in hydrogen atom(ignore spin) with angular momentum $L=0$ , take $\hat X =\hat L_x, \hat Y=\hat L_y$)</p>
 </li>
 </ol>
 <h1 id="examples-of-symmetry">Examples of Symmetry</h1>
 <h2 id="translation">Translation</h2>
-<p>Continuous translation in 1D open space: <code>$T_a : x\rightarrow x+1$</code> for all <code>$a\in\mathbb{R}$</code> form a group: <code>$T_aT_{a'}=T_{a+a'}$</code>, which is <code>isomorphic</code> to <code>$\mathbb{R}$</code> <!-- raw HTML omitted -->
+<p>Continuous translation in 1D open space: $T_a : x\rightarrow x+1$ for all $a\in\mathbb{R}$ form a group: $T_aT_{a'}=T_{a+a'}$, which is <code>isomorphic</code> to $\mathbb{R}$ <br>
 The related unitary operator is:</p>
-<!-- raw HTML omitted -->
-<p>Or use momentum basis: <code>$\hat T(a) = \exp^{-\ti a \hat p}$</code> . <!-- raw HTML omitted -->
-This shows that the generator of translation is <code>$\hat p$</code> . <!-- raw HTML omitted -->
-The momentum eigenstates <code>$\ket{p}$</code> are 1D irreps, for <code>$\hat T(a)\ket{p} = e^{-\ti a p}\ket{p}$</code></p>
+
+$$\hat T(a) = \int \ket{x+a}\bra{x}\td x$$
+
+
+<p>Or use momentum basis: $\hat T(a) = \exp^{-\ti a \hat p}$ . <br>
+This shows that the generator of translation is $\hat p$ . <br>
+The momentum eigenstates $\ket{p}$ are 1D irreps, for $\hat T(a)\ket{p} = e^{-\ti a p}\ket{p}$</p>
 <h2 id="discrete-translation">Discrete Translation</h2>
-<p>Discrete translation(<code>lattice translation</code>): <code>$T: x\rightarrow x+a$</code> for a constant <code>$a\neq 0$</code>. The discrete translation group is the cyclic group generated by <code>$T$</code> : <code>$\{T^n\}$</code> for all <code>$n\in \mathbb{Z}$</code></p>
+<p>Discrete translation(<code>lattice translation</code>): $T: x\rightarrow x+a$ for a constant $a\neq 0$. The discrete translation group is the cyclic group generated by $T$ : ${T^n}$ for all $n\in \mathbb{Z}$</p>
 <ol>
-<li>The unitary operator is still <code>$\hat T = \exp(-\ti a \hat p)$</code></li>
+<li>The unitary operator is still $\hat T = \exp(-\ti a \hat p)$</li>
 <li>There is no associated Lie algebra and conserved observables(discrete group)</li>
-<li>Unitary irreps are <code>1D</code> , <code>$\hat T = e^{\ti \theta}$</code> with real <code>$\theta$</code> mod <code>$2\pi$</code></li>
-<li>Momentum eigenstates <code>$\ket{p+\frac 2\pi n/a}$</code> for <code>$n\in\mathbb{Z}$</code> belong to the same 1D irrep.</li>
-<li><code>Bloch's Theorem</code> : for system with the above translation symmetry, <code>$[\hat H,\hat T]=0$</code> , the m-th energy eigenstate of irrep <code>$\hat T = e^{-\ti a \hat p}$</code> will be a superposition of <code>$\ket{p+nG}$</code> , <code>$\ket{E_m,p}=\sum_n u_{mn}\ket{p+nG}$</code> Where <code>$n\in\mathbb{Z}$</code> and <code>$G=2\pi/a$</code> (the reciprocal lattice vector)
-And the <code>Bloch function</code> <code>$u_m(x)=\sum_{n}u_{mn}e^{2\pi \ti n(x/a)}$</code> is periodic: <code>$u_m(x+a)=u_m(x)$</code></li>
-<li>The <code>Bloch function</code> : <code>$u_m(x)$</code> (or Fourier coefficients <code>$u_{mn}$</code>) and the <code>crystal momentum</code> <code>$p$</code> in first <code>Brillouin zone</code> : <code>$-\pi/a\leq p \leq \pi/a$</code> in 1D case, define the eigenstates.</li>
+<li>Unitary irreps are <code>1D</code> , $\hat T = e^{\ti \theta}$ with real $\theta$ mod $2\pi$</li>
+<li>Momentum eigenstates $\ket{p+\frac 2\pi n/a}$ for $n\in\mathbb{Z}$ belong to the same 1D irrep.</li>
+<li><code>Bloch's Theorem</code> : for system with the above translation symmetry, $[\hat H,\hat T]=0$ , the m-th energy eigenstate of irrep $\hat T = e^{-\ti a \hat p}$ will be a superposition of $\ket{p+nG}$ , $\ket{E_m,p}=\sum_n u_{mn}\ket{p+nG}$ Where $n\in\mathbb{Z}$ and $G=2\pi/a$ (the reciprocal lattice vector)
+And the <code>Bloch function</code> $u_m(x)=\sum_{n}u_{mn}e^{2\pi \ti n(x/a)}$ is periodic: $u_m(x+a)=u_m(x)$</li>
+<li>The <code>Bloch function</code> : $u_m(x)$ (or Fourier coefficients $u_{mn}$) and the <code>crystal momentum</code> $p$ in first <code>Brillouin zone</code> : $-\pi/a\leq p \leq \pi/a$ in 1D case, define the eigenstates.</li>
 </ol>
 <h1 id="selection-rule">Selection Rule</h1>
 <h2 id="symmetry-constraints-on-matrix-elements">Symmetry Constraints on Matrix Elements</h2>
-<p>In general we want to consider the matrix element: <code>$(f_k)_{ij}=\bra{\phi_i}\hat f_k\ket{\psi_j}$</code> . Where <code>$i(j)$</code> indicates that <code>$\phi_i(\psi_j)$</code> is one of the degenerate energy levels of irrep. <code>$R_{\phi}(R_{\psi})$</code>
-And <code>$k$</code> means that <code>$\hat f_k$</code> belongs to a set of operators forming irrep. <code>$R_f$</code> .
-Then these matrix elements shall form a tensor product representation <code>$R_f\otimes R_{\phi}^{*}\otimes R_{\psi}$</code></p>
+<p>In general we want to consider the matrix element: $(f_k)<em>{ij}=\bra{\phi_i}\hat f_k\ket{\psi_j}$ . Where $i(j)$ indicates that $\phi_i(\psi_j)$ is one of the degenerate energy levels of irrep. $R</em>{\phi}(R_{\psi})$
+And $k$ means that $\hat f_k$ belongs to a set of operators forming irrep. $R_f$ .
+Then these matrix elements shall form a tensor product representation $R_f\otimes R_{\phi}^{*}\otimes R_{\psi}$</p>
 <ol>
 <li>
-<p><code>$\hat f_k$</code> form a representation, in the sense that <code>$\hat g \hat f_k \hat g^{-1}=\sum_{k'}\hat f_{k'}R_f(g)_{k'k}$</code></p>
+<p>$\hat f_k$ form a representation, in the sense that $\hat g \hat f_k \hat g^{-1}=\sum_{k'}\hat f_{k'}R_f(g)_{k&rsquo;k}$</p>
 </li>
 <li>
-<p><code>$R_{\phi}^{*}$</code> is the conjugate representation of <code>$R_{\phi}$</code> , <code>$R_{\phi}^{*}(g)=[R_{\phi}(g)]^{*}$</code> it is easy to check it is also a representation. More over:
-<code>$\bra{g\phi_i}=\bra{\phi_i}\hat g^{\dagger}=\sum_{i'}R_{\phi}^{*}(g)_{i'i}\bra{\phi_{i'}}$</code></p>
+<p>$R_{\phi}^{*}$ is the conjugate representation of $R_{\phi}$ , $R_{\phi}^{*}(g)=[R_{\phi}(g)]^{*}$ it is easy to check it is also a representation. More over:
+$\bra{g\phi_i}=\bra{\phi_i}\hat g^{\dagger}=\sum_{i'}R_{\phi}^{*}(g)_{i&rsquo;i}\bra{\phi_{i'}}$</p>
 </li>
 <li>
-<p><code>$(f_k)_{ij}$</code> form a tensor represetntation in the sense that:</p>
-<!-- raw HTML omitted -->
+<p>$(f_k)_{ij}$ form a tensor represetntation in the sense that:</p>
+
+$$\begin{aligned}
+    (f_k)_{ij}&=\bra{\phi_i}\hat f_k \ket{\psi_j} \equiv \bra{\phi_i}\hat g^{-1}\hat g \hat f_k \hat g^{-1}\hat g \ket{\psi_j} \\
+    &= \sum_{i',j',k'} R_{\phi}^{*}(g)_{i'i}R_f(g)_{k'k}R_{\psi}(g)_{j'j} \bra{\phi_{i'}} \hat f_{k'} \ket{\psi_{j'}} \\
+    &= \sum_{i',j',k'} (f_{k'})_{i'j'} R_f(g)_{k'k}R_{\phi}^{*}(g)_{i'i}R_{\psi}(g)_{j'j}
+    \end{aligned}$$
+
+
 </li>
 </ol>
-<p>Sum over <code>$g$</code>, by the orthogonality theorem, we have:</p>
-<p><!-- raw HTML omitted -->[Theorem(Selection Rule)]<!-- raw HTML omitted --> : the matrix element <code>$(f_k)_{ij}$</code> will vanish if the tensor representation <code>$R_f\otimes R_{\phi}^{*}\otimes R_{\psi}$</code> , after decomposed into direct sum of irreps, does <code>NOT</code> contain trivial representation.</p>
+<p>Sum over $g$, by the orthogonality theorem, we have:</p>
+<p><em>[Theorem(Selection Rule)]</em> : the matrix element $(f_k)<em>{ij}$ will vanish if the tensor representation $R_f\otimes R</em>{\phi}^{*}\otimes R_{\psi}$ , after decomposed into direct sum of irreps, does <code>NOT</code> contain trivial representation.</p>
 <h2 id="examples-selection-rule">Examples: Selection Rule</h2>
 <ul>
 <li><code>Parity selection rule</code>
-Consider group <code>$\{1,I\}$</code> generated by spatial inversion <code>$I$</code> . It has only two irreps., trivial(even) one and odd representation: <code>$\{1,-1\}$</code>
+Consider group ${1,I}$ generated by spatial inversion $I$ . It has only two irreps., trivial(even) one and odd representation: ${1,-1}$
 <ul>
 <li>States &amp; Operators are classified into <code>parity odd</code> (u) and <code>parity even</code> (g) classes</li>
 <li>Atomic orbitals of even(odd) angular momentum are parity even(odd)</li>
-<li>The matrix element is nonzero only for <code>$\bra{g}\hat O_g\ket{g'}$</code> , <code>$\bra{g}\hat O_u\ket{u}$</code> , <code>$\bra{u}\hat O_g\ket{u'}$</code> , <code>$\bra{u}\hat O_u\ket{g}$</code></li>
-<li>Main contribution to optical transitions (absorption/emission of one photon) is from <code>$\bra{\phi}\bm{E}\cdot \bm{r}\ket{\psi}$</code> , the operator is parity odd. So initial and final states should have <code>opposite parity</code></li>
+<li>The matrix element is nonzero only for $\bra{g}\hat O_g\ket{g'}$ , $\bra{g}\hat O_u\ket{u}$ , $\bra{u}\hat O_g\ket{u'}$ , $\bra{u}\hat O_u\ket{g}$</li>
+<li>Main contribution to optical transitions (absorption/emission of one photon) is from $\bra{\phi}\bm{E}\cdot \bm{r}\ket{\psi}$ , the operator is parity odd. So initial and final states should have <code>opposite parity</code></li>
 <li><code>Pseudo-vector</code> : vectors that are even under inversion.</li>
 <li><code>Pseudo-scalar</code> : scalars that are odd under inversion.</li>
 </ul>
 </li>
 <li><code>Raman selection rule</code>
-absorb a photon of polarization <code>$\bm{E}_{\text{in}}$</code> and emit a photon of polarization <code>$\bm{E}_{\text{out}}$</code> , the relevant matrix element is <code>$\bra{\text{final}}(\bm{E}_{\text{out}}\cdot \bm{r})(\bm{E}_{\text{in}\cdot \bm{r}})\ket{\text{initial}}$</code> .
+absorb a photon of polarization $\bm{E}<em>{\text{in}}$ and emit a photon of polarization $\bm{E}</em>{\text{out}}$ , the relevant matrix element is $\bra{\text{final}}(\bm{E}<em>{\text{out}}\cdot \bm{r})(\bm{E}</em>{\text{in}\cdot \bm{r}})\ket{\text{initial}}$ .
 <ul>
-<li>If the system have <code>$C_{4v}$</code> symmetry, the initial state is of trivial representation <code>$A_1$</code> , <code>$\bm{E}_{\text{in}}$</code>, <code>$\bm{E}_{\text{out}}$</code> are along <code>$x,y$</code> directions respectively, then the final state must have the symmetry of function <code>$xy$</code> , or <code>$B_2$</code> representation.</li>
+<li>If the system have $C_{4v}$ symmetry, the initial state is of trivial representation $A_1$ , $\bm{E}_{\text{in}}$, $\bm{E}_{\text{out}}$ are along $x,y$ directions respectively, then the final state must have the symmetry of function $xy$ , or $B_2$ representation.</li>
 </ul>
 </li>
 </ul>
 <h2 id="examples-symmetry-allowed-hamiltonian">Examples: Symmetry-allowed Hamiltonian</h2>
 <p>In many cases the symmetry of the system is known, but exact Hamiltonian is not. The goal is to write down a Hamiltonian consistent with the symmetry.</p>
 <ul>
-<li>Then general rule: find out representation <code>$\hat g$</code> of all symmetry generators, and demand that <code>$\hat g^{-1}\hat H \hat g = \hat H$</code></li>
-<li>For continuous symmetry, <code>$\hat H$</code> should be commutative with all symmetry generators, or carry vanishing symmetry quantum number.</li>
+<li>Then general rule: find out representation $\hat g$ of all symmetry generators, and demand that $\hat g^{-1}\hat H \hat g = \hat H$</li>
+<li>For continuous symmetry, $\hat H$ should be commutative with all symmetry generators, or carry vanishing symmetry quantum number.</li>
 </ul>
 <p>There are some examples:</p>
 <ul>
 <li>
 <p><code>Translation symmetry</code>
-For each monomial of operators, the sum of momenta of the factors must be zero. That means that Hamiltonian can only contain those items like: <code>$\hat \psi^{\dagger}(p)\hat \psi(p)$</code> , <code>$\hat \psi(-p)\hat \psi(p)$</code> , <code>$\hat \psi^{\dagger}(p_1)\hat \psi^{\dagger}(p_2)\hat \psi(p_3)\hat \psi(p_1+p_2-p_3)$</code></p>
+For each monomial of operators, the sum of momenta of the factors must be zero. That means that Hamiltonian can only contain those items like: $\hat \psi^{\dagger}(p)\hat \psi(p)$ , $\hat \psi(-p)\hat \psi(p)$ , $\hat \psi^{\dagger}(p_1)\hat \psi^{\dagger}(p_2)\hat \psi(p_3)\hat \psi(p_1+p_2-p_3)$</p>
 </li>
 <li>
 <p><code>Point group symmetry</code>
 Generally, free particle Hamiltonian can be written as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\hat{\bm{\psi}}(\bm{k})$</code> is a column vector of annihilation operators.</p>
-<p>Under <code>$g$</code> there is :</p>
-<!-- raw HTML omitted -->
-<p>If <code>$g$</code> is symmetry transformation, Hamiltonian should be invariant. Then <code>$H(g\bm{k})=R(g)^{-1}H(\bm{k})R(g)$</code>
+
+$$\hat H = \int \hat {\bm{\psi}}^{\dagger}(\bm{k}) \bm{H}(\bm{k})\hat {\bm{\psi}}(\bm{k}) \td^3 \bm{k}$$
+
+
+<p>Where $\hat{\bm{\psi}}(\bm{k})$ is a column vector of annihilation operators.</p>
+<p>Under $g$ there is :</p>
+
+$$\begin{aligned}
+    \hat{\bm{\psi}}(\bm{k}) &\rightarrow_g R(g) \hat{\bm{\psi}}(g\bm{k}) \\
+    \hat H &\rightarrow_g \int \hat {\bm{\psi}}^{\dagger}(g\bm{k})R(g)^{-1} \bm{H}(\bm{k})R(g)\hat {\bm{\psi}}(\bm{k}) \td^3 \bm{k}
+    \end{aligned}$$
+
+
+<p>If $g$ is symmetry transformation, Hamiltonian should be invariant. Then $H(g\bm{k})=R(g)^{-1}H(\bm{k})R(g)$
 This will be one of the constraints of the Hamiltonian.</p>
 </li>
 </ul>
@@ -1252,7 +1319,7 @@ This will be one of the constraints of the Hamiltonian.</p>
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1294,23 +1361,8 @@ This will be one of the constraints of the Hamiltonian.</p>
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1334,13 +1386,39 @@ This will be one of the constraints of the Hamiltonian.</p>
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1353,9 +1431,6 @@ This will be one of the constraints of the Hamiltonian.</p>
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The simple introduction to Relativistic Quantum Mechanics. Mainly about the Dirac equation. Gives some basic understanding about the Dirac equation(in Dirac representation). Get to know some basic consequences of Dirac equation: Orbital angular momentum is not conserved, but the total angular momentum; Zeeman coupling term with g factor is 2; Spin-orbit coupling term and Zitterbewegung: Dirac particle cannot be &ldquo;at rest&rdquo; in classical sense. Even with zero momentum and without external potential, it seems to be oscillating.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Introduction to Relativistic Quantum Mechanics | Leonard 
-  
+    
+     Introduction to Relativistic Quantum Mechanics | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/qm/relativisticqm/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>6 minutes read</li>
+      <li>14 minutes read</li>
     
   </ul>
   
@@ -455,186 +392,566 @@ autocomplete('#aa-search-input',
 
           <div class="post-content markdown">
             <h1 id="dirac-equation">Dirac Equation</h1>
-<p>It comes from the dispersion relation in Special Relativistic Theory: <code>$E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$</code> , transfer <code>$E\rightarrow \ti\hbar \frac {\td} {\td t}$</code> and <code>$\bm{p}\rightarrow -\ti\hbar \nabla$</code> , together with the requirement of linear equation, Dirac derived that:</p>
-<!-- raw HTML omitted -->
-<p>Dirac proved that <code>$\alpha_i,\beta$</code> should at least be <code>$4\times 4$</code> matrices.</p>
-<!-- raw HTML omitted -->
-<p>We need that these coefficients satisfy that :</p>
-<!-- raw HTML omitted -->
-<p>Moreover, we need them be Hermitian for they are coefficients in Hamiltonian. <!-- raw HTML omitted -->
-Then our question is to find four <!-- raw HTML omitted -->anti-commutative, hermitian, square to identity<!-- raw HTML omitted --> matrices.</p>
-<p>First we consider 2x2 matrices. For all 2x2 Hermitian matrices are some linear combination of Pauli matrice, while:</p>
-<!-- raw HTML omitted -->
-<p>In fact, one can find that:</p>
-<!-- raw HTML omitted -->
-<p>At last, we know that those coefficients shall be even-order matrices. In fact , one can check that the construction through Pauli matrices above is the lowest order solution.</p>
-<!-- raw HTML omitted -->
+<p>It comes from the dispersion relation in Special Relativistic Theory: $E=\sqrt{c^2 \bm{p}^2+m^2 c^4}$ , transfer $E\rightarrow \ti\hbar \frac {\td} {\td t}$ and $\bm{p}\rightarrow -\ti\hbar \nabla$ , together with the requirement of linear equation, Dirac derived that:</p>
+
+$$\ti \hbar \frac {\td} {\td t} \psi = \big(c \bm{\alpha}\cdot \hat {\bm{p}} + m c^2 \beta \big)\psi$$
+
+
+<p>Dirac proved that $\alpha_i,\beta$ should at least be $4\times 4$ matrices.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We need that these coefficients satisfy that :
+
+$$(\alpha_1 p^1+\alpha_2 p^2+\alpha_3 p^3+\beta m)^2=m^2+|\bm{p}|^2$$
+
+
+Which means that :
+
+$$\begin{aligned}
+\alpha_1^2=\alpha_2^2=\alpha_3^2=\beta^2&=1 \\
+\alpha_i \alpha_j + \alpha_j \alpha_i &=0 \\
+\alpha_i \beta+\beta \alpha_i&=0
+\end{aligned}$$
+
+
+The conflit between the second equation and the first implies that those coefficients must be some matrix but number.
+
+Moreover, we need them be Hermitian for they are coefficients in Hamiltonian. <br>
+Then our question is to find four <mark>anti-commutative, hermitian, square to identity</mark> matrices.
+
+First we consider 2x2 matrices. For all 2x2 Hermitian matrices are some linear combination of Pauli matrice, while:
+
+$$\{\sigma^i,\sigma^j\}=0 , \{\sigma^i,\sigma^0\}=2\sigma^i$$
+
+
+Where $\sigma^0=\bm{I}_2$ . The solution cannot be 2x2 matrices. For:
+
+$$\{a_i^{\indent s}\sigma^s +a_i^{\indent 0} \sigma^0,a_j^{\indent s}\sigma^s +a_j^{\indent 0} \sigma^0\}=2a_i^{\indent 0}a_j^{\indent s} \sigma^s+2a_j^{\indent 0}a_i^{\indent s} \sigma^s\neq 2\delta_{i,j}\sigma^0$$
+
+
+Then, for those matrices shall be square to identity, their eigenvalues shall be $1$ or $-1$ . For $\alpha_i^2 v =\lambda_i^2 v=v$ . <br>
+And for the same reason, $\alpha_1\alpha_2\alpha_1\alpha_2=\alpha_1(-\alpha_1\alpha_2)\alpha_2=-1$ , then the eigenvalues of $\alpha_1\alpha_2$ shall be $\text{i}$ or $-\text{i}$.
+For $\text{Tr}\alpha_1\alpha_2=-\text{Tr}\alpha_2\alpha_1 \Rightarrow \text{Tr}\alpha_1\alpha_2=0$ , the matrix $\alpha_1\alpha_2$ shall be matrix with even order, same as $\alpha_i, \beta$
+
+In fact, one can find that:
+
+
+$$\alpha_1\alpha_2=-\alpha_2\alpha_1 \Rightarrow \alpha_1=-\alpha_2\alpha_1\alpha_2 \Rightarrow \text{Tr}(\alpha_1)=-\text{Tr}\alpha_2\alpha_1\alpha_2=-\text{Tr}\alpha_1\alpha_2\alpha_2=-\text{Tr}\alpha_1$$
+
+
+
+At last, we know that those coefficients shall be even-order matrices. In fact , one can check that the construction through Pauli matrices above is the lowest order solution.
+
+
+</details>
+
 <p>With <code>Dirac's convention</code> , or in <code>Dirac representation</code> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\sigma^i$</code> are Pauli matrices, and <code>$\sigma^0=\bm{I}_{2\times 2}$</code> .</p>
+
+$$\alpha_i = \begin{bmatrix} 0 & \sigma^i \\ \sigma^i & 0 \end{bmatrix} \ ; \ \beta=\begin{bmatrix} \sigma^0 & 0 \\ 0 & -\sigma^0\end{bmatrix}$$
+
+
+<p>Where $\sigma^i$ are Pauli matrices, and $\sigma^0=\bm{I}_{2\times 2}$ .</p>
 <p>Then one has the <code>Dirac equation</code> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\psi$</code> is a <code>4-component quantity</code></p>
-<p>Then one can prove that the integral of <code>$\psi^\dagger \psi$</code> over whole space is invariant with time. And it is positive-determinate. Then it can be interpreted as the possibility density.</p>
+
+$$\ti \hbar \frac {\td} {\td t} \psi = \begin{bmatrix} mc^2 & c \bm{\sigma}\cdot \hat {\bm{p}} \\ c \bm{\sigma} \cdot \hat {\bm{p}} & -mc^2 \end{bmatrix} \psi$$
+
+
+<p>Where $\psi$ is a <code>4-component quantity</code></p>
+<p>Then one can prove that the integral of $\psi^\dagger \psi$ over whole space is invariant with time. And it is positive-determinate. Then it can be interpreted as the possibility density.</p>
 <p>The Lorentz covariant form of Dirac equation is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\gamma^\mu = (\beta,\beta\bm{\alpha})$</code> . And <code>$\tilde{\psi}=\beta \psi$</code> . Note that <code>$\{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu}$</code> .</p>
-<p><!-- raw HTML omitted -->Under Lorentz transformation, <code>$\tilde{\psi}$</code> shall transform non-trivially(not only change <code>$t,\bm{x}$</code>)<!-- raw HTML omitted --></p>
+
+$$\big(\ti \hbar \gamma^\mu \partial_\mu -m c^2 \big)\tilde{\psi} =0$$
+
+
+<p>Where $\gamma^\mu = (\beta,\beta\bm{\alpha})$ . And $\tilde{\psi}=\beta \psi$ . Note that ${\gamma^\mu,\gamma^\nu}=2\eta^{\mu\nu}$ .</p>
+<p><mark>Under Lorentz transformation, $\tilde{\psi}$ shall transform non-trivially(not only change $t,\bm{x}$)</mark></p>
 <h2 id="weyl-equation">Weyl Equation</h2>
-<p>When mass <code>$m=0$</code> , or extremely relativistic Dirac particle, the Dirac equation can be block-diagonalized into <code>$2\times 2$</code> equations:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\pm$</code> signs corresponds to right(left)-handed Weyl fermions.</p>
+<p>When mass $m=0$ , or extremely relativistic Dirac particle, the Dirac equation can be block-diagonalized into $2\times 2$ equations:</p>
+
+$$\ti \hbar \frac {\td} {\td t} \psi = \pm c \bm{\sigma} \cdot \hat {\bm{p}} \psi$$
+
+
+<p>Where $\pm$ signs corresponds to right(left)-handed Weyl fermions.</p>
 <h2 id="majorana-fermion">Majorana Fermion</h2>
-<p>It is possible to choose <code>$\bm{\alpha}$</code> real and <code>$\beta$</code> purely imaginary:</p>
-<!-- raw HTML omitted -->
-<p>In this case the Dirac equation divided <code>$\ti$</code> on both sides becomes real, so has real wave function solutions.</p>
+<p>It is possible to choose $\bm{\alpha}$ real and $\beta$ purely imaginary:</p>
+
+$$\beta=\sigma^1\otimes \sigma^2 \ ; \ \alpha_1=\sigma^1\otimes \sigma^3 \ ; \ \alpha_2= -\sigma^3\otimes \sigma^0 \ ; \ \alpha_3 = -\sigma^1\otimes \sigma^1$$
+
+
+<p>In this case the Dirac equation divided $\ti$ on both sides becomes real, so has real wave function solutions.</p>
 <h1 id="conserved-quantities-for-dirac-equation">Conserved Quantities for Dirac Equation</h1>
-<p>The Hamiltonian of Dirac model is a <code>$4\times 4$</code> matrix:</p>
-<!-- raw HTML omitted -->
+<p>The Hamiltonian of Dirac model is a $4\times 4$ matrix:</p>
+
+$$\hat H= c \bm{\alpha}\cdot \hat {\bm{p}}+m c^2\beta $$
+
+
 <ol>
 <li>
-<p>Momentum <code>$\hat {\bm{p}}$</code> is conserved: <code>$[\hat H,\hat {\bm{p}}]=0$</code> .</p>
+<p>Momentum $\hat {\bm{p}}$ is conserved: $[\hat H,\hat {\bm{p}}]=0$ .</p>
 </li>
 <li>
 <p><code>Angular momentum</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\hat {\bm{J}} = \bm{x}\times \hat{\bm{p}} + \hat {\bm{S}}$$
+
+
 <p>Where the spin operator:</p>
-<!-- raw HTML omitted -->
-<p>It has eigenvalues <code>$\pm \hbar/2$</code> , this shows that Dirac particle are spin-1/2.</p>
+
+$$\hat S^i = \frac {\hbar} 2 \begin{bmatrix} \sigma^i & 0 \\ 0 & \sigma^i \end{bmatrix} = \frac {\hbar} {4\ti} \epsilon^{ijk}\alpha_j\alpha_k$$
+
+
+<p>It has eigenvalues $\pm \hbar/2$ , this shows that Dirac particle are spin-1/2.</p>
 <p>And one can prove that:</p>
-<!-- raw HTML omitted -->
-<p>Spatial rotation corresponds to <code>$\exp(-\ti \bm{n}\cdot \hat {\bm{J}} \theta/\hbar)$</code> , and it is the transformation law for <code>4-component</code> wavefunction under spatial rotation.</p>
-<!-- raw HTML omitted -->
+
+$$[\hat J^i,\hat J^j]=\ti \hbar \epsilon^{ijk} \hat J^k \ ; \ [\hat L^i,\hat L^j]=\ti \hbar \epsilon^{ijk} \hat L^k \ ; \ [\hat S^i,\hat S^j]=\ti\hbar \epsilon^{ijk} \hat S^k \ ; \ [\hat L^i,\hat S^j]=0$$
+
+
+<p>Spatial rotation corresponds to $\exp(-\ti \bm{n}\cdot \hat {\bm{J}} \theta/\hbar)$ , and it is the transformation law for <code>4-component</code> wavefunction under spatial rotation.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We will proof the orbital-angular-momentum will not be conserved in Dirac theory first, note $\alpha_i,\beta$ are commutable to c-number and scalar-operators:
+
+
+$$\begin{aligned}[]
+[\hat H,\hat L^j] &= [c\alpha_i \hat p^i+mc^2\beta,\epsilon^{jkl}\hat x^k \hat p^l] \\
+&=\epsilon^{jkl} c \alpha_i (-\ti \hbar) \delta_{ik} \hat p^l \\
+&=-\ti \hbar \epsilon^{jil} c \alpha_i \hat p^l\\
+&=-\ti \hbar c (\bm{\alpha}\times \hat{\bm{p}})^j \neq 0
+\end{aligned}$$
+
+
+
+sum for indices except $j$ .
+
+Then, the orbital angular momentum's square:
+
+
+$$[\hat H,(\hat {\bm{L}})^2]=\sum_j [\hat H, (\hat L^j)^2]=-\ti \hbar c\sum_j \{\hat L^j,(\bm{\alpha}\times \hat {\bm{p}})^j\} \neq 0 $$
+
+
+
+Then we will prove that total angular momentum is conserved. With some equalities about $\alpha,\beta$:
+
+
+$$[\alpha_i,\alpha_j]=\begin{bmatrix}\sigma^i\sigma^j-\sigma^j\sigma^i & 0 \\ 0 & \sigma^i\sigma^j-\sigma^j\sigma^i \end{bmatrix}=\frac {4\ti} {\hbar} \epsilon^{ijk} \hat S^k$$
+
+
+
+And $\{\beta,\alpha_i\}=0 \ ; \ \{\alpha_i,\alpha_j\}=2\delta_{ij}$ .
+
+For spin operator we have:
+
+
+$$[\hat S^i,\alpha_j]=\frac {\hbar} {2}\begin{bmatrix}0 & \sigma^i\sigma^j-\sigma^j\sigma^i \\ \sigma^i\sigma^j-\sigma^j\sigma^i & 0\end{bmatrix}= \ti\hbar \epsilon^{ijk}\alpha_k$$
+
+
+
+And $\{\hat S^i,\alpha_j\}=\hbar \sigma^1\otimes \sigma^0\delta_{ij}$.
+
+Then:
+
+
+$$\begin{aligned}[]
+[\hat H,\hat S^j]&=c[\alpha_i , \hat S^j]\hat p^i + mc^2 \epsilon^{jkl}\frac {\hbar} {4\ti} [\beta,\alpha_k\alpha_l] \\
+&=-\ti\hbar c \epsilon^{jik}\alpha_k \hat p^i+ mc^2 \epsilon^{jkl}\frac {\hbar} {4\ti} \big(\{\beta,\alpha_k\}\alpha_l-\alpha_k\{\beta,\alpha_l\} \big) \\
+&=\ti\hbar c (\bm{\alpha}\times \hat{\bm{p}})^j
+\end{aligned}$$
+
+
+
+Moreover, it shows that $[\hat H,\hat S^j \hat p^j]=0$ . This means `helicity` is a good quantum number. ($\hat L^j\hat p^j=0$ so we do not consider it as quantum number).
+
+And for spin $\hat {\bm{S}}^2$ :
+
+
+$$[\hat H,\hat {\bm{S}}^2]=\sum_j \{\hat S^j,\ti\hbar c (\bm{\alpha}\times \hat{\bm{p}})_j\} = \ti\hbar c \sum_j \{\hat S^j,\alpha_{k}\}\epsilon^{jkl} \hat p^l=0$$
+
+
+
+Then we compute the total angular momentum:
+
+
+$$[\hat H,\hat L^j+\hat S^j]=0$$
+
+
+
+That is to say, in Dirac theory only the total momentum is conserved. Moreover, $\hat{\bm{S}}^2$ and $\hat{\bm{S}}\cdot \hat{\bm{p}}$ are also conserved.
+
+    
+</details>
+
 </li>
-</ol>
-<p>We will proof the orbital-angular-momentum will not be conserved in Dirac theory first, note <code>$\alpha_i,\beta$</code> are commutable to c-number and scalar-operators:</p>
-<!-- raw HTML omitted -->
-<p>sum for indices except <code>$j$</code> .</p>
-<p>Then, the orbital angular momentum&rsquo;s square:</p>
-<!-- raw HTML omitted -->
-<p>Then we will prove that total angular momentum is conserved. With some equalities about <code>$\alpha,\beta$</code>:</p>
-<!-- raw HTML omitted -->
-<p>And <code>$\{\beta,\alpha_i\}=0 \ ; \ \{\alpha_i,\alpha_j\}=2\delta_{ij}$</code> .</p>
-<p>For spin operator we have:</p>
-<!-- raw HTML omitted -->
-<p>And <code>$\{\hat S^i,\alpha_j\}=\hbar \sigma^1\otimes \sigma^0\delta_{ij}$</code>.</p>
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>Moreover, it shows that <code>$[\hat H,\hat S^j \hat p^j]=0$</code> . This means <code>helicity</code> is a good quantum number. (<code>$\hat L^j\hat p^j=0$</code> so we do not consider it as quantum number).</p>
-<p>And for spin <code>$\hat {\bm{S}}^2$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Then we compute the total angular momentum:</p>
-<!-- raw HTML omitted -->
-<p>That is to say, in Dirac theory only the total momentum is conserved. Moreover, <code>$\hat{\bm{S}}^2$</code> and <code>$\hat{\bm{S}}\cdot \hat{\bm{p}}$</code> are also conserved.</p>
-<!-- raw HTML omitted -->
-<ol start="3">
-<li><code>Helicity</code> <code>$\hat {\bm{J}}\cdot \hat {\bm{p}}/|\bm{p}|=\hat {\bm{S}}\cdot \hat{\bm{p}}/|\bm{p}|$</code> . Defined for <code>momentum eigenstate</code> , so <code>$|\bm{p}|$</code> is well-defined. Helicity can be <code>$\pm \hbar/2$</code> .</li>
+<li>
+<p><code>Helicity</code> $\hat {\bm{J}}\cdot \hat {\bm{p}}/|\bm{p}|=\hat {\bm{S}}\cdot \hat{\bm{p}}/|\bm{p}|$ . Defined for <code>momentum eigenstate</code> , so $|\bm{p}|$ is well-defined. Helicity can be $\pm \hbar/2$ .</p>
+</li>
 </ol>
 <h1 id="zitterbewegung">Zitterbewegung</h1>
 <p>Consider the operators in <code>Heisenberg picture</code> , we have the equation of motion:</p>
-<!-- raw HTML omitted -->
-<p>So the velocity operator has eigenvalues <code>$\pm c$</code> and different components are not commutable.</p>
-<p>Note that <code>$[\hat H,\bm{\alpha}]\neq 0$</code> , that means in Heisenberg picture, <code>$\bm{\alpha}_H$</code> is not time-independent. Then for <code>$\bm{p}=0$</code> state:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>One can check that:</p>
-<!-- raw HTML omitted -->
-<p>And:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>Then for the state of <code>$\bm{p}=0$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\frac {\td} {\td t} \hat {\bm{x}}_H = \frac {\ti} {\hbar} [\hat H,\hat {\bm{x}}_H]=c \bm{\alpha}_H$$
+
+
+<p>So the velocity operator has eigenvalues $\pm c$ and different components are not commutable.</p>
+<p>Note that $[\hat H,\bm{\alpha}]\neq 0$ , that means in Heisenberg picture, $\bm{\alpha}_H$ is not time-independent. Then for $\bm{p}=0$ state:</p>
+
+$$\Big(\frac {\td}  {\td t}\Big)^2 \frac {\td} {\td t} \langle \hat{\bm{x}}\rangle = -\frac {4m^2 c^4} {\hbar^2} \frac {\td } {\td t} \langle \hat{\bm{x}}\rangle$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+One can check that:
+
+
+$$[\hat H,\alpha_j]=c [\alpha_i,\alpha_j]\hat p^i +mc^2 [\beta ,\alpha_j]=\frac {4\ti} {\hbar} c\epsilon^{ijk}\hat S^k \hat p^i+2mc^2 \beta\alpha_j$$
+
+
+
+And:
+
+
+$$\begin{aligned}[]
+[\hat H,[\hat H,\alpha_j]]&= [\hat H,\frac {4\ti} {\hbar} c\epsilon^{ijk}\hat S^k \hat p^i+2mc^2 \beta\alpha_j]\\
+&=\frac {4\ti c} \hbar \epsilon^{ijk} [\hat H,\hat S^k \hat p^i] + 2mc^2 [\hat H,\beta\alpha_j] \\
+&=\frac {4\ti c^2} \hbar \epsilon^{ijk} [\alpha_l,\hat S^k]\hat p^l \hat p^i+\frac {4\ti c} \hbar \epsilon^{ijk} mc^2 [\beta,\hat S^k]\hat p^i + 2mc^3 [\alpha_i ,\beta\alpha_j]\hat p^i +2(mc^2)^2 [\beta,\beta\alpha_j] \\
+&= -4 c^2 \epsilon^{ijk} \epsilon^{klr}\alpha_r\hat p^l\hat p^i-4mc^3\beta \hat p^j +4(mc^2)^2 \alpha_j \\
+&= -4c^2 (\delta_{li}\delta_{jr}-\delta_{ir}\delta_{jl})\alpha_r \hat p^l \hat p^i -4mc^3 \beta \hat p^j +4(mc^2)^2\alpha_j \\
+&= -4c^2 \alpha_j \hat {\bm{p}}^2 +4c^2 \hat p^j \bm{\alpha}\cdot \hat{\bm{p}}-4c^3 \beta \hat p^j + 4(mc^2)^2 \alpha_j
+\end{aligned}$$
+
+
+
+Then we have:
+
+
+$$\frac 1 c\Big(\frac \td {\td t} \Big)^2 \frac {\td} {\td t} \hat {\bm{x}}_H =\frac {-1} {\hbar^2} [\hat H,[\hat H,\alpha_j]] = \frac {4c^2} {\hbar^2} \hat {\bm{p}}_H^2 \bm{\alpha}_H-\frac {4c^2} {\hbar^2}(\bm{\alpha}_H\cdot \hat {\bm{p}}_H)\hat {\bm{p}}_H+\frac {4c^3} {\hbar^2} \beta_H \hat {\bm{p}}_H-\frac {4m^2c^4} {\hbar^2} \bm{\alpha}_H$$
+
+
+
+Then for the state of $\bm{p}=0$ , we have:
+
+
+$$\Big(\frac \td {\td t} \Big)^2 \frac {\td} {\td t} \bra{\bm{p}=0}\hat {\bm{x}}_H\ket{\bm{p}=0} = -\frac {4m^2c^4} {\hbar^2} \frac {\td} {\td t} \bra{\bm{p}=0}\hat {\bm{x}}_H\ket{\bm{p}=0} $$
+
+
+
+
+</details>
+
 <p>The solution of this equation is:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The generic form of the solution is that (we use <code>$\bm{x}(t)$</code> to denote the <code>$\bra{\bm{p}=0}\hat {\bm{x}}_H(t)\ket{\bm{p}=0}$</code> ):</p>
-<!-- raw HTML omitted -->
-<p>Use that :</p>
-<!-- raw HTML omitted -->
-<p>That is the initial condition:</p>
-<!-- raw HTML omitted -->
-<p>Where the <code>$\langle \cdot \rangle$</code> is compute on the state of <code>$\bm{p}=0$</code> . Then we have:</p>
-<!-- raw HTML omitted -->
-<p>Then the solution:</p>
-<!-- raw HTML omitted -->
-<p>For the state of <code>$\bm{p}=0$</code> , the Dirac equation is:</p>
-<!-- raw HTML omitted -->
-<p>That is <code>$\psi(t)=\begin{bmatrix} e^{-\ti mc^2 t/\hbar} \xi_1 \\ e^{\ti mc^2t/\hbar} \xi_2 \end{bmatrix}$</code>. Where <code>$\xi_{1,2}$</code> are arbitrary 2-component quantities. If we choose <code>$\xi_1=(1/\sqrt{2},0)^T, \xi_2=(0,1/\sqrt{2})^T$</code> for example:</p>
-<!-- raw HTML omitted -->
-<p>They are not zero simultaneously.</p>
-<!-- raw HTML omitted -->
-<p>Where the <code>$\langle \cdot \rangle$</code> is compute on the state of <code>$\bm{p}=0$</code>. These two expectation value can be nonzero for some states. This means that even for the state of <code>$\bm{p}=0$</code> , the expectation of coordinate of a Dirac particle is still oscillating with an extremely high frequency.</p>
+
+$$\bm{x}(t)=\bm{x}(0) +\frac {\hbar} {2mc} \Big(\langle\bm{\alpha}\rangle\sin \frac {2mc^2 t} {\hbar} +\ti \langle\bm{\alpha}\beta\rangle \big( \cos \frac {2mc^2t} {\hbar} -1\big) \Big)$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+The generic form of the solution is that (we use $\bm{x}(t)$ to denote the $\bra{\bm{p}=0}\hat {\bm{x}}_H(t)\ket{\bm{p}=0}$ ):
+
+
+$$\frac {\td \bm{x}(t)} {\td t} =\bm{A}\sin \frac {2mc^2 t} {\hbar} +\bm{B}\cos \frac {2mc^2 t} {\hbar} $$
+
+
+
+Use that :
+
+
+$$\begin{aligned}
+\frac {\td} {\td t} \hat {\bm{x}}_H &= c \bm{\alpha}_H \\
+\frac {\td^2} {\td t^2} \hat {\bm{x}}_H &= \frac {4c^2} {\hbar^2} (\hat{\bm{S}}_H\times \hat{\bm{p}}_H) + \frac {2mc^3 \ti} {\hbar} \beta_H \bm{\alpha}_H
+\end{aligned}$$
+
+
+
+That is the initial condition:
+
+
+$$\begin{aligned}
+\frac {\td \bm{x}(t)} {\td t}\Bigg|_{t=0} &= c \langle\bm{\alpha}\rangle \\
+\frac {\td^2 \bm{x}(t)} {\td t^2} \Bigg|_{t=0} &= \frac {2mc^3 \ti} {\hbar} \langle \beta \bm{\alpha}\rangle
+\end{aligned}$$
+
+
+
+Where the $\langle \cdot \rangle$ is compute on the state of $\bm{p}=0$ . Then we have:
+
+
+$$\begin{aligned}
+\bm{A} &= \ti c \langle \beta \bm{\alpha}\rangle \\
+\bm{B} &= c \langle \bm{\alpha}\rangle
+\end{aligned}$$
+
+
+
+Then the solution:
+
+
+$$\bm{x}(t)=\bm{x}(0)-\frac {\ti \hbar \langle \bm{\alpha}\beta\rangle} {2mc} +\frac {\hbar} {2mc} \Big(\langle\bm{\alpha}\rangle\sin \frac {2mc^2 t} {\hbar} +\ti \langle\bm{\alpha}\beta\rangle \cos \frac {2mc^2t} {\hbar} \Big)$$
+
+
+
+For the state of $\bm{p}=0$ , the Dirac equation is:
+
+
+$$\ti\hbar \frac {\td \psi} {\td t} = \begin{bmatrix} mc^2 & 0 \\ 0 & -mc^2 \end{bmatrix}\psi$$
+
+
+
+That is $\psi(t)=\begin{bmatrix} e^{-\ti mc^2 t/\hbar} \xi_1 \\ e^{\ti mc^2t/\hbar} \xi_2 \end{bmatrix}$. Where $\xi_{1,2}$ are arbitrary 2-component quantities. If we choose $\xi_1=(1/\sqrt{2},0)^T, \xi_2=(0,1/\sqrt{2})^T$ for example:
+
+
+$$\begin{aligned}
+\langle \bm{\alpha}\rangle &= (1,0,0) \\
+\langle \beta\bm{\alpha}\rangle &= (0,-\ti,0) \\
+\end{aligned}$$
+
+
+
+They are not zero simultaneously.
+
+
+</details>
+
+<p>Where the $\langle \cdot \rangle$ is compute on the state of $\bm{p}=0$. These two expectation value can be nonzero for some states. This means that even for the state of $\bm{p}=0$ , the expectation of coordinate of a Dirac particle is still oscillating with an extremely high frequency.</p>
 <h1 id="solutions-to-dirac-equation">Solutions to Dirac Equation</h1>
 <h2 id="positive-energy">Positive Energy</h2>
-<p>Let the solution has the form of <code>$\psi(t,\bm{x})=e^{\ti(\bm{p}\cdot \bm{x}-Et)/\hbar} u(\bm{p})$</code> where <code>$u(\bm{p})$</code> is a 4-component quantity. Then the Dirac equation is:</p>
-<!-- raw HTML omitted -->
-<p>Note that <code>$\bm{\sigma}\cdot \bm{p}$</code> as a <code>$2\times 2$</code> matrix has eigenvalues <code>$\pm|\bm{p}|$</code> , denote the corresponding eigenvectors as <code>$\chi_{\pm}(\bm{p})$</code> :</p>
-<!-- raw HTML omitted -->
-<p>If <code>$\bm{p}=|\bm{p}|(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos \theta)$</code> , one can choose:</p>
-<!-- raw HTML omitted -->
-<p>Then the two solution to <code>$u(\bm{p})$</code> with <code>$E=\sqrt{c^2\bm{p}^2+m^2c^4}$</code> are:</p>
-<!-- raw HTML omitted -->
+<p>Let the solution has the form of $\psi(t,\bm{x})=e^{\ti(\bm{p}\cdot \bm{x}-Et)/\hbar} u(\bm{p})$ where $u(\bm{p})$ is a 4-component quantity. Then the Dirac equation is:</p>
+
+$$\begin{bmatrix} mc^2 & c \bm{\sigma}\cdot \bm{p} \\ c \bm{\sigma} \cdot \bm{p} & -mc^2 \end{bmatrix} u(\bm{p})=Eu(\bm{p})$$
+
+
+<p>Note that $\bm{\sigma}\cdot \bm{p}$ as a $2\times 2$ matrix has eigenvalues $\pm|\bm{p}|$ , denote the corresponding eigenvectors as $\chi_{\pm}(\bm{p})$ :</p>
+
+$$\bm{\sigma}\cdot \bm{p}\chi_{\pm}(\bm{p})=\pm |\bm{p}|\chi_{\pm}(\bm{p})$$
+
+
+<p>If $\bm{p}=|\bm{p}|(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos \theta)$ , one can choose:</p>
+
+$$\chi_+(\bm{p}) = \begin{bmatrix} \cos(\theta/2) \\ e^{\ti \phi}\sin (\theta/2)\end{bmatrix} \ ; \ \chi_-(\bm{p})=\begin{bmatrix} -e^{-\ti\phi}\sin(\theta/2) \\ \cos(\theta/2) \end{bmatrix}$$
+
+
+<p>Then the two solution to $u(\bm{p})$ with $E=\sqrt{c^2\bm{p}^2+m^2c^4}$ are:</p>
+
+$$u_+(\bm{p})=\begin{bmatrix} \sqrt{\frac {E+mc^2} {2mc^2}} \chi_+(\bm{p}) \\ \sqrt{\frac {E-mc^2} {2mc^2}} \chi_+(\bm{p})\end{bmatrix} \ ; \ u_-(\bm{p})=\begin{bmatrix} \sqrt{\frac {E+mc^2} {2mc^2}} \chi_-(\bm{p}) \\ -\sqrt{\frac {E-mc^2} {2mc^2}} \chi_-(\bm{p})\end{bmatrix}$$
+
+
 <h2 id="negative-energy">Negative Energy</h2>
-<p>Let the solution has the form of <code>$\psi(t,\bm{x})=e^{-\ti(\bm{p}\cdot \bm{x}-Et)/\hbar} v(\bm{p})$</code> where <code>$v(\bm{p})$</code> is a 4-component quantity. Then the Dirac equation is:</p>
-<!-- raw HTML omitted -->
-<p>Similarly, for <code>$E=\sqrt{c^2 \bm{p}^2+m^2c^4}$</code>:</p>
-<!-- raw HTML omitted -->
-<p><code>$\psi$</code> here seems negative energy <code>$-E$</code> solution of Dirac equation with momentum <code>$-\bm{p}$</code> , actually, it should be interpreted as the <code>conjugate wavefunction</code> of a <code>positron</code> <code>$\psi'^*$</code> with energy <code>$+E$</code> and momentum <code>$\bm{p}$</code> .</p>
+<p>Let the solution has the form of $\psi(t,\bm{x})=e^{-\ti(\bm{p}\cdot \bm{x}-Et)/\hbar} v(\bm{p})$ where $v(\bm{p})$ is a 4-component quantity. Then the Dirac equation is:</p>
+
+$$\begin{bmatrix} -mc^2 & c \bm{\sigma}\cdot \bm{p} \\ c \bm{\sigma} \cdot \bm{p} & mc^2 \end{bmatrix} v(\bm{p})=Ev(\bm{p})$$
+
+
+<p>Similarly, for $E=\sqrt{c^2 \bm{p}^2+m^2c^4}$:</p>
+
+$$v_+(\bm{p})=\begin{bmatrix} \sqrt{\frac {E-mc^2} {2mc^2}} \chi_+(\bm{p}) \\ \sqrt{\frac {E+mc^2} {2mc^2}} \chi_+(\bm{p})\end{bmatrix} \ ; \ v_-(\bm{p})=\begin{bmatrix} -\sqrt{\frac {E-mc^2} {2mc^2}} \chi_-(\bm{p}) \\ \sqrt{\frac {E+mc^2} {2mc^2}} \chi_-(\bm{p})\end{bmatrix}$$
+
+
+<p>$\psi$ here seems negative energy $-E$ solution of Dirac equation with momentum $-\bm{p}$ , actually, it should be interpreted as the <code>conjugate wavefunction</code> of a <code>positron</code> $\psi'^*$ with energy $+E$ and momentum $\bm{p}$ .</p>
 <h1 id="non-relativistic-limit">Non-relativistic Limit</h1>
-<p>The Dirac equation of charge <code>$q$</code> particle in Electromagnetic field is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\Phi$</code> is electrostatic potential, and <code>$\bm{A}$</code> is the vector potential. Both depend on time and space.</p>
-<p>Consider the case that <code>$|\bm{p}|\ll mc$</code> . Separate the Hamiltonian into diagonal term <code>$\hat H_0=mc^2\beta +q \Phi$</code> and off-diagonal term <code>$\hat H_1=c\bm{\alpha}\cdot (-\ti\hbar\nabla-q \bm{A})$</code> . We try to use sequence of unitary transformation to eliminate the off-diagonal part.</p>
-<p>Let <code>$\psi'=e^{\ti \hat S(t,\bm{x})}\psi$</code> , then the transform:</p>
-<!-- raw HTML omitted -->
+<p>The Dirac equation of charge $q$ particle in Electromagnetic field is:</p>
+
+$$\ti \hbar \frac {\partial} {\partial t}\psi = \Big(c \bm{\alpha} \cdot \big(-\ti \hbar \nabla -q \bm{A}\big) +mc^2 \beta +q \Phi \Big)\psi$$
+
+
+<p>Where $\Phi$ is electrostatic potential, and $\bm{A}$ is the vector potential. Both depend on time and space.</p>
+<p>Consider the case that $|\bm{p}|\ll mc$ . Separate the Hamiltonian into diagonal term $\hat H_0=mc^2\beta +q \Phi$ and off-diagonal term $\hat H_1=c\bm{\alpha}\cdot (-\ti\hbar\nabla-q \bm{A})$ . We try to use sequence of unitary transformation to eliminate the off-diagonal part.</p>
+<p>Let $\psi'=e^{\ti \hat S(t,\bm{x})}\psi$ , then the transform:</p>
+
+$$\ti \hbar \partial_t \psi=e^{-\ti\hat S(t,\bm{x})}\ti\hbar \partial_t \psi' + \ti\hbar (\partial_t e^{-\ti \hat S(t,\bm{x})}) \psi'=\hat H\psi$$
+
+
 <p>Then we have the new equation:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\hat H'=e^{\ti \hat S(t,\bm{x})} \hat H e^{-\ti \hat S(t,\bm{x})} -\ti\hbar e^{\ti\hat S(t,\bm{x})}(\partial_t e^{-\ti \hat S(t,\bm{x})})$</code></p>
-<p>With the Hausdorff formula, noting that <code>$\partial_t e^{-\ti \hat S(t,\bm{x})}=-\ti (\partial_t \hat S)e^{-\ti \hat S(t,\bm{x})}$</code> where we do not exchange the order for general discussion:</p>
-<!-- raw HTML omitted -->
-<p>Choose <code>$\ti\hat S=\beta \hat H_1/(2mc^2)$</code> , so that:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>And</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\ti\hbar \partial_t \psi' = e^{\ti \hat S(t,\bm{x})} \hat H e^{-\ti \hat S(t,\bm{x})} \psi' -\ti\hbar e^{\ti\hat S(t,\bm{x})}\partial_t e^{-\ti \hat S(t,\bm{x})} \psi'\equiv \hat H'\psi'$$
+
+
+<p>Where $\hat H'=e^{\ti \hat S(t,\bm{x})} \hat H e^{-\ti \hat S(t,\bm{x})} -\ti\hbar e^{\ti\hat S(t,\bm{x})}(\partial_t e^{-\ti \hat S(t,\bm{x})})$</p>
+<p>With the Hausdorff formula, noting that $\partial_t e^{-\ti \hat S(t,\bm{x})}=-\ti (\partial_t \hat S)e^{-\ti \hat S(t,\bm{x})}$ where we do not exchange the order for general discussion:</p>
+
+$$\hat H'=\hat H + [\ti \hat S,\hat H]+\frac 1 2 [\ti\hat S,[\ti\hat S,\hat H]]+\cdots-\hbar (\partial_t \hat S)-\hbar[\ti\hat S,\partial_t \hat S]-\hbar[\ti\hat S,[\ti\hat S,\partial_t\hat S]]-\cdots$$
+
+
+<p>Choose $\ti\hat S=\beta \hat H_1/(2mc^2)$ , so that:</p>
+
+$$[\ti\hat S,mc^2\beta]=-\hat H_1 \ ; \ [\ti\hat S,\hat H_1]=\frac {\beta} {mc^2}(\hat H_1)^2\ ; \ [\ti\hat S,[\ti\hat S,\hat H_1]]=-\frac 1 {m^2c^4}(\hat H_1)^3$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+
+$$\begin{aligned}[]
+[\ti\hat S,mc^2\beta]&=\frac {\beta} {2}[\hat H_1,\beta]\\
+&=\frac {\beta} 2 c\sum_i[\alpha_i,\beta] (-\ti \hbar \partial_i-qA_i) \\
+&=\frac {\beta c} 2 \sum_i \Big(\begin{bmatrix}0 & -\sigma^i \\ \sigma^i & 0 \end{bmatrix}-\begin{bmatrix}0 & \sigma^i \\ -\sigma^i & 0 \end{bmatrix} \Big) (-\ti\hbar\partial_i-qA_i) \\
+&=c\sum_i \begin{bmatrix}0 & -\sigma^i \\ -\sigma^i & 0 \end{bmatrix} (-\ti\partial_i-qA_i) \\
+&=-\hat H_1
+\end{aligned}$$
+
+
+
+And
+
+
+$$\begin{aligned}[]
+[\ti \hat S,\hat H_1] &= \frac 1 {2mc^2}[\beta , \hat H_1] \hat H_1  \\
+&=\frac {\beta} {mc^2} (\hat H_1)^2 \\
+[\ti \hat S,[\ti\hat S,\hat H_1]]&=\frac {\beta} {mc^2} [\ti\hat S,(\hat H_1)^2] + \frac 1 {mc^2} [\ti\hat S,\beta](\hat H_1)^2\\
+&=\frac {\beta} {mc^2}\Big(\hat H_1 [\ti \hat S,\hat H_1]+[\ti\hat S,\hat H_1]\hat H_1 \Big)-\frac 1 {(mc^2)^2} (\hat H_1)^3 \\
+&=\frac {\beta} {mc^2}\Big(\frac 1 {mc^2}\big(\beta \hat H_1+[\hat H_1,\beta] \big)(\hat H_1)^2+\frac {\beta} {mc^2}(\hat H_1)^3 \Big)-\frac 1 {(mc^2)^2} (\hat H_1)^3\\
+&=\frac {\beta} {mc^2}\Big(\frac 1 {mc^2}\big(\beta \hat H_1-2\beta \hat H_1 \big)(\hat H_1)^2+\frac {\beta} {mc^2}(\hat H_1)^3 \Big)-\frac 1 {(mc^2)^2} (\hat H_1)^3\\
+&=-\frac 1 {m^2c^4} (\hat H_1)^4
+\end{aligned}$$
+
+
+
+
+</details>
+
 <p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>The diagonal terms(contain even number of <code>$\hat H_1$</code>) up to <code>$\frac 1 {m^2}$</code> are:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->In the second line, the 1st term is the Darwin term, the 2nd term is the spin-orbit coupling, and the last term vanishes for static electromagnetic field. These terms will be used in the relativistic correction for <code>Fine structure</code><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p>We will compute each term:</p>
-<p>Using <code>$\sigma^i\sigma^j=\delta_{ij}+\ti\epsilon^{ijk}\sigma^k$</code> .</p>
-<!-- raw HTML omitted -->
-<p>Then we check the commutator:</p>
-<!-- raw HTML omitted -->
-<p>And then:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>And the off-diagonal term up to <code>$\frac 1 m$</code> are:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>We have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Then if we make the second unitary transformation to eliminate the off-diagonal term of <code>$\mathcal{O}(m^{-1})$</code> order:</p>
-<!-- raw HTML omitted -->
-<p>In <code>$\hat H_{\text{diag}}$</code> , we can use the term <code>$\beta mc^2$</code> , that is:</p>
-<!-- raw HTML omitted -->
-<p>For that <code>$[\alpha_i,\beta]=-2\beta \alpha_i$</code> , we can choose the <code>$\ti\hat S'$</code> as:</p>
-<!-- raw HTML omitted -->
-<p>Then the lowest order of off-diagonal term donated by it is <code>$\mathcal{O}(m^{-2})$</code> , which comes from the term <code>$-\hbar \partial_t \hat S'$</code> (And it vanishes for static field). And the lowest order of diagonal term is <code>$\mathcal{O}(m^{-3})$</code> .</p>
-<p>But up to the term of <code>$\mathcal{O}(m^{-1})$</code> , we have the approximated Hamiltonian  of non-relativistic limit as:</p>
-<!-- raw HTML omitted -->
-<p>It is block-diagonalized. In these two <code>$2\times 2$</code> subspace we have two Hamiltonian:</p>
-<!-- raw HTML omitted -->
-<p>The <code>$\hat H_{\text{nr},+}$</code> is the Hamiltonian for electron, it also shows that electron should have the g-factor as <code>$g=2$</code> .</p>
-<p>The <code>$-\hat H_{\text{nr},-}$</code> , in Dirac Hole theory, is the Hamiltonian of the hole in Dirac sea. That is indeed the Hamiltonian of positron. One can directly find that a positron has the electricity charge as <code>$+e=-q$</code>, and a compose spin against the electron.</p>
-<p>The negative sign comes from that the negative-energy solution is conjugation of positron&rsquo;s wavefunction. One can find that for one-component wavefunction we have that <code>$\ti \partial_t \psi^* = -\hat H \psi^*$</code></p>
+
+$$\begin{aligned}
+\hat H' &= mc^2 \beta +\Big(q\Phi+\frac {\beta} {2mc^2}[\hat H_1,q\Phi]-\frac 1 {(2mc^2)^2}[\hat H_1,[\hat H_1,q\Phi]]+\cdots \Big)\\
+&\indent + \Big(\frac {\beta} {2mc^2}(\hat H_1)^2- \frac 1 {3m^2c^4} (\hat H_1)^3+\frac {\beta} {8m^2c^4} (\hat H_1)^3+\cdots \Big) \\
+&\indent +\Big(\ti \hbar \frac {\beta} {2mc^2}\partial_t \hat H_1-\frac {\ti\hbar} {8m^2c^4}[\hat H_1,\partial_t \hat H_1]+\cdots \Big)
+\end{aligned}$$
+
+
+<p>The diagonal terms(contain even number of $\hat H_1$) up to $\frac 1 {m^2}$ are:</p>
+
+$$\begin{aligned}
+\hat H'_{\text{diag}}&=\beta\Big(mc^2 +\frac {(\hat H_1)^2} {2mc^2} \Big)+q\Phi-\frac 1 {8m^2c^4}[\hat H_1,[\hat H_1,q\Phi]]-\frac {\ti\hbar} {8m^2c^4}[\hat H_1,\partial_t \hat H_1] \\
+&=\beta mc^2+\frac {\beta} {2m}\Big( (-\ti\hbar \nabla-q\bm{A})^2 - 2q\hat{\bm{S}}\cdot \bm{B} \Big) + q\Phi \\
+&\indent -\frac {\hbar^2 q} {8m^2 c^3} \nabla\cdot \bm{E} -\frac {\ti\hbar q} {4m^2 c^3} \hat {\bm{S}}\cdot (\nabla \times \bm{E}) - \frac {q} {2m^2 c^3} (\hat {\bm{P}}\times \bm{E})\cdot \hat{\bm{S}}
+\end{aligned}$$
+
+
+<p><mark>In the second line, the 1st term is the Darwin term, the 2nd term is the spin-orbit coupling, and the last term vanishes for static electromagnetic field. These terms will be used in the relativistic correction for <code>Fine structure</code></mark></p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We will compute each term:
+
+Using $\sigma^i\sigma^j=\delta_{ij}+\ti\epsilon^{ijk}\sigma^k$ .
+
+
+$$\begin{aligned}
+\hat H_1^2 &= \Big(c\bm{\alpha}\cdot (-\ti\hbar\nabla -q\bm{A})\Big)^2 \\
+&= c^2 \sum_{i,j}\alpha_i \alpha_j \Big(-\hbar^2\nabla^2+\ti q \hbar \partial_i A_j+q^2\bm{A}^2 \Big) \\
+&= c^2 \sum_{i,j}\begin{bmatrix}\delta_{ij}+\ti\epsilon^{ijk}\sigma^k & 0 \\ 0 & \delta_{ij}+\ti\epsilon^{ijk}\sigma^k \end{bmatrix}\Big(-\hbar^2\nabla^2+\ti q \hbar \partial_i A_j+q^2\bm{A}^2 \Big) \\
+&=c^2\Big(-\hbar^2\nabla^2 + q^2 \bm{A}^2 +\ti q \hbar \nabla\cdot \bm{A}- 2 q \epsilon^{ijk} (\partial_i A_j)\hat S^k \Big) \\
+&=c^2\Big(-\hbar^2\nabla^2 + q^2 \bm{A}^2 +\ti q \hbar \nabla\cdot \bm{A}- 2 q \hat{\bm{S}}\cdot \bm{B} \Big) \\
+&=c^2\Big((-\ti\hbar \nabla-q\bm{A})^2 - 2q\hat{\bm{S}}\cdot \bm{B} \Big)
+\end{aligned}$$
+
+
+
+Then we check the commutator:
+
+
+$$\begin{aligned}[]
+[\hat H_1,q\Phi]+\ti\hbar \partial_t \hat H_1&= c\bm{\alpha}\cdot [-\ti\hbar \nabla,q\Phi]+\ti\hbar\bm{\alpha}\cdot (-q)\partial_t \bm{A} \\
+&=c\bm{\alpha}\cdot (-\ti\hbar q \nabla \Phi)-\ti\hbar q \bm{\alpha}\cdot \partial_t\bm{A} \\
+&=-\ti\hbar qc \bm{\alpha}\cdot (\nabla \Phi + \frac 1 c \partial_t\bm{A})\\
+&=\ti\hbar qc \bm{\alpha}\cdot \bm{E}
+\end{aligned}$$
+
+
+
+And then:
+
+
+$$\begin{aligned}[]
+& [\hat H_1,[\hat H_1,q\Phi]+\ti\hbar \partial_t \hat H_1]= [\hat H_1,\ti\hbar qc \bm{\alpha}\cdot \bm{E}] \\
+=& \ti\hbar qc \sum_{i,j} [\alpha_i(-\ti\hbar\partial_i-qA_i),\alpha_j E_j] \\
+=& \ti\hbar qc \sum_{i,j} \Big(\alpha_i\alpha_j[-\ti\hbar\partial_i,E_j]+[\alpha_i,\alpha_j](-\ti\hbar \partial_i - qA_i) E_j \Big)\\
+=& \ti\hbar qc \sum_{i,j} \Big((\delta_{ij}+\frac {2\ti} {\hbar}\epsilon^{ijk}\hat S^k)(-\ti\hbar \partial_i E_j)+\frac {4\ti} {\hbar} \epsilon^{ijk}\hat S^k(-\ti\hbar \partial_i - qA_i) E_j \Big)\\
+=&\ti\hbar qc \Big(-\ti\hbar \nabla\cdot \bm{E}+2(\nabla\times \bm{E})\cdot \hat{\bm{S}}-\frac {4\ti} {\hbar} (\hat{\bm{P}}\times \bm{E})\cdot \hat{\bm{S}} \Big)
+\end{aligned}$$
+
+
+
+
+</details>
+
+<p>And the off-diagonal term up to $\frac 1 m$ are:</p>
+
+$$\hat H'_{\text{off-diag}}=\frac {\beta} {2mc^2} \Big([\hat H_1,q\Phi]+\ti\hbar \partial_t \hat H_1\Big)=\frac {\ti\hbar q\beta} {2mc} \bm{\alpha}\cdot \bm{E}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We have:
+
+
+$$\begin{aligned}[]
+[\hat H_1,q\Phi]+\ti\hbar \partial_t \hat H_1&= c\bm{\alpha}\cdot [-\ti\hbar \nabla,q\Phi]+\ti\hbar\bm{\alpha}\cdot (-q)\partial_t \bm{A} \\
+&=c\bm{\alpha}\cdot (-\ti\hbar q \nabla \Phi)-\ti\hbar q \bm{\alpha}\cdot \partial_t\bm{A} \\
+&=-\ti\hbar qc \bm{\alpha}\cdot (\nabla \Phi + \frac 1 c \partial_t\bm{A})\\
+&=\ti\hbar qc \bm{\alpha}\cdot \bm{E}
+\end{aligned}$$
+
+
+
+
+</details>
+
+<p>Then if we make the second unitary transformation to eliminate the off-diagonal term of $\mathcal{O}(m^{-1})$ order:</p>
+
+$$\hat H''=\hat H'_{\text{diag}}+\hat H'_{\text{off-diag}}+[\ti\hat S',\hat H'_{\text{diag}}]+[\ti\hat S',\hat H'_{\text{off-diag}}]-\hbar \partial_t \hat S' +\mathcal{O}(\hat S'^2)$$
+
+
+<p>In $\hat H_{\text{diag}}$ , we can use the term $\beta mc^2$ , that is:</p>
+
+$$[\ti \hat S',\beta mc^2]=-\frac {\ti\hbar q \beta} {2mc} \bm{\alpha}\cdot \bm{E}$$
+
+
+<p>For that $[\alpha_i,\beta]=-2\beta \alpha_i$ , we can choose the $\ti\hat S'$ as:</p>
+
+$$\ti \hat S' = \frac {\ti \hbar q \beta} {4m^2c^3} \bm{\alpha}\cdot \bm{E} $$
+
+
+<p>Then the lowest order of off-diagonal term donated by it is $\mathcal{O}(m^{-2})$ , which comes from the term $-\hbar \partial_t \hat S'$ (And it vanishes for static field). And the lowest order of diagonal term is $\mathcal{O}(m^{-3})$ .</p>
+<p>But up to the term of $\mathcal{O}(m^{-1})$ , we have the approximated Hamiltonian  of non-relativistic limit as:</p>
+
+$$\hat H_{\text{nr}}=\beta mc^2 +\frac {\beta} {2m}\Big((-\ti\hbar \nabla-q\bm{A})^2 -2q \hat {\bm{S}}\cdot \bm{B} \Big)+q\Phi$$
+
+
+<p>It is block-diagonalized. In these two $2\times 2$ subspace we have two Hamiltonian:</p>
+
+$$\begin{aligned}
+\hat H_{\text{nr},+}&=mc^2 + \frac {(-\ti\hbar \nabla-q\bm{A})^2} {2m} -\frac q m \hat {\bm{S}}_{\text{nr}} \cdot \bm{B}+q\Phi \\
+-\hat H_{\text{nr},-}&=mc^2 +\frac {(-\ti\hbar \nabla-q\bm{A})^2} {2m}-\frac q m \hat {\bm{S}}_{\text{nr}} \cdot \bm{B}-q\Phi
+\end{aligned}$$
+
+
+<p>The $\hat H_{\text{nr},+}$ is the Hamiltonian for electron, it also shows that electron should have the g-factor as $g=2$ .</p>
+<p>The $-\hat H_{\text{nr},-}$ , in Dirac Hole theory, is the Hamiltonian of the hole in Dirac sea. That is indeed the Hamiltonian of positron. One can directly find that a positron has the electricity charge as $+e=-q$, and a compose spin against the electron.</p>
+<p>The negative sign comes from that the negative-energy solution is conjugation of positron&rsquo;s wavefunction. One can find that for one-component wavefunction we have that $\ti \partial_t \psi^* = -\hat H \psi^*$</p>
 
           </div>
 
@@ -950,7 +1267,7 @@ Then our question is to find four <!-- raw HTML omitted -->anti-commutative, her
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -992,23 +1309,8 @@ Then our question is to find four <!-- raw HTML omitted -->anti-commutative, her
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1032,13 +1334,39 @@ Then our question is to find four <!-- raw HTML omitted -->anti-commutative, her
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1051,9 +1379,6 @@ Then our question is to find four <!-- raw HTML omitted -->anti-commutative, her
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

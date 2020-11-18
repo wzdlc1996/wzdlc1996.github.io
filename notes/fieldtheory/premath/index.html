@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The preliminary Mathematical knowledge for Quantum Field Theory. Containing the Minkowski Spacetime, Lorentz Group, and the representation theory of Lorentz Group.">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Preliminary Mathematics | Leonard 
-  
+    
+     Preliminary Mathematics | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/premath/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>14 minutes read</li>
     
   </ul>
   
@@ -458,243 +395,664 @@ autocomplete('#aa-search-input',
 <h2 id="the-structure-of-minkowski-spacetime">The Structure of Minkowski Spacetime</h2>
 <p>From now on we will study in <code>Minkowski spacetime</code> (non-General Relativity) .</p>
 <p><em>[Definition]</em> : <code>Minkowski spacetime (non-curved)</code> is a 4-dimension real linear space:</p>
-<!-- raw HTML omitted -->
-<p>Usually we note the vector as a lowercase of letter with a Greek superscript like<code>$x\sim x^{\mu}$</code>and ignore the basis.
+
+$$\mathcal{M} = \{x=(x^0,x^1,x^2,x^3)\equiv (x^0,\bm{x}) : x^{\mu}\in \mathbb{R} \}$$
+
+
+<p>Usually we note the vector as a lowercase of letter with a Greek superscript like$x\sim x^{\mu}$and ignore the basis.
 with the <code>metric</code> :</p>
-<!-- raw HTML omitted -->
-<p>And <code>dual vector</code> of <code>$x$</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\eta_{\mu\nu}=\eta^{\mu\nu} = (+,-,-,-)$$
+
+
+<p>And <code>dual vector</code> of $x$ :</p>
+
+$$x_ {\mu} = \eta_ {\mu\nu}x^{\nu}$$
+
+
 <p>where the <a href="https://en.wikipedia.org/wiki/Einstein_notation"><code>Einstein Summation Convention</code></a> has been applied.
 The <code>inner product</code> in Minkowski spacetime is:</p>
-<!-- raw HTML omitted -->
+
+$$(x,y) := x^{\mu}y_{\mu} = x_{\mu}y^{\mu} = \eta_{\mu\nu}x^{\mu}y^{\nu}$$
+
+
 <h2 id="lorentz-transformation">Lorentz Transformation</h2>
 <p><em>[Definition]</em> : <code>Lorentz Transformation</code> is a linear transformation which hold the inner product invariant:</p>
-<!-- raw HTML omitted -->
-<p>With <code>$\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda^{\nu}_{\ \ \ \  \beta} = \eta_{\alpha\beta}$</code>
-Or equivalently:<code>$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$</code></p>
-<p><em>[Theorem]</em> : By<code>$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$</code>, we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>We have<code>$\Lambda^{\mu}_{\ \ \ \  \alpha}\Lambda^{\nu}_{\ \ \ \  \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$</code>, for<code>$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$</code>, we have:</p>
-<!-- raw HTML omitted -->
-<p>Or with the raising and lowering indices pairly will not change the value:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$\Lambda$</code>and<code>$\Lambda^{-1}$</code> shall satisfy:</p>
-<!-- raw HTML omitted -->
-<p>With the comparation between these two equality above, we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\Lambda : \mathcal{M}\ni x^{\mu} \mapsto \mathcal{M} \ni x'^{\mu} = \Lambda^{\mu}_{\ \ \ \  \nu} x ^{\nu}$$
+
+
+<p>With $\forall x,y\in \mathcal{M} , (\Lambda x,\Lambda y) = (x,y) \Rightarrow \eta_{\mu\nu}\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda^{\nu}_{\ \ \ \  \beta} = \eta_{\alpha\beta}$
+Or equivalently:$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu \beta} = \eta_{\alpha\beta}$</p>
+<p><em>[Theorem]</em> : By$\eta_{\mu\lambda}\eta^{\lambda\nu}=\delta_{\mu}^{\nu}$, we have:</p>
+
+$$(\Lambda^{-1})^{\mu}_{\ \ \ \  \nu} = \Lambda_{\nu}^{\ \ \ \  \mu}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+We have$\Lambda^{\mu}_{\ \ \ \  \alpha}\Lambda^{\nu}_{\ \ \ \  \beta} \eta_{\mu\nu} = \eta_{\alpha\beta}$, for$\eta_{\alpha\gamma}\eta^{\gamma\beta} \equiv \eta_{\alpha}^{\beta} = \delta_{\alpha}^{\beta}$, we have:
+
+
+$$\Lambda^{\mu}_{\ \ \ \  \alpha} \Lambda_{\mu}^{\ \ \ \  \beta} = \delta_{\alpha}^{\beta}$$
+
+
+
+Or with the raising and lowering indices pairly will not change the value:
+
+
+$$\Lambda_{\alpha}^{\ \ \ \  \mu} \Lambda^{\alpha}_{\ \ \ \  \nu} = \delta_{\nu}^{\mu}$$
+
+
+
+For $\Lambda$and$\Lambda^{-1}$ shall satisfy:
+
+
+$$\Lambda \Lambda^{-1} = 1 \Leftrightarrow (\Lambda)^{\mu}_{\ \ \ \  \alpha} (\Lambda^{-1})^{\alpha}_{\ \ \ \  \nu} = \delta_{\nu}^{\mu}$$
+
+
+
+With the comparation between these two equality above, we have:
+
+
+$$(\Lambda^{-1})^{\mu}_{\ \ \ \  \alpha} = \Lambda_{\alpha}^{\ \ \ \  \mu}$$
+
+
+
+</details>
+
 <p>In Special Relativity, Lorentz transformation describes the coordinate transformation between two reference frames. We can classify Lorentz transformation by if it contain the time reversal and space inversion:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Where<code>$P=(+,-,-,-)$</code>is the space inversion and<code>$T=(-,+,+,+)$</code>is the time reversal. They also induce those 4 (not connected)components of<code>$\text{O}(1,3)$</code>. <!-- raw HTML omitted -->These 4 components are connected (but not simply connected)<!-- raw HTML omitted --></p>
+<ol>
+  <li>`Proper, Orthochronous` : $\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$ </li>
+  <li>`Improper, Orthochronous` :$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\geq 1$</li>
+  <li>`Improper, Non-orthochronous` :$\det \Lambda = -1 \ \ , \ \ \Lambda^0_{\indent 0}\leq -1$</li>
+  <li>`Proper, Non-orthochronous` :$\det \Lambda = 1 \ \ , \ \ \Lambda^0_{\indent 0}\leq -1$</li>
+</ol>
+With `Proper Orthochronous` (`Restricted Lorentz Group`) noted as$\text{SO}^+(1,3)$, we can construct the Lorentz Group$\text{O}(1,3)$as:
+
+$$\{ 1,P,T,PT \} \text{SO}^+(1,3) = \text{O}(1,3)$$
+
+
+<p>Where$P=(+,-,-,-)$is the space inversion and$T=(-,+,+,+)$is the time reversal. They also induce those 4 (not connected)components of$\text{O}(1,3)$. <mark>These 4 components are connected (but not simply connected)</mark></p>
 <h2 id="scalar-vector-and-tensor">Scalar, Vector and Tensor</h2>
 <p><em>[Definition]</em> : <code>Scalars</code> are some quantities, which is invariant when reference frame changes.</p>
-<p><em>[Definition]</em> : <code>Vectors</code> are those <code>4-components quantities</code>, which are transformed by <code>Lorentz Transformation</code> when reference frame changes: <code>$v'^{\mu} = \Lambda^{\mu}_{\indent \nu}v^{\nu}$</code> . For example, position <code>$x=(x^0,\bm{x})$</code> is a vector</p>
-<p><em>[Definition]</em> : <code>Tensors</code> are multilinear maps from <code>$\mathcal{M}$</code>s and their <code>dual space</code> to scalars</p>
-<p>For <code>$(m,n)$</code> type tensor <code>$T$</code> , it is the multilinear map:</p>
-<!-- raw HTML omitted -->
-<p>Here, we use <code>$\mathcal{M}$</code> to note the vector space and <code>$\mathcal{M}^* $</code> to note the dual-vector space. The Minkowski spacetime is also a vector space <code>$\mathcal{M}$</code> describing the space-time coordinates. <!-- raw HTML omitted -->
-In a reference frame, one can write the tensor <code>$T$</code> as a quantity with <code>$4(m+n)$</code> indices:</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>Vectors</code> are those <code>4-components quantities</code>, which are transformed by <code>Lorentz Transformation</code> when reference frame changes: $v'^{\mu} = \Lambda^{\mu}_{\indent \nu}v^{\nu}$ . For example, position $x=(x^0,\bm{x})$ is a vector</p>
+<p><em>[Definition]</em> : <code>Tensors</code> are multilinear maps from $\mathcal{M}$s and their <code>dual space</code> to scalars</p>
+<p>For $(m,n)$ type tensor $T$ , it is the multilinear map:</p>
+
+$$T :\mathcal{M}^{\times m} \times (\mathcal{M}^* )^{\times n} \rightarrow \mathbb{R}$$
+
+
+<p>Here, we use $\mathcal{M}$ to note the vector space and $\mathcal{M}^* $ to note the dual-vector space. The Minkowski spacetime is also a vector space $\mathcal{M}$ describing the space-time coordinates. <br>
+In a reference frame, one can write the tensor $T$ as a quantity with $4(m+n)$ indices:</p>
+
+$$T \sim T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent \indent \nu_1,\cdots,\nu_n} \ \ \ \mu_p,\nu_q \in \{0,1,2,3\}$$
+
+
 <p>And:</p>
-<!-- raw HTML omitted -->
+
+$$T(v_1,v_2,\cdots,v_m,u_1,\cdots,u_n) = T_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent  \indent \nu_1,\cdots,\nu_n} (v_1)^{\mu_1}(v_2)^{\mu_2}\cdots (v_m)^{\mu_m} (u_1)_{\nu_1}\cdots (u_n)_{\nu_n}$$
+
+
 <p>Then the transformation of the tensor shall be:</p>
-<!-- raw HTML omitted -->
+
+$$(T')_{\mu_1,\cdots,\mu_m}^{\indent \indent \indent  \indent \nu_1,\cdots,\nu_n} = T_{\alpha_1,\cdots,\alpha_m}^{\indent \indent \indent \indent \beta_1,\cdots,\beta_n} \Lambda_{\mu_1}^{\indent \alpha_1}\cdots
+\Lambda_{\mu_m}^{\indent \alpha_m} \Lambda^{\nu_1}_{\indent \beta_1}\cdots \Lambda^{\nu_n}_{\indent \beta_n}$$
+
+
 <h1 id="lorentz-group">Lorentz group</h1>
 <h2 id="basic-concept">Basic Concept</h2>
-<p><em>[Definition]</em> : <code>Lorentz Group</code> , or mathematically, <code>Generalized Orthogonal Group</code> <code>$\text{O}(1,3;\mathbb{R})$</code> , is the <code>metrix Lie Group</code> that preserves the quadratic form:</p>
-<!-- raw HTML omitted -->
-<p>on <code>$\mathbb{R}^4$</code> . Which is a <code>6-D noncompact non-abelian real Lie group, not connected</code></p>
-<p><em>[Definition]</em> : <code>Restricted Lorentz Group</code> : <code>$\text{SO}^+(1,3)$</code>, is the connected component of Lorentz Group which contains the <code>identity element</code></p>
+<p><em>[Definition]</em> : <code>Lorentz Group</code> , or mathematically, <code>Generalized Orthogonal Group</code> $\text{O}(1,3;\mathbb{R})$ , is the <code>metrix Lie Group</code> that preserves the quadratic form:</p>
+
+$$(x^0,x^1,x^2,x^3) \mapsto (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2$$
+
+
+<p>on $\mathbb{R}^4$ . Which is a <code>6-D noncompact non-abelian real Lie group, not connected</code></p>
+<p><em>[Definition]</em> : <code>Restricted Lorentz Group</code> : $\text{SO}^+(1,3)$, is the connected component of Lorentz Group which contains the <code>identity element</code></p>
 <h2 id="lie-algebra-of-restricted-lorentz-group">Lie Algebra of Restricted Lorentz Group</h2>
-<p><em>[Definition]</em> : <code>Vector representation</code> of <code>$\text{SO}^+(1,3)$</code> is its representation by <code>$4\times 4$</code> real metrix.</p>
-<p><em>[Theorem]</em> : The common form of elements in <code>$\text{SO}^+(1,3)$</code> is:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$J^{\mu\nu} = -J^{\nu\mu}$</code> are generators, and <code>$\omega_{\mu\nu}=-\omega_{\nu\mu}$</code> are six independent parameters</p>
+<p><em>[Definition]</em> : <code>Vector representation</code> of $\text{SO}^+(1,3)$ is its representation by $4\times 4$ real metrix.</p>
+<p><em>[Theorem]</em> : The common form of elements in $\text{SO}^+(1,3)$ is:</p>
+
+$$\Lambda = \exp \Big(-\frac {\ti} 2 \omega_{\mu,\nu} J^{\mu,\nu} \Big)$$
+
+
+<p>Where $J^{\mu\nu} = -J^{\nu\mu}$ are generators, and $\omega_{\mu\nu}=-\omega_{\nu\mu}$ are six independent parameters</p>
 <p>With the following notations:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\theta^i &= \frac 1 2 \sum_{jk} \epsilon^{ijk}\omega^{jk} \ ; \ L^i = \frac 1 2 \sum_{jk} \epsilon^{ijk}J^{jk} \\
+\eta^i &= \omega_{0,i} \ ; \ K^i = J^{0,i}
+\end{aligned}$$
+
+
 <p>One can rewrite the expression as</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\theta^i,\eta^i$</code> are real number, and <code>$L^i,K^i$</code> are generators.</p>
-<p>Usually, <code>$L^i$</code> generate the <code>rotation</code> in <code>$\mathbb{R}^3$</code> , and <code>$K^i$</code> generate the <code>boost</code> .</p>
+
+$$\Lambda = \exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)$$
+
+
+<p>Where $\theta^i,\eta^i$ are real number, and $L^i,K^i$ are generators.</p>
+<p>Usually, $L^i$ generate the <code>rotation</code> in $\mathbb{R}^3$ , and $K^i$ generate the <code>boost</code> .</p>
 <p>They satisfy the commutation relation as:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}[]
+[L^i,L^j] &= \ti \epsilon^{ijk}L^k \\
+[L^i,K^j] &= \ti \epsilon^{ijk}K^k \\
+[K^i,K^j] &= -\ti \epsilon^{ijk} L^k
+\end{aligned}$$
+
+
 <p>summation of $k$ is over ${1,2,3}$</p>
-<p>where $\epsilon^{ijk}$ is the covariant <code>Levi-Civita</code> simbol. Which equals <code>$1$</code> if <code>$ijk$</code> are even permutation of <code>$123$</code> , and <code>$-1$</code> for odd ones. And vanishes for otherwise.</p>
-<!-- raw HTML omitted -->
-<p>Let us begin with the infinitesimal Lorentz Transformation in vector representation. Let <code>$J^{\mu\nu}$</code> be the generators. For
-Lorentz Group is six dimension. Then there should be only six independent generators . Letting <code>$J^{\mu\nu}=-J^{\nu\mu}$</code> will satisfy it.
-With <code>$\omega_{\mu\nu}$</code> be the parameter (Also <code>$\omega_{\mu\nu}=-\omega_{\nu\mu}$</code> so that there are only 6 independent parameters), we can write down the general expression:</p>
-<!-- raw HTML omitted -->
-<p>The infinitesimal transformation will be : <code>$\Lambda^{\mu}_{\indent \nu} \approx \delta^{\mu}_{\nu} -\frac {\ti} 2 \omega_{\alpha\beta} (J^{\alpha\beta})^{\mu}_{\indent \nu}$</code>
-For Lorentz Transform should satisfy:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>This shall be hold for arbitary <code>$\omega$</code> , so we have that:</p>
-<!-- raw HTML omitted -->
-<p>Which shows that the generators in vector representation are anti-symmetric metrices.
-One can choose these matrix arbitarily. One of those is:</p>
-<!-- raw HTML omitted -->
-<p>The commutation relation are invariant among the representation. They are:</p>
-<!-- raw HTML omitted -->
-<p>By the simple property:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Here we write down all matrix form of these generators in vector representation, the simbol $\sim$ means that the right-hand-side matrix is the matrix of left-hand-side <code>$A$</code> &lsquo;s elements <code>$A^{\mu}_{\indent \nu}$</code></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>And for <code>$\bm{L},\bm{K}$</code> :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>where $\epsilon^{ijk}$ is the covariant <code>Levi-Civita</code> simbol. Which equals $1$ if $ijk$ are even permutation of $123$ , and $-1$ for odd ones. And vanishes for otherwise.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+Let us begin with the infinitesimal Lorentz Transformation in vector representation. Let $J^{\mu\nu}$ be the generators. For
+Lorentz Group is six dimension. Then there should be only six independent generators . Letting $J^{\mu\nu}=-J^{\nu\mu}$ will satisfy it.
+With $\omega_{\mu\nu}$ be the parameter (Also $\omega_{\mu\nu}=-\omega_{\nu\mu}$ so that there are only 6 independent parameters), we can write down the general expression:
+
+
+$$\Lambda^{\mu}_{\indent \nu} = \exp\Big(-\frac {\ti} {2} \omega_{\alpha\beta} J^{\alpha\beta} \Big)^{\mu}_{\indent \nu}$$
+
+
+
+The infinitesimal transformation will be : $\Lambda^{\mu}_{\indent \nu} \approx \delta^{\mu}_{\nu} -\frac {\ti} 2 \omega_{\alpha\beta} (J^{\alpha\beta})^{\mu}_{\indent \nu}$
+For Lorentz Transform should satisfy:
+
+
+$$\Lambda^{\mu}_{\indent \lambda}\Lambda^{\nu}_{\indent \delta} \eta_{\mu\nu} = \eta_{\lambda\delta}$$
+
+
+
+Then we have:
+
+
+$$\omega_{\alpha\beta}(J^{\alpha\beta})_{\delta\lambda} + \omega_{\alpha\beta}(J^{\alpha\beta})_{\lambda\delta} = 0$$
+
+
+
+This shall be hold for arbitary $\omega$ , so we have that:
+
+
+$$(J^{\alpha\beta})_{\mu\nu} = - (J^{\alpha\beta})_{\mu\nu}$$
+
+
+
+Which shows that the generators in vector representation are anti-symmetric metrices.
+One can choose these matrix arbitarily. One of those is:
+
+
+$$(J^{\alpha\beta})_{\mu\nu} = \ti (\delta_{\mu}^{\alpha}\delta_{\nu}^{\beta}-\delta_{\nu}^{\alpha}\delta_{\mu}^{\beta})$$
+
+
+
+The commutation relation are invariant among the representation. They are:
+
+
+$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu \nu} =\ti\Big\{\delta^{\delta}_{\alpha}(J^{\beta\gamma})+\delta^{\alpha}_{\gamma}(J^{\delta\beta})+\delta^{\beta}_{\delta}(J^{\gamma\alpha})+\delta_{\beta}^{\gamma}(J^{\alpha\delta}) \Big\}_{\mu\nu}$$
+
+
+
+By the simple property:
+
+
+$$([J^{\alpha\beta},J^{\gamma\delta}])_{\mu\nu} = \sum_\lambda (J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - J^{\gamma\delta})_{\mu\lambda}(J^{\alpha\beta})_{\lambda\nu} = \sum_{\lambda}(J^{\alpha\beta})_{\mu\lambda}(J^{\gamma\delta})_{\lambda\nu} - (\mu\leftrightarrow \nu)$$
+
+
+
+
+</details>
+
+<p>Here we write down all matrix form of these generators in vector representation, the simbol $\sim$ means that the right-hand-side matrix is the matrix of left-hand-side $A$ &rsquo;s elements $A^{\mu}_{\indent \nu}$</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Matrix Form
+    </summary>
+    
+
+
+$$\begin{aligned}
+J^{01}&=-J^{10}\sim \ti \begin{bmatrix}0&1&0&0\\ 1&0&0&0\\ 0&0&0&0 \\ 0&0&0&0  \end{bmatrix} \ ; \
+J^{02}=-J^{20}\sim \ti \begin{bmatrix}0&0&1&0\\ 0&0&0&0\\ 1&0&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
+J^{03}=-J^{30}\sim \ti \begin{bmatrix} 0&0&0&1\\ 0&0&0&0\\ 0&0&0&0\\ 1&0&0&0 \end{bmatrix} \\
+J^{12}&=-J^{21}\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&-1&0\\ 0&1&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
+J^{23}=-J^{32}\sim\ti\begin{bmatrix}0&0&0&0\\ 0&0&0&0\\ 0&0&0&-1\\ 0&0&1&0 \end{bmatrix} \ ; \
+J^{31}=J^{-31}\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&0&1\\ 0&0&0&0\\ 0&-1&0&0 \end{bmatrix}
+\end{aligned}$$
+
+
+
+And for $\bm{L},\bm{K}$ :
+
+
+$$\begin{aligned}
+L^1&\sim \ti \begin{bmatrix}0&0&0&0\\ 0&0&0&0\\ 0&0&0& -1\\ 0&0&1&0 \end{bmatrix} \ ; \
+L^2\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&0&1\\ 0&0&0&0\\ 0&-1&0&0 \end{bmatrix} \ ; \
+L^3\sim\ti \begin{bmatrix}0&0&0&0\\ 0&0&-1&0\\ 0&1&0&0\\ 0&0&0&0 \end{bmatrix} \\
+K^2&\sim\ti\begin{bmatrix}0&1&0&0\\ 1&0&0&0\\ 0&0&0&0 \\ 0&0&0&0  \end{bmatrix} \ ; \
+K^2\sim\ti \begin{bmatrix}0&0&1&0\\ 0&0&0&0\\ 1&0&0&0\\ 0&0&0&0 \end{bmatrix} \ ; \
+K^3\sim \ti \begin{bmatrix} 0&0&0&1\\ 0&0&0&0\\ 0&0&0&0\\ 1&0&0&0 \end{bmatrix}
+\end{aligned}$$
+
+
+
+
+
+</details>
+
 <h2 id="weyl-spinor-representation">Weyl Spinor Representation</h2>
-<p><em>[Theorem]</em> :     With the definition of <code>$L^i,K^i$</code> (or for simplicity <code>$\bm{L},\bm{K}$</code>) , one can define the new generator:</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> :     With the definition of $L^i,K^i$ (or for simplicity $\bm{L},\bm{K}$) , one can define the new generator:</p>
+
+$$\bm{J}^{(1)} := \frac 1 2 (\bm{L}+\ti \bm{K}) \ \ \bm{J}^{(2)} := \frac 1 2 (\bm{L}-\ti \bm{K})$$
+
+
 <p>And induce the new commutation relation:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>For <code>$\alpha=\beta=1$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>And when <code>$\alpha\neq\beta$</code> , there will be additional minus sign which let the result to be vanished.</p>
-<!-- raw HTML omitted -->
-<p>One can find that <code>$\{J_i^{(1,2)}\}$</code> forms two <code>$\text{su}(2)$</code> Lie Algebra.</p>
-<p>In some degree, we can say that the Lorentz Group is the direct product of two <code>$\text{SU}(2)$</code> Group with complex parameters.</p>
-<p><em>[Definition]</em> : For Lorentz Group looks like the direct product of two <code>$\text{SU}(2)$</code> , we can use a piar of indeces of <code>$\text{SU}(2)$</code> representation
-to note any representations of Lorentz Group , which can be written as <code>$(j_1,j_2)$</code>
+
+$$[J^{(\alpha),i},J^{(\beta),j}] = \ti \delta_{\alpha,\beta} \epsilon^{ijk} J^{(\alpha),k} \ \ ; \ \ \alpha,\beta=1,2$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+For $\alpha=\beta=1$ , we have:
+
+
+$$\begin{aligned}[]
+[J^i,J^j] &= \frac 1 4 \Big([L^i,L^j]-[K^i,K^j] + \ti ([L^i,K^j]+[K^i,L^j]) \Big) \\
+&= \frac 1 4 \Big(\ti \epsilon^{ijk} L^k +\ti \epsilon^{ijk} L^k +\ti (\ti\epsilon^{ijk} K^k - \ti \epsilon^{jik}K^k) \Big) \\
+&= \frac 1 2 \epsilon^{ijk}\ti(L^k+\ti K^k) \\
+&= \ti \epsilon^{ijk} J^k
+\end{aligned}$$
+
+
+
+And when $\alpha\neq\beta$ , there will be additional minus sign which let the result to be vanished.
+
+
+</details>
+
+<p>One can find that ${J_i^{(1,2)}}$ forms two $\text{su}(2)$ Lie Algebra.</p>
+<p>In some degree, we can say that the Lorentz Group is the direct product of two $\text{SU}(2)$ Group with complex parameters.</p>
+<p><em>[Definition]</em> : For Lorentz Group looks like the direct product of two $\text{SU}(2)$ , we can use a piar of indeces of $\text{SU}(2)$ representation
+to note any representations of Lorentz Group , which can be written as $(j_1,j_2)$
 Then , the basis of (1/2,0) called as <code>left-handed Weyl Spinor</code> , and the basis of (0,1/2) called as <code>right-handed Weyl Spinor</code></p>
 <p>Using the <code>covariance</code> form of <code>Pauli Matrices</code> :</p>
-<!-- raw HTML omitted -->
+
+$$\sigma^0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \ , \ \sigma^1 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \ , \ \sigma^2 = \begin{bmatrix} 0 & -\ti \\ \ti & 0\end{bmatrix} \ , \ \sigma^3 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$$
+
+
 <p>We can write the matrix representation of Lorentz Group by spinor basis:</p>
-<!-- raw HTML omitted -->
+
+$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big) \ , \ \Lambda_R = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}+\ti \bm{\eta})^i \big)$$
+
+
 <h2 id="parity-transformation">Parity-Transformation</h2>
-<p><!-- raw HTML omitted -->[Definition]<!-- raw HTML omitted --> : <code>Parity-Transformation</code> is the Spatial inversion transformation.</p>
+<p><em>[Definition]</em> : <code>Parity-Transformation</code> is the Spatial inversion transformation.</p>
 <p>In Minkowski space-time, we have the matrix form of the Parity-Transformation:</p>
-<!-- raw HTML omitted -->
-<p>It is obviously that <code>$P^2=1$</code> . That means they are self-identity.</p>
+
+$$P\sim \text{diag}(1,-1,-1,-1)$$
+
+
+<p>It is obviously that $P^2=1$ . That means they are self-identity.</p>
 <p>The question is: when Parity-Transformation is operated on the space-time, what will happen on the Lorentz Transformation of these elements(vectors and spinors)</p>
 <p>Because we know the matrix form of Parity-Transformation of 4-vectors, we will begin with them.</p>
 <ul>
 <li>
 <p>Vectors transform as:</p>
-<!-- raw HTML omitted -->
+
+$$v^{\mu} \rightarrow \Lambda(\omega)^{\mu}_{\indent \nu} v^{\nu}$$
+
+
 <p>Then under Parity transformation it shall be :</p>
-<!-- raw HTML omitted -->
+
+$$P v^{\mu} \rightarrow P \Lambda(\omega)^{\mu}_{\indent \nu} v^{\nu}= P \Lambda(\omega)^{\mu}_{\indent \nu} P P v^{\nu}$$
+
+
 <p>That means under Parity Transformation, elements in (Restricted) Lorentz Group shall be transformed by:</p>
-<!-- raw HTML omitted -->
-<p><code>$\Lambda'$</code> shall be in one component of the Lorentz Group too. Let <code>$\Lambda=\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})$</code> , then we can derive the transformation of the generators <code>$\bm{L},\bm{K}$</code> under Parity Transformation, with parameters <code>$\bm{\theta},\bm{\eta}$</code> invariant.</p>
+
+$$ \Lambda \rightarrow P \Lambda P = \Lambda' $$
+
+
+<p>$\Lambda'$ shall be in one component of the Lorentz Group too. Let $\Lambda=\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})$ , then we can derive the transformation of the generators $\bm{L},\bm{K}$ under Parity Transformation, with parameters $\bm{\theta},\bm{\eta}$ invariant.</p>
 </li>
 </ul>
-<p><!-- raw HTML omitted -->[Theorem]<!-- raw HTML omitted --> : Under Parity Transformation, we have:</p>
-<!-- raw HTML omitted -->
-<p>That means that the 3-vector <code>$\bm{L}$</code> transforms like <code>Pseudovector</code> and <code>$\bm{K}$</code> transforms like <code>vector</code></p>
-<!-- raw HTML omitted -->
-<p>For the explicit expression of <code>$\Lambda$</code> is:</p>
-<!-- raw HTML omitted -->
-<p>we have:</p>
-<!-- raw HTML omitted -->
-<p>For the matrix form of <code>$\bm{L}$</code> and <code>$\bm{K}$</code> , we can check that:</p>
-<!-- raw HTML omitted -->
-<p>Q.E.D.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --> This theorem hold for spinor representation too<!-- raw HTML omitted --> , with the form : <code>$P\Lambda_{L(R)}P = \Lambda_{R(L)}$</code> and <code>$P a_{l(r)} = a_{r(l)}$</code></p>
-<p>In some degree, we say that Parity-Transformation will exchange the left-handed spinor and right-handed spinor. For the difference between left/right handed spinor is <code>$L\leftrightarrow L , K\leftrightarrow -K$</code> (That is why they are called as <code>handed</code>)</p>
+<p><em>[Theorem]</em> : Under Parity Transformation, we have:</p>
+
+$$P\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K}) P = \Lambda(\bm{\theta},\bm{\eta};\bm{L} , -\bm{K}) $$
+
+
+<p>That means that the 3-vector $\bm{L}$ transforms like <code>Pseudovector</code> and $\bm{K}$ transforms like <code>vector</code></p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+For the explicit expression of $\Lambda$ is:
+
+
+$$\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K}) = \exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)$$
+
+
+
+we have:
+
+
+$$\begin{aligned}
+P\Lambda(\bm{\theta},\bm{\eta};\bm{L},\bm{K})P &= \exp\big(-\ti \sum_{i=1}^3 P(\theta^i L^i + \eta^i K^i)P\big) \\
+&=\exp\big(-\ti \sum_{i=1}^3 (\theta^i PL^iP + \eta^i PK^iP)\big) \\
+&=\Lambda(\bm{\theta},\bm{\eta};P\bm{L}P,P\bm{K}P)
+\end{aligned}$$
+
+
+
+For the matrix form of $\bm{L}$ and $\bm{K}$ , we can check that:
+
+
+$$\begin{aligned}
+P L^i P &= L^i \\
+P K^i P &= -K^i
+\end{aligned}$$
+
+
+
+Q.E.D.
+
+</details>
+
+<p><mark> This theorem hold for spinor representation too</mark> , with the form : $P\Lambda_{L(R)}P = \Lambda_{R(L)}$ and $P a_{l(r)} = a_{r(l)}$</p>
+<p>In some degree, we say that Parity-Transformation will exchange the left-handed spinor and right-handed spinor. For the difference between left/right handed spinor is $L\leftrightarrow L , K\leftrightarrow -K$ (That is why they are called as <code>handed</code>)</p>
 <h1 id="spinor-space">Spinor Space</h1>
 <p><em>[Definition]</em> : <code>1/2-spinor space</code> is a 2-dimension complex linear space used for the irrep. of Lorentz Group.
 To handle the Lorentz Group, we need two 1/2-spinor spaces, ususally noted as (1/2,0) and (0,1/2).
-We will separate the spinor in different space by the subscripts <code>$_l,_r$</code> .
+We will separate the spinor in different space by the subscripts $_l,_r$ .
 A spinor is noted as a pair of complex number, or a complex column vector.</p>
 <p>In this section, our goal is to construct some <code>invariants</code> of Lorentz Group or some quantities we have known from spinor spaces
 When spinor operated by the elements of Lorentz Group, it performs as the linear transformation with the 2x2 matrix above.</p>
 <h2 id="scalars">Scalars</h2>
-<p><em>[Theorem]</em> : For any two left-handed spinors: <code>$a_l,b_l$</code> , the quadratic form:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\epsilon = \ti \sigma^2$</code> , is invariant under Lorentz Transformation.</p>
-<!-- raw HTML omitted -->
-<p>consider the Lorentz Transformation with parameter <code>$\bm{\theta},\bm{\eta}$</code> , then we have:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>For complex vector <code>$\bm{x}\in \mathbb{C}^3$</code> , this formula shall be treated as:</p>
-<!-- raw HTML omitted -->
-<p>Then we can write down the general expression of the matrix:</p>
-<!-- raw HTML omitted -->
-<p>with <code>$-z_1^2-z_2^2-z_3^2+z_0^2=1$</code>
-Then:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$\sigma^2\sigma^i\sigma^2=-\sigma^{iT}$</code> , we have <code>$i,j\neq 0$</code>:</p>
-<!-- raw HTML omitted -->
-<p>And:</p>
-<!-- raw HTML omitted -->
-<p>Then:</p>
-<!-- raw HTML omitted -->
-<p>Which means the quadratic form is indeed invariant.</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : For any two left-handed spinors: $a_l,b_l$ , the quadratic form:</p>
+
+$$(a_l)^1(b_l)^2-(a_l)^2(b_l)^1 = (a_l)^T \epsilon b_l$$
+
+
+<p>Where $\epsilon = \ti \sigma^2$ , is invariant under Lorentz Transformation.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+consider the Lorentz Transformation with parameter $\bm{\theta},\bm{\eta}$ , then we have:
+
+
+$$a_l \rightarrow \Lambda_L a_l \ \ b_l \rightarrow \Lambda_L b_l$$
+
+
+Where $\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_i \sigma^i (\theta^i - \ti \eta^i) \big) $ .
+With the property of Pauli matrices:
+
+
+$$\exp(\ti \bm{x}\cdot \bm{\sigma}) = \cos(x) + \ti \sin (x) \bm{n}_x\cdot \bm{\sigma}$$
+
+
+
+For complex vector $\bm{x}\in \mathbb{C}^3$ , this formula shall be treated as:
+
+
+$$\exp(\ti \bm{x}\cdot \bm{\sigma}) = \sum_{k=0}^{\infty} \frac {(-1)^k} {(2k)!} \big(\sum_{i=1}^3 (x^i)^2 \big)^k + \ti \sum_{k=0}^{\infty} \frac {(-1)^k} {(2k+1)!} \big(\sum_{i=1}^3 (x^i)^2 \big)^k \big(\sum_{i=1}^3 x^i \sigma^i \big)$$
+
+
+
+Then we can write down the general expression of the matrix:
+
+
+$$\Lambda_L = z_0+z_1\sigma^1+z_2\sigma^2+z_3\sigma^3$$
+
+
+
+with $-z_1^2-z_2^2-z_3^2+z_0^2=1$
+Then:
+
+
+$$a_l^T\epsilon b_l \rightarrow \ti a_l^T (\sum_{i=0}^{3} z_i (\sigma^i)^T) \sigma^2 \sum_{i=0}^{3} z_i (\sigma^i) b_l$$
+
+
+
+For $\sigma^2\sigma^i\sigma^2=-\sigma^{iT}$ , we have $i,j\neq 0$:
+
+
+$$\begin{aligned}
+\sigma^{iT} \sigma^2\sigma^j &= -\sigma^2\sigma^i\sigma^j = -\sigma^2 \delta_{ij} -\ti \epsilon^{ijk} \sigma^2\sigma^k \\
+&= -\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - \epsilon^{ijk}\epsilon^{2kl}\sigma^l \\
+&= -\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - (\delta_{il}\delta_{j2}-\delta_{i2}\delta_{jl})\sigma^l \\
+&=-\sigma^2 \delta_{ij} +\ti \epsilon^{ij2} - \delta_{j2}\sigma^i+\delta_{i2}\sigma^j
+\end{aligned}$$
+
+
+
+And:
+
+
+$$\begin{aligned}
+\sigma^{0T}\sigma^2\sigma^j &= \delta_{2j} +\ti \epsilon^{2jk}\sigma^k \\
+\sigma^{iT}\sigma^2\sigma^0 &= -\sigma^2\sigma^i = -\delta_{2i}-\ti \epsilon^{2ik}\sigma^k \\
+\sigma^{0T}\sigma^2\sigma^0 &= \sigma^2
+\end{aligned}$$
+
+
+
+Then:
+
+
+$$\sum_{i,j=0}^3 z_iz_j \sigma^{iT} \sigma^2\sigma^j =z_0^2 \sigma^2 -\sum_{i=1}^3 z_i^2 \sigma^2 = \sigma^2$$
+
+
+
+Which means the quadratic form is indeed invariant.
+
+
+
+</details>
+
 <h2 id="vectors">Vectors</h2>
-<p><em>[Theorem]</em> : For any left-handed Weyl spionor $a_l$ and right-handed Weyl spinor $b_r$ , Let <code>$\bar{\sigma}^{\mu}=\sigma_{\mu}=\eta_{\mu\nu}\sigma^{\nu}$</code> , one can construct some quantities with 4-components:</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : For any left-handed Weyl spionor $a_l$ and right-handed Weyl spinor $b_r$ , Let $\bar{\sigma}^{\mu}=\sigma_{\mu}=\eta_{\mu\nu}\sigma^{\nu}$ , one can construct some quantities with 4-components:</p>
+
+$$\begin{aligned}
+a^{\mu} &= a_l^{\dagger}\bar{\sigma}^{\mu}a_l \\
+b^{\mu} &= b_r^{\dagger}\sigma^{\mu}b_r
+\end{aligned}$$
+
+
 <p>Are <code>vectors</code> . Namely, they transformed by the (4-)vector-rep. of Lorentz group under Lorentz Transformation.</p>
-<!-- raw HTML omitted -->
-<p>According to the transformation regulation of spinor, we have:</p>
-<!-- raw HTML omitted -->
-<p>Then for $a_l \rightarrow \Lambda_L a_l$ , one have:</p>
-<!-- raw HTML omitted -->
-<p>For the completion of Pauli matrices in 4x4 Hermitian matrices space:</p>
-<!-- raw HTML omitted -->
-<p>We need to check if <code>$L^{\mu}_{\indent \nu}$</code> is the the vector representation of Lorentz Group, which shall be written as:</p>
-<!-- raw HTML omitted -->
-<p>We need only to check whether the infinitesimal transformation is consistent or not. Which means that we need to check the following two equalities(generator equalities):</p>
-<!-- raw HTML omitted -->
-<p>Which is:</p>
-<!-- raw HTML omitted -->
-<p>By the matrix form of <code>$\bm{L},\bm{K}$</code> we can check these equalities</p>
-<p>Which is similar for the right-handed Weyl spinor.</p>
-<!-- raw HTML omitted -->
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+According to the transformation regulation of spinor, we have:
+
+
+$$\Lambda_L = \exp\big(-\frac {\ti} 2 \sum_{i=1}^3 \sigma^i (\bm{\theta}-\ti \bm{\eta})^i \big)$$
+
+
+
+Then for $a_l \rightarrow \Lambda_L a_l$ , one have:
+
+
+$$a^{\mu}\rightarrow a_l^{\dagger} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L a_l $$
+
+
+
+For the completion of Pauli matrices in 4x4 Hermitian matrices space:
+
+
+$$\begin{aligned}[]
+\Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L &= \eta_{\mu\nu} z_{\alpha}^{*}z_{\beta} \sigma^{\alpha}\sigma^{\nu}\sigma^{\beta} \\
+&= (\Lambda)^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}
+\end{aligned}$$
+
+
+
+We need to check if $L^{\mu}_{\indent \nu}$ is the the vector representation of Lorentz Group, which shall be written as:
+
+
+$$\Lambda^{\mu}_{\indent \nu} = \exp(-\frac \ti 2 \omega_{\alpha\beta}J^{\alpha\beta})^{\mu}_{\indent \nu}=\exp\big(-\ti \sum_{i=1}^3 (\theta^i L^i + \eta^i K^i)\big)^{\mu}_{\indent \nu}$$
+
+
+
+We need only to check whether the infinitesimal transformation is consistent or not. Which means that we need to check the following two equalities(generator equalities):
+
+
+$$\begin{aligned}
+\partial_{\theta^i} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L|_{\bm{\eta}=\bm{\theta}=0} &= \partial_{\theta^i} \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}|_{\bm{\eta}=\bm{\theta}=0} \\
+\partial_{\eta^i} \Lambda_L^{\dagger}\bar{\sigma}^{\mu}\Lambda_L|_{\bm{\eta}=\bm{\theta}=0} &= \partial_{\eta^i} \Lambda^{\mu}_{\indent \nu} \bar{\sigma}^{\nu}|_{\bm{\eta}=\bm{\theta}=0}
+\end{aligned}$$
+
+
+
+Which is:
+
+
+$$\begin{aligned}
+\frac \ti 2[\sigma^i,\bar{\sigma}^{\mu}] &= -\ti (L^i)^{\mu}_{\indent \nu}\bar{\sigma}^{\nu} \\
+-\frac 1 2\{\sigma^i,\bar{\sigma}^{\mu}\} &= -\ti (K^i)^{\mu}_{\indent \nu}\bar{\sigma}^{\nu}
+\end{aligned}$$
+
+
+
+By the matrix form of $\bm{L},\bm{K}$ we can check these equalities
+
+Which is similar for the right-handed Weyl spinor.
+
+
+</details>
+
 <h2 id="dirac-spinor">Dirac Spinor</h2>
 <p>Sometimes we need a Parity-conserved theory, in which two handed spinor should be involved simultaneously. The simplest way is the <code>direct sum</code> of two spinor. This is called as <code>Dirac spinor</code> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\psi_{\alpha}$</code> is a Dirac spinor. It has 4 components, the first two form a left-handed Weyl spinor, and the last two form a right-handed Weyl spinor.</p>
-<p>We define following 4x4 <code>$\gamma$</code> matrices, which will be widely used in field theory:</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->This is a little different from some others book. Usually this forms of gamma matrices is called that in <code>Weyl(Chiral) basis</code> <!-- raw HTML omitted --></p>
-<p>In <code>Dirac basis</code> , <code>$\gamma^{1,2,3}$</code> are the same, but <code>$\gamma^0 = \text{diag}(1,1,-1,-1)$ </code>.</p>
+
+$$\psi_{\alpha} = \begin{bmatrix} a_l \\ b_r \end{bmatrix}$$
+
+
+<p>Where $\psi_{\alpha}$ is a Dirac spinor. It has 4 components, the first two form a left-handed Weyl spinor, and the last two form a right-handed Weyl spinor.</p>
+<p>We define following 4x4 $\gamma$ matrices, which will be widely used in field theory:</p>
+
+$$\gamma^{\mu} = \begin{bmatrix} \bm{0} & \sigma^{\mu} \\ \bar{\sigma}^{\mu} & \bm{0}\end{bmatrix}$$
+
+
+<p><mark>This is a little different from some others book. Usually this forms of gamma matrices is called that in <code>Weyl(Chiral) basis</code> </mark></p>
+<p>In <code>Dirac basis</code> , $\gamma^{1,2,3}$ are the same, but $\gamma^0 = \text{diag}(1,1,-1,-1)$ `.</p>
 <p>One can check that they satisfy a anti-commutation relation:</p>
-<!-- raw HTML omitted -->
-<p>Then we know that under Parity transformation, the Dirac spinor should exchange its two Weyl spinors: <code>$\psi \rightarrow \psi'=\gamma^0\psi$</code></p>
+
+$$\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu} = 2\eta^{\mu\nu}$$
+
+
+<p>Then we know that under Parity transformation, the Dirac spinor should exchange its two Weyl spinors: $\psi \rightarrow \psi'=\gamma^0\psi$</p>
 <p>Another important matrix is:</p>
-<!-- raw HTML omitted -->
-<p>It is anti-commutative with any <code>$\gamma^\mu$</code> : <code>$\{\gamma^5,\gamma^{\mu}\}=0$</code>. And one can construct <code>Projector</code> by it:</p>
-<!-- raw HTML omitted -->
+
+$$\gamma_5=\gamma^5 = \ti \gamma^0\gamma^1\gamma^2\gamma^3 = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$$
+
+
+<p>It is anti-commutative with any $\gamma^\mu$ : ${\gamma^5,\gamma^{\mu}}=0$. And one can construct <code>Projector</code> by it:</p>
+
+$$P_L = \frac 1 2 (1-\gamma_5) \ ; \ P_R=\frac 1 2 (1+\gamma_5)$$
+
+
 <p>They will get the left(right)-handed part of a Dirac spinor.</p>
-<p>We can use Dirac spinor to construct some quantities, with <code>$\bar{\psi} = \psi^\dagger \gamma^0$</code></p>
+<p>We can use Dirac spinor to construct some quantities, with $\bar{\psi} = \psi^\dagger \gamma^0$</p>
 <ol>
 <li>
 <p><code>Parity-invariant</code> Lorentz Scalar and Vector:</p>
-<!-- raw HTML omitted -->
-<p>This shows that the matrices in spinor space <code>$\gamma^\mu$</code> seem like a vector in Minkowski spacetime.</p>
+
+$$S = \bar{\psi}\psi \ ; \ V^\mu = \bar{\psi}\gamma^\mu\psi$$
+
+
+<p>This shows that the matrices in spinor space $\gamma^\mu$ seem like a vector in Minkowski spacetime.</p>
 </li>
 <li>
-<p><code>Pseudo-Scalar</code> <code>$P$</code> , <code>Pseudo-Vector</code> <code>$A^\mu$</code> and Tensor <code>$T^{\mu\nu}$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\sigma_{\mu\nu}=\frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</code></p>
+<p><code>Pseudo-Scalar</code> $P$ , <code>Pseudo-Vector</code> $A^\mu$ and Tensor $T^{\mu\nu}$ :</p>
+
+$$P=\bar{\psi}\gamma^5\psi \ ; \ A^\mu=\bar{\psi}\gamma_5\gamma^\mu\psi \ ; \ T_{\mu\nu}=\bar{\psi}\sigma_{\mu\nu}\psi$$
+
+
+<p>Where $\sigma_{\mu\nu}=\frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</p>
 </li>
 </ol>
-<p><!-- raw HTML omitted -->[Definition (Clifford Algebra)]<!-- raw HTML omitted --> : There are 16 independent Dirac matrices: <code>$1,\gamma_5,\gamma_{\mu},\gamma_5\gamma_{\mu},\sigma_{\mu\nu}$</code> . They together with normal matrices product form an <code>algebra</code> , called as <code>Clifford Algebra</code></p>
+<p><em>[Definition (Clifford Algebra)]</em> : There are 16 independent Dirac matrices: $1,\gamma_5,\gamma_{\mu},\gamma_5\gamma_{\mu},\sigma_{\mu\nu}$ . They together with normal matrices product form an <code>algebra</code> , called as <code>Clifford Algebra</code></p>
 <p>Finally, even it is trivial, we will give the transformation relationship of Dirac Spinor under the Lorentz Transformation:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\omega_{\mu\nu}$</code> are the parameters of <code>$\Lambda$</code></p>
-<!-- raw HTML omitted -->
-<p>Similar to what we have done before, we need only check the equalities of generators:</p>
-<!-- raw HTML omitted -->
-<p>With <code>$\theta^i =  \epsilon^{ijk}\omega^{jk}/2 = \epsilon^{ijk}\omega_{jk}/2  , \eta^i=\omega_{0i}$</code> That is to check the equalities:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$\sigma_{\mu\nu} = \frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$</code> , we can calculate it in Weyl basis:</p>
-<!-- raw HTML omitted -->
-<p>With the Pauli matrices&rsquo; property: <code>$[\sigma^i,\sigma^j] = 2\ti \epsilon^{ijk}\sigma^k$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>The equalities are checked.</p>
-<!-- raw HTML omitted -->
+
+$$\psi \rightarrow \psi' = \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi = \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi $$
+
+
+<p>Where $\omega_{\mu\nu}$ are the parameters of $\Lambda$</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+Similar to what we have done before, we need only check the equalities of generators:
+
+
+$$\begin{aligned}
+\partial_{\theta^i} \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi \Bigg|_{\bm{\theta}=\bm{\eta}=0} &= \partial_{\theta^i} \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi\Big|_{\bm{\theta}=\bm{\eta}=0} \\
+\partial_{\eta^i} \begin{bmatrix} \Lambda_L & 0 \\ 0 & \Lambda_R \end{bmatrix} \psi \Bigg|_{\bm{\theta}=\bm{\eta}=0} &= \partial_{\eta^i} \exp(-\frac {\ti} 4 \sum_{\mu\nu} \sigma_{\mu\nu}\omega_{\mu\nu}) \psi\Big|_{\bm{\theta}=\bm{\eta}=0}
+\end{aligned}$$
+
+
+
+With $\theta^i =  \epsilon^{ijk}\omega^{jk}/2 = \epsilon^{ijk}\omega_{jk}/2  , \eta^i=\omega_{0i}$ That is to check the equalities:
+
+
+$$\begin{aligned}
+\begin{bmatrix} -\ti \sigma^i /2 & 0 \\ 0 & -\ti \sigma^i/2 \end{bmatrix} \psi  &= -\sum_{jk}\frac {\ti} 4 \sigma_{jk}\epsilon^{ijk} \psi \\
+\begin{bmatrix} -\sigma^i/2 & 0 \\ 0 & \sigma^i/2 \end{bmatrix} \psi &= -(\frac {\ti} 2 \sigma_{0i}) \psi
+\end{aligned}$$
+
+
+
+For $\sigma_{\mu\nu} = \frac {\ti} 2 [\gamma_{\mu},\gamma_{\nu}]$ , we can calculate it in Weyl basis:
+
+
+$$\begin{aligned}
+\sigma_{\mu\nu} &= \frac {\ti} 2 \Bigg(\begin{bmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{bmatrix}\begin{bmatrix} 0 & \sigma^\nu \\ \bar{\sigma}^\nu & 0 \end{bmatrix}-\begin{bmatrix} 0 & \sigma^\nu \\ \bar{\sigma}^\nu & 0 \end{bmatrix}\begin{bmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{bmatrix}\Bigg) \\
+&= \frac {\ti} 2 \begin{bmatrix} \sigma^\mu \bar{\sigma}^\nu -\sigma^\nu \bar{\sigma}^\mu & 0 \\ 0 & \bar{\sigma}^\mu \sigma^\nu - \bar{\sigma}^\nu\sigma^\mu \end{bmatrix}
+\end{aligned}$$
+
+
+
+With the Pauli matrices' property: $[\sigma^i,\sigma^j] = 2\ti \epsilon^{ijk}\sigma^k$ , we have:
+
+
+$$\begin{aligned}
+\sigma_{i0} &= \ti \begin{bmatrix} \sigma^i & 0 \\ 0 & -\sigma^i \end{bmatrix} \\
+\sigma_{ij} &= \epsilon^{ijk} \begin{bmatrix}\sigma^k & 0 \\ 0 & \sigma^k \end{bmatrix}
+\end{aligned}$$
+
+
+
+Then we have:
+
+
+$$\begin{aligned}
+-\frac {\ti} 2 \sigma_{0i} &= \begin{bmatrix} -\sigma^i/2 & 0 \\ 0 &\sigma^i /2\end{bmatrix} \\
+-\sum_{jk} \frac {\ti} 4 \sigma_{jk}\epsilon^{ijk} &= -2\delta_i^l \begin{bmatrix}\sigma^l & 0 \\ 0 & \sigma^l \end{bmatrix} \frac {\ti} 4 = \begin{bmatrix}-\ti\sigma^i/2 & 0 \\ 0 & -\ti\sigma^i/2 \end{bmatrix}
+\end{aligned}$$
+
+
+
+The equalities are checked.
+
+
+</details>
+
 
           </div>
 
@@ -1122,7 +1480,7 @@ Then:</p>
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1164,23 +1522,8 @@ Then:</p>
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1204,13 +1547,39 @@ Then:</p>
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1223,9 +1592,6 @@ Then:</p>
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>

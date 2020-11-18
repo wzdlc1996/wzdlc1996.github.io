@@ -2,11 +2,11 @@
 <html lang="zh_Hans">
   <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="r64AlTCOZzKlMSpDsUj76TvI5OGOmE_h2kRn11UtSYk" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
   <meta name="author" content="Leonard">
   <meta name="description" content="The canonical quantization of Real-valued Scalar Field(Klein Gordon Field). And computation of propagator and discussion, especially the causality property. At last we will discuss the discrete symmetry of Klein Gordon Field in Quantum Theory">
 
@@ -20,9 +20,9 @@
 
 
   <title>
-  
-       Quantization of Free Field: Scalar Field | Leonard 
-  
+    
+     Quantization of Free Field: Scalar Field | Leonard 
+    
   </title>
 
   <link rel="canonical" href="https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/">
@@ -38,168 +38,108 @@
   <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
 
   
-  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
   
-  <link rel="shortcut icon"
-  
-      href="https://wzdlc1996.github.io/img/cat.png"
-  
-  >
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
 
 
   
-  
-  
+
   
 
   <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
   </style>
 
 
   
   
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
   
 
   
-  
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
-  
-
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config(
-      {
-          tex2jax: {
-          inlineMath: [['$','$'],['\\(','\\)']],
-          displayMath: [['$$','$$']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        },
-          TeX: {
-            extensions: ["autobold.js"],
-            Macros:{
-               bm: ["{\\boldsymbol #1}",1],
-               flo: ["\\overset {\\cdot} {#1}",1],
-               td: ["\\text{d}"],
-               ti: ["\\text{i}"],
-               bra: ["{\\langle #1 |}",1],
-               ket: ["{| #1 \\rangle}",1],
-               degree: ["{^\{\\circ\}}",0],
-               indent:["\\ \\ \\ \\",0],
-               rhat: ["\\overset {\\rightarrow} {#1}",1],
-               lhat: ["\\overset {\\leftarrow} {#1}",1],
-               lrhat: ["\\overset {\\leftrightarrow} {#1}",1]}
-            }
-      });
-  /*  MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax();
-      for(i = 0; i &lt; all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );*/
-</script>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128644147-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128644147-1');
-</script>
-
-
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
 
 </head>
 
   <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
   
     
-
+    
 
     
       
 
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
       
-      <a class="navbar-brand" href="https://wzdlc1996.github.io">
-          
-        <img class="avatar" src="https://wzdlc1996.github.io/img/cat.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
         
-        <strong> Leonard</strong>
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
 
         
-        <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
-          </li>
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/artic/" >Articles  </a>
-            </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
 
-          
-            <li class="nav-item ">
-              <a class="nav-link" href="https://wzdlc1996.github.io/notes/" >Notes  </a>
-            </li>
-
-          
-        </ul>
-      </div>
+        
+      </ul>
+      
       <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
         <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
-        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
         </svg>
       </a>
+
     </div>
 
+  </div>
+</nav>
 
 
 
-  </nav>
 
-  
-  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,8 +183,7 @@ autocomplete('#aa-search-input',
       </div>
     </div>
   </div>
-  
-
+ 
       
 
 
@@ -266,7 +205,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -287,7 +226,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -306,7 +245,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -325,7 +264,7 @@ autocomplete('#aa-search-input',
 
         
         <div class="carousel-item">
-          <div class="view" style="background-image: url('https://wzdlc1996.github.io/img/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
 
             
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -352,7 +291,7 @@ autocomplete('#aa-search-input',
       <div class="col-12 col-sm-5 align-middle">
         <a href="https://wzdlc1996.github.io">
           
-            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/img/white_cat.png" alt="" >
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
           
         </a>
       </div>
@@ -388,8 +327,7 @@ autocomplete('#aa-search-input',
             
 
             
-
-
+            
         </div>
       </div>
     </div>
@@ -402,8 +340,7 @@ autocomplete('#aa-search-input',
 
 </div>
 
-
-
+  
     
 
     
@@ -445,7 +382,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>6 minutes read</li>
+      <li>12 minutes read</li>
     
   </ul>
   
@@ -457,175 +394,548 @@ autocomplete('#aa-search-input',
             <h1 id="quantization-of-klein-gordon-field">Quantization of Klein-Gordon Field</h1>
 <h2 id="canonical-quantization-of-real-valued-scalar-field">Canonical Quantization of real-valued Scalar Field</h2>
 <p>Here we only consider the <code>real-valued</code> Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:</p>
-<!-- raw HTML omitted -->
-<p>To quantized this system, we need let the <code>canonical coordinate and momentum</code> be <code>operators on Hilbert space</code>: <code>$\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$</code> . For simplicity, we will omit the ^ of the operator symbol. Because in the future we will discuss the Quantum Field Theory only.</p>
+
+$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^2 \big)$$
+
+
+<p>To quantized this system, we need let the <code>canonical coordinate and momentum</code> be <code>operators on Hilbert space</code>: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ . For simplicity, we will omit the ^ of the operator symbol. Because in the future we will discuss the Quantum Field Theory only.</p>
 <p>The <code>operator</code> should satisfy the <code>commutation relation</code>:</p>
-<!-- raw HTML omitted -->
+
+$$[\pi(\bm{x}),\pi(\bm{x}')]=[\phi(\bm{x}),\phi(\bm{x}')]=0\ ; \ [\phi(\bm{x}),\pi(\bm{x}')]=\ti \delta^3(\bm{x}-\bm{x}')$$
+
+
 <p>They are operators in <code>Schrodinger Picture</code>, which are independent of time. Equivalently, we can say they are operators in <code>Heisenberg Picture</code> with the same time. That is why these relations are so-called as <code>equal-time commutation relation</code></p>
 <p>One can rewrite them into the plane wave expansion. Like what we did in Classical Theory. In Schrodinger Picture:</p>
-<!-- raw HTML omitted -->
-<p>Where we let the coefficient <code>$a^*$</code> to be operator <code>$a^\dagger$</code> so that <code>$\phi$</code> will be a Hermitian operator, corresponding to the real-valued field requirement, and <code>$\omega_{|\bm{k}|}=\sqrt{|\bm{k}|^2+m^2}$</code></p>
-<p>We can write the inverse transform, which will represent <code>$a(\bm{k})$</code> by <code>$\phi,\pi$</code>:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\phi(\bm{x})&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{\ti \bm{k}\cdot \bm{x}} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k})^{\dagger} \Big\} \\
+\pi(\bm{x})&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{\ti \bm{k}\cdot \bm{x}} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k})^{\dagger} \Big\} \\
+\end{aligned}$$
+
+
+<p>Where we let the coefficient $a^*$ to be operator $a^\dagger$ so that $\phi$ will be a Hermitian operator, corresponding to the real-valued field requirement, and $\omega_{|\bm{k}|}=\sqrt{|\bm{k}|^2+m^2}$</p>
+<p>We can write the inverse transform, which will represent $a(\bm{k})$ by $\phi,\pi$:</p>
+
+$$\begin{aligned}
+a(\bm{k})&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{-\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{-\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
+a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
+\end{aligned}$$
+
+
 <p>And their commutator:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Using the 3-d delta function: <code>$\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot(\bm{x}-\bm{y})}$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>That is:</p>
-<!-- raw HTML omitted -->
-<p>We can compute some commutator:</p>
-<!-- raw HTML omitted -->
-<p>Similarly, one can prove <code>$[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0$</code></p>
-<p>Then we compute:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$[a(\bm{k}),a(\bm{k}')]=[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0 \ ; \ [a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+Using the 3-d delta function: $\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot(\bm{x}-\bm{y})}$ , we have:
+
+
+$$\begin{aligned}
+\frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(a(\bm{k})+a(-\bm{k})^\dagger\Big)&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \phi(\bm{x})\\
+\frac {-\ti\omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big(a(\bm{k})-a(-\bm{k})^\dagger\Big)&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \pi(\bm{x})
+\end{aligned}$$
+
+
+
+That is:
+
+
+$$\begin{aligned}
+a(\bm{k})&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{-\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{-\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
+a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
+\end{aligned}$$
+
+
+
+We can compute some commutator:
+
+
+$$\begin{aligned}[]
+[a(\bm{k}),a(\bm{k}')] &= \int \frac {\td^3\bm{x}\td^3\bm{x}'} {(2\pi)^3} \Big\{\ti\sqrt{\frac {\omega} {4\omega'}} e^{-\ti(\bm{k}\cdot\bm{x}+\bm{k}'\cdot \bm{x}')} [\phi(\bm{x}),\pi(\bm{x}')]+\ti\sqrt{\frac {\omega'} {4\omega}}e^{-\ti(\bm{k}\cdot\bm{x}+\bm{k}'\cdot \bm{x}')} [\pi(\bm{x}),\phi(\bm{x}')] \Big\} \\
+&=\int \frac {\td^3\bm{x}\td^3\bm{x}'} {(2\pi)^3} \Big\{-\sqrt{\frac {\omega} {4\omega'}} e^{-\ti(\bm{k}\cdot\bm{x}+\bm{k}'\cdot \bm{x}')} \delta^3(\bm{x}-\bm{x}')+\sqrt{\frac {\omega'} {4\omega}}e^{-\ti(\bm{k}\cdot\bm{x}+\bm{k}'\cdot \bm{x}')} \delta^3(\bm{x}-\bm{x}') \Big\} \\
+&=\int \frac {\td^3 \bm{x}} {(2\pi)^3} \Big\{-\sqrt{\frac {\omega} {4\omega'}} e^{-\ti(\bm{k}+\bm{k}')\cdot \bm{x}}+ \sqrt{\frac {\omega'} {4\omega}} e^{-\ti(\bm{k}+\bm{k}')\cdot \bm{x}} \Big\} \\
+&= -\sqrt{\frac {\omega} {4\omega'}}+ \sqrt{\frac {\omega'} {4\omega}} \\
+&=0
+\end{aligned}$$
+
+
+
+Similarly, one can prove $[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0$
+
+Then we compute:
+
+
+$$\begin{aligned}[]
+[a(\bm{k}),a(\bm{k}')^\dagger] &= \int \frac {\td^3\bm{x}\td^3\bm{x}'} {(2\pi)^3} \Big\{-\ti\sqrt{\frac {\omega} {4\omega'}} e^{-\ti(\bm{k}\cdot\bm{x}-\bm{k}'\cdot \bm{x}')} [\phi(\bm{x}),\pi(\bm{x}')]+\ti\sqrt{\frac {\omega'} {4\omega}}e^{\ti(\bm{k}\cdot\bm{x}-\bm{k}'\cdot \bm{x}')} [\pi(\bm{x}),\phi(\bm{x}')] \Big\} \\
+&=\int \frac {\td^3\bm{x}\td^3\bm{x}'} {(2\pi)^3} \Big\{\sqrt{\frac {\omega} {4\omega'}} e^{-\ti(\bm{k}\cdot\bm{x}-\bm{k}'\cdot \bm{x}')} \delta^3(\bm{x}-\bm{x}')+\sqrt{\frac {\omega'} {4\omega}}e^{\ti(\bm{k}\cdot\bm{x}-\bm{k}'\cdot \bm{x}')} \delta^3(\bm{x}-\bm{x}') \Big\} \\
+&=\int \frac {\td^3 \bm{x}} {(2\pi)^3} \Big\{\sqrt{\frac {\omega} {4\omega'}} e^{-\ti(\bm{k}-\bm{k}')\cdot \bm{x}}+ \sqrt{\frac {\omega'} {4\omega}} e^{\ti(\bm{k}-\bm{k}')\cdot \bm{x}} \Big\} \\
+&=2 \sqrt{\frac {\omega_{|\bm{k}|}} {4\omega_{|\bm{k}'|}}}\delta^3(\bm{k}-\bm{k}')\\
+&=\delta^3(\bm{k}-\bm{k}')
+\end{aligned}$$
+
+
+
+
+</details>
+
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$E_0=\frac 1 2 \int\td^3\bm{k} \ \omega_{|\bm{k}|}\delta(0)$</code>. This is a <code>$\infty$</code> quantity. But it will not bother us if we admit that the absolute value of energy is non-measurable. But the relative value is work.</p>
-<p><!-- raw HTML omitted --> But in General Relativistic theory, the energy value will influence the space-time structure. This argument will not work at that situation.<!-- raw HTML omitted --></p>
+
+$$\hat H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} \big(a(\bm{k})^\dagger a(\bm{k})+a(\bm{k})a(\bm{k})^\dagger\big)=E_0+\int \td^3 \bm{k} \ \omega_{|\bm{k}|} a(\bm{k})^\dagger a(\bm{k})$$
+
+
+<p>Where $E_0=\frac 1 2 \int\td^3\bm{k} \ \omega_{|\bm{k}|}\delta(0)$. This is a $\infty$ quantity. But it will not bother us if we admit that the absolute value of energy is non-measurable. But the relative value is work.</p>
+<p><mark> But in General Relativistic theory, the energy value will influence the space-time structure. This argument will not work at that situation.</mark></p>
 <p>With this argument, we can simply write the Hamiltonian as:</p>
-<!-- raw HTML omitted -->
+
+$$\hat H= \int \td^3 \bm{k} \ \omega_{|\bm{k}|} a(\bm{k})^\dagger a(\bm{k})$$
+
+
 <p>One can also write these operators in <code>Heisenberg Picture</code> :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the commutator of <code>$a,a^\dagger$</code> and <code>$\hat H$</code>:</p>
-<!-- raw HTML omitted -->
-<p>Noting that <code>$\hat H$</code> is independent of time, we have:</p>
-<!-- raw HTML omitted -->
-<p>That is, in Heisenberg Picture, the operators which is dependent of time:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}
+\phi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
+\pi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
+\end{aligned}$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the commutator of $a,a^\dagger$ and $\hat H$:
+
+
+$$\begin{aligned}[]
+[a(\bm{k}),\hat H]&=\omega_{|\bm{k}|} a(\bm{k}) \\
+[a(\bm{k})^\dagger,\hat H]&=-\omega_{|\bm{k}|} a(\bm{k})^\dagger
+\end{aligned}$$
+
+
+
+Noting that $\hat H$ is independent of time, we have:
+
+
+$$\begin{aligned}
+a_H(\bm{k}) &=e^{\ti t\hat H} a(\bm{k}) e^{-\ti t \hat H}=e^{-\ti \omega_{|\bm{k}|} t} a(\bm{k}) \\
+a_H(\bm{k})^\dagger &= e^{\ti \omega_{|\bm{k}|} t} a(\bm{k})^\dagger
+\end{aligned}$$
+
+
+
+That is, in Heisenberg Picture, the operators which is dependent of time:
+
+
+$$\begin{aligned}
+\phi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
+\pi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
+\end{aligned}$$
+
+
+
+
+</details>
+
 <h2 id="hilbert-space-of-scalar-field">Hilbert Space of Scalar Field</h2>
 <p>The Hamiltonian of Real-valued Scalar Field is the same as the Hamiltonian of a set of non-interaction harmonic oscillators. Then we can construct the <code>Hilbert space</code> by the <code>ground state</code> and <code>creation/annihilation operators</code>. This is also called as <code>Fock space</code>.</p>
-<p><em>[Definition]</em> : <code>vacuum of the Klein-Gordon Field</code> is the ground state of Scalar Field. Usually denote it as <code>$\ket{0}$</code> , and it is zero if annihilation operator acts on it:</p>
-<!-- raw HTML omitted -->
-<p>Assume that it is normalized as <code>$\bra{0}0\rangle=1$</code> . Then the energy of vacuum is zero: <code>$\bra{0}\hat H\ket{0}=0$</code>.</p>
-<p><em>[Definition]</em> : <code>1-particle</code> state is proportional to a creation operator acting on vacuum. Usually denote it as <code>$\ket{\bm{k}}$</code> :</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : <code>vacuum of the Klein-Gordon Field</code> is the ground state of Scalar Field. Usually denote it as $\ket{0}$ , and it is zero if annihilation operator acts on it:</p>
+
+$$a(\bm{k}) \ket{0}=0 \ ; \ \forall \bm{k}$$
+
+
+<p>Assume that it is normalized as $\bra{0}0\rangle=1$ . Then the energy of vacuum is zero: $\bra{0}\hat H\ket{0}=0$.</p>
+<p><em>[Definition]</em> : <code>1-particle</code> state is proportional to a creation operator acting on vacuum. Usually denote it as $\ket{\bm{k}}$ :</p>
+
+$$\ket{\bm{k}} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k})^\dagger \ket{0}$$
+
+
 <p>And the orthonormal relation is:</p>
-<!-- raw HTML omitted -->
-<p>One can prove that under the Lorentz Transformation that leads <code>$\Lambda_{\bm{k}\rightarrow \bm{0}} k=(m,0,0,0)$</code>, one has</p>
-<!-- raw HTML omitted -->
+
+$$\bra{\bm{k}}\bm{k}'\rangle = 2\omega_{|\bm{k}|} \delta^3(\bm{k}-\bm{k}')$$
+
+
+<p>One can prove that under the Lorentz Transformation that leads $\Lambda_{\bm{k}\rightarrow \bm{0}} k=(m,0,0,0)$, one has</p>
+
+$$\bra{\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}} \Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}'\rangle = \bra{\bm{k}}\bm{k}'\rangle$$
+
+
 <p>in this degree we say this quantity is invariant under Lorentz transformation.</p>
 <p>And the <code>complete relation</code> in <code>1-particle</code> subspace:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\int \td^3\bm{p} (2\omega_{|\bm{p}|})^{-1}=\int_{p^0\gt 0} \td^4p \  \delta(p^\mu p_\mu-m^2)$</code> is covariant measure.</p>
-<!-- raw HTML omitted -->
-<p>Consider</p>
-<!-- raw HTML omitted -->
-<p>Consider Lorentz transform acting on <code>$\bm{k},\bm{p}$</code> :</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\Lambda \bm{k}$</code> means the spatial components of <code>$\Lambda(\omega_{|\bm{k}|},\bm{k})$</code> . And:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\det \Lambda'_\mu$</code> are determinants of minors of <code>$\Lambda$</code> with cancelling <code>$0$</code>-row-<code>$\mu$</code>-column. That is:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$k_\mu= m \Lambda^0_{\indent \mu}$</code> , we have that: <code>$\Lambda^0_{\indent \mu}k^\mu = m \Lambda^0_{\indent \mu} \Lambda^{0\mu}=m\Lambda^0_{\indent \mu} \Lambda_0^{\indent \mu}=m\delta_0^0=m$</code> , which means that in this case: <code>$\Lambda k=(m,0,0,0)$</code> . And <code>$\det J=\frac m {k^0}\det \Lambda=m/k^0$</code></p>
-<p>That means under this special Lorentz Transformation: <code>$\Lambda_{\bm{k}\rightarrow \bm{0}} (\sqrt{m^2+\bm{k}^2},k^1,k^2,k^3) =(m,0,0,0)$</code> :</p>
-<!-- raw HTML omitted -->
-<p>q.e.d.</p>
-<p>Consider the integral:</p>
-<!-- raw HTML omitted -->
-<p>Where:</p>
-<!-- raw HTML omitted -->
-<p>If <code>$f$</code> is independent of <code>$p^0$</code> , it is simply <code>$\tilde{f}=2f$</code>.</p>
-<p>In this case, we can write down the equality of integral measure:</p>
-<!-- raw HTML omitted -->
-<p>The right-hand-side of the equality is obvious invariant under (Orthochronous) Lorentz Transformation.</p>
-<!-- raw HTML omitted -->
+
+$$1_{\text{one-particle}}=\int \frac {\td^3\bm{k}} {2\omega_{|\bm{k}|}} \ket{\bm{k}}\bra{\bm{k}}$$
+
+
+<p>Where $\int \td^3\bm{p} (2\omega_{|\bm{p}|})^{-1}=\int_{p^0\gt 0} \td^4p \  \delta(p^\mu p_\mu-m^2)$ is covariant measure.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+Consider
+
+$$\begin{aligned}
+\bra{\bm{k}}\bm{p}\rangle &= 2\omega_{|\bm{k}|} \delta^3(\bm{k}-\bm{p}) \\
+&=2\sqrt{m^2+|\bm{k}|^2}\delta(k^1-p^1)\delta(k^2-p^2)\delta(k^3-p^3)
+\end{aligned}$$
+
+
+
+Consider Lorentz transform acting on $\bm{k},\bm{p}$ :
+
+
+$$\begin{aligned}
+\bra{\Lambda\bm{k}}\Lambda \bm{p}\rangle &= 2\sqrt{m^2+|\Lambda \bm{k}|^2}\prod_i\delta(\Lambda^i_{\indent \mu}(k^\mu - p^\mu)) \\
+&=2\frac {|\Lambda^0_{\indent \mu}k^\mu|} {|\text{det}J|} \prod_i \delta(k^i-p^i)
+\end{aligned}$$
+
+
+
+Where $\Lambda \bm{k}$ means the spatial components of $\Lambda(\omega_{|\bm{k}|},\bm{k})$ . And:
+
+
+$$\begin{aligned}
+\det J &= \det\Big[ \frac {\partial} {\partial k^j}\Big(\Lambda^i_{\indent 0}(\sqrt{m^2+|\bm{k}|^2})-p_0)+\Lambda^i_{\indent l} (k^l-p^l)\Big)\Big] \\
+&=\det\Big[\Lambda^i_{\indent 0} \frac {k^j} {\sqrt{m^2+|\bm{k}|^2}}+\Lambda^i_{\indent j} \Big] \\
+&=\det \begin{bmatrix}\Lambda^1_{\indent 1}+\Lambda^1_{\indent 0} k^1/k^0 & \Lambda^1_{\indent 2}+\Lambda^1_{\indent 0} k^2/k^0 & \Lambda^1_{\indent 3}+\Lambda^1_{\indent 0} k^3/k^0 \\
+\Lambda^2_{\indent 1}+\Lambda^2_{\indent 0} k^1/k^0 & \Lambda^2_{\indent 2}+\Lambda^2_{\indent 0} k^2/k^0 & \Lambda^2_{\indent 3}+\Lambda^2_{\indent 0} k^3/k^0 \\
+\Lambda^3_{\indent 1}+\Lambda^3_{\indent 0} k^1/k^0 & \Lambda^3_{\indent 2}+\Lambda^3_{\indent 0} k^2/k^0 & \Lambda^3_{\indent 3}+\Lambda^3_{\indent 0} k^3/k^0 \end{bmatrix} \\
+&=\det \Lambda'_0+\frac {k^1} {k^0} \det \Lambda'_1-\frac {k^2} {k^0}\det \Lambda'_2 +\frac {k^3} {k^0}\det \Lambda'_3 \\
+&=\frac 1 {k^0}\sum_{\mu=0}^3 (-1)^{\mu}k_\mu \det \Lambda'_\mu
+\end{aligned}$$
+
+
+
+Where $\det \Lambda'_\mu$ are determinants of minors of $\Lambda$ with cancelling $0$-row-$\mu$-column. That is:
+
+
+$$\det \Lambda =\sum_{\mu=0}^3 (-1)^\mu \Lambda^0_{\indent \mu} \det \Lambda'_\mu $$
+
+
+
+For $k_\mu= m \Lambda^0_{\indent \mu}$ , we have that: $\Lambda^0_{\indent \mu}k^\mu = m \Lambda^0_{\indent \mu} \Lambda^{0\mu}=m\Lambda^0_{\indent \mu} \Lambda_0^{\indent \mu}=m\delta_0^0=m$ , which means that in this case: $\Lambda k=(m,0,0,0)$ . And $\det J=\frac m {k^0}\det \Lambda=m/k^0$
+
+That means under this special Lorentz Transformation: $\Lambda_{\bm{k}\rightarrow \bm{0}} (\sqrt{m^2+\bm{k}^2},k^1,k^2,k^3) =(m,0,0,0)$ :
+
+
+$$\langle\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}|\Lambda_{\bm{k}\rightarrow \bm{0}}\bm{p}\rangle =2k^0 \prod_i \delta(k^i-p^i)=\bra{\bm{k}}\bm{p}\rangle $$
+
+
+
+q.e.d.
+
+Consider the integral:
+
+
+$$\begin{aligned}
+\int \td^4 p \  \delta(p^\mu p_\mu-m^2) f(p)&=\int \td^3 \bm{p} \int \td p^0 \ \delta\Big((p^0)^2-m^2-|\bm{p}|^2\Big)f(p^0,\bm{p}) \\
+&=\int \td^3 \bm{p} \frac {f(p^0=\sqrt{m^2+|\bm{p}|^2},\bm{p})} {2\sqrt{m^2+|\bm{p}|^2}} + \int \td^3 \bm{p} \frac {f(p^0=-\sqrt{m^2+|\bm{p}|^2},\bm{p})} {2\sqrt{m^2+|\bm{p}|^2}} \\
+&=\int \frac {\td^3 \bm{p}} {2\omega_{|\bm{p}|}} \tilde{f}(\bm{p})
+\end{aligned}$$
+
+
+
+Where:
+
+
+$$\tilde{f}(\bm{p})=f(p^0=\omega_{|\bm{p}|},\bm{p})+f(p^0=-\omega_{|\bm{p}|},\bm{p})$$
+
+
+
+If $f$ is independent of $p^0$ , it is simply $\tilde{f}=2f$.
+
+In this case, we can write down the equality of integral measure:
+
+
+$$\int \frac {\td^3 \bm{p}} {2\omega_{|\bm{p}|}}=\frac 1 2\int \td^4 p \ \delta(p^\mu p_\mu -m^2)=\int_{p^0\gt 0} \td^4 p \ \delta(p^\mu p_\mu -m^2)$$
+
+
+
+The right-hand-side of the equality is obvious invariant under (Orthochronous) Lorentz Transformation.
+
+
+</details>
+
 <p>In Fock space, the Lorentz transformation for coordinates induces the Unitary transformation for operators (In finite-dimensional space Lorentz group has no unitary representation because it is not <code>tight</code>. But Fock space is infinite-dimensional.).</p>
-<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) <code>$x\rightarrow x'=\Lambda x$</code> , the corresponding operator on Hilbert space is <code>$U(\Lambda)$</code> , then we have:</p>
-<!-- raw HTML omitted -->
-<p>The vacuum is unique: <code>$U(\Lambda)\ket{0}=\ket{0}$</code> . And the creation operator:</p>
-<!-- raw HTML omitted -->
+<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) $x\rightarrow x'=\Lambda x$ , the corresponding operator on Hilbert space is $U(\Lambda)$ , then we have:</p>
+
+$$U(\Lambda)\ket{\bm{k}}=\ket{\Lambda \bm{k}}$$
+
+
+<p>The vacuum is unique: $U(\Lambda)\ket{0}=\ket{0}$ . And the creation operator:</p>
+
+$$U(\Lambda) a(\bm{k})^\dagger U(\Lambda)^{-1} = \sqrt {\frac {\omega_{|\Lambda \bm{k}|}} {\omega_{|\bm{k}|}}} a(\Lambda \bm{k})^\dagger$$
+
+
 <p>Same for annihilation operator. And one can check that the field operator will be:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>For the field operator:</p>
-<!-- raw HTML omitted -->
-<p>We have:</p>
-<!-- raw HTML omitted -->
-<p>Where we used <code>$k_\mu x^\mu = (\Lambda k)_\mu (\Lambda x)^\mu$</code> , and the covariant of the integral measure:</p>
-<!-- raw HTML omitted -->
-<p>together with that <code>$\Lambda$</code> is the special Lorentz Transformation.</p>
-<!-- raw HTML omitted -->
-<p>For general cases, if <code>$\Lambda$</code> is a general Lorentz Transformation, this conclusion works for operators in Schrodinger equation for they are independent of time, or equivalently, the zero-component of <code>$k$</code> :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This seems to violate the transformation regulation in Classical theory which is:</p>
-<!-- raw HTML omitted -->
-<p>But actually not. Here we use the field operator <code>$\phi$</code> to create or annihilate at some spacetime point. But in classical theory we discussed that the coordinate transform with a <code>fixed</code> field. Like the passive transformation &amp; active transformation, they are just mutually inverse.</p>
-<p>We will see this at spinor and vector field, in which the inverse relationship will be much more clear. For the <code>$\Lambda_{\text{Field}}$</code> in those cases are inversion too.</p>
-<!-- raw HTML omitted -->
+
+$$\phi'(x'=\Lambda x)\equiv U(\Lambda)\phi(x)U(\Lambda)^{-1} = \phi(x'=\Lambda x)$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+For the field operator:
+
+
+$$\phi(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\}$$
+
+
+
+We have:
+
+
+$$\begin{aligned}
+U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\sqrt{2\omega_{|\Lambda \bm{k}|}}} {2\omega_{|\bm{k}|}} \Big\{ e^{-\ti k_\mu x^\mu} a(\Lambda\bm{k})+e^{\ti k_\mu x^\mu} a(\Lambda\bm{k})^{\dagger} \Big\} \\
+&=\int \frac {\td^3 \Lambda\bm{k}} {(2\pi)^{3/2}} \frac {\sqrt{2\omega_{|\Lambda \bm{k}|}}} {2\omega_{|\Lambda\bm{k}|}} \Big\{ e^{-\ti k_\mu x^\mu} a(\Lambda\bm{k})+e^{\ti k_\mu x^\mu} a(\Lambda\bm{k})^{\dagger} \Big\} \\
+&=\phi(x'=\Lambda x)
+\end{aligned}$$
+
+
+
+Where we used $k_\mu x^\mu = (\Lambda k)_\mu (\Lambda x)^\mu$ , and the covariant of the integral measure:
+
+
+$$\int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}}$$
+
+
+
+together with that $\Lambda$ is the special Lorentz Transformation.
+
+
+</details>
+
+<p>For general cases, if $\Lambda$ is a general Lorentz Transformation, this conclusion works for operators in Schrodinger equation for they are independent of time, or equivalently, the zero-component of $k$ :</p>
+
+$$\phi'(\bm{x}'=\Lambda \bm{x})\equiv U(\Lambda)\phi(\bm{x})U(\Lambda)^{-1} = \phi(\bm{x}'=\Lambda \bm{x})$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Some discussion about this and the classical form
+    </summary>
+    
+
+This seems to violate the transformation regulation in Classical theory which is:
+
+
+$$\psi(x)\rightarrow \psi'(x'=\Lambda_{\text{spacetime}}(\omega)x) = \big(\Lambda_{\text{Field}}(\omega)\psi\big)(x=\Lambda_{\text{spacetime}}(\omega)^{-1}x') $$
+
+
+
+But actually not. Here we use the field operator $\phi$ to create or annihilate at some spacetime point. But in classical theory we discussed that the coordinate transform with a `fixed` field. Like the passive transformation & active transformation, they are just mutually inverse.
+
+We will see this at spinor and vector field, in which the inverse relationship will be much more clear. For the $\Lambda_{\text{Field}}$ in those cases are inversion too.
+
+
+</details>
+
 <h2 id="causality-of-scalar-field">Causality of Scalar Field</h2>
 <p>Our quantization will not violent to the causality demanded by special Relativistic Theory. That is to say:</p>
-<p><em>[Theorem]</em> : In Heisenberg Picture, for any two point <code>$x,y$</code> with spacelike interval: <code>$\|x-y\|^2\lt 0$</code> . Then the field operators are commutable:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>With the quantization that <code>$[a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$</code> . we have:</p>
-<!-- raw HTML omitted -->
-<p>One can rewrite the integral as a covariant form:</p>
-<!-- raw HTML omitted -->
-<p>For <code>$x-y$</code> is a spacelike vector, we can always find a Lorentz Transformation so that <code>$\ti\Delta(x-y)=f(\bm{x}-\bm{y})$</code> . Then:</p>
-<!-- raw HTML omitted -->
-<p>which can be easily find by transform the parameter <code>$\bm{k}\rightarrow -\bm{k}$</code> .</p>
-<p>q.e.d.</p>
-<!-- raw HTML omitted -->
+<p><em>[Theorem]</em> : In Heisenberg Picture, for any two point $x,y$ with spacelike interval: $|x-y|^2\lt 0$ . Then the field operators are commutable:</p>
+
+$$[\phi(x),\phi(y)]=0 \ ; \ \|x-y\|^2\lt 0$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+With the quantization that $[a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$ . we have:
+
+
+$$\begin{aligned}[]
+[\phi(x),\phi(y)]&= \int \frac {\td^3 \bm{k}_1\td^3 \bm{k}_2} {(2\pi)^{3} \sqrt{4\omega_1\omega_2}}\Big\{[a(\bm{k}_1),a(\bm{k}_2)^\dagger]e^{-\ti k_1\cdot x+\ti k_2\cdot y}+[a(\bm{k}_1)^\dagger,a(\bm{k}_2)]e^{\ti k_1\cdot x-\ti k_2\cdot y} \Big\} \\
+&=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}}\big(e^{-\ti k\cdot (x-y)}-e^{\ti k\cdot (x-y)} \big) \\
+& \equiv \ti \Delta(x-y)
+\end{aligned}$$
+
+
+
+One can rewrite the integral as a covariant form:
+
+
+$$\ti \Delta(x-y)=\int \frac {\td^4 k} {(2\pi)^3} \delta(k^\mu k_\mu-m^2)\Theta(k^0)\big(e^{-\ti k\cdot (x-y)}-e^{\ti k\cdot (x-y)}\big)$$
+
+
+
+For $x-y$ is a spacelike vector, we can always find a Lorentz Transformation so that $\ti\Delta(x-y)=f(\bm{x}-\bm{y})$ . Then:
+
+
+$$f(\bm{x})=\int \frac {\td^4 k} {(2\pi)^3} \delta(k^\mu k_\mu-m^2)\Theta(k^0)\big(e^{-\ti \bm{k}\cdot \bm{x}}-e^{\ti \bm{k}\cdot \bm{x}}\big)=0$$
+
+
+
+which can be easily find by transform the parameter $\bm{k}\rightarrow -\bm{k}$ .
+
+q.e.d.
+
+
+</details>
+
 <h2 id="complex-valued-scalar-field">Complex-valued Scalar Field</h2>
 <p>We write down the conclusion about <code>complex-valued Scalar Field</code> here. The derivation is similar to the real-valued case. But we need two kinds of creation operator corresponding to the internal degrees of freedom of Complex-valued Scalar Field:</p>
 <p>The field operator in Heisenberg Picture:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$k\cdot x=k_\mu x^\mu$</code> . And the Hamiltonian:</p>
-<!-- raw HTML omitted -->
+
+$$\phi(x) = \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}2\omega_{|\bm{k}|}} \Big\{e^{-\ti k\cdot x} a_+(\bm{k}) + e^{\ti k\cdot x} a_-(\bm{k})^\dagger \Big\}$$
+
+
+<p>Where $k\cdot x=k_\mu x^\mu$ . And the Hamiltonian:</p>
+
+$$\hat H=\int \td^3 \bm{k} \  \omega_{|\bm{k}|} \big(a_+(\bm{k})^\dagger a_+(\bm{k})+a_-(\bm{k})^\dagger a_-(\bm{k}) \big)$$
+
+
 <p>And the commutation relationship:</p>
-<!-- raw HTML omitted -->
+
+$$\begin{aligned}[]
+[a_+(\bm{k}),a_+(\bm{k}')] &= [a_+(\bm{k})^\dagger,a_+(\bm{k}')^\dagger]=0 \\
+[a_-(\bm{k}),a_-(\bm{k}')] &= [a_-(\bm{k})^\dagger,a_-(\bm{k}')^\dagger]=0 \\
+[a_+(\bm{k}),a_-(\bm{k}')] &= [a_+(\bm{k})^\dagger,a_-(\bm{k}')^\dagger]=0\\
+[a_+(\bm{k}),a_+(\bm{k}')^\dagger]&=[a_-(\bm{k}),a_-(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')
+\end{aligned}$$
+
+
 <p>The conserved charge:</p>
-<!-- raw HTML omitted -->
+
+$$Q=\int\td^3 \bm{k} \ \big(a_+(\bm{k})^\dagger a_+(\bm{k})-a_-(\bm{k})^\dagger a_-(\bm{k}) \big) = \sum_{\bm{k}} \big(N_{\bm{k}}^+-N_{\bm{k}}^-\big)$$
+
+
 <h1 id="propagator-of-scalar-field">Propagator of Scalar Field</h1>
 <p><em>[Definition]</em> : <code>Feynman Propagator</code> or <code>two-point time-ordered Green's Function</code> of Scalar Field is defined as :</p>
-<!-- raw HTML omitted -->
+
+$$\ti \Delta_F(x-y):=\bra{0}\mathcal{T}\{\phi(x)\phi(y)^\dagger\}\ket{0} $$
+
+
 <p>Here the time-ordered product (<code>for bosonic operators</code>) is:</p>
-<!-- raw HTML omitted -->
+
+$$\mathcal{T}\{A(x)B(y)\}=\Theta(x^0-y^0)A(x)B(y)+\Theta(y^0-x^0)B(y)A(x)$$
+
+
 <p>One can compute the propagator:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$\epsilon\rightarrow 0^+$</code> .</p>
-<!-- raw HTML omitted -->
-<p>We compute these two terms in time-ordered product:</p>
-<!-- raw HTML omitted -->
-<p>Then we have:</p>
-<!-- raw HTML omitted -->
-<p>Then we consider the integral:</p>
-<!-- raw HTML omitted -->
-<p>If <code>$x^0\lt 0$</code> , the Jordon&rsquo;s Lemma allow us to use the upper half plane. Then the pole is <code>$-\omega_{|\bm{p}|}+\ti \epsilon$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>And if <code>$x^0\gt 0$</code> , we can only use the lower half plane. Then the pole is <code>$\omega_{|\bm{p}|}-\ti \epsilon$</code> , we have:</p>
-<!-- raw HTML omitted -->
-<p>That is :</p>
-<!-- raw HTML omitted -->
-<p>Or equivalently:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+
+$$\ti \Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$
+
+
+<p>Where $\epsilon\rightarrow 0^+$ .</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+We compute these two terms in time-ordered product:
+
+
+$$\begin{aligned}
+\bra{0}\phi(x)\phi(y)^\dagger\ket{0}&= \int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot x+\ti k_1\cdot y} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
+&=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{-\ti k\cdot (x-y)} \\
+\bra{0}\phi(y)^\dagger\phi(x)\ket{0}&=\int \frac {\td^3 \bm{k}_1 \td^3 \bm{k}_2} {(2\pi)^3 \sqrt{4\omega_1\omega_2}}e^{-\ti k_2\cdot y+\ti k_1\cdot x} \bra{0}a(\bm{k}_2)a(\bm{k}_1)^\dagger \ket{0}  \\
+&=\int \frac {\td^3 \bm{k}} {(2\pi)^3 2\omega_{|\bm{k}|}} e^{\ti k\cdot (x-y)} \\
+\end{aligned}$$
+
+
+
+Then we have:
+
+
+$$\ti \Delta_F(x-y)=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big\{\Theta(x^0-y^0)e^{-\ti p\cdot (x-y)} + \Theta(y^0-x^0)e^{\ti p\cdot (x-y)} \Big\}$$
+
+
+
+Then we consider the integral:
+
+
+$$\begin{aligned}
+\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot x} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}&=\int \frac {\td^3\bm{p}} {(2\pi)^4} \int \td p^0 \frac {\ti e^{-\ti p\cdot x}} {(p^0-\omega_{|\bm{p}|}+\ti \epsilon)(p^0+\omega_{|\bm{p}|}-\ti \epsilon)}
+\end{aligned}$$
+
+
+
+If $x^0\lt 0$ , the Jordon's Lemma allow us to use the upper half plane. Then the pole is $-\omega_{|\bm{p}|}+\ti \epsilon$ , we have:
+
+
+$$\text{integral} =2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{\ti \omega_{|\bm{p}|}x^0+\ti \bm{p}\cdot \bm{x}}} {-2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti \omega_{|\bm{p}|}x^0 - \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti p\cdot x } $$
+
+
+
+And if $x^0\gt 0$ , we can only use the lower half plane. Then the pole is $\omega_{|\bm{p}|}-\ti \epsilon$ , we have:
+
+
+$$\text{integral} =-2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{-\ti \omega_{|\bm{p}|}x^0+\ti \bm{p}\cdot \bm{x}}} {2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti \omega_{|\bm{p}|}x^0 + \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti p\cdot x } $$
+
+
+
+That is :
+
+
+$$\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot x} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big\{\Theta(x^0-y^0)e^{-\ti p\cdot (x-y)} + \Theta(y^0-x^0)e^{\ti p\cdot (x-y)} \Big\}$$
+
+
+
+Or equivalently:
+
+
+$$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$
+
+
+
+
+</details>
+
 <h1 id="discrete-symmetry-of-scalar-field">Discrete Symmetry of Scalar Field</h1>
 <h2 id="spatial-inversion">Spatial Inversion</h2>
 <p>We hope the <code>spatial inversion</code> induces a unitary operator so as to:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$e^{\ti\theta_P}$</code> is a phase-factor. And <code>$U_P\ket{0}=\ket{0}$</code> .</p>
+
+$$U_P \phi(x^0,\bm{x})U_P^{-1}= e^{\ti \theta_P} \phi(x^0,-\bm{x})$$
+
+
+<p>Where $e^{\ti\theta_P}$ is a phase-factor. And $U_P\ket{0}=\ket{0}$ .</p>
 <p>For creation operators:</p>
-<!-- raw HTML omitted -->
-<p>For complex-valued Klein-Gordon Field, <code>$\theta_P$</code> has no physical meaning. But for real-valued Klein-Gordon Field, <code>$e^{\ti \theta_P}=\pm 1$</code>, denoting the particle&rsquo;s internal parity.</p>
-<p>We can also represent <code>$U_P$</code> by creation/annihilation operators:</p>
-<!-- raw HTML omitted -->
+
+$$U_P a_+(\bm{p})U_P^{-1}=e^{\ti \theta_P} a_+(-\bm{p}) \ ; \ U_P a_-(\bm{p})^\dagger U_P^{-1}=e^{\ti \theta_P} a_-(-\bm{p})^\dagger$$
+
+
+<p>For complex-valued Klein-Gordon Field, $\theta_P$ has no physical meaning. But for real-valued Klein-Gordon Field, $e^{\ti \theta_P}=\pm 1$, denoting the particle&rsquo;s internal parity.</p>
+<p>We can also represent $U_P$ by creation/annihilation operators:</p>
+
+$$U_P=\exp\Bigg\{\ti \frac {\pi} 2 \int \td^3 \bm{k} \Big(a_+(\bm{k})^\dagger a_+(-\bm{k})+a_-(\bm{k})^\dagger a_-(-\bm{k}) - e^{\ti \theta}\big(a_+(\bm{k})^\dagger a_+(\bm{k})+a_-(\bm{k})^\dagger a_-(\bm{k})\big) \Big) \Bigg\}$$
+
+
 <h2 id="charge-conjugation">Charge Conjugation</h2>
 <p>We hope the <code>charge conjugation</code> induces a unitary operator so as to:</p>
-<!-- raw HTML omitted -->
-<p>Where <code>$e^{\ti\theta_C}$</code> is a phase-factor, and also is unmeasurable for complex-valued field. For real-valued Klein-Gordon Field <code>$e^{\ti \theta_C}=\pm 1$</code> .</p>
+
+$$U_C \phi(x)U_C^{-1}=e^{\ti \theta_C}\phi(x)^\dagger$$
+
+
+<p>Where $e^{\ti\theta_C}$ is a phase-factor, and also is unmeasurable for complex-valued field. For real-valued Klein-Gordon Field $e^{\ti \theta_C}=\pm 1$ .</p>
 <p>And for creation operators:</p>
-<!-- raw HTML omitted -->
+
+$$U_C a_+(\bm{p})U_C^{-1}=e^{\ti \theta_C} a_-(\bm{p}) \ ; \ U_C a_-(\bm{p})^\dagger U_C^{-1}=e^{\ti \theta_C} a_+(\bm{p})^\dagger$$
+
+
 <h2 id="time-reversal">Time Reversal</h2>
-<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator <code>$K$</code> we can write it as <code>$U_T K$</code> , where <code>$U_T$</code> is a unitary operator:</p>
-<!-- raw HTML omitted -->
+<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator $K$ we can write it as $U_T K$ , where $U_T$ is a unitary operator:</p>
+
+$$(U_T K) \phi(x^0,\bm{x})(U_T K)^{-1} = e^{\ti \theta_T} \phi(-x^0,\bm{x})$$
+
+
 <p>And for creation operators:</p>
-<!-- raw HTML omitted -->
+
+$$(U_T K) a_+(\bm{k})(U_T K)^{-1} = e^{\ti \theta_T} a_+(-\bm{k}) \ ; \ (U_T K) a_-(\bm{k})(U_T K)^{-1} = e^{-\ti \theta_T} a_-(-\bm{k})$$
+
+
 
           </div>
 
@@ -972,7 +1282,7 @@ autocomplete('#aa-search-input',
   
 
 
-
+    
     
 
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
@@ -1014,23 +1324,8 @@ autocomplete('#aa-search-input',
   </div>
   
 
-
-
-
 </footer>
 
-
-<script>
-  MathJax.Hub.Queue(function() {
-      
-      
-      
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1){
-          all[i].SourceElement().parentNode.className += 'has-jax';
-      }}
-  );
-</script>
 
     
 
@@ -1054,13 +1349,39 @@ autocomplete('#aa-search-input',
 
 
 
-  
+
   <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 
 
 
 
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      }
+    }
+
+  }
+</script>
 
 
 
@@ -1073,9 +1394,6 @@ autocomplete('#aa-search-input',
   
   new WOW().init();
 </script>
-
-
-
 
   </body>
 </html>
