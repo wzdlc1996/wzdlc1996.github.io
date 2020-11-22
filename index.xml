@@ -170,6 +170,15 @@
     </item>
     
     <item>
+      <title>Bluetooth Audio Issues</title>
+      <link>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</guid>
+      <description>How to manager the Bluetooth earphones. Switch HSV to A2DP for the better performance.</description>
+    </item>
+    
+    <item>
       <title>Classical Field Theory</title>
       <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</link>
       <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
@@ -230,6 +239,15 @@
       
       <guid>https://wzdlc1996.github.io/notes/fieldtheory/premath/</guid>
       <description>The preliminary Mathematical knowledge for Quantum Field Theory. Containing the Minkowski Spacetime, Lorentz Group, and the representation theory of Lorentz Group.</description>
+    </item>
+    
+    <item>
+      <title>Dual Graphic Card Configuration for Manjaro Linux</title>
+      <link>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</link>
+      <pubDate>Wed, 31 Oct 2018 14:48:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</guid>
+      <description>How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card.</description>
     </item>
     
     <item>

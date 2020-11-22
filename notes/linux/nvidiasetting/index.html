@@ -8,22 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   
   <meta name="author" content="Leonard">
-  <meta name="description" content="[男なら 谁かのために强くなれ  A little site of Leonard, a physics worker]">
+  <meta name="description" content="How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card.">
 
-  <meta property="og:title" content="Notes" />
-<meta property="og:description" content="[男なら 谁かのために强くなれ  A little site of Leonard, a physics worker]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wzdlc1996.github.io/notes/" />
-<meta property="og:updated_time" content="2019-04-07T17:09:13+08:00" />
+  <meta property="og:title" content="Dual Graphic Card Configuration for Manjaro Linux" />
+<meta property="og:description" content="How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/linux/nvidiasetting/" />
+<meta property="article:published_time" content="2018-10-31T14:48:29+08:00" />
+<meta property="article:modified_time" content="2018-10-31T14:48:29+08:00" />
 
 
   <title>
     
-     Notes | Leonard 
+     Dual Graphic Card Configuration for Manjaro Linux | Leonard 
     
   </title>
 
-  <link rel="canonical" href="https://wzdlc1996.github.io/notes/">
+  <link rel="canonical" href="https://wzdlc1996.github.io/notes/linux/nvidiasetting/">
 
   
   
@@ -49,8 +50,6 @@
 
   
 
-  
-  
   
 
   <style type="text/css">
@@ -114,11 +113,9 @@
         </li>
 
         
-        <li class="nav-item  active ">
+        <li class="nav-item ">
           <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
             Notes
-            
-              <span class="sr-only">(current)</span>
             
           </a>
         </li>
@@ -330,8 +327,6 @@ autocomplete('#aa-search-input',
             
 
             
-              
-            
             
         </div>
       </div>
@@ -349,514 +344,195 @@ autocomplete('#aa-search-input',
     
 
     
-  <main class="post-main-wrapper px-5">
+  
+  <main class="post-main-wrapper">
+    
     
     <div class="row">
 
       
+
       
+      <div class="col-md-10">
+      
+
         
-        <div class="col-md-3">
-          
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://wzdlc1996.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-        
-          
-          
-            
-            <li class="py-1">
-              <a href="https://wzdlc1996.github.io/categories/physics">
-                <span>Physics (21)</span>
-              </a>
-            </li>           
-          
-            
-              <li class="middot"></li>
-            
-            <li class="py-1">
-              <a href="https://wzdlc1996.github.io/categories/linux">
-                <span>Linux (2)</span>
-              </a>
-            </li>           
-          
-        
-      </div>
-    </div>
-
-    
-  
-
-    
-          
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://wzdlc1996.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i> 
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-        
-        
-            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (15)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/statistical-phys" role="button"><span>statistical-phys (5)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/classical-theory" role="button"><span>classical-theory (4)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/approximation" role="button"><span>approximation (3)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/symmetry" role="button"><span>symmetry (3)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button"><span>manjaro (2)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/math" role="button"><span>math (2)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/os-setup" role="button"><span>os-setup (2)</span></a></li>
-          
-        
-            <li><a href="https://wzdlc1996.github.io/tags/dynamics" role="button"><span>dynamics (1)</span></a></li>
-          
-        
-      </div>
-    </div>
-
-    
-  
-
-          
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://wzdlc1996.github.io/series/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-bookmark pr-1" aria-hidden="true"></i> 
-            Recommend Series
-          </span>
-        </a>
-      </div>
-     
-      <div class="post-meta" >
-        
-          
-          
-            <li class="py-1"><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><span>Quantum-Mechanics (11)</span></a></li>
-          
-            <li class="py-1"><a href="https://wzdlc1996.github.io/series/field-theory"><span>Field-Theory (10)</span></a></li>
-          
-        
-      </div>
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
     
       
-    </div>
-  
-
-  
-        </div>
-        
-
-        
-        
-        <div class="col-md-9 mt-3">  
+        <li><a href="https://wzdlc1996.github.io/categories/linux"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Linux </a></li>
       
-          <ul>
-            <div class="div-x">
-              <div class='post-heading'>
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">Dual Graphic Card Configuration for Manjaro Linux</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Oct 31, 2018</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>3 minutes read</li>
+    
+  </ul>
   
-      Notes
-  
+
 </div>
 
-              
-              
-                <div class="px-2 middot"></div>
-                <div>
-                  24 posts
-                </div>
-              
-            </div>
 
-              
-        </ul>
-        <div>
-          <div class="pagination pagination-outline justify-content-end active-color">
-            
-            
-<ul class="pagination">
-  <li class="page-item">
-    <a href="https://wzdlc1996.github.io/notes/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="https://wzdlc1996.github.io/notes/page/4/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/">1</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/page/3/">3</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/page/4/">4</a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/page/5/">5</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/page/6/">6</a>
-  </li>
-  <li class="page-item disabled">
-    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://wzdlc1996.github.io/notes/page/8/">8</a>
-  </li>
-  <li class="page-item">
-    <a href="https://wzdlc1996.github.io/notes/page/6/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="https://wzdlc1996.github.io/notes/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
+          <div class="post-content markdown">
+            <h1 id="introduction">Introduction</h1>
+<p>usually, linux has two method to handle the dual-graphic card. The difference between
+them are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Advantages</th>
+<th style="text-align:left">Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Bumblebee</td>
+<td style="text-align:left">Uses dGPU(descrete) only when requested.  Saving power <br> Manjaro default</td>
+<td style="text-align:left">Some overhead so lower raw performance</td>
+</tr>
+<tr>
+<td style="text-align:left">PRIME</td>
+<td style="text-align:left">Uses the dGPU directly , Better performance</td>
+<td style="text-align:left">dGPU and iGPU(integrated) both powered on constantly <br> need manual configuration</td>
+</tr>
+</tbody>
+</table>
+<h1 id="step-1-remove-bumblebee">Step 1. Remove Bumblebee</h1>
+<p>Usually manjaro can be easily installed choosing the <code>free drive</code> mode, but <code>nouveau</code>
+is hard to use. And sometimes it make user cannot entry the x-system.
+One way is that noting <code>nouveau</code> in <code>blacklist</code> , use command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/modprob.d/usrBlack.blacklist
+
+blacklist nouveau
+</code></pre></div><p>Then to use the graphic card, one can run <code>mhwd-tui</code> to install the non-free driver and
+Bumblebee to manage dual graphic card.
+First of all, we need uninstall bumblebee, and may the graphic card driver installed by mhwd.
+One can simply remove them using the <code>mhwd</code> command in terminal or via <code>Manjaro Settings Manager</code>
+In other distribution, the work is the same. User can using their package manager to do it.
+Or more directly, do <strong>NOT</strong> install bumblebee, directly install PRIME after truning off nouveau.</p>
+<h1 id="step-2-install-closed-source-driver">Step 2. Install Closed-source Driver</h1>
+<p>One can follow the following articles to install the driver according to what he use:</p>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/ATI">ATI</a> to install drivers for ATI/AMD GPUs</li>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA">NVIDIA</a> to install drivers for NVIDIA GPUs</li>
 </ul>
+<p>To be careful, user should query which version of the driver is the best for their hardware.</p>
+<h1 id="step3-fix-mhwds-configuration">Step3. Fix MHWD&rsquo;s Configuration</h1>
+<p>this is for Manjaro Linux, for <code>mhwd</code> does the sensible thing and puts configuration in place as though the NVIDIA GPU was the only device available.
+Other distribution can jump to Step 4</p>
+<ol>
+<li>
+<p><strong>Remove Old Config File</strong></p>
+<p>Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf.d/optimus.conf</span>
+Section <span class="s2">&#34;Module&#34;</span>
+    Load <span class="s2">&#34;modesetting&#34;</span>
+EndSection
+Section <span class="s2">&#34;Device&#34;</span>
+    Identifier <span class="s2">&#34;nvidia&#34;</span>
+    Driver <span class="s2">&#34;nvidia&#34;</span>
+    BusID <span class="s2">&#34;PCI&#34;</span>
+    Option <span class="s2">&#34;AllowEmptyInitialConfiguration&#34;</span>
+EndSection
+</code></pre></div><p>While the BusID value can be find by command: <code>lspci | grep -E &quot;VGA|3D&quot;</code></p>
+</li>
+<li>
+<p><strong>Write Blacklist</strong>
+One need to remove two files: <code>/etc/modprobe.d/mhwd-gpu.conf</code> and <code>/etc/modprobe.d/mhwd-nvidia.conf</code> and write a new one:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">blacklist nouveau
+blacklist nvidiafb
+blacklist rivafb
+</code></pre></div></li>
+</ol>
+<h1 id="step-4-enable-nvdia-drmmodeset">Step 4. Enable <code>nvdia-drm.modeset</code></h1>
+<p>PRIME relies on <code>vidia-drm</code> , one need to creat a new file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/modprobe.d/nvidia-drm.conf</span>
 
+options nvidia_drm <span class="nv">modeset</span> <span class="o">=</span> <span class="m">1</span>
+</code></pre></div><h1 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h1>
+<p>First for other distribution but manjaro, user need to edit the file <code>/etc/X11/xorg.conf</code> , if X.Org and X server version <code>1.17.2+</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf</span>
+
+Section <span class="s2">&#34;Module&#34;</span>
+    Load <span class="s2">&#34;modesetting&#34;</span>
+EndSection
+
+Section <span class="s2">&#34;Device&#34;</span>
+    Identifier <span class="s2">&#34;nvidia&#34;</span>
+    Driver <span class="s2">&#34;nvidia&#34;</span>
+    BusID <span class="s2">&#34;PCI&#34;</span>
+    Option <span class="s2">&#34;AllowEmptyInitialConfiguration&#34;</span>
+EndSection
+</code></pre></div><p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre></div><p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
+<ol>
+<li>
+<p><code>LightDM</code>
+Edit the file <code>/etc/lightdm/lightdm.conf</code> :</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Seat:*<span class="o">]</span>
+display-setup-script <span class="o">=</span> optimus.sh
+</code></pre></div></li>
+<li>
+<p><code>GDM</code>
+GDM is the defult display manager of Gnome 3 . one should create two new .desktop files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/gdm/greeter/autostart/optimus.desktop</span>
+<span class="c1">#/etc/xdg/autostart/optimus.desktop</span>
+
+<span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Name</span><span class="o">=</span>Optimus
+<span class="nv">Exec</span><span class="o">=</span>sh -c <span class="s2">&#34;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&#34;</span>
+<span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">true</span>
+X-GNOME-Autostart-Phase<span class="o">=</span>DisplayServer
+</code></pre></div><p>Or user can create one and link those two by command <code>ln -s</code></p>
+</li>
+<li>
+<p><code>SDDM</code>
+SDDM is the default display manager of KDE . one should write those two command to file <code>/usr/share/sddm/script/Xsetup</code> like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/sddm/scripts/Xsetup</span>
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</code></pre></div></li>
+</ol>
+<h1 id="step-6-reboot">Step 6. Reboot</h1>
+<p>If everything is set correctly, when user reboot, DM will load and he can log in. And:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ glxinfo <span class="p">|</span> grep -i vendor
+server glx vendor string: NVIDIA Corporation
+client glx vendor string: NVIDIA Corporation
+OpenGL vendor string: NVIDIA Corporation
+</code></pre></div><hr>
+<h1 id="references">References</h1>
+<ol>
+<li><a href="https://wiki.archlinux.org/index.php/PRIME">PRIME - ArchWiki</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus">NVIDIA Optimus - Arch Wiki</a></li>
+<li><a href="https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225">[HowTo] Set up PRIME on Manjaro</a></li>
+</ol>
 
           </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/notes/qm/perturbation/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Perturbation Theory</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 3, 2018</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>12 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      The perturbation theory for quantum mechanics. This is a useful method on solve some problems which we cannot handle it analytically
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
-        
-      
-      
-        
-          <li><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Quantum-Mechanics</a></li>
-        
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
-      
-    
-      <li><a href="https://wzdlc1996.github.io/tags/approximation" role="button">approximation </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Classical Fields: Scalar Field</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 18, 2018</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>5 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      The classical field theory for scalar field, so-called Klein-Gordon Field. Together with the solution of Klein-Gordon equation and some symmetry analysis.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
-        
-      
-      
-        
-          <li><a href="https://wzdlc1996.github.io/series/field-theory"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Field-Theory</a></li>
-        
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/classical-theory" role="button">classical-theory </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/notes/linux/bluetoothaudio/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Bluetooth Audio Issues</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 15, 2018</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      How to manager the Bluetooth earphones. Switch HSV to A2DP for the better performance.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/linux"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Linux </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
 <div class="li-x div-x post-meta">
   <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
@@ -869,20 +545,261 @@ autocomplete('#aa-search-input',
     
   </div>
 </div>
-      
-    </div>
-  </div>
-
-</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
 
           
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/notes/amath/randomvariable/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span></span>
+                  </div>
+                </a>
+              
+            </div>
             
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/notes/fieldtheory/premath/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Preliminary Mathematics</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
         </div>
+        
+
       </div>
       
 
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#introduction">
+												 Introduction
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-1-remove-bumblebee">
+												 Step 1. Remove Bumblebee
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-2-install-closed-source-driver">
+												 Step 2. Install Closed-source Driver
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step3-fix-mhwds-configuration">
+												 Step3. Fix MHWD’s Configuration
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-4-enable-nvdia-drmmodeset">
+												 Step 4. Enable nvdia-drm.modeset
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-5-make-dgpu-as-primary">
+												 Step 5. Make dGPU as primary
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#step-6-reboot">
+												 Step 6. Reboot
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#references">
+												 References
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
     </div>
+    
+
+
   </main>
+  
+
 
     
     
@@ -912,8 +829,6 @@ autocomplete('#aa-search-input',
         <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
     
 
-    
-      
     
 
     
