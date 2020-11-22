@@ -13,7 +13,7 @@
   <meta property="og:title" content="Quantum Zeno Effect" />
 <meta property="og:description" content="The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/physics/zenoeffect/" />
 <meta property="article:published_time" content="2018-11-22T19:23:43+08:00" />
 <meta property="article:modified_time" content="2018-12-10T18:00:00+08:00" />
 
@@ -24,7 +24,7 @@
     
   </title>
 
-  <link rel="canonical" href="https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/">
+  <link rel="canonical" href="https://wzdlc1996.github.io/artic/physics/zenoeffect/">
 
   
   
@@ -40,6 +40,7 @@
   <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/lightbox/lightbox.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
@@ -749,7 +750,7 @@ $$\begin{aligned}
             
             <div class="col-md-6 text-right" >
               
-                <a href=https://wzdlc1996.github.io/artic/hugo/insitesearch/ class="post-meta">Next
+                <a href=https://wzdlc1996.github.io/artic/other/insitesearchhugo/ class="post-meta">Next
                   <div class="pt-2 pb-5 flex-reverse">
                     <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
                     <span>Setup an In-Site Search</span>
@@ -1341,6 +1342,28 @@ $$\begin{aligned}
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
 
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/lightbox/lightbox.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var imgList = document.getElementsByTagName("img");
+  var imgLen = imgList.length;
+  for (var i = 0; i < imgLen; i++) {
+    imgList[i].id = "imgtmp" + i;
+    var imgtmp = document.getElementById("imgtmp" + i);
+    var a = document.createElement("a");
+    imgtmp.parentNode.replaceChild(a, imgtmp);
+    a.href = imgtmp.src;
+    a.rel = "lightbox";
+    a.appendChild(imgtmp);
+  }
+}());
+</script>
+
+
+
 
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
 

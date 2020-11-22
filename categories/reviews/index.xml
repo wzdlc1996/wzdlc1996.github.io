@@ -9,19 +9,19 @@
     <lastBuildDate>Mon, 18 Mar 2019 16:10:47 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/categories/reviews/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to Weak Measurements and Weak Values</title>
-      <link>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</link>
+      <link>https://wzdlc1996.github.io/artic/physics/weakmeasurement/</link>
       <pubDate>Mon, 18 Mar 2019 16:10:47 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/</guid>
+      <guid>https://wzdlc1996.github.io/artic/physics/weakmeasurement/</guid>
       <description>An introduction to weak measurement and weak values. Using the simplest model and perturbation theory to analyze a class of weak measurement process and the concept of weak values. This article gives a comparison between weak measurement and the ordinary measurement in quantum mechanics(which is called as strong measurement) and some interesting application of weak values.</description>
     </item>
     
     <item>
       <title>Quantum Zeno Effect</title>
-      <link>https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/</link>
+      <link>https://wzdlc1996.github.io/artic/physics/zenoeffect/</link>
       <pubDate>Thu, 22 Nov 2018 19:23:43 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/artic/qtmmsmt/zenoeff/</guid>
+      <guid>https://wzdlc1996.github.io/artic/physics/zenoeffect/</guid>
       <description>The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation</description>
     </item>
     

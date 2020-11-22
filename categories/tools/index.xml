@@ -18,10 +18,10 @@
     
     <item>
       <title>Setup an In-Site Search</title>
-      <link>https://wzdlc1996.github.io/artic/hugo/insitesearch/</link>
+      <link>https://wzdlc1996.github.io/artic/other/insitesearchhugo/</link>
       <pubDate>Sun, 09 Dec 2018 14:56:40 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/artic/hugo/insitesearch/</guid>
+      <guid>https://wzdlc1996.github.io/artic/other/insitesearchhugo/</guid>
       <description>How to add a search bar for in site posts in Hugo. We used the Algolia as the solution provider.</description>
     </item>
     

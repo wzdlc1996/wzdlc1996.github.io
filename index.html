@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh_Hans">
   <head>
-	<meta name="generator" content="Hugo 0.77.0" />
+	<meta name="generator" content="Hugo 0.78.1" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -40,6 +40,7 @@
   <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/lightbox/lightbox.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
@@ -723,7 +724,7 @@ autocomplete('#aa-search-input',
               
                   <div class="post-wrapper white-bg post-card">
   
-  <a href="https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/">
+  <a href="https://wzdlc1996.github.io/artic/physics/weakmeasurement/">
     <div class="post-header text-center">
       <div class="px-4 post-heading">Introduction to Weak Measurements and Weak Values</div>
       <ul class="post-meta li-x mt-1">
@@ -912,6 +913,28 @@ autocomplete('#aa-search-input',
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
 
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/lightbox/lightbox.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var imgList = document.getElementsByTagName("img");
+  var imgLen = imgList.length;
+  for (var i = 0; i < imgLen; i++) {
+    imgList[i].id = "imgtmp" + i;
+    var imgtmp = document.getElementById("imgtmp" + i);
+    var a = document.createElement("a");
+    imgtmp.parentNode.replaceChild(a, imgtmp);
+    a.href = imgtmp.src;
+    a.rel = "lightbox";
+    a.appendChild(imgtmp);
+  }
+}());
+</script>
+
+
+
 
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
 

@@ -40,6 +40,7 @@
   <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/lightbox/lightbox.min.css" rel="stylesheet">
   <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
 
 
@@ -389,7 +390,7 @@ autocomplete('#aa-search-input',
             <h1 id="获取漫画柜上一本漫画的内容索引">获取漫画柜上一本漫画的内容索引</h1>
 <p><a href="https://www.manhuagui.com/">漫画柜</a> 上的每本漫画都有一个属于自己的 <code>mangaID</code> , 我们选择一部漫画点进去从链接名称上就能看出来: 像<a href="https://www.manhuagui.com/comic/17201">终将成为你</a> 的链接就是 <code>&quot;https://www.manhuagui.com/comic/17201&quot;</code> . 而点进去之后我们可以看到章节列表. 使用浏览器的 <code>Develop tools</code> (一般来说热键是 <code>f12</code> ), 我们可以看看它的页面布局:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_9.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_9.png"/></div>
 
 <p>这些章节都被存放在有着 <code>id=chapter-list-0</code> 的 <code>&lt;div&gt;</code> 中, 来用 <code>python</code> 获取一下看看:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
@@ -403,7 +404,7 @@ autocomplete('#aa-search-input',
 <h2 id="从页面布局上观察">从页面布局上观察</h2>
 <p>同刚才不同, 漫画柜并不是静态地将漫画图片呈现给用户的. 如果点进去一部漫画的某个章节, 使用浏览器的 <code>Develop tools</code> 我们会看到如下的界面:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_1.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_1.png"/></div>
 
 <p>立即看到它有一个用 <code>id=mangaBox</code> 标记的 <code>&lt;div&gt;</code> 节点来放置图片, 并且 <code>&lt;img&gt;</code> 标签上就是我们要的图片链接. 看起来如果我们直接下载这个链接就可以了. 事不宜迟, 我们上 <code>requests.get</code> 来看看:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
@@ -412,37 +413,37 @@ autocomplete('#aa-search-input',
 <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;mangaBox&#39;</span><span class="p">)</span>
 </code></pre></div><p>这段代码会帮助我们找到刚才看到的页面里的所有 <code>id=mangaBox</code> 的标签, 那么结果是什么呢?</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_2.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_2.png"/></div>
 
 <p>标签找到了, 但里边没有东西. 这说明页面里边这个图片是动态呈现的. 而 <code>requests.get</code> 并不能帮助我们完成这个工作. 一些人可能会选择 <code>selenium</code> 通过调用一个无头浏览器来绕过去这一部分, 就像真实地使用浏览器打开一样, 获取到图片的信息. 但这里并不打算这么做.</p>
 <h2 id="发现页面里的-javascript-存在问题">发现页面里的 Javascript 存在问题</h2>
 <p>既然是靠 js 来加载的, 那要么是使用 <code>load</code> 事件完成的, 要么这段代码就在放漫画的 <code>div</code> 后边. 看了一眼 <code>html</code> 的事件列表, 并没有发现和呈现漫画有关的代码. 而 <code>div</code> 之后的 <code>script</code> 标签只有两个, 其中一个还是 <code>jQuery</code> 的压缩代码. 但另一个就有的瞧了:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_3.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_3.png"/></div>
 
 <p>这么长一段太值得怀疑了, 还使用了 <code>\x</code> 的 <code>utf-8</code> 编码来掩饰自己, 用 python 来解码一下:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x65\x76\x61\x6c</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
 <span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;eval&#39;</span>
 </code></pre></div><p>不是别的, 这段代码开头的正是 <code>window.eval</code> 方法! 那答案已经很明显了, 把它执行的部分放进 <code>console</code> 里跑跑看, 注意加上括号告诉这个匿名函数是要被执行的:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_4.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_4.png"/></div>
 
 <p>终于找到你了!</p>
 <h2 id="分析获取图片的代码的其他问题">分析获取图片的代码的其他问题</h2>
 <p>接下来的问题是, 这段代码有没有调用别的函数, 检查起来很容易, 新开一个标签页用 <code>console</code> 跑一下就可以了. 如果能成功运行的话就意味着这个代码是独立的片段, 我们要的所有信息都可以通过运行它来得到.</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_5.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_5.png"/></div>
 
 <p>看来并没有那么简单啊. 不过很奇怪, 提示的错误的这个 <code>splic</code> 是什么东西, 代码里好像没出现啊. 不要着急, 看看它前面调用这个方法的对象, 不就是那串乱七八糟的字符么. 它后边有个同样用 <code>utf-8</code> 编码做了掩饰, 老规矩, 解码看看</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x73\x70\x6c\x69\x63</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
 <span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;splic&#39;</span>
 </code></pre></div><p>找到了. 怪不得无法运行, 这个东西不是 js 字符串的标准方法, 应该是来自于之前页面的代码定义的. 这里就没有什么好办法了, 只能打开刚才页面里的 js 来搜索这个函数. 除了 <code>splic</code> 同样也要用 <code>'\x73\x70\x6c\x69\x63'</code> 来找.</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_6.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_6.png"/></div>
 
 <p>还真被找着了!. 又是大段大段的 <code>utf-8</code> 编码, 但问题不大, 我们只要看看这个含有这串字符的段落是什么东西就够了. 一个简单的方案就是把它复制进浏览器的 <code>Console</code> 运行一下就够了, 但一定要完整地复制. 比如这里, 我们就需要从 <code>(function(i,k,a,n,m,an){...</code> 复制到最后一个分号. 当然也可以先复制进文件里再用 python 解码. 最终我们得到了这个:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_7.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_7.png"/></div>
 
 <p>一切都明了了, 原来 <code>splic</code> 正是:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">splic</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span><span class="k">return</span> <span class="nx">LZString</span><span class="p">.</span><span class="nx">decompressFromBase64</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="nx">f</span><span class="p">)};</span>
@@ -453,7 +454,7 @@ autocomplete('#aa-search-input',
 <span class="n">Output</span><span class="p">:</span> <span class="s1">&#39;||jpg|webp|17201|第01回|pic_014|pic_015|pic_017|pic_016|pic_013|pic_010|pic_019|pic_012|pic_011|pic_023|pic_022|pic_025|pic_024|pic_021|pic_026|pic_018|pic_020|pic_027|pic_009|179054|cid|files|cname|bpic|bid|imgData|终将成为你|bname|pic_007||pic_006|SMH|pic_008|pic_005|pic_002|pic_001|pic_004|pic_003|pic_028|path|47|zuizhongwochengleni|ps4|finished|pic_047|len|false|status|md5|sl|preInit|UF424J7EqQVy6QlloL7Dg|nextId|block_cc|prevId|183941|pic_046|pic_035|pic_034|pic_037|pic_036|pic_033|pic_030|pic_029|pic_032|pic_031|pic_042|pic_041|pic_043|pic_045|pic_044|pic_039|pic_038|pic_040&#39;</span>
 </code></pre></div><p>再把这串解码后的字符串放回到原来的位置, 当然要把 <code>.split('|')</code> 加上, 再在空白的标签页里跑跑看:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_8.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_8.png"/></div>
 
 <p>完美.</p>
 <h1 id="python-程序实现">Python 程序实现</h1>
@@ -480,7 +481,7 @@ autocomplete('#aa-search-input',
 </code></pre></div><h3 id="章节信息的获取">章节信息的获取</h3>
 <p>章节信息的获取十分简单, 就是我们上面做的操作循环执行就可以了. 为了方便后边的使用, 我们把章节按照名字和url的规则存放为字典:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./config.json&#34;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./Figs/config.json&#34;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">baseSite</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]})</span>
     <span class="n">formatedSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">baseSite</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&#34;lxml&#34;</span><span class="p">)</span>
@@ -495,7 +496,7 @@ autocomplete('#aa-search-input',
 </code></pre></div><h3 id="根据章节url获得分页图片链接">根据章节url获得分页图片链接</h3>
 <p>这一步的核心事实上只是在python中执行 javascript 代码, 我们这里使用了 <a href="https://github.com/amol-/dukpy">amol-/dukpy</a> 库, 十分感谢作者的贡献.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getCoreInfo</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./config.json&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./Figs/config.json&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">getSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]})</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&#34;lxml&#34;</span><span class="p">)</span>
     <span class="n">jsSlic</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;&gt;window.*(\(function\(p.*?)&lt;/script&gt;&#34;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">getSite</span><span class="p">))</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -518,7 +519,7 @@ autocomplete('#aa-search-input',
     <span class="k">return</span> <span class="n">pathURLs</span><span class="p">,</span> <span class="p">{</span><span class="s2">&#34;Referer&#34;</span><span class="p">:</span> <span class="n">refURL</span><span class="p">}</span>
 </code></pre></div><p>这个部分有一个坑是试图获取图片的时候, 发现直接使用 <code>requests.get</code> 会报 <code>403</code> 错误, 研究发现是没有加入 <code>requests headers</code> 信息. 对于漫画柜来说, 这部分只要加入 <code>User-Agent</code> 和 <code>Referer</code> 信息就可以了. 这似乎是最基本的反爬机制, 但这里显然还是十分简单的. 这部分信息可以在浏览器的 <code>Develop tools</code> 中找到, 注意它在 <code>Network</code> 标签下:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="https://wzdlc1996.github.io/imgs/artics/other/mangaspider_10.png"/></div>
+<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/mangaspider_10.png"/></div>
 
 <h2 id="分章节存放漫画分页图片">分章节存放漫画分页图片</h2>
 <p>由于这个代码运行的时间很长, 所以我们使用了 <code>multiprocessing</code> 库来并行处理, 同时使用 <code>progressbar2</code> 库来展示一个进度条:</p>
@@ -534,7 +535,7 @@ autocomplete('#aa-search-input',
 <span class="kn">import</span> <span class="nn">progressbar</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://www.manhuagui.com/comic/17201/&#34;</span>
-<span class="n">foldpref</span> <span class="o">=</span> <span class="s2">&#34;./test/&#34;</span>
+<span class="n">foldpref</span> <span class="o">=</span> <span class="s2">&#34;./Figs/test/&#34;</span>
 
 <span class="k">class</span> <span class="nc">dlManga</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fold</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
@@ -546,7 +547,7 @@ autocomplete('#aa-search-input',
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fold</span><span class="o">+</span><span class="n">dic</span><span class="p">[</span><span class="s2">&#34;Name&#34;</span><span class="p">]</span><span class="o">+</span><span class="s2">&#34;.jpg&#34;</span><span class="p">,</span><span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">getFile</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./config.json&#34;</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./Figs/config.json&#34;</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="n">chapList</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -598,7 +599,7 @@ autocomplete('#aa-search-input',
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://wzdlc1996.github.io/artic/qtmmsmt/weakmeas/ class="post-meta">Previous
+                <a href=https://wzdlc1996.github.io/artic/physics/weakmeasurement/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
                     <span>Introduction to Weak Measurements and Weak Values</span>
@@ -1004,6 +1005,28 @@ autocomplete('#aa-search-input',
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
 
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/lightbox/lightbox.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var imgList = document.getElementsByTagName("img");
+  var imgLen = imgList.length;
+  for (var i = 0; i < imgLen; i++) {
+    imgList[i].id = "imgtmp" + i;
+    var imgtmp = document.getElementById("imgtmp" + i);
+    var a = document.createElement("a");
+    imgtmp.parentNode.replaceChild(a, imgtmp);
+    a.href = imgtmp.src;
+    a.rel = "lightbox";
+    a.appendChild(imgtmp);
+  }
+}());
+</script>
+
+
+
 
 <script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
 
