@@ -9,19 +9,19 @@
     <lastBuildDate>Thu, 15 Nov 2018 13:13:29 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bluetooth Audio Issues</title>
-      <link>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</link>
+      <link>https://wzdlc1996.github.io/artic/other/linux/bluetoothaudio/</link>
       <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/linux/bluetoothaudio/</guid>
+      <guid>https://wzdlc1996.github.io/artic/other/linux/bluetoothaudio/</guid>
       <description>How to manager the Bluetooth earphones. Switch HSV to A2DP for the better performance.</description>
     </item>
     
     <item>
       <title>Dual Graphic Card Configuration for Manjaro Linux</title>
-      <link>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</link>
+      <link>https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/</link>
       <pubDate>Wed, 31 Oct 2018 14:48:29 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/linux/nvidiasetting/</guid>
+      <guid>https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/</guid>
       <description>How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card.</description>
     </item>
     

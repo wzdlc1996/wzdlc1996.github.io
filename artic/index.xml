@@ -43,5 +43,23 @@
       <description>The quantum Zeno effect: an unstable particle will never be found to decay if it is continuously observed. The theoretical analysis and the experiment. And a simple introduction for Many worlds interpretation</description>
     </item>
     
+    <item>
+      <title>Bluetooth Audio Issues</title>
+      <link>https://wzdlc1996.github.io/artic/other/linux/bluetoothaudio/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/other/linux/bluetoothaudio/</guid>
+      <description>How to manager the Bluetooth earphones. Switch HSV to A2DP for the better performance.</description>
+    </item>
+    
+    <item>
+      <title>Dual Graphic Card Configuration for Manjaro Linux</title>
+      <link>https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/</link>
+      <pubDate>Wed, 31 Oct 2018 14:48:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/</guid>
+      <description>How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card.</description>
+    </item>
+    
   </channel>
 </rss>
