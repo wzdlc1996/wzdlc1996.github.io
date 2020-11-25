@@ -383,7 +383,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>20 minutes read</li>
+      <li>21 minutes read</li>
     
   </ul>
   
@@ -583,6 +583,82 @@ q.e.d.
 <li>This map is <code>two-to-one</code> mapping from SU(2) to SO(3) . For $\bm{U},-\bm{U}\mapsto \bm{R}_{\bm{n}}(\theta)$ . Namely: $\text{SO}(3) \simeq \text{SU}(2)/\mathbb{Z}_2$</li>
 <li>SO(3) manifold is <code>real projective space</code> : $\text{RP}^3 = S^3/\mathbb{Z}_2$</li>
 </ol>
+<p>A generalized conclusion is also hold, works for higher order representation of SU(2), reads:</p>
+<p><em>[Theorem]</em> : The <code>representation</code> of SU(2) element of arbitrary order: $\hat{\bm{S}}$, which obeys the Lie algebra: $[\hat S_a,\hat S_b] = \ti \epsilon_{abc} \hat S_c$. Then unitary operator $e^{-\ti \theta \bm{n}\cdot \hat{\bm{S}}}$ performs on generators like a 3x3 rotation matrix $\bm{R}_{\bm{n}}(\theta)$ :</p>
+
+$$e^{-\ti \theta \bm{n}\cdot \hat{\bm{S}}} (\hat{\bm{S}}\cdot \bm{x}) e^{\ti \theta \bm{n}\cdot \hat{\bm{S}}} = \hat{\bm{S}} \cdot (\bm{R}_{\bm{n}}(\theta)\bm{x})$$
+
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+    
+
+
+With the commutator:
+
+
+$$\begin{aligned}
+[\hat S_a, \hat S_b] &= \ti \epsilon_{abc}\hat S_c
+\end{aligned}, $$
+
+
+
+we have the rotation in 3-D Euclidean space described by \(\bm{R}_{\bm{n}}(\theta)\) which means:
+
+
+$$\bm{R}_{\bm{n}}(\theta)\bm{x} = (\bm{x}\cdot \bm{n})\bm{n} +  \bm{n}\times \bm{x} \sin\theta + (\bm{x}-(\bm{x}\cdot \bm{n})\bm{n})\cos \theta .$$
+
+
+
+Then, we consider the rotation unitary operator reads
+
+
+$$\hat U(\bm{n},\theta) = \exp\Big(-\ti \theta \bm{n} \cdot \hat{\bm{S}}\Big) .$$
+
+
+
+Note that the commutator:
+
+
+$$\begin{aligned}
+[\bm{x} \cdot \hat {\bm{S}}, \bm{n} \cdot \hat {\bm{S}} ] &= x_an_b \ti \epsilon_{abc}  \hat S_c = \ti (\bm{x}\times \bm{n})\cdot \hat{\bm{S}} \\
+[[\bm{x}\cdot\hat {\bm{S}}, \bm{n} \cdot \hat {\bm{S}}], \bm{n}\cdot \hat {\bm{S}}] &= (\ti)^2 ((\bm{x} \times \bm{n})\times \bm{n})\cdot \hat{\bm{S}} \\
+&=\ti^2 ((\bm{x}\cdot \bm{n})\bm{n} - \bm{x})\cdot \hat{\bm{S}} \\
+[[[\bm{x}\cdot\hat {\bm{S}}, \bm{n} \cdot \hat {\bm{S}}], \bm{n}\cdot \hat {\bm{S}}], \bm{n}\cdot\hat{\bm{S}}] &= \ti^3 (-\bm{x}\times \bm{n})\cdot \hat S \\
+&\cdots
+\end{aligned}$$
+
+
+
+Thus, together with the Baker-Hausdorff formula:
+
+
+$$\begin{aligned}
+\hat U(\bm{n},\theta) (\bm{x}\cdot \hat{\bm{S}})\hat U(\bm{n},\theta)^\dagger &= (\bm{x}\cdot \hat{\bm{S}}) + (\ti \theta)[\bm{x}\cdot \hat {\bm{S}}, \bm{n}\cdot \hat{\bm{S}}/\hbar] + (\ti\theta)^2 [[\bm{x}\cdot \hat{\bm{S}}, \bm{n}\cdot \hat {\bm{S}}/\hbar],\bm{n}\cdot \hat {\bm{S}}/\hbar] / 2! + \cdots \\
+&= (\bm{x}\cdot \hat{\bm{S}}) - \theta (\bm{x}\times \bm{n})\cdot \hat{\bm{S}} + (-\theta)^2 ((\bm{x}\times \bm{n})\times \bm{n})\cdot \hat{\bm{S}} / 2! +\cdots \\
+&= (\bm{x}\cdot \hat{\bm{S}}) (1 - \frac {\theta^2} {2!} + \frac {\theta^4} {4!}) + (\bm{x}\cdot \bm{n}) (\bm{n}\cdot \bm{S}) (\frac {\theta^2} {2!} - \frac {\theta^4} {4!} +\cdots) \\
+& \indent + (\bm{x}\times \bm{n}) \cdot \hat{\bm{S}}(-\theta + \frac {\theta^3} {3!} + \cdots) \\
+&= \Big(\bm{x} \cos\theta + (\bm{x}\cdot \bm{n})\bm{n}(1-\cos\theta) - (\bm{x}\times \bm{n})\sin\theta\Big)\cdot \hat{\bm{S}} \\
+&= (\bm{R}_{\bm{n}}(\theta)\bm{x}) \cdot \hat{\bm{S}}
+\end{aligned}$$
+
+
+
+Then we have the equality:
+
+
+$$\exp\Big(-\ti \theta \bm{n}\cdot \hat{\bm{S}} \Big)(\hat{\bm{S}} \cdot \bm{x}) \exp\Big(\ti \theta \bm{n} \cdot \hat{\bm{S}}\Big) = (\hat{\bm{S}} \cdot (\bm{R}_{\bm{n}}(\theta) \bm{x})) $$
+
+
+
+q.e.d.
+
+
+
+</details>
+
 <h2 id="haar-measure">Haar Measure</h2>
 <p>The Haar Measure of SU(2) is:</p>
 
