@@ -6,7 +6,25 @@
     <description>Recent content on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Fri, 22 Nov 2019 19:24:24 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Nov 2020 23:19:37 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go 语言基础</title>
+      <link>https://wzdlc1996.github.io/notes/golang/chap02/</link>
+      <pubDate>Thu, 26 Nov 2020 23:19:37 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/golang/chap02/</guid>
+      <description>Go语言的基础, 包括保留关键字, 内置变量类型, 基本语法和流程控制, 多文件组织等</description>
+    </item>
+    
+    <item>
+      <title>Go的安装与环境配置</title>
+      <link>https://wzdlc1996.github.io/notes/golang/chap01/</link>
+      <pubDate>Sun, 22 Nov 2020 22:04:41 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/notes/golang/chap01/</guid>
+      <description>Go语言开发环境的安装和一些中国大陆会遇到的问题的解决方案. 开始学习Go语言来丰富自己的知识和技能!</description>
+    </item>
+    
     <item>
       <title>对漫画柜页面加密的解析和漫画爬虫</title>
       <link>https://wzdlc1996.github.io/artic/other/mangaspider/</link>
