@@ -6,7 +6,16 @@
     <description>Recent content in quantum on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Mon, 18 Mar 2019 16:10:47 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/tags/quantum/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Sep 2020 15:54:07 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/tags/quantum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time Travel and Quantum Computation</title>
+      <link>https://wzdlc1996.github.io/artic/physics/ctcquantcomputing/</link>
+      <pubDate>Sun, 27 Sep 2020 15:54:07 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/ctcquantcomputing/</guid>
+      <description>Time travel, as a famous concept in science fiction, fascinates people for a long time. However for physicists, this is not only a beautiful dream, but also a interesting problem to discuss mathematically. In the community, there are generally two directions about time travel: (1) does it exist and (2) if it indeed exists, what can we do. In this report, we discuss the application of time travel mainly in the field of quantum computation</description>
+    </item>
+    
     <item>
       <title>Introduction to Weak Measurements and Weak Values</title>
       <link>https://wzdlc1996.github.io/artic/physics/weakmeasurement/</link>
