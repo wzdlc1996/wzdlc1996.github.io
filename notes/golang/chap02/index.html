@@ -13,9 +13,10 @@
   <meta property="og:title" content="Go 语言基础" />
 <meta property="og:description" content="Go语言的基础, 包括保留关键字, 内置变量类型, 基本语法和流程控制, 多文件组织等" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wzdlc1996.github.io/notes/golang/chap02/" />
-<meta property="article:published_time" content="2020-11-26T23:19:37+08:00" />
-<meta property="article:modified_time" content="2020-11-27T02:19:00+08:00" /><meta property="og:see_also" content="https://wzdlc1996.github.io/notes/golang/chap01/" />
+<meta property="og:url" content="https://wzdlc1996.github.io/notes/golang/chap02/" /><meta property="article:section" content="Notes" />
+<meta property="article:published_time" content="2020-11-26T23:19:37&#43;08:00" />
+<meta property="article:modified_time" content="2020-11-27T02:19:00&#43;08:00" />
+<meta property="og:see_also" content="https://wzdlc1996.github.io/notes/golang/chap01/" />
 
 
 
@@ -607,7 +608,7 @@ autocomplete('#aa-search-input',
 </code></pre></div><p>在源文件的开头, 我们需要指定包名如:</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">pkgName</span>
 </code></pre></div><p>只有对于 <code>pkgName</code> 为 <code>main</code> 的文件, 其中才能有 <code>main()</code> 函数来让 Go 编译为可执行文件作为入口. 其他的源文件中只能有 <code>init()</code> 函数. 在 Go 的 <code>import</code> 过程中, 执行顺序是如下的:</p>
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./img01.png"/></div>
+<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./img01.png"/></div>
 
           </div>
 

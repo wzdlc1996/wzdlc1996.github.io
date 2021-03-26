@@ -1,294 +1,178 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://wzdlc1996.github.io/categories/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/go/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/golang/chap02/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/series/go-learning/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/series/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/categories/tools/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/golang/chap01/</loc>
     <lastmod>2020-11-27T02:19:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/quantum/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/categories/reviews/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/physics/ctcquantcomputing/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/python/</loc>
     <lastmod>2019-11-22T19:24:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/categories/techs/</loc>
     <lastmod>2019-11-22T19:24:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/other/mangaspider/</loc>
     <lastmod>2019-11-22T19:24:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/manybody3/</loc>
     <lastmod>2019-04-07T17:09:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/categories/physics/</loc>
     <lastmod>2019-04-07T17:09:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/series/quantum-mechanics/</loc>
     <lastmod>2019-04-07T17:09:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/statistical-phys/</loc>
     <lastmod>2019-04-07T17:09:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/manybody2/</loc>
     <lastmod>2019-03-19T18:48:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/physics/weakmeasurement/</loc>
     <lastmod>2019-03-18T16:10:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/measurement/</loc>
     <lastmod>2019-03-18T16:10:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/manybody1/</loc>
     <lastmod>2019-02-25T12:44:33+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/series/field-theory/</loc>
     <lastmod>2019-01-12T14:14:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/intftii/</loc>
     <lastmod>2019-01-12T14:14:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/intfti/</loc>
     <lastmod>2018-12-30T15:42:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldiii/</loc>
     <lastmod>2018-12-26T20:11:35+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/approximation/</loc>
     <lastmod>2018-12-24T12:10:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/relativisticqm/</loc>
     <lastmod>2018-12-24T12:10:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldii/</loc>
     <lastmod>2018-12-23T16:27:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/</loc>
     <lastmod>2018-12-20T14:29:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/scattering/</loc>
     <lastmod>2018-12-17T12:54:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/</loc>
     <lastmod>2018-12-20T14:21:14+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/classical-theory/</loc>
     <lastmod>2018-12-20T14:21:14+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</loc>
     <lastmod>2018-12-11T15:21:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/front-end/</loc>
     <lastmod>2018-12-09T14:56:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/other/insitesearchhugo/</loc>
     <lastmod>2018-12-09T14:56:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/perturbation/</loc>
     <lastmod>2018-12-12T13:38:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/physics/zenoeffect/</loc>
     <lastmod>2018-12-10T18:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsi/</loc>
     <lastmod>2018-12-11T17:11:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/other/linux/bluetoothaudio/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/categories/linux/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/manjaro/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/os-setup/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</loc>
     <lastmod>2018-11-14T15:20:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/spin/</loc>
     <lastmod>2018-11-14T11:42:20+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/symmetry/</loc>
     <lastmod>2018-11-14T11:42:20+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/math/</loc>
     <lastmod>2018-11-12T14:38:46+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/symmetry/</loc>
     <lastmod>2018-11-12T14:38:46+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/tags/dynamics/</loc>
     <lastmod>2018-11-12T14:15:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/dynamics/</loc>
     <lastmod>2018-11-12T14:15:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/identicalparticles/</loc>
     <lastmod>2018-11-12T13:42:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/concepts/</loc>
     <lastmod>2018-11-12T11:36:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/premath/</loc>
     <lastmod>2018-11-05T15:45:57+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/</loc>
     <lastmod>2018-10-31T14:48:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wzdlc1996.github.io/notes/amath/randomvariable/</loc>
   </url>
-  
 </urlset>

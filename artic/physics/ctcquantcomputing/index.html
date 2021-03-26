@@ -13,9 +13,10 @@
   <meta property="og:title" content="Time Travel and Quantum Computation" />
 <meta property="og:description" content="Time travel, as a famous concept in science fiction, fascinates people for a long time. However for physicists, this is not only a beautiful dream, but also a interesting problem to discuss mathematically. In the community, there are generally two directions about time travel: (1) does it exist and (2) if it indeed exists, what can we do. In this report, we discuss the application of time travel mainly in the field of quantum computation" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wzdlc1996.github.io/artic/physics/ctcquantcomputing/" />
-<meta property="article:published_time" content="2020-09-27T15:54:07+08:00" />
-<meta property="article:modified_time" content="2020-12-10T18:00:00+08:00" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/physics/ctcquantcomputing/" /><meta property="article:section" content="Artic" />
+<meta property="article:published_time" content="2020-09-27T15:54:07&#43;08:00" />
+<meta property="article:modified_time" content="2020-12-10T18:00:00&#43;08:00" />
+
 
 
   <title>
@@ -394,16 +395,16 @@ autocomplete('#aa-search-input',
 <p>Even in Special Relativity, the &ldquo;time travel&rdquo; can be done based on the twin-paradox. One leaves by a high speed and another stay on earth, when the left one comes back, he will find him younger than the other. Consequently, the left one is a time traveler to the future from the past. But this manner can never make time travel to the past.</p>
 <p>A much general framework for time travel is made in the General Relativity(GR), where physicists called <strong>Closed Timelike Curve(CTC)</strong>: closed curve whose tangent vector are always timelike. Along the CTC, two events of different <strong>proper time</strong> could appear at the same spacetime point in the view of exterior observer. Such process is what we want of time travel, and can not be reject in the framework of classical GR yet.</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/RTC_img_03.png"/></div>
+<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./Figs/RTC_img_03.png"/></div>
 
 <h3 id="about-grandfather-paradox">About grandfather paradox</h3>
 <p>According to Thorne and Novikov, possible time travel should not lead to any casual-loop paradox. They introduced a simple process: a billiard ball goes to the time machine, if the CTC exists, it can return to the past and avoid the younger ball to enter the time machine, see <a href="https://authors.library.caltech.edu/6469/1/ECHprd91.pdf">Thorne1991</a>. In this paper, they showed that there are always some self-consistent solutions. And the <a href="https://en.wikipedia.org/wiki/Novikov_self-consistency_principle">Novikov self-consistency Principle</a> claims that real world should run along such paths:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/RTC_img_01.png"/></div>
+<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./Figs/RTC_img_01.png"/></div>
 
 <p>A potential issue is the free will, but it seems it is more attractive to Sci-Fi instead of physicists, like the famous anime: <a href="https://en.wikipedia.org/wiki/Steins;Gate_(TV_series)">Steins;Gate</a>, in which the effect of self-consistency principle on intelligent time traveler is described by the phenomena named &ldquo;世界線の収束&rdquo;, see <a href="https://ja.wikipedia.org/wiki/STEINS;GATE%E3%81%AE%E7%94%A8%E8%AA%9E%E4%B8%80%E8%A6%A7#%E4%B8%96%E7%95%8C%E7%B7%9A%E9%96%A2%E9%80%A3">STEINS;GATEの用語一覧</a>:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/RTC_img_04.jpeg"/></div>
+<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./Figs/RTC_img_04.jpeg"/></div>
 
 <p>Another issue is such self-consistent solution usually is not unique. One possible resolution of this is quantum mechanics especially the path integral, in which one needs never ask which way does the partical run.</p>
 <h2 id="ctc-in-quantum-mechanics">CTC in Quantum Mechanics</h2>
@@ -415,7 +416,7 @@ autocomplete('#aa-search-input',
 <p>Computational Grandfather Paradox</p>
 <p>This procedure can be represented with a simple network model:</p>
 
-<div class="flex-center w-100" style="text-align: center;"><img name="preview" src="./Figs/RTC_img_02.png"/></div>
+<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./Figs/RTC_img_02.png"/></div>
 
 <p>Where variables $x,y$ are binary valued, and circle &ldquo;-1&rdquo; means the time machine. From the bottum to the top is the time arrow in &ldquo;laboratory&rdquo;, while along the arrow crossing gate $G$ is the <strong>proper</strong> time of the bit. The classical property is that our bits can only varies in the set of computational basis instead of the wavefunction on it. Our <strong>computational grandfather paradox</strong> happens when the gate $G$ operates &ldquo;plus&rdquo;, i.e., $a+b \mod 2$, then we need that(Note time machine will not change the bit, it only transports the bit to the past):</p>
 <p>
