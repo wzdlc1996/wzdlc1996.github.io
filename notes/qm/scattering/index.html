@@ -393,46 +393,384 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            <h1 id="setup-of-scattering-problem">Setup of Scattering Problem</h1>
+          
+            
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+<h1 id="setup-of-scattering-problem">Setup of Scattering Problem</h1>
 <h2 id="rough-picture">Rough Picture</h2>
 <ol>
 <li>
-<p><code>Time-dependent</code> : particle beam (plane wave packet) $\ket{\psi(t=0)}$ coming in, interacting with $\hat V$ , scattered particles (scattered wave) $\ket{\psi(t\rightarrow +\infty)}$ going out.</p>
+<p><code>Time-dependent</code> : particle beam (plane wave packet)  $\ket{\psi(t=0)}$  coming in, interacting with  $\hat V$  , scattered particles (scattered wave)  $\ket{\psi(t\rightarrow +\infty)}$  going out.</p>
 </li>
 <li>
-<p><code>Time-independent</code> : a (short-ranged) scattering potential $\hat V$ as a perturbation to free particle Hamiltonian $\hat H_0$ . The unperturbed state is momentum eigenstate $\ket{\bm{k}}$ (with momentum $\hbar\bm{k}$) , and the perturbed state contains scattered wave.</p>
+<p><code>Time-independent</code> : a (short-ranged) scattering potential  $\hat V$  as a perturbation to free particle Hamiltonian  $\hat H_0$  . The unperturbed state is momentum eigenstate  $\ket{\bm{k}}$  (with momentum  $\hbar\bm{k}$ ) , and the perturbed state contains scattered wave.</p>
 <p>The difficulties in treating the scattering problem as perturbation theory: infinite degeneracy</p>
 </li>
 </ol>
-<p>We will only consider non-relativistic particles: $\hat H_0=-\frac {\hbar^2} {2m} \nabla^2$</p>
-<p>Particle number(probability) current is: $\text{Re}\big(\psi^*(\bm{r})(-\ti\frac \hbar m \nabla)\psi(\bm{r})\big)$</p>
+<p>We will only consider non-relativistic particles:  $\hat H_0=-\frac {\hbar^2} {2m} \nabla^2$ </p>
+<p>Particle number(probability) current is:  $\text{Re}\big(\psi^*(\bm{r})(-\ti\frac \hbar m \nabla)\psi(\bm{r})\big)$ </p>
 <h2 id="scattering-cross-section">Scattering Cross Section</h2>
 <p><em>[Definition]</em> : <code>Differential cross section</code> :</p>
-
-$$\frac {\td \sigma} {\td \Omega} := \frac {\td Q_{\text{flux scattered crossing }r^2\td \Omega}} {J_{\text{incoming}}\td \Omega}$$
-
-
-<p>. Where $\td \sigma$ is the particle current scattered into the solid angle element $\td \Omega$, under unit incoming particle current density</p>
-<p><em>[Definition]</em> : <code>Cross section</code> is the integral of differential cross section on the full angle: $\sigma=\int \frac {\td \sigma} {\td \Omega}\td \Omega$</p>
-<p>Incoming plane wave $\ket{\bm{k}}$ is not normalizable. Probability is not easily defined. To overcome this one can use free wave packet instead of the plane wave.</p>
+<p>$$\frac {\td \sigma} {\td \Omega} := \frac {\td Q_{\text{flux scattered crossing }r^2\td \Omega}} {J_{\text{incoming}}\td \Omega}$$</p>
+<p>. Where  $\td \sigma$  is the particle current scattered into the solid angle element  $\td \Omega$ , under unit incoming particle current density</p>
+<p><em>[Definition]</em> : <code>Cross section</code> is the integral of differential cross section on the full angle:  $\sigma=\int \frac {\td \sigma} {\td \Omega}\td \Omega$ </p>
+<p>Incoming plane wave  $\ket{\bm{k}}$  is not normalizable. Probability is not easily defined. To overcome this one can use free wave packet instead of the plane wave.</p>
 <h1 id="lippmann-schwinger-equation">Lippmann-Schwinger Equation</h1>
-<p>Take the time-independent approach: $(\hat H_0+\hat V)\ket{\psi}=E\ket{\psi}$ . Assume that $\hat V$ is sufficiently short-ranged, namely for position $\bm{r}$ at a very large distance from the scattering potential $\hat V\approx 0$ and $\ket{\psi}=\ket{\bm{k}}$, that is $E=\hbar^2 \bm{k}^2/2m$ .(Here we argue $\ket{\psi}$ and $\ket{\bm{k}}$ have the same energy, which means we are only considering <code>elastic scattering</code>) Like the perturbation theory we have the <code>Lippmann-Schwinger Equation</code></p>
-
-$$\ket{\psi}=\ket{\bm{k}}+\frac {1} {E-\hat H_0+\ti \epsilon}\hat V\ket{\psi}$$
-
-
-<p>Where $\ti\epsilon$ is used to avoid singularity.</p>
+<p>Take the time-independent approach:  $(\hat H_0+\hat V)\ket{\psi}=E\ket{\psi}$  . Assume that  $\hat V$  is sufficiently short-ranged, namely for position  $\bm{r}$  at a very large distance from the scattering potential  $\hat V\approx 0$  and  $\ket{\psi}=\ket{\bm{k}}$ , that is  $E=\hbar^2 \bm{k}^2/2m$  .(Here we argue  $\ket{\psi}$  and  $\ket{\bm{k}}$  have the same energy, which means we are only considering <code>elastic scattering</code>) Like the perturbation theory we have the <code>Lippmann-Schwinger Equation</code></p>
+<p>$$\ket{\psi}=\ket{\bm{k}}+\frac {1} {E-\hat H_0+\ti \epsilon}\hat V\ket{\psi}$$</p>
+<p>Where  $\ti\epsilon$  is used to avoid singularity.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-The Lippmann-Schwinger equation can we writen as $E\ket{\psi}-\hat H_0\ket{\psi}+\ti \epsilon \ket{\psi}=\ti\epsilon \ket{\bm{k}}+\hat V \ket{\psi}$ . For the time-evolution of $\ket{\psi}$ can be obtained by the Schrodinger equation:
+The Lippmann-Schwinger equation can we writen as  $E\ket{\psi}-\hat H_0\ket{\psi}+\ti \epsilon \ket{\psi}=\ti\epsilon \ket{\bm{k}}+\hat V \ket{\psi}$  . For the time-evolution of  $\ket{\psi}$  can be obtained by the Schrodinger equation:
 
 
 $$\ti \hbar \frac {\td } {\td t}\ket{\psi(t)} = (\hat H_0+\hat V)\ket{\psi(t)}=(E+\ti\epsilon)\ket{\psi(t)}-\ti\epsilon\ket{\bm{k}}$$
-
 
 
 Then we have:
@@ -441,12 +779,10 @@ Then we have:
 $$\ti\hbar \frac {\td} {\td t} \Big(e^{\ti Et/\hbar -\epsilon t/\hbar}\ket{\psi(t)}\Big)=-\ti \epsilon e^{\ti Et/\hbar -\epsilon t/\hbar}\ket{\bm{k}}$$
 
 
-
 Then the solution is:
 
 
 $$\ket{\psi(t)}=e^{-\ti Et/\hbar+\epsilon t/\hbar}\Big(\ket{\psi(t=0)}-\frac {e^{\ti Et/\hbar-\epsilon t/\hbar}-1} {\ti E-\epsilon} \ti \epsilon \ket{\bm{k}}\Big)$$
-
 
 
 Or equivalently,
@@ -455,8 +791,7 @@ Or equivalently,
 $$\ket{\psi(t)}=e^{-\ti E t/\hbar + \epsilon t/\hbar}\big(\ket{\psi}+\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}\big)-\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}$$
 
 
-
-Which satisfies $\ket{\psi(t\rightarrow -\infty)}\propto \ket{\bm{k}}$ , mimic the scattering process. With this meaning, one can also write it as the form of:
+Which satisfies  $\ket{\psi(t\rightarrow -\infty)}\propto \ket{\bm{k}}$  , mimic the scattering process. With this meaning, one can also write it as the form of:
 
 
 $$\begin{aligned}
@@ -464,32 +799,27 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Where $(+)$ corresponding to the $\ket{\bm{k}}_{\text{in}}$ , because $\ket{\psi^{(+)}(t\rightarrow -\infty)} = \ket{\bm{k}}_{\text{in}}$ , \
-And $(-)$ corresponding to the $\ket{\bm{k}}_{\text{out}}$ , because $\ket{\psi^{(-)}(t\rightarrow +\infty)} = \ket{\bm{k}}_{\text{out}}$ .
+Where  $(+)$  corresponding to the  $\ket{\bm{k}}_{\text{in}}$  , because  $\ket{\psi^{(+)}(t\rightarrow -\infty)} = \ket{\bm{k}}_{\text{in}}$  , \
+And  $(-)$  corresponding to the  $\ket{\bm{k}}_{\text{out}}$  , because  $\ket{\psi^{(-)}(t\rightarrow +\infty)} = \ket{\bm{k}}_{\text{out}}$  .
 
 
 </details>
 
-<p>Assuming that $\hat V=\int \td^3\bm{r} \ V(\bm{r})\ket{\bm{r}}\bra{\bm{r}}$ , we can write the $\ket{\psi}$ as the wavefunction on coordinate space:</p>
-
-$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$
-
-
+<p>Assuming that  $\hat V=\int \td^3\bm{r} \ V(\bm{r})\ket{\bm{r}}\bra{\bm{r}}$  , we can write the  $\ket{\psi}$  as the wavefunction on coordinate space:</p>
+<p>$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-With the equality: $1=\int \td^3 \bm{k}\ket{\bm{k}}\bra{\bm{k}}$ , we have:
+With the equality:  $1=\int \td^3 \bm{k}\ket{\bm{k}}\bra{\bm{k}}$  , we have:
 
 
 $$\begin{aligned}
 \bra{\bm{r}}\psi\rangle &= \bra{\bm{r}}\bm{k}\rangle + \int \td^3 \bm{r}' \td^3 \bm{k}' \bra{\bm{r}}\frac {1} {E-\hat H_0+\ti\epsilon} \ket{\bm{k}'}\bra{\bm{k}'}\bm{r}'\rangle \bra{\bm{r}'}\hat V \ket{\psi} \\
 &=\bra{\bm{r}}\bm{k}\rangle +\int \td^3 \bm{r}' \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} V(\bm{r}')\bra{\bm{r}'}\psi\rangle \\
 \end{aligned}$$
-
 
 
 For that:
@@ -502,7 +832,6 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 This can be easily proved by the residue theorem.
 
 One can write down that:
@@ -511,137 +840,79 @@ One can write down that:
 $$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$
 
 
-
 q.e.d.
 
 
 </details>
 
-<p>The further approximation is that: $|\bm{r}-\bm{r}'|\approx |\bm{r}|-\frac {\bm{r}\cdot \bm{r}'} {|\bm{r}|}$ with $|\bm{r}|\gg|\bm{r}'|$ , since $V$ is only nonzero at the neighbor of origin.</p>
-
-$$\psi(\bm{r})\approx \frac 1 {(2\pi)^{3/2}}\Big(e^{\ti \bm{k}\cdot \bm{r}} +f(\bm{k}',\bm{k}) \frac {e^{\ti kr}} {r} \Big) $$
-
-
-<p>Where $f(\bm{k}',\bm{k})=-\frac {(2\pi)^{3/2}} {4\pi}\frac {2m} {\hbar}\int \td^3 \bm{r}' e^{-\ti \bm{k}'\cdot \bm{r}'}V(\bm{r}')\psi(\bm{r}')$</p>
+<p>The further approximation is that:  $|\bm{r}-\bm{r}'|\approx |\bm{r}|-\frac {\bm{r}\cdot \bm{r}'} {|\bm{r}|}$  with  $|\bm{r}|\gg|\bm{r}'|$  , since  $V$  is only nonzero at the neighbor of origin.</p>
+<p>$$\psi(\bm{r})\approx \frac 1 {(2\pi)^{3/2}}\Big(e^{\ti \bm{k}\cdot \bm{r}} +f(\bm{k}',\bm{k}) \frac {e^{\ti kr}} {r} \Big) $$</p>
+<p>Where  $f(\bm{k}',\bm{k})=-\frac {(2\pi)^{3/2}} {4\pi}\frac {2m} {\hbar}\int \td^3 \bm{r}' e^{-\ti \bm{k}'\cdot \bm{r}'}V(\bm{r}')\psi(\bm{r}')$ </p>
 <p>And one can prove that the <code>differential cross section</code>:</p>
-
-$$\frac {\td\sigma} {\td \Omega} = |f(\bm{k}',\bm{k})|^2 $$
-
-
+<p>$$\frac {\td\sigma} {\td \Omega} = |f(\bm{k}',\bm{k})|^2 $$</p>
 <p><em>[Theorem]</em> : <code>Optical theorem</code> : Total cross section is related to the forward scattering amplitude:</p>
-
-$$\sigma \equiv \int \frac {\td \sigma} {\td \Omega} \td \Omega = \frac {4\pi} {k}\text{Im}f(\bm{k},\bm{k})$$
-
-
+<p>$$\sigma \equiv \int \frac {\td \sigma} {\td \Omega} \td \Omega = \frac {4\pi} {k}\text{Im}f(\bm{k},\bm{k})$$</p>
 <h1 id="born-approximation">Born Approximation</h1>
 <p>Approximate the unknown |ψi on the right-hand-side of Lippmann-Schwinger equation by the incoming plane wave, we have the method called <code>Born Approximation</code> :</p>
-
-$$\ket{\psi} = \ket{\bm{k}} +\frac {1} {E-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}}$$
-
-
-<p>With Born Approximation, we can write the $f(\bm{k}',\bm{k})$ without any unknown function:</p>
-
-$$f(\bm{k}',\bm{k})=-\frac {2m} {4\pi\hbar}\int \td^3 \bm{x} \ e^{-\ti(\bm{k}'-\bm{k})\cdot \bm{x}} V(\bm{x})$$
-
-
-<p>It is just proportional to the fourier transform of $V(\bm{x})$ , and just the function of $\bm{k}'-\bm{k}$.</p>
+<p>$$\ket{\psi} = \ket{\bm{k}} +\frac {1} {E-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}}$$</p>
+<p>With Born Approximation, we can write the  $f(\bm{k}',\bm{k})$  without any unknown function:</p>
+<p>$$f(\bm{k}',\bm{k})=-\frac {2m} {4\pi\hbar}\int \td^3 \bm{x} \ e^{-\ti(\bm{k}'-\bm{k})\cdot \bm{x}} V(\bm{x})$$</p>
+<p>It is just proportional to the fourier transform of  $V(\bm{x})$  , and just the function of  $\bm{k}'-\bm{k}$ .</p>
 <p>One can also apply higher approximation on Lippmann-Schwinger function and obtain the <code>Born-Equation</code>:</p>
-
-$$\ket{\psi}=\ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\cdots$$
-
-
+<p>$$\ket{\psi}=\ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\cdots$$</p>
 <h1 id="partial-wave-expansion">Partial Wave Expansion</h1>
-<p>Consider the central potential $V(\bm{x})=V(|\bm{x}|)$ , then $f$ is just the function of the angle between $\bm{k}',\bm{k}$ . Define the $\bm{k}$ direction as $+z$ direction, we have:</p>
-
-$$\psi(\bm{r})\sim e^{\ti kz}+f(\theta)\frac {e^{\ti kr}} r$$
-
-
+<p>Consider the central potential  $V(\bm{x})=V(|\bm{x}|)$  , then  $f$  is just the function of the angle between  $\bm{k}',\bm{k}$  . Define the  $\bm{k}$  direction as  $+z$  direction, we have:</p>
+<p>$$\psi(\bm{r})\sim e^{\ti kz}+f(\theta)\frac {e^{\ti kr}} r$$</p>
 <p>Expand the plane wave into spherical waves:</p>
-
-$$e^{\ti kz} = \sum_{l=0}^{\infty} (2l+1)\ti^l j_l(kr)P_l(\cos\theta) $$
-
-
-<p>where $j_l$ are spherical Bessel function. For large $r$ , it is $e^{\ti kz}\sim \frac 1 {2\ti kr}\sum_{l=0}^{\infty} (2l+1)(e^{\ti kr}-(-1)^l e^{-\ti kr})P_l(\cos\theta)$</p>
-<p>Expand $f(\theta)$ into Legendre Polynomials: $f(\theta)=\sum_{l=0}^{\infty}(2l+1)f_l P_l(\cos\theta)$</p>
+<p>$$e^{\ti kz} = \sum_{l=0}^{\infty} (2l+1)\ti^l j_l(kr)P_l(\cos\theta) $$</p>
+<p>where  $j_l$  are spherical Bessel function. For large  $r$  , it is  $e^{\ti kz}\sim \frac 1 {2\ti kr}\sum_{l=0}^{\infty} (2l+1)(e^{\ti kr}-(-1)^l e^{-\ti kr})P_l(\cos\theta)$ </p>
+<p>Expand  $f(\theta)$  into Legendre Polynomials:  $f(\theta)=\sum_{l=0}^{\infty}(2l+1)f_l P_l(\cos\theta)$ </p>
 <p>Then the cross section:</p>
-
-$$\sigma =\int \td \Omega \ |f|^2=4\pi \sum_l (2l+1)|f_l|^2$$
-
-
-<p>Where we used the orthogonality of Legendre Polynomials: $\int_0^{\pi}\sin\theta \td \theta \ P_l(\cos\theta)P_{l'}(\cos\theta)=\frac 2 {2l+1}\delta_{l,l'}$</p>
+<p>$$\sigma =\int \td \Omega \ |f|^2=4\pi \sum_l (2l+1)|f_l|^2$$</p>
+<p>Where we used the orthogonality of Legendre Polynomials:  $\int_0^{\pi}\sin\theta \td \theta \ P_l(\cos\theta)P_{l'}(\cos\theta)=\frac 2 {2l+1}\delta_{l,l'}$ </p>
 <p>By <code>optical theorem</code>:</p>
-
-$$\sigma=\frac {4\pi} k \text{Im} f(0)=\frac {4\pi} k \sum_l (2l+1)\text{Im}f_l$$
-
-
-<p>Where we have used $P_l(1)=1$ .</p>
-<p>Compare these two expression, we have $|f_l|^2 = \frac 1 k \text{Im}f_l$ ,  or equivalently, $|1+2\ti kf_l|^2=1$.</p>
-<p>Define phase shift $\delta_l$ such that $1+2\ti kf_l=e^{2\ti\delta_l}$ , then $f_l=\frac 1 k e^{ti \delta_l}\sin\delta_l$ . As the result:</p>
-
-$$\psi(\bm{r})\sim \frac 1 {2\ti kr}\sum_l (2l+1)P_l(\cos\theta)\big[e^{2\ti \delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big] $$
-
-
-<p>At the large $r$. And the cross section:</p>
-
-$$\sigma=\frac {4\pi} {k^2} \sum_l (2l+1)\sin^2 \delta_l$$
-
-
+<p>$$\sigma=\frac {4\pi} k \text{Im} f(0)=\frac {4\pi} k \sum_l (2l+1)\text{Im}f_l$$</p>
+<p>Where we have used  $P_l(1)=1$  .</p>
+<p>Compare these two expression, we have  $|f_l|^2 = \frac 1 k \text{Im}f_l$  ,  or equivalently,  $|1+2\ti kf_l|^2=1$ .</p>
+<p>Define phase shift  $\delta_l$  such that  $1+2\ti kf_l=e^{2\ti\delta_l}$  , then  $f_l=\frac 1 k e^{ti \delta_l}\sin\delta_l$  . As the result:</p>
+<p>$$\psi(\bm{r})\sim \frac 1 {2\ti kr}\sum_l (2l+1)P_l(\cos\theta)\big[e^{2\ti \delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big] $$</p>
+<p>At the large  $r$ . And the cross section:</p>
+<p>$$\sigma=\frac {4\pi} {k^2} \sum_l (2l+1)\sin^2 \delta_l$$</p>
 <p>The full procedure to solve the scattering question by partial wave method is :</p>
 <ol>
+<li>Expand  $\psi(r)=\sum_l Y_l^0(\theta,\phi)R_l(r)$  , where spherical harmonic function  $Y_l^0(\theta,\phi)=\sqrt{\frac {2l+1} {4\pi}}P_l(\cos\theta)$ . Then radial function satisfies:</li>
+</ol>
+<p>$$\Big[-\frac 1 r \frac {\td^2} {\td r^2} r + \frac {l(l+1)} {r^2} +\frac {2m} {\hbar^2} V(r) \Big]R_l(r)=k^2 R_l(r)$$</p>
+<pre><code>And  $R_l(r)\sim\frac 1 {2\ti kr}\frac 1 {\sqrt{4\pi(2l+1)}}\big[e^{2\ti\delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big]$  as  $r\rightarrow \infty$ .
+</code></pre>
+<ol start="2">
 <li>
-<p>Expand $\psi(r)=\sum_l Y_l^0(\theta,\phi)R_l(r)$ , where spherical harmonic function $Y_l^0(\theta,\phi)=\sqrt{\frac {2l+1} {4\pi}}P_l(\cos\theta)$. Then radial function satisfies:</p>
-
-$$\Big[-\frac 1 r \frac {\td^2} {\td r^2} r + \frac {l(l+1)} {r^2} +\frac {2m} {\hbar^2} V(r) \Big]R_l(r)=k^2 R_l(r)$$
-
-
-<p>And $R_l(r)\sim\frac 1 {2\ti kr}\frac 1 {\sqrt{4\pi(2l+1)}}\big[e^{2\ti\delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big]$ as $r\rightarrow \infty$.</p>
-</li>
-<li>
-<p>To solve $\delta_l$ , solve the radial equation of $R_l$ first. expand its asymptotical ($r\rightarrow \infty$) form by spherical Bessel function $j_l(kr)$ and $n_l(kr)$: $R_l(kr)\sim j_l(kr)\cos(\delta_l)+n_l(kr)\sin\delta_l$</p>
-<p>Remind of the spherical Bessel function $j_l,n_l$ , they are the solution of the equation:</p>
-
-$$\Big[-\frac 1 {\rho} \frac {\td^2} {\td \rho^2} \rho + \frac {l(l+1)} {\rho^2}  \Big]R(\rho)=R(\rho)$$
-
-
-<p>And has the form:</p>
-
-$$j_l(\rho)=(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\sin\rho} {\rho} \Big) \ ; \ n_l(\rho)=-(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\cos\rho} {\rho} \Big)$$
-
-
-<p>And the asymptotical behavior:</p>
-
-$$\begin{aligned}
-    \rho &\rightarrow 0 \Rightarrow j_l(\rho)\sim \frac {\rho^l} {(2l+1)!!} \ ; \ n_l(\rho)\sim - \frac {(2l+1)!!} {\rho^l}\\
-    \rho &\rightarrow \infty \Rightarrow j_l(\rho)\sim \frac {\sin(\rho-l\pi/2)} {\rho} \ ; \ n_l(\rho)\sim \frac {\cos(\rho-l\pi/2)} {\rho}
-    \end{aligned}$$
-
-
+<p>To solve  $\delta_l$  , solve the radial equation of  $R_l$  first. expand its asymptotical ( $r\rightarrow \infty$ ) form by spherical Bessel function  $j_l(kr)$  and  $n_l(kr)$ :  $R_l(kr)\sim j_l(kr)\cos(\delta_l)+n_l(kr)\sin\delta_l$ </p>
+<p>Remind of the spherical Bessel function  $j_l,n_l$  , they are the solution of the equation:</p>
 </li>
 </ol>
+<p>$$\Big[-\frac 1 {\rho} \frac {\td^2} {\td \rho^2} \rho + \frac {l(l+1)} {\rho^2}  \Big]R(\rho)=R(\rho)$$</p>
+<pre><code>And has the form:
+</code></pre>
+<p>$$j_l(\rho)=(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\sin\rho} {\rho} \Big) \ ; \ n_l(\rho)=-(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\cos\rho} {\rho} \Big)$$</p>
+<pre><code>And the asymptotical behavior:
+</code></pre>
+<p>$$\begin{aligned}
+    \rho &\rightarrow 0 \Rightarrow j_l(\rho)\sim \frac {\rho^l} {(2l+1)!!} \ ; \ n_l(\rho)\sim - \frac {(2l+1)!!} {\rho^l}\\
+    \rho &\rightarrow \infty \Rightarrow j_l(\rho)\sim \frac {\sin(\rho-l\pi/2)} {\rho} \ ; \ n_l(\rho)\sim \frac {\cos(\rho-l\pi/2)} {\rho}
+    \end{aligned}$$</p>
 <h1 id="scattering-matrix">Scattering Matrix</h1>
-<p><em>[Definition]</em> : $\hat S$ is the unitary time evolution operator in <code>interaction picture</code> , under the <code>limit</code> that initial time $t_i\rightarrow -\infty$ and the final time $t_f\rightarrow +\infty$ :</p>
-
-$$\hat S = \lim_{t_i\rightarrow -\infty \\  t_f\rightarrow +\infty} \hat U_I(t_f,t_i)$$
-
-
+<p><em>[Definition]</em> :  $\hat S$  is the unitary time evolution operator in <code>interaction picture</code> , under the <code>limit</code> that initial time  $t_i\rightarrow -\infty$  and the final time  $t_f\rightarrow +\infty$  :</p>
+<p>$$\hat S = \lim_{t_i\rightarrow -\infty \\  t_f\rightarrow +\infty} \hat U_I(t_f,t_i)$$</p>
 <p>Then from Dyson series, we have:</p>
-
-$$\hat S = 1 +\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 \hat V_I(t_1) + \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty}\td t_1 \int_{-\infty}^{t_1} \td t_2 \hat V_I(t_1)\hat V_I(t_2)+\cdots$$
-
-
-<p>Where $\hat V_I(t)=e^{\ti \hat H_0 t/\hbar} \hat V e^{-\ti \hat H_0 t/\hbar}$</p>
-<p>Usually it is a <code>non-convergent integral</code> , to avoid this , we assume that the time of interaction is finite. That is assuming the potential (in <code>Schrodinger picture</code>) depends on time: $\hat V(t)=\hat V e^{-\epsilon |t|}$ . With $\epsilon\gt 0$ .</p>
+<p>$$\hat S = 1 +\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 \hat V_I(t_1) + \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty}\td t_1 \int_{-\infty}^{t_1} \td t_2 \hat V_I(t_1)\hat V_I(t_2)+\cdots$$</p>
+<p>Where  $\hat V_I(t)=e^{\ti \hat H_0 t/\hbar} \hat V e^{-\ti \hat H_0 t/\hbar}$ </p>
+<p>Usually it is a <code>non-convergent integral</code> , to avoid this , we assume that the time of interaction is finite. That is assuming the potential (in <code>Schrodinger picture</code>) depends on time:  $\hat V(t)=\hat V e^{-\epsilon |t|}$  . With  $\epsilon\gt 0$  .</p>
 <p>Then with the Dyson series we can compute order by order:</p>
 <h2 id="1st-order">1st Order</h2>
-
-$$\hat S^{(1)} = -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})$$
-
-
-<p>Where $\ket{\bm{k}}$ is the eigenstate of momentum, or $\hat H_0$ .</p>
-
-$$\hat H_0\ket{\bm{k}}=\frac {\hbar \bm{k}^2} {2m} \ket{\bm{k}}\equiv E_{\bm{k}}\ket{\bm{k}}$$
-
-
+<p>$$\hat S^{(1)} = -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})$$</p>
+<p>Where  $\ket{\bm{k}}$  is the eigenstate of momentum, or  $\hat H_0$  .</p>
+<p>$$\hat H_0\ket{\bm{k}}=\frac {\hbar \bm{k}^2} {2m} \ket{\bm{k}}\equiv E_{\bm{k}}\ket{\bm{k}}$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -661,8 +932,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Using that $\lim_{\epsilon\rightarrow 0^+} \frac {2\epsilon} {x^2+\epsilon^2} = 2\pi \delta(x)$.
+Using that  $\lim_{\epsilon\rightarrow 0^+} \frac {2\epsilon} {x^2+\epsilon^2} = 2\pi \delta(x)$ .
 
 q.e.d.
 
@@ -670,10 +940,7 @@ q.e.d.
 </details>
 
 <h2 id="2nd-order">2nd Order</h2>
-
-$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$
-
-
+<p>$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -693,19 +960,16 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 Consider:
 
 
 $$\lim_{\epsilon\rightarrow 0^+} \frac 1 {x+\ti \epsilon} = -\ti \pi \delta(x) + \mathcal{P}\Big(\frac 1 x \Big)$$
 
 
-
-Where $\mathcal{P}$ means `Cauchy principal value` . One can reduce the result above to:
+Where  $\mathcal{P}$  means `Cauchy principal value` . One can reduce the result above to:
 
 
 $$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$
-
 
 
 q.e.d.
@@ -714,11 +978,8 @@ q.e.d.
 </details>
 
 <h2 id="generic-formula">Generic Formula</h2>
-<p>The generic formula of $\hat S$ is:</p>
-
-$$\bra{\bm{k}}\hat S -1 \ket{\bm{k}'} = -2\pi \ti \delta(E_{\bm{k}}-E_{\bm{k}'}) \bra{\bm{k}} \Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}'}$$
-
-
+<p>The generic formula of  $\hat S$  is:</p>
+<p>$$\bra{\bm{k}}\hat S -1 \ket{\bm{k}'} = -2\pi \ti \delta(E_{\bm{k}}-E_{\bm{k}'}) \bra{\bm{k}} \Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}'}$$</p>
 <p>Is similar to Born expansion.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -726,11 +987,10 @@ $$\bra{\bm{k}}\hat S -1 \ket{\bm{k}'} = -2\pi \ti \delta(E_{\bm{k}}-E_{\bm{k}'})
     </summary>
     
 
-With that $\hat S$ is unitary, we have:
+With that  $\hat S$  is unitary, we have:
 
 
 $$\int \td^3 \bm{k}' \bra{\bm{k}} \hat S^\dagger\ket{\bm{k}'}\bra{\bm{k}'}\hat S \ket{\bm{k}}=\bra{\bm{k}}\bm{k}\rangle$$
-
 
 
 Or equivalently,
@@ -739,12 +999,10 @@ Or equivalently,
 $$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle \bra{\bm{k}'}\hat S-1\ket{\bm{k}} + \bra{\bm{k}}\hat S^\dagger -1 \ket{\bm{k}'}\bra{\bm{k}'}\bm{k}\rangle + |\bra{\bm{k}'}\hat S-1\ket{\bm{k}}|^2 \Big)=0$$
 
 
-
 Let
 
 
 $$T(\bm{k}',\bm{k})=\bra{\bm{k}'}\Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}}$$
-
 
 
 we can rewrite the equality above as:
@@ -754,19 +1012,16 @@ $$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle (-2\pi\ti)\delta(E_{\bm{k}}
 =-\int \td^3 \bm{k} \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$
 
 
-
 That is:
 
 
 $$-\int \td^3 \bm{k}' \ 4\pi \delta(E_{\bm{k}}-E_{\bm{k}'}) \text{Im}(\bra{\bm{k}}\bm{k}'\rangle T(\bm{k}',\bm{k})) = \int \td^3 \bm{k}' \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$
 
 
-
 That is the optical theorem:
 
 
 $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'}) |T(\bm{k}',\bm{k})|^2$$
-
 
 
 

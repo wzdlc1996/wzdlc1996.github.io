@@ -393,81 +393,377 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            <h1 id="review-of-path-integral-in-coordinate-space">Review of Path Integral in Coordinate Space</h1>
+          
+            
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+<h1 id="review-of-path-integral-in-coordinate-space">Review of Path Integral in Coordinate Space</h1>
 <p><code>Path integral formalism</code> is similar to the Huygens principle in optics. The wave function, or complex probability amplitude should be equal to the interference among all possible path:</p>
-
-$$\psi \propto \sum_{\text{path}} e^{\ti \phi(\text{path})}$$
-
-
+<p>$$\psi \propto \sum_{\text{path}} e^{\ti \phi(\text{path})}$$</p>
 <p>We will use this to introduce the field theory but not from the equal time commutation relationship. First of all, we take a short review for the path integral.</p>
 <h2 id="path-integral-of-1-d-system">Path Integral of 1-D System</h2>
-<p>Consider the 1-D Hamiltonian: $\hat H=\frac {\hat p^2} {2m} +V(\hat x)$ . The propagator can be written as functional integral with the time-slicing technique:</p>
-
-$$U(x,t;x',t')=\bra{x}\hat U(t,t')\ket{x'}=\int \td q_{M-1}\cdots \td q_1 \bra{x}\hat U(t,t_{M-1})\ket{q_{M-1}}\cdots \bra{q_1}\hat U(t_1,t')\ket{x'}$$
-
-
-<p>Where $t_i=t'+ i \Delta t$ , and $\Delta t=(t-t')/M$. So $t_M=t, t_0=t'$ . Let $q_M=x, q_0=x'$ , we have the generic form of the elements of matrix:</p>
-
-$$\bra{q_{n+1}}\hat U(t_{n+1},t_n)\ket{q_n} = \int \frac {\td p_{n+1}} {2\pi\hbar} \exp\Big\{\frac {\ti\Delta t} {\hbar} \Big(p_{n+1} \cdot \frac {q_{n+1}-q_n} {\Delta t}-H(p_{n+1},q_n)\Big)\Big\}$$
-
-
+<p>Consider the 1-D Hamiltonian:  $\hat H=\frac {\hat p^2} {2m} +V(\hat x)$  . The propagator can be written as functional integral with the time-slicing technique:</p>
+<p>$$U(x,t;x',t')=\bra{x}\hat U(t,t')\ket{x'}=\int \td q_{M-1}\cdots \td q_1 \bra{x}\hat U(t,t_{M-1})\ket{q_{M-1}}\cdots \bra{q_1}\hat U(t_1,t')\ket{x'}$$</p>
+<p>Where  $t_i=t'+ i \Delta t$  , and  $\Delta t=(t-t')/M$ . So  $t_M=t, t_0=t'$  . Let  $q_M=x, q_0=x'$  , we have the generic form of the elements of matrix:</p>
+<p>$$\bra{q_{n+1}}\hat U(t_{n+1},t_n)\ket{q_n} = \int \frac {\td p_{n+1}} {2\pi\hbar} \exp\Big\{\frac {\ti\Delta t} {\hbar} \Big(p_{n+1} \cdot \frac {q_{n+1}-q_n} {\Delta t}-H(p_{n+1},q_n)\Big)\Big\}$$</p>
 <p>So, in such way one can write the propagator as the functional integral for infinite dimensional momentum and coordinate:</p>
-
-$$U(x,t;x',t')=\int_{q(t')=x'}^{q(t)=x} \mathcal{D}[q]\mathcal{D}[p] \ \exp\Big(\frac \ti \hbar S[p,q]\Big)$$
-
-
-<p>Where $\mathcal{D}[p]\mathcal{D}[q]=(2\pi\hbar)^{-M}\td q_{M-1}\cdots \td q_1 \td p_{M}\cdots \td p_1$ , and:</p>
-
-$$S[p,q]=\int_{t'}^t \td t \ p(t) \cdot \flo{q}(t) - H\big(p(t),q(t)\big)$$
-
-
+<p>$$U(x,t;x',t')=\int_{q(t')=x'}^{q(t)=x} \mathcal{D}[q]\mathcal{D}[p] \ \exp\Big(\frac \ti \hbar S[p,q]\Big)$$</p>
+<p>Where  $\mathcal{D}[p]\mathcal{D}[q]=(2\pi\hbar)^{-M}\td q_{M-1}\cdots \td q_1 \td p_{M}\cdots \td p_1$  , and:</p>
+<p>$$S[p,q]=\int_{t'}^t \td t \ p(t) \cdot \flo{q}(t) - H\big(p(t),q(t)\big)$$</p>
 <p>One can also write it as the form:</p>
-
-$$U(x,t;x',t')=\int_{q(t')=x'}^{q(t)=x} \mathcal{D}[q] \ \exp\Big(\frac \ti \hbar \int_{t'}^t \td t \ \big(\frac 1 {2m} \flo q^2 -V(q)\big)\Big)$$
-
-
-<p>Where $\mathcal{D}[q]=\big(\frac {m} {2\pi\hbar\ti\Delta t}\big)^{M/2}\td q_{M-1}\cdots \td q_1$ . For detail see: <a href="https://wzdlc1996.github.io/notes/qm/dynamics/#propagator-and-path-integral">propagator-and-path-integral</a></p>
+<p>$$U(x,t;x',t')=\int_{q(t')=x'}^{q(t)=x} \mathcal{D}[q] \ \exp\Big(\frac \ti \hbar \int_{t'}^t \td t \ \big(\frac 1 {2m} \flo q^2 -V(q)\big)\Big)$$</p>
+<p>Where  $\mathcal{D}[q]=\big(\frac {m} {2\pi\hbar\ti\Delta t}\big)^{M/2}\td q_{M-1}\cdots \td q_1$  . For detail see: <a href="https://wzdlc1996.github.io/notes/qm/dynamics/#propagator-and-path-integral">propagator-and-path-integral</a></p>
 <h2 id="imaginary-time-path-integral-and-the-partition-function">Imaginary Time Path Integral and the Partition Function</h2>
 <p>According to the statistical physics, the <code>canonical partition function</code> can be written as:</p>
-
-$$\mathcal{Z}=\text{Tr} e^{-\beta \hat H}=\int \td x \ \bra{x}e^{-\beta \hat H}\ket{x}\sim \int \td x  \ U(x,-\ti\hbar\beta,x,0)$$
-
-
-<p>Which has a semblance form as the path integral, but the time variable and the integral of initial/final coordinates. Here we introduce the Wick rotation, which is also known as the imaginary time transform: $t=-\ti\tau$.</p>
+<p>$$\mathcal{Z}=\text{Tr} e^{-\beta \hat H}=\int \td x \ \bra{x}e^{-\beta \hat H}\ket{x}\sim \int \td x  \ U(x,-\ti\hbar\beta,x,0)$$</p>
+<p>Which has a semblance form as the path integral, but the time variable and the integral of initial/final coordinates. Here we introduce the Wick rotation, which is also known as the imaginary time transform:  $t=-\ti\tau$ .</p>
 <p>So we have:</p>
-
-$$\begin{aligned}
+<p>$$\begin{aligned}
 \mathcal{Z}&=\int \prod_{k=1}^M \frac {\td p_k \td q_k} {2\pi\hbar} \ \exp\Big\{\frac 1 \hbar \int_0^{\hbar\beta} \td \tau \ \Big(\ti p \cdot \frac {\td q} {\td \tau} - H(p,q)\Big)  \Big\} \\
 &=\int_{q(\beta\hbar)=q(0)} \mathcal{D}[q] \ \exp\Big\{-\frac 1 \hbar \int_0^{\beta\hbar} \td \tau \Big(\frac 1 {2m} \flo q^2 +V(q)\Big) \Big\}
-\end{aligned}$$
-
-
-<p>Where the integral contains the coordinate $q_M=q_0$. And the second equality is come from the form of Hamiltonian $H(q,p)=\frac {p^2} {2m} + V(q)$ with integrating out all momentum: $\mathcal{D}[q]=\big(\frac m {2\pi\hbar \Delta \tau}\big)^{M/2} \td q_M\cdots \td q_1$.</p>
-<p>One should always note that, <mark>all above functional integral should be calculated by their definition of discrete version.</mark> And take limit of $\Delta t ( \Delta \tau)\rightarrow 0$ at the end.</p>
+\end{aligned}$$</p>
+<p>Where the integral contains the coordinate  $q_M=q_0$ . And the second equality is come from the form of Hamiltonian  $H(q,p)=\frac {p^2} {2m} + V(q)$  with integrating out all momentum:  $\mathcal{D}[q]=\big(\frac m {2\pi\hbar \Delta \tau}\big)^{M/2} \td q_M\cdots \td q_1$ .</p>
+<p>One should always note that, <mark>all above functional integral should be calculated by their definition of discrete version.</mark> And take limit of  $\Delta t ( \Delta \tau)\rightarrow 0$  at the end.</p>
 <h1 id="coherent-state-path-integral">Coherent State Path Integral</h1>
-<p>For many-body system, we need a closure relation like $\int \td^3 \bm{x} \ \ket{\bm{x}}\bra{\bm{x}}=1$ to develop a path integral formalism. Here we choose the set of coherent state, which has the closure relation:</p>
-
-$$\int \td\phi^*\td\phi  \ e^{-\phi^*\cdot \phi} \ket{\phi}\bra{\phi}=1$$
-
-
-<p>Where $\phi=(\phi_1,\cdots,\phi_\alpha,\cdots)$ is vector of complex numbers or Grassmann variables</p>
+<p>For many-body system, we need a closure relation like  $\int \td^3 \bm{x} \ \ket{\bm{x}}\bra{\bm{x}}=1$  to develop a path integral formalism. Here we choose the set of coherent state, which has the closure relation:</p>
+<p>$$\int \td\phi^*\td\phi  \ e^{-\phi^*\cdot \phi} \ket{\phi}\bra{\phi}=1$$</p>
+<p>Where  $\phi=(\phi_1,\cdots,\phi_\alpha,\cdots)$  is vector of complex numbers or Grassmann variables</p>
 <p>Which holds for</p>
 <ol>
-<li>Boson when $\phi_\alpha$ are complex numbers and integral measure $\td\phi^*\td\phi=\prod_\alpha \frac {\td\text{Re}\phi_\alpha\td \text{Im}\phi_\alpha} {\pi}$</li>
-<li>Fermion when $\phi_\alpha$ are Grassman variables and integral measure $\td\phi^*\td\phi=\prod_\alpha \td\phi_\alpha^*\td \phi_\alpha$</li>
+<li>Boson when  $\phi_\alpha$  are complex numbers and integral measure  $\td\phi^*\td\phi=\prod_\alpha \frac {\td\text{Re}\phi_\alpha\td \text{Im}\phi_\alpha} {\pi}$ </li>
+<li>Fermion when  $\phi_\alpha$  are Grassman variables and integral measure  $\td\phi^*\td\phi=\prod_\alpha \td\phi_\alpha^*\td \phi_\alpha$ </li>
 </ol>
-<p>In the following we do not distinguish the Fermion and Boson, and $\phi$ is the vector of complex numbers or Grassman variables without bold.</p>
-<p>Assuming Hamiltonian has the normal ordered form: $\hat H=H(\hat{\bm{a}}^\dagger,\hat{\bm{a}})$</p>
+<p>In the following we do not distinguish the Fermion and Boson, and  $\phi$  is the vector of complex numbers or Grassman variables without bold.</p>
+<p>Assuming Hamiltonian has the normal ordered form:  $\hat H=H(\hat{\bm{a}}^\dagger,\hat{\bm{a}})$ </p>
 <p>Like we did before, with time splicing we have the propagator with Coherent Path integral:</p>
 <p><em>[Theorem]</em> : The propagator has the form:</p>
-
-$$\begin{aligned}
+<p>$$\begin{aligned}
 U(\phi_f^*,t_f;\phi_i,t_i) &\equiv \bra{\phi_f} \hat U(t_f,t_i)\ket{\phi_i} \\
 &= \lim_{M\rightarrow \infty} \int_{\phi_0=\phi_i}^{\phi_M^*=\phi_f^*} \prod_{k=1}^{M-1} \td \phi_k^*\td\phi_k \ \exp\Big\{\phi_M^* \cdot \phi_{M-1} - \ti \frac {\Delta t H(\phi_M^*,\phi_{M-1})} {\hbar} + \frac {\ti \Delta t} {\hbar} \sum_{k=1}^{M-1} \ti \hbar \phi_k^* \cdot \frac {\phi_k-\phi_{k-1}} {\Delta t} - H(\phi_k^*,\phi_{k-1})\Big\} \\
 &\equiv \int_{\phi(t_i)=\phi_i}^{\phi^*(t_f)=\phi_f^*} \mathcal{D}[\phi^*(t)]\mathcal{D}[\phi(t)] \ \exp\Big\{\phi_f^*\cdot\phi_f+\frac {\ti } \hbar \int_{t_i}^{t_f}\td t \ \Big(\ti\hbar \phi^*(t) \cdot \frac {\td \phi(t)} {\td t} -H\big(\phi^*(t),\phi(t)\big)\Big) \Big\}
-\end{aligned}$$
-
-
+\end{aligned}$$</p>
 <p>Note the subscripts index in the time slices.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -475,7 +771,7 @@ U(\phi_f^*,t_f;\phi_i,t_i) &\equiv \bra{\phi_f} \hat U(t_f,t_i)\ket{\phi_i} \\
     </summary>
     
 
-We slice time into $M$ intervals, which has the length $\Delta t=\frac {t_f-t_i} M$ , and $t_k=t_i+k \Delta t$ . So $t_0=t_i, t_M=t_f$ . Like we did above we insert closure relation of coherent state and then have:
+We slice time into  $M$  intervals, which has the length  $\Delta t=\frac {t_f-t_i} M$  , and  $t_k=t_i+k \Delta t$  . So  $t_0=t_i, t_M=t_f$  . Like we did above we insert closure relation of coherent state and then have:
 
 
 $$\begin{aligned}
@@ -484,7 +780,6 @@ U(\phi_f^*,t_f;\phi_i,t_i)&\equiv \bra{\phi_f}\hat U(t_f,t_i)\ket{\phi_i} \\
 &=\bra{\phi_M}\hat U(t_M,t_{M-1}) \int \td\phi_{M-1}^* \td \phi_{M-1} e^{-\phi_{M-1}^*\cdot \phi_{M-1}} \ket{\phi_{M-1}}\bra{\phi_{M-1}}\cdots \ket{\phi_0}\\
 &=\int_{\phi_0=\phi_i}^{\phi_M^*=\phi_f^*} \prod_{k=1}^{M-1} \Big(\td \phi_k^* \td \phi_k \ e^{-\phi_k^*\cdot \phi_k}\Big) \bra{\phi_M}\hat U(t_M,t_{M-1})\ket{\phi_{M-1}}\cdots \bra{\phi_1}\hat U(t_1,t_0)\ket{\phi_0}
 \end{aligned}$$
-
 
 
 Where we used the fact that a pair of Grassmann variable is commutable to any Grassmann number. So this equality hold also for Fermion system.
@@ -500,12 +795,10 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 So, the product of all matrix elements of time-evolution operator should be (also used the fact that a pair of Grassmann number is commutative to others)
 
 
 $$\bra{\phi_M}\hat U(t_M,t_{M-1})\ket{\phi_{M-1}}\cdots \bra{\phi_1}\hat U(t_1,t_0)\ket{\phi_0}\approx\exp\Big(\sum_{k=1}^{M} \phi_{k}^*\cdot \phi_{k-1}-\frac {\ti \Delta t} \hbar \sum_{k=1}^{M} H(\phi_k^*,\phi_{k-1})\Big)$$
-
 
 
 Then we have:
@@ -518,12 +811,10 @@ U(\phi_f^*,t_f;\phi_i,t_i)&=\int_{\phi_0=\phi_i}^{\phi_M^*=\phi_f^*} \prod_{k=1}
 \end{aligned}$$
 
 
-
-Then with the $M\rightarrow \infty$ , we can write down the form of functional integral:
+Then with the  $M\rightarrow \infty$  , we can write down the form of functional integral:
 
 
 $$U(\phi_f^*,t_f;\phi_i,t_i)=\int_{\phi(t_i)=\phi_i}^{\phi^*(t_f)=\phi_f^*} \mathcal{D}[\phi^*(t)]\mathcal{D}[\phi(t)] \ \exp\Big\{\phi_f^*\cdot\phi_f+\frac {\ti } \hbar \int_{t_i}^{t_f}\td t \ \Big(\ti\hbar \phi^*(t) \cdot \frac {\td \phi(t)} {\td t} -H\big(\phi^*(t),\phi(t)\big)\Big) \Big\}$$
-
 
 
 q.e.d.
@@ -533,29 +824,25 @@ q.e.d.
 
 <h2 id="partition-function-and-greens-function">Partition Function and Green&rsquo;s Function</h2>
 <p>Use the wick rotation, one can also express Partition function and Green&rsquo;s function with path integral:</p>
-<p><em>[Theorem]</em> : For coherent state, trace requires a <code>different boundary</code> condition for Fermion: $\phi_0=\phi , \phi_M^*=\zeta \phi$ . For detail see <a href="https://wzdlc1996.github.io/notes/qm/manybody1/">Coherent-State</a>. With this in mind, one has:</p>
-
-$$\begin{aligned}
+<p><em>[Theorem]</em> : For coherent state, trace requires a <code>different boundary</code> condition for Fermion:  $\phi_0=\phi , \phi_M^*=\zeta \phi$  . For detail see <a href="https://wzdlc1996.github.io/notes/qm/manybody1/">Coherent-State</a>. With this in mind, one has:</p>
+<p>$$\begin{aligned}
 \mathcal{Z} &\equiv \text{Tr} e^{-\beta \hat K} = \int \td \phi^* \td\phi \ e^{-\phi^*\cdot \phi} \bra{\zeta \phi} e^{-\beta\hat K}\ket{\phi} \\
 &=\lim_{M\rightarrow\infty} \int \prod_{k=1}^M \td \phi_k^* \td \phi_k \ \exp\Big(-\Delta t\sum_{k=1}^M \phi_k^* \big(\frac {\phi_k-\phi_{k-1}} {\Delta t}-\frac {\mu\phi_{k-1}} {\hbar}\big) +H(\phi_k^*,\phi_{k-1}) /\hbar\Big) \\
 &\equiv \int_{\phi(\beta\hbar)=\zeta \phi(0)} \mathcal{D}[\phi^*(\tau)]\mathcal{D}[\phi(\tau)] \ \exp\Big(-\int_0^{\beta\hbar} \td \tau \ \phi^*(\tau)\cdot \big(\frac {\td } {\td \tau}-\frac {\mu} {\hbar}\big)\phi(\tau)+\frac 1 \hbar H(\phi^*(\tau),\phi(\tau))\Big)
-\end{aligned}$$
-
-
+\end{aligned}$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-Similarly to the propagator, with the Wick rotation $t=-\ti \tau$ , we have $e^{-\beta \hat K}= e^{-\ti \hat K(-\ti \beta\hbar)/\hbar}$
+Similarly to the propagator, with the Wick rotation  $t=-\ti \tau$  , we have  $e^{-\beta \hat K}= e^{-\ti \hat K(-\ti \beta\hbar)/\hbar}$ 
 
 
 $$\begin{aligned}
 \bra{\zeta\phi} e^{-\beta\hat K} \ket{\phi} &\approx \int_{\phi_0=\phi_i}^{\phi_M^*=\zeta \phi^*} \prod_{k=1}^{M-1} \td \phi_k^*\td \phi_k \ \exp\Big(\phi_M^*\cdot \phi_{M-1}+\frac {\ti (-\ti)\Delta \tau} {\hbar}\sum_{k=1}^{M-1}\ti \hbar \phi_k^*\cdot \frac {\phi_k-\phi_{k-1}} {-\ti\Delta \tau} -\frac {\ti (-\ti\Delta \tau)} {\hbar}\sum_{k=1}^M K(\phi_k^*,\phi_{k-1})\Big) \\
 &=\int_{\phi_0=\phi_i}^{\phi_M^*=\zeta \phi^*} \prod_{k=1}^{M-1} \td \phi_k^*\td \phi_k \ \exp\Big(\phi_M^*\cdot \phi_{M-1}-\frac {\Delta \tau} {\hbar}\sum_{k=1}^{M-1}\hbar \phi_k^*\cdot \frac {\phi_k-\phi_{k-1}} {\Delta \tau} -\frac {\Delta \tau} {\hbar}\sum_{k=1}^M H(\phi_k^*,\phi_{k-1})-\mu \phi_k^*\cdot \phi_{k-1}\Big) \\
 \end{aligned}$$
-
 
 
 So the trace:
@@ -568,8 +855,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Take the limit of $M\rightarrow \infty$ , finally we have:
+Take the limit of  $M\rightarrow \infty$  , finally we have:
 
 
 $$\begin{aligned}
@@ -578,21 +864,17 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 q.e.d.
 
 
 </details>
 
 <p>Before we introduce the path integral formalism of Green&rsquo;s function, we introduce the following theorem first, which shows the relation between time-ordered expectation value and path integral.</p>
-<p><em>[Theorem]</em> : For a set of annihilation/creation operators $\hat a_{\alpha_i}(t) , \hat a_{\alpha_i'}^\dagger(t)$ , the time-ordered element of matrix is equal to the path integral:</p>
-
-$$\begin{aligned}
+<p><em>[Theorem]</em> : For a set of annihilation/creation operators  $\hat a_{\alpha_i}(t) , \hat a_{\alpha_i'}^\dagger(t)$  , the time-ordered element of matrix is equal to the path integral:</p>
+<p>$$\begin{aligned}
 \bra{\phi_f}\hat U(t_f,0)\mathcal{T}\Big\{\hat a_{\alpha_1}(t_1)&\cdots \hat a_{\alpha_n}(t_n)\hat a_{\alpha'_1}^\dagger(t'_1)\cdots \hat a_{\alpha'_n}(t'_n) \Big\}\hat U(0,t_i)\ket{\phi_i}\\
 &=\int_{\phi(t_i)=\phi_i}^{\phi^*(t_f)=\phi_f^*} \mathcal{D}[\phi^*(t)]\mathcal{D}[\phi(t)] \ \phi_{\alpha_1}(t_1)\cdots \phi_{\alpha_n}(t_n)\phi^*_{\alpha'_1}(t'_1)\cdots \phi^*_{\alpha'_n}(t_n') e^{\frac {\ti} {\hbar} S[\phi^*(t),\phi(t)]}
-\end{aligned}$$
-
-
+\end{aligned}$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -601,7 +883,7 @@ $$\begin{aligned}
 
 Let us begin with a simpler question: How to compute the matrix elements of a single field operator with Path Integral? . The answer is
 
-_[Lemma]_ : For a single field operator (or annihilation/creation operator), with the condition $t_i\lt t\lt t_f$, one has:
+_[Lemma]_ : For a single field operator (or annihilation/creation operator), with the condition  $t_i\lt t\lt t_f$ , one has:
 
 
 $$\begin{aligned}
@@ -610,8 +892,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Where $\hat O(t)=\hat U(0,t)\hat O\hat U(t,0)$ is its Heisenberg form. We will proof this lemma first:
+Where  $\hat O(t)=\hat U(0,t)\hat O\hat U(t,0)$  is its Heisenberg form. We will proof this lemma first:
 
 
 $$\begin{aligned}
@@ -620,12 +901,11 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
+Remember, we do not need to constraint  $t_i\lt t\lt t_f$  as long as we do not expand the propagator into path integral. So the expression above works for arbitrary  $t_i,t,t_f$  .
 
-Remember, we do not need to constraint $t_i\lt t\lt t_f$ as long as we do not expand the propagator into path integral. So the expression above works for arbitrary $t_i,t,t_f$ .
+1.  Let us consider the case of Boson. So the integral measure  $\td\phi^*\td\phi=\prod_\alpha \frac {\td \phi_\alpha^* \td \phi_\alpha} {2\pi\ti}$  and  $\phi_\alpha$  are c-numbers. Let us first consider a little more general case:
 
-1.  Let us consider the case of Boson. So the integral measure $\td\phi^*\td\phi=\prod_\alpha \frac {\td \phi_\alpha^* \td \phi_\alpha} {2\pi\ti}$ and $\phi_\alpha$ are c-numbers. Let us first consider a little more general case:
-
-    If $O$ is just a function of $\hat{\bm{a}}$ . That is $O(\phi^*,\phi')=O(\phi')$ . So we can firstly complete the integral of $\phi^*,\phi$ . Main part is:
+    If  $O$  is just a function of  $\hat{\bm{a}}$  . That is  $O(\phi^*,\phi')=O(\phi')$  . So we can firstly complete the integral of  $\phi^*,\phi$  . Main part is:
 
     
 $$\begin{aligned}
@@ -633,8 +913,7 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
-    We will show that the above integral $\int \td\phi^*\td\phi e^{-\phi^*\cdot(\phi-\phi')}\ket{\phi} = \ket{\phi'}$ . Let $\bra{z}$ is an arbitrary coherent state:
+    We will show that the above integral  $\int \td\phi^*\td\phi e^{-\phi^*\cdot(\phi-\phi')}\ket{\phi} = \ket{\phi'}$  . Let  $\bra{z}$  is an arbitrary coherent state:
 
     
 $$\begin{aligned}
@@ -643,12 +922,10 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
     Where we used the Gaussian integral for c-numbers:
 
     
 $$\int \prod_\alpha \frac {\td z_\alpha^*\td z_\alpha} {2\pi\ti} \exp\Big(-\bm{z}^\dagger \bm{H}\bm{z}+\bm{J}^\dagger\bm{z}+\bm{z}^\dagger\bm{J}\Big)=(\det \bm{H})^{-1}e^{-\bm{J}^\dagger\bm{H}\bm{J}}$$
-
 
 
     With such conclusion, we can write the integral as:
@@ -657,8 +934,7 @@ $$\int \prod_\alpha \frac {\td z_\alpha^*\td z_\alpha} {2\pi\ti} \exp\Big(-\bm{z
 $$\bra{\phi_f}\hat U(t_f,0)\hat O(t)\hat U(0,t_i)\ket{\phi_i}=\int \td\phi^*\td\phi \ U(\phi_f^*,t_f;\phi,t)O(\phi)U(\phi^*,t;\phi_i,t_i)$$
 
 
-
-    Then if $O$ is just a function of $\hat{\bm{a}}^\dagger$, or $O(\phi^*,\phi')=O(\phi^*)$ . So we can complete the integral of $\phi'^*,\phi'$ first, which is nothing but:
+    Then if  $O$  is just a function of  $\hat{\bm{a}}^\dagger$ , or  $O(\phi^*,\phi')=O(\phi^*)$  . So we can complete the integral of  $\phi'^*,\phi'$  first, which is nothing but:
 
     
 $$\begin{aligned}
@@ -667,19 +943,16 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
     So we have:
 
     
 $$\bra{\phi_f}\hat U(t_f,0)\hat O(t)\hat U(0,t_i)\ket{\phi_i}=\int \td\phi^*\td\phi \ U(\phi_f^*,t_f;\phi,t)O(\phi^*)U(\phi^*,t;\phi_i,t_i)$$
 
 
-
-    For the general case of $\hat O=O(\hat{\bm{a}}^\dagger,\hat{\bm{a}})$ , it has the form of:
+    For the general case of  $\hat O=O(\hat{\bm{a}}^\dagger,\hat{\bm{a}})$  , it has the form of:
 
     
 $$\hat O=\sum_{m,n}O_{m,n}\prod_\alpha \hat a_\alpha^{\dagger m_\alpha}\prod_\beta \hat a_\beta^{n_\beta}$$
-
 
 
     So:
@@ -695,21 +968,19 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
     Since the matrix elemens of time-evolution operator:
 
     
 $$U(\phi_1^*,t;\phi_2,t)=\bra{\phi_1}\phi_2\rangle = e^{\phi_1^*\cdot\phi_2}$$
 
 
-
     We can see, for the reason that coherent states are not orthogonal, so we cannot write it with PI for arbitrary operators.
 
 2.  For Fermions, properties above are usable because we just use the Gaussian integral formula, which is similar for Grassmann variables.
 
-So generally, we have the Lemma works for no matter Boson or Fermion. Then we consider the case of $n=1$ . Cases of $n\gt 1$ can be easily got by induction.
+So generally, we have the Lemma works for no matter Boson or Fermion. Then we consider the case of  $n=1$  . Cases of  $n\gt 1$  can be easily got by induction.
 
-For the case of $t_i\lt t_1\lt t_1'\lt t_f$ , one has:
+For the case of  $t_i\lt t_1\lt t_1'\lt t_f$  , one has:
 
 
 $$\begin{aligned}
@@ -721,23 +992,19 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Note that the anti-commutation relationship between two Grassmann variables $\phi_{\alpha_1},\phi_{\alpha_1'}$ omits the factor $\zeta$. The case of $t_i\lt t_1'\lt t_1\lt t_f$ can also be checked simply.
+Note that the anti-commutation relationship between two Grassmann variables  $\phi_{\alpha_1},\phi_{\alpha_1'}$  omits the factor  $\zeta$ . The case of  $t_i\lt t_1'\lt t_1\lt t_f$  can also be checked simply.
 
 
 </details>
 
 <p>This theorem connects the <code>time-ordered correlation function</code> of <code>Field operators</code> and the <code>path integral</code> . With this in mind, one can finally write down the equality between Green&rsquo;s function and path integral:</p>
 <p><em>[Theorem]</em> : Here we just write down the path integral formalism for thermal Green&rsquo;s function. Real time Green&rsquo;s function can be simply obtained by the analytical extension. As for the real time Green&rsquo;s function for a specific state, the theorem above can be directly applied.</p>
-
-$$\begin{aligned}
+<p>$$\begin{aligned}
 \mathcal{G}^{(n)}(\alpha_1,\tau_1;\cdots , \alpha_n,\tau_n;&\alpha_1',\tau_1';\cdots,\alpha_n',\tau_n')\equiv (-1)^n \Big\langle \mathcal{T}\big\{\hat a_{\alpha_1}(\tau_1)\cdots\hat a_{\alpha_n}(\tau_n)\hat a_{\alpha_1'}^\dagger(\tau_1')\cdots \hat a_{\alpha_n'}^\dagger(\tau_n')\big\}\Big\rangle \\
 &=\frac {(-1)^n} {\mathcal{Z}} \int_{\phi(\beta\hbar)=\zeta \phi(0)} \mathcal{D}[\phi^*(\tau)]\mathcal{D}[\phi(\tau)] \ \exp\Big(-\frac 1 \hbar \int_0^{\beta\hbar} \td \tau \ \phi^*(\tau)\cdot \big(\hbar \frac {\td} {\td\tau}-\mu\big)\phi(\tau)+H(\phi^*(\tau),\phi(\tau))\Big) \\
 &\indent \times \phi_{\alpha_1}(\tau_1)\cdots \phi_{\alpha_n}(\tau_n)\phi_{\alpha_1'}^*(\tau_1')\cdots\phi_{\alpha_n'}^*(\tau_n')
-\end{aligned}$$
-
-
-<p>As usual, $\tau_1,\cdots$ are in the interval $[0,\beta\hbar]$ .</p>
+\end{aligned}$$</p>
+<p>As usual,  $\tau_1,\cdots$  are in the interval  $[0,\beta\hbar]$  .</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -753,7 +1020,6 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 Where the integrand can be compute with the theorem above, one need only make the Wich rotation for all time variables:
 
 
@@ -766,24 +1032,17 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Where we used the same strategy to absorb the integral of $\td\phi^*\td\phi$ into the path integral $\mathcal{D}[\phi^*(\tau)]\mathcal{D}[\phi(\tau)]$ , just like what we did for the partition function.
+Where we used the same strategy to absorb the integral of  $\td\phi^*\td\phi$  into the path integral  $\mathcal{D}[\phi^*(\tau)]\mathcal{D}[\phi(\tau)]$  , just like what we did for the partition function.
 
 
 </details>
 
 <h2 id="non-interacting-system">Non-interacting System</h2>
 <p>We compute some quantities of <code>non-interacting system</code> to show how to apply the Path integral formalism on solving physics question. The non-interacting systems usually have a quadratic Hamiltonian. In the basis of energy eigenstates, we can write the Hamiltonian as the diagonal form:</p>
-
-$$\hat H=\sum_\alpha \epsilon_\alpha \hat a_\alpha^\dagger \hat a$$
-
-
+<p>$$\hat H=\sum_\alpha \epsilon_\alpha \hat a_\alpha^\dagger \hat a$$</p>
 <h3 id="partition-function">Partition function</h3>
 <p>Partition function (of Grand ensemble) of the non-interacting system is:</p>
-
-$$\mathcal{Z}=\prod_\alpha \Big(1-\zeta e^{-\beta(\epsilon_\alpha-\mu)}\Big)^{-\zeta}$$
-
-
+<p>$$\mathcal{Z}=\prod_\alpha \Big(1-\zeta e^{-\beta(\epsilon_\alpha-\mu)}\Big)^{-\zeta}$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -799,15 +1058,13 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 With the diagonal form of the non-interacting system, we have:
 
 
 $$H(\phi_k^*,\phi_k)=\sum_{\alpha} \epsilon_\alpha \phi^*_{k,\alpha}\phi_{k-1,\alpha}$$
 
 
-
-So the integral is nothing but a Gaussian integral for c-number (Boson) or for Grassmann variable (Fermion). The exponent can be written as quadratic form of the vector $(\phi_1,\cdots,\phi_M)^T$:
+So the integral is nothing but a Gaussian integral for c-number (Boson) or for Grassmann variable (Fermion). The exponent can be written as quadratic form of the vector  $(\phi_1,\cdots,\phi_M)^T$ :
 
 
 $$\begin{aligned}
@@ -822,8 +1079,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Where $a = 1-\frac {\Delta \tau} {\hbar} (\epsilon_\alpha -\mu)$
+Where  $a = 1-\frac {\Delta \tau} {\hbar} (\epsilon_\alpha -\mu)$ 
 
 Then we can evaluate the Gaussian integral and obtain:
 
@@ -841,12 +1097,10 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 As the limit:
 
 
 $$\lim_{M\rightarrow \infty} \Big(1-\frac {\Delta \tau} {\hbar}(\epsilon_\alpha-\mu)\Big)^M\equiv\lim_{M\rightarrow \infty} \Big(1-\frac {\beta} {M}(\epsilon_\alpha-\mu)\Big)^M=e^{\beta(\mu-\epsilon_\alpha)}$$
-
 
 
 The partition function has an explicit form:
@@ -855,8 +1109,7 @@ The partition function has an explicit form:
 $$\mathcal{Z}=\prod_\alpha \Big(1-\zeta e^{-\beta(\epsilon_\alpha-\mu)}\Big)^{-\zeta}$$
 
 
-
-Which is the same as the result of $\sum_{\{n_\alpha\}} e^{-\beta \sum_\alpha \epsilon_\alpha n_\alpha +\mu\beta \sum_\alpha n_\alpha}$.
+Which is the same as the result of  $\sum_{\{n_\alpha\}} e^{-\beta \sum_\alpha \epsilon_\alpha n_\alpha +\mu\beta \sum_\alpha n_\alpha}$ .
 
 q.e.d.
 
@@ -865,15 +1118,9 @@ q.e.d.
 
 <h3 id="greens-function">Green&rsquo;s function</h3>
 <p>Thermal Green&rsquo;s function of the non-interacting system is:</p>
-
-$$\mathcal{G}(\alpha,\tau;\alpha',\tau')=-\delta_{\alpha,\alpha'}e^{-(\epsilon_\alpha-\mu)(\tau-\tau')/\hbar}\Big(\Theta(\tau-\tau')(1+\zeta n_\alpha)+\zeta \Theta(\tau'-\tau)n_\alpha\Big)$$
-
-
-<p>Where $n_\alpha$ is the particle number distribution function:</p>
-
-$$n_\alpha=\frac 1 {e^{\beta(\epsilon_\alpha-\mu)}-\zeta}$$
-
-
+<p>$$\mathcal{G}(\alpha,\tau;\alpha',\tau')=-\delta_{\alpha,\alpha'}e^{-(\epsilon_\alpha-\mu)(\tau-\tau')/\hbar}\Big(\Theta(\tau-\tau')(1+\zeta n_\alpha)+\zeta \Theta(\tau'-\tau)n_\alpha\Big)$$</p>
+<p>Where  $n_\alpha$  is the particle number distribution function:</p>
+<p>$$n_\alpha=\frac 1 {e^{\beta(\epsilon_\alpha-\mu)}-\zeta}$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -893,7 +1140,6 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
     Where:
 
     
@@ -906,8 +1152,7 @@ $$\bm{S}_\alpha=\begin{bmatrix}
     \end{bmatrix}$$
 
 
-
-    and $a=1-\frac {\Delta \tau} {\hbar}(\epsilon_\alpha-\mu)$ . So:
+    and  $a=1-\frac {\Delta \tau} {\hbar}(\epsilon_\alpha-\mu)$  . So:
 
     
 $$\begin{aligned}
@@ -916,29 +1161,25 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
     But it is not convenient to calculate.
 
 2.  **Fourier transform method**
-    To fulfill the boundary condition $\phi(\beta\hbar)=\zeta \phi(0)$ , the discrete field has the Fourier series:
+    To fulfill the boundary condition  $\phi(\beta\hbar)=\zeta \phi(0)$  , the discrete field has the Fourier series:
 
     
 $$\phi_{\alpha,k}=\frac 1 {\sqrt{M}} \sum_{n=0}^{M-1} e^{-\ti \omega_n k\Delta \tau} \tilde{\phi}_{\alpha,n}$$
 
 
-
-    Where $\omega_n=\begin{cases} \frac {(2n+1)\pi} {\hbar\beta} & \zeta=-1 \\ \frac {2n\pi} {\beta\hbar} & \zeta= 1\end{cases}$ is called `Matsubara frequency`. Obviously such Fourier transform is unitary therefore the integral measure is invariant:
+    Where  $\omega_n=\begin{cases} \frac {(2n+1)\pi} {\hbar\beta} & \zeta=-1 \\ \frac {2n\pi} {\beta\hbar} & \zeta= 1\end{cases}$  is called `Matsubara frequency`. Obviously such Fourier transform is unitary therefore the integral measure is invariant:
 
     
 $$\mathcal{D}\phi^*\mathcal{D}\phi = \mathcal{D}\tilde{\phi}^*\mathcal{D}\tilde{\phi}$$
-
 
 
     So the action:
 
     
 $$S/\hbar=\bm{\phi}_\alpha^\dagger \bm{S}_\alpha \bm{\phi}_\alpha=\Delta \tau \sum_n \Big(\frac {1-e^{\ti\omega_n\Delta \tau}} {\Delta \tau}+\frac {\epsilon_\alpha -\mu} {\hbar} e^{\ti\omega_n\Delta\tau}\Big)|\tilde{\phi}_{n,\alpha}|^2$$
-
 
 
     With the Fourier transformation of Green's function:
@@ -953,19 +1194,16 @@ $$\begin{aligned}
     \end{aligned}$$
 
 
-
     It is easy to compute because the action is diagonalized by the Fourier transformation. Then we have:
 
     
 $$\mathcal{G}(\alpha,\tau;\alpha',\tau')=\frac 1 {\beta\hbar} \sum_{\omega_n} e^{-\ti\omega_n(\tau-\tau')}\mathcal{G}(\alpha,\alpha';\ti\omega_n)$$
 
 
-
     with the frequency sums formula:
 
     
 $$\frac 1 {\beta\hbar} \sum_{\omega_n} f(\ti\omega_n) =\frac 1 {2\pi\ti\beta\hbar}\oint \td z \ f(z) h_\zeta^{\pm}(z)$$
-
 
 
     Where:
@@ -979,12 +1217,10 @@ $$\begin{cases}
     \end{cases}$$
 
 
-
     Here we use the corollary:
 
     
 $$\frac 1 {\hbar\beta} \sum_{\omega_n} \frac {e^{\ti\omega_n \Delta}} {\ti\omega_n-x}=-\frac {\zeta e^{\Delta\times x}} {e^{\beta\hbar x}-\zeta} \ ; \ \text{ for }\Delta \gt 0$$
-
 
 
     So we have:
@@ -993,19 +1229,16 @@ $$\frac 1 {\hbar\beta} \sum_{\omega_n} \frac {e^{\ti\omega_n \Delta}} {\ti\omega
 $$\Theta(\tau'-\tau)\mathcal{G}(\alpha,\tau;\alpha',\tau')=-\delta_{\alpha,\alpha'}\zeta e^{-(\epsilon_\alpha-\mu)(\tau-\tau')/\hbar}n_\alpha$$
 
 
-
-    Using the periodicity of thermal Green's function, if $\tau\gt \tau'$:
+    Using the periodicity of thermal Green's function, if  $\tau\gt \tau'$ :
 
     
 $$\mathcal{G}(\alpha,\tau;\alpha',\tau')=\zeta\mathcal{G}(\alpha,\tau-\tau';\alpha',\beta\hbar)=- \delta_{\alpha,\alpha'}e^{-(\epsilon_\alpha-\mu)(\tau-\tau')/\hbar}e^{\beta(\epsilon_\alpha-\mu)}n_\alpha$$
-
 
 
     So we finally have:
 
     
 $$\mathcal{G}(\alpha,\tau;\alpha',\tau')=-\delta_{\alpha,\alpha'}e^{-(\epsilon_\alpha-\mu)(\tau-\tau')/\hbar}\Big(\Theta(\tau-\tau')(1+\zeta n_\alpha)+\zeta \Theta(\tau'-\tau)n_\alpha\Big)$$
-
 
 
     q.e.d.

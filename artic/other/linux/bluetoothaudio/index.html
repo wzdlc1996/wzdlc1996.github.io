@@ -388,7 +388,23 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            <h1 id="switch-hsv-to-a2dp">Switch HSV to A2DP</h1>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<h1 id="switch-hsv-to-a2dp">Switch HSV to A2DP</h1>
 <h2 id="a2dp-not-working-with-pulseaudio">A2DP not working with PulseAudio</h2>
 <p>Here is the explanation from ArchWiki: <a href="https://wiki.archlinux.org/index.php/Bluetooth_headset#A2DP_not_working_with_PulseAudio">A2DP not working with PulseAudio</a></p>
 <p>With <code>Blueman-manager</code> version <code>2.06</code> and <code>PulseAudio</code> version <code>12.2</code> , there is an issue that one cannot switch to A2DP with GUI. It will post the error message that <code>Fail to change profile to A2DP</code> . It seems only happening in Gnome. One need to avoid the <code>GDM</code> to start <code>PulseAudio</code>. The solution is:</p>
@@ -404,8 +420,8 @@ autocomplete('#aa-search-input',
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">nano /usr/bin/start-pulseaudio-x11
 <span class="k">if</span>
 ...
-    <span class="k">if</span> <span class="o">[</span> x”<span class="nv">$SESSION_MANAGER</span>” !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-    /usr/bin/pactl load-module module-x11-xsmp “display<span class="o">=</span><span class="nv">$DISPLAY</span> <span class="nv">session_manager</span><span class="o">=</span><span class="nv">$SESSION_MANAGER</span>” &gt; /dev/null
+    <span class="k">if</span> <span class="o">[</span> x”<span class="nv"> $SESSION_MANAGER” != x ] ; then
+        /usr/bin/pactl load-module module-x11-xsmp “display=$ DISPLAY</span> <span class="nv">session_manager</span><span class="o">=</span><span class="nv">$SESSION_MANAGER</span>” &gt; /dev/null
     <span class="k">fi</span>
 
  <span class="c1">#Insert this line#</span>

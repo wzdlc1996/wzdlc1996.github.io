@@ -393,56 +393,373 @@ autocomplete('#aa-search-input',
 
 
           <div class="post-content markdown">
-            <h1 id="quantization-of-klein-gordon-field">Quantization of Klein-Gordon Field</h1>
+          
+            
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+<h1 id="quantization-of-klein-gordon-field">Quantization of Klein-Gordon Field</h1>
 <h2 id="canonical-quantization-of-real-valued-scalar-field">Canonical Quantization of real-valued Scalar Field</h2>
 <p>Here we only consider the <code>real-valued</code> Scalar Field. The result for charged one (complex-valued) is easily to be obtained. The Hamiltonian of Scalar Field system is:</p>
-
-$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^2 \big)$$
-
-
-<p>To quantized this system, we need let the <code>canonical coordinate and momentum</code> be <code>operators on Hilbert space</code>: $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$ . For simplicity, we will omit the ^ of the operator symbol. Because in the future we will discuss the Quantum Field Theory only.</p>
+<p>$$H=\frac 1 2 \int \td^3 \bm{x} \ \big(\pi^2+\nabla\phi\cdot \nabla\phi+m^2\phi^2 \big)$$</p>
+<p>To quantized this system, we need let the <code>canonical coordinate and momentum</code> be <code>operators on Hilbert space</code>:  $\pi(\bm{x})\rightarrow \hat \pi(\bm{x}) \ ; \ \phi(\bm{x})\rightarrow \hat \phi(\bm{x})$  . For simplicity, we will omit the ^ of the operator symbol. Because in the future we will discuss the Quantum Field Theory only.</p>
 <p>The <code>operator</code> should satisfy the <code>commutation relation</code>:</p>
-
-$$[\pi(\bm{x}),\pi(\bm{x}')]=[\phi(\bm{x}),\phi(\bm{x}')]=0\ ; \ [\phi(\bm{x}),\pi(\bm{x}')]=\ti \delta^3(\bm{x}-\bm{x}')$$
-
-
+<p>$$[\pi(\bm{x}),\pi(\bm{x}')]=[\phi(\bm{x}),\phi(\bm{x}')]=0\ ; \ [\phi(\bm{x}),\pi(\bm{x}')]=\ti \delta^3(\bm{x}-\bm{x}')$$</p>
 <p>They are operators in <code>Schrodinger Picture</code>, which are independent of time. Equivalently, we can say they are operators in <code>Heisenberg Picture</code> with the same time. That is why these relations are so-called as <code>equal-time commutation relation</code></p>
 <p>One can rewrite them into the plane wave expansion. Like what we did in Classical Theory. In Schrodinger Picture:</p>
-
-$$\begin{aligned}
+<p>$$\begin{aligned}
 \phi(\bm{x})&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{\ti \bm{k}\cdot \bm{x}} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k})^{\dagger} \Big\} \\
 \pi(\bm{x})&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{\ti \bm{k}\cdot \bm{x}} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k})^{\dagger} \Big\} \\
-\end{aligned}$$
-
-
-<p>Where we let the coefficient $a^*$ to be operator $a^\dagger$ so that $\phi$ will be a Hermitian operator, corresponding to the real-valued field requirement, and $\omega_{|\bm{k}|}=\sqrt{|\bm{k}|^2+m^2}$</p>
-<p>We can write the inverse transform, which will represent $a(\bm{k})$ by $\phi,\pi$:</p>
-
-$$\begin{aligned}
+\end{aligned}$$</p>
+<p>Where we let the coefficient  $a^*$  to be operator  $a^\dagger$  so that  $\phi$  will be a Hermitian operator, corresponding to the real-valued field requirement, and  $\omega_{|\bm{k}|}=\sqrt{|\bm{k}|^2+m^2}$ </p>
+<p>We can write the inverse transform, which will represent  $a(\bm{k})$  by  $\phi,\pi$ :</p>
+<p>$$\begin{aligned}
 a(\bm{k})&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{-\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{-\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
 a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
-\end{aligned}$$
-
-
+\end{aligned}$$</p>
 <p>And their commutator:</p>
-
-$$[a(\bm{k}),a(\bm{k}')]=[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0 \ ; \ [a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$$
-
-
+<p>$$[a(\bm{k}),a(\bm{k}')]=[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0 \ ; \ [a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-Using the 3-d delta function: $\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot(\bm{x}-\bm{y})}$ , we have:
+Using the 3-d delta function:  $\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot(\bm{x}-\bm{y})}$  , we have:
 
 
 $$\begin{aligned}
 \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big(a(\bm{k})+a(-\bm{k})^\dagger\Big)&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \phi(\bm{x})\\
 \frac {-\ti\omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big(a(\bm{k})-a(-\bm{k})^\dagger\Big)&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} \pi(\bm{x})
 \end{aligned}$$
-
 
 
 That is:
@@ -452,7 +769,6 @@ $$\begin{aligned}
 a(\bm{k})&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{-\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{-\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
 a(\bm{k})^\dagger&=\int \frac {\td^3\bm{x}} {(2\pi)^{3/2}} \Big\{\sqrt{\frac  {\omega_{|\bm{k}|} } 2} e^{\ti\bm{k}\cdot \bm{x}}\phi(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} e^{\ti \bm{k}\cdot \bm{x}} \pi(\bm{x}) \Big\} \\
 \end{aligned}$$
-
 
 
 We can compute some commutator:
@@ -467,8 +783,7 @@ $$\begin{aligned}[]
 \end{aligned}$$
 
 
-
-Similarly, one can prove $[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0$
+Similarly, one can prove  $[a(\bm{k})^\dagger,a(\bm{k}')^\dagger]=0$ 
 
 Then we compute:
 
@@ -483,36 +798,26 @@ $$\begin{aligned}[]
 
 
 
-
 </details>
 
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
-
-$$\hat H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} \big(a(\bm{k})^\dagger a(\bm{k})+a(\bm{k})a(\bm{k})^\dagger\big)=E_0+\int \td^3 \bm{k} \ \omega_{|\bm{k}|} a(\bm{k})^\dagger a(\bm{k})$$
-
-
-<p>Where $E_0=\frac 1 2 \int\td^3\bm{k} \ \omega_{|\bm{k}|}\delta(0)$. This is a $\infty$ quantity. But it will not bother us if we admit that the absolute value of energy is non-measurable. But the relative value is work.</p>
+<p>$$\hat H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} \big(a(\bm{k})^\dagger a(\bm{k})+a(\bm{k})a(\bm{k})^\dagger\big)=E_0+\int \td^3 \bm{k} \ \omega_{|\bm{k}|} a(\bm{k})^\dagger a(\bm{k})$$</p>
+<p>Where  $E_0=\frac 1 2 \int\td^3\bm{k} \ \omega_{|\bm{k}|}\delta(0)$ . This is a  $\infty$  quantity. But it will not bother us if we admit that the absolute value of energy is non-measurable. But the relative value is work.</p>
 <p><mark> But in General Relativistic theory, the energy value will influence the space-time structure. This argument will not work at that situation.</mark></p>
 <p>With this argument, we can simply write the Hamiltonian as:</p>
-
-$$\hat H= \int \td^3 \bm{k} \ \omega_{|\bm{k}|} a(\bm{k})^\dagger a(\bm{k})$$
-
-
+<p>$$\hat H= \int \td^3 \bm{k} \ \omega_{|\bm{k}|} a(\bm{k})^\dagger a(\bm{k})$$</p>
 <p>One can also write these operators in <code>Heisenberg Picture</code> :</p>
-
-$$\begin{aligned}
+<p>$$\begin{aligned}
 \phi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
 \pi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac {\ti \omega_{|\bm{k}|}} {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ -e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\} \\
-\end{aligned}$$
-
-
+\end{aligned}$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-With the commutator of $a,a^\dagger$ and $\hat H$:
+With the commutator of  $a,a^\dagger$  and  $\hat H$ :
 
 
 $$\begin{aligned}[]
@@ -521,15 +826,13 @@ $$\begin{aligned}[]
 \end{aligned}$$
 
 
-
-Noting that $\hat H$ is independent of time, we have:
+Noting that  $\hat H$  is independent of time, we have:
 
 
 $$\begin{aligned}
 a_H(\bm{k}) &=e^{\ti t\hat H} a(\bm{k}) e^{-\ti t \hat H}=e^{-\ti \omega_{|\bm{k}|} t} a(\bm{k}) \\
 a_H(\bm{k})^\dagger &= e^{\ti \omega_{|\bm{k}|} t} a(\bm{k})^\dagger
 \end{aligned}$$
-
 
 
 That is, in Heisenberg Picture, the operators which is dependent of time:
@@ -542,39 +845,23 @@ $$\begin{aligned}
 
 
 
-
 </details>
 
 <h2 id="hilbert-space-of-scalar-field">Hilbert Space of Scalar Field</h2>
 <p>The Hamiltonian of Real-valued Scalar Field is the same as the Hamiltonian of a set of non-interaction harmonic oscillators. Then we can construct the <code>Hilbert space</code> by the <code>ground state</code> and <code>creation/annihilation operators</code>. This is also called as <code>Fock space</code>.</p>
-<p><em>[Definition]</em> : <code>vacuum of the Klein-Gordon Field</code> is the ground state of Scalar Field. Usually denote it as $\ket{0}$ , and it is zero if annihilation operator acts on it:</p>
-
-$$a(\bm{k}) \ket{0}=0 \ ; \ \forall \bm{k}$$
-
-
-<p>Assume that it is normalized as $\bra{0}0\rangle=1$ . Then the energy of vacuum is zero: $\bra{0}\hat H\ket{0}=0$.</p>
-<p><em>[Definition]</em> : <code>1-particle</code> state is proportional to a creation operator acting on vacuum. Usually denote it as $\ket{\bm{k}}$ :</p>
-
-$$\ket{\bm{k}} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k})^\dagger \ket{0}$$
-
-
+<p><em>[Definition]</em> : <code>vacuum of the Klein-Gordon Field</code> is the ground state of Scalar Field. Usually denote it as  $\ket{0}$  , and it is zero if annihilation operator acts on it:</p>
+<p>$$a(\bm{k}) \ket{0}=0 \ ; \ \forall \bm{k}$$</p>
+<p>Assume that it is normalized as  $\bra{0}0\rangle=1$  . Then the energy of vacuum is zero:  $\bra{0}\hat H\ket{0}=0$ .</p>
+<p><em>[Definition]</em> : <code>1-particle</code> state is proportional to a creation operator acting on vacuum. Usually denote it as  $\ket{\bm{k}}$  :</p>
+<p>$$\ket{\bm{k}} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k})^\dagger \ket{0}$$</p>
 <p>And the orthonormal relation is:</p>
-
-$$\bra{\bm{k}}\bm{k}'\rangle = 2\omega_{|\bm{k}|} \delta^3(\bm{k}-\bm{k}')$$
-
-
-<p>One can prove that under the Lorentz Transformation that leads $\Lambda_{\bm{k}\rightarrow \bm{0}} k=(m,0,0,0)$, one has</p>
-
-$$\bra{\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}} \Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}'\rangle = \bra{\bm{k}}\bm{k}'\rangle$$
-
-
+<p>$$\bra{\bm{k}}\bm{k}'\rangle = 2\omega_{|\bm{k}|} \delta^3(\bm{k}-\bm{k}')$$</p>
+<p>One can prove that under the Lorentz Transformation that leads  $\Lambda_{\bm{k}\rightarrow \bm{0}} k=(m,0,0,0)$ , one has</p>
+<p>$$\bra{\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}} \Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}'\rangle = \bra{\bm{k}}\bm{k}'\rangle$$</p>
 <p>in this degree we say this quantity is invariant under Lorentz transformation.</p>
 <p>And the <code>complete relation</code> in <code>1-particle</code> subspace:</p>
-
-$$1_{\text{one-particle}}=\int \frac {\td^3\bm{k}} {2\omega_{|\bm{k}|}} \ket{\bm{k}}\bra{\bm{k}}$$
-
-
-<p>Where $\int \td^3\bm{p} (2\omega_{|\bm{p}|})^{-1}=\int_{p^0\gt 0} \td^4p \  \delta(p^\mu p_\mu-m^2)$ is covariant measure.</p>
+<p>$$1_{\text{one-particle}}=\int \frac {\td^3\bm{k}} {2\omega_{|\bm{k}|}} \ket{\bm{k}}\bra{\bm{k}}$$</p>
+<p>Where  $\int \td^3\bm{p} (2\omega_{|\bm{p}|})^{-1}=\int_{p^0\gt 0} \td^4p \  \delta(p^\mu p_\mu-m^2)$  is covariant measure.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -589,8 +876,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Consider Lorentz transform acting on $\bm{k},\bm{p}$ :
+Consider Lorentz transform acting on  $\bm{k},\bm{p}$  :
 
 
 $$\begin{aligned}
@@ -599,8 +885,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Where $\Lambda \bm{k}$ means the spatial components of $\Lambda(\omega_{|\bm{k}|},\bm{k})$ . And:
+Where  $\Lambda \bm{k}$  means the spatial components of  $\Lambda(\omega_{|\bm{k}|},\bm{k})$  . And:
 
 
 $$\begin{aligned}
@@ -614,21 +899,18 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-Where $\det \Lambda'_\mu$ are determinants of minors of $\Lambda$ with cancelling $0$-row-$\mu$-column. That is:
+Where  $\det \Lambda'_\mu$  are determinants of minors of  $\Lambda$  with cancelling  $0$ -row- $\mu$ -column. That is:
 
 
 $$\det \Lambda =\sum_{\mu=0}^3 (-1)^\mu \Lambda^0_{\indent \mu} \det \Lambda'_\mu $$
 
 
+For  $k_\mu= m \Lambda^0_{\indent \mu}$  , we have that:  $\Lambda^0_{\indent \mu}k^\mu = m \Lambda^0_{\indent \mu} \Lambda^{0\mu}=m\Lambda^0_{\indent \mu} \Lambda_0^{\indent \mu}=m\delta_0^0=m$  , which means that in this case:  $\Lambda k=(m,0,0,0)$  . And  $\det J=\frac m {k^0}\det \Lambda=m/k^0$ 
 
-For $k_\mu= m \Lambda^0_{\indent \mu}$ , we have that: $\Lambda^0_{\indent \mu}k^\mu = m \Lambda^0_{\indent \mu} \Lambda^{0\mu}=m\Lambda^0_{\indent \mu} \Lambda_0^{\indent \mu}=m\delta_0^0=m$ , which means that in this case: $\Lambda k=(m,0,0,0)$ . And $\det J=\frac m {k^0}\det \Lambda=m/k^0$
-
-That means under this special Lorentz Transformation: $\Lambda_{\bm{k}\rightarrow \bm{0}} (\sqrt{m^2+\bm{k}^2},k^1,k^2,k^3) =(m,0,0,0)$ :
+That means under this special Lorentz Transformation:  $\Lambda_{\bm{k}\rightarrow \bm{0}} (\sqrt{m^2+\bm{k}^2},k^1,k^2,k^3) =(m,0,0,0)$  :
 
 
 $$\langle\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}|\Lambda_{\bm{k}\rightarrow \bm{0}}\bm{p}\rangle =2k^0 \prod_i \delta(k^i-p^i)=\bra{\bm{k}}\bm{p}\rangle $$
-
 
 
 q.e.d.
@@ -643,21 +925,18 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 Where:
 
 
 $$\tilde{f}(\bm{p})=f(p^0=\omega_{|\bm{p}|},\bm{p})+f(p^0=-\omega_{|\bm{p}|},\bm{p})$$
 
 
-
-If $f$ is independent of $p^0$ , it is simply $\tilde{f}=2f$.
+If  $f$  is independent of  $p^0$  , it is simply  $\tilde{f}=2f$ .
 
 In this case, we can write down the equality of integral measure:
 
 
 $$\int \frac {\td^3 \bm{p}} {2\omega_{|\bm{p}|}}=\frac 1 2\int \td^4 p \ \delta(p^\mu p_\mu -m^2)=\int_{p^0\gt 0} \td^4 p \ \delta(p^\mu p_\mu -m^2)$$
-
 
 
 The right-hand-side of the equality is obvious invariant under (Orthochronous) Lorentz Transformation.
@@ -666,21 +945,12 @@ The right-hand-side of the equality is obvious invariant under (Orthochronous) L
 </details>
 
 <p>In Fock space, the Lorentz transformation for coordinates induces the Unitary transformation for operators (In finite-dimensional space Lorentz group has no unitary representation because it is not <code>tight</code>. But Fock space is infinite-dimensional.).</p>
-<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>) $x\rightarrow x'=\Lambda x$ , the corresponding operator on Hilbert space is $U(\Lambda)$ , then we have:</p>
-
-$$U(\Lambda)\ket{\bm{k}}=\ket{\Lambda \bm{k}}$$
-
-
-<p>The vacuum is unique: $U(\Lambda)\ket{0}=\ket{0}$ . And the creation operator:</p>
-
-$$U(\Lambda) a(\bm{k})^\dagger U(\Lambda)^{-1} = \sqrt {\frac {\omega_{|\Lambda \bm{k}|}} {\omega_{|\bm{k}|}}} a(\Lambda \bm{k})^\dagger$$
-
-
+<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>)  $x\rightarrow x'=\Lambda x$  , the corresponding operator on Hilbert space is  $U(\Lambda)$  , then we have:</p>
+<p>$$U(\Lambda)\ket{\bm{k}}=\ket{\Lambda \bm{k}}$$</p>
+<p>The vacuum is unique:  $U(\Lambda)\ket{0}=\ket{0}$  . And the creation operator:</p>
+<p>$$U(\Lambda) a(\bm{k})^\dagger U(\Lambda)^{-1} = \sqrt {\frac {\omega_{|\Lambda \bm{k}|}} {\omega_{|\bm{k}|}}} a(\Lambda \bm{k})^\dagger$$</p>
 <p>Same for annihilation operator. And one can check that the field operator will be:</p>
-
-$$\phi'(x'=\Lambda x)\equiv U(\Lambda)\phi(x)U(\Lambda)^{-1} = \phi(x'=\Lambda x)$$
-
-
+<p>$$\phi'(x'=\Lambda x)\equiv U(\Lambda)\phi(x)U(\Lambda)^{-1} = \phi(x'=\Lambda x)$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -693,7 +963,6 @@ For the field operator:
 $$\phi(x)=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac 1 {\sqrt{2\omega_{|\bm{k}|}}} \Big\{ e^{-\ti k_\mu x^\mu} a(\bm{k})+e^{\ti k_\mu x^\mu} a(\bm{k})^{\dagger} \Big\}$$
 
 
-
 We have:
 
 
@@ -704,24 +973,19 @@ U(\Lambda)\phi(x)U(\Lambda)^{-1}&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \frac
 \end{aligned}$$
 
 
-
-Where we used $k_\mu x^\mu = (\Lambda k)_\mu (\Lambda x)^\mu$ , and the covariant of the integral measure:
+Where we used  $k_\mu x^\mu = (\Lambda k)_\mu (\Lambda x)^\mu$  , and the covariant of the integral measure:
 
 
 $$\int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}}$$
 
 
-
-together with that $\Lambda$ is the special Lorentz Transformation.
+together with that  $\Lambda$  is the special Lorentz Transformation.
 
 
 </details>
 
-<p>For general cases, if $\Lambda$ is a general Lorentz Transformation, this conclusion works for operators in Schrodinger equation for they are independent of time, or equivalently, the zero-component of $k$ :</p>
-
-$$\phi'(\bm{x}'=\Lambda \bm{x})\equiv U(\Lambda)\phi(\bm{x})U(\Lambda)^{-1} = \phi(\bm{x}'=\Lambda \bm{x})$$
-
-
+<p>For general cases, if  $\Lambda$  is a general Lorentz Transformation, this conclusion works for operators in Schrodinger equation for they are independent of time, or equivalently, the zero-component of  $k$  :</p>
+<p>$$\phi'(\bm{x}'=\Lambda \bm{x})\equiv U(\Lambda)\phi(\bm{x})U(\Lambda)^{-1} = \phi(\bm{x}'=\Lambda \bm{x})$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Some discussion about this and the classical form
@@ -734,28 +998,24 @@ This seems to violate the transformation regulation in Classical theory which is
 $$\psi(x)\rightarrow \psi'(x'=\Lambda_{\text{spacetime}}(\omega)x) = \big(\Lambda_{\text{Field}}(\omega)\psi\big)(x=\Lambda_{\text{spacetime}}(\omega)^{-1}x') $$
 
 
+But actually not. Here we use the field operator  $\phi$  to create or annihilate at some spacetime point. But in classical theory we discussed that the coordinate transform with a `fixed` field. Like the passive transformation & active transformation, they are just mutually inverse.
 
-But actually not. Here we use the field operator $\phi$ to create or annihilate at some spacetime point. But in classical theory we discussed that the coordinate transform with a `fixed` field. Like the passive transformation & active transformation, they are just mutually inverse.
-
-We will see this at spinor and vector field, in which the inverse relationship will be much more clear. For the $\Lambda_{\text{Field}}$ in those cases are inversion too.
+We will see this at spinor and vector field, in which the inverse relationship will be much more clear. For the  $\Lambda_{\text{Field}}$  in those cases are inversion too.
 
 
 </details>
 
 <h2 id="causality-of-scalar-field">Causality of Scalar Field</h2>
 <p>Our quantization will not violent to the causality demanded by special Relativistic Theory. That is to say:</p>
-<p><em>[Theorem]</em> : In Heisenberg Picture, for any two point $x,y$ with spacelike interval: $|x-y|^2\lt 0$ . Then the field operators are commutable:</p>
-
-$$[\phi(x),\phi(y)]=0 \ ; \ \|x-y\|^2\lt 0$$
-
-
+<p><em>[Theorem]</em> : In Heisenberg Picture, for any two point  $x,y$  with spacelike interval:  $\|x-y\|^2\lt 0$  . Then the field operators are commutable:</p>
+<p>$$[\phi(x),\phi(y)]=0 \ ; \ \|x-y\|^2\lt 0$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-With the quantization that $[a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$ . we have:
+With the quantization that  $[a(\bm{k}),a(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')$  . we have:
 
 
 $$\begin{aligned}[]
@@ -765,22 +1025,19 @@ $$\begin{aligned}[]
 \end{aligned}$$
 
 
-
 One can rewrite the integral as a covariant form:
 
 
 $$\ti \Delta(x-y)=\int \frac {\td^4 k} {(2\pi)^3} \delta(k^\mu k_\mu-m^2)\Theta(k^0)\big(e^{-\ti k\cdot (x-y)}-e^{\ti k\cdot (x-y)}\big)$$
 
 
-
-For $x-y$ is a spacelike vector, we can always find a Lorentz Transformation so that $\ti\Delta(x-y)=f(\bm{x}-\bm{y})$ . Then:
+For  $x-y$  is a spacelike vector, we can always find a Lorentz Transformation so that  $\ti\Delta(x-y)=f(\bm{x}-\bm{y})$  . Then:
 
 
 $$f(\bm{x})=\int \frac {\td^4 k} {(2\pi)^3} \delta(k^\mu k_\mu-m^2)\Theta(k^0)\big(e^{-\ti \bm{k}\cdot \bm{x}}-e^{\ti \bm{k}\cdot \bm{x}}\big)=0$$
 
 
-
-which can be easily find by transform the parameter $\bm{k}\rightarrow -\bm{k}$ .
+which can be easily find by transform the parameter  $\bm{k}\rightarrow -\bm{k}$  .
 
 q.e.d.
 
@@ -790,47 +1047,26 @@ q.e.d.
 <h2 id="complex-valued-scalar-field">Complex-valued Scalar Field</h2>
 <p>We write down the conclusion about <code>complex-valued Scalar Field</code> here. The derivation is similar to the real-valued case. But we need two kinds of creation operator corresponding to the internal degrees of freedom of Complex-valued Scalar Field:</p>
 <p>The field operator in Heisenberg Picture:</p>
-
-$$\phi(x) = \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}2\omega_{|\bm{k}|}} \Big\{e^{-\ti k\cdot x} a_+(\bm{k}) + e^{\ti k\cdot x} a_-(\bm{k})^\dagger \Big\}$$
-
-
-<p>Where $k\cdot x=k_\mu x^\mu$ . And the Hamiltonian:</p>
-
-$$\hat H=\int \td^3 \bm{k} \  \omega_{|\bm{k}|} \big(a_+(\bm{k})^\dagger a_+(\bm{k})+a_-(\bm{k})^\dagger a_-(\bm{k}) \big)$$
-
-
+<p>$$\phi(x) = \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}2\omega_{|\bm{k}|}} \Big\{e^{-\ti k\cdot x} a_+(\bm{k}) + e^{\ti k\cdot x} a_-(\bm{k})^\dagger \Big\}$$</p>
+<p>Where  $k\cdot x=k_\mu x^\mu$  . And the Hamiltonian:</p>
+<p>$$\hat H=\int \td^3 \bm{k} \  \omega_{|\bm{k}|} \big(a_+(\bm{k})^\dagger a_+(\bm{k})+a_-(\bm{k})^\dagger a_-(\bm{k}) \big)$$</p>
 <p>And the commutation relationship:</p>
-
-$$\begin{aligned}[]
+<p>$$\begin{aligned}[]
 [a_+(\bm{k}),a_+(\bm{k}')] &= [a_+(\bm{k})^\dagger,a_+(\bm{k}')^\dagger]=0 \\
 [a_-(\bm{k}),a_-(\bm{k}')] &= [a_-(\bm{k})^\dagger,a_-(\bm{k}')^\dagger]=0 \\
 [a_+(\bm{k}),a_-(\bm{k}')] &= [a_+(\bm{k})^\dagger,a_-(\bm{k}')^\dagger]=0\\
 [a_+(\bm{k}),a_+(\bm{k}')^\dagger]&=[a_-(\bm{k}),a_-(\bm{k}')^\dagger]=\delta^3(\bm{k}-\bm{k}')
-\end{aligned}$$
-
-
+\end{aligned}$$</p>
 <p>The conserved charge:</p>
-
-$$Q=\int\td^3 \bm{k} \ \big(a_+(\bm{k})^\dagger a_+(\bm{k})-a_-(\bm{k})^\dagger a_-(\bm{k}) \big) = \sum_{\bm{k}} \big(N_{\bm{k}}^+-N_{\bm{k}}^-\big)$$
-
-
+<p>$$Q=\int\td^3 \bm{k} \ \big(a_+(\bm{k})^\dagger a_+(\bm{k})-a_-(\bm{k})^\dagger a_-(\bm{k}) \big) = \sum_{\bm{k}} \big(N_{\bm{k}}^+-N_{\bm{k}}^-\big)$$</p>
 <h1 id="propagator-of-scalar-field">Propagator of Scalar Field</h1>
 <p><em>[Definition]</em> : <code>Feynman Propagator</code> or <code>two-point time-ordered Green's Function</code> of Scalar Field is defined as :</p>
-
-$$\ti \Delta_F(x-y):=\bra{0}\mathcal{T}\{\phi(x)\phi(y)^\dagger\}\ket{0} $$
-
-
+<p>$$\ti \Delta_F(x-y):=\bra{0}\mathcal{T}\{\phi(x)\phi(y)^\dagger\}\ket{0} $$</p>
 <p>Here the time-ordered product (<code>for bosonic operators</code>) is:</p>
-
-$$\mathcal{T}\{A(x)B(y)\}=\Theta(x^0-y^0)A(x)B(y)+\Theta(y^0-x^0)B(y)A(x)$$
-
-
+<p>$$\mathcal{T}\{A(x)B(y)\}=\Theta(x^0-y^0)A(x)B(y)+\Theta(y^0-x^0)B(y)A(x)$$</p>
 <p>One can compute the propagator:</p>
-
-$$\ti \Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$
-
-
-<p>Where $\epsilon\rightarrow 0^+$ .</p>
+<p>$$\ti \Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}$$</p>
+<p>Where  $\epsilon\rightarrow 0^+$  .</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -848,12 +1084,10 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
 Then we have:
 
 
 $$\ti \Delta_F(x-y)=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big\{\Theta(x^0-y^0)e^{-\ti p\cdot (x-y)} + \Theta(y^0-x^0)e^{\ti p\cdot (x-y)} \Big\}$$
-
 
 
 Then we consider the integral:
@@ -864,26 +1098,22 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-If $x^0\lt 0$ , the Jordon's Lemma allow us to use the upper half plane. Then the pole is $-\omega_{|\bm{p}|}+\ti \epsilon$ , we have:
+If  $x^0\lt 0$  , the Jordon's Lemma allow us to use the upper half plane. Then the pole is  $-\omega_{|\bm{p}|}+\ti \epsilon$  , we have:
 
 
 $$\text{integral} =2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{\ti \omega_{|\bm{p}|}x^0+\ti \bm{p}\cdot \bm{x}}} {-2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti \omega_{|\bm{p}|}x^0 - \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{\ti p\cdot x } $$
 
 
-
-And if $x^0\gt 0$ , we can only use the lower half plane. Then the pole is $\omega_{|\bm{p}|}-\ti \epsilon$ , we have:
+And if  $x^0\gt 0$  , we can only use the lower half plane. Then the pole is  $\omega_{|\bm{p}|}-\ti \epsilon$  , we have:
 
 
 $$\text{integral} =-2\pi \ti \int \frac {\td^3 \bm{p}} {(2\pi)^4} \frac {\ti e^{-\ti \omega_{|\bm{p}|}x^0+\ti \bm{p}\cdot \bm{x}}} {2\omega_{|\bm{p}|}}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti \omega_{|\bm{p}|}x^0 + \ti \bm{p}\cdot \bm{x}} = \int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} e^{-\ti p\cdot x } $$
-
 
 
 That is :
 
 
 $$\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot x} \frac {\ti} {p_\mu p^\mu-m^2+\ti \epsilon}=\int \frac {\td^3 \bm{p}} {(2\pi)^3 2\omega_{|\bm{p}|}} \Big\{\Theta(x^0-y^0)e^{-\ti p\cdot (x-y)} + \Theta(y^0-x^0)e^{\ti p\cdot (x-y)} \Big\}$$
-
 
 
 Or equivalently:
@@ -893,51 +1123,29 @@ $$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \fra
 
 
 
-
 </details>
 
 <h1 id="discrete-symmetry-of-scalar-field">Discrete Symmetry of Scalar Field</h1>
 <h2 id="spatial-inversion">Spatial Inversion</h2>
 <p>We hope the <code>spatial inversion</code> induces a unitary operator so as to:</p>
-
-$$U_P \phi(x^0,\bm{x})U_P^{-1}= e^{\ti \theta_P} \phi(x^0,-\bm{x})$$
-
-
-<p>Where $e^{\ti\theta_P}$ is a phase-factor. And $U_P\ket{0}=\ket{0}$ .</p>
+<p>$$U_P \phi(x^0,\bm{x})U_P^{-1}= e^{\ti \theta_P} \phi(x^0,-\bm{x})$$</p>
+<p>Where  $e^{\ti\theta_P}$  is a phase-factor. And  $U_P\ket{0}=\ket{0}$  .</p>
 <p>For creation operators:</p>
-
-$$U_P a_+(\bm{p})U_P^{-1}=e^{\ti \theta_P} a_+(-\bm{p}) \ ; \ U_P a_-(\bm{p})^\dagger U_P^{-1}=e^{\ti \theta_P} a_-(-\bm{p})^\dagger$$
-
-
-<p>For complex-valued Klein-Gordon Field, $\theta_P$ has no physical meaning. But for real-valued Klein-Gordon Field, $e^{\ti \theta_P}=\pm 1$, denoting the particle&rsquo;s internal parity.</p>
-<p>We can also represent $U_P$ by creation/annihilation operators:</p>
-
-$$U_P=\exp\Bigg\{\ti \frac {\pi} 2 \int \td^3 \bm{k} \Big(a_+(\bm{k})^\dagger a_+(-\bm{k})+a_-(\bm{k})^\dagger a_-(-\bm{k}) - e^{\ti \theta}\big(a_+(\bm{k})^\dagger a_+(\bm{k})+a_-(\bm{k})^\dagger a_-(\bm{k})\big) \Big) \Bigg\}$$
-
-
+<p>$$U_P a_+(\bm{p})U_P^{-1}=e^{\ti \theta_P} a_+(-\bm{p}) \ ; \ U_P a_-(\bm{p})^\dagger U_P^{-1}=e^{\ti \theta_P} a_-(-\bm{p})^\dagger$$</p>
+<p>For complex-valued Klein-Gordon Field,  $\theta_P$  has no physical meaning. But for real-valued Klein-Gordon Field,  $e^{\ti \theta_P}=\pm 1$ , denoting the particle&rsquo;s internal parity.</p>
+<p>We can also represent  $U_P$  by creation/annihilation operators:</p>
+<p>$$U_P=\exp\Bigg\{\ti \frac {\pi} 2 \int \td^3 \bm{k} \Big(a_+(\bm{k})^\dagger a_+(-\bm{k})+a_-(\bm{k})^\dagger a_-(-\bm{k}) - e^{\ti \theta}\big(a_+(\bm{k})^\dagger a_+(\bm{k})+a_-(\bm{k})^\dagger a_-(\bm{k})\big) \Big) \Bigg\}$$</p>
 <h2 id="charge-conjugation">Charge Conjugation</h2>
 <p>We hope the <code>charge conjugation</code> induces a unitary operator so as to:</p>
-
-$$U_C \phi(x)U_C^{-1}=e^{\ti \theta_C}\phi(x)^\dagger$$
-
-
-<p>Where $e^{\ti\theta_C}$ is a phase-factor, and also is unmeasurable for complex-valued field. For real-valued Klein-Gordon Field $e^{\ti \theta_C}=\pm 1$ .</p>
+<p>$$U_C \phi(x)U_C^{-1}=e^{\ti \theta_C}\phi(x)^\dagger$$</p>
+<p>Where  $e^{\ti\theta_C}$  is a phase-factor, and also is unmeasurable for complex-valued field. For real-valued Klein-Gordon Field  $e^{\ti \theta_C}=\pm 1$  .</p>
 <p>And for creation operators:</p>
-
-$$U_C a_+(\bm{p})U_C^{-1}=e^{\ti \theta_C} a_-(\bm{p}) \ ; \ U_C a_-(\bm{p})^\dagger U_C^{-1}=e^{\ti \theta_C} a_+(\bm{p})^\dagger$$
-
-
+<p>$$U_C a_+(\bm{p})U_C^{-1}=e^{\ti \theta_C} a_-(\bm{p}) \ ; \ U_C a_-(\bm{p})^\dagger U_C^{-1}=e^{\ti \theta_C} a_+(\bm{p})^\dagger$$</p>
 <h2 id="time-reversal">Time Reversal</h2>
-<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator $K$ we can write it as $U_T K$ , where $U_T$ is a unitary operator:</p>
-
-$$(U_T K) \phi(x^0,\bm{x})(U_T K)^{-1} = e^{\ti \theta_T} \phi(-x^0,\bm{x})$$
-
-
+<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator  $K$  we can write it as  $U_T K$  , where  $U_T$  is a unitary operator:</p>
+<p>$$(U_T K) \phi(x^0,\bm{x})(U_T K)^{-1} = e^{\ti \theta_T} \phi(-x^0,\bm{x})$$</p>
 <p>And for creation operators:</p>
-
-$$(U_T K) a_+(\bm{k})(U_T K)^{-1} = e^{\ti \theta_T} a_+(-\bm{k}) \ ; \ (U_T K) a_-(\bm{k})(U_T K)^{-1} = e^{-\ti \theta_T} a_-(-\bm{k})$$
-
-
+<p>$$(U_T K) a_+(\bm{k})(U_T K)^{-1} = e^{\ti \theta_T} a_+(-\bm{k}) \ ; \ (U_T K) a_-(\bm{k})(U_T K)^{-1} = e^{-\ti \theta_T} a_-(-\bm{k})$$</p>
 
           </div>
 
