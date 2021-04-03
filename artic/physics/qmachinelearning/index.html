@@ -1137,6 +1137,9 @@ autocomplete('#aa-search-input',
 
     
     
+
+    
+    
 <h1 id="data-science-and-machine-learning">Data Science and Machine Learning</h1>
 <p>Formally, <strong>Data science</strong> is an <strong>inter-disciplinary</strong> field that uses scientific methods, processes, algorithms and systems to extract <strong>knowledge</strong> and insights from many structural and unstructured data<a href="https://en.wikipedia.org/wiki/Data_science">Wikipedia/Data_science</a>. The core object of research in this field is data for the goal of knowledge. This approach is different from research of theoretical study like geometry by deductive reasoning. A nice example is <a href="https://www.sciencedirect.com/topics/engineering/keplers-law">Kepler&rsquo;s Law</a>, here we list two approaches to it in the following to show the difference between two paradigm.</p>
 <ol>
@@ -1673,9 +1676,9 @@ $$</p>
     </summary>
 <p>In the paper, they used the VQC of form</p>
 <p>$$
-\hat U(\bm{z}) = \prod_i \textrm{CNOT}_{i,f(i)} \prod_i e^{\ti z_i \sigma^y_i}
+\hat U(\bm{z}) = \prod_i \prod_{j\in F_i} \textrm{CNOT}_{i,j} \prod_i e^{\ti z_i \sigma^y_i}
 $$</p>
-<p>in which function  $f$  denotes which two qubits are connected by  $\textrm{CNOT}$  gate. This type can be easily to compute the gradient, with the property that:</p>
+<p>in which set  $F_i$  denotes the qubits connected to  $i$ -th qubit with  $\textrm{CNOT}$  gate. This type can be easily to compute the gradient, with the property that:</p>
 <p>$$
 \hat H^2 = \hat 1 \Rightarrow [\hat H, \hat O] = \ti\Big(e^{-\ti \hat H \pi/4}\hat O e^{\ti \hat H \pi/4} - e^{\ti\hat H \pi/4} \hat O e^{-\ti \hat H \pi/4}\Big)
 $$</p>
