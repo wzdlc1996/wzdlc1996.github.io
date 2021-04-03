@@ -1079,7 +1079,7 @@ q.e.d.
 <h2 id="experimental-setup">Experimental Setup</h2>
 <p>The experiment can be illustrated by the following three pictures</p>
 
-<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./Figs/weak_1.png"/></div>
+<div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/weak_1.png"/></div>
 
 <p>The main experiment system is shown in figure a): A Gaussian beam from a single model fiber is collimated by a lens and prepared in an initial polarization state by a quarter-wave plate(QWP) and half-wave plate(HWP). A polarizer postselects the beam on a final polarization state. And a charge coupled device(CCD) measures the position-dependent beam intensity.</p>
 <p>The collimated laser beam is prepared in an initial state as  $\ket{i}\otimes \ket{\psi_i}$  . Where  $\ket{i}$  is the initial polarization, and  $\ket{\psi_i}$  is the <code>state of the transverse beam profile</code>:  $|\bra{x,y}\psi_i\rangle|^2$  is proportional to the intensity density of the beam in the transverse plane  $\{(x,y)\}$  which is vertical to the wave vector. Obviously, the whole system is indeed a 1-dimension system. So we will use  $\ket{x}$  to denote the transverse state below. The initial beam is Gaussian, so we have:</p>
@@ -1699,8 +1699,14 @@ P(\gamma)&= \Big|\bra{\psi_f}\bra{f}\Big(1-\ti \gamma \hat S\otimes \hat p+\math
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;

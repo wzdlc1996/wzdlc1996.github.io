@@ -6,7 +6,16 @@
     <description>Recent content on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Thu, 26 Nov 2020 23:19:37 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Dec 2020 14:16:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quantum Machine Learning: Quantum Algorithms to Classical Data</title>
+      <link>https://wzdlc1996.github.io/artic/physics/qmachinelearning/</link>
+      <pubDate>Sat, 19 Dec 2020 14:16:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/qmachinelearning/</guid>
+      <description>Quantum machine learning is the integration of quantum algorithms within machine learning programs. Generally, we have four different approaches for this purpose, by the type of data (quantum state/data or classical data) and type of algorithm or platform (quantum algorithm/computer or classical algorithm/computer). In this report, we focus on an elementary discussion about aspect of the quantum approach to classical data. The more attractive part about quantum approach to quantum data will be left for future posts.</description>
+    </item>
+    
     <item>
       <title>Go 语言基础</title>
       <link>https://wzdlc1996.github.io/notes/golang/chap02/</link>

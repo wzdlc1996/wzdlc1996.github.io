@@ -388,6 +388,8 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
 
 
 
@@ -420,7 +422,7 @@ autocomplete('#aa-search-input',
             
             <li class="py-1">
               <a href="https://wzdlc1996.github.io/categories/reviews">
-                <span>Reviews (3)</span>
+                <span>Reviews (4)</span>
               </a>
             </li>           
           
@@ -494,6 +496,8 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
 
 
 
@@ -514,7 +518,7 @@ autocomplete('#aa-search-input',
         
         
         
-            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (16)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (17)</span></a></li>
           
         
             <li><a href="https://wzdlc1996.github.io/tags/statistical-phys" role="button"><span>statistical-phys (5)</span></a></li>
@@ -622,7 +626,7 @@ autocomplete('#aa-search-input',
             
               <div class="px-2 middot"></div>
               <div>
-                16 posts
+                17 posts
               </div>
             
           </div>
@@ -634,6 +638,19 @@ autocomplete('#aa-search-input',
             
         
         
+            
+                <li class="post-item no-bullet">
+                    <span class="date">2020.12</span>
+                </li>
+                
+                    <li class="post-item">
+    
+    <span class="meta"><time datetime='2020-12-19T14:16:00&#43;08:00'>Dec 19, 2020</time></span>
+    
+    <a href="https://wzdlc1996.github.io/artic/physics/qmachinelearning/"><span>Quantum Machine Learning: Quantum Algorithms to Classical Data</span></a>
+</li>
+
+                
             
                 <li class="post-item no-bullet">
                     <span class="date">2020.9</span>
@@ -869,8 +886,14 @@ autocomplete('#aa-search-input',
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;

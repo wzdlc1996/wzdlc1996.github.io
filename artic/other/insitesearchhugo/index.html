@@ -679,7 +679,7 @@ There might be a little bug of the bootstrap modal, which let the `padding-right
 <span class="p">}</span>
 </code></pre></div><h1 id="result">Result</h1>
 <p>After all, we will have a search icon in the left of the navigation bar. It will be looked like:</p>
-<div class="flex-center w-100" style="text-align: center"><img name="preview" src="./Figs/InsiteSearch_1.png"/></div>
+<div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/InsiteSearch_1.png"/></div>
 <h1 id="reference">Reference</h1>
 <ol>
 <li><a href="https://gohugo.io/tools/search/">Hugo official doc</a></li>
@@ -990,8 +990,14 @@ There might be a little bug of the bootstrap modal, which let the `padding-right
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;

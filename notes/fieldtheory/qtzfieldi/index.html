@@ -1563,8 +1563,14 @@ $$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \fra
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;

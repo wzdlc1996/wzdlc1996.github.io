@@ -594,8 +594,14 @@ autocomplete('#aa-search-input',
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;

@@ -394,7 +394,7 @@ autocomplete('#aa-search-input',
             
             <li class="py-1">
               <a href="https://wzdlc1996.github.io/categories/reviews">
-                <span>Reviews (3)</span>
+                <span>Reviews (4)</span>
               </a>
             </li>           
           
@@ -462,7 +462,7 @@ autocomplete('#aa-search-input',
         
         
         
-            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (16)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (17)</span></a></li>
           
         
             <li><a href="https://wzdlc1996.github.io/tags/statistical-phys" role="button"><span>statistical-phys (5)</span></a></li>
@@ -664,8 +664,14 @@ autocomplete('#aa-search-input',
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;

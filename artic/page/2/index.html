@@ -373,6 +373,8 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
 
 
 
@@ -396,7 +398,7 @@ autocomplete('#aa-search-input',
             
             <li class="py-1">
               <a href="https://wzdlc1996.github.io/categories/reviews">
-                <span>Reviews (3)</span>
+                <span>Reviews (4)</span>
               </a>
             </li>           
           
@@ -442,6 +444,8 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
 
 
 
@@ -462,7 +466,7 @@ autocomplete('#aa-search-input',
         
         
         
-            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (16)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (17)</span></a></li>
           
         
             <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button"><span>manjaro (2)</span></a></li>
@@ -513,7 +517,7 @@ autocomplete('#aa-search-input',
               
                 <div class="px-2 middot"></div>
                 <div>
-                  7 posts
+                  8 posts
                 </div>
               
             </div>
@@ -550,6 +554,63 @@ autocomplete('#aa-search-input',
 
 
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/artic/physics/weakmeasurement/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Introduction to Weak Measurements and Weak Values</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Mar 18, 2019</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>17 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      An introduction to weak measurement and weak values. Using the simplest model and perturbation theory to analyze a class of weak measurement process and the concept of weak values. This article gives a comparison between weak measurement and the ordinary measurement in quantum mechanics(which is called as strong measurement) and some interesting application of weak values.
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button">measurement </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -663,63 +724,6 @@ autocomplete('#aa-search-input',
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/artic/other/linux/bluetoothaudio/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Bluetooth Audio Issues</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 15, 2018</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      How to manager the Bluetooth earphones. Switch HSV to A2DP for the better performance.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/linux"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Linux </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/os-setup" role="button">os-setup </a></li>
-      
-    
-      <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button">manjaro </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -801,8 +805,14 @@ autocomplete('#aa-search-input',
   var imgList = document.getElementsByTagName("img");
   var imgLen = imgList.length;
   for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
     imgList[i].id = "imgtmp" + i;
     var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
     var a = document.createElement("a");
     imgtmp.parentNode.replaceChild(a, imgtmp);
     a.href = imgtmp.src;
