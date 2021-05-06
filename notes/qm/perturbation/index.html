@@ -929,22 +929,21 @@ E_n &= E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \cdots \\
 \end{aligned}$$</p>
 <p>Where  $\hat G_n=\hat Q_n (E_n-\hat H_0)^{-1}\hat Q_n$  . They do not really solve the eignestates and eigenvalues in terms of known quantities, for  $E_n$  is unknown but contained by  $\hat G_n$ .</p>
 <ol>
-<li>First order perturbation:</li>
-</ol>
+<li>
+<p>First order perturbation:</p>
 <p>$$\begin{aligned}
     \ket{n,\lambda} &= \ket{E_n^{(0)}} + \mathcal{O}(\lambda) \\
     E_n &= E_n^{(0)} + \lambda \bra{E_n^{(0)}}\hat V \ket{E_n^{(0)}} + \mathcal{O}(\lambda^2)
     \end{aligned}$$</p>
-<pre><code>Here the energy is up to  $\mathcal{O}(\lambda^2)$  but state-vector is up to  $\mathcal{O}(\lambda)$  . This is caused by that energy is the quadratic form of state-vector.
-</code></pre>
-<ol start="2">
-<li>Second order perturbation:</li>
-</ol>
+<p>Here the energy is up to  $\mathcal{O}(\lambda^2)$  but state-vector is up to  $\mathcal{O}(\lambda)$  . This is caused by that energy is the quadratic form of state-vector.</p>
+</li>
+<li>
+<p>Second order perturbation:</p>
 <p>$$\begin{aligned}
     \ket{n,\lambda} &= \ket{E_n^{(0)}} + \lambda \sum_{m,m\neq n} \frac {\bra{E_m^{(0)}}\hat V \ket{E_n^{(0)}}} {E_m^{(0)}-E_n^{(0)}} \ket{E_m^{(0)}} + \mathcal{O}(\lambda^2) \\
     E_n &= E_n^{(0)} + \lambda \bra{E_n^{(0)}}\hat V \ket{E_n^{(0)}} + \lambda^2 \sum_{m,m\neq n} \frac {|\bra{E_m^{(0)}}\hat V \ket{E_n^{(0)}}|^2} {E_m^{(0)}-E_n^{(0)}} + \mathcal{O}(\lambda^3)
     \end{aligned}$$</p>
-<pre><code><details>
+<details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
@@ -975,7 +974,8 @@ q.e.d.
     
 </details>
 
-</code></pre>
+</li>
+</ol>
 <p><em>[Theorem]</em> : The normalization factor of  $\ket{n,\lambda}=(1-\lambda \hat G_n\hat V)^{-1}\ket{E_n^{0}}$  is that  $\bra{n,\lambda} n,\lambda \rangle = (Z_n)^{-1} \geq 1$  , has the property that:</p>
 <p>$$Z_n = \frac {\partial} {\partial E_n^{(0)}} E_n$$</p>
 <details>
