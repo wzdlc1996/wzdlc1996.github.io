@@ -1256,18 +1256,20 @@ $$\text{P} \int_{-\infty}^{\infty} \frac {\tilde{G}(\omega')} {\omega'-\omega} \
 <li>Path Integral Version #1</li>
 </ol>
 <p>$$K(x',x,t) = \int \mathcal{D}[x(\tau)] \exp\big(\frac {\ti} {\hbar} \int_0^t L(x(\tau),\flo{x}(\tau))\td \tau \big) = \int \mathcal{D}[x]\exp\big[\frac {\ti} {\hbar} S \big]$$</p>
-<pre><code>-    $\int \mathcal{D}[x]$  : `functional integral` over all `path`  $x(\tau)$  with  $x(0)=x ; x(t)=x'$  . The measure of path is very diffcult to define.
--    $L(x,\flo{x})$  : `Lagrangian`
--    $\flo{x} \equiv \frac {\td x(\tau)} {\td \tau}$  : the `velocity` on path  $x(\tau)$ 
--    $S[x(\tau)]\equiv \int_0^t L(x(\tau),\flo{x}(\tau))\td \tau$  : the `action` of path  $x(\tau)$ 
-</code></pre>
+<ul>
+<li> $\int \mathcal{D}[x]$  : <code>functional integral</code> over all <code>path</code>  $x(\tau)$  with  $x(0)=x ; x(t)=x'$  . The measure of path is very diffcult to define.</li>
+<li> $L(x,\flo{x})$  : <code>Lagrangian</code></li>
+<li> $\flo{x} \equiv \frac {\td x(\tau)} {\td \tau}$  : the <code>velocity</code> on path  $x(\tau)$ </li>
+<li> $S[x(\tau)]\equiv \int_0^t L(x(\tau),\flo{x}(\tau))\td \tau$  : the <code>action</code> of path  $x(\tau)$ </li>
+</ul>
 <ol start="2">
 <li>Path Integral Version #2:</li>
 </ol>
 <p>$$K(x',x,t) = \int \mathcal{D}[x(\tau)]\mathcal{D}[p(\tau)] \exp \big(\frac {\ti} {\hbar} \int_0^t \{p \flo{x} - H(p,x) \} \big)$$</p>
-<pre><code>-    $\int \mathcal{D}[p]$  : `functional integral` over all path in momentum space, with proper measure. Path of  $p$  has no boundary condition
--    $H(p,x)$  : `Hamiltonian`
-</code></pre>
+<ul>
+<li> $\int \mathcal{D}[p]$  : <code>functional integral</code> over all path in momentum space, with proper measure. Path of  $p$  has no boundary condition</li>
+<li> $H(p,x)$  : <code>Hamiltonian</code></li>
+</ul>
 <p>One can check these two version of path integral by single particle Hamiltonian:  $\hat H = \hat p^2/2m + V(\hat x) = T(\hat p) +V(\hat x)$  , the propagator is  $K(x',x,t) = \bra{x'}e^{-\ti t \hat H / \hbar} \ket{x}$ :</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
