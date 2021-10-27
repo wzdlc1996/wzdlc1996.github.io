@@ -6,7 +6,16 @@
     <description>Recent content on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sat, 19 Dec 2020 14:16:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time in Quantum Mechanics</title>
+      <link>https://wzdlc1996.github.io/artic/physics/timeinqm/</link>
+      <pubDate>Sat, 25 Sep 2021 18:00:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/timeinqm/</guid>
+      <description>Time in quantum mechanics is always left as an parameter in the equation of motion. In the non-relativistic quantum theory we find time in the derivative of wavefunction, while in the relativistic quantum field theory, it is not at the same status of spatial position: we introduce the space-time dependent field operator only for Lorentz covariance for the equation of motion. Whether can we have an intrinsic interpretation of time flow in quantum mechanics was early discussed by Don Page and William Wootters with the purpose to match the energy superselection rule. Though it may not be a correct theory for our world or even &amp;lsquo;close&amp;rsquo; to it, it is worthy to discuss in modern view here as a consistent approach to the time puzzle.</description>
+    </item>
+    
     <item>
       <title>Quantum Machine Learning: Quantum Algorithms to Classical Data</title>
       <link>https://wzdlc1996.github.io/artic/physics/qmachinelearning/</link>
@@ -288,10 +297,10 @@
     
     <item>
       <title></title>
-      <link>https://wzdlc1996.github.io/notes/amath/randomvariable/</link>
+      <link>https://wzdlc1996.github.io/notes/mathmethod/randomvariable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wzdlc1996.github.io/notes/amath/randomvariable/</guid>
+      <guid>https://wzdlc1996.github.io/notes/mathmethod/randomvariable/</guid>
       <description>Random Variable Introduction to Probability Theory Probability Space [Definition] : A Probability Space is a triplet $(\Omega, \mathcal{F},\mathbb{P})$ of three elements:
  $\Omega$ is a set (called Sample Space) . $\mathcal{F}$ is a Sigma Algebra on $\Omega$. $\mathcal{F}$ is a collection of subsets of $\Omega$ and has the following properties:  $\Omega, \varnothing \in \mathcal{F}$ $A\in \mathcal{F} \Rightarrow A^c \equiv \Omega \setminus A \in \mathcal{F}$ A sequence of sets ${A_i}{i=1}^{\infty}$ in which $A_i \in \mathcal{F}$, then $\bigcup{j=1}^{\infty} A_j \in \mathcal{F}$   $\mathbb{P}$ is a Probability Measure: $\mathbb{P}: \mathcal{F}\rightarrow [0,1]$ and has the following properties:  (Normalization)$\mathbb{P}(\Omega) = 1$ (Countably additive)$A_1,A_2,\cdots \in \mathcal{F} \ , \ A_i\bigcap A_j=\varnothing \Rightarrow \mathbb{P}(\bigcup_{j=1}^{\infty} A_j) = \sum_{j=1}^{\infty} \mathbb{P}(A_j)$    [Definition] : A Measurable (real-valued) Function on a Measurable Space $(\Omega,\mathcal{F})$ is a function $f:\Omega \rightarrow \mathbb{R}$, which has the property:</description>
     </item>

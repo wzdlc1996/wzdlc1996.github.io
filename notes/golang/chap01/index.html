@@ -14,8 +14,8 @@
 <meta property="og:description" content="Go语言开发环境的安装和一些中国大陆会遇到的问题的解决方案. 开始学习Go语言来丰富自己的知识和技能!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/golang/chap01/" /><meta property="article:section" content="Notes" />
-<meta property="article:published_time" content="2020-11-22T22:04:41&#43;08:00" />
-<meta property="article:modified_time" content="2020-11-27T02:19:00&#43;08:00" />
+<meta property="article:published_time" content="2020-11-22T22:04:41+08:00" />
+<meta property="article:modified_time" content="2020-11-27T02:19:00+08:00" />
 <meta property="og:see_also" content="https://wzdlc1996.github.io/notes/golang/chap02/" />
 
 
@@ -436,7 +436,7 @@ autocomplete('#aa-search-input',
 <h2 id="go-环境配置">Go 环境配置</h2>
 <p>完成安装并将 Go 的可执行文件路径添加进环境变量(使用包管理时可执行文件会自动做好链接在 <code>/usr/bin/go</code>, 可以使用命令 <code>whereis go</code> 来查看). 其中之后就可以在命令行运行 <code>go version</code> 来查看安装成功与否.</p>
 <p>Go 的几乎所有操作都依赖于命令 <code>go</code>, 它的工作模式依赖于若干环境变量. 在命令行中使用命令 <code>go env</code> 将会打印出当前的默认环境变量:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~ $ go env
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~ $ go env
 GO111MODULE=""
 GOARCH="amd64"
 GOBIN=""
@@ -476,14 +476,14 @@ GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-bu
 ### GOPATH
 
 环境变量 `GOPATH` . 默认情况对于 Unix 系它为 `$ HOME/go</code>, 对于 Windows 它为 <code>%USERPROFILE%/go</code> . <code>GOPATH</code> 中存放所有用户在 Go 开发中的代码, 使用的文件等. 它是工作目录的根目录, 而且约定拥有如下文件结构:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">go/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">go/
 ├── bin     <span class="c1"># location of compiled executable programs built by Go</span>
 ├── pkg     <span class="c1"># location of compiled package code (e.g.: .a)</span>
 └── src     <span class="c1"># location of source file of Go (e.g.: .go, .c, .g, .s)</span>
 </code></pre></div><p>当用户使用命令 <code>go get</code> 来下载 Go 的库(模块)时, 将默认存放在 <code>GOPATH</code> 下. 如果 <code>GOPATH</code> 有多个取值, 则放置在第一个下.</p>
 <h3 id="goproxy">GOPROXY</h3>
 <p><code>GOPROXY</code> 环境变量某种意义上对于中国大陆的用户有着重要的地位. 它可以被理解为下载 Go 模块的地址. 因此在中国大陆使用 <code>VS Code</code> 的 <code>Golang</code> 相关功能时, 它会试图从默认仓库拉取代码并报错. 而如果换用中国大陆能够访问的<a href="https://goproxy.cn/">仓库</a>则可以顺利并且快速进行(事实上, 用户也可以手动下载这些 <code>go-tools</code> 的依赖项并本地安装, 参考<a href="https://zhuanlan.zhihu.com/p/53566172">文章</a>):</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">~ $ go env -w GOPROXY="https://goproxy.cn,direct"
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">~ $ go env -w GOPROXY="https://goproxy.cn,direct"
 ~$  go env -w <span class="nv">GO111MODULE</span><span class="o">=</span><span class="s2">&#34;on&#34;</span>
 </code></pre></div><p>而关于设置 <code>GOPROXY</code> 的根本用意与它同 Go 模块(module) 的联系则可以参考<a href="https://blog.golang.org/module-mirror-launch">文章</a></p>
 

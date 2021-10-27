@@ -14,8 +14,8 @@
 <meta property="og:description" content="How to handle the dual graphic card on Manjaro. We only show the configuration for Nvidia card." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/" /><meta property="article:section" content="Artic" />
-<meta property="article:published_time" content="2018-10-31T14:48:29&#43;08:00" />
-<meta property="article:modified_time" content="2018-10-31T14:48:29&#43;08:00" />
+<meta property="article:published_time" content="2018-10-31T14:48:29+08:00" />
+<meta property="article:modified_time" content="2018-10-31T14:48:29+08:00" />
 
 
 
@@ -429,7 +429,7 @@ them are:</p>
 <p>Usually manjaro can be easily installed choosing the <code>free drive</code> mode, but <code>nouveau</code>
 is hard to use. And sometimes it make user cannot entry the x-system.
 One way is that noting <code>nouveau</code> in <code>blacklist</code> , use command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/modprob.d/usrBlack.blacklist
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/modprob.d/usrBlack.blacklist
 
 blacklist nouveau
 </code></pre></div><p>Then to use the graphic card, one can run <code>mhwd-tui</code> to install the non-free driver and
@@ -452,7 +452,7 @@ Other distribution can jump to Step 4</p>
 <li>
 <p><strong>Remove Old Config File</strong></p>
 <p>Firstly, remove <code>/etc/X11/xorg.conf.d/90-mhwd.conf</code> (notice the su permission) , and replace it with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf.d/optimus.conf</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf.d/optimus.conf</span>
 Section <span class="s2">&#34;Module&#34;</span>
     Load <span class="s2">&#34;modesetting&#34;</span>
 EndSection
@@ -467,19 +467,19 @@ EndSection
 <li>
 <p><strong>Write Blacklist</strong>
 One need to remove two files: <code>/etc/modprobe.d/mhwd-gpu.conf</code> and <code>/etc/modprobe.d/mhwd-nvidia.conf</code> and write a new one:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">blacklist nouveau
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">blacklist nouveau
 blacklist nvidiafb
 blacklist rivafb
 </code></pre></div></li>
 </ol>
 <h1 id="step-4-enable-nvdia-drmmodeset">Step 4. Enable <code>nvdia-drm.modeset</code></h1>
 <p>PRIME relies on <code>vidia-drm</code> , one need to creat a new file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/modprobe.d/nvidia-drm.conf</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/modprobe.d/nvidia-drm.conf</span>
 
 options nvidia_drm <span class="nv">modeset</span> <span class="o">=</span> <span class="m">1</span>
 </code></pre></div><h1 id="step-5-make-dgpu-as-primary">Step 5. Make dGPU as primary</h1>
 <p>First for other distribution but manjaro, user need to edit the file <code>/etc/X11/xorg.conf</code> , if X.Org and X server version <code>1.17.2+</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/etc/X11/xorg.conf</span>
 
 Section <span class="s2">&#34;Module&#34;</span>
     Load <span class="s2">&#34;modesetting&#34;</span>
@@ -492,20 +492,20 @@ Section <span class="s2">&#34;Device&#34;</span>
     Option <span class="s2">&#34;AllowEmptyInitialConfiguration&#34;</span>
 EndSection
 </code></pre></div><p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 </code></pre></div><p>However, if user is using a <code>display manager</code> , then he should create or edit a display setup script for his DM instead of using <code>~/.xinitrc</code> , this is different among main DMs, for the most three popular: (We assume user has stored the command above in a .sh file as optimus.sh and adjusted the permission)</p>
 <ol>
 <li>
 <p><code>LightDM</code>
 Edit the file <code>/etc/lightdm/lightdm.conf</code> :</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Seat:*<span class="o">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Seat:*<span class="o">]</span>
 display-setup-script <span class="o">=</span> optimus.sh
 </code></pre></div></li>
 <li>
 <p><code>GDM</code>
 GDM is the defult display manager of Gnome 3 . one should create two new .desktop files:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/gdm/greeter/autostart/optimus.desktop</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/gdm/greeter/autostart/optimus.desktop</span>
 <span class="c1">#/etc/xdg/autostart/optimus.desktop</span>
 
 <span class="o">[</span>Desktop Entry<span class="o">]</span>
@@ -519,7 +519,7 @@ X-GNOME-Autostart-Phase<span class="o">=</span>DisplayServer
 <li>
 <p><code>SDDM</code>
 SDDM is the default display manager of KDE . one should write those two command to file <code>/usr/share/sddm/script/Xsetup</code> like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/sddm/scripts/Xsetup</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/usr/share/sddm/scripts/Xsetup</span>
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -527,7 +527,7 @@ xrandr --auto
 </ol>
 <h1 id="step-6-reboot">Step 6. Reboot</h1>
 <p>If everything is set correctly, when user reboot, DM will load and he can log in. And:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ glxinfo <span class="p">|</span> grep -i vendor
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ glxinfo <span class="p">|</span> grep -i vendor
 server glx vendor string: NVIDIA Corporation
 client glx vendor string: NVIDIA Corporation
 OpenGL vendor string: NVIDIA Corporation

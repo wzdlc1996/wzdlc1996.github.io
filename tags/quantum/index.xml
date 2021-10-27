@@ -6,7 +6,16 @@
     <description>Recent content in quantum on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sat, 19 Dec 2020 14:16:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/tags/quantum/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/tags/quantum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time in Quantum Mechanics</title>
+      <link>https://wzdlc1996.github.io/artic/physics/timeinqm/</link>
+      <pubDate>Sat, 25 Sep 2021 18:00:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/timeinqm/</guid>
+      <description>Time in quantum mechanics is always left as an parameter in the equation of motion. In the non-relativistic quantum theory we find time in the derivative of wavefunction, while in the relativistic quantum field theory, it is not at the same status of spatial position: we introduce the space-time dependent field operator only for Lorentz covariance for the equation of motion. Whether can we have an intrinsic interpretation of time flow in quantum mechanics was early discussed by Don Page and William Wootters with the purpose to match the energy superselection rule. Though it may not be a correct theory for our world or even &amp;lsquo;close&amp;rsquo; to it, it is worthy to discuss in modern view here as a consistent approach to the time puzzle.</description>
+    </item>
+    
     <item>
       <title>Quantum Machine Learning: Quantum Algorithms to Classical Data</title>
       <link>https://wzdlc1996.github.io/artic/physics/qmachinelearning/</link>

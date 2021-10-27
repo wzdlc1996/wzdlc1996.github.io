@@ -8,25 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   
   <meta name="author" content="Leonard">
-  <meta name="description" content="Quantum theory for scattering of particles. Theory and applications.">
+  <meta name="description" content="Time in quantum mechanics is always left as an parameter in the equation of motion. In the non-relativistic quantum theory we find time in the derivative of wavefunction, while in the relativistic quantum field theory, it is not at the same status of spatial position: we introduce the space-time dependent field operator only for Lorentz covariance for the equation of motion. Whether can we have an intrinsic interpretation of time flow in quantum mechanics was early discussed by Don Page and William Wootters with the purpose to match the energy superselection rule. Though it may not be a correct theory for our world or even &lsquo;close&rsquo; to it, it is worthy to discuss in modern view here as a consistent approach to the time puzzle.">
 
-  <meta property="og:title" content="Scattering Theory" />
-<meta property="og:description" content="Quantum theory for scattering of particles. Theory and applications." />
+  <meta property="og:title" content="Time in Quantum Mechanics" />
+<meta property="og:description" content="Time in quantum mechanics is always left as an parameter in the equation of motion. In the non-relativistic quantum theory we find time in the derivative of wavefunction, while in the relativistic quantum field theory, it is not at the same status of spatial position: we introduce the space-time dependent field operator only for Lorentz covariance for the equation of motion. Whether can we have an intrinsic interpretation of time flow in quantum mechanics was early discussed by Don Page and William Wootters with the purpose to match the energy superselection rule. Though it may not be a correct theory for our world or even &lsquo;close&rsquo; to it, it is worthy to discuss in modern view here as a consistent approach to the time puzzle." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wzdlc1996.github.io/notes/qm/scattering/" /><meta property="article:section" content="Notes" />
-<meta property="article:published_time" content="2018-12-17T12:54:43+08:00" />
-<meta property="article:modified_time" content="2018-12-17T12:54:43+08:00" />
-<meta property="og:see_also" content="https://wzdlc1996.github.io/notes/qm/manybody3/" /><meta property="og:see_also" content="https://wzdlc1996.github.io/notes/qm/manybody2/" /><meta property="og:see_also" content="https://wzdlc1996.github.io/notes/qm/manybody1/" /><meta property="og:see_also" content="https://wzdlc1996.github.io/notes/qm/relativisticqm/" /><meta property="og:see_also" content="https://wzdlc1996.github.io/notes/qm/perturbation/" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/physics/timeinqm/" /><meta property="article:section" content="Artic" />
+<meta property="article:published_time" content="2021-09-25T18:00:00+08:00" />
+<meta property="article:modified_time" content="2021-09-25T18:00:00+08:00" />
 
 
 
   <title>
     
-     Scattering Theory | Leonard 
+     Time in Quantum Mechanics | Leonard 
     
   </title>
 
-  <link rel="canonical" href="https://wzdlc1996.github.io/notes/qm/scattering/">
+  <link rel="canonical" href="https://wzdlc1996.github.io/artic/physics/timeinqm/">
 
   
   
@@ -365,26 +364,22 @@ autocomplete('#aa-search-input',
   <ul class="post-meta li-x">
     
       
-        <li><a href="https://wzdlc1996.github.io/categories/physics"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Physics </a></li>
+        <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
       
     
-    
-      
-        <li><a href="https://wzdlc1996.github.io/series/quantum-mechanics"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Quantum-Mechanics</a></li>
-      
     
   </ul>
 
-  <div class="px-4 post-heading">Scattering Theory</div>
+  <div class="px-4 post-heading">Time in Quantum Mechanics</div>
 
   <ul class="post-meta li-x mt-1">
     
-      <li>Dec 17, 2018</li>
+      <li>Sep 25, 2021</li>
     
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>14 minutes read</li>
     
   </ul>
   
@@ -443,115 +438,13 @@ autocomplete('#aa-search-input',
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
 
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
     
     
@@ -738,295 +631,170 @@ autocomplete('#aa-search-input',
 
     
     
-<h1 id="setup-of-scattering-problem">Setup of Scattering Problem</h1>
-<h2 id="rough-picture">Rough Picture</h2>
+<h1 id="introduction">Introduction</h1>
+<p>Time might be the most mysterious concept in physics theory. Before the relativistic theory, time was long considered as the global parameter controlling the world. Einstein told us time and space should be linked as one and influenced by matter. However, the most fundamental two theory of physics, quantum theory and general relativistics are still not unified well. The former one gives us the best description about basic particles and their motion. The latter discuss how matter influence the spacetime, the stage of the motion. These two theories deal time quite differently and make it still an unsolved puzzle to scientists. In 1983, Page and Wootters discussed the approach to treat the time as an emergent phenomena instead of the parameter isolated from theory. They proposed a strategy to define time and dynamics within a stationary system. Recently, the time is emergent from quantum correlation become popular in the community <!-- Need reference -->. It is worthy to discuss their original work and some modern development here.</p>
+<p>This post is arranged as three parts. First we show the original Page-Wootters (PaW) mechanism of time. Then we discuss how the equation of motion appear in such scenario. At last, we discuss the recent development about introducing the interaction between clock and system.</p>
+<h1 id="page-wootterspaw-mechanism">Page-Wootters(PaW) Mechanism</h1>
+<!--ref: the original paper [by Page & Wootters](https://journals.aps.org/prd/pdf/10.1103/PhysRevD.27.2885)-->
+<h2 id="motivation">Motivation</h2>
+<p>The motivation of Page and Wootters' work is the <strong>superselection rule</strong> in quantum mechanics (see <a href="https://en.wikipedia.org/wiki/Superselection">wikipedia/Superselection</a> for more information). Simply speaking, superselection rule think the Hamiltonian of the whole universe has a special structure such that some additive physics quantity (as operator) is commute to it. This leads to the Hilbert space of universe can be separated into several sectors. Observers, as the subsystem in the universe, are not allowed to recognize whether the universe is in a coherent superposition of distinct sectors or just a mixture of them. If the initial state of universe is in one sector, then during the time evolution there should be a global conservation rule existing. Wigner might be the first one to consider such observable limitation leading specific conservation rules like the total charge (<a href="https://link.springer.com/article/10.1007/BF02741478">Wightman, 1995</a>).</p>
+<p>Page and Wootters thought there should be also a total energy superselection rule, and the universe should be at some energy eigenstate (<a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885">Page &amp; Wootters, 1983</a>). By the quantum mechanics, this leads to the stationary picture of the universe dynamics as</p>
+<p>$$
+\ket{\psi(t): \textrm{universe}} = e^{\ti E t /\hbar} \ket{\psi(0): \textrm{universe}}.
+$$</p>
+<p>In such case, there should be no &ldquo;time evolution&rdquo; and violates our intuition: time flow does exists and we can even check it by experiment. To overcome this issue, Page and Wootters illustrate an interesting analysis for a closed system and introduced the &ldquo;clock time&rdquo; via the entanglement of parties. The &ldquo;clock time&rdquo;, instead of the &ldquo;coordinate time&rdquo;  $t$  in the Schrodinger equation, should be the one we realizable in the real world. This analysis, by their original paper, may not be correct but consistent. It is interesting to discuss, especially recently there are some new progress in this context.</p>
+<h2 id="theory-conditional-probability-interpretation">Theory: Conditional Probability Interpretation</h2>
+<p>The core idea of Page and Wootters' is described in (<a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885">Page &amp; Wootters, 1983</a>) as</p>
+<blockquote>
+<p>&hellip; although the dependence of a system upon coordinate time is completely unobservable, one can observe a dependence upon an internal clock time.</p>
+</blockquote>
+<p>The dependence of the dynamical variables to the clock time is described as the <strong>Conditional Probability</strong>.</p>
+<p>Let the composite system be split into the subsystem we concern as  $S$  and the clock  $C$ . The clock time  $\tau$  (we use different notation to distinguish coordinate time  $t$ ) is some observable on  $C$ , i.e. described as an operator on the subspace  $\mathcal{H}_C$ . Our naive calling for &ldquo;Something happened to  $S$  at time  $\tau$ &rdquo; means we find the system  $S$  at some state, with the condition of  $C$  reads  $\tau$ . Mathematically speaking, the state of  $S$  at time  $\tau$  means the following conditional probability distribution</p>
+<p>$$
+\mathbb{P}(S \textrm{ at state } s| C \textrm{ at } \tau).
+$$</p>
+<p>Thus the time flow can be separated into two aspects. One is the evolution of coordinate time  $t$ , which could leave no observable difference on the universe  $S+ C$  or any subsystem. Another is the evolution of clock time. Our perception of such evolution comes from the correlation between the subsystem and the internal clock.</p>
+<h2 id="an-example-how-does-internal-clock-work">An Example: How does Internal Clock Work?</h2>
+<p>This is the example to illustrate how does conditional probability work in Page and Wootters' original paper.</p>
+<p>Consider the system (Universe) of two large but distinguishable spins denoted as  $1, 2$ . The Hamiltonian of the Universe is made up with the kinetic energy of them with <strong>NO</strong> interaction. With the eigenstates of  $\hat S_{i, z} , i=1,2$ , the Hamiltonian reads</p>
+<p>$$
+\hat H = \hbar \omega \hat S_{1,z}+ \hbar \omega \hat S_{2,z}  = \sum_{m_1=-s}^{s} \sum_{m_2=-s}^{s} \hbar \omega m_1 \ket{m_1}\bra{m_1} \otimes \hat I_2 + \hbar\omega m_2 \hat I_1 \otimes \ket{m_2}\bra{m_2}.
+$$</p>
+<p>Since there is no interaction between spin 1 and 2, the composite motion is just the direct product of two free rotations along the z-axis. Suppose the initial condition of the composite system is the product state of the eigenstates of  $\hat S_{1,x}$  and  $\hat S_{2,x}$  with maximum magnitude. With the theory of quantum angular momentum, such states should be</p>
+<p>$$
+\ket{x}=\frac 1 {2^s} \sum_{m=-s}^s \sqrt{\frac {(2s)!} {(s-m)!(s+m)!}} \ket{m} \Rightarrow \hat S_x \ket{x} = \hbar s \ket{x}.
+$$</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note: Checking for this eigenstate
+    </summary>
+<p>One can check this is the eigenstate of  $\hat S_x$  with possibly largest eigenvalue by the ladder operator in  $\hat S_z$  eigenbasis representation.</p>
+<p>$$
+(\hat S_x \pm \ti \hat S_y) \ket{s, m} = \hbar \sqrt{s(s+1) - m(m\pm 1)} \ket{s,m\pm 1} \\
+\Rightarrow \hat S_x =\frac \hbar 2 \sum_{m=-s}^s \sqrt{s(s+1)-m(m+1)}\ket{m+1}\bra{m} + \sqrt{s(s+1)-m(m-1)}\ket{m-1}\bra{m}.
+$$</p>
+<p>Then, there is</p>
+<p>$$
+\begin{aligned}
+\frac 1 \hbar \hat S_x \ket{x} &= \frac 1 {2^{s+1}}\sum_m \sqrt{C_{2s}^{s+m}}\Big(\sqrt{(s-m)(s+m+1)}\ket{m+1} + \sqrt{(s+m)(s-m+1)}\ket{m-1}\Big) \\
+&=\frac 1 {2^{s+1}} \Big(\sum_m \sqrt{\frac{(2s)!(s+m+1)} {(s-m-1)!(s+m)!}} \ket{m+1} + \sqrt{\frac {(2s)!(s-m+1)} {(s+m-1)!(s-m)!}} \ket{m-1} \Big) \\
+&=\frac 1 {2^{s+1}} \Big(\sum_{m=-s+1}^s \sqrt{\frac{(2s)!(s+m)} {(s-m)!(s+m-1)!}} \ket{m} + \sum_{m=-s}^{s-1}\sqrt{\frac {(2s)!(s-m)} {(s+m)!(s-m-1)!}} \ket{m} \Big)  \\
+&=\frac 1 {2^{s+1}} \Big(\sum_{m=-s}^s \sqrt{\frac{(2s)!} {(s-m)!(s+m)!}}(s+m) \ket{m} + \sum_{m=-s}^{s}\sqrt{\frac {(2s)!} {(s+m)!(s-m)!}}(s-m) \ket{m} \Big) \\
+&=s \ket{x}
+\end{aligned}
+$$</p>
+<p>We change the range of sum for the added term should be zero by the sum rule. Thus the state  $\ket{x}$  should be the eigenstate of  $\hat S_x$  with the possibly maximum eigenvalue. This means the spin oriented along  $x$  axis.</p>
+</details>
+<p>The second spin would be our internal clock. The observer (spin 1) cannot be asked any question about its motion with the respect to coordinate time  $t$  (though there is indeed absolute motion in this case). One can only ask the conditional probability of spin-1 with the condition of spin-2 state. This procedure cannot be done in real world, since such prediction of probability can only get demonstration via some infinite ensemble of the universe. This fault is the same as many-world interpretation: the theory of the transition probability of the irreversible procedure cannot verified preciously via experiment.</p>
+<p>To illustrate how the internal clock works, we show how spin-1 and spin-2 get correlated via a set of &ldquo;stationary operators&rdquo;. The system itself does not have any entanglement during the evolution. This is one of the novelty of Page and Wootters' work.</p>
+<p>The operators, or measurement is chosen to be the spin component along  $x$  axis. To determine the conditional probability, we need the induced projector by measure spin-2 and spin-1&amp;2 together by</p>
+<p>$$
+\hat P_{c} = \hat I_1 \otimes \ket{x, 2}\bra{x, 2} \ ; \ \hat P(k) = \ket{J_{1,x} = s-k, 1}\bra{J_{1,x}=s-k,1}\otimes \ket{x,2}\bra{x,2}.
+$$</p>
+<p>In the Heisenberg picture, one can write down the explicit expression for eigenstate of  $\hat J_{x}(t)$  as</p>
+<p>$$
+\ket{J_x=s-k} = \sum_{m=-s}^s \sqrt{\frac {C_{2s}^k} {C_{2s}^{s+m}}} \sum_{l=0}^k C_k^l C_{2s-k}^{s+m-l} 2^{-s} (-1)^l e^{-\ti m \omega t} \ket{m}.
+$$</p>
+<p>Since projector  $\hat P_c$  and  $\hat P(k)$  are both dependent of time in the Heisenberg picture (i.e., they are not stationary operators). The authors considered the long time average of these projectors for the conditional probability as</p>
+<p>$$
+\mathbb{P}(J_{1,x}=s-k|J_{2,x}=s) = \frac {\braket{\psi|\overline{\hat P(k)}|\psi}} {\braket{\psi|\overline{\hat P}_j|\psi}},
+$$</p>
+<p>with  $\overline{\hat O} = \lim_{T\rightarrow \infty} \frac 1 {2T}\int_{-T}^T e^{\ti \hat H t} \hat O e^{-\ti \hat H t} \td t$ . By their result, the conditional probability reads</p>
+<p>$$
+\mathbb{P}(J_{1,x} = s-k|J_{2,x}=s) = 2^{-4s} \frac {C_{8s}^{4s} C_{2s}^k C_{4s}^k} {C_{4s}^{2s}C_{8s}^{2k}} \sim_{s\rightarrow \infty} 2^{-1/2 - 3k} C_{2k}^k.
+$$</p>
+<p>This performs a strong concentration around  $k=0$ , i.e., these two spin illustrate the correlation by the conditional probability through the stationary operators.</p>
+<h1 id="physical-theory-with-clock-time">Physical Theory with Clock Time</h1>
+<!--ref: the recent Nat. Comm. paper [Nat Commun 12, 1787 (2021).](https://www.nature.com/articles/s41467-021-21782-4.pdf)-->
+<h2 id="the-classical-analog">The Classical Analog</h2>
+<p>In the classical mechanics, we can assign a dynamical variable as the time instead of coordinate time and obtain the analog of PaW mechanism.</p>
+<p>Let us begin with the system described by the clock time  $\tau$ , which can be the dynamical variable of one additional degree of freedom or another subsystem. The classical mechanics for the subsystem apart from the internal clock can be expressed as the action
+$$
+S = \int \td \tau \ L_S\Big(q, \frac {\td q} {\td \tau}\Big).
+$$
+Without loss of the generality, we choose a time-independent Lagrangian for the system. Then according to the PaW picture, we can derive the mechanics of the universe with respect to the coordinate time  $t$ . The transformation can be down by noting  $\tau = \tau(t)$  is a dynamical variable. The action evolving all degrees of freedom(subsystem and the clock) should be
+$$
+S = \int \td t \ \dot{\tau} L_S(q, \dot{q} / \dot{\tau}) = \int\td t\ L(q, \dot{q}, \dot{\tau}).
+$$
+We denoting all time derivative of dynamical variables with respect to coordinate time  $t$  as the dot-notation. Then the Lagrangian of the universe which leads to the classical theory for dynamics should be
+$$
+L(q, \dot{q}, \dot{\tau}) = \dot{\tau} L_S(q, \dot{q}/\dot{\tau}).
+$$
+The Hamiltonian of the universe can also be obtained by the full Legendre transformation including  $\tau$  as
+$$
+\begin{aligned}
+H &= \frac {\partial L} {\partial \dot{\tau}} \dot{\tau} + \frac {\partial L} {\partial \dot{q}} \dot{q} - L \\
+&= L_S\dot{\tau}+\dot{\tau}\partial_2 L_S \cdot (-\dot{q} / \dot{\tau}^2) \dot{\tau}+\dot{\tau} \partial_2L_S(1/\dot{\tau})\dot{q} - \dot{\tau}L_S \\
+&=0.
+\end{aligned}
+$$</p>
+<p>This vanishing Hamiltonian means that this classical universe is stationary. However such form of the Lagrangian  $L$  for universe leads to the non-vanishing effective dynamics for the subsystem with respect to internal clock time  $\tau$ . With this result, we can legally make a conjecture that there is no &ldquo;absolute&rdquo; motion of the universe. Our feeling for the time flow is caused by the careful choice of the clock time  $\tau$ , since the universe&rsquo;s Lagrangian  $L$  could lead to a non-vanishing motion of the subsystem with respect to  $\tau$ . This is the core idea of PaW mechanism.</p>
+<h2 id="derive-the-schrodinger-equation">&ldquo;Derive&rdquo; the Schrodinger Equation</h2>
+<p>Our next work is to apply the analysis to the quantum system. The approach was originally proposed in Page and Wootters' paper. Recently, their idea got mathematically strict expression in <a href="https://www.nature.com/articles/s41467-021-21782-4.pdf">Nat Commun 12, 1787 (2021).</a> We follow the Page &amp; Wootters' language here since it is simple and enough to show the method.</p>
+<p>Consider the composite system (universe) of clock  $C$  and system  $S$  without interaction. The Hamiltonian reads
+$$
+\hat H = \hat H_S\otimes \hat I_C + \hat I_S \otimes \hat H_C.
+$$
+Without loss of generality, let the universe is at the eigenstate of energy to be zero. The global energy shift can only lead to the overall phase factor(coordinate time dependent) that is not observable. That means
+$$
+\hat H \ket{\Psi} = 0.
+$$
+Without further explanation, we use upper Greek letters to denote the universe and lower case for the (sub)system.</p>
+<p>It is necessary in this theory that  $\hat H_C$  generates a set of clock states. In Page &amp; Wootters' original paper, they required
+$$
+e^{\ti \hat H_C s}\ket{0} = \ket{s} \ ; \ \hat I_C = \int \td s \ \ket{s}\bra{s}.
+$$
+This is actually a non-trivial requirement for  $\hat H_C$ . One can easily find the conjugate operator of any spectral operator like position in the Hilbert space of clock match this. However, such  $\hat H_C$  would not have a lower bound and harmful for the quantum theory. Such clock works for showing PaW mechanism in this toy model. However, one should be carefully to use this for further research. One should also note that this fault is not fatal for the discussion of local procedure during short time interval. For those global cases with a long time interval, the unbounded Hamiltonian from below is questioned because of multiple instability issues.</p>
+<p>By Page &amp; Wootters' setup, the (conditional) expectation value of operator  $\hat O$  on the Hilbert space of subsystem  $S$  at clock time  $\tau$  should be</p>
+<p>$$
+\begin{aligned}
+\langle \hat O(\tau)\rangle &= \sum_j \frac {\bra{\Psi} (\ket{O=O_j}\bra{O=O_j} \otimes \ket{\tau}\bra{\tau}) \ket{\Psi}} {\bra{\Psi} (\hat I_S \otimes \ket{\tau}\bra{\tau})\ket{\Psi}} O_j \\
+&= \frac {\textrm{Tr} \hat \rho (\hat O \otimes \ket{\tau}\bra{\tau})} { \textrm{Tr} \hat \rho (\hat I_S \otimes \ket{\tau}\bra{\tau})}.
+\end{aligned}
+$$</p>
+<p>With the definition of clock states  $\ket{\tau}$  and the fact that  $[\hat \rho, \hat H] = 0$ , one has</p>
+<p>$$
+\begin{aligned}
+\textrm{Tr} \hat \rho (\hat O \otimes \ket{\tau}\bra{\tau}) &= \textrm{Tr} \hat \rho \Big(\hat O \otimes e^{-\ti \hat H_C \tau} \ket{0}\bra{0} e^{\ti \hat H_C \tau}\Big) \\
+&= \textrm{Tr} \ e^{-\ti \hat H \tau} \hat \rho e^{\ti \hat H \tau} e^{-\ti \hat I_S \otimes \hat H_C \tau} (\hat O \otimes \ket{0}\bra{0}) e^{\ti \hat I_S \otimes\hat H_C \tau} \\
+&= \textrm{Tr} \hat \rho \Big((e^{\ti \hat H_S \tau} \hat O e^{-\ti \hat H_S \tau} )\otimes \ket{0}\bra{0}\Big).
+\end{aligned}
+$$</p>
+<p>Thus, the expectation value of the operator at (clock) time  $\tau$  should be</p>
+<p>$$
+\braket{\hat O(\tau)} = \frac {\textrm{Tr}\hat \rho (\hat O \otimes \ket{\tau}\bra{\tau})} {\textrm{Tr} \hat\rho (\hat I_S \otimes \ket{\tau}\bra{\tau})}  = \frac {\textrm{Tr}\hat \rho (e^{\ti \hat H_S \tau} \hat O e^{-\ti \hat H_S \tau}\otimes \ket{0}\bra{0})} {\textrm{Tr} \hat \rho (\hat I_S \otimes \ket{0}\bra{0})} = \braket{e^{\ti \hat H_S \tau} \hat O(\tau = 0)e^{-\ti \hat H_S \tau}}.
+$$</p>
+<p>That is to say, the dynamics of expectation of observables obeys the Heisenberg equation. By the equivalence between the Heisenberg picture and Schrodinger picture, PaW mechanism provides us the same scene as common quantum mechanics with respect to coordinate time  $t$ .</p>
+<h1 id="interacting-clock-and-system">Interacting Clock and System</h1>
+<p>ref: the work of <a href="https://quantum-journal.org/papers/q-2019-07-08-160/pdf/">Alexander R. H. Smith1 and Mehdi Ahmadi-</a></p>
+<p>In the most generic case, we cannot assume that there is no interaction between the clock and the system. There should at least the gravitational interaction between them. Even when we consider the local theory so the gravity is neglectable, the mechanism cannot escape discussing the interaction. As the clock time matches our feeling to the time flow, we need at least an observer to connect the clock and the system. These two subsystem should be entangled to the observer at the same time. This leads to the information exchange between them, for example, by photons. The existence of this procedure requires the interaction.</p>
+<p>With the same setup of the clock states and the universe state (Hamiltonian constraint)</p>
+<p>$$
+\Big(\hat H_S\otimes \hat I_C + \hat I_S \otimes \hat H_C + \hat H_{\textrm{int}}\Big) \ket{\Psi} = 0,
+$$</p>
+<p>we can derive the &ldquo;clock time&rdquo; dependent wavefunction for system  $S$ :  $\ket{\psi_S(\tau)} = \braket{\tau| \Psi} \equiv \sum_j \ket{j} \Big(\bra{j} \otimes \bra{\tau} \ket{\Psi}\Big)$ . The equation of motion for it should be</p>
+<p>$$
+\begin{aligned}
+\ti \frac {\td} {\td \tau} \ket{\psi_S(\tau)} &= \ti\sum_j \ket{j} \Big(\bra{j} \otimes \bra{0} \frac {\td } {\td \tau} e^{\ti \hat H_C \tau} \Big)\ket{\Psi} \\
+&= \sum_j \ket{j} \Big(\bra{j} \otimes \bra{\tau}\Big) (-\hat I_S \otimes \hat H_C) \ket{\Psi} \\
+&=\sum_j \ket{j} \Big(\bra{j} \otimes \bra{\tau}\Big) (\hat H_S \otimes \hat I_C + \hat H_{\textrm{int}}) \ket{\Psi} \\
+&= \hat H_S \ket{\psi_S(\tau)} + \int \td \tau' \ K(\tau, \tau') \ket{\psi_S(\tau')}
+\end{aligned}
+$$</p>
+<p>The integral kernel  $K(\tau, \tau') = \braket{\tau|\hat H_{\textrm{int}}| \tau'}$  is the operator on the Hilbert space of  $S$ . Such equation is firstly introduced in (<a href="https://quantum-journal.org/papers/q-2019-07-08-160/pdf/">Alexander R. H. Smith, 2019</a>) as the direct conclusion of PaW mechanism with clock-system interaction.</p>
+<p>Generally, this equation is not local in time, i.e., the motion of  $\psi_S$  (time derivative) is dependent of the previous states (history) rather than the state at time  $\tau$  only. Further more, the equation of motion does not automatically preserve the inner product of  $\psi_S(\tau)$ . This requires the interaction cannot be of arbitrary form or the physical states of  $\psi_S$  is limited.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>It has been a long mystery for the answer of what time is. In the past theoretical approach to the nature this question was evaded by introduce the global parameter since Newton&rsquo;s &ldquo;absolute time&rdquo; (<a href="https://en.wikipedia.org/wiki/Absolute_space_and_time">wikipedia/absolute_space_and_time</a>). Page and Wootters gave us a novel way to treat time as an emergent phenomena in quantum mechanics. Though there are still some issues in this framework for example</p>
 <ol>
-<li>
-<p><code>Time-dependent</code> : particle beam (plane wave packet)  $\ket{\psi(t=0)}$  coming in, interacting with  $\hat V$  , scattered particles (scattered wave)  $\ket{\psi(t\rightarrow +\infty)}$  going out.</p>
-</li>
-<li>
-<p><code>Time-independent</code> : a (short-ranged) scattering potential  $\hat V$  as a perturbation to free particle Hamiltonian  $\hat H_0$  . The unperturbed state is momentum eigenstate  $\ket{\bm{k}}$  (with momentum  $\hbar\bm{k}$ ) , and the perturbed state contains scattered wave.</p>
-<p>The difficulties in treating the scattering problem as perturbation theory: infinite degeneracy</p>
-</li>
+<li>Orthogonal clock states with the stable universe Hamiltonian.</li>
+<li>The choice of clock states is also an instance of preferred basis problem.</li>
+<li>How about the time arrow in microscopic systems?</li>
+<li>&hellip; &hellip;</li>
 </ol>
-<p>We will only consider non-relativistic particles:  $\hat H_0=-\frac {\hbar^2} {2m} \nabla^2$ </p>
-<p>Particle number(probability) current is:  $\text{Re}\big(\psi^*(\bm{r})(-\ti\frac \hbar m \nabla)\psi(\bm{r})\big)$ </p>
-<h2 id="scattering-cross-section">Scattering Cross Section</h2>
-<p><em>[Definition]</em> : <code>Differential cross section</code> :</p>
-<p>$$\frac {\td \sigma} {\td \Omega} := \frac {\td Q_{\text{flux scattered crossing }r^2\td \Omega}} {J_{\text{incoming}}\td \Omega}$$</p>
-<p>. Where  $\td \sigma$  is the particle current scattered into the solid angle element  $\td \Omega$ , under unit incoming particle current density</p>
-<p><em>[Definition]</em> : <code>Cross section</code> is the integral of differential cross section on the full angle:  $\sigma=\int \frac {\td \sigma} {\td \Omega}\td \Omega$ </p>
-<p>Incoming plane wave  $\ket{\bm{k}}$  is not normalizable. Probability is not easily defined. To overcome this one can use free wave packet instead of the plane wave.</p>
-<h1 id="lippmann-schwinger-equation">Lippmann-Schwinger Equation</h1>
-<p>Take the time-independent approach:  $(\hat H_0+\hat V)\ket{\psi}=E\ket{\psi}$  . Assume that  $\hat V$  is sufficiently short-ranged, namely for position  $\bm{r}$  at a very large distance from the scattering potential  $\hat V\approx 0$  and  $\ket{\psi}=\ket{\bm{k}}$ , that is  $E=\hbar^2 \bm{k}^2/2m$  .(Here we argue  $\ket{\psi}$  and  $\ket{\bm{k}}$  have the same energy, which means we are only considering <code>elastic scattering</code>) Like the perturbation theory we have the <code>Lippmann-Schwinger Equation</code></p>
-<p>$$\ket{\psi}=\ket{\bm{k}}+\frac {1} {E-\hat H_0+\ti \epsilon}\hat V\ket{\psi}$$</p>
-<p>Where  $\ti\epsilon$  is used to avoid singularity.</p>
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    
-
-The Lippmann-Schwinger equation can we writen as  $E\ket{\psi}-\hat H_0\ket{\psi}+\ti \epsilon \ket{\psi}=\ti\epsilon \ket{\bm{k}}+\hat V \ket{\psi}$  . For the time-evolution of  $\ket{\psi}$  can be obtained by the Schrodinger equation:
-
-
-$$\ti \hbar \frac {\td } {\td t}\ket{\psi(t)} = (\hat H_0+\hat V)\ket{\psi(t)}=(E+\ti\epsilon)\ket{\psi(t)}-\ti\epsilon\ket{\bm{k}}$$
-
-
-Then we have:
-
-
-$$\ti\hbar \frac {\td} {\td t} \Big(e^{\ti Et/\hbar -\epsilon t/\hbar}\ket{\psi(t)}\Big)=-\ti \epsilon e^{\ti Et/\hbar -\epsilon t/\hbar}\ket{\bm{k}}$$
-
-
-Then the solution is:
-
-
-$$\ket{\psi(t)}=e^{-\ti Et/\hbar+\epsilon t/\hbar}\Big(\ket{\psi(t=0)}-\frac {e^{\ti Et/\hbar-\epsilon t/\hbar}-1} {\ti E-\epsilon} \ti \epsilon \ket{\bm{k}}\Big)$$
-
-
-Or equivalently,
-
-
-$$\ket{\psi(t)}=e^{-\ti E t/\hbar + \epsilon t/\hbar}\big(\ket{\psi}+\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}\big)-\frac {\epsilon} {E+\ti\epsilon}\ket{\bm{k}}$$
-
-
-Which satisfies  $\ket{\psi(t\rightarrow -\infty)}\propto \ket{\bm{k}}$  , mimic the scattering process. With this meaning, one can also write it as the form of:
-
-
-$$\begin{aligned}
-\ket{\psi^{(\pm)}}=\ket{\bm{k}}_{\text{in}/\text{out}}+\frac 1 {E-\hat H_0\pm \ti \epsilon} \hat V \ket{\psi^{(\pm)}}
-\end{aligned}$$
-
-
-Where  $(+)$  corresponding to the  $\ket{\bm{k}}_{\text{in}}$  , because  $\ket{\psi^{(+)}(t\rightarrow -\infty)} = \ket{\bm{k}}_{\text{in}}$  , \
-And  $(-)$  corresponding to the  $\ket{\bm{k}}_{\text{out}}$  , because  $\ket{\psi^{(-)}(t\rightarrow +\infty)} = \ket{\bm{k}}_{\text{out}}$  .
-
-
-</details>
-
-<p>Assuming that  $\hat V=\int \td^3\bm{r} \ V(\bm{r})\ket{\bm{r}}\bra{\bm{r}}$  , we can write the  $\ket{\psi}$  as the wavefunction on coordinate space:</p>
-<p>$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$</p>
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    
-
-With the equality:  $1=\int \td^3 \bm{k}\ket{\bm{k}}\bra{\bm{k}}$  , we have:
-
-
-$$\begin{aligned}
-\bra{\bm{r}}\psi\rangle &= \bra{\bm{r}}\bm{k}\rangle + \int \td^3 \bm{r}' \td^3 \bm{k}' \bra{\bm{r}}\frac {1} {E-\hat H_0+\ti\epsilon} \ket{\bm{k}'}\bra{\bm{k}'}\bm{r}'\rangle \bra{\bm{r}'}\hat V \ket{\psi} \\
-&=\bra{\bm{r}}\bm{k}\rangle +\int \td^3 \bm{r}' \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} V(\bm{r}')\bra{\bm{r}'}\psi\rangle \\
-\end{aligned}$$
-
-
-For that:
-
-
-$$\begin{aligned}
-\int \td^3 \bm{k}' \frac {\bra{\bm{r}}\bm{k}'\rangle\bra{\bm{k}'}\bm{r}'\rangle} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon}&=\frac 1 {(2\pi)^{3/2}}\int \td^3 \bm{k}' \frac {e^{\ti \bm{k}'\cdot(\bm{r}-\bm{r}')}} {\frac {\hbar^2\bm{k}^2} {2m}-\frac {\hbar^2\bm{k}'^2} {2m}+\ti\epsilon} \\
-&=\frac {2m} {(2\pi)^{3/2}\hbar^2} \int_{0}^{\infty} \td|\bm{k}'|\int_0^{2\pi}\td \theta\int_0^\pi \td \phi |\bm{k}'|^2 \sin \phi \frac {e^{\ti|\bm{k}'||\bm{r}-\bm{r}'|\cos\phi}} {|\bm{k}|^2-|\bm{k}'|^2+\ti \epsilon'} \\
-&=-\frac {2m} {(2\pi)^{3/2}\hbar^2} \frac {2\pi^2} {|\bm{r}-\bm{r}'|}e^{\ti k|\bm{r}-\bm{r}'|}
-\end{aligned}$$
-
-
-This can be easily proved by the residue theorem.
-
-One can write down that:
-
-
-$$\psi(\bm{r})=\bra{\bm{r}}\psi\rangle = \frac {e^{\ti \bm{k}\cdot \bm{r}}} {(2\pi)^{3/2}}-\frac {2m} {\hbar^2} \int \td^3 \bm{r'} \frac {e^{\ti k |\bm{r}-\bm{r}'|}} {4\pi |\bm{r}-\bm{r}'|} V(\bm{r}')\psi(\bm{r}') $$
-
-
-q.e.d.
-
-
-</details>
-
-<p>The further approximation is that:  $|\bm{r}-\bm{r}'|\approx |\bm{r}|-\frac {\bm{r}\cdot \bm{r}'} {|\bm{r}|}$  with  $|\bm{r}|\gg|\bm{r}'|$  , since  $V$  is only nonzero at the neighbor of origin.</p>
-<p>$$\psi(\bm{r})\approx \frac 1 {(2\pi)^{3/2}}\Big(e^{\ti \bm{k}\cdot \bm{r}} +f(\bm{k}',\bm{k}) \frac {e^{\ti kr}} {r} \Big) $$</p>
-<p>Where  $f(\bm{k}',\bm{k})=-\frac {(2\pi)^{3/2}} {4\pi}\frac {2m} {\hbar}\int \td^3 \bm{r}' e^{-\ti \bm{k}'\cdot \bm{r}'}V(\bm{r}')\psi(\bm{r}')$ </p>
-<p>And one can prove that the <code>differential cross section</code>:</p>
-<p>$$\frac {\td\sigma} {\td \Omega} = |f(\bm{k}',\bm{k})|^2 $$</p>
-<p><em>[Theorem]</em> : <code>Optical theorem</code> : Total cross section is related to the forward scattering amplitude:</p>
-<p>$$\sigma \equiv \int \frac {\td \sigma} {\td \Omega} \td \Omega = \frac {4\pi} {k}\text{Im}f(\bm{k},\bm{k})$$</p>
-<h1 id="born-approximation">Born Approximation</h1>
-<p>Approximate the unknown |ψi on the right-hand-side of Lippmann-Schwinger equation by the incoming plane wave, we have the method called <code>Born Approximation</code> :</p>
-<p>$$\ket{\psi} = \ket{\bm{k}} +\frac {1} {E-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}}$$</p>
-<p>With Born Approximation, we can write the  $f(\bm{k}',\bm{k})$  without any unknown function:</p>
-<p>$$f(\bm{k}',\bm{k})=-\frac {2m} {4\pi\hbar}\int \td^3 \bm{x} \ e^{-\ti(\bm{k}'-\bm{k})\cdot \bm{x}} V(\bm{x})$$</p>
-<p>It is just proportional to the fourier transform of  $V(\bm{x})$  , and just the function of  $\bm{k}'-\bm{k}$ .</p>
-<p>One can also apply higher approximation on Lippmann-Schwinger function and obtain the <code>Born-Equation</code>:</p>
-<p>$$\ket{\psi}=\ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\frac 1 {E-\hat H_0+\ti \epsilon}\hat V \frac 1 {E-\hat H_0+\ti \epsilon}\hat V \ket{\bm{k}}+\cdots$$</p>
-<h1 id="partial-wave-expansion">Partial Wave Expansion</h1>
-<p>Consider the central potential  $V(\bm{x})=V(|\bm{x}|)$  , then  $f$  is just the function of the angle between  $\bm{k}',\bm{k}$  . Define the  $\bm{k}$  direction as  $+z$  direction, we have:</p>
-<p>$$\psi(\bm{r})\sim e^{\ti kz}+f(\theta)\frac {e^{\ti kr}} r$$</p>
-<p>Expand the plane wave into spherical waves:</p>
-<p>$$e^{\ti kz} = \sum_{l=0}^{\infty} (2l+1)\ti^l j_l(kr)P_l(\cos\theta) $$</p>
-<p>where  $j_l$  are spherical Bessel function. For large  $r$  , it is  $e^{\ti kz}\sim \frac 1 {2\ti kr}\sum_{l=0}^{\infty} (2l+1)(e^{\ti kr}-(-1)^l e^{-\ti kr})P_l(\cos\theta)$ </p>
-<p>Expand  $f(\theta)$  into Legendre Polynomials:  $f(\theta)=\sum_{l=0}^{\infty}(2l+1)f_l P_l(\cos\theta)$ </p>
-<p>Then the cross section:</p>
-<p>$$\sigma =\int \td \Omega \ |f|^2=4\pi \sum_l (2l+1)|f_l|^2$$</p>
-<p>Where we used the orthogonality of Legendre Polynomials:  $\int_0^{\pi}\sin\theta \td \theta \ P_l(\cos\theta)P_{l'}(\cos\theta)=\frac 2 {2l+1}\delta_{l,l'}$ </p>
-<p>By <code>optical theorem</code>:</p>
-<p>$$\sigma=\frac {4\pi} k \text{Im} f(0)=\frac {4\pi} k \sum_l (2l+1)\text{Im}f_l$$</p>
-<p>Where we have used  $P_l(1)=1$  .</p>
-<p>Compare these two expression, we have  $|f_l|^2 = \frac 1 k \text{Im}f_l$  ,  or equivalently,  $|1+2\ti kf_l|^2=1$ .</p>
-<p>Define phase shift  $\delta_l$  such that  $1+2\ti kf_l=e^{2\ti\delta_l}$  , then  $f_l=\frac 1 k e^{ti \delta_l}\sin\delta_l$  . As the result:</p>
-<p>$$\psi(\bm{r})\sim \frac 1 {2\ti kr}\sum_l (2l+1)P_l(\cos\theta)\big[e^{2\ti \delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big] $$</p>
-<p>At the large  $r$ . And the cross section:</p>
-<p>$$\sigma=\frac {4\pi} {k^2} \sum_l (2l+1)\sin^2 \delta_l$$</p>
-<p>The full procedure to solve the scattering question by partial wave method is :</p>
-<ol>
-<li>Expand  $\psi(r)=\sum_l Y_l^0(\theta,\phi)R_l(r)$  , where spherical harmonic function  $Y_l^0(\theta,\phi)=\sqrt{\frac {2l+1} {4\pi}}P_l(\cos\theta)$ . Then radial function satisfies:</li>
-</ol>
-<p>$$\Big[-\frac 1 r \frac {\td^2} {\td r^2} r + \frac {l(l+1)} {r^2} +\frac {2m} {\hbar^2} V(r) \Big]R_l(r)=k^2 R_l(r)$$</p>
-<pre><code>And  $R_l(r)\sim\frac 1 {2\ti kr}\frac 1 {\sqrt{4\pi(2l+1)}}\big[e^{2\ti\delta_l}e^{\ti kr}-(-1)^l e^{-\ti kr} \big]$  as  $r\rightarrow \infty$ .
-</code></pre>
-<ol start="2">
-<li>
-<p>To solve  $\delta_l$  , solve the radial equation of  $R_l$  first. expand its asymptotical ( $r\rightarrow \infty$ ) form by spherical Bessel function  $j_l(kr)$  and  $n_l(kr)$ :  $R_l(kr)\sim j_l(kr)\cos(\delta_l)+n_l(kr)\sin\delta_l$ </p>
-<p>Remind of the spherical Bessel function  $j_l,n_l$  , they are the solution of the equation:</p>
-</li>
-</ol>
-<p>$$\Big[-\frac 1 {\rho} \frac {\td^2} {\td \rho^2} \rho + \frac {l(l+1)} {\rho^2}  \Big]R(\rho)=R(\rho)$$</p>
-<pre><code>And has the form:
-</code></pre>
-<p>$$j_l(\rho)=(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\sin\rho} {\rho} \Big) \ ; \ n_l(\rho)=-(-\rho)^l \Big(\frac 1 {\rho}\frac {\td} {\td \rho} \Big)^l \Big(\frac {\cos\rho} {\rho} \Big)$$</p>
-<pre><code>And the asymptotical behavior:
-</code></pre>
-<p>$$\begin{aligned}
-    \rho &\rightarrow 0 \Rightarrow j_l(\rho)\sim \frac {\rho^l} {(2l+1)!!} \ ; \ n_l(\rho)\sim - \frac {(2l+1)!!} {\rho^l}\\
-    \rho &\rightarrow \infty \Rightarrow j_l(\rho)\sim \frac {\sin(\rho-l\pi/2)} {\rho} \ ; \ n_l(\rho)\sim \frac {\cos(\rho-l\pi/2)} {\rho}
-    \end{aligned}$$</p>
-<h1 id="scattering-matrix">Scattering Matrix</h1>
-<p><em>[Definition]</em> :  $\hat S$  is the unitary time evolution operator in <code>interaction picture</code> , under the <code>limit</code> that initial time  $t_i\rightarrow -\infty$  and the final time  $t_f\rightarrow +\infty$  :</p>
-<p>$$\hat S = \lim_{t_i\rightarrow -\infty \\  t_f\rightarrow +\infty} \hat U_I(t_f,t_i)$$</p>
-<p>Then from Dyson series, we have:</p>
-<p>$$\hat S = 1 +\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 \hat V_I(t_1) + \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty}\td t_1 \int_{-\infty}^{t_1} \td t_2 \hat V_I(t_1)\hat V_I(t_2)+\cdots$$</p>
-<p>Where  $\hat V_I(t)=e^{\ti \hat H_0 t/\hbar} \hat V e^{-\ti \hat H_0 t/\hbar}$ </p>
-<p>Usually it is a <code>non-convergent integral</code> , to avoid this , we assume that the time of interaction is finite. That is assuming the potential (in <code>Schrodinger picture</code>) depends on time:  $\hat V(t)=\hat V e^{-\epsilon |t|}$  . With  $\epsilon\gt 0$  .</p>
-<p>Then with the Dyson series we can compute order by order:</p>
-<h2 id="1st-order">1st Order</h2>
-<p>$$\hat S^{(1)} = -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})$$</p>
-<p>Where  $\ket{\bm{k}}$  is the eigenstate of momentum, or  $\hat H_0$  .</p>
-<p>$$\hat H_0\ket{\bm{k}}=\frac {\hbar \bm{k}^2} {2m} \ket{\bm{k}}\equiv E_{\bm{k}}\ket{\bm{k}}$$</p>
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    
-
-The first order term in Dyson series is:
-
-
-$$\begin{aligned}
-&\frac {-\ti} {\hbar} \int_{-\infty}^{+\infty} \td t_1 e^{\ti \hat H_0 t_1/\hbar} \hat V e^{-\epsilon |t_1|} e^{-\ti \hat H_0 t_1/\hbar}  \\
-=& \int \td^3 \bm{k}\td^3 \bm{k}' \ \frac {-\ti} \hbar \int_{-\infty}^{+\infty} \td t_1 \ket{\bm{k}}e^{\ti E_{\bm{k}}t/\hbar}\bra{\bm{k}}\hat V\ket{\bm{k}'}e^{-\epsilon |t_1|} e^{-\ti E_{\bm{k}'}t/\hbar} \bra{\bm{k}'} \\
-=& \int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \Big(\frac 1 {\ti(E_{\bm{k}}-E_{\bm{k}'})/\hbar +\epsilon} - \frac 1 {\ti(E_{\bm{k}}-E_{\bm{k}'})/\hbar -\epsilon} \Big)\\
-=& \int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \frac {2\epsilon} {(E_{\bm{k}}-E_{\bm{k}'})^2/\hbar^2 +\epsilon^2} \\
-\sim_{\epsilon\rightarrow 0} &\int \td^3 \bm{k}\td^3 \bm{k}' \  \frac {-\ti} \hbar \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} 2\pi \delta\big(\frac {E_{\bm{k}}-E_{\bm{k}'}} {\hbar} \big) \\
-=& -\int \td^3 \bm{k}\td^3 \bm{k}' \ \ket{\bm{k}}\bra{\bm{k}}\hat V \ket{\bm{k}'}\bra{\bm{k}'} \ 2\pi\ti \delta(E_{\bm{k}}-E_{\bm{k}'})
-\end{aligned}$$
-
-
-Using that  $\lim_{\epsilon\rightarrow 0^+} \frac {2\epsilon} {x^2+\epsilon^2} = 2\pi \delta(x)$ .
-
-q.e.d.
-
-
-</details>
-
-<h2 id="2nd-order">2nd Order</h2>
-<p>$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$</p>
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Proof
-    </summary>
-    
-
-The second order term in Dyson series is:
-
-
-$$\begin{aligned}
-& \Big(\frac {-\ti} {\hbar}\Big)^2 \int_{-\infty}^{+\infty} \td t_1 \int_{-\infty}^{t_1}\td t_2 e^{\ti \hat H_0 t_1 /\hbar} \hat V e^{-\epsilon |t_1|} e^{-\ti \hat H_0 t_1/\hbar} e^{\ti \hat H_0 t_2/\hbar} \hat V e^{-\epsilon |t_2|} e^{-\ti \hat H_0 t_2/\hbar} \\
-&= (\frac {-\ti} \hbar)^2 \int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \td^3 \bm{k}_3 \ \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \ket{\bm{k}_2}\bra{\bm{k}_2}\hat V \ket{\bm{k}_3}\bra{\bm{k}_3} \times \\
-& \indent \int_{-\infty}^{+\infty} \td t_1 \int_{-\infty}^{t_1}\td t_2 \ e^{\ti E_{\bm{k}_1}t_1/\hbar-\epsilon|t_1|-\ti E_{\bm{k}_2}t_1/\hbar +\ti E_{\bm{k}_2}t_2/\hbar -\epsilon |t_2|-\ti E_{\bm{k}_3}t_2/\hbar} \\
-&= (\frac {-\ti} \hbar)^2 \int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \td^3 \bm{k}_3 \ \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \ket{\bm{k}_2}\bra{\bm{k}_2}\hat V \ket{\bm{k}_3}\bra{\bm{k}_3} \times \\
-&\indent \Big\{\frac 1 {\ti(E_{\bm{k}_2}-E_{\bm{k}_3})/\hbar +\epsilon}\Big(\frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_3})/\hbar +\epsilon} - \frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_2})/\hbar -\epsilon} \Big) \\
-&\indent - \frac 1 {\ti(E_{\bm{k}_2}-E_{\bm{k}_3})/\hbar -\epsilon}\Big(\frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_3})/\hbar -\epsilon} - \frac 1 {\ti(E_{\bm{k}_1}-E_{\bm{k}_2})/\hbar -\epsilon} \Big) \Big\}
-\end{aligned}$$
-
-
-Consider:
-
-
-$$\lim_{\epsilon\rightarrow 0^+} \frac 1 {x+\ti \epsilon} = -\ti \pi \delta(x) + \mathcal{P}\Big(\frac 1 x \Big)$$
-
-
-Where  $\mathcal{P}$  means `Cauchy principal value` . One can reduce the result above to:
-
-
-$$\hat S^{(2)} = -\int \td^3 \bm{k}_1 \td^3 \bm{k}_2 \ket{\bm{k}_1}\bra{\bm{k}_1}\hat V \frac 1 {E_{\bm{k}_1}-\hat H_0+\ti \epsilon} \hat V \ket{\bm{k}_2}\bra{\bm{k}_2} 2\pi \ti \delta(E_{\bm{k}_1}-E_{\bm{k}_2})$$
-
-
-q.e.d.
-
-
-</details>
-
-<h2 id="generic-formula">Generic Formula</h2>
-<p>The generic formula of  $\hat S$  is:</p>
-<p>$$\bra{\bm{k}}\hat S -1 \ket{\bm{k}'} = -2\pi \ti \delta(E_{\bm{k}}-E_{\bm{k}'}) \bra{\bm{k}} \Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}'}$$</p>
-<p>Is similar to Born expansion.</p>
-<details>
-    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
-        Re-prove the Optical Theorem
-    </summary>
-    
-
-With that  $\hat S$  is unitary, we have:
-
-
-$$\int \td^3 \bm{k}' \bra{\bm{k}} \hat S^\dagger\ket{\bm{k}'}\bra{\bm{k}'}\hat S \ket{\bm{k}}=\bra{\bm{k}}\bm{k}\rangle$$
-
-
-Or equivalently,
-
-
-$$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle \bra{\bm{k}'}\hat S-1\ket{\bm{k}} + \bra{\bm{k}}\hat S^\dagger -1 \ket{\bm{k}'}\bra{\bm{k}'}\bm{k}\rangle + |\bra{\bm{k}'}\hat S-1\ket{\bm{k}}|^2 \Big)=0$$
-
-
-Let
-
-
-$$T(\bm{k}',\bm{k})=\bra{\bm{k}'}\Big(\hat V +\hat V \frac 1 {E_{\bm{k}}-\hat H_0+\ti\epsilon} \hat V +\cdots \Big) \ket{\bm{k}}$$
-
-
-we can rewrite the equality above as:
-
-
-$$\int \td^3 \bm{k}' \Big(\bra{\bm{k}}\bm{k}'\rangle (-2\pi\ti)\delta(E_{\bm{k}}-E_{\bm{k}'}) T(\bm{k}',\bm{k})+2\pi\ti\delta(E_{\bm{k}}-E_{\bm{k}'}) T(\bm{k}',\bm{k})^*\bra{\bm{k}'}\bm{k}\rangle \Big)\\
-=-\int \td^3 \bm{k} \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$
-
-
-That is:
-
-
-$$-\int \td^3 \bm{k}' \ 4\pi \delta(E_{\bm{k}}-E_{\bm{k}'}) \text{Im}(\bra{\bm{k}}\bm{k}'\rangle T(\bm{k}',\bm{k})) = \int \td^3 \bm{k}' \big(2\pi \delta(E_{\bm{k}'}-E_{\bm{k}}) \big)^2 |T(\bm{k}',\bm{k})|^2 $$
-
-
-That is the optical theorem:
-
-
-$$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'}) |T(\bm{k}',\bm{k})|^2$$
-
-
-
-</details>
-
+<p>PaW mechanism is still valuable for the modern research for quantum theory for gravity.</p>
+<p>With PaW mechanism, one can also make further interesting discussion of novel quantum procedure that not allowed with the coordinate time. Like the history representation for the time arrow, time machine with respect to clock time, and the similar approach (conditional probability interpretation) for the spatial coordinates and momentum.</p>
+<!--In quantum field theory, (flat) space and time are treated as parameters (indices of degree of freedom). It would be interesting to reformulate them as the conditional probability with respect some reference frame and discuss the Lorentz invariability. -->
+<!--# Reference-->
 
           </div>
 
@@ -1043,9 +811,6 @@ $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'
       <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
       
     
-      <li><a href="https://wzdlc1996.github.io/tags/approximation" role="button">approximation </a></li>
-      
-    
   </div>
 </div>
               </div>
@@ -1059,23 +824,16 @@ $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/ class="post-meta">Previous
+                <a href=https://wzdlc1996.github.io/artic/physics/qmachinelearning/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>Classical Fields: Maxwell Field</span>
+                    <span>Quantum Machine Learning: Quantum Algorithms to Classical Data</span>
                   </div>
                 </a>
               
             </div>
             
             <div class="col-md-6 text-right" >
-              
-                <a href=https://wzdlc1996.github.io/notes/fieldtheory/qtzfieldi/ class="post-meta">Next
-                  <div class="pt-2 pb-5 flex-reverse">
-                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>Quantization of Free Field: Scalar Field</span>
-                  </div>
-                </a>
               
             </div>
           </div>
@@ -1121,8 +879,30 @@ $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#setup-of-scattering-problem">
-												 Setup of Scattering Problem
+						 					<a class="nav-link" href="#introduction">
+												 Introduction
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#page-wootterspaw-mechanism">
+												 Page-Wootters(PaW) Mechanism
 											</a>
 										</li>
 						 
@@ -1145,148 +925,8 @@ $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#rough-picture">
-												 Rough Picture
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#scattering-cross-section">
-												 Scattering Cross Section
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#lippmann-schwinger-equation">
-												 Lippmann-Schwinger Equation
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#born-approximation">
-												 Born Approximation
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#partial-wave-expansion">
-												 Partial Wave Expansion
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#scattering-matrix">
-												 Scattering Matrix
-											</a>
-										</li>
-						 
-								
-								
-									</ul>
-								
-							
-						
-				 
-						
-						
-							
-								
-								
-									<ul class="nav">
-								
-									<ul class="nav">
-								
-								
-
-										<li class="nav-item">
-						 					<a class="nav-link" href="#1st-order">
-												 1st Order
+						 					<a class="nav-link" href="#motivation">
+												 Motivation
 											</a>
 										</li>
 						 
@@ -1311,8 +951,8 @@ $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#2nd-order">
-												 2nd Order
+						 					<a class="nav-link" href="#theory-conditional-probability-interpretation">
+												 Theory: Conditional Probability Interpretation
 											</a>
 										</li>
 						 
@@ -1337,14 +977,132 @@ $$-\text{Im}T(\bm{k},\bm{k})=\int \td^3 \bm{k}' \pi \delta(E_{\bm{k}}-E_{\bm{k}'
 								
 
 										<li class="nav-item">
-						 					<a class="nav-link" href="#generic-formula">
-												 Generic Formula
+						 					<a class="nav-link" href="#an-example-how-does-internal-clock-work">
+												 An Example: How does Internal Clock Work?
 											</a>
 										</li>
 						 
 								
 								
 									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#physical-theory-with-clock-time">
+												 Physical Theory with Clock Time
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#the-classical-analog">
+												 The Classical Analog
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#derive-the-schrodinger-equation">
+												 “Derive” the Schrodinger Equation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#interacting-clock-and-system">
+												 Interacting Clock and System
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#conclusion">
+												 Conclusion
+											</a>
+										</li>
+						 
+								
 								
 									</ul>
 								

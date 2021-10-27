@@ -14,8 +14,8 @@
 <meta property="og:description" content="最近在准备可视化课程的大作业, 正好学习一下python爬虫的知识并且实际地练练手. 就选择了漫画柜网站, 顺便也能够爬一点漫画下来到本地看. 这篇文章主要记录了一下对漫画柜网站的分析和js逆向的过程, 因为是拿来给自己看并且面向中文用户的, 所以就用中文来写了. 同时会分享一下用来下载漫画的爬虫代码. Recently during the preparation of the final project of Visualization class, I plan to learn python spider systematically. As a good choice for practice, I analyzed the logic of the website of Manhuagui(manhuagui.com) and write a simple code for download mangas efficiently. This article mainly covers the analyzation and reverses its javascript, which would be like a boring detective store. Because this article is written for Chinese web users, it is in Chinese. Sorry for those users of the English language." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/artic/other/mangaspider/" /><meta property="article:section" content="Artic" />
-<meta property="article:published_time" content="2019-11-22T19:24:24&#43;08:00" />
-<meta property="article:modified_time" content="2019-11-22T19:24:24&#43;08:00" />
+<meta property="article:published_time" content="2019-11-22T19:24:24+08:00" />
+<meta property="article:modified_time" content="2019-11-22T19:24:24+08:00" />
 
 
 
@@ -407,12 +407,12 @@ autocomplete('#aa-search-input',
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_9.png"/></div>
 
 <p>这些章节都被存放在有着 <code>id=chapter-list-0</code> 的 <code>&lt;div&gt;</code> 中, 来用 <code>python</code> 获取一下看看:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">bs4</span>
 <span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://www.manhuagui.com/comic/17201/&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
 <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;chapter-list-0&#39;</span><span class="p">)</span>
 
-<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&#34;chapter-list cf mt10&#34;</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;chapter-list-0&#34;</span><span class="o">&gt;&lt;</span><span class="n">ul</span> <span class="n">style</span><span class="o">=</span><span class="s2">&#34;display:block&#34;</span><span class="o">&gt;&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s2">&#34;status0&#34;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&#34;/comic/17201/455630.html&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&#34;第45话&#34;</span><span class="o">&gt;&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="err">第</span><span class="mi">45</span><span class="err">话</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">36</span><span class="n">p</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;...</span><span class="p">]</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&#34;chapter-list cf mt10&#34;</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;chapter-list-0&#34;</span><span class="o">&gt;&lt;</span><span class="n">ul</span> <span class="n">style</span><span class="o">=</span><span class="s2">&#34;display:block&#34;</span><span class="o">&gt;&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s2">&#34;status0&#34;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&#34;/comic/17201/455630.html&#34;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&#34;_blank&#34;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&#34;第45话&#34;</span><span class="o">&gt;&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="n">第45话</span><span class="o">&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">36</span><span class="n">p</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;...</span><span class="p">]</span>
 </code></pre></div><p>看起来包括链接, 话数, 图片数在内的都拿到了. 那么我们就该去看看每个章节的图片怎么下过来了.</p>
 <h1 id="漫画柜的漫画呈现方式分析">漫画柜的漫画呈现方式分析</h1>
 <h2 id="从页面布局上观察">从页面布局上观察</h2>
@@ -421,7 +421,7 @@ autocomplete('#aa-search-input',
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_1.png"/></div>
 
 <p>立即看到它有一个用 <code>id=mangaBox</code> 标记的 <code>&lt;div&gt;</code> 节点来放置图片, 并且 <code>&lt;img&gt;</code> 标签上就是我们要的图片链接. 看起来如果我们直接下载这个链接就可以了. 事不宜迟, 我们上 <code>requests.get</code> 来看看:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">bs4</span>
 <span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://www.manhuagui.com/comic/17201/179054.html&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
 <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;mangaBox&#39;</span><span class="p">)</span>
@@ -436,8 +436,8 @@ autocomplete('#aa-search-input',
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_3.png"/></div>
 
 <p>这么长一段太值得怀疑了, 还使用了 <code>\x</code> 的 <code>utf-8</code> 编码来掩饰自己, 用 python 来解码一下:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x65\x76\x61\x6c</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
-<span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;eval&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="o">:=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x65\x76\x61\x6c</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+<span class="n">Out</span> <span class="o">:=</span> <span class="s1">&#39;eval&#39;</span>
 </code></pre></div><p>不是别的, 这段代码开头的正是 <code>window.eval</code> 方法! 那答案已经很明显了, 把它执行的部分放进 <code>console</code> 里跑跑看, 注意加上括号告诉这个匿名函数是要被执行的:</p>
 
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_4.png"/></div>
@@ -449,8 +449,8 @@ autocomplete('#aa-search-input',
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_5.png"/></div>
 
 <p>看来并没有那么简单啊. 不过很奇怪, 提示的错误的这个 <code>splic</code> 是什么东西, 代码里好像没出现啊. 不要着急, 看看它前面调用这个方法的对象, 不就是那串乱七八糟的字符么. 它后边有个同样用 <code>utf-8</code> 编码做了掩饰, 老规矩, 解码看看</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="p">:</span><span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x73\x70\x6c\x69\x63</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
-<span class="n">Out</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;splic&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span>  <span class="o">:=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x73\x70\x6c\x69\x63</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+<span class="n">Out</span> <span class="o">:=</span> <span class="s1">&#39;splic&#39;</span>
 </code></pre></div><p>找到了. 怪不得无法运行, 这个东西不是 js 字符串的标准方法, 应该是来自于之前页面的代码定义的. 这里就没有什么好办法了, 只能打开刚才页面里的 js 来搜索这个函数. 除了 <code>splic</code> 同样也要用 <code>'\x73\x70\x6c\x69\x63'</code> 来找.</p>
 
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_6.png"/></div>
@@ -460,9 +460,9 @@ autocomplete('#aa-search-input',
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/mangaspider_7.png"/></div>
 
 <p>一切都明了了, 原来 <code>splic</code> 正是:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">splic</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span><span class="k">return</span> <span class="nx">LZString</span><span class="p">.</span><span class="nx">decompressFromBase64</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="nx">f</span><span class="p">)};</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">splic</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span><span class="k">return</span> <span class="nx">LZString</span><span class="p">.</span><span class="nx">decompressFromBase64</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="nx">f</span><span class="p">)};</span>
 </code></pre></div><p>那么刚才的那段代码也就清楚了, 注意到 <code>\x7c</code> 其实是字符 <code>'|'</code> . 而里边的 <code>LZString</code> , google一下发现是一种压缩算法, 甚至找到了它的 <a href="https://github.com/pieroxy/lz-string">github页面</a> , 发现有python的移植. 赶紧解码看看:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">lzstring</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">lzstring</span>
 <span class="n">lzstring</span><span class="o">.</span><span class="n">LZString</span><span class="o">.</span><span class="n">decompressFromBase64</span><span class="p">(</span><span class="s2">&#34;D7BWAcHNgdwUwEbmARgOwCYAMLiBpvHQPbVhwBLAYwH0cAWEi6lAVnqpzVcYDZOcBmXiiyCAnIIyDcZNhgHTqGCfKwYWyjHXVSGKnspQAOXtmMdlWMehFYmdcqQAmwAGakANnADOwcgDsAhgC2cMBIFKGOwKSBkAAi/gAu/sCAE36AYDqACEaAXHKABvKhAcG8WBxFPADKALIAEkVG5mo6KkXabFiajXI6GHWJABbANBwAXgCupEO9APa+kDCT5L1wMx6+pCSedK6rnotOyoPAKy7+bp4hnkkJI96BDiyebiQATnAAkqsJwACqAGI0GgApNAAUQAjgBFABqAE8uOC3G5JgAZNCxaC+OAADwSrycCER5AA1pRyORnnAAG641AGPgiGgtag0PQ6PgNNh8docsyslkczoc4TqMTKPhKVmMtritgM3g0AVM9lMrnUOm8Ph1HQ0LBAA==&#34;</span><span class="p">)</span>
 
 <span class="n">Output</span><span class="p">:</span> <span class="s1">&#39;||jpg|webp|17201|第01回|pic_014|pic_015|pic_017|pic_016|pic_013|pic_010|pic_019|pic_012|pic_011|pic_023|pic_022|pic_025|pic_024|pic_021|pic_026|pic_018|pic_020|pic_027|pic_009|179054|cid|files|cname|bpic|bid|imgData|终将成为你|bname|pic_007||pic_006|SMH|pic_008|pic_005|pic_002|pic_001|pic_004|pic_003|pic_028|path|47|zuizhongwochengleni|ps4|finished|pic_047|len|false|status|md5|sl|preInit|UF424J7EqQVy6QlloL7Dg|nextId|block_cc|prevId|183941|pic_046|pic_035|pic_034|pic_037|pic_036|pic_033|pic_030|pic_029|pic_032|pic_031|pic_042|pic_041|pic_043|pic_045|pic_044|pic_039|pic_038|pic_040&#39;</span>
@@ -483,7 +483,7 @@ autocomplete('#aa-search-input',
 <p>整个代码分为两个文件, 其中一个放置针对漫画柜的分析器. 它应当完成给定一个漫画的url后, 返回各个章节的名称和url. 并且能够根据url获得各个漫画分页的图片链接以及 <code>requests</code> 的其他参数来方便下载. 另一个文件则在这个基础上完成漫画的下载和分类存放过程. 这样今后遇到其他的漫画站只需要修改解析器的机制就可以了, 分类存放的代码可以复用.</p>
 <h2 id="漫画柜的分析器">漫画柜的分析器</h2>
 <p>这部分代码使用了如下的全局变量和模块:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">dukpy</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">dukpy</span>
 <span class="kn">import</span> <span class="nn">lzstring</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -494,7 +494,7 @@ autocomplete('#aa-search-input',
 <span class="n">imgURL</span> <span class="o">=</span> <span class="s2">&#34;https://i.hamreus.com&#34;</span>
 </code></pre></div><h3 id="章节信息的获取">章节信息的获取</h3>
 <p>章节信息的获取十分简单, 就是我们上面做的操作循环执行就可以了. 为了方便后边的使用, 我们把章节按照名字和url的规则存放为字典:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getChapterList</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./Figs/config.json&#34;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">baseSite</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]})</span>
@@ -509,7 +509,7 @@ autocomplete('#aa-search-input',
     <span class="k">return</span> <span class="n">res</span>
 </code></pre></div><h3 id="根据章节url获得分页图片链接">根据章节url获得分页图片链接</h3>
 <p>这一步的核心事实上只是在python中执行 javascript 代码, 我们这里使用了 <a href="https://github.com/amol-/dukpy">amol-/dukpy</a> 库, 十分感谢作者的贡献.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getCoreInfo</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getCoreInfo</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./Figs/config.json&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">getSite</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]})</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&#34;lxml&#34;</span><span class="p">)</span>
@@ -537,13 +537,13 @@ autocomplete('#aa-search-input',
 
 <h2 id="分章节存放漫画分页图片">分章节存放漫画分页图片</h2>
 <p>由于这个代码运行的时间很长, 所以我们使用了 <code>multiprocessing</code> 库来并行处理, 同时使用 <code>progressbar2</code> 库来展示一个进度条:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="kn">import</span> <span class="nn">mhgParser</span> <span class="kn">as</span> <span class="nn">ps</span>
+<span class="kn">import</span> <span class="nn">mhgParser</span> <span class="k">as</span> <span class="nn">ps</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="kn">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">requests</span> <span class="kn">as</span> <span class="nn">rq</span>
+<span class="kn">import</span> <span class="nn">requests</span> <span class="k">as</span> <span class="nn">rq</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">progressbar</span>
@@ -571,7 +571,7 @@ autocomplete('#aa-search-input',
     <span class="n">chapPath</span> <span class="o">=</span> <span class="n">foldpref</span><span class="o">+</span><span class="n">chap</span><span class="p">[</span><span class="s2">&#34;Text&#34;</span><span class="p">]</span><span class="o">+</span><span class="s2">&#34;/&#34;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">foldpref</span><span class="o">+</span><span class="n">chap</span><span class="p">[</span><span class="s2">&#34;Text&#34;</span><span class="p">])</span>
-    <span class="k">except</span> <span class="n">FileExistsError</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
         <span class="k">pass</span>
     <span class="n">dlDic</span><span class="p">,</span> <span class="n">addOption</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">getDlSetting</span><span class="p">(</span><span class="n">chap</span><span class="p">[</span><span class="s2">&#34;URL&#34;</span><span class="p">])</span>
     <span class="n">headerOption</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">conf</span><span class="p">[</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">]}</span>

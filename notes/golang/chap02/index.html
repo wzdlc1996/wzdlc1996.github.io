@@ -14,8 +14,8 @@
 <meta property="og:description" content="Go语言的基础, 包括保留关键字, 内置变量类型, 基本语法和流程控制, 多文件组织等" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzdlc1996.github.io/notes/golang/chap02/" /><meta property="article:section" content="Notes" />
-<meta property="article:published_time" content="2020-11-26T23:19:37&#43;08:00" />
-<meta property="article:modified_time" content="2020-11-27T02:19:00&#43;08:00" />
+<meta property="article:published_time" content="2020-11-26T23:19:37+08:00" />
+<meta property="article:modified_time" content="2020-11-27T02:19:00+08:00" />
 <meta property="og:see_also" content="https://wzdlc1996.github.io/notes/golang/chap01/" />
 
 
@@ -411,7 +411,7 @@ autocomplete('#aa-search-input',
     
 <h1 id="go-语言基础">Go 语言基础</h1>
 <p>Go 中共有 25 个保留关键字 (<strong>keywords</strong>) , 他们是:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">break</span>    <span class="k">default</span>      <span class="kd">func</span>    <span class="kd">interface</span>    <span class="k">select</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="k">break</span>    <span class="k">default</span>      <span class="kd">func</span>    <span class="kd">interface</span>    <span class="k">select</span>
 <span class="k">case</span>     <span class="k">defer</span>        <span class="k">go</span>      <span class="kd">map</span>          <span class="kd">struct</span>
 <span class="kd">chan</span>     <span class="k">else</span>         <span class="k">goto</span>    <span class="kn">package</span>      <span class="k">switch</span>
 <span class="kd">const</span>    <span class="k">fallthrough</span>  <span class="k">if</span>      <span class="k">range</span>        <span class="kd">type</span>
@@ -420,7 +420,7 @@ autocomplete('#aa-search-input',
 <h2 id="变量与内置变量类型">变量与内置变量类型</h2>
 <h3 id="变量声明">变量声明</h3>
 <p>Go 中的变量声明主要有如下若干形式:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Declare a variable named as `variableName` of type `type`
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Declare a variable named as `variableName` of type `type`
 </span><span class="c1"></span><span class="kd">var</span> <span class="nx">variableName</span> <span class="kd">type</span>
 
 <span class="c1">// Declare some variables of the same type
@@ -441,7 +441,7 @@ autocomplete('#aa-search-input',
 </span><span class="c1"></span><span class="nx">var1</span><span class="p">,</span> <span class="nx">var2</span> <span class="o">:=</span> <span class="nx">val1</span><span class="p">,</span> <span class="nx">val2</span>
 </code></pre></div><p>Go 中有一个特殊的变量: <code>_</code>, 任何赋予给它的值都将会被丢弃. 同 <code>python</code> 类似, 但你无法调用 <code>_</code> 变量. 值得注意的是, <mark>在 Go 中的任何声明但未使用的变量将在编译阶段报错</mark>.</p>
 <p>在变量以外, Go 中允许声明常量, 这些常量在编译阶段就会确定下来值. ( 在函数中进行常量声明是合法的 ), 并且引入了一个枚举变量 <code>iota</code> 用来计数. <code>iota</code> 在第一次遇到常量声明时重置. 常量中的每一 <strong>行</strong> 声明都将使它 <code>+1</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>              <span class="c1">// iota: initialized as 0
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>              <span class="c1">// iota: initialized as 0
 </span><span class="c1"></span>    <span class="nx">c1</span> <span class="p">=</span> <span class="mi">1</span>           <span class="c1">// iota: 1
 </span><span class="c1"></span>    <span class="nx">c2</span><span class="p">,</span> <span class="nx">c3</span> <span class="p">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>    <span class="c1">// iota: 2
 </span><span class="c1"></span>    <span class="nx">c4</span> <span class="p">=</span> <span class="mi">4</span>           <span class="c1">// iota: 3
@@ -468,17 +468,17 @@ autocomplete('#aa-search-input',
 <li>
 <p><strong>String</strong></p>
 <p>Go 中的字符串由双引号 <code>&quot;</code> 或反引号 <code>(`)</code> 来引入, 其中后者可以用于定义跨行的字符串如:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">s1</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;this is a string&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">s1</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;this is a string&#34;</span>
 <span class="kd">var</span> <span class="nx">s2</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">`this is a 
 </span><span class="s">                    string with linebreak`</span>
 </code></pre></div></li>
 </ol>
 <h3 id="数组">数组</h3>
 <p>在 Go 中使用如下语句定义并初始化数组 <code>array</code>, 数组的性质类似 C 的行为, 必须声明时指定尺寸等:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">arr</span> <span class="p">[</span><span class="nx">len</span><span class="p">]</span><span class="kd">type</span><span class="p">{</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">...</span><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">arr</span> <span class="p">[</span><span class="nx">len</span><span class="p">]</span><span class="kd">type</span><span class="p">{</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">...</span><span class="p">}</span>
 </code></pre></div><p>其中中括号内的是指定的数组初始值, 其长度可以不等于给定的数组长度 <code>len</code>, 未指定元赋值为 <code>0</code>.</p>
 <p>同数组相关的概念是 <code>slice</code>, 一个 <code>slice</code> 变量是一个数组上一些元素的<strong>引用</strong>, 行为类似 <code>numpy</code> 中的数组. 其声明规则如下:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">slc</span> <span class="p">[]</span><span class="kd">type</span><span class="p">{</span><span class="nx">initialization</span><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">slc</span> <span class="p">[]</span><span class="kd">type</span><span class="p">{</span><span class="nx">initialization</span><span class="p">}</span>
 
 <span class="c1">// Declare a slice with given array, 
 </span><span class="c1">// with arr being its based array, 
@@ -486,7 +486,7 @@ autocomplete('#aa-search-input',
 </span><span class="c1"></span><span class="nx">slc</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">:</span><span class="nx">j</span><span class="p">]</span>
 </code></pre></div><p>同数组类似, 但不指定长度.</p>
 <p>此外还有键值对的字典, 其声明规则为:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Declare a map with key type as key and value type as val
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Declare a map with key type as key and value type as val
 </span><span class="c1"></span><span class="kd">var</span> <span class="nx">dict</span> <span class="kd">map</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="nx">val</span>
 </code></pre></div><p>在 Go 中, 可以使用类似 <code>C++</code> 中的 <code>new</code> 关键字来分配内存生成对象. 也可以使用 <code>make</code> 来生成内建类型 (<code>map</code>, <code>slice</code>, and <code>channel</code>) 的实例. 其主要区别在于:</p>
 <ol>
@@ -499,7 +499,7 @@ autocomplete('#aa-search-input',
 <ol>
 <li>
 <p><code>if</code> 语句</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// if statement
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// if statement
 </span><span class="c1"></span><span class="k">if</span> <span class="nx">test</span> <span class="p">{</span>
     <span class="c1">// operation if test is true
 </span><span class="c1"></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -508,7 +508,7 @@ autocomplete('#aa-search-input',
 </code></pre></div></li>
 <li>
 <p><code>for</code> 循环</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// for statement
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// for statement
 </span><span class="c1"></span><span class="k">for</span> <span class="nx">vari</span> <span class="o">:=</span> <span class="nx">ini</span><span class="p">;</span> <span class="nx">check</span><span class="o">-</span><span class="nx">vari</span><span class="p">;</span> <span class="nx">iter</span><span class="o">-</span><span class="nx">vari</span> <span class="p">{</span>
     <span class="c1">// Operation with vari
 </span><span class="c1"></span><span class="p">}</span>
@@ -530,7 +530,7 @@ autocomplete('#aa-search-input',
 </code></pre></div></li>
 <li>
 <p><code>switch</code> 结构</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// switch statement
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// switch statement
 </span><span class="c1"></span><span class="k">switch</span> <span class="nx">sExpr</span> <span class="p">{</span>
 <span class="k">case</span> <span class="nx">expr1</span><span class="p">:</span>
     <span class="c1">// Operations when sExpr is expr1
@@ -543,13 +543,13 @@ autocomplete('#aa-search-input',
 </ol>
 <h3 id="函数定义与函数对象">函数定义与函数对象</h3>
 <p>Go 中使用 <code>func</code> 关键字来定义函数, 其原型写为:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Define a function with name funcName, and two inputs, two outputs
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Define a function with name funcName, and two inputs, two outputs
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">funcName</span><span class="p">(</span><span class="nx">input1</span> <span class="nx">type1</span><span class="p">,</span> <span class="nx">input2</span> <span class="nx">type2</span><span class="p">)</span> <span class="p">(</span><span class="nx">output1</span> <span class="nx">type1</span><span class="p">,</span> <span class="nx">output2</span> <span class="nx">type2</span><span class="p">){</span>
     <span class="c1">// Operations
 </span><span class="c1"></span>    <span class="k">return</span> <span class="nx">val1</span><span class="p">,</span> <span class="nx">val2</span>
 <span class="p">}</span>
 </code></pre></div><p>Go 中的函数可以返回多个值, 而没有返回值的函数不需要写原型中的 <code>output1,...</code> 的括号. 函数的行为同 <code>C</code> 类似, 传入参数是形参, 对齐的操作不会影响对象的值. 若有对传入参数进行操作的需求需要传入指针变量. Go 中也有一种可变参数的函数写法:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Define a function with variate arguments
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Define a function with variate arguments
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">printList</span><span class="p">(</span><span class="nx">arg</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">n</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arg</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;The number is %d \n&#34;</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span>
@@ -563,13 +563,13 @@ autocomplete('#aa-search-input',
 </span><span class="cm">The number is 4
 </span><span class="cm">*/</span>
 </code></pre></div><p>在 Go 中可以声明函数类型, 同 <code>C</code> 类似, 来为其他函数传入一个函数入口:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Define a type named funcT as the function
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Define a type named funcT as the function
 </span><span class="c1">// with single integer input and single boolean
 </span><span class="c1">// output
 </span><span class="c1"></span><span class="kd">type</span> <span class="nx">funcT</span> <span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span>
 </code></pre></div><h3 id="defer-语句">defer 语句</h3>
 <p>Go 中有着一个 <code>defer</code> 语句的设计, 在函数中给出的 <code>defer</code> 语句将会在函数将退出时按照逆序执行(后进先出). 一个例子为:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">revPrint</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">revPrint</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
         <span class="k">defer</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;This is: &#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
     <span class="p">}</span>
@@ -608,7 +608,7 @@ autocomplete('#aa-search-input',
                 └── go.mod
 </code></pre></div><p>在 <code>$GOPATH/src</code> 下, Go 使用代码仓库的域名同名的文件夹下, 根据用户名文件夹分离, 其下不同的应用或模块对应不同的文件夹来放置源代码. Go 使用文件名来组织模块. 并且在每个叶文件夹中使用文件 <code>go.mod</code> 来定义模块信息. 可以使用命令 <code>go mod init</code> 来生成这个文件. <mark>同一个模块下的源文件互相不需要导入, 使用首字母大小写来区分变量是 <code>private</code> 还是 <code>public</code>. 在不同的模块中想要相互导入则需要使用 <code>import</code> 关键字.</mark></p>
 <p>对于上面的这个文件结构, 如果想要在 <code>github.com/user/app1.go</code> 中调用作为模块的 <code>github.com/user/app2</code>, 就需要书写:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;github.com/user/app2&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;github.com/user/app2&#34;</span>
 
 <span class="c1">// Other forms:
 </span><span class="c1">// Import as the name of pkg
@@ -620,11 +620,11 @@ autocomplete('#aa-search-input',
 <span class="c1">// Import without function in module, just run init()
 </span><span class="c1">// import _ &#34;github.com/user/app2&#34;
 </span></code></pre></div><p>默认情况它会从域名对应的代码仓库中拉取源文件, 如果需要使用本地调试则要将 <code>app1</code> 下的 <code>go.mod</code> 中加入:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// gitub.com/user/app1/go.mod
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// gitub.com/user/app1/go.mod
 </span><span class="c1"></span>
 <span class="nx">replace</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">user</span><span class="o">/</span><span class="nx">app2</span> <span class="p">=&gt;</span> <span class="p">..</span><span class="o">/</span><span class="nx">app2</span>
 </code></pre></div><p>在源文件的开头, 我们需要指定包名如:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">pkgName</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">pkgName</span>
 </code></pre></div><p>只有对于 <code>pkgName</code> 为 <code>main</code> 的文件, 其中才能有 <code>main()</code> 函数来让 Go 编译为可执行文件作为入口. 其他的源文件中只能有 <code>init()</code> 函数. 在 Go 的 <code>import</code> 过程中, 执行顺序是如下的:</p>
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./img01.png"/></div>
 
