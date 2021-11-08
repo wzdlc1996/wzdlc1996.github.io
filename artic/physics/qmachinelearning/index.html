@@ -1164,8 +1164,8 @@ autocomplete('#aa-search-input',
 <li>
 <p><strong>Supervised learning</strong></p>
 <ul>
-<li>Data: a set of input  $x$  and its label  $y$  ${x_i, y_i}_{i=1}^N $
-    -  Goal: find a model for the map from $ x$ to  $y$  of  $y = f(x;\theta)$ </li>
+<li>Data: a set of input  $x$  and its label  $y$  ${x_i, y_i}_{i=1}^N $</li>
+<li>Goal: find a model for the map from $x$ to  $y$  of  $y = f(x;\theta)$ </li>
 </ul>
 <p>There are two main applications to supervised learning: regression (continuous  $y$ ) and classification (discretized  $y$ )</p>
 </li>
@@ -2147,7 +2147,7 @@ $$</p>
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -2161,7 +2161,8 @@ $$</p>
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

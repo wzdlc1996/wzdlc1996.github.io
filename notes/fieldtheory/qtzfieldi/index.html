@@ -1601,7 +1601,7 @@ $$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \fra
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -1615,7 +1615,8 @@ $$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)} \fra
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

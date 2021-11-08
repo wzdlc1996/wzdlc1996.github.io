@@ -1103,7 +1103,7 @@ $$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -1117,7 +1117,8 @@ $$H=\frac 1 2 \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big( \sum_{\lambda=1}^3\big
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

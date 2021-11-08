@@ -1211,7 +1211,7 @@ R[\hat \rho_{CR}=\frac 1 2 (1+\bm{n}\cdot \bm{\sigma})] &= \text{Tr}_{CTC}(\hat 
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -1225,7 +1225,8 @@ R[\hat \rho_{CR}=\frac 1 2 (1+\bm{n}\cdot \bm{\sigma})] &= \text{Tr}_{CTC}(\hat 
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

@@ -406,18 +406,6 @@ autocomplete('#aa-search-input',
 
 
 
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
 <h1 id="go-的下载与安装">Go 的下载与安装</h1>
 <h2 id="go-语言简介">Go 语言简介</h2>
 <p><a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Go</a> 语言是 Google 开发的 <strong>静态类型</strong>, <strong>编译型</strong> 的编程语言. 它的语法同 C 相似, 但拥有 <strong>内存安全, 垃圾回收, 高并发支持</strong> 等诸多良好的特性. 基于此, 有时 Go 也被称为 21 世纪的 C 语言. 根据 Go <a href="https://golang.org/">官方网站</a>的介绍:</p>
@@ -436,46 +424,43 @@ autocomplete('#aa-search-input',
 <h2 id="go-环境配置">Go 环境配置</h2>
 <p>完成安装并将 Go 的可执行文件路径添加进环境变量(使用包管理时可执行文件会自动做好链接在 <code>/usr/bin/go</code>, 可以使用命令 <code>whereis go</code> 来查看). 其中之后就可以在命令行运行 <code>go version</code> 来查看安装成功与否.</p>
 <p>Go 的几乎所有操作都依赖于命令 <code>go</code>, 它的工作模式依赖于若干环境变量. 在命令行中使用命令 <code>go env</code> 将会打印出当前的默认环境变量:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~ $ go env
-GO111MODULE=""
-GOARCH="amd64"
-GOBIN=""
-GOCACHE="$ HOME</span><span class="s2">/.cache/go-build&#34;</span>
-<span class="nv">GOENV</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv"> $HOME/.config/go/env"
-GOEXE=""
-GOFLAGS=""
-GOHOSTARCH="amd64"
-GOHOSTOS="linux"
-GOINSECURE=""
-GOMODCACHE="$ HOME</span><span class="s2">/go/pkg/mod&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ~ $ go env</span>
+<span class="nv">GO111MODULE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOARCH</span><span class="o">=</span><span class="s2">&#34;amd64&#34;</span>
+<span class="nv">GOBIN</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOCACHE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ HOME</span><span class="s2">/.cache/go-build&#34;</span>
+<span class="nv">GOENV</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv"> $HOME</span><span class="s2">/.config/go/env&#34;</span>
+<span class="nv">GOEXE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOFLAGS</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOHOSTARCH</span><span class="o">=</span><span class="s2">&#34;amd64&#34;</span>
+<span class="nv">GOHOSTOS</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span>
+<span class="nv">GOINSECURE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOMODCACHE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ HOME</span><span class="s2">/go/pkg/mod&#34;</span>
 <span class="nv">GONOPROXY</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
 <span class="nv">GONOSUMDB</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
 <span class="nv">GOOS</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span>
-<span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv"> $HOME/go"
-GOPRIVATE=""
-GOPROXY="https://proxy.golang.org,direct"
-GOROOT="/usr/lib/go"
-GOSUMDB="sum.golang.org"
-GOTMPDIR=""
-GOTOOLDIR="/usr/lib/go/pkg/tool/linux_amd64"
-GCCGO="gccgo"
-AR="ar"
-CC="gcc"
-CXX="g++"
-CGO_ENABLED="1"
-GOMOD="/dev/null"
-CGO_CFLAGS="-g -O2"
-CGO_CPPFLAGS=""
-CGO_CXXFLAGS="-g -O2"
-CGO_FFLAGS="-g -O2"
-CGO_LDFLAGS="-g -O2"
-PKG_CONFIG="pkg-config"
-GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build194656316=/tmp/go-build -gno-record-gcc-switches"
-```
-
-### GOPATH
-
-环境变量 `GOPATH` . 默认情况对于 Unix 系它为 `$ HOME/go</code>, 对于 Windows 它为 <code>%USERPROFILE%/go</code> . <code>GOPATH</code> 中存放所有用户在 Go 开发中的代码, 使用的文件等. 它是工作目录的根目录, 而且约定拥有如下文件结构:</p>
+<span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv"> $HOME</span><span class="s2">/go&#34;</span>
+<span class="nv">GOPRIVATE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOPROXY</span><span class="o">=</span><span class="s2">&#34;https://proxy.golang.org,direct&#34;</span>
+<span class="nv">GOROOT</span><span class="o">=</span><span class="s2">&#34;/usr/lib/go&#34;</span>
+<span class="nv">GOSUMDB</span><span class="o">=</span><span class="s2">&#34;sum.golang.org&#34;</span>
+<span class="nv">GOTMPDIR</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">GOTOOLDIR</span><span class="o">=</span><span class="s2">&#34;/usr/lib/go/pkg/tool/linux_amd64&#34;</span>
+<span class="nv">GCCGO</span><span class="o">=</span><span class="s2">&#34;gccgo&#34;</span>
+<span class="nv">AR</span><span class="o">=</span><span class="s2">&#34;ar&#34;</span>
+<span class="nv">CC</span><span class="o">=</span><span class="s2">&#34;gcc&#34;</span>
+<span class="nv">CXX</span><span class="o">=</span><span class="s2">&#34;g++&#34;</span>
+<span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="s2">&#34;1&#34;</span>
+<span class="nv">GOMOD</span><span class="o">=</span><span class="s2">&#34;/dev/null&#34;</span>
+<span class="nv">CGO_CFLAGS</span><span class="o">=</span><span class="s2">&#34;-g -O2&#34;</span>
+<span class="nv">CGO_CPPFLAGS</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="nv">CGO_CXXFLAGS</span><span class="o">=</span><span class="s2">&#34;-g -O2&#34;</span>
+<span class="nv">CGO_FFLAGS</span><span class="o">=</span><span class="s2">&#34;-g -O2&#34;</span>
+<span class="nv">CGO_LDFLAGS</span><span class="o">=</span><span class="s2">&#34;-g -O2&#34;</span>
+<span class="nv">PKG_CONFIG</span><span class="o">=</span><span class="s2">&#34;pkg-config&#34;</span>
+<span class="nv">GOGCCFLAGS</span><span class="o">=</span><span class="s2">&#34;-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build194656316=/tmp/go-build -gno-record-gcc-switches&#34;</span>
+</code></pre></div><h3 id="gopath">GOPATH</h3>
+<p>环境变量 <code>GOPATH</code> . 默认情况对于 Unix 系它为 <code>$ HOME/go</code>, 对于 Windows 它为 <code>%USERPROFILE%/go</code> . <code>GOPATH</code> 中存放所有用户在 Go 开发中的代码, 使用的文件等. 它是工作目录的根目录, 而且约定拥有如下文件结构:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">go/
 ├── bin     <span class="c1"># location of compiled executable programs built by Go</span>
 ├── pkg     <span class="c1"># location of compiled package code (e.g.: .a)</span>
@@ -483,7 +468,7 @@ GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-bu
 </code></pre></div><p>当用户使用命令 <code>go get</code> 来下载 Go 的库(模块)时, 将默认存放在 <code>GOPATH</code> 下. 如果 <code>GOPATH</code> 有多个取值, 则放置在第一个下.</p>
 <h3 id="goproxy">GOPROXY</h3>
 <p><code>GOPROXY</code> 环境变量某种意义上对于中国大陆的用户有着重要的地位. 它可以被理解为下载 Go 模块的地址. 因此在中国大陆使用 <code>VS Code</code> 的 <code>Golang</code> 相关功能时, 它会试图从默认仓库拉取代码并报错. 而如果换用中国大陆能够访问的<a href="https://goproxy.cn/">仓库</a>则可以顺利并且快速进行(事实上, 用户也可以手动下载这些 <code>go-tools</code> 的依赖项并本地安装, 参考<a href="https://zhuanlan.zhihu.com/p/53566172">文章</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">~ $ go env -w GOPROXY="https://goproxy.cn,direct"
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">~ $ go env -w <span class="nv">GOPROXY</span><span class="o">=</span><span class="s2">&#34;https://goproxy.cn,direct&#34;</span>
 ~$  go env -w <span class="nv">GO111MODULE</span><span class="o">=</span><span class="s2">&#34;on&#34;</span>
 </code></pre></div><p>而关于设置 <code>GOPROXY</code> 的根本用意与它同 Go 模块(module) 的联系则可以参考<a href="https://blog.golang.org/module-mirror-launch">文章</a></p>
 
@@ -853,7 +838,7 @@ GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-bu
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -867,7 +852,8 @@ GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-bu
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

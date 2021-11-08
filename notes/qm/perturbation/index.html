@@ -1714,7 +1714,7 @@ Z_n&=1-\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {(E_n^{(0)}-E_m^{(0)})^2}
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -1728,7 +1728,8 @@ Z_n&=1-\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {(E_n^{(0)}-E_m^{(0)})^2}
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

@@ -952,7 +952,7 @@ $$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big)
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -966,7 +966,8 @@ $$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big)
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }

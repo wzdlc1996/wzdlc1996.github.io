@@ -1322,7 +1322,7 @@ P^i &= \int \td^3 \bm{x} T^{0i} = \int \td^3 \bm{x} \ \pi \partial^i \phi \sim -
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      inlineMath: [['$', '$']],
       displayMath: [["$$", "$$"]],
       macros: {
         bm: ["{\\boldsymbol {#1}}",1],
@@ -1336,7 +1336,8 @@ P^i &= \int \td^3 \bm{x} T^{0i} = \int \td^3 \bm{x} \ \pi \partial^i \phi \sim -
         rhat: ["\\overset {\\rightarrow} {#1}",1],
         lhat: ["\\overset {\\leftarrow} {#1}",1],
         lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
-      }
+      },
+      processEscape: true
     }
 
   }
