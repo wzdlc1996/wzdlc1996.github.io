@@ -394,506 +394,131 @@ autocomplete('#aa-search-input',
 
           <div class="post-content markdown">
           
+          
             
 
 
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
 
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 <h1 id="time-independent-perturbation-theory">Time-Independent Perturbation Theory</h1>
 <h2 id="nondegenerate-perturbation-theory-the-goal">Nondegenerate Perturbation Theory: The Goal</h2>
 <p>Given a Hamiltonian  $\hat H_0$  with <code>nondegenerate</code> energy eigenvalues  $E_n^{(0)}$  and eigenstates  $\ket{E_n^{(0)}}$  , where  $n=0,1,\cdots$  . Compute the eigenvalues and eigenstates of  $\hat H= \hat H_0+\lambda \hat V$  , <code>in terms of series of the &quot;small parameter&quot;</code>  $\lambda$ </p>
-<p>Under the basis  $\{\ket{E_n^{(0)}}\}$  ,  $\hat H_0$  is diagonal matrix, and  $\hat V$  is a generic one. The diagonal elements of  $\hat V$  will cause the shift of energy without changing the eigenstates; off-diagonal elements mixes eigenstates and shift the energy.</p>
+<p>Under the basis  ${\ket{E_n^{(0)}}}$  ,  $\hat H_0$  is diagonal matrix, and  $\hat V$  is a generic one. The diagonal elements of  $\hat V$  will cause the shift of energy without changing the eigenstates; off-diagonal elements mixes eigenstates and shift the energy.</p>
 <p>Usually we will find that the off-diagonal elements of  $\hat V$  cause the <code>level-repulsion</code> , that is to say adding the off-diagonal elements tends to increase the energy gap.</p>
 <p><em>[Assumption]</em> : Assume that  $\lambda$  is sufficiently small, so that  $\ket{n,\lambda}$  of  $\hat H$  is adiabatically connected to  $\ket{E_n^{(0)}}$  . And we can write the (<code>asymptotical</code>) series expansion of the eigenstates and eigenvalues:</p>
 <p>$$\begin{aligned}
@@ -1231,6 +856,7 @@ Z_n&=1-\sum_{m,m\neq n} \frac {V_{nm}V_{mn}} {(E_n^{(0)}-E_m^{(0)})^2}
 \end{aligned}$$</p>
 <p>Consistent with the time-independent perturbation theory.</p>
 
+          
           </div>
 
           

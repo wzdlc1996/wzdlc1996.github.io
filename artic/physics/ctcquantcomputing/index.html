@@ -389,287 +389,65 @@ autocomplete('#aa-search-input',
 
           <div class="post-content markdown">
           
+          
             
 
 
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
 
     
+        
     
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
-    
-    
-
+        
     
+        
     
-
-    
-    
-
-    
-    
-
+        
     
+        
     
-
-    
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
-
+        
     
+        
     
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
 <h1 id="time-travel-and-quantum-computation">Time Travel and Quantum Computation</h1>
 <p>Time travel, as a famous concept in science fiction, fascinates people for a long time. However for physicists, this is not only a beautiful dream, but also a interesting problem to discuss mathematically. In the community, there are generally two directions about time travel: (1) does it exist and (2) if it indeed exists, what can we do. People usually use classical general relativity to study these questions, but in recent years, some works within quantum mechanics have been also made to help us understand the nature of time and the potential application of time travel.</p>
 <p>In this report, we will discuss the aspect (2): application of time travel, mainly in the field of quantum computation. The content is arranged as following: first we will introduce the time travel in relativity as a simple warm up on some philosophical problem, then we will give them explanation in quantum framework, which is firstly came up with by David Deutsch in 1991. At last we will discuss its influence on quantum computation.</p>
@@ -788,12 +566,12 @@ R[\hat \rho_{CR}=\frac 1 2 (1+\bm{n}\cdot \bm{\sigma})] &= \text{Tr}_{CTC}(\hat 
 \end{aligned}$$</p>
 <p>Now we apply this evolution  $R$  on a NP-complete problem: <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">SAT</a>:</p>
 <blockquote>
-<p>Given a boolean function  $f:\{0,1\}^n\rightarrow \{0,1\}$ , specified in conjunctive normal form, the goal is to answer whether there is solution of  $f(x)=1$  or not.</p>
+<p>Given a boolean function  $f:{0,1}^n\rightarrow {0,1}$ , specified in conjunctive normal form, the goal is to answer whether there is solution of  $f(x)=1$  or not.</p>
 </blockquote>
 <p>The algorithm reads:</p>
 <ol>
 <li>
-<p>Prepare the state of  $\sum_{i\in \{0,1\}^n} \ket{i}\ket{f(i)}$  on  $n+1$ -spin, by oracle:  $\sum_{i\in\{0,1\}^n} \ket{i}\bra{i}\otimes \sigma_x^{f(i)}$ </p>
+<p>Prepare the state of  $\sum_{i\in {0,1}^n} \ket{i}\ket{f(i)}$  on  $n+1$ -spin, by oracle:  $\sum_{i\in{0,1}^n} \ket{i}\bra{i}\otimes \sigma_x^{f(i)}$ </p>
 </li>
 <li>
 <p>traced out the first  $n$  spins and get</p>
@@ -803,7 +581,7 @@ R[\hat \rho_{CR}=\frac 1 2 (1+\bm{n}\cdot \bm{\sigma})] &= \text{Tr}_{CTC}(\hat 
 <p>where  $s$  is the number of solutions of  $f(x)=1$ </p>
 </li>
 <li>
-<p>Map  $R$  on  $\hat \rho_0$  $0\leq s < 2^n$ times:</p>
+<p>Map  $R$  on  $\hat \rho_0$  $p$ times:</p>
 <p>$$
     R^n[\hat \rho_0] = \frac 1 2 \Big(1+(-1+\frac s {2^{n-1}})^{2^p}\sigma_z\Big)
     $$</p>
@@ -811,10 +589,11 @@ R[\hat \rho_{CR}=\frac 1 2 (1+\bm{n}\cdot \bm{\sigma})] &= \text{Tr}_{CTC}(\hat 
 </ol>
 <p>And then:</p>
 <ol>
-<li>if  $0\leq s < 2^n$ , i.e.,  $0\leq s < 2^n$ , is a trivial case</li>
-<li>if  $s> 0$ , measure the state on  $s> 0$  basis. When one get  $s> 0$ , it means  $s> 0$ , otherwise  $s> 0$ . When  $s> 0$ , the probability of find  $s> 0$  is exponentially small. i.e., after polynomial times map, we can claim whether  $f(x)=1$  has solution or not with exponential probability statement: P=NP.</li>
+<li>if  $s=2^n$ , i.e.,  $f=1$ , is a trivial case</li>
+<li>if  $0\leq s &lt; 2^n$ , measure the state on  $\sigma_z$  basis. When one get  $\ket{0}\bra{0}$ , it means  $s=0$ , otherwise  $s&gt; 0$ . When  $s&gt; 0$ , the probability of find  $\ket{0}\bra{0}$  is exponentially small. i.e., after polynomial times map, we can claim whether  $f(x)=1$  has solution or not with exponential probability statement: P=NP.</li>
 </ol>
 
+          
           </div>
 
           
