@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
+  <meta name="author" content="Leonard">
+  <meta name="description" content="The first problem we meet in the practice about quantum mechanics is to simulate the quantum time evolution on computer. Formally, it is the numerical simulation of the (time-dependent) Schrodinger Equation. In this review, we discuss various numerical method for the Schrodinger equation and quantum time evolution, including their implementation and error analysis. We will only focus on the non-relativistic quantum mechanics, i.e., the number of degree of freedom is finite.">
+
+  <meta property="og:title" content="Numerical Methods for Schrodinger Equation" />
+<meta property="og:description" content="The first problem we meet in the practice about quantum mechanics is to simulate the quantum time evolution on computer. Formally, it is the numerical simulation of the (time-dependent) Schrodinger Equation. In this review, we discuss various numerical method for the Schrodinger equation and quantum time evolution, including their implementation and error analysis. We will only focus on the non-relativistic quantum mechanics, i.e., the number of degree of freedom is finite." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/physics/numschrodinger/" /><meta property="article:section" content="Artic" />
+<meta property="article:published_time" content="2021-07-22T22:50:00+08:00" />
+<meta property="article:modified_time" content="2021-07-22T22:50:00+08:00" />
+
+
+
+  <title>
+    
+     Numerical Methods for Schrodinger Equation | Leonard 
+    
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/artic/physics/numschrodinger/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/lightbox/lightbox.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
+
+
+  
+
+  
+
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+  </style>
+
+
+  
+  
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
+      
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
+
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
+
+        
+      </ul>
+      
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="aa-input-icon" width="120" height="16">
+      <g fill="none" fill-rule="evenodd">
+        <path fill="#848AB8" fill-rule="nonzero" d="M4.202 10.434c-.497.378-1.18.564-2.057.564-.873 0-1.588-.13-2.145-.39V9.46c.352.159.728.283 1.122.375.398.092.768.137 1.109.137.5 0 .869-.09 1.107-.274a.883.883 0 0 0 .356-.735.901.901 0 0 0-.328-.706c-.219-.193-.67-.421-1.353-.685-.705-.274-1.201-.586-1.49-.94-.29-.35-.435-.774-.435-1.267 0-.62.229-1.106.688-1.462.457-.356 1.073-.534 1.844-.534.74 0 1.476.155 2.21.467l-.401.988c-.687-.276-1.3-.415-1.84-.415-.408 0-.72.085-.93.255a.83.83 0 0 0-.318.678c0 .193.044.36.128.495.085.137.225.267.419.388.193.123.54.283 1.046.482.568.226.984.439 1.248.635.263.196.457.417.58.665.124.245.185.538.185.873 0 .661-.248 1.179-.745 1.554zm2.53-.201c-.512-.509-.768-1.21-.768-2.102 0-.917.236-1.638.712-2.162.477-.525 1.13-.787 1.962-.787.772 0 1.382.225 1.83.675.447.45.67 1.068.67 1.857v.644H7.242c.017.545.17.964.46 1.257.288.293.696.438 1.22.438a4.6 4.6 0 0 0 .965-.094c.298-.062.618-.166.96-.312v.97c-.305.138-.61.237-.921.293a5.77 5.77 0 0 1-1.063.087c-.908.001-1.62-.254-2.132-.764zm.956-3.787c-.238.24-.38.59-.426 1.049h2.653c-.007-.463-.123-.813-.348-1.052-.227-.239-.537-.359-.932-.359-.393 0-.709.12-.947.362zm8.269 3.669h-.043c-.282.342-.565.574-.85.697-.286.125-.653.186-1.1.186-.575 0-1.024-.148-1.345-.446-.322-.297-.483-.718-.483-1.264 0-.578.224-1.015.67-1.309.448-.294 1.131-.455 2.047-.482l1.01-.03v-.301c0-.36-.09-.627-.262-.803-.175-.18-.445-.268-.812-.268-.3 0-.587.042-.861.126-.276.085-.54.184-.794.3l-.401-.853c.317-.16.664-.28 1.041-.363a4.968 4.968 0 0 1 1.068-.124c.743 0 1.304.156 1.683.466.379.312.568.8.568 1.468v3.78h-.888l-.248-.78zm-.515-.393c.272-.242.409-.581.409-1.018v-.488l-.751.03c-.585.022-1.01.114-1.277.282-.266.168-.398.425-.398.77 0 .25.076.443.232.58.155.137.388.206.699.206.451 0 .813-.12 1.086-.362zm6.97-4.49l-.122 1.112c-.177-.04-.36-.06-.551-.06-.495 0-.899.154-1.207.466-.307.312-.462.715-.462 1.213v2.933h-1.24V5.284h.97l.165.989h.063c.194-.335.447-.601.758-.797.313-.196.65-.294 1.008-.294.249 0 .455.017.619.05zm1.423 5.023c-.459-.496-.69-1.207-.69-2.134 0-.945.242-1.67.722-2.177.483-.507 1.176-.761 2.087-.761.616 0 1.17.11 1.663.33l-.374.958c-.526-.195-.959-.293-1.301-.293-1.01 0-1.516.643-1.516 1.933 0 .63.125 1.103.377 1.419.253.316.622.475 1.108.475a3.27 3.27 0 0 0 1.57-.397v1.041c-.22.125-.458.215-.709.269a4.28 4.28 0 0 1-.918.082c-.887-.003-1.559-.25-2.02-.745zm8.916.641v-3.45c0-.435-.09-.756-.271-.97-.183-.213-.47-.321-.865-.321-.521 0-.905.151-1.151.45-.243.3-.366.8-.366 1.503v2.788h-1.242V3h1.242v2.003c0 .321-.02.666-.063 1.03h.079c.169-.27.403-.48.705-.628a2.362 2.362 0 0 1 1.055-.223c1.417 0 2.126.685 2.126 2.055v3.66h-1.249z"/>
+        <path fill="#848AB8" d="M42.828 6.115c.418.537.628 1.29.628 2.26 0 .974-.213 1.732-.637 2.275-.425.542-1.012.813-1.768.813-.76 0-1.352-.27-1.773-.81h-.087l-.233.703H38V3h1.278v1.987c0 .147-.007.365-.022.655-.014.29-.025.475-.032.553h.054c.405-.59 1.005-.886 1.795-.886.75 0 1.336.27 1.755.806zm-3.201.674c-.225.3-.343.8-.35 1.5v.087c0 .721.117 1.245.349 1.57.233.323.61.485 1.136.485.454 0 .797-.177 1.031-.532.233-.354.352-.866.352-1.535 0-1.35-.466-2.025-1.403-2.025-.518 0-.887.15-1.115.45zm5.792-1.372l1.223 3.366c.186.48.31.93.37 1.354h.044c.034-.196.094-.435.18-.716.088-.28.548-1.615 1.382-4.003H50l-2.573 6.73C46.96 13.381 46.18 14 45.087 14a3.66 3.66 0 0 1-.826-.092v-.998c.192.043.411.065.658.065.618 0 1.05-.353 1.3-1.058l.223-.56-2.415-5.94h1.392z"/>
+        <path fill="#5468FF" fill-rule="nonzero" d="M70.306 0a1.87 1.87 0 0 1 1.865 1.872V12.35a1.87 1.87 0 0 1-1.865 1.872h-10.44A1.87 1.87 0 0 1 58 12.35V1.867C58 .837 58.834 0 59.866 0h10.44zM65.25 3.593a4.012 4.012 0 0 0-4.003 4.02 4.008 4.008 0 0 0 4.003 4.017 4.012 4.012 0 0 0 4.003-4.02 4.006 4.006 0 0 0-4.003-4.017zm0 6.85a2.827 2.827 0 0 1-2.82-2.83 2.827 2.827 0 0 1 2.82-2.829 2.827 2.827 0 0 1 2.82 2.83c0 1.561-1.26 2.83-2.82 2.83zm0-2.972c0 .06.064.103.12.074l1.867-.97c.042-.021.055-.074.033-.116a2.32 2.32 0 0 0-1.933-1.179c-.043 0-.086.035-.086.083l-.001 2.108zm-2.614-3.658l-.246-.245a.61.61 0 0 0-.868 0l-.292.293a.615.615 0 0 0 0 .87l.24.243c.04.04.095.03.13-.008a4.484 4.484 0 0 1 1.023-1.028c.043-.026.047-.087.013-.125zm3.925-1.126a.616.616 0 0 0-.615-.617h-1.432a.617.617 0 0 0-.614.617v.5c0 .056.052.096.107.082a4.5 4.5 0 0 1 2.451-.012.084.084 0 0 0 .104-.081l-.001-.489zm28.457 9.023c0 1.294-.33 2.238-.995 2.838-.664.6-1.68.9-3.047.9-.5 0-1.538-.097-2.368-.28l.305-1.502c.695.146 1.612.185 2.092.185.762 0 1.306-.155 1.63-.465.326-.311.485-.77.485-1.38v-.31a5.712 5.712 0 0 1-.742.28c-.305.092-.66.141-1.057.141-.523 0-1-.082-1.432-.247a2.99 2.99 0 0 1-1.11-.726 3.3 3.3 0 0 1-.718-1.202c-.17-.48-.257-1.336-.257-1.966 0-.59.092-1.33.271-1.824a3.51 3.51 0 0 1 .801-1.274 3.67 3.67 0 0 1 1.275-.824 4.688 4.688 0 0 1 1.723-.324c.616 0 1.183.078 1.736.169.554.093 1.024.19 1.408.296v7.516zm-5.274-3.738c0 .794.174 1.675.524 2.044.35.367.8.551 1.354.551.3 0 .587-.044.854-.124.265-.084.48-.18.65-.297V5.444a7.53 7.53 0 0 0-1.252-.16c-.689-.018-1.213.262-1.582.71-.363.452-.549 1.242-.549 1.978h.001zm14.278 0c0 .64-.092 1.123-.281 1.651a3.897 3.897 0 0 1-.8 1.351 3.534 3.534 0 0 1-1.242.867c-.485.203-1.233.32-1.605.32-.374-.006-1.116-.113-1.596-.32a3.626 3.626 0 0 1-1.238-.868 3.993 3.993 0 0 1-.806-1.35 4.477 4.477 0 0 1-.29-1.652c0-.64.086-1.254.281-1.778.195-.523.465-.969.815-1.342a3.646 3.646 0 0 1 1.242-.86 3.993 3.993 0 0 1 1.582-.301c.573 0 1.102.101 1.587.3.485.203.903.49 1.242.862.345.374.61.818.806 1.343.204.521.304 1.137.304 1.776h-.001zm-1.94.004c0-.818-.18-1.5-.53-1.973-.349-.48-.838-.719-1.465-.719-.625 0-1.116.238-1.465.718-.349.478-.519 1.155-.519 1.973 0 .83.175 1.387.523 1.867.35.483.841.72 1.467.72.625 0 1.116-.242 1.465-.72.349-.486.522-1.038.522-1.867l.002.001zm6.165 4.187c-3.11.013-3.11-2.51-3.11-2.912L105.134.3l1.896-.3v8.89c0 .23 0 1.672 1.218 1.677v1.596zm3.343 0h-1.906V3.984l1.907-.3v8.479zm-.956-9.372c.637 0 1.155-.514 1.155-1.148 0-.634-.513-1.147-1.155-1.147-.64 0-1.154.513-1.154 1.147s.52 1.148 1.155 1.148h-.001zm5.696.9c.626 0 1.155.078 1.582.232.428.156.77.373 1.024.649.253.277.432.655.539 1.052.111.396.165.833.165 1.312v4.871c-.29.064-.732.137-1.324.224-.591.087-1.256.13-1.993.13-.49 0-.942-.049-1.344-.141a2.833 2.833 0 0 1-1.043-.45 2.174 2.174 0 0 1-.675-.804c-.16-.329-.243-.794-.243-1.28 0-.464.092-.759.27-1.079.187-.32.433-.58.745-.784a3.163 3.163 0 0 1 1.085-.435 6.131 6.131 0 0 1 2.688.038v-.311c0-.217-.024-.425-.078-.619a1.335 1.335 0 0 0-.27-.517 1.263 1.263 0 0 0-.515-.349 2.25 2.25 0 0 0-.81-.146 7.05 7.05 0 0 0-1.2.116 5.662 5.662 0 0 0-.892.219l-.229-1.556a7.85 7.85 0 0 1 1.048-.245 8.239 8.239 0 0 1 1.47-.126zm.16 6.872c.583 0 1.014-.033 1.315-.092V8.544a3.627 3.627 0 0 0-.456-.093 4.605 4.605 0 0 0-.66-.048 4.07 4.07 0 0 0-.635.049 1.962 1.962 0 0 0-.577.168c-.169.084-.31.2-.412.35-.106.15-.155.237-.155.465 0 .447.155.702.436.873.287.174.665.257 1.146.257l-.002-.002zM79.029 3.74c.626 0 1.155.078 1.582.232.426.155.77.374 1.023.65.257.28.432.653.539 1.05.112.397.165.833.165 1.313v4.871c-.293.062-.733.136-1.324.222-.594.09-1.258.132-1.996.132-.49 0-.94-.048-1.344-.14a2.833 2.833 0 0 1-1.043-.45 2.183 2.183 0 0 1-.673-.806c-.161-.329-.244-.794-.244-1.278 0-.465.092-.76.272-1.08a2.3 2.3 0 0 1 .742-.784 3.165 3.165 0 0 1 1.087-.436 6.222 6.222 0 0 1 1.95-.091 5.9 5.9 0 0 1 .737.131v-.31c0-.218-.023-.427-.077-.62a1.324 1.324 0 0 0-.272-.518 1.28 1.28 0 0 0-.515-.349 2.25 2.25 0 0 0-.81-.145c-.436 0-.834.054-1.198.116a5.345 5.345 0 0 0-.892.218l-.228-1.555a7.667 7.667 0 0 1 1.048-.246 7.821 7.821 0 0 1 1.469-.127h.002zm.164 6.877c.583 0 1.015-.033 1.316-.092V8.597a3.683 3.683 0 0 0-.457-.093 4.615 4.615 0 0 0-.66-.048c-.21 0-.423.015-.638.049a1.92 1.92 0 0 0-.576.169c-.17.083-.31.199-.412.35-.107.15-.155.236-.155.464 0 .447.154.702.435.873.281.169.665.258 1.145.258l.002-.002zm7.69 1.547c-3.109.013-3.109-2.51-3.109-2.912L83.767.3l1.896-.3v8.89c0 .23 0 1.672 1.218 1.677v1.594l.002.003z"/>
+      </g>
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+      
+
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+
+
+        
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>
+            
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+
+            
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">Numerical Methods for Schrodinger Equation</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jul 22, 2021</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>20 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+          
+          
+            
+
+
+
+
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+
+
+
+
+
+<h1 id="generic-discussion">Generic Discussion</h1>
+<p>The dynamical equation in quantum mechanics always has the form of generical Schrodinger Equation as</p>
+<p>$$
+\ti \frac {\td} {\td t} \ket{\psi} = \hat H \ket{\psi},
+$$</p>
+<p>in which we set  $\hbar = 1$ . The quantum state (wavefunction)  $\ket{\psi}\in\mathcal{H}$  is a vector in an abstract Hilbert space, while  $\hat H: \mathcal{H} \rightarrow \mathcal{H}$  is a Linear operator on it. For the closed system,  $\hat H$  is Hermitian, while for the effective theory for open system,  $\hat H$  could be non-Hermitian to simulate the particle loss and gaining during the time evolution.</p>
+<p>In non-Relativistic quantum theory, the state is usually represented as function of coordinates, and Hamiltonian  $\hat H$  is the classical energy with the &ldquo;quantization&rdquo;  $\hat{\bm{p}} \rightarrow -\ti \nabla$ . In relativistic theory, i.e., quantum field theory, spatial coordinates is one degree of freedom of  $\ket{\psi}$  (like the subscription of particles in non-relativistic many body system). In this case, the Hilbert space  $\mathcal{H}$  is tensor product of infinitly many local Hilbert spaces:  $\mathcal{H} = \otimes_x \mathcal{H}_x$ , and the equation of motion still has the form of Schrodinger equation, with the Lorentz covariance required by the Special Relativistic theory.</p>
+<p>Generally, to numerically solve the Schrodinger equation, we need a set of basis  $\ket{x}$  and rewrite the equation as matrix form</p>
+<p>$$
+\ti \frac {\td} {\td t} \bm{\psi} = \bm{H}\bm{\psi} \ ; \ (\bm{\psi})_x = \braket{x|\psi}, (\bm{H})_{x,x'} = \braket{x|\hat H|x'}.
+$$</p>
+<p>When the time evolution is closed in a finite subspace of  $\mathcal{H} = \textrm{span} {\ket{x}}$ , the equation of motion becomes a finite dimensional linear ODE. There has been much algorithms to handle this case like <strong>Exact Diagonalization</strong> to find the exact solution and <strong>Runge-Kutta Method</strong> for finite precision solution. The problem get serious when we cannot find such finite subspace, this can be led by the initial condition and system itself. If the dynamics is constraint, we can use some cutoff strategy to make it be finite approximately. This procedure is usually completed by analyzing the symmetry of the system. The worst case is the case of the system do not allowed such effective cutoff, like most systems in field theory whose degree of freedom is infinity. This problem attracts much attentions recently and many models friendly to numerical simulation, like lattice field theory, are developed.</p>
+<p>In this note, we will focused on the easy problems: the system who can be treated as finite dimensional system. We discuss the numerical algorithm to effectively solve such ODEs. This is also important since the dimension of Hilbert space is usually exponential to the system size and exact diagonalization might not be always the best choice. How to find the cutoff is also our goal. However, usually it does not have a unified strategy. We will discuss this on some frequently used models.</p>
+<h1 id="numerical-method-for-eigensystem-problem">Numerical Method for Eigensystem Problem</h1>
+<p>For those systems who have natural discretized basis, the stationary Schrodinger equation has the form of common eigensystem problem of an Hermitian matrix:</p>
+<p>$$
+\sum_{x'} \braket{x|\hat H|x'} \braket{x'|E} = E \braket{x|E} \Rightarrow \bm{H} \bm{\psi}_E = E \bm{\psi}_E. 
+$$</p>
+<p>For the case of dimension of Hilbert space is small, one can choose exact diagonalization with treating  $\bm{H}$  as a dense matrix. In the real scenarios, people encode  $\bm{H}$  as a sparse matrix and use iterative algorithms since usually one the lowest few energy levels are matter. In this section we will not discuss these method detailly. There are two method apart from exact diagonalization and widely used in computational physics: imaginary time evolution and the variational approach. Note that the latter is actually a large category of a class of algorithms and have been well developed. We will only focus on its spirit and a generic framework of the approach.</p>
+<h2 id="imaginary-time-evolution">Imaginary Time Evolution</h2>
+<p><strong>Imaginary time evolution</strong> can be quite efficient to find the ground state if the time evolution driven by the Hamiltonian can be efficiently simulated(See the next section &ldquo;Numerical Method for Time Dependent Schrodinger Equation&rdquo;). If the Hamiltonian has a sparse encoding, this would be quite easy. But this makes it hard to defeat <strong>exact diagonalization</strong> for sparse matrix(i.e., Lancos algorithm).</p>
+<p>One can see how imaginary time evolution work by the following equation</p>
+<p>$$
+\begin{aligned}
+e^{-\hat H \tau} \ket{\psi} &= \sum_{i} \ket{E_i}e^{- E_i \tau} \braket{E_i|\psi} \\
+&= e^{-E_{g.s.} \tau} \Big(\ket{E_{g.s.}} \braket{E_{g.s.} |\psi} + \sum_{i \neq g.s.} \ket{E_i} e^{-(E_i - E_{g.s.}) \tau} \braket{E_i|\psi}\Big).
+\end{aligned}
+$$</p>
+<p>Note that  $E_i - E_{g.s.} \geq 0$ . Thus, if the ground state is non-degenerate and the overlap between it and the initial state  $\ket{\psi}$  is not zero, then simulate the &ldquo;time&rdquo; evolution of  $e^{-\hat H\tau}$  together with normalization, i.e.,  $\ket{\psi(\tau)} = e^{-\hat H \tau} \ket{\psi} / |e^{-\hat H \tau} \ket{\psi}|$ , one can expect that  $\ket{\psi(\tau)}$  should be the ground state as  $\tau$  gets large enough. The name &ldquo;imaginary time evolution&rdquo; comes from that  $e^{-\hat H\tau} = e^{-\ti \hat H (-\ti \tau)}$ , i.e., it looks like the quantum time evolution with  $t = -\ti \tau$  pure imaginary time interval.</p>
+<p>In practice, one may need to solve the imaginary time Schrodinger equation numerically</p>
+<p>$$
+-\frac {\td } {\td t} \ket{\psi} = \hat H \ket{\psi}.
+$$</p>
+<p>One way is to rewrite it in coordinate basis and solve the diffusion equation by Monte Carlo method (see <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.73.33">Quantum Monte Carlo simulations of solids</a>).</p>
+<h2 id="variational-quantum-eigensolver">Variational Quantum Eigensolver</h2>
+<p><strong>Variational Quantum Eigensolver(VQE)</strong>, or a large category of variational algorithms behind it, is to convert the diagonalization in the hugo Hilbert space into the optimization in a low-dimensional parameter manifold. To implement the approach, one need to specify a parameterized model, which can be simulated efficiently on a classical computer (like matrix product state), or could be prepared on a <a href="https://arxiv.org/abs/1801.00862">NISQ</a> quantum device. Generally, it can be represented as a parameterized quantum state  $\ket{\psi(x)}, x\in \mathcal{X}$ . Then the ground state(energy) can be obtained by the optimization procedure</p>
+<p>$$
+E_{g.s.} = \argmin_{x\in\mathcal{X}} \braket{\psi(x)|\hat H |\psi(x)}. 
+$$</p>
+<p>This can be done by gradient descent procedure or other programming subroutines.</p>
+<p>The issue of variational algorithms is that the solution could diverge quite from the exact solution. In the meanwhile, whether the optimization is more efficient than diagonalization or not is questionable. By the procedure, one can only find the state with minimal energy(if the optimization is done) in a small set  ${\ket{\psi(x)} : x\in\mathcal{X}}\subset \mathcal{H}$ . One can hardly to ensure that this set can cover the exact solution. And this can only be improved by making a more powerful model, which is exactly hard to design. The trade-off between precision and the complexity of optimization is also an open problem in the community.</p>
+<h1 id="numerical-method-for-time-dependent-schrodinger-equation">Numerical Method for Time Dependent Schrodinger Equation</h1>
+<p>Let us continue for the single particle Schrodinger equation with potential (now it can be dependent of time) of</p>
+<p>$$
+\ti \frac {\partial }{\partial t} \psi(x, t) = -\frac 1 2 \nabla^2 \psi(x, t) + V(x, t) \psi(x, t).
+$$</p>
+<h2 id="unitary-finite-difference">Unitary Finite Difference</h2>
+<p>We can always compute the right-hand-side by finite difference to obtain the addition on time domain, and use Euler method to compute the wavefunction  $\psi$  at each discretized time step, like the ODE numerical method.</p>
+<p>With the Catersian system with spatial resolution  $\Delta x$ , the Laplacian in right-hand-side can be estimated as</p>
+<p>$$
+\nabla^2 \psi = \sum_{i=1}^3 \partial_i^2 \psi =  \sum_{i=1}^3 \frac {\psi(x^i + \Delta x) + \psi(x^i - \Delta x) - 2\psi(x^i)} {\Delta x^2} + \mathcal{O}(\Delta x^2) = [\nabla^2 \psi]_{\Delta x} + \mathcal{O}(\Delta x^2).
+$$</p>
+<p>The error scaling can be obtained by Taylor expansion along each axis. Then we can calculate the time step by different order according to our demand.</p>
+<p>With this discretization, the Crank-Nicolson method suggests (with superscript denoting time point)</p>
+<!--$$
+\ti \frac {\psi^{n+1} - \psi^n} {\Delta t} = -\frac 1 4 \Big([\nabla^2 \psi^{n+1}]_{\Delta x} + [\nabla^2 \psi^{n}]_{\Delta x}\Big) + \frac 1 2 (V^{n+1}\psi^{n+1} + V^n\psi^n).
+$$-->
+<p>$$
+\begin{aligned}
+&\ti \frac {\psi^{n+1} - \psi^n} {\Delta t} = -\frac 1 4 \Big([\nabla^2 \psi^{n+1}]_{\Delta x} + [\nabla^2 \psi^{n}]_{\Delta x}\Big) + V^n \frac {\psi^{n+1} + \psi^n} 2 \\
+\Leftrightarrow \indent &
+\psi^{n+1} + \frac {\ti \Delta t} 2\Big(-\frac 1 2 [\nabla^2\psi^{n+1}]_{\Delta x} + V^{n} \psi^{n+1}\Big) = \psi^{n} - \frac {\ti \Delta t} 2 \Big(-\frac 1 2 [\nabla^2 \psi^n]_{\Delta x} + V^n \psi^n\Big).
+\end{aligned}
+$$</p>
+<p>Or simplified form  $(1+\ti \Delta t \hat H/2) \psi^{n+1} = (1-\ti \Delta t \hat H/2) \psi^n$ .</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note: why not naive propagation
+    </summary>
+<p>The naive propagation is defined by the discretization equation</p>
+<p>$$
+\ti \frac {\psi^{n+1} - \psi^n} {\Delta t} = -\frac 1 2[\nabla^2 \psi^{n}]_{\Delta x} + V^n\psi^n.
+$$</p>
+<p>Different with Crank-Nicolson method, naive propagation is an explicit method, i.e., given the value of  $\psi^n$ , we can directly compute the next time  $\psi^{n+1}$ . Crank-Nicolson method is implicit since we need further to solve a linear system to obtain  $\psi^{n+1}$ .</p>
+<p>The reason why we do not use naive propagation is that it is not numerical stable. To see this, we analyze the growth factor of error. Since the original differential equation is linear, the propagation of error function is same to the equation for  $\psi$ , as</p>
+<p>$$
+\ti \frac {\epsilon^{(n+1)} - \epsilon^{(n)}} {\Delta t} = -\frac 1 2[\nabla^2 \epsilon^{(n)}]_{\Delta x} + V^n\epsilon^{(n)}.
+$$</p>
+<p>Assuming the growth of  $\epsilon$  is</p>
+<p>$$
+\epsilon^{(n)} = \sum_k \xi_k^n e^{\ti k\cdot x}.
+$$</p>
+<p>The growth factor at mode  $k$  is  $\xi_k$ , and it should be of the order by</p>
+<p>$$
+\ti \frac {\xi_k - 1} {\Delta t} = \frac {1-\cos k\cdot \Delta x} {\Delta x^2} + V^n \Rightarrow \xi_k = 1- \ti \Big(\frac {2\Delta t} {\Delta x^2} \sin^2 \frac {k\cdot \Delta x} {2} + V^n\Big).
+$$</p>
+<p>It shows  $|\xi_k|^2 \gt 1$  at finite  $\Delta t, \Delta x$  for some  $k$  and  $x$ , i.e., the error grows exponentially. This analysis is known as <strong>von Neumann Stability Analysis</strong>, see <a href="https://en.wikipedia.org/wiki/Von_Neumann_stability_analysis">wikipedia/Von_Neumann_stability_analysis</a> for more information. It is not the only stability analysis method, but usually a good start.</p>
+<p>Since the Schrodinger equation has an imaginary time step term, the explicit method is often unstable. The Crank-Nicolson method can be approximately viewed as the average of both sides of forward naive propagation and backward propagation. We will see adding the backward propagation stabilizes the algorithm.</p>
+<p>$$
+\Big(1 + \frac {\ti \Delta t} 2 \Big(\frac {2\sin^2 k\cdot \Delta x/2} {\Delta x^2} + V^{n}\Big)\Big)\xi_k = \Big(1 - \frac {\ti \Delta t} 2 \Big(\frac {2\sin^2 k\cdot \Delta x/2} {\Delta x^2} + V^{n}\Big)\Big) \Rightarrow |\xi_k| = 1.
+$$</p>
+<p>Which means the method is not only stable, but also unitary. Thus we even do not need normalize the wavefunction at each time step. This is also why we not use the exact average of forward and backward (Note the potential  $V$  at left-hand-side is at time  $n$  rather than time  $n+1$ ).</p>
+</details>
+<p>Crank-Nicolson method is unitary and has the second order local truncation error. This makes it popular in numerical solution of Schrodinger equation.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note: error of Crank-Nicolson method
+    </summary>
+<p>The <strong>Local Truncation Error</strong> is defined as the difference between numerical solution and exact solution led by single time step. We can compute it with the Taylor expansion at time  $t$ :</p>
+<p>$$
+\psi^{n+1} = \psi(t + \Delta t) = \psi(t) + \psi_t \Delta t + \frac 1 2 \psi_{tt}\Delta t^2 + \mathcal{O}(\Delta t^3).
+$$</p>
+<p>Then substitute this into the Crank-Nicolson method iteration, we have</p>
+<p>$$
+\begin{aligned}
+\textrm{l.h.s.} &= (1+\ti \Delta t \hat H /2)\Big(\psi(t) + \psi_t \Delta t + \frac 1 2 \psi_{tt}\Delta t^2 + \mathcal{O}(\Delta t^3) \Big) \\
+&=(1+\ti \Delta t \hat H /2) \psi(t) + (1+\ti \Delta t \hat H / 2) (-\ti \hat H \psi(t)) \Delta t + \frac 1 2 \psi_{tt} \Delta t^2 + \mathcal{O}(\Delta t^3) \\
+&=(1-\ti \Delta t \hat H /2) \psi(t) + \mathcal{O}(\Delta t^3) \\
+&=\textrm{r.h.s.} + \mathcal{O}(\Delta t^3)
+\end{aligned}
+$$</p>
+<p>The exact (up to third order) local truncation error is (considering error of gradient)</p>
+<p>$$
+\begin{aligned}
+T(t) &= \psi(t+\Delta t) - \psi^{n+1}\Big|_{\psi^n = \psi(t)} \\
+&\approx \psi(t+\Delta t) -\psi(t) - \ti\Delta t\Big(\frac {1} {4}([\nabla^2 \psi(t+\Delta t)]_{\Delta x} + [\nabla^2 \psi(t)]_{\Delta x}) - \frac {V(t) (\psi(t+\Delta t) + \psi(t))} 2 \Big) \\
+&=\psi_t \Delta t + \frac 1 2 \psi_{tt}\Delta t^2 - \ti \Delta t\Big(\frac 1 2 \nabla^2 \psi - V\psi + \frac 1 4 \nabla^2 \psi_t \Delta t + \frac 1 {24}\psi_{xxxx}\Delta x^2 - \frac 1 2 V\psi_t \Delta t -\frac 1 4 V\psi_{tt}\Delta t^2 + \cdots\Big)\\
+&=- \ti \Delta t \Big(\frac 1 {24}\psi_{xxxx}\Delta x^2 - \frac 1 4 V \psi_{tt}\Delta t^2 + \cdots \Big)
+\end{aligned}
+$$</p>
+<p>Note that the local error is of third order, thus the approximation in second line (substitute all  $\psi^{n+1}$  to exact value  $\psi(t+\Delta t)$ ) would not break the result. Accumulating this local error we can estimate the global error, note  $\sum \Delta t = \textrm{Const.}$ , we have</p>
+<p>$$
+\psi(t) - \psi^n \sim \mathcal{O}(\Delta x^2, \Delta t^2).
+$$</p>
+</details>
+<p>Crank-Nicolson method is an implicit method. The price is that we need to solve a linear system with (in 1-D) tri-diagonal matrix. With proper algorithm this would cost as  $\mathcal{O}(D)$  of dimension of Hilbert space. For higher dimension, the coefficient matrix by direct Crank-Nicolson method would be more complicate. Then we need to use other optimization(Now most sparse matrix library offers fast linear system solving, in many cases the plain way is good enough. But for some specific application, one may use the <a href="https://en.wikipedia.org/wiki/Alternating-direction_implicit_method">Alternating-direction-implicit method</a>, or a stable and explict method as below.).</p>
+<!--<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note: Alternating-direction implicit method
+    </summary>
+    
+
+To overcome the heavy cost of solving the linear system in higher dimension, the **alternating-direction implicit(ADI)** is proposed. See [wikipedia/Alternating-direction_implicit_method](https://en.wikipedia.org/wiki/Alternating-direction_implicit_method) for more information. 
+
+One understanding about ADI for Schrodinger equation can be illustrated by the Crank-Nicolson method for a 2-D Schrodinger equation. The time evolution reads
+
+$$
+\Big(1 + \frac {\ti \Delta t} 2 \big(-\frac 1 2 \partial_x^2 -\frac 1 2 \partial_y^2 + V^n\big)\Big)\psi^{n+1} = \Big(1 - \frac {\ti \Delta t} 2 \big(-\frac 1 2 \partial_x^2 -\frac 1 2 \partial_y^2 + V^n\big)\Big)\psi^{n}.
+$$
+
+
+</details>
+-->
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Fast &amp; stable Explicit Method
+    </summary>
+<p>This is originally proposed in <a href="https://aip.scitation.org/doi/abs/10.1063/1.168415">Computers in Physics 5, 596 (1991)</a>. As it was introduced, it is an explicit algorithm with second-order accurate in time and as stable as Crank-Nicolson method. Here we make a brief discussion for it.</p>
+<p>The algorithm computes the real and imaginary part of wavefunction separately at different time sequence. Letting  $\psi = \psi_r + \ti \psi_i$ , the Schrodinger equation reads</p>
+<p>$$
+\frac {\td \psi_r} {\td t} = \hat H \psi_i \ ; \ \frac {\td \psi_i} {\td t} = -\hat H \psi_r.
+$$</p>
+<p>The algorithm requires  $\psi_r, \psi_i$  at different time sequence as  $\psi_r^n = \psi_r(t=n \Delta t), \psi_i^n = \psi_i(t = (n+1/2) \Delta t)$ . Then the time evolution is performed as</p>
+<p>$$
+\begin{aligned}
+\psi_r^{n+1} &= \psi_r^n + \Delta t \hat H \psi_i^n \\
+\psi_i^{n+1} &= \psi_i^n - \Delta t \hat H \psi_r^{n+1}
+\end{aligned}
+$$</p>
+<p>Different from the implicit method, this method requires the initial condition at two different time points as  $\psi_r^0 = \textrm{Re}\psi(t=0), \psi_i^0 = \textrm{Im}\psi(t=\Delta t/2)$ . Thus to implement this method we may need to compute one step time evolution by implicit method for higher accuracy.</p>
+<p>The probability along two time sequences are computed in a different way as</p>
+<p>$$
+\begin{aligned}
+P(t = n\Delta t) &= (\psi_r^n)^2 + \psi_i^n \psi_i^{n-1} \\
+P(t = (n+1/2)\Delta t) &= \psi_r^{n+1} \psi_r^n + (\psi_i^n)^2
+\end{aligned}
+$$</p>
+<p>When the iteration is stable, the probability in such algorithm is conserved during the time evolution. As an example, we check the formula for integer time steps (denoting  $\Delta t \hat H = \bm{A}$  as matrix form)</p>
+<p>$$
+\begin{aligned}
+\sum P^{n+1} &= \bm{\psi_r^{n+1}} \cdot \bm{\psi_r^{n+1}} + \bm{\psi_i^{n+1}} \cdot \bm{\psi_i^{n}} \\
+&=(\bm{\psi_r^n} + \bm{A} \bm{\psi_i^n})\cdot (\bm{\psi_r^n} + \bm{A} \bm{\psi_i^n}) + (\bm{\psi_i^n} - \bm{A} \bm{\psi_r^n}- \bm{A}^2 \bm{\psi_i^{n}})\cdot \bm{\psi_i^n} \\
+&= \bm{\psi_r^n}\cdot \bm{\psi_r^n} + \bm{\psi_r^n}^T \bm{A}\bm{\psi_i^n} + \bm{\psi_i^n}\cdot (\bm{\psi_i^{n-1}} - \bm{A}\bm{\psi_r^n}) \\
+&= \bm{\psi_r^n}\cdot \bm{\psi_r^n} + \bm{\psi_i^n}\cdot \bm{\psi_i^{n-1}} \\
+&= \sum P^n
+\end{aligned}
+$$</p>
+<p>Note that we requires that  $\bm{\psi_i^n}^T \bm{A}^T\bm{A} \bm{\psi_i^n} = \bm{\psi_i^n}^T \bm{A}^2 \bm{\psi_i^n}$ . This leads us to deal the discretized Hamiltonian carefully. It is most convenient to prepare the matrix  $\bm{A}$  into a real symmetric matrix. In most physical system, such  $\bm{A}$  can be easy obtained.</p>
+<p>This explicit method is different from Crank-Nicolson method in the stability. Here we discuss the stability condition of the method. The discretized iteration equation can be expressed as matrix form as</p>
+<p>$$
+\begin{bmatrix}
+\psi_r^{n+1} \\
+\psi_i^{n+1}
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & \Delta t \hat H \\
+-\Delta t \hat H & 1 - \Delta t^2 \hat H^2
+\end{bmatrix}\begin{bmatrix}
+\psi_r^{n} \\
+\psi_i^{n}
+\end{bmatrix}
+$$</p>
+<p>By the determinant of such block matrix (see <a href="https://en.wikipedia.org/wiki/Determinant#Block_matrices">wikipedia/Determinant#Block_matrices</a> for details), we have</p>
+<p>$$
+\det \begin{bmatrix}
+1 - \lambda & \Delta t \hat H \\
+-\Delta t \hat H & 1 - \Delta t^2 \hat H^2 - \lambda
+\end{bmatrix} = \det \Big((1-\lambda) (1-\Delta t^2 \hat H^2 - \lambda) + \Delta t^2 \hat H^2\Big) = 0.
+$$</p>
+<p>One can check the equation is equivalent to (omit the case of  $\lambda = 0$ )</p>
+<p>$$
+\det \Big(\frac {1-2\lambda +\lambda^2} \lambda + \Delta t^2 \hat H^2\Big) = 0.
+$$</p>
+<p>That means, if the eigenvalues of  $\hat H$  is denoted as  ${E_i}$ , then the eigenvalues of discretized propagation should be</p>
+<p>$$
+\lambda_i = 1 - \frac {E_i^2 \Delta t^2} 2 \pm \sqrt{\frac {E_i^4 \Delta t^4} 4 - E_i^2 \Delta t^2}.
+$$</p>
+<p>Note that in the practice we implement Hamiltonian  $\hat H$  via finite difference for the derivative. So there is slight inconsistency between  $E_i$  and actual energy spectrum. With the similar method as von Neumann analysis, we assume the growth of error behaves like  $\xi_k^n e^{\ti k\cdot x}$ , the eigenvalue of  $\hat H \Delta t$  (actually the growth factor), can be estimated as</p>
+<p>$$
+\ti \frac {\xi_k - 1} {\Delta t} = E_i \sim \frac {2} {\Delta x^2} \sin^2 \frac {k \cdot \Delta x} 2 + V^n.
+$$</p>
+<p>The stability condition requires that  $|\lambda_i|\leq 1$ . If we require  $x = E_i^2 \Delta t^2$  has the property of  $x^2/ 4 \geq x$  thus  $\lambda_i \in \mathbb{R}$ , then the stability condition is equivalent to</p>
+<p>$$
+\begin{aligned}
+\Big|1- \frac x 2 \pm \sqrt{\frac {x^2} 4 - x}\Big| \leq 1 &\Rightarrow \Big|1 - \frac x 2\Big| + \sqrt{\frac {x^2} 4 - x} \leq 1 \\
+&\Rightarrow  (1 - x/2)^2 \leq (1-\sqrt{x^2/4 -x})^2 \textrm{ and } 1 \geq \sqrt{x^2/4 -x} \\
+&\Rightarrow 0 \leq -2 \sqrt{x^2/4-x} \textrm{ and } 1 \geq \sqrt{x^2/4 -x}
+\end{aligned}
+$$</p>
+<p>which is impossible. Thus we need  $x \gt x^2 /4$  and  $\lambda_i$  are a pair of conjugate complex numbers. The modulus of them is</p>
+<p>$$
+\Big|1- \frac x 2 \pm \sqrt{\frac {x^2} 4 - x}\Big|_{x \leq 4} = (1 - x/2)^2 + (x - x^2 /4) = 1.
+$$</p>
+<p>Thus, the stability condition requires that  $x \leq 4 \Rightarrow |E_i \Delta t| \leq 2$ . With the estimation for  $E_i$ , we can write down the stability condition w.r.t. potential  $V$  and discretization parameters as</p>
+<p>$$
+\frac {-2} {\Delta t} \leq V^n \leq \frac {2} {\Delta t} - \frac 2 {\Delta x^2} .
+$$</p>
+<p>For any potential  $V$ , once we make a sufficiently small  $\Delta t$  and  $\Delta t \leq \mathcal{O}(\Delta x^2)$ , then the stability condition can be achieved.</p>
+</details>
+<h2 id="trotter-suzuki-expansion">Trotter-Suzuki Expansion</h2>
+<p><strong>Trotter-Suzuki Expansion</strong>, as its formula, works fine when the Hamiltonian can be expressed as a sum of easy to simulate Hamiltonians. The <strong>Trotter-Suzuki Formula</strong> reads</p>
+<p>$$
+\exp\Big(-\ti \sum_{j=1}^m \hat H_j t\Big) = \prod_{j=1}^m \exp\Big(-\ti \hat H_j t\Big) + \mathcal{O}(m^2t^2).
+$$</p>
+<p>If the subroutine for simulating  $e^{-\ti \hat H_j t}$  works fast, then Trotter-Suzuki expansion would be an efficient numerical method for numerical solution of Schrodinger equation. Usually, the spin system with few-body interactions(local interaction) would has such property (sparsity would help much). For the generic equation of spatial wavefunctions, this property holds since the kinetic term can be fast simulated via <strong>FFT(Fast Fourier Transformation)</strong>.</p>
+<p>Let us consider the wavefunction with coordinate representation  $\psi(\bm{x})$ . The kinetic energy operator reads  $\hat T = - \frac 1 2 \nabla^2$ . The operator exponent with  $\hat T$  as generator can be easily evaluated on  $\psi(\bm{x})$  by the Fourier transform (assuming  $\psi$  is good enough to do so)</p>
+<p>$$
+\begin{aligned}
+e^{-\ti \hat T t} \psi(\bm{x}) &= e^{-\ti \hat T t} \int \frac {\td \bm{k}} {(2\pi)^{3/2}} \tilde{\psi}(\bm{k}) e^{\ti \bm{k}\cdot \bm{x}} \\
+&= \int \frac {\td \bm{k}} {(2\pi)^{3/2}} \tilde{\psi}(\bm{k}) e^{-\ti \bm{k}^2 t /2} e^{\ti \bm{k}\cdot \bm{x}} \\
+&= \frac {1} {(2\pi)^3} \int \td \bm{x'} \td \bm{k} \ \psi(\bm{x'}) e^{-\ti \bm{k}^2 t/ 2} e^{\ti \bm{k}\cdot (\bm{x} - \bm{x'})}
+\end{aligned}
+$$</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note: Approximate Fourier Transform via FFT
+    </summary>
+<p>In mathematics we define the <strong>Fourier Transform(FT)</strong> of a 1D-function (with some requirements) as the integral</p>
+<p>$$
+\mathcal{F}(f(x))(k) = \int_{-\infty}^{\infty} f(x) e^{-\ti kx} \td x = \tilde{f}(k).
+$$</p>
+<p>While the <strong>Fast Fourier Transform(FFT)</strong> algorithm implement the discretized FT for an array</p>
+<p>$$
+\mathcal{F}(\{x_n\}_{n=0}^{N-1})_k = \sum_{n=0}^{N-1} x_n e^{-\ti 2\pi kn/N} = \tilde{x}_k.
+$$</p>
+<p>The continuous one can be approximated by the discretized one. Consider the homogeneous mesh for  $x$  of function  $f$  as  $X = {x_n}<em>{n=0}^{N-1}$  such that  $x_i = x_0 + n \Delta x$  and the cutoff of  $x\notin (x_0, x</em>{N}) \rightarrow f(x) = 0$ (Note that this implies the open boundary condition.), one has</p>
+<p>$$
+\begin{aligned}
+\tilde{f}(k) &= \int_{x_0}^{x_N} \td x \ e^{-\ti k x} f(x) \\
+&\approx \sum_{n=0}^{N-1} \Delta x \ e^{-\ti k (x_0 + n \Delta x)} f(x_0 + n \Delta x) \\
+&= \Delta x e^{-\ti k x_0} \sum_{n=0}^{N-1} e^{-\ti k n \Delta x} f_n
+\end{aligned} 
+$$</p>
+<p>where  $f_n = f(x_0 + n \Delta x)$ . With the  $k$ -mesh as  $k_m =k_0 +  2\pi m / \Delta x N$  with  $m=0,\cdots, N-1$ , we can get the value of  $\tilde{f}$  at  $k$ -mesh with FFT algorithm as</p>
+<p>$$
+\tilde{f}_{appr}(k_m) = \Delta x e^{-\ti k_m x_0} \Big(\mathcal{F}(f_n e^{-\ti k_0 n \Delta x})\Big)_m.
+$$</p>
+<p> $\tilde{f}_{appr}$  is quite different from  $\tilde{f}$  but usually a good approximation. One can check that</p>
+<p>$$
+\begin{aligned}
+e(k_m) &= |\tilde{f}(k_m) - \tilde{f}_{appr}(k_m)| \\
+&= \Big|\sum_{n=0}^{N-1} \int_{x_n}^{x_{n+1}} \td x \  e^{-\ti k_m x} f(x) - e^{-\ti k_m x_n} f(x_n)\Big| \\
+&= \Big|\sum_{n=0}^{N-1} \int_{x_n}^{x_{n+1}} \td x \ \Big(\big(f'(z) - \ti k_m f(z)\big) e^{-\ti k_m z}\Big) (x-x_n) \Big| \\
+&\leq\sum_{n=0}^{N-1} \Big|f'(z) - \ti k_m f(z)\Big|_{z\in (x_n, x_{n+1})} \frac {\Delta x^2} 2 \\
+&\leq \frac {N\Delta x^2} 2 \max |f'(z) - \ti k_m f(z)|
+\end{aligned}
+$$</p>
+<p>The error bound grows as  $k_m$  gets larger. That means the approximation could be bad at limit  $N\rightarrow\infty, \Delta x \rightarrow 0$  while  $k_m \sim 2\pi / \Delta x$ . That is why we truncate  $k$ -mesh within  $(-\pi/\Delta x , \pi/\Delta x)$  by letting  $k_0 = -\pi/\Delta x$  but not zero. This is also what <strong><a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon sampling theorem</a></strong> said:</p>
+<blockquote>
+<p>If a function  $x(t)$  contains no frequencies higher than  $F$ , it is completely determined by giving its ordinates at a series of points spaced  $1/(2F)$  seconds apart.</p>
+</blockquote>
+<p>As our spatial sampling spacing  $\Delta x$ , the good momentum cutoff should be  $\pi / \Delta x$ .</p>
+<p>Now we consider the approximation to free evolution  $e^{-\ti \hat T t}$  with FFT. It is (in 1-D)</p>
+<p>$$
+\begin{aligned}
+\Delta x e^{-\ti k_m x_0}\Big(\mathcal{F}(e^{-\ti \hat T t}\psi(x_n) e^{-\ti k_0 n \Delta x})\Big) &= e^{-\ti k_m^2 t}\Delta x e^{-\ti k_m x_0}\Big(\mathcal{F}(\psi(x_n) e^{-\ti k_0 n \Delta x})\Big)\\
+\Rightarrow  (e^{-\ti \hat T t}\psi)(x_n) &= e^{\ti k_0 n\Delta x} \mathcal{F}^{-1}\Big(e^{-\ti k_m^2 t} \mathcal{F}(\psi(x_n) e^{-\ti k_0 n\Delta x})\Big)
+\end{aligned}
+$$</p>
+<p>The error comes from two parts. One is the truncation of momentum: those contribution from high momentum components are not considered in the summation. The other one is the error of using discrete Fourier transform to approximate continuous Fourier transform. To control the error, one need to make sure that  $\Delta x$  is small enough while  $\Delta x N$  should not be too small (i.e.,  $\Delta k$  should also be small enough). Thus, it would approximate well the continuous function  $\psi(x)$  with discrete one  $\sum_n \psi(x_n) 1_{x_n\leq x\leq x_{n+1}}$ . Making sure that  $\psi(x)$  is really smooth and contains no high frequency components is also helpful. This method is efficient to illustrate the dynamics of wave, since the time complexity is just  $\mathcal{O}(N\log N)$ .</p>
+<p>There are better algorithms to compute the Fourier integral with FFT subroutine. The method is to use better function approximator. The above one is to use</p>
+<p>$$
+f_{appr}(x) = \sum_{n=0}^{N-1} f(x_n) 1_{x_n \leq x \leq x_{n+1}} \approx f(x).
+$$</p>
+<p>This is actually bad in any cases. One can use better interpolation function to do this work, generally</p>
+<p>$$
+f_{appr}(x) = \sum_{n=0}^{N-1} f(x_n) G(x-x_n).
+$$</p>
+<p>Then the integral</p>
+<p>$$
+\begin{aligned}
+\tilde{f}_{appr}(k) &= \sum_{n=0}^{N-1} f(x_n) \int G(x) e^{-\ti k (x+x_n)} \td x \\
+&= W(k) \sum_{n=0}^{N-1} f(x_n) e^{-\ti k x_n}
+\end{aligned}
+$$</p>
+<p>where  $W(k) = \int G(x) e^{-\ti k x} \td x$ . This would provide a better approximation to  $\tilde{f}(k)$ , but would cost more.</p>
+</details>
+<p>The Trotters-Suzuki method is powerful for simulating generic quantum system. One can develop higher order Trotter-Suzuki expansion to obtain higher precision with cost polynomialy scaling of  $m$ . For example the second order expansion (see <a href="https://docs.microsoft.com/en-us/azure/quantum/user-guide/libraries/chemistry/concepts/algorithms">docs.microsoft:quantum</a>)</p>
+<p>$$
+\hat U_2(t) = \Big(\prod_{j=1}^m e^{-\ti \hat H_j t/2r} \prod_{j=m}^1 e^{-\ti \hat H_j t/2r}\Big)^r = e^{-\ti \hat H t} + \mathcal{O}(m^3 t^3 / r^2),
+$$</p>
+<p>and higher order with iterative form</p>
+<p>$$
+\hat U_{2k}(t) = \big(\hat U_{2k-2}(s_k t)\big)^2 \hat U_{2k-2}((1-4s_k)t)\big(\hat U_{2k-2} (s_kt)\big)^2 = e^{-\ti \hat H t} + \mathcal{O}((mt)^{2k+1} / r^{2k}),
+$$</p>
+<p>where  $s_k = (4-4^{1/(2k-1)})^{-1}$ .</p>
+
+          
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/artic/physics/qmachinelearning/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Quantum Machine Learning: Quantum Algorithms to Classical Data</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/artic/physics/timeinqm/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Time in Quantum Mechanics</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#generic-discussion">
+												 Generic Discussion
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#numerical-method-for-eigensystem-problem">
+												 Numerical Method for Eigensystem Problem
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#imaginary-time-evolution">
+												 Imaginary Time Evolution
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#variational-quantum-eigensolver">
+												 Variational Quantum Eigensolver
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#numerical-method-for-time-dependent-schrodinger-equation">
+												 Numerical Method for Time Dependent Schrodinger Equation
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#unitary-finite-difference">
+												 Unitary Finite Difference
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#trotter-suzuki-expansion">
+												 Trotter-Suzuki Expansion
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/lightbox/lightbox.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var imgList = document.getElementsByTagName("img");
+  var imgLen = imgList.length;
+  for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
+    imgList[i].id = "imgtmp" + i;
+    var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
+    var a = document.createElement("a");
+    imgtmp.parentNode.replaceChild(a, imgtmp);
+    a.href = imgtmp.src;
+    a.rel = "lightbox";
+    a.appendChild(imgtmp);
+  }
+}());
+</script>
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      },
+      processEscape: true
+    }
+
+  }
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+  </body>
+</html>

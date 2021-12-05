@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Numerical Methods for Schrodinger Equation</title>
+      <link>https://wzdlc1996.github.io/artic/physics/numschrodinger/</link>
+      <pubDate>Thu, 22 Jul 2021 22:50:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/numschrodinger/</guid>
+      <description>The first problem we meet in the practice about quantum mechanics is to simulate the quantum time evolution on computer. Formally, it is the numerical simulation of the (time-dependent) Schrodinger Equation. In this review, we discuss various numerical method for the Schrodinger equation and quantum time evolution, including their implementation and error analysis. We will only focus on the non-relativistic quantum mechanics, i.e., the number of degree of freedom is finite.</description>
+    </item>
+    
+    <item>
       <title>Quantum Machine Learning: Quantum Algorithms to Classical Data</title>
       <link>https://wzdlc1996.github.io/artic/physics/qmachinelearning/</link>
       <pubDate>Sat, 19 Dec 2020 14:16:00 +0800</pubDate>

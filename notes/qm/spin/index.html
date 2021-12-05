@@ -928,7 +928,7 @@ C_2&=[C_1,\bm{J}\cdot \bm{n}]=-\sum_{a,c}\ti \epsilon_{abc}n_a [M_c,\bm{J}\cdot 
 <p>And:</p>
 <p>$$D_{m,m'}^{(j)}(\bm{U}) = \sqrt{\frac {(j+m')!(j-m')!} {(j+m)!(j-m)!}} \sum_{k=0}^{j+m} \Big(\begin{array}{cc}j+m \\ k\end{array}\Big)\Big(\begin{array}{cc}j-m \\ j+m'-k\end{array}\Big) u^k v^{j+m-k}(-v^*)^{j+m'-k}(u^*)^{j-m-(j+m'-k)}$$</p>
 <p>This is the ( $2j+1$ )-dimensional <code>irreducible</code> unitary representation of SU(2) .</p>
-<p> $D_{m,m'}^{(j)}(\bm{U})$  is a <code>homogeneous polynomial</code> of degree  $2j$  in terms of  $u,v,u^*,v^*$  . Then for <code>integer</code>  $j$  ,  $D_{m,m'}^{(j)}(\bm{U})=D_{m,m'}^{(j)}(-\bm{U})$  , it is an <code>irreducible</code> unitary representation of SO(3)</p>
+<p> $D_{m,m'}^{(j)}(\bm{U})$  is a <code>homogeneous polynomial</code> of degree  $2j$  in terms of  $u,v,u^<em>,v^</em>$  . Then for <code>integer</code>  $j$  ,  $D_{m,m'}^{(j)}(\bm{U})=D_{m,m'}^{(j)}(-\bm{U})$  , it is an <code>irreducible</code> unitary representation of SO(3)</p>
 <p><em>[Theorem]</em> : <code>Relation to spherical harmonics</code> : for <code>integer</code>  $l$ </p>
 <p>$$D_{0m}^{(l)}(e^{\ti \phi J_z}e^{\ti\theta J_y}) = \sqrt{\frac {4\pi} {2l+1}} Y_l^m(\theta,\phi)$$</p>
 <p><em>[Theorem]</em> : <code>Orthogonality</code> :</p>
@@ -1386,7 +1386,7 @@ That is  $c'_\mu=c_\mu$ , namely the decomposition is correct.
 
 <p>With the <code>total Angular Momentum</code> :  $\hat {\bm{J}}=\hat {\bm{J}}_1 \otimes 1 + 1\otimes \hat{\bm{J}}_2$  (or simply  $\hat {\bm{J}}_1+\hat{\bm{J}}_2$ ). The theorem shows that:</p>
 <p>By a unitary transformation of basis,  $\hat{\bm{J}}$  can be block-diagonalized, each block is the angular momentum operator for  $J$  between  $|J_1-J_2|$  and  $J_1+J_2$  .</p>
-<p><em>[Theorem]</em> : <code>Clebsch-Gordon</code> coefficients is the expansion coefficients of <code>total angular momentum</code> basis  $\ket{J,m}$  on tensor product states  $\ket{J_1,m_1}\otimes \ket{J_2,m_2}$  .<br>
+<p><em>[Theorem]</em> : <code>Clebsch-Gordon</code> coefficients is the expansion coefficients of <code>total angular momentum</code> basis  $\ket{J,m}$  on tensor product states  $\ket{J_1,m_1}\otimes \ket{J_2,m_2}$  . <br>
 According to analysis above, we have these two properties:</p>
 <ol>
 <li>
@@ -1498,7 +1498,7 @@ $$\bra{j',m'}\hat T_{q}^{(k)}\ket{j,m}\propto \bra{j',m'}j,m;k,q\rangle$$
 <p>$$\mathcal{T}: \ti\hbar\frac {\td\psi} {\td t} = \hat H \psi\rightarrow \ti\hbar \frac {\td \psi'} {\td t'} = \hat H^* \psi'$$</p>
 <p>Then if  $\hat H^*=\hat H$  , we say that the system has <code>time-reversal symmetry</code></p>
 <h2 id="conjugation-operator">Conjugation Operator</h2>
-<p><em>[Definition]</em> : <code>Complex Conjugation Operator</code> :  $\hat K$  is anti-linear operator :  $\hat K (\lambda \ket{\psi})=\lambda^* \hat K \ket{\psi}$  defined on coordinate space :  $\hat K \ket{\bm{x}}=\ket{\bm{x}}$  . Note that  $\hat K^{-1}=\hat K = \hat K^\dagger$  .<br>
+<p><em>[Definition]</em> : <code>Complex Conjugation Operator</code> :  $\hat K$  is anti-linear operator :  $\hat K (\lambda \ket{\psi})=\lambda^* \hat K \ket{\psi}$  defined on coordinate space :  $\hat K \ket{\bm{x}}=\ket{\bm{x}}$  . Note that  $\hat K^{-1}=\hat K = \hat K^\dagger$  . <br>
 The Hermitian conjugate is defined by:</p>
 <p>$$(\hat K^\dagger \ket{\psi},\ket{\phi}) = (\ket{\psi},\hat K\ket{\phi})^*$$</p>
 <p>Then for those states which are independent of time, <code>time-reversal</code> operator is <code>complex conjugation operator</code></p>
@@ -1513,7 +1513,7 @@ The Hermitian conjugate is defined by:</p>
 <p>For momentum eigenstate:  $\hat K\ket{\bm{p}} =(2\pi\hbar)^{-3/2}\hat K \int \td^3 \bm{x}\ket{x}e^{\ti\bm{p}\cdot \bm{x}/\hbar}=\ket{-\bm{p}}$ </p>
 </li>
 <li>
-<p>For linear operator:  $\hat K \hat O = \hat O^* \hat K$  . Note:  $(\bra{\psi}\hat O\ket{\phi})^*=\bra{\psi}\hat O^*\ket{\phi}$  only for real states.</p>
+<p>For linear operator:  $\hat K \hat O = \hat O^* \hat K$  . Note:  $(\bra{\psi}\hat O\ket{\phi})^<em>=\bra{\psi}\hat O^</em>\ket{\phi}$  only for real states.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -1602,7 +1602,7 @@ $$c_{m+1}=-c_m$$
 
 </li>
 <li>
-<p>Generally, we have  $\hat T \ket{J,m}= c (-1)^{J-m}\ket{J,-m}$  , with  $c$  is a constant phase.<br>
+<p>Generally, we have  $\hat T \ket{J,m}= c (-1)^{J-m}\ket{J,-m}$  , with  $c$  is a constant phase. <br>
 With <code>Condon-Shortley convention</code>, for integer  $J$  , we let  $c=(-1)^J$ </p>
 <p>$$\hat T \ket{J,m}=(-1)^m \ket{J,-m}$$</p>
 <p>For spin-1/2 , the usual convention is that  $c=1$ , that is:</p>
