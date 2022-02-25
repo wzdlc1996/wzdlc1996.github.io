@@ -404,6 +404,14 @@ autocomplete('#aa-search-input',
 
 
 
+
+
+
+
+    
+        
+        
+    
 <h1 id="introduction">Introduction</h1>
 <p><code>Hugo</code> is a static website constructor, based on <code>GO</code>. In this article we will realize a search tools for the posts in your blog. It is well introduced in the official doc: [<a href="https://gohugo.io/tools/search/">hugo doc</a>]. Here we use the commercial search service: <code>Algolia</code> [<a href="https://www.algolia.com/">Algolia site</a>] .</p>
 <p>Algolia has a free plan for personal use, which provides 10,000 records and 100,000 indexing operations per month. But it is enough for those personal website to use.</p>
@@ -423,7 +431,7 @@ autocomplete('#aa-search-input',
 </code></pre></div><p>remember to let it executable with <code>chmod +x</code></p>
 <p>And one can simply use it with TOML front file to generate the JSON file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo-algolia --config ./config.toml
-</code></pre></div><p>It will generate a JSON file in the  $hugoroot/public<code> folder, in which all posts in $ hugoroot/content</code> will be listed.</p>
+</code></pre></div><p>It will generate a JSON file in the   $hugoroot/public` folder, in which all posts in $ hhugoroot/content</code> will be listed.</p>
 <p>One can also use the <code>-s</code> flag to send them to Algolia. However this tool can not read the <code>appID</code> and <code>key</code> in <code>TOML</code> file, we can make some hack on it. A temporal adjustment is edit the file $node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js<code>, rewrite the function </code>HugoAlgolia.prototype.setCredentials` :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">//$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js
 </span><span class="c1"></span>
@@ -925,7 +933,7 @@ autocomplete('#aa-search-input',
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

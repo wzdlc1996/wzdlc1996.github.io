@@ -539,11 +539,211 @@ autocomplete('#aa-search-input',
 
 
 
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
 <h1 id="quantization-of-maxwell-field">Quantization of Maxwell Field</h1>
 <h2 id="canonical-quantization-of-maxwell-field">Canonical Quantization of Maxwell Field</h2>
 <p>The Hamiltonian of Maxwell Field is(in <code>Feynman Gauge</code>):</p>
 <p>$$H=\frac 1 2\int \td^3 \bm{x} \ \Big\{\sum_{i=1}^3 \Big((\partial_0 A_i)^2+(\nabla A_i)^2\Big)-(\partial_0 A_0)^2 - (\nabla A_0)^2 \Big\}$$</p>
-<p>Where  $A^\mu$  are vector field. We will use the canonical commutation relationship. For  $A_i$  they can be written equivalently as:</p>
+<p>Where     $A^\mu$     are vector field. We will use the canonical commutation relationship. For   $A_i$   they can be written equivalently as:</p>
 <p>$$[A^\mu(\bm{x}),(\partial_0 A^\nu)(\bm{x}')]=-\ti \eta^{\mu\nu}\delta^3 (\bm{x}-\bm{x}')$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -563,7 +763,7 @@ If we use the canonical commutation relationship as :
 $$[A^\mu(\bm{x}),\pi_\nu (\bm{x}')]=\ti\delta^\mu_\nu \delta^3(\bm{x}-\bm{x}')$$
 
 
-Because the canonical momentum of  $A^\mu$  is  $\pi_\mu=\frac {\delta L} {\delta \partial_0 A^\mu}$  which should be a covariance vector.
+Because the canonical momentum of     $A^\mu$     is   $\pi_\mu=\frac {\delta L} {\delta \partial_0 A^\mu}$   which should be a covariance vector.
 
 And any other commutator vanish, it is equivalent to:
 
@@ -571,13 +771,13 @@ And any other commutator vanish, it is equivalent to:
 $$[A^\mu(\bm{x}),\partial^\nu A^0(\bm{x})-(\partial^0 A^\nu)(\bm{x})-\eta^{\nu 0}\Big((\partial_0 A^0)(\bm{x})+\sum_i \partial_i A^i(\bm{x})\Big)]=\ti\delta^{\mu\nu}\delta^3(\bm{x}-\bm{x}')$$
 
 
-For that  $[A^\mu(\bm{x}),A^\nu(\bm{x}')]=0$  , we will have that
+For that   $[A^\mu(\bm{x}),A^\nu(\bm{x}')]=0$   , we will have that
 
 
 $$\partial_{\bm{x}'}[A^\mu(\bm{x}),A^\nu(\bm{x}')]=0$$
 
 
-That is  $[A^\mu(\bm{x}),\partial_i A^\nu(\bm{x}')]=0$  . Then the canonical commutation relationship should be:
+That is   $[A^\mu(\bm{x}),\partial_i A^\nu(\bm{x}')]=0$   . Then the canonical commutation relationship should be:
 
 
 $$\begin{aligned}[]
@@ -599,9 +799,9 @@ q.e.d.
 
 <p>One can rewrite them into the plane-wave expansion. In Schrodinger Picture:</p>
 <p>$$A^\mu(\bm{x})=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti \bm{k}\cdot \bm{x}} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti \bm{k} \cdot \bm{x}} a(\bm{k},\lambda)^\dagger \Big) $$</p>
-<p>Where  $a$  is operators and  $\omega_{|\bm{k}|}=|\bm{k}|$  . Polarization vectors have the property:</p>
+<p>Where   $a$   is operators and   $\omega_{|\bm{k}|}=|\bm{k}|$   . Polarization vectors have the property:</p>
 <p>$$\epsilon(\bm{k},\lambda)\cdot \epsilon(\bm{k},\lambda')^*=\eta^{\lambda\lambda'} \ ; \ \sum_\lambda \eta^{\lambda\lambda} \epsilon^\mu(\bm{k},\lambda)\epsilon^{\nu*}(\bm{k},\lambda)=\eta^{\mu\nu}$$</p>
-<p>We can write the inverse transformation, which will represent  $a, a^\dagger$  by  $A^\mu$  and  $\partial_0 A^\mu$  :</p>
+<p>We can write the inverse transformation, which will represent   $a, a^\dagger$   by     $A^\mu$     and   $\partial_0 A^\mu$   :</p>
 <p>$$\begin{aligned}
 a(\bm{k},\lambda) &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},\lambda')^* \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
 a(\bm{k},\lambda)^\dagger &= \sum_{\lambda'} \eta^{\lambda,\lambda'} \int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{-\ti \bm{k}\cdot \bm{x}} \epsilon_\mu(\bm{k},\lambda') \Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})-\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big) \\
@@ -638,7 +838,7 @@ That is:
 $$\sum_\lambda \epsilon^\mu(\bm{k},\lambda)a(\bm{k},\lambda)=\int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti\bm{k}\cdot \bm{x}}\Big(\sqrt{\frac {\omega_{|\bm{k}|}} 2} A^\mu(\bm{x})+\ti \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \partial_0 A^\mu(\bm{x}) \Big)$$
 
 
-With  $\epsilon_\mu(\bm{k},\lambda) \epsilon^\mu(\bm{k},\lambda')^*=\eta^{\lambda\lambda'}$  , we have:
+With   $\epsilon_\mu(\bm{k},\lambda) \epsilon^\mu(\bm{k},\lambda')^*=\eta^{\lambda\lambda'}$   , we have:
 
 
 $$\begin{aligned}
@@ -647,7 +847,7 @@ a(\bm{k},i)&= -\int \frac{\td^3 \bm{x}} {(2\pi)^{3/2}} \ e^{\ti \bm{k}\cdot \bm{
 \end{aligned}$$
 
 
-Where  $i=1,2,3$  . And similarly:
+Where   $i=1,2,3$   . And similarly:
 
 
 $$\begin{aligned}
@@ -677,7 +877,7 @@ $$\begin{aligned}[]
 \end{aligned}$$
 
 
-And for the same reason  $[a(\bm{k},\lambda)^\dagger,a(\bm{k}',\lambda')^\dagger]=0$  . Then:
+And for the same reason   $[a(\bm{k},\lambda)^\dagger,a(\bm{k}',\lambda')^\dagger]=0$   . Then:
 
 
 $$\begin{aligned}[]
@@ -697,7 +897,7 @@ q.e.d.
 
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
 <p>$$\hat H=\int \td^3 \bm{k} \ \Big(\sum_{\lambda=1}^3 a(\bm{k},\lambda)^\dagger a(\bm{k},\lambda) - a(\bm{k},0)^\dagger a(\bm{k},0) \Big) $$</p>
-<p>There is also a  $\infty$  quantity at the right-hand-side. But like usual, we ignore it.</p>
+<p>There is also a   $\infty$   quantity at the right-hand-side. But like usual, we ignore it.</p>
 <p>One can also write these operators in Heisenberg Picture :</p>
 <p>$$A^\mu(x)=\int \frac {\td^3\bm{k}} {(2\pi)^{3/2}}\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}\sum_{\lambda=0}^3 \Big(\epsilon^\mu(\bm{k},\lambda)e^{-\ti k\cdot x} a(\bm{k},\lambda) + \epsilon^{\mu*}(\bm{k},\lambda) e^{\ti k\cdot x} a(\bm{k},\lambda)^\dagger \Big) $$</p>
 <details>
@@ -712,7 +912,7 @@ We can also check that:
 $$[a(\bm{k},\lambda),\hat H]=\omega_{|\bm{k}|}a(\bm{k},\lambda) \ ; \ [a(\bm{k},\lambda)^\dagger , \hat H]=-\omega_{|\bm{k}|}a(\bm{k},\lambda)^\dagger$$
 
 
-It hold for  $\lambda=0$  component cause the  $\eta^{00}=-\eta^{ii}$  .
+It hold for    $\lambda=0$    component cause the   $\eta^{00}=-\eta^{ii}$   .
 
 Then:
 
@@ -740,9 +940,9 @@ q.e.d.
 
 One can find that this quantization procedure leads to a Hamiltonian `without` lower bound. Different from the Dirac Field, using anti-commutation relationship has no help, because the negative sign of `scalar polarization` come from the classical theory.
 
-Moreover, in classical electromagnetic field theory, we know that `dof`of  electromagnetic wave is 2. But here we have four. In classical we use gauge condition to eliminate them, but in quantum theory, for example, Lorentz gauge  $\partial_\mu A^\mu=0$  cannot be a equality for operator. Because we have  $\pi^0\propto \partial_\mu A^\mu$  , let it hold will conflict to commutator relationship.
+Moreover, in classical electromagnetic field theory, we know that `dof`of  electromagnetic wave is 2. But here we have four. In classical we use gauge condition to eliminate them, but in quantum theory, for example, Lorentz gauge   $\partial_\mu A^\mu=0$   cannot be a equality for operator. Because we have   $\pi^0\propto \partial_\mu A^\mu$   , let it hold will conflict to commutator relationship.
 
-At last, we find that commutator for  $\lambda=0$  component is irregular:  $[a(\bm{k},0),a(\bm{k}',0)]=-\delta^3 (\bm{k}-\bm{k}')$  . That is to say if we normalize the vacuum  $\bra{0}0\rangle=1$  , then  $\bra{0} a(\bm{k},0) a(\bm{k}',0)^\dagger\ket{0}=-\delta^3 (\bm{k}-\bm{k}')\lt 0$  . Shows that our Hilbert space should cover some state with negative modulus. This is dangerous to Quantum theory especially for possibility interpretation.
+At last, we find that commutator for    $\lambda=0$    component is irregular:   $[a(\bm{k},0),a(\bm{k}',0)]=-\delta^3 (\bm{k}-\bm{k}')$   . That is to say if we normalize the vacuum   $\bra{0}0\rangle=1$   , then   $\bra{0} a(\bm{k},0) a(\bm{k}',0)^\dagger\ket{0}=-\delta^3 (\bm{k}-\bm{k}')\lt 0$   . Shows that our Hilbert space should cover some state with negative modulus. This is dangerous to Quantum theory especially for possibility interpretation.
 
 In general, we have to accept that there are some non-physical states in Hilbert space. And on those physical states the theory is legal.
 
@@ -760,7 +960,7 @@ In general, we have to accept that there are some non-physical states in Hilbert
     </summary>
     
 
-If  $\ket{\Psi}$  satisfy  $\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\Psi} = 0$  , then we have:
+If   $\ket{\Psi}$   satisfy   $\big(a(\bm{k},3)-a(\bm{k},0) \big)\ket{\Psi} = 0$   , then we have:
 
 
 $$\begin{aligned}
@@ -782,14 +982,14 @@ q.e.d.
 <p>$$\bra{\psi_{\text{phys.}}}\hat H\ket{\psi_{\text{phys.}}} = \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \sum_{\lambda=1,2} \bra{\psi_{\text{phys.}}} a(\bm{k},\lambda)^\dagger a(\bm{k},\lambda) \ket{\psi_{\text{phys.}}}$$</p>
 <p>The right-hand-side is positive definite.</p>
 <p>And we have the structure of physical subspace:</p>
-<p><em>[Definition]</em> : <code>vacuum of the Maxwell Field</code> is the ground state of it. Denoting it as  $\ket{0}$  , it satisfies:</p>
+<p><em>[Definition]</em> : <code>vacuum of the Maxwell Field</code> is the ground state of it. Denoting it as    $\ket{0}$    , it satisfies:</p>
 <p>$$a(\bm{k},\lambda)\ket{0}=0 \ ; \ \forall \bm{k},\lambda=0,1,2,3$$</p>
-<p>Obviously,  $\ket{0}$  is a physical state.</p>
+<p>Obviously,    $\ket{0}$    is a physical state.</p>
 <p><em>[Theorem]</em> : Any physical states can be expressed as:</p>
 <p>$$\ket{\Phi_c} = \hat R_c \ket{\Phi_T}$$</p>
-<p>Where  $\ket{\Phi_T}$  is the state which contains <code>only</code> transverse photons(polarizations) , and operator  $\hat R_c$  creates the admixture of longitudinal and scalar photons:</p>
+<p>Where     $\ket{\Phi_T}$     is the state which contains <code>only</code> transverse photons(polarizations) , and operator   $\hat R_c$   creates the admixture of longitudinal and scalar photons:</p>
 <p>$$\hat R_c = 1+\int \td^3 \ c(\bm{k})\hat L^\dagger(\bm{k}) + \int \td^3 \bm{k}\td^3 \bm{k}' \ c(\bm{k},\bm{k}') \hat L^\dagger(\bm{k})\hat L^\dagger(\bm{k}')+\cdots$$</p>
-<p>Where  $c$  are arbitrary functions and  $\hat L^\dagger(\bm{k})=a(\bm{k},3)^\dagger - a(\bm{k},0)^\dagger$  . And:</p>
+<p>Where   $c$   are arbitrary functions and   $\hat L^\dagger(\bm{k})=a(\bm{k},3)^\dagger - a(\bm{k},0)^\dagger$   . And:</p>
 <p>$$\bra{\Phi_c}\Phi_c\rangle = \bra{\Phi_T}\Phi_T\rangle$$</p>
 <p>That&rsquo;s why they(added states) are also called as <code>states-with-zero-norm</code> .</p>
 <details>
@@ -810,7 +1010,7 @@ Then we have:
 $$\hat L(\bm{k})\hat R_c=\hat R_c\hat L(\bm{k})$$
 
 
-For  $\hat L(\bm{k})\ket{\Phi_T}=0$  by the definition, we have:
+For   $\hat L(\bm{k})\ket{\Phi_T}=0$   by the definition, we have:
 
 
 $$\hat L(\bm{k}) \hat R_c \ket{\Phi_T}=0\Rightarrow \hat R_c \ket{\Phi_T} \in \text{physical subspace}$$
@@ -835,9 +1035,9 @@ q.e.d.
 
 </details>
 
-<p><em>[Theorem]</em> : The states  $\ket{\Phi_c}$  for a given  $\ket{\Phi_T}$  form an <code>equivalence class</code> . The member of this equivalence class are related by gauge transformations. Explicitly speaking, one has:</p>
+<p><em>[Theorem]</em> : The states   $\ket{\Phi_c}$   for a given     $\ket{\Phi_T}$     form an <code>equivalence class</code> . The member of this equivalence class are related by gauge transformations. Explicitly speaking, one has:</p>
 <p>$$\bra{\Phi_c}A_\mu \ket{\Phi_c} = \bra{\Phi_T}A_\mu \ket{\Phi_T} + \partial_\mu \Lambda$$</p>
-<p>Where  $\Lambda$  is a function satisfies  $\partial_\mu \partial^\mu \Lambda=0$  , it will come from gauge transformation.</p>
+<p>Where    $\Lambda$    is a function satisfies   $\partial_\mu \partial^\mu \Lambda=0$   , it will come from gauge transformation.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -850,7 +1050,7 @@ One has:
 $$\bra{\Phi_c}A_\mu\ket{\Phi_c}=\bra{\Phi_T}\hat R_c^\dagger [A_\mu, \hat R_c]\ket{\Phi_T}+\bra{\Phi_T}[\hat R_c^\dagger , A_\mu]\ket{\Phi_T}+\bra{\Phi_T} A_\mu \ket{\Phi_T}$$
 
 
-Where we used  $\hat R_c^\dagger \ket{\Phi_T}=\ket{\Phi_T}$  . By using the fact that the commutators of  $A_\mu$  with  $\hat L(\bm{k}),\hat L^\dagger (\bm{k})$  are c-numbers:
+Where we used   $\hat R_c^\dagger \ket{\Phi_T}=\ket{\Phi_T}$   . By using the fact that the commutators of   $A_\mu$   with   $\hat L(\bm{k}),\hat L^\dagger (\bm{k})$   are c-numbers:
 
 
 $$[A_\mu,\hat L^\dagger (\bm{k})]=\frac 1 {\sqrt{2\omega_{|\bm{k}|}}}e^{-\ti k\cdot x}(\epsilon_\mu(\bm{k},3)+\epsilon_\mu(\bm{k},0))$$
@@ -862,7 +1062,7 @@ We obtain:
 $$\bra{\Phi_c}A_\mu\ket{\Phi_c}=\int \td^3 \bm{k} \ c(\bm{k})[A_\mu,\hat L^\dagger(\bm{k})]+\int \td^3 \bm{k} \ c(\bm{k})^* [\hat L(\bm{k}),A_\mu]+\bra{\Phi_T} A_\mu \ket{\Phi_T}$$
 
 
-And with  $\epsilon_\mu(\bm{k},3)+\epsilon_\mu(\bm{k},0)\propto k_\mu$  , which can be easily checked by the Lorentz-covariance. We have:
+And with   $\epsilon_\mu(\bm{k},3)+\epsilon_\mu(\bm{k},0)\propto k_\mu$   , which can be easily checked by the Lorentz-covariance. We have:
 
 
 $$\begin{aligned}
@@ -878,21 +1078,21 @@ Where:
 $$\Lambda=\ti \int \frac {\td^3 \bm{k}} {\sqrt{2\omega_{|\bm{k}|}}} (e^{-\ti k\cdot x} A c(\bm{k})-e^{\ti k\cdot x} A^* c(\bm{k})^*)$$
 
 
-Since  $k^0=|\bm{k}|$  , we have  $\square \Lambda=0$  . The gauge function  $\Lambda$  is consistent with the Lorentz gauge condition.
+Since   $k^0=|\bm{k}|$   , we have   $\square \Lambda=0$   . The gauge function    $\Lambda$    is consistent with the Lorentz gauge condition.
 
 q.e.d.
 
 
 </details>
 
-<p><mark>With these theorems, we can use  $\ket{\Phi_T}$  as the representation of each equivalence class. And in this meaning the Maxwell Field is totally quantized.</mark></p>
+<p><mark>With these theorems, we can use     $\ket{\Phi_T}$     as the representation of each equivalence class. And in this meaning the Maxwell Field is totally quantized.</mark></p>
 <p><em>[Definition]</em> : <code>1-particle</code> state is defined as:</p>
 <p>$$\ket{\bm{k},\lambda=1,2} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k},\lambda=1,2)^\dagger \ket{0}$$</p>
 <p>And the Lorentz covariance:</p>
 <p>$$\bra{\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\bm{k},\lambda }\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}} \bm{k}',\lambda'\rangle = \bra{\bm{k},\lambda}\bm{k}',\lambda'\rangle = 2\omega_{|\bm{k}|}\delta_{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$$</p>
 <p>And the Lorentz covariant integral:</p>
 <p>$$\int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} = \int \td^4 k \ \delta(k_\mu k^\mu)\Theta(k^0) $$</p>
-<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>)  $x\rightarrow x'=\Lambda(\omega)x$  , the corresponding operator on Hilbert space is  $U(\Lambda(\omega))$  , then we have:</p>
+<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>)   $x\rightarrow x'=\Lambda(\omega)x$   , the corresponding operator on Hilbert space is   $U(\Lambda(\omega))$   , then we have:</p>
 <p>$$U(\Lambda(\omega))\ket{\bm{k},\lambda}=\ket{\Lambda(\omega),\lambda}$$</p>
 <p>The vacuum is unique, then:</p>
 <p>$$U(\Lambda(\omega))a(\bm{k},s)^\dagger U(\Lambda(\omega))^{-1} = \sqrt{\frac {\omega_{|\Lambda(\omega)\bm{k}|}} {\omega_{|\bm{k}|}} } a(\Lambda(\omega)\bm{k},\lambda)^\dagger$$</p>
@@ -904,7 +1104,7 @@ q.e.d.
     </summary>
     
 
-The proof is similar to what we did before, just noting  $\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\epsilon^\mu(\bm{k},\lambda)$  will be independent of  $\bm{k}$ , which means:
+The proof is similar to what we did before, just noting   $\Lambda_{\bm{k}\rightarrow \bm{k}_{\text{special}}}\epsilon^\mu(\bm{k},\lambda)$   will be independent of   $\bm{k}$ ,, which means:
 
 
 $$\epsilon^\mu (\Lambda \bm{k},\lambda)=\Lambda^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$$
@@ -926,7 +1126,7 @@ q.e.d.
 
 <h2 id="causality-of-maxwell-field">Causality of Maxwell Field</h2>
 <p>Our quantization will not violent to the causality demanded by special Relativistic Theory. That is to say:</p>
-<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points  $x,y$  with spacelike interval:  $|x-y|^2\lt 0$  , the field operators are commutable:</p>
+<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points   $x,y$   with spacelike interval:   $\|x-y\|^2\lt 0$   , the field operators are commutable:</p>
 <p>$$[A_\mu(x),A_\nu(y)]=0 \ ; \ \|x-y\|^2\lt 0$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -934,7 +1134,7 @@ q.e.d.
     </summary>
     
 
-With the quantization that  $[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$  . One has:
+With the quantization that   $[a(\bm{k},\lambda),a(\bm{k}',\lambda')^\dagger]=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$   . One has:
 
 
 $$\begin{aligned}[]
@@ -953,14 +1153,14 @@ With the similar argument, the causality is proved.
 <p>$$\ti \Delta_F(x-y):= \bra{0}\mathcal{T}(A_\mu(x)A_\nu(y))\ket{0}$$</p>
 <p>And Maxwell Field is bosonic. One can compute that:</p>
 <p>$$\ti\Delta_F(x-y)=\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot(x-y)} \Big(\frac {-\ti \eta_{\mu\nu}} {p_\mu p^\mu +\ti \epsilon} \Big)$$</p>
-<p>The calculation is similar to Scalar field, with  $m=0$  , and  $\bra{0}a(\bm{k},\lambda)a(\bm{k}',\lambda')^\dagger\ket{0}=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$ . That is why there are a factor  $-\eta_{\mu\nu}$  here.</p>
-<p>This form only work for <code>Feynman Gauge</code>:  $\xi=1$  . The generic form is:</p>
+<p>The calculation is similar to Scalar field, with   $m=0$   , and   $\bra{0}a(\bm{k},\lambda)a(\bm{k}',\lambda')^\dagger\ket{0}=-\eta^{\lambda\lambda'}\delta^3(\bm{k}-\bm{k}')$ .. That is why there are a factor   $-\eta_{\mu\nu}$   here.</p>
+<p>This form only work for <code>Feynman Gauge</code>:   $\xi=1$   . The generic form is:</p>
 <p>$$\ti \Delta_F(x-y) =\int \frac {\td^4 p} {(2\pi)^4} e^{-\ti p\cdot (x-y)}(-\ti) \Big\{\frac {\eta_{\mu\nu}} {p_\mu p^\mu +\ti \epsilon} + \frac {1-\xi} {\xi} \frac {p_\mu p_\nu} {(p_\mu p^\mu+\ti \epsilon)^2} \Big\}$$</p>
 <h1 id="discrete-symmetry-of-maxwell-field">Discrete Symmetry of Maxwell Field</h1>
 <h2 id="spatial-inversion">Spatial Inversion</h2>
 <p>We hope the <code>Spatial Inversion</code> induces a unitary operator so as to</p>
 <p>$$U_P A_\mu(x^0,\bm{x}) U_P^{-1} = \eta_\gamma A_\mu(x^0,-\bm{x})$$</p>
-<p>For Maxwell Field,  $\eta_\gamma=-1$  , which is different from the real-valued scalar field.</p>
+<p>For Maxwell Field,   $\eta_\gamma=-1$   , which is different from the real-valued scalar field.</p>
 <p>For creation/annihilation operators:</p>
 <p>$$U_P a(\bm{k},\lambda) U_P^{-1} = - a(-\bm{k},\lambda)$$</p>
 <h2 id="charge-conjugation">Charge Conjugation</h2>
@@ -969,19 +1169,19 @@ With the similar argument, the causality is proved.
 <p>Same to creation/annihilation operators:</p>
 <p>$$U_C a(\bm{k},\lambda) U_C^{-1}=-a(\bm{k},\lambda)$$</p>
 <h2 id="time-reversal">Time Reversal</h2>
-<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator  $K$  we can write it as  $U_T K$  , where  $U_T$  is a unitary operator. For creation/annihilation operators:</p>
+<p><code>Time reversal</code> induces an anti-unitary operator. With conjugation operator   $K$   we can write it as   $U_T K$   , where   $U_T$   is a unitary operator. For creation/annihilation operators:</p>
 <p>$$(U_T K) a(\bm{k},\lambda) (U_T K)^{-1}= a(-\bm{k},\lambda)$$</p>
-<p>For  $\lambda$  denotes the <code>helicity</code>, <code>time reversal</code> inverse momentum and spin, so  $\lambda$  should be leave invariant.</p>
+<p>For    $\lambda$    denotes the <code>helicity</code>, <code>time reversal</code> inverse momentum and spin, so    $\lambda$    should be leave invariant.</p>
 <p>Then we can prove that:</p>
 <p>$$(U_T K) A_\mu(x^0,\bm{x})(U_T K)^{-1}= \eta_{\mu\mu} A_\mu(-x^0,\bm{x})$$</p>
-<p>Do not sum for  $\mu$  here.</p>
+<p>Do not sum for    $\mu$    here.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-For  $\epsilon^\mu(-\bm{k},\lambda) = P^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$  , and  $P^\mu_{\indent \nu}=\eta^{\mu\nu}$  , we have:
+For   $\epsilon^\mu(-\bm{k},\lambda) = P^\mu_{\indent \nu}\epsilon^\nu(\bm{k},\lambda)$   , and   $P^\mu_{\indent \nu}=\eta^{\mu\nu}$   , we have:
 
 
 $$\begin{aligned}
@@ -991,7 +1191,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Do not sum for  $\mu$  here. q.e.d.
+Do not sum for    $\mu$    here. q.e.d.
 
 
 </details>
@@ -1355,7 +1555,7 @@ Do not sum for  $\mu$  here. q.e.d.
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

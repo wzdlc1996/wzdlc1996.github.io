@@ -457,17 +457,74 @@ autocomplete('#aa-search-input',
 
 
 
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
 <h1 id="klein-gordon-field">Klein-Gordon Field</h1>
 <h2 id="formalism">Formalism</h2>
 <p><em>[Definition]</em> : <code>Klein-Gordon</code> Field is a class of scalar fields. For the <code>real valued</code> field, the Lagrangian(Lorentz-scalar) is:</p>
 <p>$$\mathcal{L} = \frac 1 2 \partial^{\mu}\phi\partial_{\mu}\phi - \frac {m^2} 2 \phi^2$$</p>
 <p>And for the <code>complex valued</code> field, the Lagrangian is:</p>
 <p>$$\mathcal{L} = \frac 1 2 \partial_\mu \phi^{*}\partial^\mu \phi - \frac {m^2} 2 \phi^{*}\phi$$</p>
-<p>It can be treated as two independent real value field:  $\phi=\phi_r+\ti \phi_i$  and  $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$ </p>
+<p>It can be treated as two independent real value field:   $\phi=\phi_r+\ti \phi_i$   and   $\mathcal{L}_C(\phi) = \mathcal{L}_R(\phi_r)+\mathcal{L}_R(\phi_i)$ 
+</p>
 <p>We discuss the real valued field hereafter (and we will see that real-valued means <code>neutral</code>):</p>
 <p>The equation of motion is:</p>
 <p>$$(\partial^{\mu}\partial_{\mu} + m^2) \phi = (\square + m^2)\phi=0$$</p>
-<p>Where  $\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$  is <code>d'Alembert operator</code> . <br>
+<p>Where   $\square=\partial_{\mu}\partial^\mu=\partial_0^2-\partial_1^2-\partial_2^2-\partial_3^2$   is <code>d'Alembert operator</code> . <br>
 And the <code>canonically conjugate field</code>(momentum):</p>
 <p>$$\pi = \partial_0 \phi $$</p>
 <p>Then one can write down the Hamiltonian:</p>
@@ -475,18 +532,18 @@ And the <code>canonically conjugate field</code>(momentum):</p>
 <h2 id="solution-of-the-equation">Solution of The Equation</h2>
 <p>To solve the field equation, one can use the Fourier transformation:</p>
 <p>$$\phi(x) = \int \frac {\td^3\bm{k}\td \omega} {(2\pi)^{4/2}} e^{\ti \bm{k}\cdot \bm{x}-\ti\omega t} a(\bm{k},\omega) = \int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} e^{-\ti k_\mu x^\mu} a(k)$$</p>
-<p>Where the 4-vector  $k=(\omega,\bm{k})$  . Then the equation will be:</p>
+<p>Where the 4-vector   $k=(\omega,\bm{k})$   . Then the equation will be:</p>
 <p>$$\int\frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4/2}} (-k_\mu k^\mu+m^2) e^{-\ti k_\mu x^\mu} a(k) = 0$$</p>
-<p>Which requires that  $-k_\mu k^\mu+m^2=0$  , which is the <code>dispersion relationship</code> :</p>
+<p>Which requires that   $-k_\mu k^\mu+m^2=0$   , which is the <code>dispersion relationship</code> :</p>
 <p>$$\omega_{|\bm{k}|} = \pm \sqrt{m^2+|\bm{k}|^2}$$</p>
 <p>With this relation, we separate the general solution to two items according to the sign of frequency:</p>
 <p>$$\begin{aligned}
 \phi(x) &= \int \frac {\td^3\bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\} \\
 \pi(x) &= \int \frac {\td^3\bm{k} \ \ti \omega_{|\bm{k}|}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \Big\{-e^{\ti \bm{k}\cdot \bm{x} - \ti \omega_{|\bm{k}|}t} a(\bm{k})+e^{-\ti \bm{k}\cdot \bm{x} + \ti \omega_{|\bm{k}|}t} a(\bm{k})^* \Big\}
 \end{aligned}$$</p>
-<p>One can rewrite the Hamiltonian with  $a(\bm{k})$  as:</p>
+<p>One can rewrite the Hamiltonian with   $a(\bm{k})$   as:</p>
 <p>$$H = \frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\bm{k})a(\bm{k})^*)$$</p>
-<p>In which we hold the order of  $a$  , which will let the conclusion hold in quantum theory</p>
+<p>In which we hold the order of    $a$    , which will let the conclusion hold in quantum theory</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -520,13 +577,13 @@ $$H =\frac 1 2 \int \td^3\bm{k} \ \omega_{|\bm{k}|} (a(\bm{k})^*a(\bm{k}) + a(\b
 
 <h2 id="charged-klein-gordon-field">Charged Klein-Gordon Field</h2>
 <p>Complex valued Klein-Gordon Field has a internal degree of freedom. It allow the complex valued Klein-Gordon Field to describe the charged spin-0 particles. Here we will show it by the Noether Theorem.</p>
-<p>Complex valued Klein-Gordon Field has an  $\text{U}(1)$  symmetry:</p>
+<p>Complex valued Klein-Gordon Field has an   $\text{U}(1)$   symmetry:</p>
 <p>$$\phi\rightarrow \phi' = \phi e^{\ti \alpha} \ ; \ \phi^* \rightarrow \phi'^*=\phi' e^{-\ti \alpha}$$</p>
-<p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with  $\delta x=0 , \delta \phi=\ti \phi\delta \alpha$  as the generator)</p>
+<p>This transformation leaves Lagrangian invariant. Then we have the conserved charge(with   $\delta x=0 , \delta \phi=\ti \phi\delta \alpha$   as the generator)</p>
 <p>$$Q = \int \td^3 \bm{x} \frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi)} \delta \phi+\frac {\partial {\mathcal{L}}} {\partial(\partial_0 \phi^*)} \delta \phi^* \sim \ti \int \td^3 \bm{x} \ (\pi \phi - \pi^* \phi^*) $$</p>
 <p>With the formalism of complex valued Klein-Gordon Field, we can use two set of real valued Klein-Gordon Field to describe it:</p>
 <p>$$\phi_r \sim a(\bm{k}) \ ; \ \phi_i \sim b(\bm{k})$$</p>
-<p>And write down the expression of  $Q$  :</p>
+<p>And write down the expression of   $Q$   :</p>
 <p>$$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big) $$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -563,7 +620,7 @@ Like:
 $$\frac {\partial} {\partial z}=\frac {\partial \text{Re} z} {\partial z}\frac {\partial} {\partial \text{Re} z}+\frac {\partial \text{Im} z} {\partial z}\frac {\partial} {\partial \text{Im} z}=\frac 1 2\frac {\partial} {\partial \text{Re} z}+\frac 1 {2\ti}\frac {\partial} {\partial \text{Im} z}$$
 
 
-with  $\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$ .
+with   $\text{Re}z=\frac 1 2(z+z^*) \ ; \ \text{Im}z=\frac 1 {2\ti}(z-z^*)$ ..
 
 Then the charge:
 
@@ -571,7 +628,7 @@ Then the charge:
 $$Q=\ti \int \td^3 \bm{x} \ (\pi \phi-\pi^*\phi^*)=\int \td^3 \bm{x} \ (\pi_i \phi_r -\pi_r \phi_i)$$
 
 
-Then we need only compute the integral of  $\pi_i\phi_r$  , and another term can be obtained by permute the  $a$  and  $b$  :
+Then we need only compute the integral of   $\pi_i\phi_r$   , and another term can be obtained by permute the    $a$    and   $b$   :
 
 
 $$\begin{aligned}
@@ -594,9 +651,9 @@ $$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big)
 
 </details>
 
-<p>Or with that  $c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$  , we have:</p>
+<p>Or with that   $c_{\pm}(\bm{k})=\frac {a(\bm{k})\mp\ti b(\bm{k})} {\sqrt{2}}$   , we have:</p>
 <p>$$Q=\int \td^3 \bm{k}(c_+(\bm{k})^*c_+(\bm{k})-c_-(\bm{k})^*c_-(\bm{k}))$$</p>
-<p>This conclusion hold in Quantum theory where  $a,a^*$  are not commutable but  $a,b$  are commutable.</p>
+<p>This conclusion hold in Quantum theory where   $a,a^*$   are not commutable but   $a,b$   are commutable.</p>
 
           
           </div>
@@ -834,7 +891,7 @@ $$Q = \int \td^3 \bm{k}\ \ti \Big(b(\bm{k})^*a(\bm{k})-b(\bm{k})a(\bm{k})^*\Big)
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

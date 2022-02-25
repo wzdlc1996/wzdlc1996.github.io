@@ -6,7 +6,25 @@
     <description>Recent content on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sat, 25 Sep 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 00:21:44 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prove the Irrationality of Square Root of 2</title>
+      <link>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</link>
+      <pubDate>Sat, 19 Feb 2022 00:21:44 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</guid>
+      <description>Various methods of proving the irrationality of the square root of integer 2. Including the method by contradiction and the direct way.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning in Quantum Mechanics, Up to 2021</title>
+      <link>https://wzdlc1996.github.io/artic/physics/mlinqphy/</link>
+      <pubDate>Sun, 12 Dec 2021 22:50:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/mlinqphy/</guid>
+      <description>In the recent(at 2021) decades, machine learning algorithms have been popular in almost all disciplines of science and even art. People have found out that a huge share of research and production problems can be viewed as instances of basic tasks that could get well solved with the modern powerful hardware and algorithms. In physics, there has been already plenty of applications covering data manipulation and model/theory discovering. However, just like those famous algorithms in the past, machine learning has its own caveats. Researchers should get well understanding about the boundary of algorithms&#39; ability. Being a well-trained user instead of package importer would be the new requirements of people in related fields. In this review, we will discuss the success applications of machine learning in quantum physics in recent years and the potential limitation. Then the reader could get a clearer picture on the development of machine learning and quantum physics frontier.</description>
+    </item>
+    
     <item>
       <title>Time in Quantum Mechanics</title>
       <link>https://wzdlc1996.github.io/artic/physics/timeinqm/</link>

@@ -547,39 +547,464 @@ autocomplete('#aa-search-input',
 
 
 
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
 <h1 id="basic-introduce">Basic Introduce</h1>
 <h2 id="perturbation-theory">Perturbation Theory</h2>
-<p><em>[Definition]</em> : In quantum field theory, the <code>perturbation theory</code> is a <code>power series</code> respect to the <code>coupling parameter</code> (parameter of interaction term) of the theory. Namely, for a quantity  $A(\lambda)$  with  $\lambda$  is the coupling parameter, when  $\lambda=0$  it is the free field theory. Then the perturbation theory give us:</p>
+<p><em>[Definition]</em> : In quantum field theory, the <code>perturbation theory</code> is a <code>power series</code> respect to the <code>coupling parameter</code> (parameter of interaction term) of the theory. Namely, for a quantity   $A(\lambda)$   with    $\lambda$    is the coupling parameter, when   $\lambda=0$   it is the free field theory. Then the perturbation theory give us:</p>
 <p>$$A(\lambda)\sim A(0)\big(1+c_1\lambda+c_2\lambda^2+c_3\lambda^3+\cdots\big)$$</p>
-<p>Where  $A(0)$  is the quantity in Free Field Theory. And coefficient  $c_n$  can be obtained by perturbation calculation(like <code>Feynman Diagram</code>)</p>
-<p>One should note that this expansion usually is <code>NOT</code> convergent. But it is treated as an <code>asymptotic expansion</code> respect to  $\lambda$  , namely:</p>
+<p>Where   $A(0)$   is the quantity in Free Field Theory. And coefficient   $c_n$   can be obtained by perturbation calculation(like <code>Feynman Diagram</code>)</p>
+<p>One should note that this expansion usually is <code>NOT</code> convergent. But it is treated as an <code>asymptotic expansion</code> respect to    $\lambda$    , namely:</p>
 <p>$$\lim_{\lambda\rightarrow 0} \frac 1 {\lambda^n} \Big(A(\lambda)-A(0)\sum_{i=0}^n c_i \lambda^i \Big) = 0$$</p>
 <p>For first some orders it will improve the calculation, though it is divergent actually.</p>
 <h2 id="scale-cutoff-and-lagrangian">Scale, Cutoff and Lagrangian</h2>
 <p>A field system has <code>(uncountable) infinite degree of freedom</code> , which leads to a large class of divergence in Quantum Field Theory. To overcome this, one needs a <code>cutoff</code> in the theory. The cutoff demand that there are only finite energy-momentum modes in any integral, equivalently it leads to a discrete real space.</p>
-<p>The cutoff might come from the fundamental property of the nature: the nature is separated into different parts according to the <code>scale</code> . And for each part we have a <code>effective theory</code> to describe it. One can think the Quantum Field Theory just work for a finite range of energy, with the upper bound  $\Lambda$  , which is the <code>cutoff</code>. The cutoff make all quantities convergent, or <code>the Interacting Field Theory is regularized</code>.</p>
+<p>The cutoff might come from the fundamental property of the nature: the nature is separated into different parts according to the <code>scale</code> . And for each part we have a <code>effective theory</code> to describe it. One can think the Quantum Field Theory just work for a finite range of energy, with the upper bound    $\Lambda$    , which is the <code>cutoff</code>. The cutoff make all quantities convergent, or <code>the Interacting Field Theory is regularized</code>.</p>
 <p>With the <code>cutoff</code>, <code>dimensional-analysis</code>, and <code>symmetry analysis</code>, one can determinate the form of Lagrangian for the Interacting Field Theory. Especially at the energy scale which is far from the cutoff.</p>
 <h2 id="lambda-phi4-theory">lambda-phi^4 Theory</h2>
-<p>For free Klein-Gordon Field, the Lagrangian is constructed by the quantities with dimensional  $M^{4}$  , and field has the dimensional of  $M^{2}$ . ( $H\sim X^{3}M^2(\phi)^2\sim M$ , with  $k$  has dimensional  $X^{-1}=M$  , we have  $\phi\sim M$  ) If we need the system has the symmetry of  $\phi\rightarrow -\phi$  , Then we can write the Lagrangian as:</p>
+<p>For free Klein-Gordon Field, the Lagrangian is constructed by the quantities with dimensional    $M^{4}$    , and field has the dimensional of   $M^{2}$ .. (( $H\sim X^{3}M^2(\phi)^2\sim M$ ,, with     $k$  ,  has dimensional   $X^{-1}=M$   , we have   $\phi\sim M$   ) If we need the system has the symmetry of   $\phi\rightarrow -\phi$   , Then we can write the Lagrangian as:</p>
 <p>$$\mathcal{L}_{\text{interacting}}=\frac 1 2 \partial^\mu \phi \partial_\mu \phi - \frac {m^2} 2 \phi^2 - \lambda \phi^4- \frac {\lambda'} {\Lambda^2} \phi^6-\frac {\lambda''} {\Lambda^4} \phi^8-\cdots$$</p>
-<p>Where  $\lambda,\lambda',\cdots$  are dimensional-less. At the energy scale far from  $\Lambda$  , one can find only  $\phi^4$  term works. That is why it called as  $\lambda\phi^4$  theory, or <code>Scalar Field self-interaction theory</code>:</p>
+<p>Where   $\lambda,\lambda',\cdots$   are dimensional-less. At the energy scale far from    $\Lambda$    , one can find only   $\phi^4$   term works. That is why it called as   $\lambda\phi^4$   theory, or <code>Scalar Field self-interaction theory</code>:</p>
 <p>$$\mathcal{L}=\frac 1 2 \partial^\mu \phi \partial_\mu \phi - \frac {m^2} 2 \phi^2 -  \frac \lambda {4!} \phi^4$$</p>
 <p>Those omitted operators with high dimensional usually are called as <code>irrelevant operators</code>. Or <code>nonrenormalizable operators</code> . A theory with no nonrenormalizable operators are called <code>renormalizable</code>.</p>
 <h2 id="yukawa-theory">Yukawa Theory</h2>
-<p>For Dirac spinor Field, similarly Lagrangian has the dimensional  $M^{4}$  , Then  $M^4\sim M (\psi)^2$  , we know Dirac Field has the dimensional  $M^{3/2}$  ,  $\psi,\bar \psi$  has the same dimensional. So the lowest order of interaction between scalar Field and Dirac Field should have the form of  $\bar{\psi}\phi\psi$  , then we can write down the Lagrangian:</p>
+<p>For Dirac spinor Field, similarly Lagrangian has the dimensional    $M^{4}$    , Then   $M^4\sim M (\psi)^2$   , we know Dirac Field has the dimensional   $M^{3/2}$   ,   $\psi,\bar \psi$   has the same dimensional. So the lowest order of interaction between scalar Field and Dirac Field should have the form of   $\bar{\psi}\phi\psi$   , then we can write down the Lagrangian:</p>
 <p>$$\mathcal{L}=\frac 1 2 \partial^\mu \phi \partial_\mu \phi - \frac {m_{\text{scalar}}^2} 2 \phi^2 - \frac \lambda {4!}\phi^4 +\bar{\psi}(\ti \gamma^\mu \partial_\mu -m_{\text{Dirac}}-g\phi)\psi$$</p>
-<p>Where  $g$  is the coupling parameter of scalar-Dirac field interaction.</p>
+<p>Where    $g$    is the coupling parameter of scalar-Dirac field interaction.</p>
 <p>This theory is also known as <code>Yukawa Theory</code>.</p>
 <h2 id="quantum-electrodynamics">Quantum ElectroDynamics</h2>
 <p>The interaction between Dirac Spinor Field and Maxwell Field is described by <code>Quantum Electrodynamics (QED)</code> , it has the form:</p>
 <p>$$\mathcal{L}=\bar{\psi}(\ti \gamma^\mu \partial_\mu - e \gamma^\mu A_\mu-m)\psi - \frac 1 4 F_{\mu\nu}F^{\mu\nu}$$</p>
 <p>Here we do not use the form of Maxwell Field&rsquo;s Lagrangian of <code>Gupta-Bleuler Quantization</code>.</p>
-<p>It can also be obtained by <code>dimensional-analysis</code>, if one notes  $A_\mu$  has the dimensional of  $M^1$  like Scalar field.</p>
-<p>The interaction term of QED, with  $j^\mu=\bar{\psi}\gamma^\mu\psi$  is the <code>conserved current</code> of  $\text{U}(1)$  symmetry of Dirac Field, one can write it as:</p>
+<p>It can also be obtained by <code>dimensional-analysis</code>, if one notes   $A_\mu$   has the dimensional of   $M^1$   like Scalar field.</p>
+<p>The interaction term of QED, with   $j^\mu=\bar{\psi}\gamma^\mu\psi$   is the <code>conserved current</code> of   $\text{U}(1)$   symmetry of Dirac Field, one can write it as:</p>
 <p>$$\mathcal{L}_{\text{int}}=-e A_\mu j^\mu$$</p>
 <p>One can check QED Lagrangian is invariant under <code>gauge transform</code>:</p>
 <p>$$\psi(x)\rightarrow e^{\ti \theta(x)}\psi(x) \ ; \ A_\mu(x)\rightarrow A_\mu(x)-\frac 1 e \partial_\mu \theta(x)$$</p>
-<p>If we demand the <code>Gauge invariance</code> , there will not be any self-interaction term of Maxwell Field like  $A^4, A_\mu A^\mu \partial_\nu A^\nu , \cdots$  .</p>
+<p>If we demand the <code>Gauge invariance</code> , there will not be any self-interaction term of Maxwell Field like   $A^4, A_\mu A^\mu \partial_\nu A^\nu , \cdots$   .</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -595,7 +1020,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-While for  $\mathcal{L}_{\text{Maxwell}}=\frac 1 4 F_{\mu\nu}F^{\mu\nu}$  , we have:
+While for   $\mathcal{L}_{\text{Maxwell}}=\frac 1 4 F_{\mu\nu}F^{\mu\nu}$   , we have:
 
 
 $$\begin{aligned}
@@ -605,7 +1030,7 @@ F'_{\mu\nu}&= \partial_{\mu} A'_\nu-\partial_\nu A'_\mu \\
 \end{aligned}$$
 
 
-That is to say  $\Delta \mathcal{L}_{\text{Maxwell}}=0$  .
+That is to say   $\Delta \mathcal{L}_{\text{Maxwell}}=0$   .
 
 q.e.d.
 
@@ -620,15 +1045,15 @@ For self-interaction of Maxwell Field, one can check they will not have gauge in
 <h2 id="interaction-picture">Interaction Picture</h2>
 <p><mark>If interaction term contain no time-differential of Field, then canonical momentum is the same as Free field case</mark> , that is to say, in Schrodinger Picture, field-operators and canonical momentum operators of interacting Field system have the same form of those which in non-interacting system.</p>
 <p>In quantum mechanics, we know the relationship between <code>interaction picture</code> and <code>Schrodinger picture</code>:</p>
-<p>With  $\hat H = \hat H_0+\hat H_{\text{int}}$  , we have:</p>
+<p>With   $\hat H = \hat H_0+\hat H_{\text{int}}$   , we have:</p>
 <p>$$\begin{aligned}
 \ket{\psi_I(t)} &= e^{\ti \hat H_0 t} \ket{\psi_S(t)}\\
 \hat O_I(t) &= e^{\ti \hat H_0 t} \hat O_S e^{-\ti \hat H_0 t}
 \end{aligned}$$</p>
-<p>So that  $\bra{\alpha_I(t)}\hat O_I(t)\ket{\beta_I(t)}=\bra{\alpha_S(t)}\hat O_S\ket{\beta_S(t)}$  . One can find that <mark>the operator in Interaction Picture is the same as the operator in Heisenberg Picture for Free system.</mark></p>
+<p>So that   $\bra{\alpha_I(t)}\hat O_I(t)\ket{\beta_I(t)}=\bra{\alpha_S(t)}\hat O_S\ket{\beta_S(t)}$   . One can find that <mark>the operator in Interaction Picture is the same as the operator in Heisenberg Picture for Free system.</mark></p>
 <p>Then we have the equation of motion in Interaction Picture:</p>
 <p>$$\ti \frac {\td} {\td t} \ket{\psi_I(t)} = \hat H_{\text{int},I}(t)\ket{\psi_I(t)}$$</p>
-<p>Or the time-evolution operator, which is defined by  $\ket{\psi_I(t)}=\hat U_I(t,t_0)\ket{\psi_I(t_0)}$  .</p>
+<p>Or the time-evolution operator, which is defined by   $\ket{\psi_I(t)}=\hat U_I(t,t_0)\ket{\psi_I(t_0)}$   .</p>
 <p>$$\ti\frac {\partial} {\partial t}\hat U_I(t,t_0)=\hat H_{\text{int},I}(t)\hat U_I(t,t_0)$$</p>
 <p>One can write the <code>Dyson Series</code> of time-evolution operator:</p>
 <p>$$\hat U_I(t,t_0)=1+(-\ti)\int_{t_0}^t \td t_1 \hat H_{\text{int},I}(t)+(-\ti)^2\int_{t_0}^t \td t_1 \int_{t_0}^{t_1}\td t_2\hat H_{\text{int},I}(t_1)\hat H_{\text{int},I}(t_2)+\cdots$$</p>
@@ -638,7 +1063,7 @@ For self-interaction of Maxwell Field, one can check they will not have gauge in
 &\equiv 1+(-\ti) \int_{t_0}^t \td \tau \hat H_{\text{int},I}(\tau) + \frac {(-\ti)^2} {2!} \int_{t_0}^t \td \tau_1\int_{t_0}^t \td \tau_2 \mathcal{T}\big\{\hat H_{\text{int},I}(\tau_1)\hat H_{\text{int},I}(\tau_2) \big\} \\
 &\indent +\frac {(-\ti)^3} {3!} \int_{t_0}^t \td \tau_1\int_{t_0}^t \td \tau_2\int_{t_0}^t \td \tau_3 \  \mathcal{T}\big\{\hat H_{\text{int},I}(\tau_1)\hat H_{\text{int},I}(\tau_2)\hat H_{\text{int},I}(\tau_3) \big\}+\cdots
 \end{aligned}$$</p>
-<p>Where we treat  $\hat H_{\text{int},I}(\tau)$  as bosonic, that is to say:</p>
+<p>Where we treat   $\hat H_{\text{int},I}(\tau)$   as bosonic, that is to say:</p>
 <p>$$\mathcal{T}\big\{\hat H_{\text{int},I}(t_1)\cdots \hat H_{\text{int},I}(t_n)\big\}=\sum_{\sigma \in S_n}\Theta(t_{\sigma(1)}-t_{\sigma(2)})\Theta(t_{\sigma(2)}-t_{\sigma(3)})\cdots \Theta(t_{\sigma(n-1)}-t_{\sigma(n)})\hat H_{\text{int},I}(t_{\sigma(1)})\cdots \hat H_{\text{int},I}(t_{\sigma(n)})$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -652,7 +1077,7 @@ One can rewrite the differential equation:
 $$\ti\frac {\partial} {\partial t}\hat U_I(t,t_0)=\hat H_{\text{int},I}(t)\hat U_I(t,t_0)$$
 
 
-as integral equation, with  $\hat U_I(t_0,t_0)=1$ :
+as integral equation, with   $\hat U_I(t_0,t_0)=1$ ::
 
 
 $$\hat U_I(t,t_0)=1+(-\ti)\int_{t_0}^t \td t_1 \ \hat H_{\text{int},I}(t_1) \hat U_I(t_1,t_0)$$
@@ -664,7 +1089,7 @@ Then use this equation recurrently:
 $$\hat U_I(t,t_0)=1+(-\ti)\int_{t_0}^t \td t_1 \ \hat H_{\text{int},I}(t_1)+(-\ti)^2\int_{t_0}^t \td t_1 \int_{t_0}^{t_1}\td t_2 \hat H_{\text{int},I}(t_1)\hat H_{\text{int},I}(t_2)+\cdots$$
 
 
-The third term at right-hand-side above, can be rewritten by time-ordered product, noting that the integral is calculated at the range of  $t_1\gt t_2$  :
+The third term at right-hand-side above, can be rewritten by time-ordered product, noting that the integral is calculated at the range of   $t_1\gt t_2$   :
 
 
 $$\begin{aligned}
@@ -674,7 +1099,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Where the factor  $(2!)^{-1}$  comes from the time-ordered product of  $n$  operators has  $n!$  terms.
+Where the factor   $(2!)^{-1}$   comes from the time-ordered product of   $n$   operators has   $n!$   terms.
 
 Then for high order terms, the relation is the same. Then we have:
 
@@ -723,11 +1148,11 @@ $$\hat O_H(t)=\hat U_S(t,0)^\dagger \hat O_S \hat U_S(t,0)=\hat U_I(t,0)^\dagger
 </details>
 
 <h2 id="interacting-vacuum">Interacting Vacuum</h2>
-<p><em>[Theorem(Gell-Mann-Low)]</em> : In the interacting field system, the vacuum is generally not the vacuum state of direct product of free fields. If denote the vacuum without interaction as  $\ket{0}$  , and vacuum with interaction is  $\ket{\Omega}$  . The interacting Hamiltonian is  $\hat H=\hat H_0+g \hat H_{\text{int}}$  , with  $g$  is the <code>coupling parameter</code> .</p>
-<p>Define the time-dependent Hamiltonian  $\hat H_\epsilon = \hat H_0+e^{-\epsilon |t|}g\hat H_{\text{int}}$  , which <code>effectively interpolates</code> between  $\hat H$  and  $\hat H_0$  in the limit  $\epsilon\rightarrow 0^+ , t\rightarrow \infty$  . Let  $\hat U_{\epsilon,I}(t,t_0)$  be the time-evolution operator of this Hamiltonian in the <code>Interaction picture</code>, and  $\hat H_0\ket{\Psi_0}=E_0\ket{\Psi_0}$ . The <code>Gell-Man &amp; Low Theorem</code> asserts that if the limit as  $\epsilon\rightarrow 0^+$  of:</p>
+<p><em>[Theorem(Gell-Mann-Low)]</em> : In the interacting field system, the vacuum is generally not the vacuum state of direct product of free fields. If denote the vacuum without interaction as    $\ket{0}$    , and vacuum with interaction is    $\ket{\Omega}$    . The interacting Hamiltonian is   $\hat H=\hat H_0+g \hat H_{\text{int}}$   , with    $g$    is the <code>coupling parameter</code> .</p>
+<p>Define the time-dependent Hamiltonian   $\hat H_\epsilon = \hat H_0+e^{-\epsilon |t|}g\hat H_{\text{int}}$   , which <code>effectively interpolates</code> between    $\hat H$    and     $\hat H_0$     in the limit   $\epsilon\rightarrow 0^+ , t\rightarrow \infty$   . Let   $\hat U_{\epsilon,I}(t,t_0)$   be the time-evolution operator of this Hamiltonian in the <code>Interaction picture</code>, and   $\hat H_0\ket{\Psi_0}=E_0\ket{\Psi_0}$ .. The <code>Gell-Man &amp; Low Theorem</code> asserts that if the limit as    $\epsilon\rightarrow 0^+$    of:</p>
 <p>$$\ket{\Psi_\epsilon^{(\pm)}} = \frac {\hat U_{\epsilon,I}(0,\pm \infty)\ket{\Psi_0}} {\bra{\Psi_0}\hat U_{\epsilon,I}(0,\pm\infty)\ket{\Psi_0}}$$</p>
-<p>exists, then  $\ket{\Psi_{\epsilon}^{(\pm)}}$  are eigenstates of  $\hat H$  .</p>
-<p>Note that the theorem does not guarantee that if  $\ket{\Psi_0}=\ket{0}$  is the vacuum of  $\hat H_0$  the evolved state will be the ground state. But in perturbation theory, we believe it is indeed the ground state.</p>
+<p>exists, then   $\ket{\Psi_{\epsilon}^{(\pm)}}$   are eigenstates of    $\hat H$    .</p>
+<p>Note that the theorem does not guarantee that if   $\ket{\Psi_0}=\ket{0}$   is the vacuum of     $\hat H_0$     the evolved state will be the ground state. But in perturbation theory, we believe it is indeed the ground state.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
@@ -743,19 +1168,19 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Or the integral equation, with  $g=e^{\epsilon\theta}$ :
+Or the integral equation, with   $g=e^{\epsilon\theta}$ ::
 
 
 $$\hat U_{\epsilon,S}(t_1,t_2)=1+(-\ti) \int_{t_2}^{t_1} \td t' (\hat H_0+e^{\epsilon(\theta-|t'|)}\hat H_{\text{int}})\hat U_{\epsilon,S}(t',t_2)$$
 
 
-For the case  $0\geq t_1\geq t_2$  , with changing the variables  $\tau=t'+\theta$ :
+For the case   $0\geq t_1\geq t_2$   , with changing the variables   $\tau=t'+\theta$ ::
 
 
 $$\hat U_{\epsilon,S}(t_1,t_2)=1+(-\ti) \int_{t_2+\theta}^{t_1+\theta} \td \tau (\hat H_0+e^{\epsilon\tau}\hat H_{\text{int}})\hat U_{\epsilon,S}(\tau-\theta,t_2)$$
 
 
-For the propagator of  $\hat H^{(\pm)}(t)=\hat H_0+e^{\pm\epsilon t}\hat H_{\text{int}}$  is  $\hat U^{(\pm)}(t,t')$ , which satisfies the equation:
+For the propagator of   $\hat H^{(\pm)}(t)=\hat H_0+e^{\pm\epsilon t}\hat H_{\text{int}}$   is   $\hat U^{(\pm)}(t,t')$ ,, which satisfies the equation:
 
 
 $$\hat U^{(\pm)}(t_1+\theta,t_2+\theta)=1+(-\ti)\int_{t_2+\theta}^{t_1+\theta} \td \tau (\hat H_0+e^{\pm\epsilon\tau}\hat H_{\text{int}})\hat U^{(\pm)}(\tau,t_2+\theta)$$
@@ -767,23 +1192,23 @@ With the same initial condition:
 $$\hat U_{\epsilon,S}(t_1=t_2,t_2)=1=\hat U^{(+)}(t_1+\theta=t_2+\theta,t_2+\theta)$$
 
 
-Then we have:  $\hat U_{\epsilon,S}(t_1,t_2)=\hat U^{(+)}(t_1+\theta,t_2+\theta)$  . That is to say:
+Then we have:   $\hat U_{\epsilon,S}(t_1,t_2)=\hat U^{(+)}(t_1+\theta,t_2+\theta)$   . That is to say:
 
 
 $$\partial_{\theta}\hat U_{\epsilon,S}(t_1,t_2)=\partial_{t_1}\hat U_{\epsilon,S}(t_1,t_2)+\partial_{t_2}\hat U_{\epsilon,S}(t_1,t_2)$$
 
 
-Because  $\theta$  enters in the operator  $\hat U^{(+)}(t_1+\theta,t_2+\theta)$  only in its temporal variables.
+Because   $\theta$   enters in the operator   $\hat U^{(+)}(t_1+\theta,t_2+\theta)$   only in its temporal variables.
 
-If  $t_1\geq t_2\geq 0$  , one has  $\hat U_{\epsilon,S}(t_1,t_2)=\hat U^{(-)}(t_1-\theta,t_2-\theta)$  , which induces:
+If   $t_1\geq t_2\geq 0$   , one has   $\hat U_{\epsilon,S}(t_1,t_2)=\hat U^{(-)}(t_1-\theta,t_2-\theta)$   , which induces:
 
 
 $$\partial_{\theta}\hat U_{\epsilon,S}(t_1,t_2)=-\partial_{t_1}\hat U_{\epsilon,S}(t_1,t_2)-\partial_{t_2}\hat U_{\epsilon,S}(t_1,t_2)$$
 
 
-An identity for  $t_1\geq 0 \geq t_2$  can be obtained by writing  $\hat U_{\epsilon,S}(t_1,t_2)=\hat U_{\epsilon,S}(t_1,0)\hat U_{\epsilon,S}(0,t_2)$  .
+An identity for   $t_1\geq 0 \geq t_2$   can be obtained by writing   $\hat U_{\epsilon,S}(t_1,t_2)=\hat U_{\epsilon,S}(t_1,0)\hat U_{\epsilon,S}(0,t_2)$   .
 
-Then with  $\partial_{\theta}=\epsilon g\partial_g$  , one can write it as:
+Then with   $\partial_{\theta}=\epsilon g\partial_g$   , one can write it as:
 
 
 $$\ti \epsilon g\partial_g \hat U_{\epsilon,S}(t_1,t_2)=\begin{cases}
@@ -801,7 +1226,7 @@ $$\ti \epsilon g\partial_g \hat U_{\epsilon,I}(t_1,t_2)=\begin{cases}
 \end{cases}$$
 
 
-Where  $\hat H_{\epsilon,I}(t)=e^{\ti \hat H_0 t} \hat H_{\epsilon}(t) e^{-\ti \hat H_0 t}$  . Apply it with  $t_2=-\infty,t_1=0$  or  $t_1=+\infty,t_2=0$  on an eigenstate  $\ket{\Psi_0}$  of  $\hat H_0$  , note that  $\hat H_{\epsilon,I}(\pm\infty)=\hat H_0, \hat H_{\epsilon,I}(0)=\hat H_{\epsilon}(0)=\hat H$  , one has:
+Where   $\hat H_{\epsilon,I}(t)=e^{\ti \hat H_0 t} \hat H_{\epsilon}(t) e^{-\ti \hat H_0 t}$   . Apply it with   $t_2=-\infty,t_1=0$   or   $t_1=+\infty,t_2=0$   on an eigenstate   $\ket{\Psi_0}$   of     $\hat H_0$     , note that   $\hat H_{\epsilon,I}(\pm\infty)=\hat H_0, \hat H_{\epsilon,I}(0)=\hat H_{\epsilon}(0)=\hat H$   , one has:
 
 
 $$\begin{aligned}
@@ -810,13 +1235,13 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Or with  $\hat U_{\epsilon,I}(+\infty,0)^\dagger = \hat U_{\epsilon,I}(0,+\infty)$  , we can write them as:
+Or with   $\hat U_{\epsilon,I}(+\infty,0)^\dagger = \hat U_{\epsilon,I}(0,+\infty)$   , we can write them as:
 
 
 $$\Big(\hat H-E_0\pm \ti \epsilon g \partial_g\Big)\hat U_{\epsilon,I}(0,\pm\infty)\ket{\Psi_0}=0$$
 
 
-With the definition of  $\ket{\Psi_\epsilon^{(\pm)}}$ , one can write down:
+With the definition of   $\ket{\Psi_\epsilon^{(\pm)}}$ ,, one can write down:
 
 
 $$\begin{aligned}
@@ -827,13 +1252,13 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Or, with  $E^{(\pm)}=E_0-\bra{\Psi_0}(E_0-\hat H)\ket{\Psi_\epsilon^{(\pm)}}$  , we have:
+Or, with   $E^{(\pm)}=E_0-\bra{\Psi_0}(E_0-\hat H)\ket{\Psi_\epsilon^{(\pm)}}$   , we have:
 
 
 $$\big(\hat H-E^{(\pm)}\big)\ket{\Psi_\epsilon^{(\pm)}}=\mp\ti\epsilon g\partial_g \ket{\Psi_\epsilon^{(\pm)}}$$
 
 
-Do the limit with  $\epsilon\rightarrow 0^+$  , with the assumption,  $g\partial_g\ket{\Psi_\epsilon^{(\pm)}}$  will be finite, but with the factor  $\epsilon$  it will vanish. That is to say, at the limit:
+Do the limit with    $\epsilon\rightarrow 0^+$    , with the assumption,   $g\partial_g\ket{\Psi_\epsilon^{(\pm)}}$   will be finite, but with the factor   $\epsilon$   it will vanish. That is to say, at the limit:
 
 
 $$\hat H\ket{\Psi^{(\pm)}}=E^{(\pm)}\ket{\Psi^{(\pm)}}$$
@@ -849,17 +1274,17 @@ It is the eigenstate of interacting system. q.e.d.
 <h2 id="time-ordered-greens-function">Time-ordered Green&rsquo;s Function</h2>
 <p><em>[Definition]</em> : In Field Theory, we usually need to compute the <code>time-ordered Green's Function</code>, which is defined as:</p>
 <p>$$G(x_1,\cdots,x_n)=\bra{\Omega}\mathcal{T}\{\phi_1(x_1)\cdots \phi_n(x_n)\}\ket{\Omega}$$</p>
-<p>Where  $\ket{\Omega}$  is the vacuum(ground state of interacting system), and  $\phi_i$  is the  $i$ -th field operator(in <code>Heisenberg Picture</code>), and  $x_i=(x_i^0,\bm{x}_i)$  is spacetime point.</p>
+<p>Where    $\ket{\Omega}$    is the vacuum(ground state of interacting system), and   $\phi_i$   is the   $i$ --th field operator(in <code>Heisenberg Picture</code>), and   $x_i=(x_i^0,\bm{x}_i)$   is spacetime point.</p>
 <p>With the <code>Gell-Mann &amp; Low Theorem</code>, we can express it as:</p>
 <p>$$G(x_1,\cdots,x_n)=\lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\mathcal{T}\big\{\phi_{1,I}(x_1)\cdots\phi_{n,I}(x_n)\exp\big(-\ti\int_{-\infty}^{+\infty}\td \tau \ e^{-\epsilon|\tau|}\hat H_{\text{int},I}(\tau)\big)\big\}\ket{0}} {\bra{0}\exp\big(-\ti\int_{-\infty}^{+\infty}\td \tau \ e^{-\epsilon|\tau|}\hat H_{\text{int},I}(\tau) \big)\ket{0}}$$</p>
-<p>Where  $\ket{0}$  is the vacuum of non-interacting system.</p>
+<p>Where    $\ket{0}$    is the vacuum of non-interacting system.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-Without loss of generality, we assume  $x_1^0\gt x_2^0\gt \cdots \gt x_n^0$  , other cases can be simply obtained by exchange the field operators and add sign  $(\pm)$  for fermionic operators. Then with the `Gell-Mann & Low theorem` and for the  $n=2$  case:
+Without loss of generality, we assume   $x_1^0\gt x_2^0\gt \cdots \gt x_n^0$   , other cases can be simply obtained by exchange the field operators and add sign   $(\pm)$   for fermionic operators. Then with the `Gell-Mann & Low theorem` and for the       $n=2$       case:
 
 
 $$\begin{aligned}
@@ -873,7 +1298,7 @@ G(x_1,x_2)&= \lim_{\epsilon\rightarrow 0^+} \frac {\bra{0}\hat U_{\epsilon,I}(+\
 \end{aligned}$$
 
 
-Where the normalization factor can be simply obtained by compute  $\bra{\Omega}\Omega\rangle$  by Gell-Mann & Low theorem. And similarly for cases of more than two operators.
+Where the normalization factor can be simply obtained by compute   $\bra{\Omega}\Omega\rangle$   by Gell-Mann & Low theorem. And similarly for cases of more than two operators.
 
 Some times people will simply write it as:
 
@@ -892,23 +1317,23 @@ And deal with the divergence at the final of all computation.
 \mathcal{N}\{\phi_1^{(a)}\phi_2^{(c)}\phi_3^{(c)}\phi_4^{(a)}\cdots\}&=(\pm)^{\sigma'((1234\cdots)\rightarrow(23\cdots,14\cdots))}\phi_2^{(c)}\phi_3^{(c)}\cdots \phi_1^{(a)}\phi_4^{(a)}\cdots\\
 \mathcal{N}\{A_1A_2\cdots+B_1B_2\cdots+\cdots\}&= \mathcal{N}\{A_1A_2\cdots\}+\mathcal{N}\{B_1B_2\cdots\}+\cdots\\
 \end{aligned}$$</p>
-<p><mark>Where  $\sigma'$  means the number of exchanges between fermionic operators.</mark></p>
+<p><mark>Where    $\sigma'$    means the number of exchanges between fermionic operators.</mark></p>
 <p><em>[Theorem]</em> : Normal-ordered product has the property:</p>
 <p>$$\mathcal{N}\{\phi_{\sigma(1)}\phi_{\sigma(2)}\cdots\phi_{\sigma(n)}\}=(- 1)^{\sigma'} \mathcal{N}\{\phi_1\cdots\phi_n\}$$</p>
-<p>Where  $\sigma'$  means the number of exchanges between fermionic operators.</p>
+<p>Where    $\sigma'$    means the number of exchanges between fermionic operators.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-We will use mathematical induction to prove this. For  $n=2$  case:
+We will use mathematical induction to prove this. For       $n=2$       case:
 
 
 $$\mathcal{N}\{\phi_1\phi_2\}=(\pm 1)^0 \mathcal{N}\{\phi_1\phi_2\}$$
 
 
-And with the property of that  $[\phi_1^{(a)},\phi_2^{(a)}]_\xi=[\phi_1^{(c)},\phi_2^{(c)}]_\xi=0$  , where  $\xi=1$  for Boson and  $\xi=-1$  for Fermion <mark>(this demand these two operators are all fermionic.)</mark> , where  $[A,B]_{\xi}=AB-\xi BA$  . Then we find that:
+And with the property of that   $[\phi_1^{(a)},\phi_2^{(a)}]_\xi=[\phi_1^{(c)},\phi_2^{(c)}]_\xi=0$   , where     $\xi=1$     for Boson and      $\xi=-1$      for Fermion <mark>(this demand these two operators are all fermionic.)</mark> , where    $[A,B]_{\xi}=AB-\xi BA$ .  . Then we find that:
 
 
 $$\begin{aligned}
@@ -921,7 +1346,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Where the factor  $-1$  appears only when  $\phi_1,\phi_2$  are all fermionic operators. That is to say it works for  $n=2$  case. We assume it works for all  $n\leq k$  cases, then for  $n=k+1$  case, we first express it with some normal-ordered product of  $n\leq k$  operators:
+Where the factor   $-1$   appears only when   $\phi_1,\phi_2$   are all fermionic operators. That is to say it works for       $n=2$       case. We assume it works for all    $n\leq k$    cases, then for   $n=k+1$   case, we first express it with some normal-ordered product of    $n\leq k$    operators:
 
 
 $$\mathcal{N}\{\phi_1\cdots\phi_k\phi_{k+1}\}=\mathcal{N}\{\phi_1\cdots\phi_k \phi_{k+1}^{(c)}\}+\mathcal{N}\{\phi_1\cdots\phi_k\}\phi_{k+1}^{(a)}$$
@@ -933,19 +1358,19 @@ The first term in right-hand-side can be computed term by term. By the definitio
 $$\mathcal{N}\{\phi_1\cdots\phi_k\phi_{k+1}^{(c)}\}=(\pm 1)^{k'}\phi_{k+1}^{(c)}\mathcal{N}\{\phi_1\cdots\phi_k\}$$
 
 
-in which we need to move  $\phi_{k+1}^{(c)}$  to the head of the queue of annihilation parts, which will contribute the factor  $(\pm 1)^l$  , where  $l$  is the number of annihilation parts (if exchange two fermionic operators) in that term. Then we move it to the head of queue of creation parts, every exchange between operators will contribute the factor  $(\pm 1)$  for the (anti-)commutator relation of (Fermion)Boson operators. Then the total factor should be  $(\pm 1)^{k'}$  where  $k'$  is the number of fermionic operators in  $\phi_1,\cdots,\phi_k$  , and only when  $\phi_{k+1}$  is fermionic it is  $(-1)$  .   Then we have:
+in which we need to move   $\phi_{k+1}^{(c)}$   to the head of the queue of annihilation parts, which will contribute the factor   $(\pm 1)^l$   , where   $l$   is the number of annihilation parts (if exchange two fermionic operators) in that term. Then we move it to the head of queue of creation parts, every exchange between operators will contribute the factor   $(\pm 1)$   for the (anti-)commutator relation of (Fermion)Boson operators. Then the total factor should be   $(\pm 1)^{k'}$   where   $k'$   is the number of fermionic operators in   $\phi_1,\cdots,\phi_k$   , and only when    $\phi_{k+1}$    is fermionic it is   $(-1)$   .   Then we have:
 
 
 $$\mathcal{N}\{\phi_1\cdots\phi_k\phi_{k+1}\}=(\pm 1)^{k'}\phi_{k+1}^{(c)}\mathcal{N}\{\phi_1\cdots\phi_k \}+\mathcal{N}\{\phi_1\cdots\phi_k\}\phi_{k+1}^{(a)}$$
 
 
-Then obviously that for the permutation among  $1\cdots k$  , we have:
+Then obviously that for the permutation among   $1\cdots k$   , we have:
 
 
 $$\mathcal{N}\{\phi_{\sigma(1)}\cdots \phi_{\sigma(k)}\phi_{k+1}\}=(\pm 1)^{\sigma'} \mathcal{N}\{\phi_1\cdots\phi_k\phi_{k+1}\}$$
 
 
-And for the permutation of  $k+1$  and  $k$ , we can check:
+And for the permutation of     $k+1$     and     $k$  , , we can check:
 
 
 $$\begin{aligned}
@@ -971,7 +1396,7 @@ Then we proved:
 $$\mathcal{N}\{\phi_1\cdots\phi_{k+1}\phi_k\}=\xi \mathcal{N}\{\phi_1\cdots\phi_k\phi_{k+1}\}$$
 
 
-Then, for arbitrary element  $\sigma_{k+1}$  of  $k+1$  permutation group, can always be represent as  $\sigma_k(k\leftrightarrow k+1)\sigma'_k$ ,  $\sigma_k,\sigma'_k$  will contribute two factors as  $(\xi)^{\sigma_k},(\xi)^{\sigma'_k}$  , and exchange  $(k\leftrightarrow k+1)$  contributes factor  $\xi$  , where  $\xi=-1$  only when  $\phi_k,\phi_{k+1}$  are fermionic. Then we finally proved:
+Then, for arbitrary element   $\sigma_{k+1}$   of     $k+1$     permutation group, can always be represent as   $\sigma_k(k\leftrightarrow k+1)\sigma'_k$ ,,   $\sigma_k,\sigma'_k$   will contribute two factors as   $(\xi)^{\sigma_k},(\xi)^{\sigma'_k}$   , and exchange   $(k\leftrightarrow k+1)$   contributes factor   $\xi$   , where      $\xi=-1$      only when   $\phi_k,\phi_{k+1}$   are fermionic. Then we finally proved:
 
 
 $$\mathcal{N}\{\phi_{\sigma(1)}\cdots\phi_{\sigma(k+1)}\}=(-1)^{\sigma'} \mathcal{N}\{\phi_1\cdots\phi_{k+1}\}$$
@@ -985,7 +1410,7 @@ By the mathematical induction, the theorem has been proved.
 <p><em>[Definition]</em> : The <code>Wick Contraction</code> between two field operators are defined as:</p>
 <p>$$\phi_1^{\cdot}(x_1)\phi_2^{\cdot}(x_2):=\bra{0}\mathcal{T}\{\phi_1(x_1)\phi_2(x_2)\}\ket{0}\equiv \begin{cases}[\phi_1^{(a)}(x_1),\phi_2^{(c)}(x_2)]_{\xi} & x_1^0\gt x_2^0 \\
 \xi [\phi_2^{(a)}(x_2),\phi_1^{(c)}(x_1)]_{\xi} & x_2^0\gt x_1^0 \end{cases}$$</p>
-<p>Where  $\xi=\pm 1$  , and  $[A,B]_{\xi}=AB-\xi BA$ . For  $\xi=1$  , it is the commutator and for  $\xi=-1$  it is anti-commutator. We used the fact that (anti-)commutator between creation/annihilation part of (Fermionic) Bosonic field operators are <code>c-number</code>. So the right-hand-side always equals to its expectation on free-vacuum, if we let  $\xi=-1$  when  $A,B$  are fermionic and  $\xi=1$  otherwise.</p>
+<p>Where   $\xi=\pm 1$   , and    $[A,B]_{\xi}=AB-\xi BA$ . . For     $\xi=1$     , it is the commutator and for      $\xi=-1$      it is anti-commutator. We used the fact that (anti-)commutator between creation/annihilation part of (Fermionic) Bosonic field operators are <code>c-number</code>. So the right-hand-side always equals to its expectation on free-vacuum, if we let      $\xi=-1$      when   $A,B$   are fermionic and     $\xi=1$     otherwise.</p>
 <p><em>[Theorem(Wick)]</em> : Time-ordered product of operators can be written as normal-ordered product and sum of all possible Wick&rsquo;s contraction:</p>
 <p>$$\begin{aligned}
 \mathcal{T}\{\phi_1\cdots\phi_n\}&=\mathcal{N}\{\phi_1\cdots\phi_n\}\\
@@ -999,7 +1424,8 @@ By the mathematical induction, the theorem has been proved.
     </summary>
     
 
-One can use the Mathematical induction to prove this. For  $n=2$  case, if  $x_1^0\gt x_2^0$ 
+One can use the Mathematical induction to prove this. For       $n=2$       case, if   $x_1^0\gt x_2^0$ 
+
 
 
 $$\begin{aligned}
@@ -1009,7 +1435,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-And if  $x_2^0\gt x_1^0$  :
+And if   $x_2^0\gt x_1^0$   :
 
 
 $$\begin{aligned}
@@ -1025,7 +1451,7 @@ with the theorem about normal-order product above. Then we find that:
 $$\mathcal{T}\{\phi_1\phi_2\}=\mathcal{N}\{\phi_1\phi_2\}+\phi_1^{\cdot}\phi_2^{\cdot}$$
 
 
-That is to say, the equality works for  $n=2$  case. Then we will use the Mathematical induction, assume it works for  $n=k$  case, without loss of generality, we let  $x_{k+1}^0\lt x_{k}^0\lt \cdots \lt x_1^0$  ,
+That is to say, the equality works for       $n=2$       case. Then we will use the Mathematical induction, assume it works for   $n=k$   case, without loss of generality, we let   $x_{k+1}^0\lt x_{k}^0\lt \cdots \lt x_1^0$   ,
 
 
 $$\begin{aligned}
@@ -1034,9 +1460,9 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-We need to check how  $\phi_{k+1}$  will enter the normal-ordered product in every term:
+We need to check how    $\phi_{k+1}$    will enter the normal-ordered product in every term:
 
-First, the term with no Wick's contraction, we need to compute  $\mathcal{N}\{\phi_1\cdots\phi_k\}\phi_{k+1}$  , consider the term:
+First, the term with no Wick's contraction, we need to compute   $\mathcal{N}\{\phi_1\cdots\phi_k\}\phi_{k+1}$   , consider the term:
 
 
 $$\phi_1^{(c)}\phi_2^{(c)}\cdots\phi_{k-1}^{(c)}\phi_k^{(a)}\phi_{k+1}^{(c)}=\xi\phi_1^{(c)}\phi_2^{(c)}\cdots\phi_{k-1}^{(c)}\phi_{k+1}^{(c)}\phi_{k}^{(a)}+\phi_1^{(c)}\phi_2^{(c)}\cdots\phi_{k-1}^{(c)}\phi_k^{\cdot}\phi_{k+1}^{\cdot}$$
@@ -1063,7 +1489,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Then we have proved the  $k$  to  $k+1$  . q.e.d.
+Then we have proved the     $k$  ,  to     $k+1$     . q.e.d.
 
 
 </details>
@@ -1484,7 +1910,7 @@ Then we have proved the  $k$  to  $k+1$  . q.e.d.
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

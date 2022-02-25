@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interest-Math on Leonard</title>
+    <link>https://wzdlc1996.github.io/categories/interest-math/</link>
+    <description>Recent content in Interest-Math on Leonard</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh_Hans</language>
+    <lastBuildDate>Sat, 19 Feb 2022 00:21:44 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/categories/interest-math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prove the Irrationality of Square Root of 2</title>
+      <link>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</link>
+      <pubDate>Sat, 19 Feb 2022 00:21:44 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</guid>
+      <description>Various methods of proving the irrationality of the square root of integer 2. Including the method by contradiction and the direct way.</description>
+    </item>
+    
+  </channel>
+</rss>

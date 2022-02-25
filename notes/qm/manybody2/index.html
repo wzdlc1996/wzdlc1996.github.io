@@ -543,18 +543,224 @@ autocomplete('#aa-search-input',
 
 
 
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
 <h1 id="greens-function">Green&rsquo;s Function</h1>
-<p>Giving a set of orthonormal basis for single-particle state  ${\ket{\alpha}}$  (e.g. coordinate eigenstate  $\ket{\bm{r}}$  for spinless particles), we can write down the creation/annihilation operators :  $\hat a_\alpha \ , \ \hat a_{\alpha}^\dagger$  in the Fock space, which forms the complete description for the many-body system.</p>
-<p><em>[Definition]</em> :  $n$ -particle <code>Real-time Green's function</code> is a function of  $2n$  parameters distinguishing states and  $2n$  time variables:</p>
+<p>Giving a set of orthonormal basis for single-particle state   $\{\ket{\alpha}\}$   (e.g. coordinate eigenstate   $\ket{\bm{r}}$   for spinless particles), we can write down the creation/annihilation operators :   $\hat a_\alpha \ , \ \hat a_{\alpha}^\dagger$   in the Fock space, which forms the complete description for the many-body system.</p>
+<p><em>[Definition]</em> :     $n$ ----particle <code>Real-time Green's function</code> is a function of    $2n$    parameters distinguishing states and    $2n$    time variables:</p>
 <p>$$G^{(n)}(\alpha_1,t_1;\cdots;\alpha_n,t_n;\alpha_1',t_1';\cdots;\alpha_n',t_n')=(-\ti)^n \Big\langle \mathcal{T}\big\{\hat a_{\alpha_1}(t_1)\cdots \hat a_{\alpha_n}(t_n)\hat a_{\alpha_1'}^\dagger(t_1')\cdots \hat a_{\alpha_n'}^\dagger(t_n') \big\} \Big\rangle$$</p>
-<p>Where  $\hat a_{\alpha}(t)=e^{\ti\hat H t/\hbar}\hat a_\alpha e^{-\ti\hat H t/\hbar}$  is the definition of operators in Heisenberg Picture. And the <code>time-ordered product</code> of time-dependent operators is defined as:</p>
+<p>Where   $\hat a_{\alpha}(t)=e^{\ti\hat H t/\hbar}\hat a_\alpha e^{-\ti\hat H t/\hbar}$   is the definition of operators in Heisenberg Picture. And the <code>time-ordered product</code> of time-dependent operators is defined as:</p>
 <p>$$\mathcal{T}\{\hat O_1(t_1)\cdots \hat O_n(t_n)\}=\sum_{\sigma} \zeta^\sigma \ \Theta(t_{\sigma(1)}-t_{\sigma(2)})\Theta(t_{\sigma(2)}-t_{\sigma(3)})\cdots \Theta(t_{\sigma(n-1)}-t_{\sigma(n)}) \hat O_{\sigma(1)}(t_{\sigma(1)})\cdots \hat O_{\sigma(n)}(t_{\sigma(n)})$$</p>
-<p>Summation is calculated over all  $n$ -permutation. Factor  $\zeta=1$  for Bosonic operators and  $\zeta=-1$  for Fermionic operators. <mark>For the case of some time variable are equal, time-ordered product should be treated as the normal-ordered product, which means that annihilation operator should be at right side of the creation operator, but hold the order in bracket as far as possible.</mark></p>
-<p>The expectation value  $\langle \cdots \rangle$  can be choose differently according to the application. For example, one can compute the Green&rsquo;s function on the many-body ground state, then  $\langle \cdots \rangle = \bra{\Psi_0}\cdots \ket{\Psi_0}$  , one can also compute it on the thermal state:  $\langle \cdots \rangle = \text{Tr}\hat \rho \cdots$  where  $\hat \rho=\frac 1 {\mathcal{Z}} e^{-\beta \hat H}$  for canonical ensemble and  $\hat \rho=\frac 1 {\mathcal{Z}} e^{-\beta(\hat H-\mu\hat N)}$  for grand canonical ensemble. And for the case of ensemble average, we change the definition of  $\hat a_{\alpha}(t)$  as:  $\hat a_{\alpha}(t)=e^{\ti \hat Kt/\hbar} \hat a_{\alpha}e^{-\ti\hat Kt/\hbar}$  . Where  $\hat K=\hat H$  for canonical ensemble and  $\hat K=\hat H-\mu\hat N$  for grand canonical ensemble.</p>
-<p><em>[Definition]</em> :  $n$ -particle <code>Thermal Green's function</code> is similar to the real-time Green&rsquo;s function:</p>
+<p>Summation is calculated over all     $n$ ----permutation. Factor   $\zeta=1$   for Bosonic operators and   $\zeta=-1$   for Fermionic operators. <mark>For the case of some time variable are equal, time-ordered product should be treated as the normal-ordered product, which means that annihilation operator should be at right side of the creation operator, but hold the order in bracket as far as possible.</mark></p>
+<p>The expectation value   $\langle \cdots \rangle$   can be choose differently according to the application. For example, one can compute the Green&rsquo;s function on the many-body ground state, then   $\langle \cdots \rangle = \bra{\Psi_0}\cdots \ket{\Psi_0}$   , one can also compute it on the thermal state:   $\langle \cdots \rangle = \text{Tr}\hat \rho \cdots$   where   $\hat \rho=\frac 1 {\mathcal{Z}} e^{-\beta \hat H}$   for canonical ensemble and   $\hat \rho=\frac 1 {\mathcal{Z}} e^{-\beta(\hat H-\mu\hat N)}$   for grand canonical ensemble. And for the case of ensemble average, we change the definition of   $\hat a_{\alpha}(t)$   as:   $\hat a_{\alpha}(t)=e^{\ti \hat Kt/\hbar} \hat a_{\alpha}e^{-\ti\hat Kt/\hbar}$   . Where    $\hat K=\hat H$    for canonical ensemble and    $\hat K=\hat H-\mu\hat N$    for grand canonical ensemble.</p>
+<p><em>[Definition]</em> :     $n$ ----particle <code>Thermal Green's function</code> is similar to the real-time Green&rsquo;s function:</p>
 <p>$$\mathcal{G}^{(n)}(\alpha_1,\tau_1;\cdots;\alpha_n,\tau_n;\alpha_1',\tau_1';\cdots;\alpha_n',\tau_n')=(-1)^n \Big\langle \mathcal{T}\big\{\hat a_{\alpha_1}(\tau_1)\cdots \hat a_{\alpha_n}(\tau_n)\hat a_{\alpha_1'}^\dagger(\tau_1')\cdots \hat a_{\alpha_n'}^\dagger(\tau_n') \big\} \Big\rangle$$</p>
-<p>Thermal Green&rsquo;s function is always defined with the ensemble average. Where  $\hat a_\alpha(\tau)=e^{\hat K\tau/\hbar} \hat a _\alpha e^{-\hat K\tau/\hbar}$  is the operator in Heisenberg Picture with the imaginary time  $t\rightarrow -\ti\tau$ . Where  $\hat K=\hat H$  for canonical ensemble and  $\hat K=\hat H-\mu\hat N$  for grand canonical ensemble. Any time variable is in the interval  $[0,\hbar\beta]$  : $\tau_i,\tau_i'\in [0,\hbar\beta]$  .</p>
-<p>Note that  $\hat a_\alpha^\dagger(\tau)$  with this definition is not the Hermitian adjoint of  $\hat a_\alpha(\tau)$ . And  $\mathcal{G}^{(n)}(\tau)\neq (-\ti)^n G^{(n)}(t=-\ti \tau)$  because of the singularity of the of  $\Theta$  function with imaginary arguments.</p>
+<p>Thermal Green&rsquo;s function is always defined with the ensemble average. Where   $\hat a_\alpha(\tau)=e^{\hat K\tau/\hbar} \hat a _\alpha e^{-\hat K\tau/\hbar}$   is the operator in Heisenberg Picture with the imaginary time   $t\rightarrow -\ti\tau$ .. Where    $\hat K=\hat H$    for canonical ensemble and    $\hat K=\hat H-\mu\hat N$    for grand canonical ensemble. Any time variable is in the interval   $[0,\hbar\beta]$   :: $\tau_i,\tau_i'\in [0,\hbar\beta]$   .</p>
+<p>Note that   $\hat a_\alpha^\dagger(\tau)$   with this definition is not the Hermitian adjoint of   $\hat a_\alpha(\tau)$ .. And   $\mathcal{G}^{(n)}(\tau)\neq (-\ti)^n G^{(n)}(t=-\ti \tau)$   because of the singularity of the of   $\Theta$   function with imaginary arguments.</p>
 <h2 id="single-particle-greens-function">Single-Particle Green&rsquo;s Function</h2>
 <p>The special form of the Green&rsquo;s function: single particle Green&rsquo;s function is widely used in the many-body theory. Here we show some different species of single-particle Green&rsquo;s function in coordinate representation:</p>
 <ol>
@@ -568,7 +774,8 @@ autocomplete('#aa-search-input',
 <li><strong>Retarded Green&rsquo;s function</strong></li>
 </ol>
 <p>$$\ti G^r(\bm{r},t;\bm{r'},t')=\Theta(t-t')\big\langle[\hat \psi(\bm{r},t),\hat \psi^\dagger(\bm{r'},t')]_{-\zeta}\big\rangle$$</p>
-<pre><code>Where the generalized commutator is  $[A,B]_{-\zeta}=AB-\zeta BA$ 
+<pre><code>Where the generalized commutator is   $[A,B]_{-\zeta}=AB-\zeta BA$ 
+
 </code></pre>
 <ol start="3">
 <li><strong>Advanced Green&rsquo;s function</strong></li>
@@ -611,7 +818,7 @@ G^r-G^a &= -\ti\Theta(t-t')\langle \hat \psi(\bm{r},t)\hat \psi^\dagger(\bm{r'},
 \end{aligned}$$
 
 
-Where we used the fact that  $\Theta(x)+\Theta(-x)=1$ .
+Where we used the fact that   $\Theta(x)+\Theta(-x)=1$ ..
 
 
 $$\begin{aligned}
@@ -621,7 +828,7 @@ G&= -\ti \Theta(t-t')\langle \hat \psi(\bm{r},t)\hat \psi^\dagger(\bm{r'},t')\ra
 \end{aligned}$$
 
 
-Similarly, one can check that  $G=G^a+G^>$ .
+Similarly, one can check that   $G=G^a+G^>$ ..
 
 
 $$\begin{aligned}
@@ -653,7 +860,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Then use the spatial-time translation symmetry, i.e., we apply the variable substitution:  $\bm{r}-\bm{r'}=\bm{x} \ ; \bm{r}+\bm{r'}=\bm{R}$  and  $t-t'=\Delta t \ ; \ t+t'=\bm{T}$  . Noting the Jacobian:  $J=\frac 1 {16}$ . So:
+Then use the spatial-time translation symmetry, i.e., we apply the variable substitution:   $\bm{r}-\bm{r'}=\bm{x} \ ; \bm{r}+\bm{r'}=\bm{R}$   and   $t-t'=\Delta t \ ; \ t+t'=\bm{T}$   . Noting the Jacobian:   $J=\frac 1 {16}$ .. So:
 
 
 $$\begin{aligned}
@@ -679,12 +886,12 @@ then we need to connect them with such Fourier transform:
 $$\tilde{G}(\bm{k},\omega) = \int \td^3 \bm{r}\td t \ e^{-\ti\bm{k}\cdot \bm{r}+\ti\omega t} G(\bm{r},t)\leftrightarrow G(\bm{r}-\bm{r'},t-t')=\int \frac {\td^3 \bm{k}\td\omega} {(2\pi)^4} e^{\ti\bm{k}\cdot (\bm{r}-\bm{r'})-\ti\omega (t-t')}\tilde{G}(\bm{k},\omega)$$
 
 
-<mark>One can also understand this in the way of Green's function has a pair of field operators. So the factor should be modified. And the form is the same as the function inner product, i.e.  $\int \td^3 \bm{r}\td t$ .</mark>
+<mark>One can also understand this in the way of Green's function has a pair of field operators. So the factor should be modified. And the form is the same as the function inner product, i.e.   $\int \td^3 \bm{r}\td t$ ..</mark>
 
 
 </details>
 
-<p>In which the function of  $\bm{k},\omega$  :  $\tilde{G}(\bm{k},\omega)$  is the Green&rsquo;s function in frequency/momentum representation. Without the confusion sometimes we directly write it as  $G(\bm{k},\omega)$  but use the arguments to distinguish the Green&rsquo;s function in time/coordinate representation or frequency/momentum representation.</p>
+<p>In which the function of   $\bm{k},\omega$   :   $\tilde{G}(\bm{k},\omega)$   is the Green&rsquo;s function in frequency/momentum representation. Without the confusion sometimes we directly write it as   $G(\bm{k},\omega)$   but use the arguments to distinguish the Green&rsquo;s function in time/coordinate representation or frequency/momentum representation.</p>
 <p><em>[Definition]</em> : The <code>spectral function</code> is defined by the Green&rsquo;s function in frequency/momentum representation:</p>
 <p>$$\begin{aligned}
 A(\bm{k},\omega)&=\ti[G^r(\bm{k},\omega)-G^a(\bm{k},\omega)] =-2\text{Im} G^r(\bm{k},\omega) \\
@@ -728,7 +935,7 @@ q.e.d.
 
 </details>
 
-<p><em>[Theorem]</em> : In equilibrium, which means we treat the average as the thermal average:  $\langle \cdots \rangle = \text{Tr}\hat \rho\cdots$ , all the (single-particle) Green&rsquo;s functions can be related to the spectral function:</p>
+<p><em>[Theorem]</em> : In equilibrium, which means we treat the average as the thermal average:   $\langle \cdots \rangle = \text{Tr}\hat \rho\cdots$ ,, all the (single-particle) Green&rsquo;s functions can be related to the spectral function:</p>
 <p>$$\begin{cases}
 G^<(\bm{k},\omega) &= -\ti \zeta n_{\zeta}(\omega) A(\bm{k},\omega)\\
 G^>(\bm{k},\omega) &= -\ti(1+\zeta n_{\zeta}(\omega)) A(\bm{k},\omega) \\
@@ -736,14 +943,14 @@ G(\bm{k},\omega) &= \int \frac {\td \omega'} {2\pi} A(\bm{k},\omega)\Big\{-\frac
 G^r(\bm{k},\omega) &= \int \frac {\td \omega'} {2\pi} \frac {A(\bm{k},\omega')} {\omega-\omega'+\ti \epsilon} \\
 G^a(\bm{k},\omega) &= \int \frac {\td \omega'} {2\pi} \frac {A(\bm{k},\omega')} {\omega-\omega'-\ti\epsilon}
 \end{cases}$$</p>
-<p>Where  $n_{\zeta}(\omega) = \big(e^{\beta\hbar\omega}-\zeta\big)^{-1}$  , and  $\epsilon$ , as usual, is a infinitesimal small positive real number.</p>
+<p>Where   $n_{\zeta}(\omega) = \big(e^{\beta\hbar\omega}-\zeta\big)^{-1}$   , and   $\epsilon$ ,, as usual, is a infinitesimal small positive real number.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-First of all, we show the relationship between greater/lesser Green's function and spectral function. We choose a set of orthonormal basis  $\ket{m}$  , they are eigenstates of Hamiltonian(and particle number):
+First of all, we show the relationship between greater/lesser Green's function and spectral function. We choose a set of orthonormal basis   $\ket{m}$   , they are eigenstates of Hamiltonian(and particle number):
 
 
 $$\hat K=\hbar\omega_m\ket{m}$$
@@ -775,7 +982,7 @@ Then with the existence of delta function, we have the equality:
 $$G^<(\bm{k},\omega)=\zeta e^{\beta\hbar\omega} G^>(\bm{k},\omega)$$
 
 
-So with the definition of spectral function:  $A(\bm{k},\omega)=\ti(G^>(\bm{k},\omega)-G^<(\bm{k},\omega))$  , we have the first two equality:
+So with the definition of spectral function:   $A(\bm{k},\omega)=\ti(G^>(\bm{k},\omega)-G^<(\bm{k},\omega))$   , we have the first two equality:
 
 
 $$\begin{aligned}
@@ -800,13 +1007,13 @@ G^r(\bm{k},\omega)&=\frac 1 {2\pi}\int \td \omega' \ \mathscr{F}[\Theta](\omega-
 \end{aligned}$$
 
 
-Similarly, with  $G^a=-\Theta(t'-t)(G^>-G^<)$  in real space, one can obtain:
+Similarly, with   $G^a=-\Theta(t'-t)(G^>-G^<)$   in real space, one can obtain:
 
 
 $$G^a(\bm{k},\omega)=\int \frac {\td \omega'} {2\pi} \frac {A(\bm{k},\omega')} {\omega-\omega'-\ti\eta}$$
 
 
-With  $G=\Theta(t-t') G^>+\Theta(t'-t)G^<$  in real space:
+With   $G=\Theta(t-t') G^>+\Theta(t'-t)G^<$   in real space:
 
 
 $$G(\bm{k},\omega)=\int \frac {\td \omega'} {2\pi}\Big( \frac {1+\zeta n_{\zeta}(\omega')} {\omega-\omega'+\ti\eta}-\frac {\zeta n_\zeta(\omega')} {\omega-\omega'-\ti\eta}\Big)A(\bm{k},\omega')$$
@@ -814,7 +1021,7 @@ $$G(\bm{k},\omega)=\int \frac {\td \omega'} {2\pi}\Big( \frac {1+\zeta n_{\zeta}
 
 So we have proved all relations above.
 
-Moreover with the fact that  $A(\bm{k},\omega)\in\mathbb{R}$  and the identity:
+Moreover with the fact that   $A(\bm{k},\omega)\in\mathbb{R}$   and the identity:
 
 
 $$\frac 1 {x\pm\ti \eta}=\mathcal{P}\frac 1 x \mp\ti\pi \delta(x)$$
@@ -843,10 +1050,10 @@ q.e.d.
 </details>
 
 <h2 id="thermal-greens-function-and-analytic-continuation">Thermal Green&rsquo;s Function and Analytic Continuation</h2>
-<p>Let us discuss the thermal Green&rsquo;s function here. In almost all case, thermal Green&rsquo;s function is computed in the thermal state because the Gibbs factor  $e^{-\beta \hat H}$  is indeed the evolution operator of time-independent Hamiltonian with imaginary time.</p>
+<p>Let us discuss the thermal Green&rsquo;s function here. In almost all case, thermal Green&rsquo;s function is computed in the thermal state because the Gibbs factor   $e^{-\beta \hat H}$   is indeed the evolution operator of time-independent Hamiltonian with imaginary time.</p>
 <p><em>[Theorem]</em> : When Hamiltonian is time-independent, 2-point thermal Green&rsquo;s function should be a function which is only dependent of time-interval:</p>
 <p>$$\mathcal{G}(\alpha_1,\tau_1;\alpha_1',\tau_1')=\mathcal{G}(\alpha_1,\alpha_1';\tau_1-\tau_1')$$</p>
-<p>Then it can be expanded time-periodically, which means in the interval  $\tau\in[-\beta\hbar,0]$  one has</p>
+<p>Then it can be expanded time-periodically, which means in the interval   $\tau\in[-\beta\hbar,0]$   one has</p>
 <p>$$\mathcal{G}(\alpha_1,\alpha_1',\tau+\beta\hbar)=\zeta \mathcal{G}(\alpha_1,\alpha_1',\tau)$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -873,7 +1080,7 @@ $$\mathcal{G}(\alpha_1,\alpha_1';\tau)=\frac {-1} {\mathcal{Z}}\begin{cases}
 \end{cases}$$
 
 
-For the case of  $-\beta\hbar \lt \tau\lt 0$ :
+For the case of   $-\beta\hbar \lt \tau\lt 0$ ::
 
 
 $$\begin{aligned}
@@ -888,15 +1095,15 @@ q.e.d.
 
 </details>
 
-<p>Then we can expand the definition of  $\mathcal{G}(\alpha,\alpha';\tau)$  to the entire real number field for  $\tau$  , with the well-defined  $\mathcal{G}(\alpha,\alpha;\tau\in[-\beta\hbar,\beta\hbar])$  :</p>
+<p>Then we can expand the definition of    $\mathcal{G}(\alpha,\alpha';\tau)$    to the entire real number field for   $\tau$   , with the well-defined   $\mathcal{G}(\alpha,\alpha;\tau\in[-\beta\hbar,\beta\hbar])$   :</p>
 <p>$$\mathcal{G}(\alpha,\alpha';\tau+\beta\hbar)=\zeta \mathcal{G}(\alpha,\alpha',\tau) \ ; \ \tau\in\mathbb{R}$$</p>
-<p>So it is a periodic function with period is  $2\beta\hbar$ .</p>
-<p>It can be easily performed by write  $\mathcal{G}(\alpha,\alpha';\tau)$  into the discrete Fourier series:</p>
+<p>So it is a periodic function with period is   $2\beta\hbar$ ..</p>
+<p>It can be easily performed by write    $\mathcal{G}(\alpha,\alpha';\tau)$    into the discrete Fourier series:</p>
 <p>$$\mathcal{G}(\alpha,\alpha';\tau)=\frac 1 {\beta\hbar}\sum_{\omega_n} \tilde{\mathcal{G}}(\alpha,\alpha';\ti\omega_n)e^{-\ti\omega_n \tau}$$</p>
-<p>Where  $\omega_n=\frac {2n\pi} {\beta\hbar}$  for boson and  $\omega_n=\frac {(2n+1)\pi} {\beta\hbar}$  for fermion. The reason why here we use the factor  $1/\beta\hbar$  is the same as the discussion for real-time Green&rsquo;s function above.</p>
+<p>Where   $\omega_n=\frac {2n\pi} {\beta\hbar}$   for boson and   $\omega_n=\frac {(2n+1)\pi} {\beta\hbar}$   for fermion. The reason why here we use the factor   $1/\beta\hbar$   is the same as the discussion for real-time Green&rsquo;s function above.</p>
 <p>And the inverse transform:</p>
 <p>$$\tilde{\mathcal{G}}(\alpha,\alpha';\ti\omega_n)=\int_0^{\beta\hbar}\td \tau \ \mathcal{G}(\alpha,\alpha';\tau) e^{\ti\omega_n\tau}$$</p>
-<p>Similarly, for the simplicity, in the following we ignore the tilde and just recognize  $\mathcal{G}$  and its Fourier series by arguments.</p>
+<p>Similarly, for the simplicity, in the following we ignore the tilde and just recognize   $\mathcal{G}$   and its Fourier series by arguments.</p>
 <p><em>[Theorem]</em> : The thermal Green&rsquo;s function can be related to the spectral function( in equilibrium ):</p>
 <p>$$\mathcal{G}(\bm{k},\ti\omega_n)=\int \frac {\td\omega'} {2\pi} \frac {A(\bm{k},\omega')} {\ti\omega_n-\omega'}$$</p>
 <details>
@@ -968,9 +1175,9 @@ q.e.d.
 <h2 id="evaluation-of-expectation-values-of-observables">Evaluation of Expectation Values of Observables</h2>
 <p>Green&rsquo;s function contains sufficient information to evaluate the expectation values of observables. Here, we show some formula about the application of Green&rsquo;s function: to derive some expectation values of observables. We will use the one-particle Green&rsquo;s function in coordinate representation:</p>
 <p>$$\ti G(\bm{r},t;\bm{r'},t'):=\Big\langle \mathcal{T}\big\{\hat \psi(\bm{r},t) \hat \psi(\bm{r'},t')^\dagger\big\}\Big\rangle$$</p>
-<p>Where  $\hat \psi(\bm{r},t), \hat \psi(\bm{r},t)^\dagger$  are field operators of particle in Heisenberg picture, they are actually the annihilation/creation operator in coordinate basis:</p>
+<p>Where   $\hat \psi(\bm{r},t), \hat \psi(\bm{r},t)^\dagger$   are field operators of particle in Heisenberg picture, they are actually the annihilation/creation operator in coordinate basis:</p>
 <p>$$\hat \psi(\bm{r},t)^\dagger \equiv \hat \psi^\dagger(\bm{r},t) = \sum_{\alpha} \bra{\bm{r}}\alpha \rangle \hat a_{\alpha}^\dagger (t) $$</p>
-<p>Where  $\ket{\alpha}$  is a set of complete single-particle states.</p>
+<p>Where   $\ket{\alpha}$   is a set of complete single-particle states.</p>
 <p>When the system has the spatial-time translation invariance, this Green&rsquo;s function should just be the function of displacement and time interval. So it should has a Fourier transformation form:</p>
 <p>$$G(\bm{r},t;\bm{r'},t')=\int \frac {\td^3 \bm{k}\td \omega} {(2\pi)^{4}} e^{\ti \bm{k}\cdot (\bm{r}-\bm{r'})-\ti \omega(t-t')}\tilde {G}(\bm{k},\omega)$$</p>
 <ol>
@@ -992,7 +1199,7 @@ q.e.d.
     </summary>
     
 
-The equality aboult  $\langle \hat T\rangle$  and  $G(\bm{r},t;\bm{r'},t')$  is simple. We just check the last equality here:
+The equality aboult   $\langle \hat T\rangle$   and   $G(\bm{r},t;\bm{r'},t')$   is simple. We just check the last equality here:
 
 
 $$\begin{aligned}
@@ -1002,7 +1209,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Where  $V=\int \td^3 \bm{r}$  is the volume of the system.
+Where   $V=\int \td^3 \bm{r}$   is the volume of the system.
 
     
 </details>
@@ -1018,7 +1225,7 @@ Where  $V=\int \td^3 \bm{r}$  is the volume of the system.
 <pre><code>If the system can be described with the following Hamiltonian:
 </code></pre>
 <p>$$\hat H= \hat T+\hat V$$</p>
-<pre><code>Where  $\hat T$  is the kinetic energy defined above. Then we have its expectation value with Green's function as:
+<pre><code>Where   $\hat T$   is the kinetic energy defined above. Then we have its expectation value with Green's function as:
 </code></pre>
 <p>$$\langle \hat V\rangle = \frac {\ti \zeta} {2} \int \td^3 \bm{r} \Big[\Big(\ti\hbar \frac {\partial } {\partial t}+\frac {\hbar^2} {2m}\nabla_{\bm{r}}^2\Big)G(\bm{r},t;\bm{r'},t=t+\epsilon)\Big]_{\bm{r}=\bm{r'},\epsilon\rightarrow 0^+}$$</p>
 <pre><code>Similarly, for system with spatial-time translation symmetry:
@@ -1053,7 +1260,7 @@ $$\begin{aligned}[]
 \end{aligned}$$
 
 
-With the anticommutation relationship and the fact that  $v(\bm{r})=v(-\bm{r})$  , finally we have:
+With the anticommutation relationship and the fact that   $v(\bm{r})=v(-\bm{r})$   , finally we have:
 
 
 $$\ti \hbar \frac {\partial} {\partial t} \hat \psi(\bm{r},t) = -\frac {\hbar^2} {2m}\nabla^2 \hat \psi(\bm{r},t)+\int \td^3 \bm{r'} \ v(\bm{r}-\bm{r'})\hat \psi^\dagger(\bm{r'},t)\hat \psi(\bm{r'},t)\hat \psi(\bm{r},t)$$
@@ -1349,7 +1556,7 @@ The formula for system with spatial-time translation symmetry can be also checke
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

@@ -535,11 +535,193 @@ autocomplete('#aa-search-input',
 
 
 
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
 <h1 id="quantization-of-dirac-field">Quantization of Dirac Field</h1>
 <h2 id="canonical-quantization-of-dirac-spinor-field">Canonical Quantization of Dirac Spinor Field</h2>
 <p>The Hamiltonian of Dirac Spinor Field is:</p>
 <p>$$H = \int \td^3 \bm{x} \Big\{-\sum_{i=1}^3 \ti \bar{\psi}\gamma^i \partial_i \psi + m \bar{\psi}\psi \Big\}$$</p>
-<p>Where the  $\psi$  should be a 4-component-Dirac-spinor. And the <code>canonical momentum</code> is  $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$  . Then with the <code>anti-commutation relationship</code> we need:</p>
+<p>Where the   $\psi$   should be a 4-component-Dirac-spinor. And the <code>canonical momentum</code> is   $\pi=\ti \bar{\psi}\gamma^0=\ti\psi^\dagger$   . Then with the <code>anti-commutation relationship</code> we need:</p>
 <p>$$\{\pi_\alpha (\bm{x}),\pi_\beta(\bm{x}')\}=\{\psi_\alpha(\bm{x}),\psi_\beta(\bm{x}')\}=0 \ ; \ \{\psi_\alpha(\bm{x}),\pi_\beta(\bm{x}')\}=\ti \delta_{\alpha\beta}\delta^3(\bm{x}-\bm{x}')$$</p>
 <p>Which means that:</p>
 <p>$$\begin{aligned}[]
@@ -548,10 +730,10 @@ autocomplete('#aa-search-input',
 \end{aligned}$$</p>
 <p>One can rewrite them into the plane wave expansion. In Schrodinger Picture:</p>
 <p>$$\psi(\bm{x})=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{\ti \bm{k}\cdot \bm{x}} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{-\ti \bm{k}\cdot \bm{x}} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$</p>
-<p>Where  $a,b$  are operators, and  $\omega_{|\bm{k}|}=\sqrt{m^2+|\bm{k}|^2}$  . Spinors:</p>
+<p>Where      $a,b$  ,   are operators, and   $\omega_{|\bm{k}|}=\sqrt{m^2+|\bm{k}|^2}$   . Spinors:</p>
 <p>$$u^{(s)}(\bm{k})=\frac {m+k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \chi^{(s)} \\ \chi^{(s)}\end{bmatrix} \ ; \ v^{(s)}(\bm{k})=\frac {m-k_{\mu}\gamma^\mu} {\sqrt{2m(m+\omega_{|\bm{k}|})}} \begin{bmatrix} \xi^{(s)} \\ -\xi^{(s)}\end{bmatrix}$$</p>
-<p>With the 2-component quantities  $\chi,\xi$  satisfy  $\chi^{(r)\dagger}\chi^{(s)}=\xi^{(r)\dagger}\xi^{(s)}=\delta_r^s m$  .</p>
-<p>We can write the inverse transform, which will represent  $a,b$  by  $\psi,\psi^\dagger$  :</p>
+<p>With the 2-component quantities    $\chi,\xi$    satisfy   $\chi^{(r)\dagger}\chi^{(s)}=\xi^{(r)\dagger}\xi^{(s)}=\delta_r^s m$   .</p>
+<p>We can write the inverse transform, which will represent      $a,b$  ,   by   $\psi,\psi^\dagger$   :</p>
 <p>$$\begin{aligned}
 a(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti \bm{k}\cdot \bm{x}} u^{(s)\dagger}(\bm{k}) \psi(\bm{x}) \\
 b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2\pi)^{3/2}} e^{-\ti\bm{k}\cdot \bm{x}}\psi (\bm{x})^\dagger v^{(s)}(\bm{k})
@@ -569,7 +751,7 @@ b(\bm{k},s)&= \frac 1 {\sqrt{2\omega_{|\bm{k}|}}}  \int \frac {\td^3 \bm{x}} {(2
     </summary>
     
 
-Using the 3-d delta function:  $\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot (\bm{x}-\bm{y})}$ , we have:
+Using the 3-d delta function:   $\delta^3(\bm{x}-\bm{y})=\int \frac {\td^3 \bm{k}} {(2\pi)^3} e^{\ti \bm{k}\cdot (\bm{x}-\bm{y})}$ ,, we have:
 
 
 $$\begin{aligned}
@@ -578,7 +760,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-With the orthogonal property of  $u,v$ :
+With the orthogonal property of      $u,v$    ::
 
 
 $$\begin{aligned}
@@ -587,13 +769,13 @@ v^{(s')\dagger}(\bm{k})v^{(s)}(\bm{k})&=\bar{v}^{(s')}(\bm{k})\gamma^0 v^{(s)}(\
 \end{aligned}$$
 
 
-And using that  $(m+k_\mu \gamma^\mu)^{\dagger}=(m+(k^0,-\bm{k})\cdot \gamma)$  and  $(m+k_\mu \gamma^\mu)(m-k_\mu \gamma^\mu)=0$  , one can prove that:
+And using that   $(m+k_\mu \gamma^\mu)^{\dagger}=(m+(k^0,-\bm{k})\cdot \gamma)$   and   $(m+k_\mu \gamma^\mu)(m-k_\mu \gamma^\mu)=0$   , one can prove that:
 
 
 $$u^{(s')\dagger}(\bm{k})v^{(s)}(-\bm{k})=0$$
 
 
-Then noting that  $\gamma$  matrices and spinors  are commutable to operators  $a,b$ , we can write down:
+Then noting that   $\gamma$   matrices and spinors  are commutable to operators      $a,b$  ,  , we can write down:
 
 
 $$\begin{aligned}
@@ -622,7 +804,7 @@ $$\begin{aligned}[]
 \end{aligned}$$
 
 
-Similarly, we can prove that:  $\{b(\bm{k},s),b(\bm{k}',s')\}=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')$  . And:
+Similarly, we can prove that:   $\{b(\bm{k},s),b(\bm{k}',s')\}=\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')$   . And:
 
 
 $$\begin{aligned}[]
@@ -640,7 +822,7 @@ q.e.d.
 
 <p>With this result and the hold-order discussion in Classical theory, we can write the Hamiltonian as:</p>
 <p>$$\hat H = \sum_s \int \td^3 \bm{k} \ \omega_{|\bm{k}|} \Big[a(\bm{k},s)^\dagger a(\bm{k},s) + b(\bm{k},s)^\dagger b(\bm{k},s) \Big]$$</p>
-<p>There is also a  $\infty$  quantity at the right-hand-side. But like what in Klein-Gordon Field, we ignore it.</p>
+<p>There is also a    $\infty$    quantity at the right-hand-side. But like what in Klein-Gordon Field, we ignore it.</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Result with usual commutation relationship
@@ -656,16 +838,16 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Even we ignore the  $\infty$  quantity, the Hamiltonian still has no lower bound, which is caused by the `negative-energy` electrons.
+Even we ignore the    $\infty$    quantity, the Hamiltonian still has no lower bound, which is caused by the `negative-energy` electrons.
 
-The anti-commutation relationship will let Hamiltonian has a lower bound. In original Dirac theory, the vacuum is defined as the state of all negative energy levels are occupied by negative-energy electrons, the anti-particle is treated as the hole in negative-energy electrons sea. Here  $b^\dagger$  will generate an anti-electron automatically.
+The anti-commutation relationship will let Hamiltonian has a lower bound. In original Dirac theory, the vacuum is defined as the state of all negative energy levels are occupied by negative-energy electrons, the anti-particle is treated as the hole in negative-energy electrons sea. Here   $b^\dagger$   will generate an anti-electron automatically.
 
 
 </details>
 
 <p>And one can also write the <code>conserved charge</code> of Dirac Field:</p>
 <p>$$\hat Q =\sum_{s=1,2}\int \td^3 \bm{k} \Big(a(\bm{k},s)^\dagger a(\bm{k},s)-b(\bm{k},s)^\dagger b(\bm{k},s)\Big) $$</p>
-<p>Which shows that the particles created by  $a,b$  have <code>different charge</code>.</p>
+<p>Which shows that the particles created by      $a,b$  ,   have <code>different charge</code>.</p>
 <p>One can also write these operators in <code>Heisenberg Picture</code> :</p>
 <p>$$\begin{aligned}
 \psi(x)&=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)\\
@@ -689,7 +871,7 @@ And:
 $$a_H(\bm{k})=e^{\ti t \hat H} a(\bm{k})e^{-\ti t \hat H} = e^{-\ti \omega_{|\bm{k}|}t} a(\bm{k})$$
 
 
-same for  $b$  . Then:
+same for      $b$   .  . Then:
 
 
 $$\psi(x)=e^{\ti t \hat H} \psi(\bm{x})e^{-\ti t \hat H}=\int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \sqrt{\frac 1 {2\omega_{|\bm{k}|}}} \sum_{s=1,2}\Big(e^{-\ti k\cdot x} u^{(s)}(\bm{k}) a(\bm{k},s)+e^{\ti k\cdot x} v^{(s)}(\bm{k}) b(\bm{k},s)^\dagger \Big)$$
@@ -699,7 +881,7 @@ $$\psi(x)=e^{\ti t \hat H} \psi(\bm{x})e^{-\ti t \hat H}=\int \frac {\td^3 \bm{k
 </details>
 
 <h2 id="hilbert-space-of-dirac-spinor-field">Hilbert Space of Dirac Spinor Field</h2>
-<p><em>[Definition]</em> : <code>vacuum of the Dirac Field</code> is the ground state of it. Denoting it as  $\ket{0}$  , we will find:</p>
+<p><em>[Definition]</em> : <code>vacuum of the Dirac Field</code> is the ground state of it. Denoting it as   $\ket{0}$   , we will find:</p>
 <p>$$a(\bm{k},s)\ket{0}=b(\bm{k},s)\ket{0}=0 \ ; \ \forall \bm{k},s$$</p>
 <p><em>[Definition]</em> : <code>1-particle</code> state is defined as:</p>
 <p>$$\ket{\bm{k},s,\text{Fermion}} = \sqrt{2\omega_{|\bm{k}|}} a(\bm{k},s)^\dagger \ket{0}$$</p>
@@ -707,31 +889,31 @@ $$\psi(x)=e^{\ti t \hat H} \psi(\bm{x})e^{-\ti t \hat H}=\int \frac {\td^3 \bm{k
 <p>$$\ket{\bm{k},s,\text{anti-Fermion}} = \sqrt{2\omega_{|\bm{k}|}} b(\bm{k},s)^\dagger \ket{0}$$</p>
 <p>With this definition, we can prove(like what we did for Scalar field):</p>
 <p>$$\bra{\Lambda_{\bm{k}\rightarrow \bm{0}}\bm{k},s}\Lambda_{\bm{k}\rightarrow \bm{0}} \bm{k}',s'\rangle = \bra{\bm{k},s}\bm{k}',s'\rangle=2\omega_{|\bm{k}|}\delta^{s,s'}\delta^3(\bm{k}-\bm{k}')$$</p>
-<p>Where  $\Lambda_{\bm{k}\rightarrow 0}k=(m,0,0,0)$  only contains the boost. The behavior of spin under spatial-rotation will be discussed in following.</p>
+<p>Where   $\Lambda_{\bm{k}\rightarrow 0}k=(m,0,0,0)$   only contains the boost. The behavior of spin under spatial-rotation will be discussed in following.</p>
 <p>And the <code>complete relation</code> in <code>1-(anti-)particle</code> subspace is also:</p>
 <p>$$1_{\text{one-(anti-)particle}} = \sum_{s=1,2} \int \frac {\td^3 \bm{k}} {2\omega_{|\bm{k}|}} \ket{\bm{k},s,(\text{anti})}\bra{\bm{k},s,(\text{anti})}$$</p>
 <p>Also has the covariant integral measure:</p>
 <p>$$\int \frac {\td^3 \bm{p}} {2\omega_{|\bm{p}|}} = \int \td^4 p \delta(p_\mu p^\mu -m^2) \Theta(p^0)$$</p>
-<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>)  $x\rightarrow x'=\Lambda(\omega) x$  , the corresponding operator on Hilbert space is  $U(\Lambda(\omega))$  , then we have:</p>
+<p><em>[Definition]</em> : Consider the coordinate transformation(<code>special Lorentz Transformation</code>)   $x\rightarrow x'=\Lambda(\omega) x$   , the corresponding operator on Hilbert space is   $U(\Lambda(\omega))$   , then we have:</p>
 <p>$$U(\Lambda(\omega))\ket{\bm{k},s}=\ket{\Lambda(\omega) \bm{k},s}$$</p>
-<p>The vacuum is unique  $U(\Lambda)\ket{0}=\ket{0}$  . Then:</p>
+<p>The vacuum is unique   $U(\Lambda)\ket{0}=\ket{0}$   . Then:</p>
 <p>$$U(\Lambda(\omega)) a(\bm{k},s)^\dagger U(\Lambda(\omega))^{-1} = \sqrt {\frac {\omega_{|\bm{\Lambda(\omega)\bm{k}}|}} {\omega_{|\bm{k}|}} } a(\Lambda(\omega)\bm{k},s)^\dagger$$</p>
-<p>same for anti-Fermion operator  $b$ . Then one can check that the field operator will be:</p>
+<p>same for anti-Fermion operator      $b$   . . Then one can check that the field operator will be:</p>
 <p>$$\psi'(x'=\Lambda(\omega)x) \equiv U(\Lambda(\omega))\psi(x)U(\Lambda(\omega))^{-1}=\Lambda_{1/2}(\omega)^{-1} \psi(x'=\Lambda(\omega)x)$$</p>
-<p>Where  $\Lambda_{1/2}(\omega)=\exp(-\frac \ti 4 \sum_{\mu\nu}\sigma_{\mu\nu}\omega_{\mu\nu})=\exp(-\ti\omega_{\mu\nu}S^{\mu\nu}/2)$  .</p>
+<p>Where   $\Lambda_{1/2}(\omega)=\exp(-\frac \ti 4 \sum_{\mu\nu}\sigma_{\mu\nu}\omega_{\mu\nu})=\exp(-\ti\omega_{\mu\nu}S^{\mu\nu}/2)$   .</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof
     </summary>
     
 
-The proof is similar to what we did for Klein-Gordon Field. Just noting that the property of  $u,v$  :
+The proof is similar to what we did for Klein-Gordon Field. Just noting that the property of      $u,v$    : :
 
 
 $$u^{(s)}(\bm{k})=\Lambda_{\bm{0}\rightarrow \bm{k}}\Lambda_{\bm{k}'\rightarrow \bm{0}} u^{(s)}(\bm{k}')=\Lambda_{\bm{k}'\rightarrow \bm{k}}u^{(s)}(\bm{k}')$$
 
 
-Same for  $v$  . Where  $\Lambda_{\bm{k}'\rightarrow \bm{k}}=\Lambda_{1/2}(\omega)$  with the  $\omega$  that satisfies  $\Lambda(\omega)\bm{k}'=\bm{k}$  .
+Same for   $v$   . Where   $\Lambda_{\bm{k}'\rightarrow \bm{k}}=\Lambda_{1/2}(\omega)$   with the   $\omega$   that satisfies   $\Lambda(\omega)\bm{k}'=\bm{k}$   .
 
 Then:
 
@@ -742,7 +924,7 @@ U(\Lambda)\psi(x)U(\Lambda)^{-1} &= \int \frac {\td^3 \bm{k}} {(2\pi)^{3/2}} \fr
 \end{aligned}$$
 
 
-Then similarly using that  $k_\mu x^\mu=(\Lambda k)_\mu (\Lambda x)^\mu$  and the covariant integral measure, we have:
+Then similarly using that   $k_\mu x^\mu=(\Lambda k)_\mu (\Lambda x)^\mu$   and the covariant integral measure, we have:
 
 
 $$U(\Lambda)\psi(x)U(\Lambda)^{-1}=\Lambda_{1/2}(\omega)^{-1}\psi(\Lambda x)$$
@@ -753,7 +935,7 @@ $$U(\Lambda)\psi(x)U(\Lambda)^{-1}=\Lambda_{1/2}(\omega)^{-1}\psi(\Lambda x)$$
 
 <h2 id="causality-of-dirac-field">Causality of Dirac Field</h2>
 <p>Our quantization will not violent to the causality demanded by special Relativistic Theory. That is to say:</p>
-<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points  $x,y$  with spacelike interval:  $|x-y|^2\lt 0$ . Then the field operators are commutable:</p>
+<p><em>[Theorem]</em> : In Heisenberg Picture, for any two points   $x,y$   with spacelike interval:     $\|x-y\|^2\lt 0$ , .. Then the field operators are commutable:</p>
 <p>$$\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0 \ ; \ \|x-y\|^2\lt 0$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -773,7 +955,7 @@ And the anti-commutation relation:
 $$\{a(\bm{k},s),a(\bm{k}',s')^\dagger\}=\delta^{s,s'}\delta^3 (\bm{k}-\bm{k}')$$
 
 
-Same for  $b$  , and vanish for all of other types. Then we have:
+Same for      $b$   .  , and vanish for all of other types. Then we have:
 
 
 $$\{\psi_\alpha(x),\psi_\beta(y)^\dagger\} = \int \frac {\td^3 \bm{k}} {(2\pi)^3} \frac 1 {2\omega_{|\bm{k}|}} \sum_{s=1,2} \Big(e^{-\ti k\cdot (x-y)} u^{(s)}_\alpha(\bm{k})u^{(s)}_\beta(\bm{k})^* + e^{\ti k\cdot (x-y)} v^{(s)}_\alpha(\bm{k})v^{(s)}_\beta(\bm{k})^* \Big)$$
@@ -788,7 +970,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Then with that  $\bar x = x^\dagger \gamma^0$  , we have:
+Then with that   $\bar x = x^\dagger \gamma^0$   , we have:
 
 
 $$\begin{aligned}
@@ -807,13 +989,14 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-Where  $\partial_{x,\mu}=\frac {\partial} {\partial x^\mu}$  , and
+Where   $\partial_{x,\mu}=\frac {\partial} {\partial x^\mu}$   , and
 
 
 $$D(x)=\int \td^4 k \ \delta(k_\mu k^\mu-m^2)\Theta(k^0) e^{-\ti k_\mu x^\mu}$$
 
 
-Is invariant under Lorentz transform. And we have proved that when  $\|x-y\|^2\lt 0$  , we have  $D(x-y)=D(y-x)$  in the discussion of causality of Scalar field. Then we proved when  $\|x-y\|^2\lt 0$ ,  $\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0$ 
+Is invariant under Lorentz transform. And we have proved that when    $\|x-y\|^2\lt 0$ ,  , we have   $D(x-y)=D(y-x)$   in the discussion of causality of Scalar field. Then we proved when    $\|x-y\|^2\lt 0$ , ,   $\{\psi_\alpha(x),\psi_\beta(y)^\dagger\}=0$ 
+
 
 q.e.d.
 
@@ -880,12 +1063,12 @@ $$\ti \Delta_F(x-y) = \int \frac {\td^4 p} {(2\pi)^4} \frac {\ti} {\gamma^\mu p_
 <h2 id="spatial-inversion">Spatial Inversion</h2>
 <p>We hope the <code>spatial inversion</code> induces a unitary operator so as to:</p>
 <p>$$U_P \psi(x^0,\bm{x}) U_P^{-1} = A_P \psi(x^0,\bm{x})$$</p>
-<p>Where  $A_P$  is a unitary matrix in Dirac-Spinor space. This is a little different to what for Scalar field. And  $U_P\ket{0}=\ket{0}$  .</p>
+<p>Where   $A_P$   is a unitary matrix in Dirac-Spinor space. This is a little different to what for Scalar field. And   $U_P\ket{0}=\ket{0}$   .</p>
 <p>For creation operators, we demand the unitary operator of spatial inversion will cause the direction-inverse of momentum:</p>
 <p>$$U_P a(\bm{k},s) U_P^{-1} = \eta_a a(-\bm{k},s)\ ; \ U_P b(\bm{k},s) U_P^{-1} = \eta_b b(-\bm{k},s)$$</p>
-<p>Where  $\eta_a,\eta_b$  are c-numbers. If we demand all observables(even number of fermionic operators' product) invariant under two spatial inversion:</p>
+<p>Where   $\eta_a,\eta_b$   are c-numbers. If we demand all observables(even number of fermionic operators' product) invariant under two spatial inversion:</p>
 <p>$$\eta_a^2=\pm 1\ ; \ \eta_b^2 =\pm1$$</p>
-<p>In early discussion, we know that under parity-transformation, Weyl spinor will change the chirality. That means  $A_P\propto \gamma^0$  . That means we should let  $\eta_b^*=-\eta_a$  . And:</p>
+<p>In early discussion, we know that under parity-transformation, Weyl spinor will change the chirality. That means   $A_P\propto \gamma^0$   . That means we should let   $\eta_b^*=-\eta_a$   . And:</p>
 <p>$$\begin{aligned}
 U_P \psi(x^0,\bm{x}) U_P^{-1} &= \eta_a \gamma^0 \psi(x^0,-\bm{x})\\
 U_P \bar \psi(x^0,\bm{x}) U_P^{-1} &= \eta_a^* \psi(x^0,-\bm{x})\gamma^0
@@ -893,7 +1076,7 @@ U_P \bar \psi(x^0,\bm{x}) U_P^{-1} &= \eta_a^* \psi(x^0,-\bm{x})\gamma^0
 <h2 id="charge-conjugation">Charge Conjugation</h2>
 <p>We hope the <code>charge conjugation</code> induces a unitary operator which can exchange the fermion and anti-fermion:</p>
 <p>$$U_C a(\bm{k},s)U_C^{-1} = b(\bm{k},s) \ ; \ U_C b(\bm{k},s)U_C^{-1} = a(\bm{k},s)$$</p>
-<p>With the convention of  $\chi,\xi$  :  $\xi^{(s)}=(-\ti\sigma^2) (\chi^{(s)})^*$  , we can prove that:</p>
+<p>With the convention of    $\chi,\xi$    :   $\xi^{(s)}=(-\ti\sigma^2) (\chi^{(s)})^*$   , we can prove that:</p>
 <p>$$\begin{aligned}
 U_C \psi U_C^{-1} &= -\ti (\bar{\psi}\gamma^0\gamma^2)^T \\
 U_C \bar{\psi} U_C^{-1} &= (-\ti \gamma^0 \gamma^2 \psi)^T
@@ -904,7 +1087,7 @@ U_C \bar{\psi} U_C^{-1} &= (-\ti \gamma^0 \gamma^2 \psi)^T
     </summary>
     
 
-With the property of  $u,v$  :
+With the property of      $u,v$    : :
 
 
 $$u^{(s)}(\bm{k})=-\ti \gamma^2\Big(v^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(s)}(\bm{k})=-\ti \gamma^2 \Big(u^{(s)}(\bm{k}) \Big)^*$$
@@ -928,9 +1111,9 @@ Another equality's proof is similar.
 </details>
 
 <h2 id="time-reversal">Time Reversal</h2>
-<p>ime reversal will induce an anti-unitary operator. With conjugation operator  $K$  we can write it as  $U_T K$  , where  $U_T$  is a unitary operator. We hope the <code>time reversal</code> will inverse the spin and momentum. Where the spin-inversion should be  $x^{(\bar s)}=-\ti \sigma^2 (x^{(s)})^*$  . Then we demand:</p>
+<p>ime reversal will induce an anti-unitary operator. With conjugation operator    $K$    we can write it as   $U_T K$   , where   $U_T$   is a unitary operator. We hope the <code>time reversal</code> will inverse the spin and momentum. Where the spin-inversion should be   $x^{(\bar s)}=-\ti \sigma^2 (x^{(s)})^*$   . Then we demand:</p>
 <p>$$U_T K a(\bm{k},s) (U_T K)^{-1} = a(-\bm{k},\bar{s}) \ ; \ U_T K b(\bm{k},s) (U_T K)^{-1} = b(-\bm{k},\bar{s})$$</p>
-<p>Where  $a(\bm{k},\bar 1)=a(\bm{k},2)\ ; \ a(\bm{k},\bar 2)=-a(\bm{k},1)$  , same for  $b$  .</p>
+<p>Where   $a(\bm{k},\bar 1)=a(\bm{k},2)\ ; \ a(\bm{k},\bar 2)=-a(\bm{k},1)$   , same for      $b$   .  .</p>
 <p>Then we can prove that:</p>
 <p>$$\begin{aligned}
 U_T K \psi(x^0,\bm{x}) (U_T K)^{-1} &= \gamma^1\gamma^3 \psi(-x^0,\bm{x}) \\
@@ -942,7 +1125,7 @@ U_T K \bar \psi(x^0,\bm{x}) (U_T K)^{-1} &=  \bar \psi(-x^0,\bm{x}) \gamma^1\gam
     </summary>
     
 
-With the property of  $u,v$  :
+With the property of      $u,v$    : :
 
 
 $$u^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(u^{(s)}(\bm{k}) \Big)^* \ ; \ v^{(\bar s)}(-\bm{k})=-\gamma^1\gamma^3 \Big(v^{(s)}(\bm{k}) \Big)^*$$
@@ -960,13 +1143,13 @@ U_T K \psi(x^0,\bm{x}) (U_T K)^{-1} &=\sum_s\int \frac {\td^3 \bm{k}} {(2\pi)^{3
 \end{aligned}$$
 
 
-Noting that conjugation operator  $K$  is not commutative with complex number:
+Noting that conjugation operator    $K$    is not commutative with complex number:
 
 
 $$K c = c^* K$$
 
 
-The proof for  $\bar \psi$  is similar.
+The proof for   $\bar \psi$   is similar.
 
 
 </details>
@@ -1330,7 +1513,7 @@ The proof for  $\bar \psi$  is similar.
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2021 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 
