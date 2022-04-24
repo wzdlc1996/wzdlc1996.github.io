@@ -397,23 +397,23 @@ autocomplete('#aa-search-input',
 <ol>
 <li>
 <p>Edit <code>/etc/pulse/default.pa</code> to close the default Bluetooth discover of pulse.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">nano /etc/pulse/default.pa
-
-<span class="c1"># load-module module-bluetooth-discover</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nano /etc/pulse/default.pa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># load-module module-bluetooth-discover</span>
+</span></span></code></pre></div></li>
 <li>
 <p>Edit <code>/usr/bin/start-pulseaudio-x11</code> to open bluetooth discover by <code>pactl</code> . It should be:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">nano /usr/bin/start-pulseaudio-x11
-<span class="k">if</span>
-...
-    <span class="k">if</span> <span class="o">[</span> x”<span class="nv">$SESSION_MANAGER</span>” !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-    /usr/bin/pactl load-module module-x11-xsmp “display<span class="o">=</span><span class="nv">$DISPLAY</span> <span class="nv">session_manager</span><span class="o">=</span><span class="nv">$SESSION_MANAGER</span>” &gt; /dev/null
-    <span class="k">fi</span>
-
- <span class="c1">#Insert this line#</span>
- /usr/bin/pactl load-module module-bluetooth-discover
- <span class="k">fi</span>
-</code></pre></div><p>Usually this block of code is at the last line.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nano /usr/bin/start-pulseaudio-x11
+</span></span><span class="line"><span class="cl"><span class="k">if</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> x”<span class="nv">$SESSION_MANAGER</span>” !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/pactl load-module module-x11-xsmp “display<span class="o">=</span><span class="nv">$DISPLAY</span> <span class="nv">session_manager</span><span class="o">=</span><span class="nv">$SESSION_MANAGER</span>” &gt; /dev/null
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="c1">#Insert this line#</span>
+</span></span><span class="line"><span class="cl"> /usr/bin/pactl load-module module-bluetooth-discover
+</span></span><span class="line"><span class="cl"> <span class="k">fi</span>
+</span></span></code></pre></div><p>Usually this block of code is at the last line.</p>
 </li>
 </ol>
 <p>This solution is from:</p>

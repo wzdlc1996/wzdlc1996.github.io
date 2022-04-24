@@ -581,7 +581,7 @@ $$</p>
  , </p>
 <p>Other proofs by contradiction are mainly the variation of the procedure to construct contradiction by        $p^2 = 2q^2$  ,.  .. We list some of the beautiful proofs below.</p>
 <h2 id="the-number-of-even-factors">The number of even factors</h2>
-<p>This is another way to make a contradiction by        $p^2 = 2q^2$  ,.  . by <a href="https://www.zhihu.com/question/61798983">zhihu@BAJIN</a>. Consider the factorization of          $p, q$ . . , , , there should be integer even factors in both of them. Thus the numbers of even factors in   $p^2, q^2$   are both even. However, there are odd number of even factor in   $2q^2$   since the extra factor   $2$ .. Thus the number of even factors in the two sides of equality        $p^2 = 2q^2$  ,.  . would be ``even = odd''. That makes a contradiction.</p>
+<p>This is another way to make a contradiction by        $p^2 = 2q^2$  ,.  . by <a href="https://www.zhihu.com/question/61798983">zhihu@BAJIN</a>. Consider the factorization of          $p, q$ . . , , , there should be integer even factors in both of them. Thus the numbers of even factors in   $p^2, q^2$   are both even. However, there are odd number of even factor in   $2q^2$   since the extra factor   $2$ .. Thus the number of even factors in the two sides of equality        $p^2 = 2q^2$  ,.  . would be ``even = odd&rsquo;&rsquo;. That makes a contradiction.</p>
 <h2 id="with-the-area-of-squares">With the area of squares</h2>
 <p>This is another simple and elegant way to make contradiction for        $p^2 = 2q^2$  ,.  .. This method is found in (<a href="https://www.zhihu.com/question/61798983">zhihu@楚若儿</a>, <a href="https://blog.csdn.net/matrix67/article/details/4780419?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.pc_relevant_paycolumn_v3&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=3">CSDN@matrix67</a>).</p>
 <div class="flex-center w-100 mainTextImg" style="text-align: center">
@@ -613,12 +613,12 @@ $$</p>
     </summary>
 <p>This lemma is based on that there are only two types of numbers: rational and irrational. It is true for real numbers. To prove this lemma, we need only to prove that finite continued fraction and rational number are equivalent. From finite to rational is trivial. Now we consider the inverse one.</p>
 <p>Now we consider the <strong>simple form</strong>, which means   $b_1 =\cdots = 1$ .. Note that convert to simple form would not change the finiteness of continued fraction. Note that such representation is unique for real numbers since the generation is</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Input: number `x`</span>
-<span class="c1"># Output: simple continued fraction `[a_0, a_1, ...]`</span>
-<span class="k">def</span> <span class="nf">GenerateSimpleContinuedFraction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">GenerateSimpleContinuedFraction</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">)))</span>
-</code></pre></div><p>Then we can immediately find that this iteration would terminate if   $x$   is a rational number as   $p/q$ .. Because the procedure is actually the <strong>Euclidean algorithm(辗转相除法)</strong> to find the greatest common divisor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Input: number `x`</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Output: simple continued fraction `[a_0, a_1, ...]`</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">GenerateSimpleContinuedFraction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">GenerateSimpleContinuedFraction</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">)))</span>
+</span></span></code></pre></div><p>Then we can immediately find that this iteration would terminate if   $x$   is a rational number as   $p/q$ .. Because the procedure is actually the <strong>Euclidean algorithm(辗转相除法)</strong> to find the greatest common divisor.</p>
 <p>The detailed proof of uniqueness of simple continued fraction can be seen in (<a href="https://proofwiki.org/wiki/Irrational_Number_is_Limit_of_Unique_Simple_Infinite_Continued_Fraction">proofwiki/Irrational_Number_is_Limit_of_Unique_Simple_Infinite_Continued_Fraction</a>)</p>
 </details>
 <p>Then for          $\sqrt{2}$    ,
@@ -689,10 +689,10 @@ $$</p>
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://wzdlc1996.github.io/artic/physics/timeinqm/ class="post-meta">Previous
+                <a href=https://wzdlc1996.github.io/artic/physics/mlinqphy/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>Time in Quantum Mechanics</span>
+                    <span>Machine Learning in Quantum Mechanics, Up to 2021</span>
                   </div>
                 </a>
               

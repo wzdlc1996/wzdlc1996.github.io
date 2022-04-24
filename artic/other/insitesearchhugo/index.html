@@ -427,124 +427,124 @@ autocomplete('#aa-search-input',
 </blockquote>
 <p>And it supports YAML, JSON, and TOML front matter.</p>
 <p>The installation is easy to do with <code>npm</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">npm install hugo-algolia
-</code></pre></div><p>remember to let it executable with <code>chmod +x</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install hugo-algolia
+</span></span></code></pre></div><p>remember to let it executable with <code>chmod +x</code></p>
 <p>And one can simply use it with TOML front file to generate the JSON file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo-algolia --config ./config.toml
-</code></pre></div><p>It will generate a JSON file in the   $hugoroot/public` folder, in which all posts in $ hhugoroot/content</code> will be listed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo-algolia --config ./config.toml
+</span></span></code></pre></div><p>It will generate a JSON file in the   $hugoroot/public` folder, in which all posts in $ hhugoroot/content</code> will be listed.</p>
 <p>One can also use the <code>-s</code> flag to send them to Algolia. However this tool can not read the <code>appID</code> and <code>key</code> in <code>TOML</code> file, we can make some hack on it. A temporal adjustment is edit the file $node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js<code>, rewrite the function </code>HugoAlgolia.prototype.setCredentials` :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">//$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js
-</span><span class="c1"></span>
-<span class="nx">HugoAlgolia</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setCredentials</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="cm">/*
-</span><span class="cm">   Original code, one can find that it called the module &#34;matter&#34; to handle the
-</span><span class="cm">   YAML file. Now YAML can handle the TOML too with the same usage, but the
-</span><span class="cm">   author of hugo-algolia has not correct it yet.
-</span><span class="cm">
-</span><span class="cm">   const configMeta = matter.read(self.pathToCredentials);
-</span><span class="cm">   const creds = configMeta.data.algolia;
-</span><span class="cm">
-</span><span class="cm">   if (creds) {
-</span><span class="cm">     self.algoliaCredentials = {
-</span><span class="cm">       indexName: creds.index,
-</span><span class="cm">       key: write_key &amp;&amp; write_key !== undefined ? write_key : creds.key,
-</span><span class="cm">       appID: creds.appID
-</span><span class="cm">     };
-</span><span class="cm">     self.localIndexName = creds.index;
-</span><span class="cm">   }
-</span><span class="cm">*/</span>
-<span class="cm">/*
-</span><span class="cm">   Here we directly write the &#34;index&#34;, &#34;key&#34;, and &#34;appID&#34; here so that them can
-</span><span class="cm">   be send to Algolia correctly.
-</span><span class="cm">
-</span><span class="cm">*/</span>
-   <span class="nx">self</span><span class="p">.</span><span class="nx">algoliaCredentials</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="nx">indexName</span><span class="o">:</span> <span class="s2">&#34;Your Index Name&#34;</span><span class="p">,</span>
-       <span class="nx">key</span><span class="o">:</span> <span class="s2">&#34;Administrator&#39;s Key&#34;</span><span class="p">,</span>
-       <span class="nx">appID</span><span class="o">:</span> <span class="s2">&#34;The Application ID&#34;</span>
-     <span class="p">};</span>
-     <span class="nx">self</span><span class="p">.</span><span class="nx">localIndexName</span> <span class="o">=</span> <span class="s2">&#34;Your Index Name&#34;</span><span class="p">;</span>
- <span class="p">};</span>
-</code></pre></div><p>With the adjustment, we can use the command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo-algolia -s --config ./config.toml
-</code></pre></div><p>at hugo root folder to generate the JSON indices file and send them to Algolia.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">//$node_modules_prefix/lib/node_modules/hugo-algolia/lib/index.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">HugoAlgolia</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setCredentials</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">   Original code, one can find that it called the module &#34;matter&#34; to handle the
+</span></span></span><span class="line"><span class="cl"><span class="cm">   YAML file. Now YAML can handle the TOML too with the same usage, but the
+</span></span></span><span class="line"><span class="cl"><span class="cm">   author of hugo-algolia has not correct it yet.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">   const configMeta = matter.read(self.pathToCredentials);
+</span></span></span><span class="line"><span class="cl"><span class="cm">   const creds = configMeta.data.algolia;
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">   if (creds) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">     self.algoliaCredentials = {
+</span></span></span><span class="line"><span class="cl"><span class="cm">       indexName: creds.index,
+</span></span></span><span class="line"><span class="cl"><span class="cm">       key: write_key &amp;&amp; write_key !== undefined ? write_key : creds.key,
+</span></span></span><span class="line"><span class="cl"><span class="cm">       appID: creds.appID
+</span></span></span><span class="line"><span class="cl"><span class="cm">     };
+</span></span></span><span class="line"><span class="cl"><span class="cm">     self.localIndexName = creds.index;
+</span></span></span><span class="line"><span class="cl"><span class="cm">   }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">   Here we directly write the &#34;index&#34;, &#34;key&#34;, and &#34;appID&#34; here so that them can
+</span></span></span><span class="line"><span class="cl"><span class="cm">   be send to Algolia correctly.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">self</span><span class="p">.</span><span class="nx">algoliaCredentials</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">indexName</span><span class="o">:</span> <span class="s2">&#34;Your Index Name&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">key</span><span class="o">:</span> <span class="s2">&#34;Administrator&#39;s Key&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">appID</span><span class="o">:</span> <span class="s2">&#34;The Application ID&#34;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">};</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">self</span><span class="p">.</span><span class="nx">localIndexName</span> <span class="o">=</span> <span class="s2">&#34;Your Index Name&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">};</span>
+</span></span></code></pre></div><p>With the adjustment, we can use the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo-algolia -s --config ./config.toml
+</span></span></code></pre></div><p>at hugo root folder to generate the JSON indices file and send them to Algolia.</p>
 <p>After this process we can find them under the <code>indices</code> page in the dashboard.</p>
 <h1 id="front-end-setup">Front-end Setup</h1>
 <p>Now we have submitted posts we want to Algolia. Then we need to make a front-end UI to use it. It is different for different hugo themes. Here we use a simple one:</p>
 <p>we will add a little icon which is a <code>&lt;a&gt;</code> element actually, and when one click on it, there will be a <code>modal</code> subpage by the <code>bootstrap 4</code> library. And there will be a input dialog in it. Then we can use it to search the posts.</p>
 <p>We need to add the <code>bootstrap 4</code> in the site, and because of the dependence, we need also add the <code>jquery</code> lib. Edit the $themepath/layouts/partials/head.html` file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--$themepath/layouts/partials/head.html--&gt;</span>
-<span class="c">&lt;!--Bootstrap--&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://code.jquery.com/jquery-3.3.1.slim.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div><p>One need to remove the origin <code>bootstrap css</code> importation if exists.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--$themepath/layouts/partials/head.html--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--Bootstrap--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://code.jquery.com/jquery-3.3.1.slim.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js&#34;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>One need to remove the origin <code>bootstrap css</code> importation if exists.</p>
 <p>Then we can make the front-end ui:</p>
 <p>First we need to add a file like $themepath/layouts/partials/search.html`:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--$themepath/layouts/partials/search.html--&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-container&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;aa-input-container&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;aa-search-input&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-search&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Search for titles or URIs...&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&#34;off&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-icon&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;654 -372 1664 1664&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&#34;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
-
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">https:</span><span class="err">//</span><span class="na">res</span><span class="err">.</span><span class="na">cloudinary</span><span class="err">.</span><span class="na">com</span><span class="err">/</span><span class="na">jimmysong</span><span class="err">/</span><span class="na">raw</span><span class="err">/</span><span class="na">upload</span><span class="err">/</span><span class="na">rootsongjc-hugo</span><span class="err">/</span><span class="na">algoliasearch</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">https:</span><span class="err">//</span><span class="na">res</span><span class="err">.</span><span class="na">cloudinary</span><span class="err">.</span><span class="na">com</span><span class="err">/</span><span class="na">jimmysong</span><span class="err">/</span><span class="na">raw</span><span class="err">/</span><span class="na">upload</span><span class="err">/</span><span class="na">rootsongjc-hugo</span><span class="err">/</span><span class="na">autocomplete</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="cm">/*here you need to write your appID and apiKey(not administrator key!)*/</span>
-<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">algoliasearch</span><span class="p">(</span><span class="s2">&#34;Application ID&#34;</span><span class="p">,</span> <span class="s2">&#34;API Key&#34;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">initIndex</span><span class="p">(</span><span class="s1">&#39;Your Index Name&#39;</span><span class="p">);</span>
-<span class="nx">autocomplete</span><span class="p">(</span><span class="s1">&#39;#aa-search-input&#39;</span><span class="p">,</span>
-<span class="p">{</span> <span class="nx">hint</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span> <span class="p">{</span>
-    <span class="nx">source</span><span class="o">:</span> <span class="nx">autocomplete</span><span class="p">.</span><span class="nx">sources</span><span class="p">.</span><span class="nx">hits</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="p">{</span><span class="nx">hitsPerPage</span><span class="o">:</span> <span class="mi">8</span><span class="p">}),</span>
-    <span class="nx">displayKey</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
-    <span class="nx">templates</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">suggestion</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">suggestion</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">suggestion</span><span class="p">);</span>
-            <span class="cm">/*here the link format might be need to correct according to your site */</span>
-            <span class="k">return</span> <span class="s1">&#39;&lt;span&gt;&#39;</span> <span class="o">+</span> <span class="s1">&#39;&lt;a href=&#34;/&#39;</span> <span class="o">+</span> <span class="nx">suggestion</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/&#34;&gt;&#39;</span> <span class="o">+</span>
-            <span class="nx">suggestion</span><span class="p">.</span><span class="nx">_highlightResult</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39;&lt;/a&gt;&lt;/span&gt;&#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div><p>Where the <code>svg</code> element is a little magnifier icon.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--$themepath/layouts/partials/search.html--&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-container&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;aa-input-container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;aa-search-input&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-search&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Search for titles or URIs...&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;search&#34;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&#34;off&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-icon&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;654 -372 1664 1664&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">https:</span><span class="err">//</span><span class="na">res</span><span class="err">.</span><span class="na">cloudinary</span><span class="err">.</span><span class="na">com</span><span class="err">/</span><span class="na">jimmysong</span><span class="err">/</span><span class="na">raw</span><span class="err">/</span><span class="na">upload</span><span class="err">/</span><span class="na">rootsongjc-hugo</span><span class="err">/</span><span class="na">algoliasearch</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">https:</span><span class="err">//</span><span class="na">res</span><span class="err">.</span><span class="na">cloudinary</span><span class="err">.</span><span class="na">com</span><span class="err">/</span><span class="na">jimmysong</span><span class="err">/</span><span class="na">raw</span><span class="err">/</span><span class="na">upload</span><span class="err">/</span><span class="na">rootsongjc-hugo</span><span class="err">/</span><span class="na">autocomplete</span><span class="err">.</span><span class="na">min</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*here you need to write your appID and apiKey(not administrator key!)*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">algoliasearch</span><span class="p">(</span><span class="s2">&#34;Application ID&#34;</span><span class="p">,</span> <span class="s2">&#34;API Key&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">initIndex</span><span class="p">(</span><span class="s1">&#39;Your Index Name&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">autocomplete</span><span class="p">(</span><span class="s1">&#39;#aa-search-input&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="nx">hint</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">source</span><span class="o">:</span> <span class="nx">autocomplete</span><span class="p">.</span><span class="nx">sources</span><span class="p">.</span><span class="nx">hits</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="p">{</span><span class="nx">hitsPerPage</span><span class="o">:</span> <span class="mi">8</span><span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">displayKey</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">templates</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">suggestion</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">suggestion</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">suggestion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/*here the link format might be need to correct according to your site */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s1">&#39;&lt;span&gt;&#39;</span> <span class="o">+</span> <span class="s1">&#39;&lt;a href=&#34;/&#39;</span> <span class="o">+</span> <span class="nx">suggestion</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/&#34;&gt;&#39;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">suggestion</span><span class="p">.</span><span class="nx">_highlightResult</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39;&lt;/a&gt;&lt;/span&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Where the <code>svg</code> element is a little magnifier icon.</p>
 <p>Then we need to make a entry. For <code>AllinOne</code> theme: [<a href="https://github.com/orianna-zzo/AllinOne">AllinOne homepage</a>] , we will set it on the left of <code>navbar</code>. Edit the file $themepath/layouts/partials/site-navbar.html<code>, add this</code><a><code>element at the end of the</code><div><code>in the label</code><nav><code>, before the last</code></div>` notation.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;</span>
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#modalSearch&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;outline: none;&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-butn&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;654 -372 1664 1664&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&#34;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</code></pre></div><p>And add the following <code>&lt;div&gt;</code> after the <code>&lt;nav&gt;</code> :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;</span>
-<span class="c">&lt;!-- Modal --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;modalSearch&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span><span class="p">&gt;</span>Search<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Close&#34;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
-          {{ partial &#34;search.html&#34; . }}
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div><p>You need also add a <code>CSS</code> file in which to assign the style of these elements:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#modalSearch&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;outline: none;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;aa-input-butn&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;654 -372 1664 1664&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>And add the following <code>&lt;div&gt;</code> after the <code>&lt;nav&gt;</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--$themepath/layouts/partials/site-navbar.html--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- Modal --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal fade&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;modalSearch&#34;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&#34;-1&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;dialog&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-dialog&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;document&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-content&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-header&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-title&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;exampleModalLabel&#34;</span><span class="p">&gt;</span>Search<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;modal&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Close&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;modal-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          {{ partial &#34;search.html&#34; . }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>You need also add a <code>CSS</code> file in which to assign the style of these elements:</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         CSS file
     </summary>
 <pre tabindex="0"><code class="language-css3" data-lang="css3">/*#themepath/static/css/search.css*/
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+@import &#39;https://fonts.googleapis.com/css?family=Montserrat:400,700&#39;;
 .aa-input-container {
   display: inline-block;
   position: relative;
@@ -560,7 +560,7 @@ autocomplete('#aa-search-input',
   border-radius: 4px;
   -webkit-transition: .2s;
   transition: .2s;
-  font-family: &quot;Montserrat&quot;, sans-serif;
+  font-family: &#34;Montserrat&#34;, sans-serif;
   box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
   font-size: 11px;
   box-sizing: border-box;
@@ -603,7 +603,7 @@ autocomplete('#aa-search-input',
   background-color: #fff;
   border: 2px solid rgba(228, 228, 228, 0.6);
   border-top-width: 1px;
-  font-family: &quot;Montserrat&quot;, sans-serif;
+  font-family: &#34;Montserrat&#34;, sans-serif;
   width: 300px;
   margin-top: 10px;
   box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
@@ -645,14 +645,14 @@ autocomplete('#aa-search-input',
 }
 </code></pre></details>
 <p>And add it to the $themepath/layouts/partials/head.html` to let it contain the css file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--$themepath/layouts/partials/head.html--&gt;</span>
-<span class="c">&lt;!--Search--&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">css</span><span class="err">/</span><span class="na">search</span><span class="err">.</span><span class="na">css</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span> <span class="p">/&gt;</span>
-</code></pre></div><p>There might be a little bug of the bootstrap modal, which let the <code>padding-right</code> of <code>body</code> increase at each time to use the modal. To correct this, we can add a line to the $themepath/static/css/main.css` :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-CSS" data-lang="CSS"><span class="nt">body</span> <span class="p">{</span>
-  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="cp">!important</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><h1 id="result">Result</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--$themepath/layouts/partials/head.html--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--Search--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">css</span><span class="err">/</span><span class="na">search</span><span class="err">.</span><span class="na">css</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span> <span class="p">/&gt;</span>
+</span></span></code></pre></div><p>There might be a little bug of the bootstrap modal, which let the <code>padding-right</code> of <code>body</code> increase at each time to use the modal. To correct this, we can add a line to the $themepath/static/css/main.css` :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-CSS" data-lang="CSS"><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="result">Result</h1>
 <p>After all, we will have a search icon in the left of the navigation bar. It will be looked like:</p>
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./Figs/InsiteSearch_1.png"/></div>
 <h1 id="reference">Reference</h1>
