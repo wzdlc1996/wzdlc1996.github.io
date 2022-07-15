@@ -167,7 +167,7 @@ $\Omega$ is a set (called Sample Space) . $\mathcal{F}$ is a Sigma Algebra on $\
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
 <script>
 var client = algoliasearch("PECJICBAMJ", "80b8039b55378125cdbf9e91c4729818");
-var index = client.initIndex('leonard-blog');
+var index = client.initIndex('main');
 autocomplete('#aa-search-input',
 { hint: false}, {
     source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
