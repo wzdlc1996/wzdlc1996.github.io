@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh_Hans">
   <head>
-	<meta name="generator" content="Hugo 0.96.0" />
+	<meta name="generator" content="Hugo 0.101.0" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -165,7 +165,7 @@
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
 <script>
-var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var client = algoliasearch("PECJICBAMJ", "80b8039b55378125cdbf9e91c4729818");
 var index = client.initIndex('leonard-blog');
 autocomplete('#aa-search-input',
 { hint: false}, {
@@ -593,7 +593,118 @@ autocomplete('#aa-search-input',
               
                   <div class="post-wrapper white-bg post-card">
   
-  <a href="https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/">
+  <a href="https://wzdlc1996.github.io/artic/elementary/rigidbodystat/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">对一般刚体的定点转动的统计力学分析</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 15, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>8 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      在统计力学中, 我们通常会关注正则动量与坐标. 因为由它们确定的相空间体积元在正则变换下不变. 但在我们实际进行计算时, 却并非总是正则动量与坐标的表达最为方便. 一个例子就是刚体力学中, 我们会偏爱使用转动惯量和惯量主轴的方法来讨论问题. 然而作为角动量, 它们彼此之间并不对易, 因而在处理统计力学积分时往往带来困惑: 我们能使用它们作为被积变量吗? 进一步的, 用刚体转动模型理解多原子分子热容时同样会遇到这个问题. 本文旨在对这个问题给出解答: 在讨论不依赖转动构型的力学量时, 使用主轴角动量作为动力学变量是完全可行的. 变量替换的 Jacobian 只是转动构型的函数.
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/classical-theory" role="button">classical-theory </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Introduction to Measurement Based Quantum Computing</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>May 19, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>15 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      In this note, we will generally discuss the basic conceptions of measurement-based quantum computing(MBQC). We focus on the workflow of MBQC and how to transpile a circuit-based model to MBQC. The parallization for quantum computing and other optimizations are not fully covered but the references are offered. Finally, we discuss the development of MBQC in theoretical perspective.
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button">measurement </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/quantum-computing" role="button">quantum-computing </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/artic/elementary/irrasqrttwo/">
     <div class="post-header text-center">
       <div class="px-4 post-heading">Prove the Irrationality of Square Root of 2</div>
       <ul class="post-meta li-x mt-1">
@@ -714,7 +825,7 @@ autocomplete('#aa-search-input',
     
         
           <li class="middot"></li>
-          <li>13 minutes read</li>
+          <li>11 minutes read</li>
         
       </ul>
     </div>
@@ -722,114 +833,6 @@ autocomplete('#aa-search-input',
 
     
       Time in quantum mechanics is always left as an parameter in the equation of motion. In the non-relativistic quantum theory we find time in the derivative of wavefunction, while in the relativistic quantum field theory, it is not at the same status of spatial position: we introduce the space-time dependent field operator only for Lorentz covariance for the equation of motion. Whether can we have an intrinsic interpretation of time flow in quantum mechanics was early discussed by Don Page and William Wootters with the purpose to match the energy superselection rule. Though it may not be a correct theory for our world or even &#39;close&#39; to it, it is worthy to discuss in modern view here as a consistent approach to the time puzzle.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/artic/physics/numschrodinger/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Numerical Methods for Schrodinger Equation</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Jul 22, 2021</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>20 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      The first problem we meet in the practice about quantum mechanics is to simulate the quantum time evolution on computer. Formally, it is the numerical simulation of the (time-dependent) Schrodinger Equation. In this review, we discuss various numerical method for the Schrodinger equation and quantum time evolution, including their implementation and error analysis. We will only focus on the non-relativistic quantum mechanics, i.e., the number of degree of freedom is finite.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/artic/physics/qmachinelearning/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Quantum Machine Learning: Quantum Algorithms to Classical Data</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 19, 2020</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>29 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      Quantum machine learning is the integration of quantum algorithms within machine learning programs. Generally, we have four different approaches for this purpose, by the type of data (quantum state/data or classical data) and type of algorithm or platform (quantum algorithm/computer or classical algorithm/computer). In this report, we focus on an elementary discussion about aspect of the quantum approach to classical data. The more attractive part about quantum approach to quantum data will be left for future posts.
     
   </a>
 

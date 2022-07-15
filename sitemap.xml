@@ -3,15 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://wzdlc1996.github.io/artic/</loc>
-    <lastmod>2022-02-19T00:21:44+08:00</lastmod>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/categories/</loc>
-    <lastmod>2022-02-19T00:21:44+08:00</lastmod>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://wzdlc1996.github.io/categories/interest-math/</loc>
-    <lastmod>2022-02-19T00:21:44+08:00</lastmod>
+    <loc>https://wzdlc1996.github.io/tags/classical-theory/</loc>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/</loc>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/categories/reviews/</loc>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/tags/</loc>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/artic/elementary/rigidbodystat/</loc>
+    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/</loc>
+    <lastmod>2022-05-19T22:16:06+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/tags/measurement/</loc>
+    <lastmod>2022-05-19T22:16:06+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/tags/quantum-computing/</loc>
+    <lastmod>2022-05-19T22:16:06+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/categories/interest-math/</loc>
     <lastmod>2022-02-19T00:21:44+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/tags/math/</loc>
@@ -20,19 +41,13 @@
     <loc>https://wzdlc1996.github.io/tags/number-theory/</loc>
     <lastmod>2022-02-19T00:21:44+08:00</lastmod>
   </url><url>
-    <loc>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</loc>
-    <lastmod>2022-02-19T00:21:44+08:00</lastmod>
-  </url><url>
-    <loc>https://wzdlc1996.github.io/tags/</loc>
+    <loc>https://wzdlc1996.github.io/artic/elementary/irrasqrttwo/</loc>
     <lastmod>2022-02-19T00:21:44+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/artic/physics/mlinqphy/</loc>
     <lastmod>2021-12-12T22:50:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/tags/quantum/</loc>
-    <lastmod>2021-12-12T22:50:00+08:00</lastmod>
-  </url><url>
-    <loc>https://wzdlc1996.github.io/categories/reviews/</loc>
     <lastmod>2021-12-12T22:50:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/artic/physics/timeinqm/</loc>
@@ -95,9 +110,6 @@
     <loc>https://wzdlc1996.github.io/artic/physics/weakmeasurement/</loc>
     <lastmod>2019-03-18T16:10:47+08:00</lastmod>
   </url><url>
-    <loc>https://wzdlc1996.github.io/tags/measurement/</loc>
-    <lastmod>2019-03-18T16:10:47+08:00</lastmod>
-  </url><url>
     <loc>https://wzdlc1996.github.io/notes/qm/manybody1/</loc>
     <lastmod>2019-02-25T12:44:33+08:00</lastmod>
   </url><url>
@@ -131,9 +143,6 @@
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/</loc>
     <lastmod>2018-12-20T14:21:14+08:00</lastmod>
   </url><url>
-    <loc>https://wzdlc1996.github.io/tags/classical-theory/</loc>
-    <lastmod>2018-12-20T14:21:14+08:00</lastmod>
-  </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsii/</loc>
     <lastmod>2018-12-11T15:21:12+08:00</lastmod>
   </url><url>
@@ -162,6 +171,9 @@
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/tags/os-setup/</loc>
+    <lastmod>2018-11-15T13:13:29+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/artic/other/linux/gtkthemeperapp/</loc>
     <lastmod>2018-11-15T13:13:29+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</loc>

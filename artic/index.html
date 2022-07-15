@@ -166,7 +166,7 @@
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
 <script>
-var client = algoliasearch("CKGQ2NF14W", "47466714a15e4af509908b3be9a18065");
+var client = algoliasearch("PECJICBAMJ", "80b8039b55378125cdbf9e91c4729818");
 var index = client.initIndex('leonard-blog');
 autocomplete('#aa-search-input',
 { hint: false}, {
@@ -383,6 +383,12 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
+  
+
+  
+
 
 
 
@@ -406,7 +412,7 @@ autocomplete('#aa-search-input',
             
             <li class="py-1">
               <a href="https://wzdlc1996.github.io/categories/reviews">
-                <span>Reviews (7)</span>
+                <span>Reviews (9)</span>
               </a>
             </li>           
           
@@ -415,7 +421,7 @@ autocomplete('#aa-search-input',
             
             <li class="py-1">
               <a href="https://wzdlc1996.github.io/categories/linux">
-                <span>Linux (2)</span>
+                <span>Linux (3)</span>
               </a>
             </li>           
           
@@ -471,6 +477,12 @@ autocomplete('#aa-search-input',
 
   
 
+  
+
+  
+
+  
+
 
 
 
@@ -491,19 +503,25 @@ autocomplete('#aa-search-input',
         
         
         
-            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (20)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button"><span>quantum (18)</span></a></li>
+          
+        
+            <li><a href="https://wzdlc1996.github.io/tags/classical-theory" role="button"><span>classical-theory (5)</span></a></li>
+          
+        
+            <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button"><span>manjaro (3)</span></a></li>
           
         
             <li><a href="https://wzdlc1996.github.io/tags/math" role="button"><span>math (3)</span></a></li>
           
         
-            <li><a href="https://wzdlc1996.github.io/tags/manjaro" role="button"><span>manjaro (2)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button"><span>measurement (3)</span></a></li>
           
         
-            <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button"><span>measurement (2)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/os-setup" role="button"><span>os-setup (3)</span></a></li>
           
         
-            <li><a href="https://wzdlc1996.github.io/tags/os-setup" role="button"><span>os-setup (2)</span></a></li>
+            <li><a href="https://wzdlc1996.github.io/tags/quantum-computing" role="button"><span>quantum-computing (3)</span></a></li>
           
         
             <li><a href="https://wzdlc1996.github.io/tags/front-end" role="button"><span>front-end (1)</span></a></li>
@@ -548,7 +566,7 @@ autocomplete('#aa-search-input',
               
                 <div class="px-2 middot"></div>
                 <div>
-                  12 posts
+                  15 posts
                 </div>
               
             </div>
@@ -579,10 +597,13 @@ autocomplete('#aa-search-input',
         <a href="https://wzdlc1996.github.io/artic/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
       </li>
       <li class="page-item">
+        <a href="https://wzdlc1996.github.io/artic/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
         <a href="https://wzdlc1996.github.io/artic/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://wzdlc1996.github.io/artic/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://wzdlc1996.github.io/artic/page/5/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
@@ -590,7 +611,118 @@ autocomplete('#aa-search-input',
           
               <div class="post-wrapper white-bg post-card">
   
-  <a href="https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/">
+  <a href="https://wzdlc1996.github.io/artic/elementary/rigidbodystat/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">对一般刚体的定点转动的统计力学分析</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 15, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>8 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      在统计力学中, 我们通常会关注正则动量与坐标. 因为由它们确定的相空间体积元在正则变换下不变. 但在我们实际进行计算时, 却并非总是正则动量与坐标的表达最为方便. 一个例子就是刚体力学中, 我们会偏爱使用转动惯量和惯量主轴的方法来讨论问题. 然而作为角动量, 它们彼此之间并不对易, 因而在处理统计力学积分时往往带来困惑: 我们能使用它们作为被积变量吗? 进一步的, 用刚体转动模型理解多原子分子热容时同样会遇到这个问题. 本文旨在对这个问题给出解答: 在讨论不依赖转动构型的力学量时, 使用主轴角动量作为动力学变量是完全可行的. 变量替换的 Jacobian 只是转动构型的函数.
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/classical-theory" role="button">classical-theory </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Introduction to Measurement Based Quantum Computing</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>May 19, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>15 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      In this note, we will generally discuss the basic conceptions of measurement-based quantum computing(MBQC). We focus on the workflow of MBQC and how to transpile a circuit-based model to MBQC. The parallization for quantum computing and other optimizations are not fully covered but the references are offered. Finally, we discuss the development of MBQC in theoretical perspective.
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button">measurement </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/quantum-computing" role="button">quantum-computing </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://wzdlc1996.github.io/artic/elementary/irrasqrttwo/">
     <div class="post-header text-center">
       <div class="px-4 post-heading">Prove the Irrationality of Square Root of 2</div>
       <ul class="post-meta li-x mt-1">
@@ -634,114 +766,6 @@ autocomplete('#aa-search-input',
       
     
       <li><a href="https://wzdlc1996.github.io/tags/number-theory" role="button">number-theory </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/artic/physics/mlinqphy/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Machine Learning in Quantum Mechanics, Up to 2021</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 12, 2021</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>21 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      In the recent(at 2021) decades, machine learning algorithms have been popular in almost all disciplines of science and even art. People have found out that a huge share of research and production problems can be viewed as instances of basic tasks that could get well solved with the modern powerful hardware and algorithms. In physics, there has been already plenty of applications covering data manipulation and model/theory discovering. However, just like those famous algorithms in the past, machine learning has its own caveats. Researchers should get well understanding about the boundary of algorithms&#39; ability. Being a well-trained user instead of package importer would be the new requirements of people in related fields. In this review, we will discuss the success applications of machine learning in quantum physics in recent years and the potential limitation. Then the reader could get a clearer picture on the development of machine learning and quantum physics frontier.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://wzdlc1996.github.io/artic/physics/timeinqm/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Time in Quantum Mechanics</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Sep 25, 2021</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>13 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      Time in quantum mechanics is always left as an parameter in the equation of motion. In the non-relativistic quantum theory we find time in the derivative of wavefunction, while in the relativistic quantum field theory, it is not at the same status of spatial position: we introduce the space-time dependent field operator only for Lorentz covariance for the equation of motion. Whether can we have an intrinsic interpretation of time flow in quantum mechanics was early discussed by Don Page and William Wootters with the purpose to match the energy superselection rule. Though it may not be a correct theory for our world or even &#39;close&#39; to it, it is worthy to discuss in modern view here as a consistent approach to the time puzzle.
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://wzdlc1996.github.io/tags/quantum" role="button">quantum </a></li>
       
     
   </div>

@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
+  <meta name="author" content="Leonard">
+  <meta name="description" content="在统计力学中, 我们通常会关注正则动量与坐标. 因为由它们确定的相空间体积元在正则变换下不变. 但在我们实际进行计算时, 却并非总是正则动量与坐标的表达最为方便. 一个例子就是刚体力学中, 我们会偏爱使用转动惯量和惯量主轴的方法来讨论问题. 然而作为角动量, 它们彼此之间并不对易, 因而在处理统计力学积分时往往带来困惑: 我们能使用它们作为被积变量吗? 进一步的, 用刚体转动模型理解多原子分子热容时同样会遇到这个问题. 本文旨在对这个问题给出解答: 在讨论不依赖转动构型的力学量时, 使用主轴角动量作为动力学变量是完全可行的. 变量替换的 Jacobian 只是转动构型的函数.">
+
+  <meta property="og:title" content="对一般刚体的定点转动的统计力学分析" />
+<meta property="og:description" content="在统计力学中, 我们通常会关注正则动量与坐标. 因为由它们确定的相空间体积元在正则变换下不变. 但在我们实际进行计算时, 却并非总是正则动量与坐标的表达最为方便. 一个例子就是刚体力学中, 我们会偏爱使用转动惯量和惯量主轴的方法来讨论问题. 然而作为角动量, 它们彼此之间并不对易, 因而在处理统计力学积分时往往带来困惑: 我们能使用它们作为被积变量吗? 进一步的, 用刚体转动模型理解多原子分子热容时同样会遇到这个问题. 本文旨在对这个问题给出解答: 在讨论不依赖转动构型的力学量时, 使用主轴角动量作为动力学变量是完全可行的. 变量替换的 Jacobian 只是转动构型的函数." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/elementary/rigidbodystat/" /><meta property="article:section" content="Artic" />
+<meta property="article:published_time" content="2022-07-15T22:00:00+08:00" />
+<meta property="article:modified_time" content="2022-07-15T22:00:00+08:00" />
+
+
+
+  <title>
+    
+     对一般刚体的定点转动的统计力学分析 | Leonard 
+    
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/artic/elementary/rigidbodystat/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/lightbox/lightbox.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
+
+
+  
+
+  
+
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+  </style>
+
+
+  
+  
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
+      
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
+
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
+
+        
+      </ul>
+      
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="aa-input-icon" width="120" height="16">
+      <g fill="none" fill-rule="evenodd">
+        <path fill="#848AB8" fill-rule="nonzero" d="M4.202 10.434c-.497.378-1.18.564-2.057.564-.873 0-1.588-.13-2.145-.39V9.46c.352.159.728.283 1.122.375.398.092.768.137 1.109.137.5 0 .869-.09 1.107-.274a.883.883 0 0 0 .356-.735.901.901 0 0 0-.328-.706c-.219-.193-.67-.421-1.353-.685-.705-.274-1.201-.586-1.49-.94-.29-.35-.435-.774-.435-1.267 0-.62.229-1.106.688-1.462.457-.356 1.073-.534 1.844-.534.74 0 1.476.155 2.21.467l-.401.988c-.687-.276-1.3-.415-1.84-.415-.408 0-.72.085-.93.255a.83.83 0 0 0-.318.678c0 .193.044.36.128.495.085.137.225.267.419.388.193.123.54.283 1.046.482.568.226.984.439 1.248.635.263.196.457.417.58.665.124.245.185.538.185.873 0 .661-.248 1.179-.745 1.554zm2.53-.201c-.512-.509-.768-1.21-.768-2.102 0-.917.236-1.638.712-2.162.477-.525 1.13-.787 1.962-.787.772 0 1.382.225 1.83.675.447.45.67 1.068.67 1.857v.644H7.242c.017.545.17.964.46 1.257.288.293.696.438 1.22.438a4.6 4.6 0 0 0 .965-.094c.298-.062.618-.166.96-.312v.97c-.305.138-.61.237-.921.293a5.77 5.77 0 0 1-1.063.087c-.908.001-1.62-.254-2.132-.764zm.956-3.787c-.238.24-.38.59-.426 1.049h2.653c-.007-.463-.123-.813-.348-1.052-.227-.239-.537-.359-.932-.359-.393 0-.709.12-.947.362zm8.269 3.669h-.043c-.282.342-.565.574-.85.697-.286.125-.653.186-1.1.186-.575 0-1.024-.148-1.345-.446-.322-.297-.483-.718-.483-1.264 0-.578.224-1.015.67-1.309.448-.294 1.131-.455 2.047-.482l1.01-.03v-.301c0-.36-.09-.627-.262-.803-.175-.18-.445-.268-.812-.268-.3 0-.587.042-.861.126-.276.085-.54.184-.794.3l-.401-.853c.317-.16.664-.28 1.041-.363a4.968 4.968 0 0 1 1.068-.124c.743 0 1.304.156 1.683.466.379.312.568.8.568 1.468v3.78h-.888l-.248-.78zm-.515-.393c.272-.242.409-.581.409-1.018v-.488l-.751.03c-.585.022-1.01.114-1.277.282-.266.168-.398.425-.398.77 0 .25.076.443.232.58.155.137.388.206.699.206.451 0 .813-.12 1.086-.362zm6.97-4.49l-.122 1.112c-.177-.04-.36-.06-.551-.06-.495 0-.899.154-1.207.466-.307.312-.462.715-.462 1.213v2.933h-1.24V5.284h.97l.165.989h.063c.194-.335.447-.601.758-.797.313-.196.65-.294 1.008-.294.249 0 .455.017.619.05zm1.423 5.023c-.459-.496-.69-1.207-.69-2.134 0-.945.242-1.67.722-2.177.483-.507 1.176-.761 2.087-.761.616 0 1.17.11 1.663.33l-.374.958c-.526-.195-.959-.293-1.301-.293-1.01 0-1.516.643-1.516 1.933 0 .63.125 1.103.377 1.419.253.316.622.475 1.108.475a3.27 3.27 0 0 0 1.57-.397v1.041c-.22.125-.458.215-.709.269a4.28 4.28 0 0 1-.918.082c-.887-.003-1.559-.25-2.02-.745zm8.916.641v-3.45c0-.435-.09-.756-.271-.97-.183-.213-.47-.321-.865-.321-.521 0-.905.151-1.151.45-.243.3-.366.8-.366 1.503v2.788h-1.242V3h1.242v2.003c0 .321-.02.666-.063 1.03h.079c.169-.27.403-.48.705-.628a2.362 2.362 0 0 1 1.055-.223c1.417 0 2.126.685 2.126 2.055v3.66h-1.249z"/>
+        <path fill="#848AB8" d="M42.828 6.115c.418.537.628 1.29.628 2.26 0 .974-.213 1.732-.637 2.275-.425.542-1.012.813-1.768.813-.76 0-1.352-.27-1.773-.81h-.087l-.233.703H38V3h1.278v1.987c0 .147-.007.365-.022.655-.014.29-.025.475-.032.553h.054c.405-.59 1.005-.886 1.795-.886.75 0 1.336.27 1.755.806zm-3.201.674c-.225.3-.343.8-.35 1.5v.087c0 .721.117 1.245.349 1.57.233.323.61.485 1.136.485.454 0 .797-.177 1.031-.532.233-.354.352-.866.352-1.535 0-1.35-.466-2.025-1.403-2.025-.518 0-.887.15-1.115.45zm5.792-1.372l1.223 3.366c.186.48.31.93.37 1.354h.044c.034-.196.094-.435.18-.716.088-.28.548-1.615 1.382-4.003H50l-2.573 6.73C46.96 13.381 46.18 14 45.087 14a3.66 3.66 0 0 1-.826-.092v-.998c.192.043.411.065.658.065.618 0 1.05-.353 1.3-1.058l.223-.56-2.415-5.94h1.392z"/>
+        <path fill="#5468FF" fill-rule="nonzero" d="M70.306 0a1.87 1.87 0 0 1 1.865 1.872V12.35a1.87 1.87 0 0 1-1.865 1.872h-10.44A1.87 1.87 0 0 1 58 12.35V1.867C58 .837 58.834 0 59.866 0h10.44zM65.25 3.593a4.012 4.012 0 0 0-4.003 4.02 4.008 4.008 0 0 0 4.003 4.017 4.012 4.012 0 0 0 4.003-4.02 4.006 4.006 0 0 0-4.003-4.017zm0 6.85a2.827 2.827 0 0 1-2.82-2.83 2.827 2.827 0 0 1 2.82-2.829 2.827 2.827 0 0 1 2.82 2.83c0 1.561-1.26 2.83-2.82 2.83zm0-2.972c0 .06.064.103.12.074l1.867-.97c.042-.021.055-.074.033-.116a2.32 2.32 0 0 0-1.933-1.179c-.043 0-.086.035-.086.083l-.001 2.108zm-2.614-3.658l-.246-.245a.61.61 0 0 0-.868 0l-.292.293a.615.615 0 0 0 0 .87l.24.243c.04.04.095.03.13-.008a4.484 4.484 0 0 1 1.023-1.028c.043-.026.047-.087.013-.125zm3.925-1.126a.616.616 0 0 0-.615-.617h-1.432a.617.617 0 0 0-.614.617v.5c0 .056.052.096.107.082a4.5 4.5 0 0 1 2.451-.012.084.084 0 0 0 .104-.081l-.001-.489zm28.457 9.023c0 1.294-.33 2.238-.995 2.838-.664.6-1.68.9-3.047.9-.5 0-1.538-.097-2.368-.28l.305-1.502c.695.146 1.612.185 2.092.185.762 0 1.306-.155 1.63-.465.326-.311.485-.77.485-1.38v-.31a5.712 5.712 0 0 1-.742.28c-.305.092-.66.141-1.057.141-.523 0-1-.082-1.432-.247a2.99 2.99 0 0 1-1.11-.726 3.3 3.3 0 0 1-.718-1.202c-.17-.48-.257-1.336-.257-1.966 0-.59.092-1.33.271-1.824a3.51 3.51 0 0 1 .801-1.274 3.67 3.67 0 0 1 1.275-.824 4.688 4.688 0 0 1 1.723-.324c.616 0 1.183.078 1.736.169.554.093 1.024.19 1.408.296v7.516zm-5.274-3.738c0 .794.174 1.675.524 2.044.35.367.8.551 1.354.551.3 0 .587-.044.854-.124.265-.084.48-.18.65-.297V5.444a7.53 7.53 0 0 0-1.252-.16c-.689-.018-1.213.262-1.582.71-.363.452-.549 1.242-.549 1.978h.001zm14.278 0c0 .64-.092 1.123-.281 1.651a3.897 3.897 0 0 1-.8 1.351 3.534 3.534 0 0 1-1.242.867c-.485.203-1.233.32-1.605.32-.374-.006-1.116-.113-1.596-.32a3.626 3.626 0 0 1-1.238-.868 3.993 3.993 0 0 1-.806-1.35 4.477 4.477 0 0 1-.29-1.652c0-.64.086-1.254.281-1.778.195-.523.465-.969.815-1.342a3.646 3.646 0 0 1 1.242-.86 3.993 3.993 0 0 1 1.582-.301c.573 0 1.102.101 1.587.3.485.203.903.49 1.242.862.345.374.61.818.806 1.343.204.521.304 1.137.304 1.776h-.001zm-1.94.004c0-.818-.18-1.5-.53-1.973-.349-.48-.838-.719-1.465-.719-.625 0-1.116.238-1.465.718-.349.478-.519 1.155-.519 1.973 0 .83.175 1.387.523 1.867.35.483.841.72 1.467.72.625 0 1.116-.242 1.465-.72.349-.486.522-1.038.522-1.867l.002.001zm6.165 4.187c-3.11.013-3.11-2.51-3.11-2.912L105.134.3l1.896-.3v8.89c0 .23 0 1.672 1.218 1.677v1.596zm3.343 0h-1.906V3.984l1.907-.3v8.479zm-.956-9.372c.637 0 1.155-.514 1.155-1.148 0-.634-.513-1.147-1.155-1.147-.64 0-1.154.513-1.154 1.147s.52 1.148 1.155 1.148h-.001zm5.696.9c.626 0 1.155.078 1.582.232.428.156.77.373 1.024.649.253.277.432.655.539 1.052.111.396.165.833.165 1.312v4.871c-.29.064-.732.137-1.324.224-.591.087-1.256.13-1.993.13-.49 0-.942-.049-1.344-.141a2.833 2.833 0 0 1-1.043-.45 2.174 2.174 0 0 1-.675-.804c-.16-.329-.243-.794-.243-1.28 0-.464.092-.759.27-1.079.187-.32.433-.58.745-.784a3.163 3.163 0 0 1 1.085-.435 6.131 6.131 0 0 1 2.688.038v-.311c0-.217-.024-.425-.078-.619a1.335 1.335 0 0 0-.27-.517 1.263 1.263 0 0 0-.515-.349 2.25 2.25 0 0 0-.81-.146 7.05 7.05 0 0 0-1.2.116 5.662 5.662 0 0 0-.892.219l-.229-1.556a7.85 7.85 0 0 1 1.048-.245 8.239 8.239 0 0 1 1.47-.126zm.16 6.872c.583 0 1.014-.033 1.315-.092V8.544a3.627 3.627 0 0 0-.456-.093 4.605 4.605 0 0 0-.66-.048 4.07 4.07 0 0 0-.635.049 1.962 1.962 0 0 0-.577.168c-.169.084-.31.2-.412.35-.106.15-.155.237-.155.465 0 .447.155.702.436.873.287.174.665.257 1.146.257l-.002-.002zM79.029 3.74c.626 0 1.155.078 1.582.232.426.155.77.374 1.023.65.257.28.432.653.539 1.05.112.397.165.833.165 1.313v4.871c-.293.062-.733.136-1.324.222-.594.09-1.258.132-1.996.132-.49 0-.94-.048-1.344-.14a2.833 2.833 0 0 1-1.043-.45 2.183 2.183 0 0 1-.673-.806c-.161-.329-.244-.794-.244-1.278 0-.465.092-.76.272-1.08a2.3 2.3 0 0 1 .742-.784 3.165 3.165 0 0 1 1.087-.436 6.222 6.222 0 0 1 1.95-.091 5.9 5.9 0 0 1 .737.131v-.31c0-.218-.023-.427-.077-.62a1.324 1.324 0 0 0-.272-.518 1.28 1.28 0 0 0-.515-.349 2.25 2.25 0 0 0-.81-.145c-.436 0-.834.054-1.198.116a5.345 5.345 0 0 0-.892.218l-.228-1.555a7.667 7.667 0 0 1 1.048-.246 7.821 7.821 0 0 1 1.469-.127h.002zm.164 6.877c.583 0 1.015-.033 1.316-.092V8.597a3.683 3.683 0 0 0-.457-.093 4.615 4.615 0 0 0-.66-.048c-.21 0-.423.015-.638.049a1.92 1.92 0 0 0-.576.169c-.17.083-.31.199-.412.35-.107.15-.155.236-.155.464 0 .447.154.702.435.873.281.169.665.258 1.145.258l.002-.002zm7.69 1.547c-3.109.013-3.109-2.51-3.109-2.912L83.767.3l1.896-.3v8.89c0 .23 0 1.672 1.218 1.677v1.594l.002.003z"/>
+      </g>
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("PECJICBAMJ", "80b8039b55378125cdbf9e91c4729818");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+      
+
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+
+
+        
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>
+            
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+
+            
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">对一般刚体的定点转动的统计力学分析</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jul 15, 2022</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>8 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+          
+          
+            
+
+
+
+
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+<h1 id="对一般刚体的定点转动的统计力学分析">对一般刚体的定点转动的统计力学分析</h1>
+<h2 id="如何阅读这篇文章">如何阅读这篇文章</h2>
+<p>本文正文分为 4 个部分:</p>
+<ol>
+<li>刚体定点运动的描述
+<ul>
+<li>提供了刚体运动学的一般性介绍: 刚体构型, 角速度</li>
+<li>提供了 Euler 角参数化下的角速度表达式</li>
+</ul>
+</li>
+<li>刚体定点自由运动的动力学: Lagrange 视角
+<ul>
+<li>提供了刚体定点自由运动的 Lagrangian: 事实上就是动能</li>
+<li>为转动惯量张量的分析性质做了简要描述</li>
+<li>给出了惯量主轴的概念</li>
+</ul>
+</li>
+<li>刚体定点自由运动的动力学: Hamilton 视角
+<ul>
+<li>提供了刚体定点自由运动的 Hamiltonian: 非显式</li>
+<li>指出了在合理的参数化下, Hamiltonian 仍然是广义动量的二次型</li>
+<li>指出了在极端情况(某个主轴上转动惯量消失)下, 刚体动力学上自由度的降低</li>
+</ul>
+</li>
+<li>刚体定点自由运动的统计力学分析
+<ul>
+<li>提供了正则系综相空间积分变量替换的推导</li>
+<li>给出了一般情况相空间体积元的形式</li>
+<li>指出当处理的函数只依赖于主轴角动量时,   $\td L_1 \td L_2 \td L_3$   作为体积元的合理性</li>
+</ul>
+</li>
+</ol>
+<p>其中2, 4是主要内容和结论所在, 1, 3则提供了一些背景和简单讨论. 读者需要对线性代数(对角化, 正交矩阵)和多元微积分尤其是变量替换技巧有所了解.</p>
+<h2 id="刚体定点运动的描述">刚体定点运动的描述</h2>
+<h3 id="角速度">角速度</h3>
+<p><strong>刚体</strong> 是一类特殊的经典物理模型, 是一种受到约束的质点系统. 当研究刚体的定点运动时, 我们通常会引入转动矩阵来作为它所处位置 (或者严谨的, <strong>构型(configuration)</strong>) 的描述. 而刚体上初始一点    $\bm{r}(0)$    (相对定点) 在时刻   $t$   的位置即为</p>
+<p>$$
+\bm{r}(t) = \bm{A}(t) \bm{r}(0).
+$$</p>
+<p>其中     $\bm{A}(t)$ ,   是一个    $3\times 3$    的矩阵. 直观地, 我们可以想像存在一个固连在刚体上的坐标系,    $\bm{r}(0)$    就是在这个坐标系中的一点的位置坐标. 而在另一个原点重合的, 同观察者静止的坐标系中, 同一点的坐标就是    $\bm{r}(t)$  .. 刚体的约束则直接导致了矩阵     $\bm{A}(t)$ ,   是一个描述空间转动的矩阵, 数学地, 我们称它是一个正交矩阵, 具有性质   $\bm{A}(t)^T = \bm{A}(t)^{-1}$   而行列式   $\det \bm{A}(t) = 1$   是必须的, 因为我们的刚体无法作中心反射.</p>
+<p>从而我们可以给出某个点的速度:</p>
+<p>$$
+\bm{v}(t) = \frac {\td \bm{r}(t)} {\td t} = \frac {\td \bm{A}(t)} {\td t} \bm{r}(0) = \frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^{T} \bm{r}(t).
+$$</p>
+<p>注意我们使用了   $\bm{A}^{-1} = \bm{A}^T$   这个正交矩阵的性质. 从这个形式我们立刻可以看到:</p>
+<p>$$
+0 = \frac{\td \bm{I}} {\td t}= \frac{\td \bm{A}(t)\bm{A}(t)^T} {\td t} = \frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^{T} + \bm{A}(t) \frac {\td \bm{A}(t)^T} {\td t} = \frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^{T} + \Big(\frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^{T}\Big)^T.
+$$</p>
+<p>这告诉我们矩阵   $\frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^{T}$   总是一个反对称矩阵. 普遍的我们可以将它写为</p>
+<p>$$
+\frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^{T} = \begin{bmatrix}
+0 & -\omega_z & \omega_y \\
+\omega_z & 0 & -\omega_x \\
+-\omega_y & \omega_x & 0
+\end{bmatrix}.
+$$</p>
+<p>可以验证这样的定义下, 矩阵运算</p>
+<p>$$
+\begin{bmatrix}
+0 & -\omega_z & \omega_y \\
+\omega_z & 0 & -\omega_x \\
+-\omega_y & \omega_x & 0
+\end{bmatrix} \begin{bmatrix}
+r_x \\ r_y \\ r_z
+\end{bmatrix} = \begin{bmatrix}
+\omega_y r_z - \omega_z r_y \\
+\omega_z r_x - \omega_x r_z \\
+\omega_x r_y - \omega_y r_x
+\end{bmatrix} = \bm{\omega} \times \bm{r}.
+$$</p>
+<p>其中向量   $\bm{\omega} = (\omega_x, \omega_y, \omega_z), \bm{r} = (r_x, r_y, r_z)$   (严格的应当写为列向量的形式). 向量     $\bm{\omega}$     称为角速度, 而一般的刚体的运动学描述也就被写为</p>
+<p>$$
+\frac {\td\bm{r}(t)} {\td t} = \bm{\omega} \times \bm{r}(t).
+$$</p>
+<p>注意一般来说,     $\bm{\omega}$     可以依赖于时间. 这个方程只能给我们运动学的信息,     $\bm{\omega}$     随时间的变化以及具体的运动    $\bm{r}(t)$  . 将依赖于动力学规律.</p>
+<h3 id="euler-角">Euler 角</h3>
+<p>对刚体构型的描述尽管被简化为矩阵   $\bm{A}$ ,, 但事实上我们并不需要    $3\times 3$    个实数来描述它. 作为正交矩阵, 事实上只需要   $3$   个独立参数就能够达成完整描述. 直观地, 任何转动都等同于对某个轴的一次转动, 因此两个参数确定轴的方向, 一个参数确定角度即可给出结果. 但更常用的我们会选择 Euler 角参数. 其几何定义可以参看 <a href="https://en.wikipedia.org/wiki/Euler_angles">wikipedia/Euler_angles</a>, 我们这里相对分析地给出它们. 对于任意的正交矩阵, 都能够分解为逐次的   $z-y-z$   转动</p>
+<p>$$
+\bm{A}(t) = \bm{R}_z(\gamma) \bm{R}_y(\beta) \bm{R}_z(\alpha) = 
+\begin{bmatrix}
+\cos \gamma & -\sin \gamma & 0 \\
+\sin \gamma & \cos \gamma & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+\cos \beta & 0 & \sin \beta  \\
+0 & 1 & 0 \\
+-\sin \beta & 0 & \cos \beta 
+\end{bmatrix}
+\begin{bmatrix}
+\cos \alpha & -\sin \alpha & 0 \\
+\sin \alpha & \cos \alpha & 0 \\
+0 & 0 & 1
+\end{bmatrix}.
+$$</p>
+<p>我们关心角速度的三个分量是如何和 Euler 角的时间导数联系起来的, 按照角速度的定义, 我们计算</p>
+<p>$$
+\begin{aligned}
+\frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^T &= \frac {\td \bm{R}_z(\gamma) \bm{R}_y(\beta) \bm{R}_z(\alpha)} {\td t} \bm{R}_z(-\alpha) \bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
+&=\frac {\td \bm{R}_z(\gamma)} {\td t} \bm{R}_z(-\gamma) + \bm{R}_z(\gamma) \frac {\td \bm{R}_y(\beta)} {\td t} \bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
+&\indent + \bm{R}_z(\gamma) \bm{R}_y(\beta) \frac {\td \bm{R}_z(\alpha)} {\td t} \bm{R}_z(-\alpha)\bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
+&= \dot{\gamma}
+\begin{bmatrix}
+0 & -1 & 0\\ 
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
++\dot{\beta} \bm{R}_z(\gamma)\begin{bmatrix}
+0 & 0 & 1\\ 
+0 & 0 & 0 \\
+-1 & 0 & 0
+\end{bmatrix} \bm{R}_z(-\gamma) \\
+&\indent + \dot{\alpha }\bm{R}_z(\gamma) \bm{R}_y(\beta) 
+\begin{bmatrix}
+0 & -1 & 0\\ 
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
+&= \begin{bmatrix}
+0 & -\dot{\gamma} - \dot{\alpha} \cos\beta & \dot{\beta} \cos\gamma +\dot{\alpha}\sin\beta \sin\gamma \\
+\dot{\gamma} + \dot{\alpha}\cos\beta & 0 & \dot{\beta}\sin\gamma - \dot{\alpha}\cos\gamma \sin \beta \\
+-\dot{\beta} \cos\gamma -\dot{\alpha}\sin\beta \sin\gamma & -\dot{\beta}\sin\gamma + \dot{\alpha}\cos\gamma \sin \beta & 0
+\end{bmatrix}
+\end{aligned}
+$$</p>
+<p>从而我们给出了:</p>
+<p>$$
+\begin{bmatrix}
+\omega_x \\ \omega_y \\ \omega_z
+\end{bmatrix} = 
+\begin{bmatrix}
+\cos\gamma \sin \beta & -\sin\gamma & 0 \\
+\sin\gamma \sin \beta & \cos\gamma & 0 \\
+\cos\beta & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\alpha} \\ \dot{\beta} \\ \dot{\gamma}
+\end{bmatrix}.
+$$</p>
+<p>不难检查</p>
+<p>$$
+\det \begin{bmatrix}
+\cos\gamma \sin \beta & -\sin\gamma & 0 \\
+\sin\gamma \sin \beta & \cos\gamma & 0 \\
+\cos\beta & 0 & 1
+\end{bmatrix} = \sin \beta.
+$$</p>
+<p>即这个矩阵不总是可逆的. 这来自于 Euler 角在   $\beta = 0, \pi$   时的坐标奇异性. 但这种奇异性总是可以通过选择合适的广义坐标规避掉. 在我们之后的讨论里这个奇异性不会带来重大影响.</p>
+<h2 id="刚体定点自由运动的动力学-lagrange-视角">刚体定点自由运动的动力学: Lagrange 视角</h2>
+<p>为了分析刚体的动力学, 我们需要写出它的 Lagrangian. 对于自由运动的刚体, 它的 Lagrangian 就是刚体的动能. 从刚体的运动方程(参看角速度章节)我们很容易写出:</p>
+<p>$$
+\begin{aligned}
+L &= \int \td m \ \frac 1 2 \bm{v}^2 \\
+&= \frac 1 2 \int \td m \ (\bm{\omega} \times \bm{r})^2 \\
+&= \frac 1 2 \int \td m \ \sum_{i \in \{x,y,z\}} \sum_{jkpq}\epsilon_{ijk} \epsilon_{ipq} r_j \omega_k r_p \omega_q \\
+&= \frac 1 2 \int \td m \ \sum \Big(\delta_{jp}\delta_{kp} - \delta_{jq}\delta_{kp}\Big) r_j r_p \omega_k \omega_q \\
+&= \frac 1 2 \sum_{i, j} \Big(\delta_{ij} \int \td m \ \bm{r}^2 - \int \td m \ r_i r_j \Big)\omega_i \omega_j \\
+&= \frac 1 2 \sum_{i, j=1}^3 J_{ij} \omega_i\omega_j
+\end{aligned}
+$$</p>
+<p>其中矩阵       $J_{ij}$       被称作 <strong>转动惯量张量</strong>, 下标的取值范围为   $x,y,z$   三个空间分量, 我们这里用数字   $1,2,3$   代替. 注意一般的,       $J_{ij}$       会依赖于刚体的构型, 即依赖于转动     $\bm{A}(t)$ ,  , 或者说依赖于广义坐标 (如如果我们选择 Euler 角作为广义坐标, 那么它就会显含   $\alpha, \beta, \gamma$   三个角度). 但普遍的, 由于       $J_{ij}$       是一个对称矩阵, 我们总能够找到一个正交矩阵将之对角化, 而且对角化的转动惯量(称为 <strong>主轴惯量</strong>, 有时也会被记作   $J_1, J_2, J_3$ ))只和刚体的形状有关, 和构型无关. 由这个正交矩阵确定的空间转动定义了刚体的 <strong>惯量主轴</strong> 的方向. 因此, 我们也会写:</p>
+<p>$$
+L = \frac 1 2 \sum_{i=1}^3 J_i (R\omega)_i^2.
+$$</p>
+<p>其中   $R\omega$   代表将角速度在主轴方向进行投影的三个分量:</p>
+<p>$$
+(R\omega)_i = (\bm{R}\bm{\omega})_i = \sum_{j=1}^3 R_{ij}\omega_j.
+$$</p>
+<p>注意矩阵     $\bm{R}$     事实上就是对角化惯量张量的矩阵, 令</p>
+<p>$$
+\sum_{k=1}^3 J_k R_{ki} R_{kj} = J_{ij}.
+$$</p>
+<p>注意矩阵     $\bm{R}$     同样依赖于刚体的构型.</p>
+<p>关于    $J_{1,2,3}$    不依赖于刚体的构型可以直观地理解:    $J_{1,2,3}$    是转动惯量张量       $J_{ij}$       的本征值. 其中</p>
+<p>$$
+J_{ij} = \delta_{ij} \int \td m \ \bm{r}^2 - \int \td m \ r_i r_j.
+$$</p>
+<p>当我们对坐标系进行转动(相当于对刚体进行转动)时, 第一项   $\bm{r}^2$   总是不变的, 从而积分结果也不变. 第二项则会按照一个正交矩阵进行变换:   $r_i \rightarrow \sum_k Q_{ik} r_k$ ,, 使得矩阵    $\bm{J}$    发生变换:</p>
+<p>$$
+\bm{J} \rightarrow \bm{Q}\bm{J} \bm{Q}^T.
+$$</p>
+<p>而在正交矩阵这样的变换下, 矩阵的本征值是不变的. 因此刚体的主轴惯量在转动下不变, 换言之, 这样的主轴惯量应当只依赖于刚体形状, 而和刚体的构型无关.</p>
+<h2 id="刚体定点自由运动的动力学-hamilton-视角">刚体定点自由运动的动力学: Hamilton 视角</h2>
+<p>当给定了刚体转动的一种参数化之后, 如 Euler 角, 我们就有了一组广义坐标:   $(\theta_1,\theta_2,\theta_3)$ .. 我们不加证明地指出, 总能够选出这样的广义坐标, 使得刚体的角速度同广义速度之间只相差一个仅依赖广义坐标的线性变换 (事实上 Euler 角就是满足这个条件的一组广义坐标), 即:</p>
+<p>$$
+\omega_i = \sum_{j=1}^3 K_{ij}(\theta) \dot{\theta}_j.
+$$</p>
+<p>从而刚体的 Lagrangian 总能写为</p>
+<p>$$
+L = \frac 1 2 \sum_{i=1}^3 J_i \Big(\sum_{j,k=1}^3 R_{ij}(\theta) K_{jk}(\theta) \dot{\theta}_k\Big)^2.
+$$</p>
+<p>而广义坐标所对应的广义动量不难给出:</p>
+<p>$$
+p_i = \frac {\partial L} {\partial \dot{\theta}_i} = \sum J_l R_{lj}(\theta)K_{jk}(\theta) R_{lj'}(\theta)K_{j'i}(\theta)\dot{\theta}_k.
+$$</p>
+<p>尽管复杂, 但我们仍然能够看到   $p_i$   总是线性依赖于广义速度, 而且系数矩阵只和广义坐标有关. 而且如果刚体失去某个方向的线度, 令某个主轴惯量为0, 我们立即可以发现系统的自由度会降低. 一般的, 我们将广义动量简写为</p>
+<p>$$
+p_i = U_{ij}(\theta) \dot{\theta}_j.
+$$</p>
+<p>而这样导致的系统的 Hamiltonian 就写为:</p>
+<p>$$
+H = \frac 1 2 \sum_{l=1}^3 J_l \Big(\sum_{j,k,l=1}^3 R_{ij}(\theta) K_{jk}(\theta) (\bm{U}(\theta))^{-1}_{kl} p_l\Big)^2.
+$$</p>
+<p>同样是广义动量的二次型.</p>
+<h2 id="刚体定点自由运动的统计力学分析">刚体定点自由运动的统计力学分析</h2>
+<p>在正则系综下, 刚体某个力学函数的期待值可以计算为</p>
+<p>$$
+\braket{F} = \frac 1 {Z} \int \td \theta \td p \ F(\theta, p) e^{-\beta H}.
+$$</p>
+<p>我们总可以进行变量替换, 选择    $\theta, \dot{\theta}$ ,  广义速度作为积分变量. 由于前面的假设, 我们有变量替换的 Jacobian</p>
+<p>$$
+\Bigg|\frac {\partial (\theta, p)} {\partial(\theta, \dot{\theta})}\Bigg| = \Bigg|\frac {\partial p} {\partial\dot{\theta}}\Bigg| = \Big|\frac {\partial} {\partial \dot{\theta}}\frac {\partial L} {\partial \dot{\theta}} \Big| = \det \bm{K}(\theta)^{T} \bm{J}\bm{K}(\theta) = \det \bm{J} \Big(\det \bm{K}(\theta)\Big)^2.
+$$</p>
+<p>对于第一个等号我们可以直接地进行验证:</p>
+<p>$$
+\begin{aligned}
+\Bigg|\frac {\partial (\theta, p)} {\partial(\theta, \dot{\theta})}\Bigg| &= \det 
+\begin{vmatrix}
+\partial_{\theta_1} \theta_1 & \partial_{\theta_1} \theta_2 & \partial_{\theta_1} \theta_3 & \partial_{\theta_1} p_1 & \partial_{\theta_1} p_2 & \partial_{\theta_1} p_3 \\
+\partial_{\theta_2} \theta_1 & \partial_{\theta_2} \theta_2 & \partial_{\theta_2} \theta_3 & \partial_{\theta_2} p_1 & \partial_{\theta_2} p_2 & \partial_{\theta_2} p_3 \\
+\partial_{\theta_3} \theta_1 & \partial_{\theta_3} \theta_2 & \partial_{\theta_3} \theta_3 & \partial_{\theta_3} p_1 & \partial_{\theta_3} p_2 & \partial_{\theta_3} p_3 \\
+\partial_{\dot \theta_1} \theta_1 & \partial_{\dot \theta_1} \theta_2 & \partial_{\dot \theta_1} \theta_3 & \partial_{\dot \theta_1} p_1 & \partial_{\dot \theta_1} p_2 & \partial_{\dot \theta_1} p_3 \\
+\partial_{\dot \theta_2} \theta_1 & \partial_{\dot \theta_2} \theta_2 & \partial_{\dot \theta_2} \theta_3 & \partial_{\dot \theta_2} p_1 & \partial_{\dot \theta_2} p_2 & \partial_{\dot \theta_2} p_3 \\
+\partial_{\dot \theta_3} \theta_1 & \partial_{\dot \theta_3} \theta_2 & \partial_{\dot \theta_3} \theta_3 & \partial_{\dot \theta_3} p_1 & \partial_{\dot \theta_3} p_2 & \partial_{\dot \theta_3} p_3 \\
+\end{vmatrix} \\
+&= \det 
+\begin{vmatrix}
+1 & 0 & 0 & \partial_{\theta_1} p_1 & \partial_{\theta_1} p_2 & \partial_{\theta_1} p_3 \\
+0 & 1 & 0 & \partial_{\theta_2} p_1 & \partial_{\theta_2} p_2 & \partial_{\theta_2} p_3 \\
+0 & 0 & 1 & \partial_{\theta_3} p_1 & \partial_{\theta_3} p_2 & \partial_{\theta_3} p_3 \\
+0 & 0 & 0 & \partial_{\dot \theta_1} p_1 & \partial_{\dot \theta_1} p_2 & \partial_{\dot \theta_1} p_3 \\
+0 & 0 & 0 & \partial_{\dot \theta_2} p_1 & \partial_{\dot \theta_2} p_2 & \partial_{\dot \theta_2} p_3 \\
+0 & 0 & 0 & \partial_{\dot \theta_3} p_1 & \partial_{\dot \theta_3} p_2 & \partial_{\dot \theta_3} p_3 \\
+\end{vmatrix} \\
+&= \det 
+\begin{vmatrix}
+\partial_{\dot \theta_1} p_1 & \partial_{\dot \theta_1} p_2 & \partial_{\dot \theta_1} p_3 \\
+\partial_{\dot \theta_2} p_1 & \partial_{\dot \theta_2} p_2 & \partial_{\dot \theta_2} p_3 \\
+\partial_{\dot \theta_3} p_1 & \partial_{\dot \theta_3} p_2 & \partial_{\dot \theta_3} p_3
+\end{vmatrix} \\
+&= \Bigg|\frac {\partial p} {\partial\dot{\theta}}\Bigg|
+\end{aligned}
+$$</p>
+<p>原式中    $\bm{J}$    是由转动惯量张量       $J_{ij}$       确定的矩阵, 而   $\bm{K}(\theta)$   则来自角速度和广义速度之间的线性变换   $\omega_i =\sum_j K_{ij}(\theta)\dot{\theta}_j$   的系数矩阵. 注意到   $\det \bm{J} = J_1J_2J_3$   是一个只依赖于刚体形状的常数(正交变换的行列式为    $1$ ,)), 而   $\det \bm{K}(\theta)$   则只依赖于广义坐标, 因此我们总能写出:</p>
+<p>$$
+\braket{F} = \frac 1 {Z} \int \td \theta \td \dot{\theta}  \ F(\theta, \dot{\theta}) (\det K)^2 e^{-\beta L}.
+$$</p>
+<p>注意现在广义速度   $\dot{\theta}$   应当被认为是一个整体符号被积分掉, 而不再考虑它作为     $\theta$  ,  的时间导数, 同时我们修改了函数   $F$   的自变量为    $\theta, \dot{\theta}$ , , 这可能会引起误解, 但出于符号的简洁性考虑我们仅在此指出这一点且在今后不做进一步说明. 此外, 由于是自由运动, 我们有   $H = L$ .. 我们可以继续进行坐标变换, 采用   $\theta, \omega$   作为积分变量, 同样需要计算 Jacobian</p>
+<p>$$
+\Bigg|\frac {\partial(\theta,\dot{\theta})} {\partial(\theta, \omega)}\Bigg| = \Bigg|\frac {\partial\dot{\theta}} {\partial\omega}\Bigg| = 1 / \Bigg|\frac {\partial\omega} {\partial\dot{\theta}}\Bigg| = \frac 1 {\det K}. 
+$$</p>
+<p>从而正则系综的期待值成为</p>
+<p>$$
+\braket{F} = \frac 1 {Z} \int \td \theta \td \omega  \ F(\theta, \omega) (\det K) \exp\Big(-\frac {\beta} 2 \sum_{ij} J_{ij} \omega_i \omega_j\Big).
+$$</p>
+<p>当然, 有时候我们也会喜欢使用主轴角动量   $L_i = J_i (R\omega)_i$   作为积分变量, 注意到     $\bm{R}$     是正交矩阵从而 Jacobian 为    $1$ ,), 而   $J_i$   又是只和刚体形状有关的常数, 我们容易写下:</p>
+<p>$$
+\braket{F} = \frac 1 {Z} \int (\det K) \td \theta \td L_1 \td L_2 \td L_3  \ F(\theta, L) \exp\Big(-\beta \sum_{i=1}^3 \frac {L_i^2} {2J_i}\Big).
+$$</p>
+<p>从而这个表达式给出了如何计算刚体定点自由运动在正则系综下的各种力学量期待值的计算方法. 我们总可以简记相空间体积元为</p>
+<p>$$
+\td \Gamma = (\det K(\theta)) \td \theta_1 \td\theta_2\td\theta_3 \ \td L_1 \td L_2 \td L_3 = \td\theta_1 \td \theta_2 \td \theta_3 \td p_1\td p_2\td p_3.
+$$</p>
+<p>在 Euler 角参数下,   $\det K(\theta) = \sin \beta$ .. 而普遍的构型空间权重可能并非如此, 但角动量总是独立且均匀的. 注意主轴角动量   $L_{1,2,3}$   并非正则变量, 而且变量替换   $\theta,p \rightarrow \theta, L$   也确实令相空间体积元发生了变化: 多了    $\det K$    的系数. 但    $\det K$    只依赖于构型     $\theta$  , , 因此它并不影响我们对无关于刚体转动构型的任何动力学变量的讨论. 当我们关心的函数只是主轴角动量的函数, 而和广义坐标无关时, 对     $\theta$  ,  的积分连带权重   $\det K(\theta)$   被配分函数   $Z$   消去, 我们就有</p>
+<p>$$
+\Big\langle F(L)\Big\rangle = \frac {\displaystyle \int\td L_1 \td L_2 \td L_3 \ F(L_1, L_2,L_3)\exp\Big(-\beta \sum_{i=1}^3 \frac {L_i^2} {2J_i}\Big)} {\displaystyle \int\td L_1 \td L_2 \td L_3 \exp\Big(-\beta \sum_{i=1}^3 \frac {L_i^2} {2J_i}\Big)}.
+$$</p>
+<p>利用这个结果我们不难讨论能均分定理等一系列结果, 也不难验证对一般刚体的每个转动自由度的内能贡献均为   $k_BT / 2$ ..</p>
+
+          
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/classical-theory" role="button">classical-theory </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Introduction to Measurement Based Quantum Computing</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%af%b9%e4%b8%80%e8%88%ac%e5%88%9a%e4%bd%93%e7%9a%84%e5%ae%9a%e7%82%b9%e8%bd%ac%e5%8a%a8%e7%9a%84%e7%bb%9f%e8%ae%a1%e5%8a%9b%e5%ad%a6%e5%88%86%e6%9e%90">
+												 对一般刚体的定点转动的统计力学分析
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%a6%82%e4%bd%95%e9%98%85%e8%af%bb%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0">
+												 如何阅读这篇文章
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%88%9a%e4%bd%93%e5%ae%9a%e7%82%b9%e8%bf%90%e5%8a%a8%e7%9a%84%e6%8f%8f%e8%bf%b0">
+												 刚体定点运动的描述
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e8%a7%92%e9%80%9f%e5%ba%a6">
+												 角速度
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#euler-%e8%a7%92">
+												 Euler 角
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%88%9a%e4%bd%93%e5%ae%9a%e7%82%b9%e8%87%aa%e7%94%b1%e8%bf%90%e5%8a%a8%e7%9a%84%e5%8a%a8%e5%8a%9b%e5%ad%a6-lagrange-%e8%a7%86%e8%a7%92">
+												 刚体定点自由运动的动力学: Lagrange 视角
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%88%9a%e4%bd%93%e5%ae%9a%e7%82%b9%e8%87%aa%e7%94%b1%e8%bf%90%e5%8a%a8%e7%9a%84%e5%8a%a8%e5%8a%9b%e5%ad%a6-hamilton-%e8%a7%86%e8%a7%92">
+												 刚体定点自由运动的动力学: Hamilton 视角
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%88%9a%e4%bd%93%e5%ae%9a%e7%82%b9%e8%87%aa%e7%94%b1%e8%bf%90%e5%8a%a8%e7%9a%84%e7%bb%9f%e8%ae%a1%e5%8a%9b%e5%ad%a6%e5%88%86%e6%9e%90">
+												 刚体定点自由运动的统计力学分析
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/lightbox/lightbox.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var imgList = document.getElementsByTagName("img");
+  var imgLen = imgList.length;
+  for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
+    imgList[i].id = "imgtmp" + i;
+    var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
+    var a = document.createElement("a");
+    imgtmp.parentNode.replaceChild(a, imgtmp);
+    a.href = imgtmp.src;
+    a.rel = "lightbox";
+    a.appendChild(imgtmp);
+  }
+}());
+</script>
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      },
+      processEscape: true
+    }
+
+  }
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+  </body>
+</html>

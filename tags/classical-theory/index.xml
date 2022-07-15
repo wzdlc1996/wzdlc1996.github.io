@@ -6,7 +6,16 @@
     <description>Recent content in classical-theory on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Tue, 11 Dec 2018 15:21:14 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/tags/classical-theory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/tags/classical-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对一般刚体的定点转动的统计力学分析</title>
+      <link>https://wzdlc1996.github.io/artic/elementary/rigidbodystat/</link>
+      <pubDate>Fri, 15 Jul 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/elementary/rigidbodystat/</guid>
+      <description>在统计力学中, 我们通常会关注正则动量与坐标. 因为由它们确定的相空间体积元在正则变换下不变. 但在我们实际进行计算时, 却并非总是正则动量与坐标的表达最为方便. 一个例子就是刚体力学中, 我们会偏爱使用转动惯量和惯量主轴的方法来讨论问题. 然而作为角动量, 它们彼此之间并不对易, 因而在处理统计力学积分时往往带来困惑: 我们能使用它们作为被积变量吗? 进一步的, 用刚体转动模型理解多原子分子热容时同样会遇到这个问题. 本文旨在对这个问题给出解答: 在讨论不依赖转动构型的力学量时, 使用主轴角动量作为动力学变量是完全可行的. 变量替换的 Jacobian 只是转动构型的函数.</description>
+    </item>
+    
     <item>
       <title>Classical Fields: Maxwell Field</title>
       <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalfieldsiii/</link>

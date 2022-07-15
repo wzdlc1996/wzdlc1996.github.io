@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>如何为特定应用指定GTK3主题</title>
+      <link>https://wzdlc1996.github.io/artic/other/linux/gtkthemeperapp/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/other/linux/gtkthemeperapp/</guid>
+      <description>这个笔记记录如何为特定应用指定不同于系统主题的GTK3主题. 主要是为了解决在系统是用黑色主题时因为字体颜色为白色导致linuxqq中难以辨别的问题</description>
+    </item>
+    
+    <item>
       <title>Dual Graphic Card Configuration for Manjaro Linux</title>
       <link>https://wzdlc1996.github.io/artic/other/linux/nvidiasetting/</link>
       <pubDate>Wed, 31 Oct 2018 14:48:29 +0800</pubDate>

@@ -6,13 +6,31 @@
     <description>Recent content on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Sat, 19 Feb 2022 00:21:44 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对一般刚体的定点转动的统计力学分析</title>
+      <link>https://wzdlc1996.github.io/artic/elementary/rigidbodystat/</link>
+      <pubDate>Fri, 15 Jul 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/elementary/rigidbodystat/</guid>
+      <description>在统计力学中, 我们通常会关注正则动量与坐标. 因为由它们确定的相空间体积元在正则变换下不变. 但在我们实际进行计算时, 却并非总是正则动量与坐标的表达最为方便. 一个例子就是刚体力学中, 我们会偏爱使用转动惯量和惯量主轴的方法来讨论问题. 然而作为角动量, 它们彼此之间并不对易, 因而在处理统计力学积分时往往带来困惑: 我们能使用它们作为被积变量吗? 进一步的, 用刚体转动模型理解多原子分子热容时同样会遇到这个问题. 本文旨在对这个问题给出解答: 在讨论不依赖转动构型的力学量时, 使用主轴角动量作为动力学变量是完全可行的. 变量替换的 Jacobian 只是转动构型的函数.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Measurement Based Quantum Computing</title>
+      <link>https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/</link>
+      <pubDate>Thu, 19 May 2022 22:16:06 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/</guid>
+      <description>In this note, we will generally discuss the basic conceptions of measurement-based quantum computing(MBQC). We focus on the workflow of MBQC and how to transpile a circuit-based model to MBQC. The parallization for quantum computing and other optimizations are not fully covered but the references are offered. Finally, we discuss the development of MBQC in theoretical perspective.</description>
+    </item>
+    
     <item>
       <title>Prove the Irrationality of Square Root of 2</title>
-      <link>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</link>
+      <link>https://wzdlc1996.github.io/artic/elementary/irrasqrttwo/</link>
       <pubDate>Sat, 19 Feb 2022 00:21:44 +0800</pubDate>
       
-      <guid>https://wzdlc1996.github.io/artic/elemath/irrasqrttwo/</guid>
+      <guid>https://wzdlc1996.github.io/artic/elementary/irrasqrttwo/</guid>
       <description>Various methods of proving the irrationality of the square root of integer 2. Including the method by contradiction and the direct way.</description>
     </item>
     
@@ -251,6 +269,15 @@
     </item>
     
     <item>
+      <title>如何为特定应用指定GTK3主题</title>
+      <link>https://wzdlc1996.github.io/artic/other/linux/gtkthemeperapp/</link>
+      <pubDate>Thu, 15 Nov 2018 13:13:29 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/artic/other/linux/gtkthemeperapp/</guid>
+      <description>这个笔记记录如何为特定应用指定不同于系统主题的GTK3主题. 主要是为了解决在系统是用黑色主题时因为字体颜色为白色导致linuxqq中难以辨别的问题</description>
+    </item>
+    
+    <item>
       <title>Classical Field Theory</title>
       <link>https://wzdlc1996.github.io/notes/fieldtheory/classicalft/</link>
       <pubDate>Wed, 14 Nov 2018 15:20:07 +0800</pubDate>
@@ -329,7 +356,7 @@
       
       <guid>https://wzdlc1996.github.io/notes/mathmethod/randomvariable/</guid>
       <description>Random Variable Introduction to Probability Theory Probability Space [Definition] : A Probability Space is a triplet $(\Omega, \mathcal{F},\mathbb{P})$ of three elements:
- $\Omega$ is a set (called Sample Space) . $\mathcal{F}$ is a Sigma Algebra on $\Omega$. $\mathcal{F}$ is a collection of subsets of $\Omega$ and has the following properties:  $\Omega, \varnothing \in \mathcal{F}$ $A\in \mathcal{F} \Rightarrow A^c \equiv \Omega \setminus A \in \mathcal{F}$ A sequence of sets ${A_i}{i=1}^{\infty}$ in which $A_i \in \mathcal{F}$, then $\bigcup{j=1}^{\infty} A_j \in \mathcal{F}$   $\mathbb{P}$ is a Probability Measure: $\mathbb{P}: \mathcal{F}\rightarrow [0,1]$ and has the following properties:  (Normalization)$\mathbb{P}(\Omega) = 1$ (Countably additive)$A_1,A_2,\cdots \in \mathcal{F} \ , \ A_i\bigcap A_j=\varnothing \Rightarrow \mathbb{P}(\bigcup_{j=1}^{\infty} A_j) = \sum_{j=1}^{\infty} \mathbb{P}(A_j)$    [Definition] : A Measurable (real-valued) Function on a Measurable Space $(\Omega,\mathcal{F})$ is a function $f:\Omega \rightarrow \mathbb{R}$, which has the property:</description>
+$\Omega$ is a set (called Sample Space) . $\mathcal{F}$ is a Sigma Algebra on $\Omega$. $\mathcal{F}$ is a collection of subsets of $\Omega$ and has the following properties: $\Omega, \varnothing \in \mathcal{F}$ $A\in \mathcal{F} \Rightarrow A^c \equiv \Omega \setminus A \in \mathcal{F}$ A sequence of sets ${A_i}{i=1}^{\infty}$ in which $A_i \in \mathcal{F}$, then $\bigcup{j=1}^{\infty} A_j \in \mathcal{F}$ $\mathbb{P}$ is a Probability Measure: $\mathbb{P}: \mathcal{F}\rightarrow [0,1]$ and has the following properties: (Normalization)$\mathbb{P}(\Omega) = 1$ (Countably additive)$A_1,A_2,\cdots \in \mathcal{F} \ , \ A_i\bigcap A_j=\varnothing \Rightarrow \mathbb{P}(\bigcup_{j=1}^{\infty} A_j) = \sum_{j=1}^{\infty} \mathbb{P}(A_j)$ [Definition] : A Measurable (real-valued) Function on a Measurable Space $(\Omega,\mathcal{F})$ is a function $f:\Omega \rightarrow \mathbb{R}$, which has the property:</description>
     </item>
     
   </channel>

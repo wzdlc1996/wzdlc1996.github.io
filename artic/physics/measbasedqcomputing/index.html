@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  
+  <meta name="author" content="Leonard">
+  <meta name="description" content="In this note, we will generally discuss the basic conceptions of measurement-based quantum computing(MBQC). We focus on the workflow of MBQC and how to transpile a circuit-based model to MBQC. The parallization for quantum computing and other optimizations are not fully covered but the references are offered. Finally, we discuss the development of MBQC in theoretical perspective.">
+
+  <meta property="og:title" content="Introduction to Measurement Based Quantum Computing" />
+<meta property="og:description" content="In this note, we will generally discuss the basic conceptions of measurement-based quantum computing(MBQC). We focus on the workflow of MBQC and how to transpile a circuit-based model to MBQC. The parallization for quantum computing and other optimizations are not fully covered but the references are offered. Finally, we discuss the development of MBQC in theoretical perspective." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/" /><meta property="article:section" content="Artic" />
+<meta property="article:published_time" content="2022-05-19T22:16:06+08:00" />
+<meta property="article:modified_time" content="2022-05-19T22:16:06+08:00" />
+
+
+
+  <title>
+    
+     Introduction to Measurement Based Quantum Computing | Leonard 
+    
+  </title>
+
+  <link rel="canonical" href="https://wzdlc1996.github.io/artic/physics/measbasedqcomputing/">
+
+  
+  
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://wzdlc1996.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://wzdlc1996.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/vendors/lightbox/lightbox.min.css" rel="stylesheet">
+  <link href="https://wzdlc1996.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"  href="https://wzdlc1996.github.io/imgs/cat.png" >
+
+
+  
+
+  
+
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+  </style>
+
+
+  
+  
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/vendors/highlight/github-gist.css">
+  
+
+  
+  <link rel="stylesheet" href="https://wzdlc1996.github.io/css/search.css" />
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+
+    
+    <a class="navbar-brand" href="https://wzdlc1996.github.io">
+      
+      <img class="avatar" src="https://wzdlc1996.github.io/imgs/cat.png" style="width: 40px!important;height: auto;" class="d-inline-block align-top" alt="">
+      
+      <strong> Leonard</strong>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io">Home</a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/artic/">
+            Articles
+            
+          </a>
+        </li>
+
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="https://wzdlc1996.github.io/notes/">
+            Notes
+            
+          </a>
+        </li>
+
+        
+      </ul>
+      
+      <a data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+        <svg class="aa-input-butn" viewBox="654 -372 1664 1664">
+          <path
+            d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" />
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="aa-input-icon" width="120" height="16">
+      <g fill="none" fill-rule="evenodd">
+        <path fill="#848AB8" fill-rule="nonzero" d="M4.202 10.434c-.497.378-1.18.564-2.057.564-.873 0-1.588-.13-2.145-.39V9.46c.352.159.728.283 1.122.375.398.092.768.137 1.109.137.5 0 .869-.09 1.107-.274a.883.883 0 0 0 .356-.735.901.901 0 0 0-.328-.706c-.219-.193-.67-.421-1.353-.685-.705-.274-1.201-.586-1.49-.94-.29-.35-.435-.774-.435-1.267 0-.62.229-1.106.688-1.462.457-.356 1.073-.534 1.844-.534.74 0 1.476.155 2.21.467l-.401.988c-.687-.276-1.3-.415-1.84-.415-.408 0-.72.085-.93.255a.83.83 0 0 0-.318.678c0 .193.044.36.128.495.085.137.225.267.419.388.193.123.54.283 1.046.482.568.226.984.439 1.248.635.263.196.457.417.58.665.124.245.185.538.185.873 0 .661-.248 1.179-.745 1.554zm2.53-.201c-.512-.509-.768-1.21-.768-2.102 0-.917.236-1.638.712-2.162.477-.525 1.13-.787 1.962-.787.772 0 1.382.225 1.83.675.447.45.67 1.068.67 1.857v.644H7.242c.017.545.17.964.46 1.257.288.293.696.438 1.22.438a4.6 4.6 0 0 0 .965-.094c.298-.062.618-.166.96-.312v.97c-.305.138-.61.237-.921.293a5.77 5.77 0 0 1-1.063.087c-.908.001-1.62-.254-2.132-.764zm.956-3.787c-.238.24-.38.59-.426 1.049h2.653c-.007-.463-.123-.813-.348-1.052-.227-.239-.537-.359-.932-.359-.393 0-.709.12-.947.362zm8.269 3.669h-.043c-.282.342-.565.574-.85.697-.286.125-.653.186-1.1.186-.575 0-1.024-.148-1.345-.446-.322-.297-.483-.718-.483-1.264 0-.578.224-1.015.67-1.309.448-.294 1.131-.455 2.047-.482l1.01-.03v-.301c0-.36-.09-.627-.262-.803-.175-.18-.445-.268-.812-.268-.3 0-.587.042-.861.126-.276.085-.54.184-.794.3l-.401-.853c.317-.16.664-.28 1.041-.363a4.968 4.968 0 0 1 1.068-.124c.743 0 1.304.156 1.683.466.379.312.568.8.568 1.468v3.78h-.888l-.248-.78zm-.515-.393c.272-.242.409-.581.409-1.018v-.488l-.751.03c-.585.022-1.01.114-1.277.282-.266.168-.398.425-.398.77 0 .25.076.443.232.58.155.137.388.206.699.206.451 0 .813-.12 1.086-.362zm6.97-4.49l-.122 1.112c-.177-.04-.36-.06-.551-.06-.495 0-.899.154-1.207.466-.307.312-.462.715-.462 1.213v2.933h-1.24V5.284h.97l.165.989h.063c.194-.335.447-.601.758-.797.313-.196.65-.294 1.008-.294.249 0 .455.017.619.05zm1.423 5.023c-.459-.496-.69-1.207-.69-2.134 0-.945.242-1.67.722-2.177.483-.507 1.176-.761 2.087-.761.616 0 1.17.11 1.663.33l-.374.958c-.526-.195-.959-.293-1.301-.293-1.01 0-1.516.643-1.516 1.933 0 .63.125 1.103.377 1.419.253.316.622.475 1.108.475a3.27 3.27 0 0 0 1.57-.397v1.041c-.22.125-.458.215-.709.269a4.28 4.28 0 0 1-.918.082c-.887-.003-1.559-.25-2.02-.745zm8.916.641v-3.45c0-.435-.09-.756-.271-.97-.183-.213-.47-.321-.865-.321-.521 0-.905.151-1.151.45-.243.3-.366.8-.366 1.503v2.788h-1.242V3h1.242v2.003c0 .321-.02.666-.063 1.03h.079c.169-.27.403-.48.705-.628a2.362 2.362 0 0 1 1.055-.223c1.417 0 2.126.685 2.126 2.055v3.66h-1.249z"/>
+        <path fill="#848AB8" d="M42.828 6.115c.418.537.628 1.29.628 2.26 0 .974-.213 1.732-.637 2.275-.425.542-1.012.813-1.768.813-.76 0-1.352-.27-1.773-.81h-.087l-.233.703H38V3h1.278v1.987c0 .147-.007.365-.022.655-.014.29-.025.475-.032.553h.054c.405-.59 1.005-.886 1.795-.886.75 0 1.336.27 1.755.806zm-3.201.674c-.225.3-.343.8-.35 1.5v.087c0 .721.117 1.245.349 1.57.233.323.61.485 1.136.485.454 0 .797-.177 1.031-.532.233-.354.352-.866.352-1.535 0-1.35-.466-2.025-1.403-2.025-.518 0-.887.15-1.115.45zm5.792-1.372l1.223 3.366c.186.48.31.93.37 1.354h.044c.034-.196.094-.435.18-.716.088-.28.548-1.615 1.382-4.003H50l-2.573 6.73C46.96 13.381 46.18 14 45.087 14a3.66 3.66 0 0 1-.826-.092v-.998c.192.043.411.065.658.065.618 0 1.05-.353 1.3-1.058l.223-.56-2.415-5.94h1.392z"/>
+        <path fill="#5468FF" fill-rule="nonzero" d="M70.306 0a1.87 1.87 0 0 1 1.865 1.872V12.35a1.87 1.87 0 0 1-1.865 1.872h-10.44A1.87 1.87 0 0 1 58 12.35V1.867C58 .837 58.834 0 59.866 0h10.44zM65.25 3.593a4.012 4.012 0 0 0-4.003 4.02 4.008 4.008 0 0 0 4.003 4.017 4.012 4.012 0 0 0 4.003-4.02 4.006 4.006 0 0 0-4.003-4.017zm0 6.85a2.827 2.827 0 0 1-2.82-2.83 2.827 2.827 0 0 1 2.82-2.829 2.827 2.827 0 0 1 2.82 2.83c0 1.561-1.26 2.83-2.82 2.83zm0-2.972c0 .06.064.103.12.074l1.867-.97c.042-.021.055-.074.033-.116a2.32 2.32 0 0 0-1.933-1.179c-.043 0-.086.035-.086.083l-.001 2.108zm-2.614-3.658l-.246-.245a.61.61 0 0 0-.868 0l-.292.293a.615.615 0 0 0 0 .87l.24.243c.04.04.095.03.13-.008a4.484 4.484 0 0 1 1.023-1.028c.043-.026.047-.087.013-.125zm3.925-1.126a.616.616 0 0 0-.615-.617h-1.432a.617.617 0 0 0-.614.617v.5c0 .056.052.096.107.082a4.5 4.5 0 0 1 2.451-.012.084.084 0 0 0 .104-.081l-.001-.489zm28.457 9.023c0 1.294-.33 2.238-.995 2.838-.664.6-1.68.9-3.047.9-.5 0-1.538-.097-2.368-.28l.305-1.502c.695.146 1.612.185 2.092.185.762 0 1.306-.155 1.63-.465.326-.311.485-.77.485-1.38v-.31a5.712 5.712 0 0 1-.742.28c-.305.092-.66.141-1.057.141-.523 0-1-.082-1.432-.247a2.99 2.99 0 0 1-1.11-.726 3.3 3.3 0 0 1-.718-1.202c-.17-.48-.257-1.336-.257-1.966 0-.59.092-1.33.271-1.824a3.51 3.51 0 0 1 .801-1.274 3.67 3.67 0 0 1 1.275-.824 4.688 4.688 0 0 1 1.723-.324c.616 0 1.183.078 1.736.169.554.093 1.024.19 1.408.296v7.516zm-5.274-3.738c0 .794.174 1.675.524 2.044.35.367.8.551 1.354.551.3 0 .587-.044.854-.124.265-.084.48-.18.65-.297V5.444a7.53 7.53 0 0 0-1.252-.16c-.689-.018-1.213.262-1.582.71-.363.452-.549 1.242-.549 1.978h.001zm14.278 0c0 .64-.092 1.123-.281 1.651a3.897 3.897 0 0 1-.8 1.351 3.534 3.534 0 0 1-1.242.867c-.485.203-1.233.32-1.605.32-.374-.006-1.116-.113-1.596-.32a3.626 3.626 0 0 1-1.238-.868 3.993 3.993 0 0 1-.806-1.35 4.477 4.477 0 0 1-.29-1.652c0-.64.086-1.254.281-1.778.195-.523.465-.969.815-1.342a3.646 3.646 0 0 1 1.242-.86 3.993 3.993 0 0 1 1.582-.301c.573 0 1.102.101 1.587.3.485.203.903.49 1.242.862.345.374.61.818.806 1.343.204.521.304 1.137.304 1.776h-.001zm-1.94.004c0-.818-.18-1.5-.53-1.973-.349-.48-.838-.719-1.465-.719-.625 0-1.116.238-1.465.718-.349.478-.519 1.155-.519 1.973 0 .83.175 1.387.523 1.867.35.483.841.72 1.467.72.625 0 1.116-.242 1.465-.72.349-.486.522-1.038.522-1.867l.002.001zm6.165 4.187c-3.11.013-3.11-2.51-3.11-2.912L105.134.3l1.896-.3v8.89c0 .23 0 1.672 1.218 1.677v1.596zm3.343 0h-1.906V3.984l1.907-.3v8.479zm-.956-9.372c.637 0 1.155-.514 1.155-1.148 0-.634-.513-1.147-1.155-1.147-.64 0-1.154.513-1.154 1.147s.52 1.148 1.155 1.148h-.001zm5.696.9c.626 0 1.155.078 1.582.232.428.156.77.373 1.024.649.253.277.432.655.539 1.052.111.396.165.833.165 1.312v4.871c-.29.064-.732.137-1.324.224-.591.087-1.256.13-1.993.13-.49 0-.942-.049-1.344-.141a2.833 2.833 0 0 1-1.043-.45 2.174 2.174 0 0 1-.675-.804c-.16-.329-.243-.794-.243-1.28 0-.464.092-.759.27-1.079.187-.32.433-.58.745-.784a3.163 3.163 0 0 1 1.085-.435 6.131 6.131 0 0 1 2.688.038v-.311c0-.217-.024-.425-.078-.619a1.335 1.335 0 0 0-.27-.517 1.263 1.263 0 0 0-.515-.349 2.25 2.25 0 0 0-.81-.146 7.05 7.05 0 0 0-1.2.116 5.662 5.662 0 0 0-.892.219l-.229-1.556a7.85 7.85 0 0 1 1.048-.245 8.239 8.239 0 0 1 1.47-.126zm.16 6.872c.583 0 1.014-.033 1.315-.092V8.544a3.627 3.627 0 0 0-.456-.093 4.605 4.605 0 0 0-.66-.048 4.07 4.07 0 0 0-.635.049 1.962 1.962 0 0 0-.577.168c-.169.084-.31.2-.412.35-.106.15-.155.237-.155.465 0 .447.155.702.436.873.287.174.665.257 1.146.257l-.002-.002zM79.029 3.74c.626 0 1.155.078 1.582.232.426.155.77.374 1.023.65.257.28.432.653.539 1.05.112.397.165.833.165 1.313v4.871c-.293.062-.733.136-1.324.222-.594.09-1.258.132-1.996.132-.49 0-.94-.048-1.344-.14a2.833 2.833 0 0 1-1.043-.45 2.183 2.183 0 0 1-.673-.806c-.161-.329-.244-.794-.244-1.278 0-.465.092-.76.272-1.08a2.3 2.3 0 0 1 .742-.784 3.165 3.165 0 0 1 1.087-.436 6.222 6.222 0 0 1 1.95-.091 5.9 5.9 0 0 1 .737.131v-.31c0-.218-.023-.427-.077-.62a1.324 1.324 0 0 0-.272-.518 1.28 1.28 0 0 0-.515-.349 2.25 2.25 0 0 0-.81-.145c-.436 0-.834.054-1.198.116a5.345 5.345 0 0 0-.892.218l-.228-1.555a7.667 7.667 0 0 1 1.048-.246 7.821 7.821 0 0 1 1.469-.127h.002zm.164 6.877c.583 0 1.015-.033 1.316-.092V8.597a3.683 3.683 0 0 0-.457-.093 4.615 4.615 0 0 0-.66-.048c-.21 0-.423.015-.638.049a1.92 1.92 0 0 0-.576.169c-.17.083-.31.199-.412.35-.107.15-.155.236-.155.464 0 .447.154.702.435.873.281.169.665.258 1.145.258l.002-.002zm7.69 1.547c-3.109.013-3.109-2.51-3.109-2.912L83.767.3l1.896-.3v8.89c0 .23 0 1.672 1.218 1.677v1.594l.002.003z"/>
+      </g>
+    </svg>
+</div>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+<script>
+var client = algoliasearch("PECJICBAMJ", "80b8039b55378125cdbf9e91c4729818");
+var index = client.initIndex('leonard-blog');
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
+    displayKey: 'name',
+    templates: {
+        suggestion: function(suggestion) {
+            console.log(suggestion);
+            return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+      
+
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides/56562834_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//60104382_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//63590923_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://wzdlc1996.github.io/imgs/header-slides//66977044_p0.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://wzdlc1996.github.io">
+          
+            <img class="pull-right avatar avatar-md" src="https://wzdlc1996.github.io/imgs/white_cat.png" alt="" >
+          
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://wzdlc1996.github.io">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Leonard</strong>
+          </h1>
+        </a>
+
+
+        
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="http://github.com/wzdlc1996" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>
+            
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+
+            
+                <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+
+            
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="container pr-5">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://wzdlc1996.github.io/categories/reviews"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Reviews </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">Introduction to Measurement Based Quantum Computing</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>May 19, 2022</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>15 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+          
+          
+            
+
+
+
+
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+<h1 id="introduction">Introduction</h1>
+<p><strong>Measurement Based Quantum Computing (MBQC)</strong>, or <strong>One-way quantum computing</strong> ( <strong>QCc</strong> in short with <code>c</code> denoting the term cluster state) is a</p>
+<ol>
+<li>Universal, all circuit can be simulated by it</li>
+<li>Operation-friendly, only single-qubit measurement.</li>
+</ol>
+<p>quantum computation model. As firstly introduced by Robert Raussendorf and Hans J. Briegel in 2001 (<a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.5188">Raussendorf 2001</a>), MBQC has attracted much attentions of community. The main reason is MBQC has no direct classical concept and the isolation between entanglement unit (as multi-qubit gates) and single qubit operations. This framework helps us to understand the unique role of entanglement on the power of quantum computing. It also offers a efficient way to design the quantum computer on some modern platforms like optics system.</p>
+<p>In this note, we focus on answer the following two questions:</p>
+<ol>
+<li>What is MBQC and how does it work?</li>
+<li>Is MBQC more powerful than circuit model?</li>
+</ol>
+<p>Some other developments on MBQC are also discussed here like whether more entanglement leads us more power or not. As an introduction, we will not fully cover the optimization techs but those references are still offered.</p>
+<h1 id="main-model">Main Model</h1>
+<p>The most generic formalism for MBQC has the following procedure:</p>
+<ol>
+<li>
+<p><strong>Platform</strong>   $\mathcal{C}$   has multiple qubits.</p>
+<ul>
+<li>I/O qubits can be parts of the platform.</li>
+<li>Redundant qubits in principle is not necessary.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clusterize</strong> the platform means a standard unitary evolution to prepare the initial state:</p>
+<p>$$
+    \ket{\psi_{\mathcal{C}}} = \hat U_{\mathcal{C}} \ket{\psi}_{I} \otimes\ket{+}^{\otimes |\mathcal{C} - I|}.
+    $$</p>
+<p>The evolution generates the entanglement but can be independent of the algorithm.</p>
+</li>
+<li>
+<p><strong>Measurement</strong> for single qubit is applied on the platform. This outputs a set of classical data for the result of measurements     $x$ ..::</p>
+<p>$$
+    \ket{\psi} \rightarrow \prod_j \hat P_j(x)  \ket{\psi_\mathcal{C}}.
+    $$</p>
+</li>
+<li>
+<p><strong>Post-process</strong> applies some (usually single-qubit) unitary gates on the platform according to measurement results     $x$ ..:.</p>
+<p>$$
+    \ket{\psi} \rightarrow \hat U(x)\prod_j \hat P_j(x)  \ket{\psi_\mathcal{C}}.
+    $$</p>
+</li>
+</ol>
+<p>There are some notes on the above procedure:</p>
+<ul>
+<li>
+<p>Step 3, 4 can be repeated adaptively in the practice. One can even introduce additional entanglement unit in the mid way (not recommended in original version). This actually enlarges the ability of MBQC by deepen it.</p>
+</li>
+<li>
+<p>To readout the final state of I/O qubits safely, we can measure all redundant qubits making them to product state. This leads various post-processing in MBQC.</p>
+</li>
+<li>
+<p>The clusterization allows   $\hat U_{\mathcal{C}}$   independent to the problem. This makes it can be efficiently prepared statically and friendly to some near-term system like ion-trap, cold atom, and optical array.</p>
+<p>In Ref. (<a href="https://www.nature.com/articles/nphys1157">Briegel 2009</a>), the authors suggests <strong>graph states</strong> as the platform: given graph   $G(V,E)$ ,, the   $n=|V|$ --qubit graph states reads</p>
+<p>$$
+   \ket{\psi_{\mathcal{C}}} = \ket{G} = \prod_{(i, j) \in E} \textrm{CZ}_{i, j} \ket{+}^{\otimes |V|}.
+   $$</p>
+<p>The entanglement is prepared by controlled-Z gates:   $\textrm{CZ}_{i,j}\sim \textrm{diag}\{1,1,1,-1\}$ .. Such graph states can be efficiently simulated on classical computers (see (<a href="https://en.wikipedia.org/wiki/Gottesman%E2%80%93Knill_theorem">wikipedia/Gottesman-Knill_theorem</a>), note that   $\textrm{CZ}=(1\otimes H)\textrm{CNOT}(1\otimes H)$ .. In practice to support any-direction measurement, we need   $\mathcal{O}(2^n)$   time to simulate MBQC (generic circuit model might require   $\mathcal{O}(n2^n)$ ..)).</p>
+</li>
+<li>
+<p>In step 3, we can implement compatible measurements parallelly. This accelerates the MBQC procedure and make it shallow. The post-processing in step 4 could only contains the single-qubit   $X,Y,Z$   gates.</p>
+</li>
+</ul>
+<p>However, the cons of MBQC is obvious:</p>
+<ul>
+<li>It is hard to design a MBQC algorithm. First, to design a deterministic MBQC algorithm, we need the policy    $\hat U(x)$    covers all possible measurement results, which exponentially depends on the number of measured qubit.</li>
+<li>MBQC consume much more qubits than the circuit model. This is caused by the monotonous of entanglment (decrease) during measurement. In Ref. (<a href="https://doi.org/10.1103/PhysRevA.68.022312">Raussendorf 2003</a>), the authors demonstrates that the scaling of resource is at worst polynomial as compared to the circuit model.</li>
+</ul>
+<h1 id="relation-to-circuit-model">Relation to Circuit Model</h1>
+<p>The <strong>universality</strong> of original MBQC is proved in Ref. (<a href="https://doi.org/10.1103/PhysRevA.68.022312">Raussendorf 2003</a>). Here, we make a weaker proof about it as the comparison between MBQC and circuit model.</p>
+<p><em>[Theorem]</em>: Any unitary operator   $\hat U$   on I/O qubits can be simulated by MBQC with the procedure of:</p>
+<p>$$
+\hat U \ket{\psi}\otimes \ket{+}^{\otimes n_r} \sim \hat M_{L-1}\cdots \hat M_1\hat M_0\ket{\psi}\otimes \ket{+}^{\otimes n_r},
+$$</p>
+<p>in which   $\hat M_i$   is a unit of MBQC subroutine:   $\hat M_i = \hat U(x) \hat P_x \hat U_G$ ,, with   $\hat U_G = \prod_{(i,j)\in E} \textrm{CZ}_{i,j}$   being the subroutine of clusterization,   $\hat P_x$   being the projector for measurement and    $\hat U(x)$    the post-process of measurement outcome     $x$ ..:.</p>
+<p>With this language, the original MBQC claims that with sufficent   $n_r$ ,, one has   $L=1$ ..</p>
+<p>By the universality of circuit model with single-qubit rotation and CNOT gate, we need only to prove that we can simulate them on MBQC platform.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof: Single-qubit rotation
+    </summary>
+<p>To simulate arbitrary single-qubit rotation, we need only simulate the X-rotation and Z-rotation, then make the decomposition of   $\hat U = \hat R_x(\gamma) \hat R_z(\beta) \hat R_x(\alpha)$ ..</p>
+<p>Let us firstly introduce the single-qubit rotation unit:</p>
+<p>$$
+\begin{aligned}
+\ket{\psi} &\rightarrow \ket{ini} &&=\textrm{CZ}_{0,1}(\ket{\psi}_0\otimes \ket{+}_1) \\
+&\rightarrow \ket{fin:s} &&= \hat P_{(\theta, \phi) = (\pi/2, \xi)}^{(\textrm{on qubit-0})}(s)\ket{ini} \\
+& && = H Z^s e^{\ti Z \xi/2} \ket{\psi}
+\end{aligned}
+$$</p>
+<p>(neglect global phase.) State   $\ket{+}$   is the eigenstate of    $X$ ,  with    $1$    eigenvalue. The probabilities to find   $s = 0, 1$   are both    $1/2$ ,.. By circuit model we illustrate this unit as</p>
+<div class="flex-center w-100 mainTextImg" style="text-align: center">
+<img name="preview" src="./figs/single_unit.png"/>
+</div>
+<p>Such single-qubit rotation unit together with single-qubit Hadamard gate and Pauli gates would offer us any single qubit rotation, by the fact that   $HZH=X$   (even Hadamard gate can be implemented with   $\xi =0$ )). Such unit can be viewed as the MBQC operation with graph state by   $G(\{0, 1\}, \{(0,1)\})$   as the resource. We note that MBQC strategy could be different for different resource setup.</p>
+<p>Cascading the unit, we can implement any rotation for single qubit with   $5$ --qubit graph state with only single-qubit measurement. By</p>
+<p>$$
+\begin{aligned}
+\ket{G} = \prod_{i=3}^0\textrm{CZ}_{i,i+1}(\ket{\psi}\ket{+}^{\otimes 4}) \sim & G(\{0,1,2,3,4\}, \{ \\
+    & \indent (0, 1), (1, 2), (2, 3), (3, 4) \\
+& \}),
+\end{aligned}
+$$</p>
+<p>by GZ gates with   $0$   as input qubit, we have (<a href="https://doi.org/10.1103/PhysRevA.68.022312">Raussendorf 2003</a>)</p>
+<p>$$
+\begin{aligned}
+& \prod_{i=4}^1 \hat P_{(\theta, \phi) = (\pi/2, \xi_i)}(s_i)\ket{G} = \prod_{i=4}^1 HZ^{s_i} e^{\ti Z\xi_i / 2} \ket{\psi} \\
+=& R_x(-\xi_4) X^{s_4}R_z(-\xi_3)Z^{s_3}R_x(-\xi_2)X^{s_2}Z^{s_1}R_z(-\xi_1) \ket{\psi} \\
+=& X^{s_4}Z^{s_3}X^{s_2}Z^{s_1}R_x\Big((-1)^{1+s_3+s_1}\xi_4\Big)R_z\Big((-1)^{1+s_2}\xi_3\Big)R_x\Big((-1)^{1+s_1} \xi_2\Big)R_z(-\xi_1)\ket{\psi}
+\end{aligned}
+$$</p>
+<p>By adaptively choosing   $\xi_1=0, \xi_2 = (-1)^{1+s_1}\alpha, \xi_3=(-1)^{1+s_2} \beta, \xi_4=(-1)^{1+s_1+s_3} \gamma$ ,, we have any single-qubit rotation as (neglecting global phase factor)</p>
+<p>$$
+R_x(\gamma)R_z(\beta)R_x(\alpha)\ket{\psi} = X^{s_4+s_2}Z^{s_1+s_3}\prod_{i=4}^1 \hat P_{(\theta, \phi) = (\pi/2, \xi_i)}(s_i)\ket{G}.
+$$</p>
+<p>The proof is as follows. The initial state reads</p>
+<p>$$
+\begin{aligned}
+\ket{ini} &= \textrm{CZ}_{0,1} \Big((u_0\ket{0}+u_1\ket{1})\otimes \ket{+}\Big) \\
+&= \frac 1 {\sqrt{2}}\Big(u_0 \ket{0,0} + u_0\ket{0,1} + u_1\ket{1,0} - u_1\ket{1,1}\Big)\\
+&= \frac 1 {\sqrt{2}} \Big(u_0 \ket{0}\ket{+} + u_1 \ket{1} \ket{-}\Big). 
+\end{aligned}
+$$</p>
+<p>We measure this state along the direction   $(\pi/2, \xi)\sim (\cos \xi, \sin\xi, 0)$   on the first qubit(input), with the basis</p>
+<p>$$
+\begin{aligned}
+\ket{0: (\pi/2, \xi)} &= \frac 1 {\sqrt 2}\ket{0} +\frac 1 {\sqrt{2}} e^{\ti \xi} \ket{1}\\
+\ket{1: (\pi/2, \xi)} &= \frac 1 {\sqrt 2}\ket{0} -\frac 1 {\sqrt{2}} e^{\ti \xi} \ket{1}
+\end{aligned}
+$$</p>
+<p>or   $\ket{s: (\pi/2, \xi)} = \frac 1 {\sqrt{2}} (\ket{0} + (-1)^s e^{\ti \xi}\ket{1})$   in short (( $s \in \{0, 1\}$ )). Then the possible outcome reads</p>
+<p>$$
+\begin{aligned}
+\ket{fin:s} &= \braket{s:(\pi/2,\xi)| ini} \\
+&= \frac 1 2 \Big(u_0 \ket{+} + u_1(-1)^s e^{-\ti \xi}\ket{-}\Big) \\
+&=\frac {e^{-\ti \xi/2}} {\sqrt{2}} H Z^s e^{\ti Z\xi /2}(u_0\ket{0}+ u_1\ket{1}).
+\end{aligned}
+$$</p>
+<p>It is not normalized with the length as the probability to find result    $s$ 
+.. Obviously the probability of   $0/1$   is the same.</p>
+</details>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof: CNOT gate
+    </summary>
+<p>The minimal implement of CNOT gate requires   $4$   qubit in total(<a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.5188">Raussendorf 2001</a>). The graph state reads</p>
+<p>$$
+G(\{0, 1, 2, 3\}, \{(0, 2), (1, 2), (2, 3)\}).
+$$</p>
+<p>The qubit   $0, 1$   are input qubit, while   $1, 3$   is the output qubit. Actually, we note    $1$    as the controlling qubit.</p>
+<p>Formally, the CNOT unit reads</p>
+<p>$$
+\begin{aligned}
+\ket{c}\otimes\ket{\psi} & \rightarrow \ket{ini} &&= \textrm{CZ}_{0,2}\textrm{CZ}_{1,2}\textrm{CZ}_{2,3} \Big(\ket{\psi}_0 \ket{c}_1 \ket{+}_2 \ket{+}_3  \Big) \\
+& \rightarrow \ket{fin: s_0, s_2} && = \hat P_{(\theta,\phi) = (\pi/2, 0)}^{(\textrm{on qubit-2})}(s_2) \hat P_{(\theta,\phi) = (\pi/2, 0)}^{(\textrm{on qubit-1})}(s_0)\ket{ini} \\
+& && = \Big(Z^{s_0}\otimes (X^{s_2}Z^{s_0})\Big) \textrm{CNOT} (\ket{c}\otimes \ket{\psi})
+\end{aligned}
+$$</p>
+<p>with   $\ket{c}$   being the controlling qubit.</p>
+<p>The proof is as follows.</p>
+<p>Note the basis along   $(\theta,\phi) = (\pi/2, 0)$   is the eigenstates of    $X$ , , i.e.,</p>
+<p>$$
+\ket{s: (\pi/2, 0)} = \frac 1 {\sqrt{2}}(\ket{0} + (-1)^s \ket{1}).
+$$</p>
+<p>Thus, we have</p>
+<p>$$
+\begin{aligned}
+\ket{fin: s_0, s_2} &= \bra{s_0, s_2:(\pi/2,0)}\textrm{CZ}_{0,2}\textrm{CZ}_{1,2}\textrm{CZ}_{2,3} \ket{\psi}_0 \ket{c}_1 \ket{+}_2 \ket{+}_3 \\
+&=\bra{s_2:(\pi/2,0)} \textrm{CZ}_{1,2}\textrm{CZ}_{2,3} \ket{c}_1 (H Z^{s_0}\ket{\psi})_2 \ket{+}_3 \\
+&= \sum_{s\in \{0, 1\}}\braket{s|c}\bra{s_2:(\pi/2,0)}  \textrm{CZ}_{23}\ket{s}_1 (Z^s H Z^{s_0}\ket{\psi}_2)\ket{+}_3 \\
+&= \sum_{s\in \{0, 1\}} \braket{s|c} \ket{s}_1 \Big(H Z^{s_2} Z^s H Z^{s_0}\ket{\psi}_3\Big) \\
+&= (1\otimes HZ^{s_2}) (\textrm{CZ}_{1,3}) (1\otimes HZ^{s_0}) \ket{c}_1 \ket{\psi}_3 \\
+&= (1\otimes X^{s_2}) (1\otimes H) (Z\otimes X)^{s_0} \textrm{CZ}_{1,3} (1\otimes H) \ket{c}_1 \ket{\psi}_3 \\
+&=\Big(Z^{s_0}\otimes X^{s_2}Z^{s_0}\Big) \textrm{CNOT}_{1,3}(\ket{c}_1\ket{\psi}_3)
+\end{aligned}
+$$</p>
+<p>We used the following property of (Clifford algebra):</p>
+<p>$$
+\begin{aligned}
+Z^s H &= H X^s \\
+H Z^s &= X^s H \\
+\textrm{CNOT} &= (1\otimes H)\textrm{CZ} (1\otimes H) \\
+X^s Z &= (-1)^s Z X^s \\
+\textrm{CZ}(1\otimes X^s) &= \begin{bmatrix}
+X^s & 0 \\
+0 & Z  X^s
+\end{bmatrix} = (1\otimes X^s)\begin{bmatrix}
+1 & 0 \\
+0 & (-1)^s
+\end{bmatrix}\begin{bmatrix}
+1 & 0 \\
+0 & Z
+\end{bmatrix} = (Z^s \otimes X^s)\textrm{CZ}
+\end{aligned}
+$$</p>
+</details>
+<p>We note that this is a weaker version of the universality of MBQC. However, we can still make some helpful conclusion from this proof:</p>
+<ol>
+<li>The exact implementation of the same unitary evolution by MBQC is deeply related to the form of <strong>clusterization</strong> : the preparation of graph state.</li>
+<li>Once a measurement is done, the corresponding qubit is projected out. It cannot be used again until another entangle layer is applied.</li>
+<li>The I/O qubit during the computation procedure is not necessary to be static. Actually, this is also the originality of MBQC: the information flow exists in the computing model.</li>
+<li>In CNOT proof, we notice that independent measurement can be applied by arbitrary order. The parallelization of MBQC is relied on this property.</li>
+</ol>
+<h1 id="applications">Applications</h1>
+<h2 id="limited-mbqc-measurement-calculus">Limited MBQC: Measurement Calculus</h2>
+<p>Note that there are only measurement along   $\theta = \pi/2$   are needed to build single-qubit rotation and CNOT gate. A limited version of MBQC(<strong>L-MBQC</strong>) is</p>
+<ol>
+<li><strong>Platform</strong> is a set of qubits   $\mathcal{C} = I + O + \textrm{Red} = V$ 
+</li>
+<li><strong>Clusterization</strong> generates entanglement by controlled-Z gate. Note that   $\textrm{CZ}_{i,j} = \textrm{CZ}_{j,i} = E_{ij}$ 
+</li>
+<li><strong>Measurement</strong> are a set of single-parameter measurement:   $M_i(\alpha, s) = \hat P_{(\theta,\phi) = (\pi/2,\alpha)}^{(\textrm{on qubit-i})}(s)$ 
+</li>
+<li><strong>Post-process</strong> applies single qubit gates   $X_i^s, Z_i^s$   according to the <strong>signal</strong>(measurement results)    $s$ 
+.</li>
+</ol>
+<p>The above operations   $\{E_{ij}\}\cup \{M_i(\alpha,s): \alpha\in [0,2\pi), s=0, 1\}\cup \{X_i^s, Z_i^s\}$   forms the <strong>syntax</strong> of <strong>L-MBQC</strong>. The <strong>Standardization</strong> rule helps to rewrite all single qubit syntax at the left of entanglement syntax</p>
+<p>$$
+\begin{cases}
+X_i^s Z_i^t &= (-1)^t Z_i^t X_i^s \\
+E_{ij} X_i^s &= X_i^s Z_j^s E_{ij} \\
+E_{ij} Z_i^s &= Z_i^s E_{ij} \\
+M_i(\alpha, *) X_i^s Z_i^t &= M_i\Big((-1)^s\alpha + t \pi, *\Big) \\
+M_i(\alpha, s) Z_i^t &= M_i(\alpha, s + t\mod 2)
+\end{cases}
+$$</p>
+<p>The universality of <strong>L-MBQC</strong> reads</p>
+<p><em>[Theorem]</em>: Any unitary operator on   $O$   can be implement with single qubit syntax on entangled resource:</p>
+<p>$$
+\hat U \ket{\psi}_O = (XZ...)_{O}^s (M(\alpha..., s))_{V -O} \prod_{(i,j) \in \textrm{Edge}} E_{ij} \ket{\psi}_I \otimes \ket{+}_{V - I}. 
+$$</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+<p>We need only to prove the cascading of L-MBQC unit preserve the format. Then by cascading the single-qubit rotation and CNOT any unitary can be simulated.</p>
+<p>For this, we denote single qubit syntax   $X, Z$   as    $C$  ,, a general L-MBQC unit reads</p>
+<p>$$
+\hat U \ket{\psi}_O = C_O M_{V-O} E \ket{\psi}_I \otimes \ket{+}_{V-I}.
+$$</p>
+<p>Then the cascading</p>
+<p>$$
+\begin{aligned}
+\hat U_2 \hat U_1\ket{\psi}_O &= C_{O_2} M_{V_2 - O_2} E_{V_2} \Big((\hat U_1 \ket{\psi})_{I_2} \otimes \ket{+}_{V_2 - I_2}\Big) \\
+&= C_{O_2} M_{V_2-O_2}E_{V_2} \Big(C_{O_1} M_{V_1-O_1} E_{V_1} (\ket{\psi}_{I_1} \otimes \ket{+}_{V_1-I_1}) \otimes \ket{+}_{V_2-I_2} \Big) \\
+&= C_{O_2}C'_{O_1} M'_{V_2-O_2} M_{V_1-O_1} E_{V_2}E_{V_1} \ket{\psi}_{I_1} \otimes \ket{+}_{V_1-I_1 + V_2-I_2}.
+\end{aligned}
+$$</p>
+<p>We note that   $V_1 \cap V_2 = O_1$   thus   $(V_1-O_1) \cap V_2 = \varnothing$ .. That is why we have</p>
+<p>$$
+E_{V_2} M_{V_1-O_1} = M_{V_1-O_1} E_{V_2}.
+$$</p>
+<p>By standardization we can always move    $C$  , to the left side. q.e.d.</p>
+</details>
+<p>In Ref. (<a href="https://doi.org/10.1016/j.tcs.2008.12.046">Broadbent 2009</a>), the authors proved with the standardization and proper reduction, quantum circuit can be transpiled to MBQC unit with polynomial more auxiliary qubits and depth. By the parallelization nature of MBQC, the exact depth could usually be decreased.</p>
+<h2 id="universality-and-entanglement">Universality and Entanglement</h2>
+<p>In Ref. (<a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.102.190501">Gross 2009</a>), the authors shows that more entanglement of resource may not helpful. They further proved that for MBQC, the universal resource is rare in the sense of Haar measure in the Hilbert space. This also offers us new perspective on the relation between quantum advantage and quantum entanglement.</p>
+<p><em>[Theorem]</em>: Let    $\ket{\Psi}$ .  as a many-body wavefunction of   $n$   qubits with geometric measure of entanglement</p>
+<p>$$
+E_g(\Psi) = -\log_2 \sup_{\alpha \in \mathcal{P}} |\braket{\alpha|\Psi}|^2 \gt n - \delta.
+$$</p>
+<p>where   $\mathcal{P}$   is the set of all product states and   $\delta$   is a small positive number. Then a classical computer augmented by the power of perform local measurements on    $\ket{\Psi}$ . . If this adjoint system is capable to solve a NP problem with probability greater than    $1/2$ ,., then there exists a pure classical algorithm could solve it within polynomial time.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+<p>Without loss of generality, let the classical part of adjoint system is deterministic (classical non-deterministic part could be absorbed in quantum measurement). Then the procedure reads:</p>
+<ol>
+<li>Perform proper measurement on      $\Psi$ .  .. This could be done adaptively.</li>
+<li>Input the result of measurement of      $\Psi$ .  . as a bit-string into the classical part.</li>
+<li>Get the classical output within polynomial time and solve the problem.</li>
+</ol>
+<p>The ability of performing measurement on      $\Psi$ .  . is to efficiently sampling the bit-string with the distribution     $p_z$ .:.. The adaptive measurement is actually the autoregressive random process based on      $\Psi$ .  .. All bitstrings by such distribution could used to solve the NP problem via the classical part.</p>
+<p>The requirement of bounded success probability means</p>
+<p>$$
+\frac 1 2 \lt \sum_{z \sim p_z} |\braket{z|\Psi}|^2 \leq n_p 2^{-E_g(\Psi)} \lt n_z 2^{-n + \delta},
+$$</p>
+<p>where   $\ket{z}$   is the product state generated by the given bitstring, and   $n_z$   is the number of ``good&rsquo;&rsquo; bitstrings, formally the size of support of     $p_z$ .:.:   $n_z = |\{z: p_z(z) \gt 0\}|$ .. Then we have</p>
+<p>$$
+n_z \gt 2^{n-\delta - 1} \Rightarrow \frac {n_z} {2^n} \gt 2^{-\delta - 1}.
+$$</p>
+<p>This means that by the assumption that local-measurement augmented classical computer could solve NP problem with bounded probability, the probability of finding a ``good&rsquo;&rsquo; bitstring pure randomly is also bounded.</p>
+<p>Then we solve the problem on a pure classical machine. We still need to call the classical part of the adjoint system. By purely randomly generating bitstrings, the probability of hitting a ``good&rsquo;&rsquo; one is greater than   $2^{-1-\delta}$ .. Then we repeatedly call such generating and the classical part subroutine, the probability of failed is</p>
+<p>$$
+\mathbb{P}(\textrm{failed } k ) \lt \Big(1 - 2^{-1-\delta}\Big)^k \leq e^{-k 2 ^{-1-\delta}}.
+$$</p>
+<p>It could be exponentially small. Thus, given the success probability bound   $p_f$ ,, one need only call such process   $k \sim 2^{1+\delta} \log 1/p_f$ .. Note that certify an answer of NP problem needs only polynomial time, such pure classical system could solve this NP problem with bounded success probability and polynomial time cost.</p>
+</details>
+<p>This theorem shows too much entanglement would makes the output of local measurement so random that could be efficiently simulated by classical random number generator. This implies the MBQC relies on the entanglement structure instead of amount.</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Note on MBQC
+    </summary>
+<p>In MBQC, we introduce adaptive measurement and post-processing to avoid the probabilistic nature of quantum measurement. This helps us specify the distribution     $p_z$ .:.. But generally, the ability to handle all possible output of measurement on   $n-k$   qubits and obtain the same state on the remaining     $k$ -   qubits is non-trivial. In Ref. (<a href="https://iopscience.iop.org/article/10.1088/1367-2630/9/6/204">Nest 2007</a>), the authors introduced CQ-universality to describe such property. In Ref. (<a href="https://arxiv.org/abs/1809.02019">Haddadi 2019</a>), the authors shows the geometric measure for graph states up to   $7$   qubits.</p>
+</details>
+<p>However, since the concentration of measure, such too entangled to be useful states are majority among all many-body states.</p>
+<p><em>[Theorem]</em>: The fraction of states on   $n\geq 11$   qubits with geometric measure of entanglement less than   $n-2\log_2 n -3$   is smaller than   $e^{-n^2}$ ..</p>
+<h2 id="simulate-evolution">Simulate Evolution</h2>
+<p>The simulation of quantum evolution based on MBQC and accelerating QAOA is based on the following subroutine (<a href="https://qml.baidu.com/tutorials/measurement-based-quantum-computation/measurement-based-quantum-approximate-optimization-algorithm.html">qml.baidu/mbqc</a>):</p>
+<p><em>[Theorem]</em>: Time evolution of     $k$ -   qubits can be simulated via</p>
+<p>$$
+\hat P_{(\theta, \phi) = (2\tau, \pi/2)}^{\textrm{on qubit 0}}(s)\Big(\prod_{l=1}^k \textrm{CZ}_{0,l} \Big)\Big(\ket{+}_0\otimes \ket{\psi}\Big) = \Big(\prod_{l=1}^k Z_l\Big)^s e^{-\ti \tau Z_1\cdots Z_k} \ket{\psi}.
+$$</p>
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof
+    </summary>
+<p>Consider the input state reads</p>
+<p>$$
+\ket{\psi} = \sum_{\sigma} x_\sigma \ket{\sigma},
+$$</p>
+<p>where   $\sigma$   is     $k$ -  -length bitstrings. Then the graph state reads</p>
+<p>$$
+\prod_{l=1}^k \textrm{CZ}_{0, l} \Big(\ket{+}_0 \otimes \ket{\psi} \Big) = \frac 1 {\sqrt{2}}\sum_{\sigma} x_\sigma \ket{0, \sigma} + x_\sigma (-1)^{\sum_{l=1}^j \sigma_l}\ket{1, \sigma}.
+$$</p>
+<p>The basis of measurement reads</p>
+<p>$$
+\begin{aligned}
+\ket{0: (2\tau, \pi/2)} &= \cos \tau \ket{0} + \ti \sin \tau \ket{1} \\
+\ket{1: (2\tau, \pi/2)} &= \sin\tau \ket{0} - \ti \cos \tau \ket{1}
+\end{aligned}
+$$</p>
+<p>Then the projection on each branch</p>
+<p>$$
+\begin{aligned}
+s = 0 &\Rightarrow \frac 1 {\sqrt{2}} \sum_\sigma x_\sigma \big(\cos \tau - \ti \sin \tau (-1)^{\sum \sigma_l}\big) \ket{\sigma} \\
+& = \frac 1 {\sqrt{2}} \sum_\sigma x_\sigma e^{-\ti \tau \sum \sigma_l} \ket{\sigma} \\
+&= \frac 1 {\sqrt{2}} e^{-\ti \tau Z_1\cdots Z_k} \ket{\psi} \\
+s = 1 &\Rightarrow \frac 1 {\sqrt{2}} \sum_\sigma x_\sigma \big(\sin \tau + \ti \cos \tau (-1)^{\sum \sigma_l}\big) \ket{\sigma} \\
+&= \frac {\ti} {\sqrt{2}} \sum_\sigma x_\sigma  (-1)^{\sum \sigma_l} e^{-\ti \tau \sum \sigma_l} \ket{\sigma} \\
+&= \frac {\ti} {\sqrt{2}} \Big(\prod_{l=1}^k Z_l \Big)e^{-\ti \tau Z_1\cdots Z_k} \ket{\psi}
+\end{aligned}
+$$</p>
+<p>q.e.d.</p>
+</details>
+<h1 id="reference">Reference</h1>
+<ol>
+<li><a href="https://doi.org/10.1103/PhysRevA.68.022312">Robert Raussendorf, Daniel E. Browne, and Hans J. Briegel, Measurement-based quantum computation on cluster states, Phys. Rev. A 68, 022312</a></li>
+<li><a href="https://www.nature.com/articles/46503?__hstc=13887208.d9c6f9c40e1956d463f0af8da73a29a7.1475020800048.1475020800050.1475020800051.2&amp;__hssc=13887208.1.1475020800051&amp;__hsfp=1773666937">Gottesman, D., Chuang, I. Demonstrating the viability of universal quantum computation using teleportation and single-qubit operations. Nature 402, 390–393 (1999). https://doi.org/10.1038/46503</a></li>
+<li><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.5188">Robert Raussendorf and Hans J. Briegel, A One-Way Quantum Computer, Phys. Rev. Lett. 86, 5188</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0375960102018030">Michael A.Nielsen, Quantum computation by measurement and quantum memory, Physics Letters A, Volume 308, Issues 2–3, 24 February 2003, Pages 96-100</a></li>
+<li><a href="https://dl.acm.org/doi/abs/10.5555/2011492.2011495">Raussendorf, Robert, and Hans J. Briegel. &ldquo;Computational model underlying the one-way quantum computer.&rdquo; Quantum Information &amp; Computation 2.6 (2002): 443-486.</a></li>
+<li><a href="https://www.nature.com/articles/nphys1157">Briegel, H., Browne, D., Duer, W. et al. Measurement-based quantum computation. Nature Phys 5, 19–26 (2009). https://doi.org/10.1038/nphys1157</a></li>
+<li><a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.70.062314">Panos Aliferis and Debbie W. Leung, Computation by measurements: A unifying picture, Phys. Rev. A 70, 062314</a></li>
+<li><a href="https://arxiv.org/abs/quant-ph/0603226">Dan E. Browne, Hans J. Briegel, One-way Quantum Computation - a tutorial introduction, arXiv:quant-ph/0603226</a></li>
+<li><a href="https://qml.baidu.com/tutorials/measurement-based-quantum-computation/mbqc-quick-start-guide.html">qml.baidu: MBQC-tutorial</a></li>
+<li><a href="https://arxiv.org/abs/2109.10111">Tzu-Chieh Wei, Measurement-Based Quantum Computation, arXiv:2109.10111</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Gottesman%E2%80%93Knill_theorem">wikipedia/Gottesman-Knill_theorem</a></li>
+<li><a href="https://www.uibk.ac.at/th-physik/qic-group/research/topics/measurement-based-quantum-computation/">Prof. Dr. Hans J. Briegel&rsquo;s qic group website</a></li>
+<li><a href="https://www.annualreviews.org/doi/10.1146/annurev-conmatphys-020911-125041">Robert Raussendorf and Tzu-Chieh Wei, Quantum Computation by Local Measurement, Annual Review of Condensed Matter Physics, Vol. 3:239-261 (Volume publication date March 2012) </a></li>
+<li><a href="https://doi.org/10.1016/j.tcs.2008.12.046">Broadbent, A., &amp; Kashefi, E. (2009). Parallelizing quantum circuits. Theoretical Computer Science, 410(26), 2489–2510.</a></li>
+<li><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.102.190501">D. Gross, S. T. Flammia, and J. Eisert, Most Quantum States Are Too Entangled To Be Useful As Computational Resources Phys. Rev. Lett. 102, 190501</a></li>
+<li><a href="https://iopscience.iop.org/article/10.1088/1367-2630/9/6/204">M Van den Nest, W Duer, A Miyake and H. J. Briegel, Fundamentals of universality in one-way quantum computation, New Journal of Physics, Volume 9, June 2007</a></li>
+</ol>
+
+          
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://wzdlc1996.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://wzdlc1996.github.io/tags/measurement" role="button">measurement </a></li>
+      
+    
+      <li><a href="https://wzdlc1996.github.io/tags/quantum-computing" role="button">quantum-computing </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://wzdlc1996.github.io/artic/elementary/irrasqrttwo/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Prove the Irrationality of Square Root of 2</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://wzdlc1996.github.io/artic/elementary/rigidbodystat/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>对一般刚体的定点转动的统计力学分析</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="http://github.com/wzdlc1996 " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:wzdlc1996@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/vendors/lightbox/lightbox.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var imgList = document.getElementsByTagName("img");
+  var imgLen = imgList.length;
+  for (var i = 0; i < imgLen; i++) {
+    if (!(imgList[i].parentElement
+                    .classList
+                    .contains("mainTextImg"))) {
+      continue;
+    }
+    imgList[i].id = "imgtmp" + i;
+    var imgtmp = document.getElementById("imgtmp" + i);
+    imgtmp.style.height="400px";
+    var a = document.createElement("a");
+    imgtmp.parentNode.replaceChild(a, imgtmp);
+    a.href = imgtmp.src;
+    a.rel = "lightbox";
+    a.appendChild(imgtmp);
+  }
+}());
+</script>
+
+
+
+
+<script type="text/javascript" src="https://wzdlc1996.github.io/js/main.js"></script>
+
+
+
+
+  <script src="https://wzdlc1996.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [["$$", "$$"]],
+      macros: {
+        bm: ["{\\boldsymbol {#1}}",1],
+        flo: ["\\overset {\\cdot} {#1}",1],
+        td: ["\\text{d}"],
+        ti: ["\\text{i}"],
+        bra: ["{\\langle #1 |}",1],
+        ket: ["{| #1 \\rangle}",1],
+        degree: ["{^\{\\circ\}}",0],
+        indent:["\\ \\ \\ \\ ",0],
+        rhat: ["\\overset {\\rightarrow} {#1}",1],
+        lhat: ["\\overset {\\leftarrow} {#1}",1],
+        lrhat: ["\\overset {\\leftrightarrow} {#1}",1]
+      },
+      processEscape: true
+    }
+
+  }
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+  </body>
+</html>
