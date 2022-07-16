@@ -379,7 +379,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>8 minutes read</li>
+      <li>9 minutes read</li>
     
   </ul>
   
@@ -457,6 +457,10 @@ autocomplete('#aa-search-input',
     
         
     
+        
+    
+        
+    
 
 
 
@@ -468,6 +472,27 @@ autocomplete('#aa-search-input',
 
 
 
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
     
         
         
@@ -754,7 +779,12 @@ $$</p>
 <h3 id="euler-角">Euler 角</h3>
 <p>对刚体构型的描述尽管被简化为矩阵   $\bm{A}$ ,, 但事实上我们并不需要    $3\times 3$    个实数来描述它. 作为正交矩阵, 事实上只需要   $3$   个独立参数就能够达成完整描述. 直观地, 任何转动都等同于对某个轴的一次转动, 因此两个参数确定轴的方向, 一个参数确定角度即可给出结果. 但更常用的我们会选择 Euler 角参数. 其几何定义可以参看 <a href="https://en.wikipedia.org/wiki/Euler_angles">wikipedia/Euler_angles</a>, 我们这里相对分析地给出它们. 对于任意的正交矩阵, 都能够分解为逐次的   $z-y-z$   转动</p>
 <p>$$
-\bm{A}(t) = \bm{R}_z(\gamma) \bm{R}_y(\beta) \bm{R}_z(\alpha) = 
+\bm{A}(t) = \bm{R}_z(\alpha) \bm{R}_y(\beta) \bm{R}_z(\gamma) = 
+\begin{bmatrix}
+\cos \alpha & -\sin \alpha & 0 \\
+\sin \alpha & \cos \alpha & 0 \\
+0 & 0 & 1
+\end{bmatrix}
 \begin{bmatrix}
 \cos \gamma & -\sin \gamma & 0 \\
 \sin \gamma & \cos \gamma & 0 \\
@@ -764,41 +794,44 @@ $$</p>
 \cos \beta & 0 & \sin \beta  \\
 0 & 1 & 0 \\
 -\sin \beta & 0 & \cos \beta 
-\end{bmatrix}
-\begin{bmatrix}
-\cos \alpha & -\sin \alpha & 0 \\
-\sin \alpha & \cos \alpha & 0 \\
-0 & 0 & 1
 \end{bmatrix}.
 $$</p>
-<p>我们关心角速度的三个分量是如何和 Euler 角的时间导数联系起来的, 按照角速度的定义, 我们计算</p>
+<p>注意在实际的 Euler 角定义的转动中, 第二个 y 转动和第三个 z 转动的轴是固连刚体的轴. 因此应当是:</p>
+<p>$$
+\bm{R}_{z''}(\gamma)\bm{R}_{y'}(\beta)\bm{R}_z(\alpha) = \bm{R}_z(\alpha)\bm{R}_{y}(\beta)\bm{R}_{z}(\gamma)\bm{R}_{y}(\beta)^T\bm{R}_z(\alpha)^T\bm{R}_z(\alpha)\bm{R}_{y}(\beta)\bm{R}_z(\alpha)^T\bm{R}_z(\alpha) = \bm{R}_z(\alpha) \bm{R}_y(\beta) \bm{R}_z(\gamma).
+$$</p>
+<p>其中我们使用转动复合的如下性质:</p>
+<p>$$
+\bm{R}\bm{R}_{\bm{n}}(\theta) \bm{R}^T = \bm{R}_{\bm{R}\bm{n}}(\theta).
+$$</p>
+<p>它不难从   $\bm{R}_{\bm{n}}(\theta)$   的谱分解:   $\bm{R}_{\bm{n}}(\theta) = \bm{n}\bm{n}^T + ...$   得到:   $\bm{R}\bm{R}_{\bm{n}}(\theta) \bm{R}^T$   对应于本征值为     $1$ ,)  的方向(转动轴)是   $\bm{R}\bm{n}$ ,, 因此有   $\bm{R}_{y'}(\beta) = \bm{R}_z(\alpha)\bm{R}_{y}(\beta)\bm{R}_z(\alpha)^T$   和   $\bm{R}_{z''}(\gamma) = \bm{R}_z(\alpha)\bm{R}_{y}(\beta)\bm{R}_{z}(\gamma)\bm{R}_{y}(\beta)^T\bm{R}_z(\alpha)^T$   我们关心角速度的三个分量是如何和 Euler 角的时间导数联系起来的, 按照角速度的定义, 我们计算</p>
 <p>$$
 \begin{aligned}
-\frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^T &= \frac {\td \bm{R}_z(\gamma) \bm{R}_y(\beta) \bm{R}_z(\alpha)} {\td t} \bm{R}_z(-\alpha) \bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
-&=\frac {\td \bm{R}_z(\gamma)} {\td t} \bm{R}_z(-\gamma) + \bm{R}_z(\gamma) \frac {\td \bm{R}_y(\beta)} {\td t} \bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
-&\indent + \bm{R}_z(\gamma) \bm{R}_y(\beta) \frac {\td \bm{R}_z(\alpha)} {\td t} \bm{R}_z(-\alpha)\bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
-&= \dot{\gamma}
+\frac {\td \bm{A}(t)} {\td t} \bm{A}(t)^T &= \frac {\td \bm{R}_z(\alpha) \bm{R}_y(\beta) \bm{R}_z(\gamma)} {\td t} \bm{R}_z(-\gamma) \bm{R}_y(-\beta) \bm{R}_z(-\alpha) \\
+&=\frac {\td \bm{R}_z(\alpha)} {\td t} \bm{R}_z(-\alpha) + \bm{R}_z(\alpha) \frac {\td \bm{R}_y(\beta)} {\td t} \bm{R}_y(-\beta) \bm{R}_z(-\alpha) \\
+&\indent + \bm{R}_z(\alpha) \bm{R}_y(\beta) \frac {\td \bm{R}_z(\gamma)} {\td t} \bm{R}_z(-\gamma)\bm{R}_y(-\beta) \bm{R}_z(-\alpha) \\
+&= \dot{\alpha}
 \begin{bmatrix}
 0 & -1 & 0\\ 
 1 & 0 & 0 \\
 0 & 0 & 0
 \end{bmatrix}
-+\dot{\beta} \bm{R}_z(\gamma)\begin{bmatrix}
++\dot{\beta} \bm{R}_z(\alpha)\begin{bmatrix}
 0 & 0 & 1\\ 
 0 & 0 & 0 \\
 -1 & 0 & 0
-\end{bmatrix} \bm{R}_z(-\gamma) \\
-&\indent + \dot{\alpha }\bm{R}_z(\gamma) \bm{R}_y(\beta) 
+\end{bmatrix} \bm{R}_z(-\alpha) \\
+&\indent + \dot{\gamma }\bm{R}_z(\alpha) \bm{R}_y(\beta) 
 \begin{bmatrix}
 0 & -1 & 0\\ 
 1 & 0 & 0 \\
 0 & 0 & 0
 \end{bmatrix}
-\bm{R}_y(-\beta) \bm{R}_z(-\gamma) \\
+\bm{R}_y(-\beta) \bm{R}_z(-\alpha) \\
 &= \begin{bmatrix}
-0 & -\dot{\gamma} - \dot{\alpha} \cos\beta & \dot{\beta} \cos\gamma +\dot{\alpha}\sin\beta \sin\gamma \\
-\dot{\gamma} + \dot{\alpha}\cos\beta & 0 & \dot{\beta}\sin\gamma - \dot{\alpha}\cos\gamma \sin \beta \\
--\dot{\beta} \cos\gamma -\dot{\alpha}\sin\beta \sin\gamma & -\dot{\beta}\sin\gamma + \dot{\alpha}\cos\gamma \sin \beta & 0
+0 & -\dot{\alpha} - \dot{\gamma} \cos\beta & \dot{\beta} \cos\alpha +\dot{\gamma}\sin\beta \sin\alpha \\
+\dot{\alpha} + \dot{\gamma}\cos\beta & 0 & \dot{\beta}\sin\alpha - \dot{\gamma}\cos\alpha \sin \beta \\
+-\dot{\beta} \cos\alpha -\dot{\gamma}\sin\beta \sin\alpha & -\dot{\beta}\sin\alpha + \dot{\gamma}\cos\alpha \sin \beta & 0
 \end{bmatrix}
 \end{aligned}
 $$</p>
@@ -808,19 +841,19 @@ $$</p>
 \omega_x \\ \omega_y \\ \omega_z
 \end{bmatrix} = 
 \begin{bmatrix}
-\cos\gamma \sin \beta & -\sin\gamma & 0 \\
-\sin\gamma \sin \beta & \cos\gamma & 0 \\
+\cos\alpha \sin \beta & -\sin\alpha & 0 \\
+\sin\alpha \sin \beta & \cos\alpha & 0 \\
 \cos\beta & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-\dot{\alpha} \\ \dot{\beta} \\ \dot{\gamma}
+\dot{\gamma} \\ \dot{\beta} \\ \dot{\alpha}
 \end{bmatrix}.
 $$</p>
 <p>不难检查</p>
 <p>$$
 \det \begin{bmatrix}
-\cos\gamma \sin \beta & -\sin\gamma & 0 \\
-\sin\gamma \sin \beta & \cos\gamma & 0 \\
+\cos\alpha \sin \beta & -\sin\alpha & 0 \\
+\sin\alpha \sin \beta & \cos\alpha & 0 \\
 \cos\beta & 0 & 1
 \end{bmatrix} = \sin \beta.
 $$</p>
@@ -920,7 +953,7 @@ $$</p>
 &= \Bigg|\frac {\partial p} {\partial\dot{\theta}}\Bigg|
 \end{aligned}
 $$</p>
-<p>原式中    $\bm{J}$    是由转动惯量张量       $J_{ij}$       确定的矩阵, 而   $\bm{K}(\theta)$   则来自角速度和广义速度之间的线性变换   $\omega_i =\sum_j K_{ij}(\theta)\dot{\theta}_j$   的系数矩阵. 注意到   $\det \bm{J} = J_1J_2J_3$   是一个只依赖于刚体形状的常数(正交变换的行列式为    $1$ ,)), 而   $\det \bm{K}(\theta)$   则只依赖于广义坐标, 因此我们总能写出:</p>
+<p>原式中    $\bm{J}$    是由转动惯量张量       $J_{ij}$       确定的矩阵, 而   $\bm{K}(\theta)$   则来自角速度和广义速度之间的线性变换   $\omega_i =\sum_j K_{ij}(\theta)\dot{\theta}_j$   的系数矩阵. 注意到   $\det \bm{J} = J_1J_2J_3$   是一个只依赖于刚体形状的常数(正交变换的行列式为     $1$ ,) ), 而   $\det \bm{K}(\theta)$   则只依赖于广义坐标, 因此我们总能写出:</p>
 <p>$$
 \braket{F} = \frac 1 {Z} \int \td \theta \td \dot{\theta}  \ F(\theta, \dot{\theta}) (\det K)^2 e^{-\beta L}.
 $$</p>
@@ -932,7 +965,7 @@ $$</p>
 <p>$$
 \braket{F} = \frac 1 {Z} \int \td \theta \td \omega  \ F(\theta, \omega) (\det K) \exp\Big(-\frac {\beta} 2 \sum_{ij} J_{ij} \omega_i \omega_j\Big).
 $$</p>
-<p>当然, 有时候我们也会喜欢使用主轴角动量   $L_i = J_i (R\omega)_i$   作为积分变量, 注意到     $\bm{R}$     是正交矩阵从而 Jacobian 为    $1$ ,), 而   $J_i$   又是只和刚体形状有关的常数, 我们容易写下:</p>
+<p>当然, 有时候我们也会喜欢使用主轴角动量   $L_i = J_i (R\omega)_i$   作为积分变量, 注意到     $\bm{R}$     是正交矩阵从而 Jacobian 为     $1$ ,) , 而   $J_i$   又是只和刚体形状有关的常数, 我们容易写下:</p>
 <p>$$
 \braket{F} = \frac 1 {Z} \int (\det K) \td \theta \td L_1 \td L_2 \td L_3  \ F(\theta, L) \exp\Big(-\beta \sum_{i=1}^3 \frac {L_i^2} {2J_i}\Big).
 $$</p>
