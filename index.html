@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh_Hans">
   <head>
-	<meta name="generator" content="Hugo 0.101.0" />
+	<meta name="generator" content="Hugo 0.105.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -165,15 +165,15 @@
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
 <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
 <script>
-var client = algoliasearch("PECJICBAMJ", "80b8039b55378125cdbf9e91c4729818");
-var index = client.initIndex('main');
+var client = algoliasearch("916YRU5QNA", "fd296abe6c1266d8c198ff2672a1bbae");
+var index = client.initIndex("myblog");
 autocomplete('#aa-search-input',
 { hint: false}, {
     source: autocomplete.sources.hits(index, {hitsPerPage: 8}),
     displayKey: 'name',
     templates: {
         suggestion: function(suggestion) {
-            console.log(suggestion);
+            
             return '<span>' + '<a href="https://wzdlc1996.github.io/' + suggestion.uri.toLowerCase() + '/">' +
             suggestion._highlightResult.title.value + '</a></span>';
         }
