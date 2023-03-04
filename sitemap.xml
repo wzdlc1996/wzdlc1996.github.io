@@ -3,21 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://wzdlc1996.github.io/artic/</loc>
-    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/categories/</loc>
-    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/tags/data-science/</loc>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/artic/datascience/rnnchatgpt/</loc>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/</loc>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/tags/python/</loc>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/tags/</loc>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://wzdlc1996.github.io/categories/techs/</loc>
+    <lastmod>2023-03-05T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/tags/classical-theory/</loc>
     <lastmod>2022-07-15T22:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://wzdlc1996.github.io/</loc>
-    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://wzdlc1996.github.io/categories/reviews/</loc>
-    <lastmod>2022-07-15T22:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://wzdlc1996.github.io/tags/</loc>
     <lastmod>2022-07-15T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/artic/elementary/rigidbodystat/</loc>
@@ -82,12 +94,6 @@
   </url><url>
     <loc>https://wzdlc1996.github.io/artic/physics/ctcquantcomputing/</loc>
     <lastmod>2020-12-10T18:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://wzdlc1996.github.io/tags/python/</loc>
-    <lastmod>2019-11-22T19:24:24+08:00</lastmod>
-  </url><url>
-    <loc>https://wzdlc1996.github.io/categories/techs/</loc>
-    <lastmod>2019-11-22T19:24:24+08:00</lastmod>
   </url><url>
     <loc>https://wzdlc1996.github.io/artic/other/mangaspider/</loc>
     <lastmod>2019-11-22T19:24:24+08:00</lastmod>

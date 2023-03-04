@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Leonard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh_Hans</language>
-    <lastBuildDate>Fri, 15 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://wzdlc1996.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Techs</title>
+      <link>https://wzdlc1996.github.io/categories/techs/</link>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://wzdlc1996.github.io/categories/techs/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Reviews</title>
       <link>https://wzdlc1996.github.io/categories/reviews/</link>
@@ -31,15 +40,6 @@
       <pubDate>Thu, 26 Nov 2020 23:19:37 +0800</pubDate>
       
       <guid>https://wzdlc1996.github.io/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Techs</title>
-      <link>https://wzdlc1996.github.io/categories/techs/</link>
-      <pubDate>Fri, 22 Nov 2019 19:24:24 +0800</pubDate>
-      
-      <guid>https://wzdlc1996.github.io/categories/techs/</guid>
       <description></description>
     </item>
     
