@@ -688,7 +688,7 @@ autocomplete('#aa-search-input',
 </blockquote>
 <p>In the paper, Hopfield pointed out the property of evolving states to stable ones in physical systems could be used to mimic the memory mechanism.</p>
 <blockquote>
-<p>Consider a physical system described by many coordinates   $X_1,\cdots, X_N$ ,, the components of a state vector   $X$ .. Let the system have locally stable limit points   $X_a, X_b, \cdots$ .. Then, if the system is started sufficiently near any   $X_a$ ,, as at   $X=X_a+\Delta$ ,, it will proceed in time until   $X\approx X_a$ .. &hellip;</p>
+<p>Consider a physical system described by many coordinates   $X_1,\cdots, X_N$   , the components of a state vector   $X$   . Let the system have locally stable limit points   $X_a, X_b, \cdots$   . Then, if the system is started sufficiently near any   $X_a$   , as at   $X=X_a+\Delta$   , it will proceed in time until   $X\approx X_a$   . &hellip;</p>
 </blockquote>
 <p>Generally, Hopfield proposed a graphic model with any connections (interactions) allowed, even the <code>backward coupling</code>. Given the update rule (dynamics), the system works like a multilayered perceptron but the output could be used as input during computing. Such structure inspires the design of modern RNN.</p>
 
@@ -698,8 +698,8 @@ autocomplete('#aa-search-input',
 <p>$$
 (x_{t+1}, h_{t+1}) = f((x_t, h_t), \theta).
 $$</p>
-<p>Parameter   $\theta$   are shared along the &ldquo;time&rdquo;     $t$   .. Note that any feed-forward neural network could be simulated by an RNN, while an RNN can also be expanded like a feed-forward neural network (<a href="https://www.deeplearningbook.org/">Goodfellow 2016</a>):</p>
-<p>For example, one use RNN for binary classfication of series like   $(x_1, x_2,\cdots,x_N)$ ,, an RNN model reads</p>
+<p>Parameter   $\theta$   are shared along the &ldquo;time&rdquo;     $t$     . Note that any feed-forward neural network could be simulated by an RNN, while an RNN can also be expanded like a feed-forward neural network (<a href="https://www.deeplearningbook.org/">Goodfellow 2016</a>):</p>
+<p>For example, one use RNN for binary classfication of series like   $(x_1, x_2,\cdots,x_N)$   , an RNN model reads</p>
 <p>$$
 (x_1, x_2,\cdots,x_N) \xrightarrow{h_{t+1} = f((x_t, h_t), \theta)} \textrm{Readout}(h_1,\cdots,h_{N+1}) \in \{0, 1\}.
 $$</p>
@@ -711,50 +711,38 @@ $$</p>
 <th style="text-align:center">Connection</th>
 <th style="text-align:center">Dynamics</th>
 <th style="text-align:center">Parameter</th>
-<th></th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">Hopfield Network</td>
 <td style="text-align:center">Any pair</td>
-<td style="text-align:center">Greedily minimize Energy   $H$ |</td>
-<td style="text-align:center">Ising    $(w_{ij}, \theta_i)$ ||</td>
-<td></td>
-<td></td>
+<td style="text-align:center">Greedily minimize Energy   $H$  </td>
+<td style="text-align:center">Ising    $(w_{ij}, \theta_i)$   </td>
 </tr>
 <tr>
 <td style="text-align:center">Boltzmann Machine</td>
 <td style="text-align:center">Any pair (no intralayer in restricted version)</td>
-<td style="text-align:center">Sampling   $e^{-\beta H}$ |</td>
-<td style="text-align:center">Ising    $(w_{ij}, \theta_i)$ ||</td>
-<td></td>
-<td></td>
+<td style="text-align:center">Sampling   $e^{-\beta H}$  </td>
+<td style="text-align:center">Ising    $(w_{ij}, \theta_i)$   </td>
 </tr>
 <tr>
 <td style="text-align:center">Feed-forward NN</td>
 <td style="text-align:center">Layer by layer</td>
-<td style="text-align:center">| $y^{i+1} = f(W_iy^i + b_i)$ |</td>
-<td style="text-align:center">Weight &amp; bias   $(W_i, b_i)$ |</td>
-<td></td>
-<td></td>
+<td style="text-align:center">  $y^{i+1} = f(W_iy^i + b_i)$  </td>
+<td style="text-align:center">Weight &amp; bias   $(W_i, b_i)$  </td>
 </tr>
 <tr>
 <td style="text-align:center">Convolutional NN</td>
 <td style="text-align:center">Layer by Layer</td>
-<td style="text-align:center">| $y^{i+1} = f(W(K_i)y^i)$ |</td>
-<td style="text-align:center">Convolution kernel   $(K_i)$ |</td>
-<td></td>
-<td></td>
+<td style="text-align:center">  $y^{i+1} = f(W(K_i)y^i)$  </td>
+<td style="text-align:center">Convolution kernel   $(K_i)$  </td>
 </tr>
 <tr>
 <td style="text-align:center">Recurrent NN</td>
 <td style="text-align:center">Any pair</td>
-<td style="text-align:center">| $(x_{t+1}, h_{t+1}) = f((x_t, h_t), \theta)$ |</td>
-<td style="text-align:center">Shared along time   $(\theta)$ |</td>
-<td></td>
-<td></td>
+<td style="text-align:center">  $(x_{t+1}, h_{t+1}) = f((x_t, h_t), \theta)$  </td>
+<td style="text-align:center">Shared along time   $(\theta)$  </td>
 </tr>
 </tbody>
 </table>
@@ -773,24 +761,24 @@ p(x_1, x_2, \cdots, x_T) &= p(x_T | x_1,\cdots, x_{T-1})p(x_1,\cdots, x_{T-1}) \
 &= p(x_1)\prod_{t=2}^T p(x_t| x_1,\cdots, x_{t-1}) 
 \end{aligned}.
 $$</p>
-<p>The (vanilla) RNN is proper to approximate the transition probability of   $p(x_t| x_1,\cdots, x_{t-1})$ ..</p>
+<p>The (vanilla) RNN is proper to approximate the transition probability of   $p(x_t| x_1,\cdots, x_{t-1})$   .</p>
 <h2 id="long-short-term-memory">Long Short-Term Memory</h2>
 <p>As proposed by S. Hochreiter and J. Schmidhuber in 1997 (<a href="https://direct.mit.edu/neco/article-abstract/9/8/1735/6109/Long-Short-Term-Memory?redirectedFrom=fulltext">Hochreiter 1997</a>), <strong>Long short-term memory(LSTM)</strong> was designed to overcome the &ldquo;vanishing gradient over time issue&rdquo; in ordinary (or &ldquo;vanilla&rdquo;) RNN:</p>
 <blockquote>
 <p>With conventional backpropagation through time (BPTT; Williams &amp; Zipser, 1992; Werbos, 1988) or real-time recurrent learning (RTRL; Robinson &amp; Fallside, 1987), error signals flowing backward in time tend to (1) blow up or (2) vanish; the temporal evolution of the backpropagated error exponentially depends on the size of the weights (Hochreiter, 1991). Case 1 may lead to oscillating weights; in case 2, learning to bridge long time lags takes a prohibitive amount of time or does not work at all (see section 3)</p>
 </blockquote>
-<p>To see this, consider we have a vanilla RNN with output    $x_t$    (including hidden states) at time     $t$   . reads</p>
+<p>To see this, consider we have a vanilla RNN with output    $x_t$    (including hidden states) at time     $t$     reads</p>
 <p>$$
 x_t = f(W x_{t-1}).
 $$</p>
-<p>Here    $W$    is the linear weights,    $f$    is the non-linear activation function. The backpropagation through time following the inductive rule requires the derivative (with   $x_t' = f((W+\td W) x_{t-1}'), \cdots$ ))</p>
+<p>Here    $W$    is the linear weights,    $f$    is the non-linear activation function. The backpropagation through time following the inductive rule requires the derivative (with   $x_t' = f((W+\td W) x_{t-1}'), \cdots$   )</p>
 <p>$$
 \begin{aligned}
 \td L &= L(\cdots, x_{T-1}', x_{T}') - L(\cdots, x_{T-1}, x_{T})\\
 &= L(\cdots, x_{T-1}', x_{T}') - L(\cdots, x_{T-1}', f(Wx_{T-1}')) \\
 &\indent + L(\cdots, x_{T-1}', f(Wx_{T-1}')) - L(\cdots, f(W x_{T-2}'), f(W f(W x_{T-2}'))) \\
 &\indent + \cdots \\
-&= \frac {\partial }{\partial x_T} \Big(L(\cdots, x_T)\Big) \frac {\partial' x_T} {\partial W} \td W + \frac {\partial }{\partial x_{T-1}} \Big(L(\cdots, x_{T-1}, f(Wx_{T-1}))\Big) \frac {\partial' x_{T-1}} {\partial W} \td W + \cdots
+&= \frac {\partial }{\partial x_T} \Big(L(\cdots, x_T)\Big) \frac {\partial' x_T} {\partial W} \td W + \frac {\partial }{\partial x_{T-1}} \Big(L(\cdots, x_{T-1}, f(Wx_{T-1}))\Big) \frac {\partial' x_{T-1}} {\partial W} \td W + \cdots .
 \end{aligned}
 $$</p>
 <p>The partial with prime   $\partial'$   means the derivative holding all    $x_t$    at past, e.g.</p>
@@ -802,10 +790,10 @@ $$</p>
 \begin{aligned}
 \Delta_t &=\frac {\partial} {\partial x_t} L(\cdots, x_t, f(W x_t), \cdots) \\
 &= \frac {\partial L} {\partial x_t} + \frac {\partial} {\partial x_{t+1}} \Big(L(\cdots, x_t, x_{t+1}, f(Wx_{t+1}),\cdots)\Big) \frac {\partial x_{t+1}} {\partial x_t} \\
-&= \frac {\partial L} {\partial x_t} + \Delta_{t+1} f'(Wx_t) W
+&= \frac {\partial L} {\partial x_t} + \Delta_{t+1} f'(Wx_t) W .
 \end{aligned}
 $$</p>
-<p>Iteratively, the susceptibility of updates over time (approximately   $\|\Delta_t\|$ )) is controlled by</p>
+<p>Iteratively, the susceptibility of updates over time (approximately   $\|\Delta_t\|$   ) is controlled by</p>
 <p>$$
 \frac {\delta \|\Delta_t\|} {\delta \|\Delta_{t+k}\|} = \prod_{i=0}^{k-1} \|f'(Wx_i) W\|.
 $$</p>
@@ -825,18 +813,18 @@ $$</p>
 
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./figs/rnn_encdec.png"/></div>
 
-<p>The encoder RNN maps the input sequence   $x$   into tensor     $c$  .  (is the hidden states of RNN, called summary), then with decoder RNN to generate the output sequence   $y$   conditionally with     $c$  . .</p>
+<p>The encoder RNN maps the input sequence   $x$   into tensor     $c$     (is the hidden states of RNN, called summary), then with decoder RNN to generate the output sequence   $y$   conditionally with     $c$     .</p>
 <h3 id="roadmap-to-attention">Roadmap to Attention</h3>
 <p>In seq2seq task, the elements in input sequence usually should be treated differently. The attention mechanism is to making neural network could automatically find which part is more important.</p>
 <p>In Ref. (<a href="https://arxiv.org/abs/1409.0473">D. Bahdanau 2014</a>), the authors proposed an Encoder-decoder model with attention for translation task.</p>
 
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./figs/birnn_annotating.png"/></div>
 
-<p>The core is to compute the context vector     $c$  .  as the weighted sum of the hidden states along input. The weights are dependent of time position     $t$   . and trained jointly with the model. Formally, denoting the weight    $\alpha_{ij}$    as the weight for   $j$ --th input hidden state to the context used for    $i$  --th output, the context vector at    $i$  - is</p>
+<p>The core is to compute the context vector     $c$     as the weighted sum of the hidden states along input. The weights are dependent of time position     $t$     and trained jointly with the model. Formally, denoting the weight    $\alpha_{ij}$    as the weight for   $j$   -th input hidden state to the context used for    $i$    -th output, the context vector at    $i$    is</p>
 <p>$$
 c_i = \sum_j \alpha_{ij} h_j.
 $$</p>
-<p>Intuitively,    $\alpha_{ij}$    should be computed based on both     $h_j$ --  and   $s_{i-1}$   (just before emitting   $y_i$ )), In the original paper the model reads</p>
+<p>Intuitively,    $\alpha_{ij}$    should be computed based on both     $h_j$     and   $s_{i-1}$   (just before emitting   $y_i$   ), In the original paper the model reads</p>
 <p>$$
 e_{ij} = \textrm{AlignmentNN} (s_{i-1}, h_j), \alpha_{ij} = \textrm{softmax}(e_{ij}).
 $$</p>
@@ -844,23 +832,23 @@ $$</p>
 
 <div class="flex-center w-100 mainTextImg" style="text-align: center"><img name="preview" src="./figs/transformer.png"/></div>
 
-<p>Formally, there are three important tensors in the attention mechanism of Transformer: query    $Q$ ,,, key    $K$ ,,, and value     $V$ . .. Revisit the old attention mechanism by</p>
+<p>Formally, there are three important tensors in the attention mechanism of Transformer: query    $Q$    , key    $K$    , and value     $V$     . Revisit the old attention mechanism by</p>
 <p>$$
 c_i = \sum_j \textrm{softmax}\Big(\textrm{AlignmentNN}(s_{i-1}, h_j)\Big) h_j,
 $$</p>
-<p><code>AlignmentNN</code> is the measure of correlation or similarity between vectors in    $s$    and     $h$   .. Sequence    $s$    is the information of inputs while     $h$   . is of potentially outputs. A matrix with each rows are   $s_i$ --like data forms the query    $Q$ ,,, while    $K$ ,,,     $V$ . . are pairs of     $h_j$ -- -like (in AlignmentNN) and     $h_j$ -- -like (at outside) tensors. By simplify <code>AlignmentNN</code> as matrix inner product, such attention mechanism is called <strong>Scaled dot-product attention</strong>, which reads</p>
+<p><code>AlignmentNN</code> is the measure of correlation or similarity between vectors in    $s$    and     $h$     . Sequence    $s$    is the information of inputs while     $h$     is of potentially outputs. A matrix with each rows are   $s_i$   -like data forms the query    $Q$    , while    $K$    ,     $V$     are pairs of     $h_j$     -like (in AlignmentNN) and     $h_j$     -like (at outside) tensors. By simplify <code>AlignmentNN</code> as matrix inner product, such attention mechanism is called <strong>Scaled dot-product attention</strong>, which reads</p>
 <p>$$
 \textrm{Attention}(Q, K, V) = \textrm{softmax}\Big(\frac {QK^T} {\sqrt{d_K}}\Big)V.
 $$</p>
 <p>
- $d_K$   is the size of   $Q, K$ '&rsquo;s second dimension (number of terms in matrix multiplication). The Transformer used the tech known as <strong>Self-attention</strong>, which means   $Q, K, V$   are computed from the same sequence. In practice, given input tensor   $x \in \mathbb{R}^{L\times f}$   (( $L$   for sequence length while    $f$    for the number of features), these three tensors can be computed with full-connected layers (Linear) as   $Q = xW_Q$ ,,   $K = xW_K$ ,, and   $V= xW_V$   with   $W_Q, W_K \in \mathbb{R}^{f\times d_K}, W_V\in \mathbb{R}^{f\times d_V}$ .. Thus   $\textrm{Attention}(Q, K, V)$   has the shape of   $L\times d_V$ .. The multi-head attention is concating the single attention multiple times with a linear layer:</p>
+ $d_K$   is the size of   $Q, K$   &rsquo;s second dimension (number of terms in matrix multiplication). The Transformer used the tech known as <strong>Self-attention</strong>, which means   $Q, K, V$   are computed from the same sequence. In practice, given input tensor   $x \in \mathbb{R}^{L\times f}$   (( $ L$   for sequence length while    $f$    for the number of features), these three tensors can be computed with full-connected layers (Linear) as   $Q = xW_Q$   ,   $K = xW_K$   , and   $V= xW_V$   with   $W_Q, W_K \in \mathbb{R}^{f\times d_K}, W_V\in \mathbb{R}^{f\times d_V}$   . Thus   $\textrm{Attention}(Q, K, V)$   has the shape of   $L\times d_V$   . The multi-head attention is concating the single attention multiple times with a linear layer:</p>
 <p>$$
 \textrm{MultiHead}(Q,K,V) = \textrm{concat}([\textrm{Attention}(QW_i^Q, KW_i^K, VW_i^V),\cdots])W^O.
 $$</p>
 <p>Some interesting facts about Transformer</p>
 <ol>
 <li>Residual connection and LayerNorm are used to make training easier.</li>
-<li>Feed-forward NN is to serve the nonlinearity. Note Attention does nothing but linear transformation to     $V$ . ..</li>
+<li>Feed-forward NN is to serve the nonlinearity. Note Attention does nothing but linear transformation to     $V$     .</li>
 <li>The masked attention is used in decoder to ensure we cannot peak at the future.</li>
 <li>Though Transformer&rsquo;s attention is optimized (no need for serial generating), it still cost   $\mathcal{O}(T^2)$   time to handle the sequence.</li>
 </ol>
@@ -876,7 +864,7 @@ $$</p>
 <blockquote>
 <p>GPT-1 and GPT-2 use transformer decoder with different sizes. GPT-3 used &ldquo;alternating dense and locally banded sparse attention patterns in the layers of the transformer&rdquo;  (<a href="https://arxiv.org/abs/2005.14165">OpenAI, 2020</a>)</p>
 </blockquote>
-<p>As suggested in (<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">OpenAI, 2018</a>), a task-dependent <strong>supervised fine-tuning protocol</strong> was proposed. Generally, one extracts the final Transformer block&rsquo;s activation     $h$   . and express the conditional probability of labelled pair   $(x, y)$  </p>
+<p>As suggested in (<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">OpenAI, 2018</a>), a task-dependent <strong>supervised fine-tuning protocol</strong> was proposed. Generally, one extracts the final Transformer block&rsquo;s activation     $h$     and express the conditional probability of labelled pair   $(x, y)$  </p>
 <p>$$
 P(y|x) = \textrm{softmax}(h(x) W).
 $$</p>
@@ -894,7 +882,7 @@ $$</p>
 <thead>
 <tr>
 <th style="text-align:center">Model Name</th>
-<th style="text-align:center">| $n_{\textrm{params}}$ |</th>
+<th style="text-align:center">| $ n_{\textrm{params}}$  </th>
 <th style="text-align:center">Training set</th>
 </tr>
 </thead>
