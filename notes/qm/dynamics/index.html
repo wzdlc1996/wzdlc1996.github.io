@@ -384,7 +384,7 @@ autocomplete('#aa-search-input',
 
     
       <li class="middot"></li>
-      <li>15 minutes read</li>
+      <li>18 minutes read</li>
     
   </ul>
   
@@ -534,6 +534,50 @@ autocomplete('#aa-search-input',
     
         
     
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
 
 
 
@@ -545,6 +589,45 @@ autocomplete('#aa-search-input',
 
 
 
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
     
         
         
@@ -1132,6 +1215,10 @@ For system&rsquo;s Hamiltonian is dependent of time by a parameter   $R$   :</p>
 <p>The instantaneous eigenstates of Hamiltonian are   $\hat H(t)\ket{E_n(t)} = E_n(t) \ket{E_n(t)}$ .. <br>
 The Adiabatic theorem showd that:</p>
 <p>$$\ket{\psi(t=0)} = \ket{E_0(t=0)} \Rightarrow \ket{\psi(t)} = \ket{E_0(t)}$$</p>
+<p>The theorem holds if</p>
+<p>$$
+\Big|\frac{1} {E_n(t)-E_m(t)} \bra{E_n(t)}\frac {\td \hat H(t)} {\td t} \ket{E_m(t)}\Big| \ll 1.
+$$</p>
 <details>
     <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
         Proof(non-degenerate cases)
@@ -1181,7 +1268,161 @@ With the initial condition:   $c_n(t=0) = \delta_{0,n}$   , and the Hamiltonian 
 $$c_n(t) = \delta_{0,n} \exp\big(\int_0^t \td t' \bra{E_n(t')}\frac {\td} {\td t'} \ket{E_n(t')} \big)  $$
 
 
-Which means that       $\ket{\psi(t)}$  .    is the simultaneous ground state .
+Which means that       $\ket{\psi(t)}$  .    is the simultaneous ground state . On the other hand, we have the condition for adiabatic theorem:
+
+$$
+\Big|\frac{1} {E_n(t)-E_m(t)} \bra{E_n(t)}\frac {\td \hat H(t)} {\td t} \ket{E_m(t)}\Big| \ll 1.
+$$
+
+</details>
+
+<details>
+    <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+        Proof(non-degenerate cases, with another adiabatic condition)
+    </summary>
+    
+
+Consider the adiabatic process with
+
+$$
+\hat H(t) \ket{E_n(t)} = E_n(t) \ket{E_n(t)}.
+$$
+
+Thus, the Schrodinger equation of arbitrary state   $\ket{\psi(t)} = \sum_n a_n(t) e^{-\ti \int^t E_n(t)\td t} \ket{E_n(t)}$   reads (with   $\hbar = 1$ ))
+
+$$
+\ti \sum_n \Big(\frac {\td a_n} {\td t}  \ket{E_n(t)} + a_n(-\ti E_n)\ket{E_n(t)} +a_n  \partial_t \ket{E_n(t)}\Big)e^{-\ti \int^t E_n(t)\td t} = \sum_n a_n e^{-\ti \int^t E_n(t)\td t} E_n(t) \ket{E_n(t)}.
+$$
+
+Or
+
+$$
+\ti \frac {\td a_n} {\td t} + \ti \sum_m a_m e^{-\ti \theta_{nm}(t)} \braket{n|\partial_t|m} = 0.
+$$
+
+Given matrix
+
+$$
+(\bm{A})_{nm} = -e^{\ti \theta_{nm}(t)} \braket{n|\partial_t|m} \equiv - \braket{E_n(t)|\partial_t|E_m(t)} e^{\ti \int_0^t (E_n - E_m)\td t},
+$$
+
+the equation of motion can be write as matrix differential equation (with   $(\bm{x})_n = a_n$ )), like
+
+$$
+\frac {\td \bm{x}} {\td t} = \bm{A}(t) \bm{x} \Leftrightarrow \frac {\td a_n} {\td t} = A_{nm} a_m.
+$$
+
+Consider the diagonal term contribution, let
+
+$$
+b_n(t) = a_n(t) \exp\Big(-\int_0^t A_{nn}(t)\td t\Big) = a_n(t) \exp\Big(-\ti \int_0^t (\ti \braket{n|\partial_t|n})\td t\Big) = a_n(t)e^{-\ti \gamma_n(t)}.
+$$
+
+Then
+
+$$
+\frac {\td b_n} {\td t} = \frac {\td a_n} {\td t} e^{-\ti \gamma_n} - A_{nn} a_n e^{-\ti \gamma_n} = (A_{nm} - A_{nn}\delta_{nm}) b_n.
+$$
+
+Or
+
+$$
+\frac {\td \bm{y}} {\td t} = \bm{B} \bm{y}
+$$
+
+with   $\bm{y} = (b_1 ,\cdots)$ .. Note that   $\bm{y}(0) = \bm{x}(0)$ ,, and when   $\|\bm{y}(t) - \bm{y}(0)\|\ll 1$ ,, the off-diagonal terms could be neglected.
+
+One can write down
+
+$$
+\begin{aligned}
+\|\bm{y}(t) - \bm{y}(0)\| &= \Big\|\int_0^t \bm{B}(s) (\bm{y}(s) - \bm{y}(0) + \bm{y}(0))\td s \Big\| \\
+&\leq \Big\|\int_0^t \bm{B}(s) (\bm{y}(s) - \bm{y}(0))\td s \Big\| + \Big\|\int_0^t \bm{B}(s) \bm{y}(0) \td s \Big\| \\
+&\leq \int_0^t \|\bm{B}(s)\|\cdot \|\bm{y}(s) - \bm{y}(0)\|\td s + \Big\|\int_0^t \bm{B}(s) \td s \Big\| \cdot \|\bm{y}(0)\|
+\end{aligned}
+$$
+
+Denoting   $z(t) = \|\bm{y}(t) - \bm{y}(0)\|$ ,,   $M(s) = \|\bm{B}(s)\|$   (being a metrix-norm, as a positive real number), and note   $\|\bm{y}(0)\| = 1$   as the wavefunction is normalized. Thus, the inequality reads
+
+$$
+\begin{aligned}
+z(t) &\leq \int_0^t M(s) z(s)\td s + \Big\|\int_0^t \bm{B}(s) \td s \Big\| \\
+&\leq \int_0^t M(s) z(s)\td s + \sum_{n, m} \Big|\int_0^t B_{nm}(s) \td s \Big|.
+\end{aligned}
+$$
+
+Note 
+
+$$
+\begin{aligned}
+\int_0^t B_{nm}(s) \td s &= \int_0^t (1- \delta_{nm}) A_{nm}(s) \td s = -(1- \delta_{nm}) \int_0^t e^{\ti \theta_{nm}(s)} \braket{n|\partial_t|m} \td s \\
+&=-(1- \delta_{nm}) \int_0^t e^{\ti \theta_{nm}(s)} \frac {\braket{n|\partial_t|m}} {E_n - E_m} \td \theta_{nm} \\
+&= -(1- \delta_{nm}) \int \frac {\braket{n|\partial_t|m}} {\ti(E_n - E_m)} \td e^{\ti \theta_{nm}}
+\end{aligned}
+$$
+
+Thus
+
+$$
+\begin{aligned}
+\Big|\int_0^t B_{nm}(s) \td s \Big| &= (1-\delta_{nm})\Bigg|\int \frac {\braket{n|\partial_t|m}} {E_n - E_m} \td e^{\ti \theta_{nm}} \Bigg|\\
+&\leq (1-\delta_{nm}) \sup_{0\leq s \leq t} \Big|\frac {\braket{n|\partial_t|m}} {E_n - E_m}\Big| \cdot \Big|\int \td e^{\ti \theta_{nm}}\Big| \\
+&\leq 2(1-\delta_{nm}) \sup_{0\leq s \leq t} \Big|\frac {\braket{n|\partial_t|m}} {E_n - E_m}\Big|
+\end{aligned}
+$$
+
+Finally, the inequality about   $z(t)$   becomes
+
+$$
+z(t) \leq \int_0^t M(s)z(s)\td s + 2 \sum_{n\neq m} \sup_{0\leq s \leq t} \Big|\frac {\braket{n|\partial_t|m}} {E_n - E_m}\Big| \equiv \int_0^t M(s)z(s)\td s + \Xi(t).
+$$
+
+Note   $\Xi(t)$   is non-decrease and   $\Xi(0) \geq 0$ .. Consider function (The following proof is known as the integral form of [Grönwall's inequality](https://en.wikipedia.org/wiki/Gr%C3%B6nwall%27s_inequality))
+
+$$
+w(t) = \exp\Big(- \int_0^t M(s)\td s \Big) \int_0^t M(s) z(s)\td s.
+$$
+
+One has 
+
+$$
+\begin{aligned}
+w'(t) &= -M(t) e^{-\int_0^t M(s)\td s}\int_0^t M(s) z(s)\td s + (M(t)z(t))e^{-\int_0^t M(s)\td s} \\
+&= M(t)e^{-\int_0^t M(s)\td s} \Big(z(t) - \int_0^t M(s)z(s) \td s\Big) \\
+&\leq M(t)e^{-\int_0^t M(s)\td s} \Xi(t)
+\end{aligned}
+$$
+
+Thus
+
+$$
+w(t) - w(0) \leq \int_0^t \td s \ M(s)e^{-\int_0^s M(x)\td x} \Xi(s) \leq \Xi(t)\int_0^t \td s \ M(s)e^{-\int_0^s M(x)\td x} = \Xi(t) (1 - e^{-\int_0^t M(s)\td s})
+$$
+
+Note   $w(0) = 0$ ,, then we have
+
+$$
+\exp\Big(- \int_0^t M(s)\td s \Big) \int_0^t M(s) z(s)\td s \leq \Xi(t)(1 - e^{-\int_0^t M(s)\td s}).
+$$
+
+And
+
+$$
+z(t) \leq \int_0^t M(s) z(s)\td s + \Xi(t) \leq \Xi(t)e^{\int_0^t M(s)\td s} \leq \Xi(t) e^{t \sup M}.
+$$
+
+That means
+
+$$
+\|\bm{y}(t) - \bm{y}(0)\| \leq e^{K t} \sum_{n\neq m} \sup_{0\leq s \leq t} \Big|\frac {\braket{n|\partial_t|m}} {E_n - E_m}\Big|.
+$$
+
+There is another adiabatic condition, which reads
+
+$$
+\sup_{0\leq s \leq t} \Big|\frac {\braket{n|\partial_t|m}} {E_n - E_m}\Big| \ll 1.
+$$
+
 
 </details>
 
@@ -1963,7 +2204,7 @@ MOdify the definition of probability current density as</p>
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 
